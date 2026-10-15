@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fagord til kapitel 7 – Kemibogen</title>
+<title>Fagord til kapitel 7 – Kemibogen C</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6f5271ed9d1b222440e9dd30dde7dfcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,10 +105,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="niveauer">
 <p><span class="her">Kemi C</span> <a href="../../b/index.html">Kemi B</a> <a href="../../a/index.html">Kemi A</a></p>
 </div>
+<div class="kompendielink">
+<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
+</div>
 </div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Kemibogen</a> 
+      <a href="../">Kemibogen C</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -164,20 +167,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/1-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/1-2-atomet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1.2 Atomet</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/1-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -188,14 +179,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/1-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.3</span></a>
+  <a href="../kapitler/1-4-reaktionsskemaer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.4 Reaktionsskemaer og afstemning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/1-4-reaktionsskemaer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.4 Reaktionsskemaer og afstemning</span></a>
+  <a href="../opgaver/1-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/1-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/1-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -982,6 +985,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../eksamen/eksamen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eksamen i kemi C</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
@@ -2596,10 +2605,99 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
+// Menuen i venstre side: "Til kapitlet" under afsnittene (Niels 15. okt. 2026, prøve i kapitel 1).
+//
+// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, sættes rubrikken "Til kapitlet" ind
+// foran dem, og de fire linjer "Opgaver til 1.1" osv. bliver til én linje: "Opgaver 1.1 1.2 1.3 1.4".
+// Fagord og repetition står bagefter som før. Til sidst kommer linkene i EKSTRA (slides, modulplaner og
+// kapitlets animationer på kemiformler.dk). Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
+(function () {
+  var EKSTRA = {
+    "1": [
+      { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
+      { tekst: "Animationer til kapitel 1", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+    ]
+  };
+
+  function li(klasse) {
+    var el = document.createElement("li");
+    el.className = "sidebar-item " + klasse;
+    return el;
+  }
+
+  function lavKapitel(ul) {
+    var punkter = Array.prototype.filter.call(ul.children, function (el) { return el.tagName === "LI"; });
+    var afsnit = [], opgaver = [], sidsteAfsnit = -1, foersteOpgave = -1;
+    punkter.forEach(function (p, i) {
+      var a = p.querySelector("a.sidebar-link");
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      if (/(^|\/)kapitler\//.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
+      else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href)) {
+        opgaver.push(p);
+        if (foersteOpgave < 0) foersteOpgave = i;
+      }
+    });
+    if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
+
+    // Kapitlets nummer og vejen til bogens rod tages fra første afsnit ("../kapitler/1-1-....html").
+    var foerste = afsnit[0].getAttribute("href");
+    var nr = (afsnit[0].textContent.trim().match(/^(\d+)\./) || [])[1];
+    var rod = foerste.slice(0, foerste.search(/kapitler\//));
+
+    var rubrik = li("kapitelmenu-rubrik");
+    rubrik.textContent = "Til kapitlet";
+    ul.insertBefore(rubrik, opgaver[0]);
+
+    var raekke = li("kapitelmenu-opgaver");
+    var navn = document.createElement("span");
+    navn.className = "kapitelmenu-navn";
+    navn.textContent = "Opgaver";
+    raekke.appendChild(navn);
+    opgaver.forEach(function (p) {
+      var gammel = p.querySelector("a.sidebar-link");
+      var a = document.createElement("a");
+      a.href = gammel.getAttribute("href");
+      a.textContent = gammel.textContent.trim().replace(/^Opgaver til\s*/, "");
+      a.title = gammel.textContent.trim();
+      if (gammel.classList.contains("active")) { a.className = "active"; a.setAttribute("aria-current", "page"); }
+      raekke.appendChild(a);
+    });
+    ul.insertBefore(raekke, opgaver[0]);
+    opgaver.forEach(function (p) { p.remove(); });
+
+    (EKSTRA[nr] || []).forEach(function (e) {
+      var p = li("kapitelmenu-ekstra");
+      var boks = document.createElement("div");
+      boks.className = "sidebar-item-container";
+      var a = document.createElement("a");
+      a.className = "sidebar-item-text sidebar-link";
+      a.href = e.url || rod + e.sti;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.classList.add("kapitelmenu-" + e.ikon);
+      a.textContent = e.tekst;
+      boks.appendChild(a);
+      p.appendChild(boks);
+      ul.appendChild(p);
+    });
+  }
+
+  function start() {
+    Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
+</script>
+<script>
 // Fagordlister (sider med "body-classes: fagord" og en tabel under hver overskrift).
 //
-// Over tabellerne sættes en bjælke med fire knapper. "Quiz: fem hurtige" åbner en lille quiz på
-// selve siden: en forklaring og fire fagord at vælge imellem. "Kort og godt" åbner spillet på kemiformler.dk
+// Over tabellerne sættes en bjælke med knapper. "Quiz: fem hurtige" åbner en lille quiz på
+// selve siden: en forklaring og fire fagord at vælge imellem. "Speedtalk" viser fagordene på hele
+// skærmen ét ad gangen med en klokke imellem, til en øvelse for hele klassen (Niels 15. okt. 2026).
+// "Kort og godt" åbner spillet på kemiformler.dk
 // (vendekort, vendespil og parring) med fagordene som et sæt: hele sættet står i linket. De to andre
 // kopierer fagordene som tekst, der passer til Quizlet (fagord, tabulator, forklaring) eller til
 // Crossword Labs (svar, mellemrum, ledetråd). Knappen "Vælg fagord" folder en oversigt ud med et
@@ -2660,6 +2758,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var quizStart = el("button", "fe-knap fe-quizstart", "Quiz: fem hurtige");
   quizStart.type = "button";
   linje.appendChild(quizStart);
+  var speedStart = el("button", "fe-knap fe-speedstart", "Speedtalk");
+  speedStart.type = "button";
+  linje.appendChild(speedStart);
   linje.appendChild(el("span", "fe-tekst", "Brug fagordene i"));
   // Kort og godt er et rigtigt link, så adressen også kan kopieres og deles med en klasse.
   var tilSpil = el("a", "fe-knap fe-spil", "Kort og godt");
@@ -2762,6 +2863,48 @@ document.addEventListener("DOMContentLoaded", function () {
   fq.appendChild(fqBesked);
   fq.appendChild(fqKnapper);
   boks.appendChild(fq);
+
+  // Speedtalk har også sit eget felt under knapperne: en kort beskrivelse til læreren, tiden pr.
+  // fagord, om rækkefølgen skal blandes, og knappen, der viser fagordene på hele skærmen.
+  var fs = el("div", "fq fs-panel");
+  fs.hidden = true;
+  var fsHoved = el("div", "fq-hoved");
+  fsHoved.appendChild(el("span", "fq-titel fs-titel", "Speedtalk"));
+  var fsLuk = el("button", "fq-luk", "Luk");
+  fsLuk.type = "button";
+  fsHoved.appendChild(fsLuk);
+  fs.appendChild(fsHoved);
+  fs.appendChild(el("p", "fs-om", "De valgte fagord kommer på tavlen ét ad gangen uden forklaring. Eleverne sidder to og to. " +
+    "Den ene taler så hurtigt og så meget som muligt om fagordet, og den anden lytter og hjælper, hvis makkeren går i stå. " +
+    "Når klokken ringer, kommer næste fagord, og de bytter."));
+  var fsValg = el("div", "fs-valg");
+  var fsTidFelt = el("label", "fs-felt");
+  fsTidFelt.appendChild(el("span", null, "Tid pr. fagord"));
+  var fsTid = el("select");
+  [["efter", "15 til 30 sekunder efter fagordet"], ["15", "15 sekunder"], ["20", "20 sekunder"],
+   ["25", "25 sekunder"], ["30", "30 sekunder"]].forEach(function (v) {
+    var mulighed = el("option", null, v[1]);
+    mulighed.value = v[0];
+    fsTid.appendChild(mulighed);
+  });
+  fsTidFelt.appendChild(fsTid);
+  fsValg.appendChild(fsTidFelt);
+  var fsBlandFelt = el("label", "fs-felt");
+  var fsBland = el("input");
+  fsBland.type = "checkbox";
+  fsBland.checked = true;
+  fsBlandFelt.appendChild(fsBland);
+  fsBlandFelt.appendChild(el("span", null, "Bland fagordene"));
+  fsValg.appendChild(fsBlandFelt);
+  fs.appendChild(fsValg);
+  var fsKnapper = el("div", "fq-knapper fs-knapper");
+  var fsVis = el("button", "fe-knap fs-vis", "Vis på tavlen");
+  fsVis.type = "button";
+  var fsOmfang = el("span", "fs-omfang");
+  fsKnapper.appendChild(fsVis);
+  fsKnapper.appendChild(fsOmfang);
+  fs.appendChild(fsKnapper);
+  boks.appendChild(fs);
 
   var resultat = el("div", "fe-resultat");
   resultat.hidden = true;
@@ -3099,6 +3242,417 @@ document.addEventListener("DOMContentLoaded", function () {
   tilQuizlet.addEventListener("click", function () { sidst = quizlet; vis(quizlet()); });
   tilKryds.addEventListener("click", function () { sidst = kryds; vis(kryds()); });
 
+  // ----- Speedtalk --------------------------------------------------------------------------
+  // Læreren viser de valgte fagord på tavlen ét ad gangen, uden forklaring og på hele skærmen
+  // (Niels 15. okt. 2026). Eleverne sidder to og to: den ene taler så hurtigt og så meget som
+  // muligt om fagordet, og den anden lytter og hjælper. Når tiden er gået, ringer en klokke, næste
+  // fagord kommer, og de bytter. Tiden følger fagordet: 15 sekunder til et enkelt ord som hydron
+  // og op til 30 til et stort begreb som vands selvionisering. Et fagord, der ikke står i
+  // SPEEDTALK_TID, får 20 sekunder. Læreren kan også give alle fagord samme tid.
+  // Mellemrum sætter på pause, pilene (og en fremviser) skifter fagord, og Esc lukker.
+  var SPEEDTALK_STANDARD = 20;
+  // SPEEDTALK_TID begynder
+  var SPEEDTALK_TID = {
+    15: [
+      "atomsymbol", "halvmetal", "kerne", "proton", "neutron", "atomnummer", "elektrisk neutral", "nukleontal",
+      "alkalimetaller", "halogener", "reaktant", "produkt", "reaktionspil", "koefficient", "tilstandssymbol",
+      "natriumion", "romertal", "jern(II)ion", "jern(III)ion", "-id", "fluorid", "chlorid", "oxid", "sulfid",
+      "nitrid", "hydroxid", "nitrat", "carbonat", "sulfat", "phosphat", "ammonium", "frit elektronpar",
+      "enkeltbinding", "dobbeltbinding", "tripelbinding", "pol", "størrelse", "symbol", "enhed", "masse",
+      "volumen", "kelvin", "gaskonstanten", "opløst stof", "molær", "målekolbe", "burette", "omslag",
+      "forbrug", "uorganisk", "uforgrenet", "forgrenet", "hovedkæde", "sidegruppe", "enkeltumættet",
+      "flerumættet", "hydron", "neutral", "lakmus", "bromthymolblåt", "phenolphthalein", "pH-meter", "dosis",
+      "halvsyntetisk", "syntetisk", "copolymer", "tilsætningsstof", "plastkode", "biobaseret", "faresymbol",
+      "signalord", "H-sætning", "P-sætning", "sikkerhedsdatablad", "substrat", "indstille sig", "R", "Z", "E",
+      "hydroxygruppe", "DNPH", "primær amin", "sekundær amin", "tertiær amin", "synligt lys", "hvidt lys",
+      "kuvette", "blindprøve", "ligefrem proportional", "lysvej", "standardopløsning", "stamopløsning",
+      "lineært område", "monohydron", "middelstærk syre", "galactose", "fructose", "aldose", "ketose",
+      "Fehling I", "Fehling II", "upolær sidekæde", "polær sidekæde", "sur sidekæde", "basisk sidekæde",
+      "essentiel aminosyre", "dipeptid", "α-helix", "β-foldeblad", "disulfidbro", "lægemiddel",
+      "virksomt stof", "bindingslomme", "kiralt center", "ethansyreanhydrid", "filtrering", "råprodukt",
+      "destillat", "løbevæske", "væskefront", "salicylat", "totaltryk", "molbrøk", "homogen", "heterogen",
+      "system", "omgivelser", "standardtegn", "naturstof", "alkylgruppe", "test", "reagens", "positiv test",
+      "negativ test", "asymmetrisk", "planpolariseret", "drejning", "højredrejende", "venstredrejende",
+      "infrarødt lys", "radiobølger", "bånd", "stræk", "bøjning", "transmittans", "TMS", "ppm",
+      "integralkurve", "singlet", "dublet", "triplet", "kvartet", "multiplet", "bred singlet",
+      "genereret spektrum", "residual", "frekvensfaktor", "buet pil", "pH-optimum", "oxidationstrin",
+      "centralion", "koordinationstal", "diiod", "thiosulfat", "kolonne", "top", "areal", "standard",
+      "deoxyribose", "ribose", "purin", "pyrimidin", "adenin", "guanin", "cytosin", "thymin", "uracil",
+      "phosphatgruppe", "rygrad", "5′-ende", "3′-ende", "sekvens", "komplementær", "hårnål", "skabelonstreng",
+      "kodende streng"
+    ],
+    25: [
+      "det periodiske system", "kemisk reaktion", "skalmodel", "ædelgasreglen", "oktetreglen", "afstemt",
+      "ionbinding", "fældningsreaktion", "elektronparbinding", "vinklet", "elektronegativitet",
+      "polær binding", "polært molekyle", "blandbarhed", "betydende cifre", "ækvivalente mængder",
+      "begrænsende faktor", "vejeanalyse", "idealgasligningen", "fortynde", "aktuel koncentration",
+      "ækvivalenspunkt", "indikator", "alkan", "isomerer", "forbrænding", "substitution", "alken", "addition",
+      "bromvand", "polymerisation", "krakning", "alkohol", "carboxylsyre", "fedtstof", "hydrolyse", "hærdning",
+      "syre/base-reaktion", "svag syre", "svag base", "pH", "oxidation", "reduktion", "redoxreaktion",
+      "oxidationstal", "offeranode", "drivhusgas", "fossile brændstoffer", "brændselscelle", "termoplast",
+      "hærdeplast", "hastighedskonstant", "aktiveringsenergi", "exoterm", "endoterm", "temperatur",
+      "katalysator", "aktivt center", "reaktionsbrøk", "indgreb", "opløselighed", "londonbinding",
+      "dipol-dipolbinding", "hydrogenbinding", "stereoisomerer", "cis-trans-isomeri", "spejlbilledisomerer",
+      "asymmetrisk carbonatom", "elimination", "gæring", "kondensation", "Tollens' test", "sæbe", "ester",
+      "forsæbning", "polykondensation", "aminosyre", "spektrofotometer", "konjugerede dobbeltbindinger",
+      "standardkurve", "syre-basereaktion", "omdannelsesgrad", "basestyrkekonstant", "halvækvivalenspunkt",
+      "omslagsområde", "glucose", "ringslutning", "glykosidbinding", "stivelse", "cellulose", "Fehlings væske",
+      "reducerende sukker", "mættet fedtsyre", "umættet fedtsyre", "transfedtsyre", "fordelingsdiagram",
+      "isoelektrisk punkt", "peptidbinding", "sekundær struktur", "tertiær struktur", "denaturering",
+      "fordelingsforhold", "log D", "omkrystallisering", "destillation", "tyndtlagschromatografi", "kompleks",
+      "SÆL-skema", "fælles ion-effekten", "bjerrumdiagram", "tilvæksten i entalpi", "kalorimeter", "spontan",
+      "elementaranalyse", "dobbeltbindingsækvivalenter", "optisk aktiv", "polaritetsanalyse",
+      "fordelingsligevægt", "ekstraktion", "orbital", "elektronkonfiguration", "sp²-hybridiseret", "π-binding",
+      "delokaliserede elektroner", "IR-spektrum", "skærme", "kemisk skift", "kobling", "opsplitning",
+      "reaktionskinetik", "orden", "første orden", "halveringstid", "det hastighedsbestemmende trin",
+      "overgangstilstand", "carbokation", "kompetitiv inhibitor", "non-kompetitiv inhibitor",
+      "Michaelis-konstanten", "Lineweaver-Burk-plot", "redoxtitrering", "HPLC", "omvendt fase",
+      "gaschromatografi", "basepar", "londonbindinger", "smeltetemperatur", "DNA-polymerase", "cyklus",
+      "mutation"
+    ],
+    30: [
+      "mængdeberegning", "titrering", "Mohrtitrering", "vands ionprodukt", "titrerkurve", "spændingsrækken",
+      "korrosion", "drivhuseffekten", "havforsuring", "syreregn", "reaktionshastighed", "sammenstødsmodel",
+      "hastighedsudtryk", "energiprofil", "enzym", "ligevægt", "dynamisk ligevægt", "ligevægtskonstant",
+      "ligevægtsloven", "Le Chateliers princip", "opløselighedsligevægt", "opløselighedsprodukt",
+      "intermolekylær binding", "protein", "Lambert-Beers lov", "vands selvionisering", "syrestyrkekonstant",
+      "puffersystem", "pufferligningen", "tilbagetitrering", "chromatografi", "entalpi", "Hess' lov",
+      "entropi", "termodynamikkens anden hovedsætning", "Gibbs-energi", "van 't Hoff-ligningen",
+      "hybridisering", "IR-spektroskopi", "¹H-NMR", "starthastighedsmetoden", "Arrhenius-ligningen",
+      "reaktionsmekanisme", "nucleofil substitution", "SN2", "SN1", "Michaelis-Menten-ligningen",
+      "gelelektroforese", "dobbeltspiral", "PCR", "transskription", "translation"
+    ]
+  };
+  // SPEEDTALK_TID slutter
+  // Fagordet slås op med små bogstaver og lige apostroffer (siden viser Hess’ lov, listen Hess' lov).
+  function speedNoegle(t) {
+    return t.toLowerCase().replace(/[‘’`´]/g, "'").replace(/[ \s]+/g, " ").replace(/‑/g, "-").trim();
+  }
+  var speedTider = Object.create(null);
+  Object.keys(SPEEDTALK_TID).forEach(function (sek) {
+    SPEEDTALK_TID[sek].forEach(function (ord) { speedTider[speedNoegle(ord)] = Number(sek); });
+  });
+  function taletid(o) {
+    if (fsTid.value !== "efter") return Number(fsTid.value);
+    return speedTider[speedNoegle(o.ord)] || SPEEDTALK_STANDARD;
+  }
+  function omfang(ord) {
+    var sek = ord.reduce(function (sum, o) { return sum + taletid(o); }, 0);
+    var min = Math.max(1, Math.round(sek / 60));
+    return ord.length + " fagord · cirka " + min + (min === 1 ? " minut" : " minutter");
+  }
+  function opdaterSpeedOmfang() {
+    var antal = valgte().length;
+    fsOmfang.textContent = antal ? omfang(valgte()) : "Der er ikke valgt nogen fagord.";
+    fsVis.disabled = antal === 0;
+  }
+
+  // Lærredet dækker hele skærmen og har tre tilstande: klar (reglerne og Start), koerer (et
+  // fagord ad gangen med en bjælke, der viser tiden) og slut.
+  var tavle = el("div", "fs-tavle");
+  tavle.hidden = true;
+  tavle.tabIndex = -1;
+  tavle.setAttribute("role", "dialog");
+  tavle.setAttribute("aria-modal", "true");
+  tavle.setAttribute("aria-label", "Speedtalk");
+  var klar = el("div", "fs-klar");
+  klar.appendChild(el("div", "fs-overskrift", "Speedtalk"));
+  var regler = el("ul", "fs-regler");
+  ["Find en makker.",
+   "Den ene taler så hurtigt og så meget som muligt om fagordet.",
+   "Den anden lytter og hjælper, hvis makkeren går i stå.",
+   "Når klokken ringer, stopper I, hvor I er. Der kommer et nyt fagord, og I bytter."].forEach(function (t) {
+    regler.appendChild(el("li", null, t));
+  });
+  klar.appendChild(regler);
+  var klarOmfang = el("p", "fs-klaromfang");
+  klar.appendChild(klarOmfang);
+  var fsStart = el("button", "fs-stor", "Start");
+  fsStart.type = "button";
+  klar.appendChild(fsStart);
+  tavle.appendChild(klar);
+
+  var scene = el("div", "fs-scene");
+  var fsNr = el("span", "fs-nr"), fsSek = el("span", "fs-sek");
+  var fsOrd = el("div", "fs-ord");
+  var fsPauseTekst = el("div", "fs-pausetekst", "Pause");
+  scene.appendChild(fsNr);
+  scene.appendChild(fsSek);
+  scene.appendChild(fsOrd);
+  scene.appendChild(fsPauseTekst);
+  tavle.appendChild(scene);
+
+  var slutBillede = el("div", "fs-slutbillede");
+  slutBillede.appendChild(el("div", "fs-ros", "Godt snakket!"));
+  var slutKnapper = el("div", "fs-slutknapper");
+  var fsIgen = el("button", "fs-stor", "Igen");
+  var fsSlutLuk = el("button", "fs-stor fs-hvid", "Luk");
+  fsIgen.type = fsSlutLuk.type = "button";
+  slutKnapper.appendChild(fsIgen);
+  slutKnapper.appendChild(fsSlutLuk);
+  slutBillede.appendChild(slutKnapper);
+  tavle.appendChild(slutBillede);
+
+  var styring = el("div", "fs-styring");
+  function styreknap(tekst, klasse, handling) {
+    var k = el("button", klasse, tekst);
+    k.type = "button";
+    k.addEventListener("click", function () {
+      handling();
+      // Fokus tilbage på lærredet, så mellemrum betyder pause og ikke et nyt tryk på knappen.
+      if (!tavle.hidden) tavle.focus({ preventScroll: true });
+    });
+    styring.appendChild(k);
+    return k;
+  }
+  styreknap("← Forrige", "fs-kun-koerer", function () { skift(-1); });
+  var fsPause = styreknap("Pause", "fs-kun-koerer", pauseSkift);
+  styreknap("Næste →", "fs-kun-koerer", function () { skift(1); });
+  var fsFuld = styreknap("Hele skærmen", "", heleSkaermen);
+  styreknap("Luk", "", lukTavle);
+  tavle.appendChild(styring);
+  var bjaelke = el("div", "fs-bjaelke"), fyld = el("div", "fs-fyld");
+  bjaelke.appendChild(fyld);
+  tavle.appendChild(bjaelke);
+  document.body.appendChild(tavle);
+
+  var st = null;          // { ord, i, varighed, slut, rest, pause } mens fagordene kører
+  var ur = null, stilleUr = null, vaagen = null, lydkilde = null;
+
+  function tilstand(t) {
+    tavle.setAttribute("data-tilstand", t);
+    tavle.classList.remove("fs-stille", "fs-pauset", "fs-sidste");
+    clearTimeout(stilleUr);
+  }
+
+  function fuldskaerm() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
+  function heleSkaermen() {
+    var f = tavle.requestFullscreen || tavle.webkitRequestFullscreen;
+    if (!f || fuldskaerm()) return;
+    try {
+      var p = f.call(tavle);
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) { /* så bliver lærredet i vinduet */ }
+  }
+  function opdaterFuld() {
+    fsFuld.hidden = !!fuldskaerm() || !(tavle.requestFullscreen || tavle.webkitRequestFullscreen);
+    tilpas();
+  }
+  document.addEventListener("fullscreenchange", opdaterFuld);
+  document.addEventListener("webkitfullscreenchange", opdaterFuld);
+  window.addEventListener("resize", function () { if (!tavle.hidden) tilpas(); });
+
+  // Skærmen må ikke gå i dvale midt i en runde.
+  function holdVaagen() {
+    try {
+      if (navigator.wakeLock) navigator.wakeLock.request("screen").then(function (l) { vaagen = l; }, function () {});
+    } catch (e) { vaagen = null; }
+  }
+  function slipVaagen() {
+    if (vaagen) { try { vaagen.release(); } catch (e) { /* ingen */ } }
+    vaagen = null;
+  }
+
+  // Klokken laves med Web Audio, så der ikke er nogen lydfil: to slag på en lille klokke med
+  // uharmoniske overtoner, der klinger ud. Lyden skal kunne høres, mens hele klassen snakker.
+  function lyd() {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    if (!lydkilde) {
+      try { lydkilde = new AC(); } catch (e) { return null; }
+    }
+    if (lydkilde.state === "suspended") lydkilde.resume();
+    return lydkilde;
+  }
+  function klokke() {
+    var ac = lyd();
+    if (!ac) return;
+    var ud = ac.createGain();
+    ud.gain.value = 0.7;     // højst omkring 0,85 i alt, når andet slag rammer, mens det første klinger
+    ud.connect(ac.destination);
+    var grund = 988;
+    // [forhold til grundtonen, styrke, sekunder til den er klinget ud]
+    var toner = [[0.5, 0.12, 1.6], [1, 0.55, 2.4], [2.76, 0.24, 1.3], [5.4, 0.12, 0.7], [8.93, 0.05, 0.35]];
+    [[0, 1], [0.2, 0.8]].forEach(function (slag) {
+      var t = ac.currentTime + 0.02 + slag[0];
+      toner.forEach(function (d) {
+        var osc = ac.createOscillator(), g = ac.createGain();
+        osc.type = "sine";
+        osc.frequency.value = grund * d[0];
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.linearRampToValueAtTime(d[1] * slag[1], t + 0.004);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + d[2]);
+        osc.connect(g);
+        g.connect(ud);
+        osc.start(t);
+        osc.stop(t + d[2] + 0.05);
+      });
+    });
+  }
+
+  // Fagordet står så stort, som der er plads til, uden at et ord bliver delt.
+  function tilpas() {
+    if (tavle.getAttribute("data-tilstand") !== "koerer") return;
+    var str = Math.min(window.innerWidth * 0.15, window.innerHeight * 0.28);
+    var hoejst = window.innerHeight * 0.62;
+    fsOrd.style.fontSize = str + "px";
+    while (str > 20 && (fsOrd.scrollWidth > fsOrd.clientWidth + 1 || fsOrd.scrollHeight > hoejst)) {
+      str *= 0.92;
+      fsOrd.style.fontSize = str + "px";
+    }
+  }
+
+  function aabnTavle() {
+    tilstand("klar");
+    klarOmfang.textContent = omfang(valgte());
+    tavle.hidden = false;
+    document.documentElement.classList.add("fs-aaben");
+    heleSkaermen();
+    opdaterFuld();
+    fsStart.focus({ preventScroll: true });
+  }
+
+  function koer() {
+    if (tavle.getAttribute("data-tilstand") === "koerer") return;
+    var ord = valgte();
+    if (!ord.length) return;
+    lyd();
+    st = { ord: fsBland.checked ? bland(ord) : ord.slice(), i: 0 };
+    tilstand("koerer");
+    tavle.focus({ preventScroll: true });
+    holdVaagen();
+    visOrd(0);
+    clearInterval(ur);
+    ur = setInterval(tik, 100);
+    vaekMedStyring();
+  }
+
+  function visOrd(i) {
+    var o = st.ord[i];
+    st.i = i;
+    st.varighed = taletid(o) * 1000;
+    st.slut = performance.now() + st.varighed;
+    st.pause = false;
+    tavle.classList.remove("fs-pauset", "fs-sidste");
+    fsPause.textContent = "Pause";
+    fsOrd.innerHTML = o.ordHtml;
+    fsNr.textContent = (i + 1) + " / " + st.ord.length;
+    tilpas();
+    fsOrd.classList.remove("fs-nyt");
+    void fsOrd.offsetWidth;
+    fsOrd.classList.add("fs-nyt");
+    // Bjælken springer fuld ud uden at glide.
+    fyld.style.transition = "none";
+    fyld.style.transform = "scaleX(1)";
+    void fyld.offsetWidth;
+    fyld.style.transition = "";
+    fsSek.textContent = Math.round(st.varighed / 1000);
+    klokke();
+  }
+
+  function tik() {
+    if (!st || st.pause) return;
+    var rest = st.slut - performance.now();
+    if (rest <= 0) {
+      if (st.i + 1 < st.ord.length) visOrd(st.i + 1); else slutRunde();
+      return;
+    }
+    fyld.style.transform = "scaleX(" + (rest / st.varighed).toFixed(4) + ")";
+    fsSek.textContent = Math.ceil(rest / 1000);
+    tavle.classList.toggle("fs-sidste", rest <= 5000);
+  }
+
+  function skift(d) {
+    if (!st) return;
+    var j = Math.max(0, st.i + d);
+    if (j >= st.ord.length) slutRunde(); else visOrd(j);
+  }
+
+  function pauseSkift() {
+    if (!st) return;
+    if (st.pause) {
+      st.slut = performance.now() + st.rest;
+      st.pause = false;
+    } else {
+      st.rest = st.slut - performance.now();
+      st.pause = true;
+    }
+    tavle.classList.toggle("fs-pauset", st.pause);
+    fsPause.textContent = st.pause ? "Fortsæt" : "Pause";
+  }
+
+  function slutRunde() {
+    clearInterval(ur);
+    st = null;
+    tilstand("slut");
+    klokke();
+    slipVaagen();
+    fsIgen.focus({ preventScroll: true });
+  }
+
+  function lukTavle() {
+    clearInterval(ur);
+    st = null;
+    slipVaagen();
+    tavle.hidden = true;
+    document.documentElement.classList.remove("fs-aaben");
+    if (fuldskaerm() === tavle) {
+      var luk = document.exitFullscreen || document.webkitExitFullscreen;
+      try {
+        var p = luk.call(document);
+        if (p && p.catch) p.catch(function () {});
+      } catch (e) { /* ingen */ }
+    }
+    fsVis.focus({ preventScroll: true });
+  }
+
+  // Mens fagordene kører, forsvinder knapperne og musen efter et par sekunder, så kun fagordet
+  // og bjælken står på tavlen. De kommer igen, når musen flyttes, eller der trykkes på skærmen.
+  function vaekMedStyring() {
+    tavle.classList.remove("fs-stille");
+    clearTimeout(stilleUr);
+    if (tavle.getAttribute("data-tilstand") === "koerer") {
+      stilleUr = setTimeout(function () { tavle.classList.add("fs-stille"); }, 2500);
+    }
+  }
+  tavle.addEventListener("pointermove", vaekMedStyring);
+  tavle.addEventListener("pointerdown", vaekMedStyring);
+
+  document.addEventListener("keydown", function (e) {
+    if (tavle.hidden) return;
+    var t = tavle.getAttribute("data-tilstand");
+    var paaKnap = e.target !== tavle && /^(BUTTON|SELECT|INPUT|A)$/.test(e.target.tagName);
+    var k = e.key;
+    if ((k === " " || k === "Spacebar" || k === "Enter") && paaKnap) return;   // knappen klarer det selv
+    var handling = null;
+    if (k === " " || k === "Spacebar") handling = t === "klar" ? koer : t === "koerer" ? pauseSkift : null;
+    else if (k === "ArrowRight" || k === "PageDown") handling = t === "klar" ? koer : t === "koerer" ? function () { skift(1); } : null;
+    else if (k === "ArrowLeft" || k === "PageUp") handling = t === "koerer" ? function () { skift(-1); } : null;
+    else if (k === "Escape" || k === "Esc") handling = lukTavle;
+    if (k === " " || k === "Spacebar" || /^(Arrow|Page)/.test(k)) e.preventDefault();
+    if (!handling) return;
+    e.stopPropagation();
+    handling();
+  }, true);
+
+  function lukSpeed() {
+    fs.hidden = true;
+    speedStart.hidden = false;
+  }
+  speedStart.addEventListener("click", function () {
+    opdaterSpeedOmfang();
+    fs.hidden = false;
+    speedStart.hidden = true;
+    if (fs.scrollIntoView) fs.scrollIntoView({ block: "nearest" });
+    fsVis.focus({ preventScroll: true });
+  });
+  fsLuk.addEventListener("click", lukSpeed);
+  fsTid.addEventListener("change", opdaterSpeedOmfang);
+  fsVis.addEventListener("click", aabnTavle);
+  fsStart.addEventListener("click", koer);
+  fsIgen.addEventListener("click", koer);
+  fsSlutLuk.addEventListener("click", lukTavle);
+
   // ----- Valget af fagord ændres ------------------------------------------------------------
   // Knappen viser antallet, afsnittenes flueben følger deres fagord (halvt sat, når kun nogle er
   // valgt), de fravalgte fagord bliver matte i tabellerne, og linket til Kort og godt følger med.
@@ -3115,8 +3669,9 @@ document.addEventListener("DOMContentLoaded", function () {
         o.raekke.classList.toggle("fe-fravalgt", !o.valgt);
       });
     });
-    quizStart.disabled = tilQuizlet.disabled = tilKryds.disabled = antal === 0;
+    quizStart.disabled = speedStart.disabled = tilQuizlet.disabled = tilKryds.disabled = antal === 0;
     opdaterSpil();
+    opdaterSpeedOmfang();
   }
   // Et resultat, der allerede er vist, hører til det gamle valg og bliver skjult. En quiz, der er
   // i gang, begynder forfra med de fagord, der nu er valgt.
@@ -3560,19 +4115,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Skrevet af Niels Kræmmer</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Opgaver til T1.1 – Kemibogen</title>
+<title>Opgaver til T1.1 – Kemibogen C</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6f5271ed9d1b222440e9dd30dde7dfcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -134,10 +134,13 @@ window.Quarto = {
 <div class="niveauer">
 <p><span class="her">Kemi C</span> <a href="../../b/index.html">Kemi B</a> <a href="../../a/index.html">Kemi A</a></p>
 </div>
+<div class="kompendielink">
+<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
+</div>
 </div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Kemibogen</a> 
+      <a href="../">Kemibogen C</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -193,20 +196,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/1-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/1-2-atomet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1.2 Atomet</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/1-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -217,14 +208,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/1-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.3</span></a>
+  <a href="../kapitler/1-4-reaktionsskemaer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.4 Reaktionsskemaer og afstemning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/1-4-reaktionsskemaer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.4 Reaktionsskemaer og afstemning</span></a>
+  <a href="../opgaver/1-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/1-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/1-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1011,6 +1014,12 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../eksamen/eksamen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eksamen i kemi C</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
@@ -3212,6 +3221,93 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 .kopierlink-besked.vist { opacity: .92; }
 </style>
+<script>
+// Menuen i venstre side: "Til kapitlet" under afsnittene (Niels 15. okt. 2026, prøve i kapitel 1).
+//
+// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, sættes rubrikken "Til kapitlet" ind
+// foran dem, og de fire linjer "Opgaver til 1.1" osv. bliver til én linje: "Opgaver 1.1 1.2 1.3 1.4".
+// Fagord og repetition står bagefter som før. Til sidst kommer linkene i EKSTRA (slides, modulplaner og
+// kapitlets animationer på kemiformler.dk). Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
+(function () {
+  var EKSTRA = {
+    "1": [
+      { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
+      { tekst: "Animationer til kapitel 1", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+    ]
+  };
+
+  function li(klasse) {
+    var el = document.createElement("li");
+    el.className = "sidebar-item " + klasse;
+    return el;
+  }
+
+  function lavKapitel(ul) {
+    var punkter = Array.prototype.filter.call(ul.children, function (el) { return el.tagName === "LI"; });
+    var afsnit = [], opgaver = [], sidsteAfsnit = -1, foersteOpgave = -1;
+    punkter.forEach(function (p, i) {
+      var a = p.querySelector("a.sidebar-link");
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      if (/(^|\/)kapitler\//.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
+      else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href)) {
+        opgaver.push(p);
+        if (foersteOpgave < 0) foersteOpgave = i;
+      }
+    });
+    if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
+
+    // Kapitlets nummer og vejen til bogens rod tages fra første afsnit ("../kapitler/1-1-....html").
+    var foerste = afsnit[0].getAttribute("href");
+    var nr = (afsnit[0].textContent.trim().match(/^(\d+)\./) || [])[1];
+    var rod = foerste.slice(0, foerste.search(/kapitler\//));
+
+    var rubrik = li("kapitelmenu-rubrik");
+    rubrik.textContent = "Til kapitlet";
+    ul.insertBefore(rubrik, opgaver[0]);
+
+    var raekke = li("kapitelmenu-opgaver");
+    var navn = document.createElement("span");
+    navn.className = "kapitelmenu-navn";
+    navn.textContent = "Opgaver";
+    raekke.appendChild(navn);
+    opgaver.forEach(function (p) {
+      var gammel = p.querySelector("a.sidebar-link");
+      var a = document.createElement("a");
+      a.href = gammel.getAttribute("href");
+      a.textContent = gammel.textContent.trim().replace(/^Opgaver til\s*/, "");
+      a.title = gammel.textContent.trim();
+      if (gammel.classList.contains("active")) { a.className = "active"; a.setAttribute("aria-current", "page"); }
+      raekke.appendChild(a);
+    });
+    ul.insertBefore(raekke, opgaver[0]);
+    opgaver.forEach(function (p) { p.remove(); });
+
+    (EKSTRA[nr] || []).forEach(function (e) {
+      var p = li("kapitelmenu-ekstra");
+      var boks = document.createElement("div");
+      boks.className = "sidebar-item-container";
+      var a = document.createElement("a");
+      a.className = "sidebar-item-text sidebar-link";
+      a.href = e.url || rod + e.sti;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.classList.add("kapitelmenu-" + e.ikon);
+      a.textContent = e.tekst;
+      boks.appendChild(a);
+      p.appendChild(boks);
+      ul.appendChild(p);
+    });
+  }
+
+  function start() {
+    Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -3630,19 +3726,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Skrevet af Niels Kræmmer</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 
