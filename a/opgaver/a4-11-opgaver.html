@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1111,7 +1111,7 @@ window.Quarto = {
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Signalets navn fortæller antallet af linjer: en singlet har 1 linje, en dublet 2, en triplet 3, en kvartet 4, en kvintet 5 og en septet 7. En kvartet har altså 4 linjer, og gruppen har 4 − 1 = 3 nabo-hydrogenatomer.</p>
+<p>Signalets navn fortæller antallet af linjer: en singlet har 1 linje, en dublet 2, en triplet 3, en kvartet 4, en kvintet 5 og en septet 7. En kvartet har altså 4 linjer, og gruppen har 3 nabo-hydrogenatomer, én færre end antallet af linjer.</p>
 <p>Til spørgsmål c om isopropylgruppen, (CH<sub>3</sub>)<sub>2</sub>CH−: nabo-hydrogenatomerne kan sidde på flere nabocarbonatomer. Tæl hydrogenatomerne i begge methylgrupper.</p>
 </div>
 </div>
@@ -1207,7 +1207,7 @@ window.Quarto = {
 </tbody>
 </table>
 <ol start="3" type="a">
-<li>Hydrogenatomet i CH-gruppen i isopropylgruppen har 3 + 3 = 6 nabo-hydrogenatomer, fordi begge methylgrupper sidder på CH-gruppens carbonatom. Signalet har 6 + 1 = 7 linjer og er en septet.</li>
+<li>Hydrogenatomet i CH-gruppen i isopropylgruppen har 6 nabo-hydrogenatomer, 3 i hver methylgruppe, fordi begge methylgrupper sidder på CH-gruppens carbonatom. Signalet har 7 linjer, én mere end antallet af naboer, og er en septet.</li>
 </ol>
 </div>
 </div>
@@ -1401,7 +1401,7 @@ window.Quarto = {
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hver nabokerne har to muligheder, ↑ og ↓. To nabokerner giver 2 · 2 = 4 kombinationer, og tre nabokerner giver 2 · 2 · 2 = 8 kombinationer. Skriv dem systematisk: begynd med alle pile op, og vend én pil ad gangen. Figuren under overskriften “Naboerne deler signalet” i afsnit A4.11 viser kombinationerne.</p>
+<p>Hver nabokerne har to muligheder, ↑ og ↓. To nabokerner giver 4 kombinationer, og tre nabokerner giver 8 kombinationer, for hver ny nabokerne fordobler antallet. Skriv dem systematisk: begynd med alle pile op, og vend én pil ad gangen. Figuren under overskriften “Naboerne deler signalet” i afsnit A4.11 viser kombinationerne.</p>
 </div>
 </div>
 </div>
@@ -2103,7 +2103,7 @@ Figur&nbsp;2: Methyl-2-methylpropanoat og stoffets NMR-spektrum.
 </tr>
 </tbody>
 </table>
-<p>Integralerne giver tilsammen 6 + 1 + 3 = 10 hydrogenatomer, som molekylformlen C<sub>5</sub>H<sub>10</sub>O<sub>2</sub> siger.</p>
+<p>Integralerne giver 6, 1 og 3 hydrogenatomer, i alt 10, som molekylformlen C<sub>5</sub>H<sub>10</sub>O<sub>2</sub> siger.</p>
 <ol start="2" type="a">
 <li><p>Signal A og signal B. En dublet med 6 H og en septet med 1 H er mønstret for en isopropylgruppe: de to methylgrupper har 1 nabo-hydrogenatom på CH-gruppen, og CH-gruppen har 6 nabo-hydrogenatomer på de to methylgrupper.</p></li>
 <li><p>Methylgruppen bag signal C sidder på oxygenatomet i estergruppen. Kobling går ikke hen over et oxygenatom, så methylgruppen har 0 nabo-hydrogenatomer og giver en singlet.</p></li>
@@ -3757,6 +3757,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -4175,6 +4235,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

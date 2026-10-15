@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,6 +80,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1136,6 +1165,53 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../temaer/polymerer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 4: Polymerer</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-1-nylon-og-polyester.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.1 Nylon og polyester</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-2-naturens-polymerer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.2 Naturens polymerer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-3-bioplast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.3 Bioplast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../videre-til-a.html" class="sidebar-item-text sidebar-link">
@@ -1144,13 +1220,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Bilag</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bilag/sikkerhed.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sikkerhed i laboratoriet</span></a>
@@ -1667,8 +1743,8 @@ ul.task-list li input[type="checkbox"] {
 <ol type="a">
 <li>Nitrogen har +III i NO<sub>2</sub><sup>−</sup> og +V i NO<sub>3</sub><sup>−</sup>.</li>
 <li>Oxygen har 0 i O<sub>2</sub> og −II i NO<sub>3</sub><sup>−</sup>.</li>
-<li>Ét nitrogenatom stiger 2. Der er 2 nitrogenatomer, så stigningen er 2 · 2 = 4.</li>
-<li>Ét oxygenatom falder 2. Der er 2 oxygenatomer i O<sub>2</sub>, så faldet er 2 · 2 = 4.</li>
+<li>Ét nitrogenatom stiger 2. Der er 2 nitrogenatomer, så stigningen er 4.</li>
+<li>Ét oxygenatom falder 2. Der er 2 oxygenatomer i O<sub>2</sub>, så faldet er 4.</li>
 <li>Stigningen og faldet er lige store. Der bliver afgivet lige så mange elektroner, som der bliver optaget, så koefficienterne passer. Ladningen passer også, for den er −2 på begge sider.</li>
 <li>Oxygen, O<sub>2</sub>, er oxidationsmidlet, for oxygens oxidationstal falder. Nitrit er reduktionsmidlet, for nitrogens oxidationstal stiger.</li>
 </ol>
@@ -1811,25 +1887,40 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li><p>Carbon har 0 i CH<sub>2</sub>O, for de to hydrogenatomer giver +2, og oxygenatomet giver −2. Carbon har +IV i CO<sub>2</sub>. Nitrogen har +V i NO<sub>3</sub><sup>−</sup> og +I i N<sub>2</sub>O.</p></li>
-<li><p>Hvert carbonatom stiger 4. Hvert nitrogenatom falder 4. N<sub>2</sub>O har 2 nitrogenatomer, så der skal 2 NO<sub>3</sub><sup>−</sup> til venstre. Med 2 nitrogenatomer bliver faldet 4 · 2 = 8. Stigningen skal også være 8, så der skal 2 carbonatomer til: 4 · 2 = 8. Der skal altså 2 CH<sub>2</sub>O og 2 NO<sub>3</sub><sup>−</sup> til venstre og 2 CO<sub>2</sub> og 1 N<sub>2</sub>O til højre.</p></li>
+<li><p>Hvert carbonatom stiger 4. Hvert nitrogenatom falder 4. N<sub>2</sub>O har 2 nitrogenatomer, så der skal 2 NO<sub>3</sub><sup>−</sup> til venstre. Med 2 nitrogenatomer bliver faldet 8. Stigningen skal også være 8, så der skal 2 carbonatomer til, som stiger 4 hver. Der skal altså 2 CH<sub>2</sub>O og 2 NO<sub>3</sub><sup>−</sup> til venstre og 2 CO<sub>2</sub> og 1 N<sub>2</sub>O til højre.</p></li>
 </ol>
 <div class="reaktion">
 <p>2 CH<sub>2</sub>O + 2 NO<sub>3</sub><sup>−</sup> → 2 CO<sub>2</sub> + N<sub>2</sub>O</p>
 </div>
 <ol start="3" type="a">
-<li>Ladning til venstre: 2 · (−1) = −2</li>
+<li><p>Ladningen på hver side:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{ladning til venstre} &amp;= 2 \cdot (-1) = -2 \\
+\text{ladning til højre} &amp;= 0
+\end{aligned}
+\]</span></p></li>
 </ol>
-<p>Ladning til højre: 0</p>
 <p>Der mangler 2 plusser til venstre. Tilføj 2 H<sup>+</sup> til venstre.</p>
 <ol start="4" type="a">
-<li>H til venstre: 2 · 2 + 2 = 6</li>
+<li><p>Hydrogenatomerne på hver side:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{antal H til venstre} &amp;= 2 \cdot 2 + 2 = 6 \\
+\text{antal H til højre} &amp;= 0
+\end{aligned}
+\]</span></p></li>
 </ol>
-<p>H til højre: 0</p>
 <p>Der mangler 6 H til højre. Tilføj 3 H<sub>2</sub>O til højre.</p>
 <ol start="5" type="a">
-<li>O til venstre: 2 + 2 · 3 = 8</li>
+<li><p>Oxygenatomerne på hver side:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{antal O til venstre} &amp;= 2 + 2 \cdot 3 = 8 \\
+\text{antal O til højre} &amp;= 2 \cdot 2 + 1 + 3 = 8
+\end{aligned}
+\]</span></p></li>
 </ol>
-<p>O til højre: 2 · 2 + 1 + 3 = 8</p>
 <p>Det passer. Skemaet er afstemt:</p>
 <div class="reaktion">
 <p>2 CH<sub>2</sub>O + 2 NO<sub>3</sub><sup>−</sup> + 2 H<sup>+</sup> → 2 CO<sub>2</sub> + N<sub>2</sub>O + 3 H<sub>2</sub>O</p>
@@ -2954,6 +3045,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -3372,6 +3523,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

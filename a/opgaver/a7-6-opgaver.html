@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1318,11 +1318,11 @@ Figur&nbsp;1: To sukkerstoffer, 1 og 2, og to baser, 3 og 4.
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Med to baser i hvert codon ville der være 4 · 4 = 16 forskellige codons. Det er færre end de 20 aminosyrer, så nogle aminosyrer ville ikke få deres eget codon.</p></li>
-<li><p>Hver af de tre pladser i et codon kan have fire forskellige baser. Det giver 4 · 4 · 4 = 64 forskellige codons.</p></li>
+<li><p>Med to baser i hvert codon ville der være 4 gange 4, altså 16 forskellige codons. Det er færre end de 20 aminosyrer, så nogle aminosyrer ville ikke få deres eget codon.</p></li>
+<li><p>Hver af de tre pladser i et codon kan have fire forskellige baser. Det giver 4 gange 4 gange 4, altså 64 forskellige codons.</p></li>
 <li><p>Leucin har 6 codons: UUA, UUG, CUU, CUC, CUA og CUG. Alanin har 4 codons: GCU, GCC, GCA og GCG. Tryptophan har kun 1 codon: UGG.</p></li>
-<li><p>Der er 64 − 3 = 61 codons, som står for en aminosyre. De 61 codons skal deles mellem kun 20 aminosyrer, så de fleste aminosyrer har flere codons. Tit er det kun den tredje base, der er forskellig, som i de fire codons for alanin.</p></li>
-<li><p>Et protein med 120 aminosyrer kræver 120 codons og ét stopsignal, altså 121 codons. Det svarer til 121 · 3 = 363 baser i mRNA.</p></li>
+<li><p>Når de 3 stopcodons trækkes fra de 64, er der 61 codons, som står for en aminosyre. De 61 codons skal deles mellem kun 20 aminosyrer, så de fleste aminosyrer har flere codons. Tit er det kun den tredje base, der er forskellig, som i de fire codons for alanin.</p></li>
+<li><p>Et protein med 120 aminosyrer kræver 120 codons og ét stopsignal, altså 121 codons. Hvert codon er 3 baser, så det svarer til 363 baser i mRNA.</p></li>
 </ol>
 </div>
 </div>
@@ -1400,7 +1400,7 @@ M(\text{Gly-Ser}) = 75{,}07\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 105{,}10\ \dfrac
 <p>Molarmassen af dipeptidet Gly-Ser er 162,15 g/mol.</p>
 <ol start="4" type="a">
 <li><p><em>n</em> angiver her antallet af aminosyrer i kæden. En kæde af 4 aminosyrer har 3 peptidbindinger, så der fraspaltes 3 vandmolekyler. En kæde af <em>n</em> aminosyrer har <em>n</em> − 1 peptidbindinger, så der fraspaltes <em>n</em> − 1 vandmolekyler.</p></li>
-<li><p>Glucagon har 29 − 1 = 28 peptidbindinger. Der bruges ét vandmolekyle for hver peptidbinding, altså 28 vandmolekyler for hvert molekyle glucagon. Reaktionen er en hydrolyse, som er det modsatte af en kondensation.</p></li>
+<li><p>Glucagon har 29 aminosyrer og dermed 28 peptidbindinger, én færre end antallet af aminosyrer. Der bruges ét vandmolekyle for hver peptidbinding, altså 28 vandmolekyler for hvert molekyle glucagon. Reaktionen er en hydrolyse, som er det modsatte af en kondensation.</p></li>
 </ol>
 </div>
 </div>
@@ -1976,7 +1976,7 @@ Figur&nbsp;5: De tre produkter, når aspartam hydrolyseres fuldstændigt.
 <p><span class="math display">\[
 x_\mathrm{s} = \frac{1}{1 + 10^{\,7{,}0 - 7{,}9}} = 0{,}89
 \]</span></p>
-<p>Amidgruppen og estergruppen er hverken syrer eller baser og har ingen ladning. I 89 % af molekylerne af aspartam er den samlede ladning derfor +1 − 1 = 0. De molekyler er amfoioner. De sidste 11 % har aminogruppen på formen −NH<sub>2</sub> og den samlede ladning −1.</p>
+<p>Amidgruppen og estergruppen er hverken syrer eller baser og har ingen ladning. I 89 % af molekylerne af aspartam er den samlede ladning derfor 0, fordi +1 fra −NH<sub>3</sub><sup>+</sup> og −1 fra −COO<sup>−</sup> ophæver hinanden. De molekyler er amfoioner. De sidste 11 % har aminogruppen på formen −NH<sub>2</sub> og den samlede ladning −1.</p>
 <ol start="4" type="a">
 <li>Massen af aspartam i dåsen er</li>
 </ol>
@@ -2053,7 +2053,7 @@ Figur&nbsp;6: En phosphatgruppe i mRNA og to molekyler af fedtstoffet ved pH 5,0
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For fedtstoffet er pH − p<em>K</em><sub>s</sub> = 5,0 − 6,5 = −1,5 ved pH 5,0 og 7,4 − 6,5 = 0,9 ved pH 7,4.</p>
+<p>For fedtstoffet er pH − p<em>K</em><sub>s</sub> = 5,0 − 6,5 = −1,5 ved pH 5,0 og pH − p<em>K</em><sub>s</sub> = 7,4 − 6,5 = 0,9 ved pH 7,4.</p>
 <p>Find for hvert nummer i figuren de to grupper, bindingen er imellem. Ved 1 har de to grupper hver sin ladning. Ved 2 består begge grupper kun af carbon og hydrogen.</p>
 <p>Du kan begynde forklaringen sådan: “Phosphatgrupperne i mRNA har p<em>K</em><sub>s</sub> omkring 1, så de er … ved både pH 5,0 og pH 7,4. Ved pH 5,0 er … % af fedtstoffet på formen …, som kan danne … Ved pH 7,4 er kun … %”</p>
 </div>
@@ -3347,6 +3347,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -3765,6 +3825,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1174,7 +1174,7 @@ p_\mathrm{total} = 1{,}281\ \mathrm{bar} + 0{,}438\ \mathrm{bar} = 1{,}72\ \math
 <p>Ved den nye ligevægt er <em>p</em>(N<sub>2</sub>O<sub>4</sub>) = 1,28 bar og <em>p</em>(NO<sub>2</sub>) = 0,44 bar. Totaltrykket er 1,72 bar.</p>
 </div>
 </div>
-<p>Før indgrebet var totaltrykket 0,60 bar + 0,30 bar = 0,90 bar. Lige efter var det 1,80 bar. Forskydningen mod venstre laver to molekyler om til ét og får trykket til at falde lidt igen, til 1,72 bar. Også når rumfanget ændres, bliver indgrebet altså modvirket uden at blive ophævet.</p>
+<p>Før indgrebet var totaltrykket 0,90 bar: 0,60 bar N<sub>2</sub>O<sub>4</sub> og 0,30 bar NO<sub>2</sub>. Lige efter var det 1,80 bar. Forskydningen mod venstre laver to molekyler om til ét og får trykket til at falde lidt igen, til 1,72 bar. Også når rumfanget ændres, bliver indgrebet altså modvirket uden at blive ophævet.</p>
 <div id="fig-a1-indgreb-kurver" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-a1-indgreb-kurver-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1293,7 +1293,10 @@ K_\mathrm{c} = \frac{(0{,}667\ \mathrm{mol} + x)^{2}}{(0{,}333\ \mathrm{mol} - x
 \]</span></p>
 <p>CAS-værktøjet giver <em>x</em> = 0,178 eller <em>x</em> = 2,49. Der er kun 0,333 mol ethansyre, så <em>x</em> = 2,49 mol forkastes. Altså er <em>x</em> = 0,178 mol.</p>
 <p><strong>Den nye ligevægt</strong></p>
-<p>Der er 0,667 mol + 0,178 mol = 0,845 mol ester.</p>
+<p>Stofmængden af ester er</p>
+<p><span class="math display">\[
+n(\text{ester}) = 0{,}667\ \mathrm{mol} + 0{,}178\ \mathrm{mol} = 0{,}845\ \mathrm{mol}
+\]</span></p>
 <p><strong>Konklusion</strong></p>
 <p>Mængden af ester er steget fra 0,667 mol til 0,845 mol. Udbyttet er steget fra 67 % til 85 % af det, der kan dannes af 1,00 mol ethansyre.</p>
 </div>
@@ -1322,9 +1325,6 @@ K_\mathrm{c} = \frac{(0{,}667\ \mathrm{mol} + x)^{2}}{(0{,}333\ \mathrm{mol} - x
 </ul>
 </div>
 </div>
-<div class="proev-selv">
-<p><span id="ord-proev-selv" class="fagord-anker"><strong>Prøv selv:</strong></span> I animationen <a href="https://kemiformler.dk/animationer/kemi-b-filer/b2.6_volumen%C3%A6ndring.html">Volumenændring og ligevægt</a> kan du ændre rumfanget af en beholder og se, hvordan ligevægten bliver forskudt.</p>
-</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1344,8 +1344,11 @@ K_\mathrm{c} = \frac{(0{,}667\ \mathrm{mol} + x)^{2}}{(0{,}333\ \mathrm{mol} - x
 </ul>
 </div>
 </div>
+<div class="proev-selv">
+<p><strong>Prøv selv:</strong> <a href="https://kemiformler.dk/animationer/kemi-b-filer/b2.6_volumen%C3%A6ndring.html">Volumenændring og ligevægt</a>: se ligevægten blive forskudt.</p>
+</div>
 <div class="til-opgaver">
-<p><span id="ord-opgaver" class="fagord-anker"><strong>Opgaver:</strong></span> <a href="../opgaver/a1-4-opgaver.html">Opgaver til A1.4</a></p>
+<p><a href="../opgaver/a1-4-opgaver.html">Se alle opgaver til emnet “Indgreb og ny ligevægt” (A1.4)</a></p>
 </div>
 
 
@@ -2461,6 +2464,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -2879,6 +2942,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

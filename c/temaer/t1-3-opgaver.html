@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kemi B – Kemibogen</title>
+<title>Opgaver til T1.3 – Kemibogen</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,25 +29,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./bilag/grundstoffer.html" rel="next">
-<link href="./fagord/temaer.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../temaer/t1-4-pvc-og-bloedgoerere.html" rel="next">
+<link href="../temaer/t1-3-kaempemolekyler-og-nylon.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,10 +77,39 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked opgaver tema tema-plast quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./videre-til-b.html">Kemi B</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/plast.html">Tema 1: Plast</a></li><li class="breadcrumb-item"><a href="../temaer/t1-3-opgaver.html">Opgaver til T1.3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søg" onclick="window.quartoOpenSearch();">
@@ -103,12 +132,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
 <div class="niveauer">
-<p><span class="her">Kemi C</span> <a href="./../b/index.html">Kemi B</a> <a href="./../a/index.html">Kemi A</a></p>
+<p><span class="her">Kemi C</span> <a href="../../b/index.html">Kemi B</a> <a href="../../a/index.html">Kemi A</a></p>
 </div>
 </div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Kemibogen</a> 
+      <a href="../">Kemibogen</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -120,14 +149,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Forord</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 1: Kemi og atomet</span></a>
+            <a href="../indledninger/kapitel-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 0: Før du går i gang</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -135,70 +164,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/1-1-hvad-er-kemi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.1 Hvad er kemi?</span></a>
+  <a href="../kapitler/0-1-hvorfor-kemi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.1 Hvorfor lære kemi?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/1-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./kapitler/1-2-atomet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.2 Atomet</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./opgaver/1-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./kapitler/1-3-elektronskaller.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.3 Elektronskaller og det periodiske system</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./opgaver/1-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./kapitler/1-4-reaktionsskemaer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.4 Reaktionsskemaer og afstemning</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./opgaver/1-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 1.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 1</span></a>
+  <a href="../kapitler/0-2-saadan-laerer-du-kemi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.2 Sådan lærer du kemi</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 2: Ioner og ionforbindelser</span></a>
+            <a href="../indledninger/kapitel-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 1: Kemi og atomet</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -206,70 +187,70 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/2-1-ioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1 Ioner</span></a>
+  <a href="../kapitler/1-1-hvad-er-kemi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 Hvad er kemi?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.1</span></a>
+  <a href="../opgaver/1-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/2-2-ioners-navne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.2 Ioners navne</span></a>
+  <a href="../kapitler/1-2-atomet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.2 Atomet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.2</span></a>
+  <a href="../opgaver/1-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/2-3-ionforbindelser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.3 Ionforbindelser</span></a>
+  <a href="../kapitler/1-3-elektronskaller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.3 Elektronskaller og det periodiske system</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.3</span></a>
+  <a href="../opgaver/1-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.4 Fældningsreaktioner</span></a>
+  <a href="../kapitler/1-4-reaktionsskemaer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.4 Reaktionsskemaer og afstemning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/2-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.4</span></a>
+  <a href="../opgaver/1-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 1.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 2</span></a>
+  <a href="../fagord/kapitel-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 2</span></a>
+  <a href="../repetition/kapitel-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 1</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 3: Molekyler</span></a>
+            <a href="../indledninger/kapitel-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 2: Ioner og ionforbindelser</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -277,70 +258,70 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/3-1-molekyler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.1 Molekyler</span></a>
+  <a href="../kapitler/2-1-ioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 Ioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/3-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 3.1</span></a>
+  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/3-2-molekylers-form.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.2 Molekylers form</span></a>
+  <a href="../kapitler/2-2-ioners-navne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.2 Ioners navne</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/3-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 3.2</span></a>
+  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/3-3-polaritet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.3 Polære bindinger og polære molekyler</span></a>
+  <a href="../kapitler/2-3-ionforbindelser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.3 Ionforbindelser</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/3-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 3.3</span></a>
+  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/3-4-blandbarhed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.4 Blandbarhed</span></a>
+  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Fældningsreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/3-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 3.4</span></a>
+  <a href="../opgaver/2-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 3</span></a>
+  <a href="../fagord/kapitel-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 3</span></a>
+  <a href="../repetition/kapitel-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 2</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 4: Mængdeberegning</span></a>
+            <a href="../indledninger/kapitel-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 3: Molekyler</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -348,94 +329,70 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/4-1-beregninger.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.1 Beregninger i kemi</span></a>
+  <a href="../kapitler/3-1-molekyler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 Molekyler</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/4-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.1</span></a>
+  <a href="../opgaver/3-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 3.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/4-2-molarmasse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.2 Molarmasse</span></a>
+  <a href="../kapitler/3-2-molekylers-form.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Molekylers form</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/4-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.2</span></a>
+  <a href="../opgaver/3-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 3.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/4-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 Stofmængde</span></a>
+  <a href="../kapitler/3-3-polaritet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.3 Polære bindinger og polære molekyler</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/4-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.3</span></a>
+  <a href="../opgaver/3-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 3.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/4-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.4 Ækvivalente mængder</span></a>
+  <a href="../kapitler/3-4-blandbarhed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.4 Blandbarhed</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/4-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.4</span></a>
+  <a href="../opgaver/3-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 3.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/4-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.5 Mængdeberegning</span></a>
+  <a href="../fagord/kapitel-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/4-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./kapitler/4-6-gasser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.6 Gasser</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./opgaver/4-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 4</span></a>
+  <a href="../repetition/kapitel-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 3</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 5: Koncentration</span></a>
+            <a href="../indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 4: Mængdeberegning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -443,58 +400,94 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/5-1-koncentration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.1 Koncentration</span></a>
+  <a href="../kapitler/4-1-beregninger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Beregninger i kemi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/5-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.1</span></a>
+  <a href="../opgaver/4-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/5-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.2 Formel og aktuel koncentration</span></a>
+  <a href="../kapitler/4-2-molarmasse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Molarmasse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/5-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.2</span></a>
+  <a href="../opgaver/4-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/5-3-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.3 Titrering</span></a>
+  <a href="../kapitler/4-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Stofmængde</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.3</span></a>
+  <a href="../opgaver/4-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 5</span></a>
+  <a href="../kapitler/4-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Ækvivalente mængder</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 5</span></a>
+  <a href="../opgaver/4-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/4-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Mængdeberegning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/4-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/4-6-gasser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.6 Gasser</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/4-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/kapitel-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../repetition/kapitel-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 4</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 6: Organisk kemi</span></a>
+            <a href="../indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 5: Koncentration</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -502,94 +495,58 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/6-1-alkaner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.1 Carbonhydrider og alkaner</span></a>
+  <a href="../kapitler/5-1-koncentration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/6-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.1</span></a>
+  <a href="../opgaver/5-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/6-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.2 Zigzagformler og navngivning</span></a>
+  <a href="../kapitler/5-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Formel og aktuel koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/6-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.2</span></a>
+  <a href="../opgaver/5-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/6-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Alkaners reaktioner</span></a>
+  <a href="../kapitler/5-3-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.3 Titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/6-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.3</span></a>
+  <a href="../opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/6-4-alkener.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Alkener og addition</span></a>
+  <a href="../fagord/kapitel-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/6-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./kapitler/6-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Alkoholer og carboxylsyrer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./opgaver/6-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./kapitler/6-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.6 Fedtstoffer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./opgaver/6-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 6</span></a>
+  <a href="../repetition/kapitel-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 5</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 7: Syrer og baser</span></a>
+            <a href="../indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 6: Organisk kemi</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -597,82 +554,94 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/7-1-syrer-og-baser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.1 Syrer og baser</span></a>
+  <a href="../kapitler/6-1-alkaner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.1 Carbonhydrider og alkaner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/7-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.1</span></a>
+  <a href="../opgaver/6-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/7-2-staerke-og-svage-syrer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.2 Stærke og svage syrer</span></a>
+  <a href="../kapitler/6-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.2 Zigzagformler og navngivning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/7-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.2</span></a>
+  <a href="../opgaver/6-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/7-3-ph-skalaen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.3 pH-skalaen</span></a>
+  <a href="../kapitler/6-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Alkaners reaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/7-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.3</span></a>
+  <a href="../opgaver/6-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/7-4-ph-beregninger.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.4 pH-beregninger</span></a>
+  <a href="../kapitler/6-4-alkener.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.4 Alkener og addition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/7-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.4</span></a>
+  <a href="../opgaver/6-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/7-5-syre-base-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Syre/base-titrering</span></a>
+  <a href="../kapitler/6-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.5 Alkoholer og carboxylsyrer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/7-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.5</span></a>
+  <a href="../opgaver/6-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 7</span></a>
+  <a href="../kapitler/6-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.6 Fedtstoffer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 7</span></a>
+  <a href="../opgaver/6-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/kapitel-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../repetition/kapitel-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 6</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./indledninger/kapitel-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 8: Redoxreaktioner</span></a>
+            <a href="../indledninger/kapitel-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 7: Syrer og baser</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -680,82 +649,82 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/8-1-redoxreaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.1 Redoxreaktioner</span></a>
+  <a href="../kapitler/7-1-syrer-og-baser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.1 Syrer og baser</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/8-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.1</span></a>
+  <a href="../opgaver/7-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/8-2-spaendingsraekken.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.2 Spændingsrækken</span></a>
+  <a href="../kapitler/7-2-staerke-og-svage-syrer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.2 Stærke og svage syrer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/8-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.2</span></a>
+  <a href="../opgaver/7-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/8-3-oxidationstal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.3 Oxidationstal</span></a>
+  <a href="../kapitler/7-3-ph-skalaen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.3 pH-skalaen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/8-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.3</span></a>
+  <a href="../opgaver/7-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/8-4-redoxafstemning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.4 Afstemning af redoxreaktioner</span></a>
+  <a href="../kapitler/7-4-ph-beregninger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.4 pH-beregninger</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/8-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.4</span></a>
+  <a href="../opgaver/7-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kapitler/8-5-korrosion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.5 Korrosion</span></a>
+  <a href="../kapitler/7-5-syre-base-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Syre/base-titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opgaver/8-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.5</span></a>
+  <a href="../opgaver/7-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/kapitel-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til kapitel 8</span></a>
+  <a href="../fagord/kapitel-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 7</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repetition/kapitel-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition af kapitel 8</span></a>
+  <a href="../repetition/kapitel-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 7</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./oevelser/oversigt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Laboratorieøvelser</span></a>
+            <a href="../indledninger/kapitel-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 8: Redoxreaktioner</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -763,70 +732,82 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/1-3-flammefarver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 1.3: Flammefarver</span></a>
+  <a href="../kapitler/8-1-redoxreaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.1 Redoxreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/1-4-sker-der-en-kemisk-reaktion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 1.4: Sker der en kemisk reaktion?</span></a>
+  <a href="../opgaver/8-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/2-1-leder-det-stroem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 2.1: Leder det strøm?</span></a>
+  <a href="../kapitler/8-2-spaendingsraekken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.2 Spændingsrækken</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/2-3-salt-i-varmt-og-koldt-vand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 2.3: Salt i varmt og koldt vand</span></a>
+  <a href="../opgaver/8-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/2-4a-find-det-ukendte-salt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 2.4a: Find det ukendte salt</span></a>
+  <a href="../kapitler/8-3-oxidationstal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3 Oxidationstal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/2-4b-bundfald-i-draaber.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 2.4b: Bundfald i dråber</span></a>
+  <a href="../opgaver/8-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/3-4-hvad-kan-blandes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 3.4: Hvad kan blandes?</span></a>
+  <a href="../kapitler/8-4-redoxafstemning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.4 Afstemning af redoxreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/4-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 4.5: Ståluld på vægten</span></a>
+  <a href="../opgaver/8-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/7-5-eddikesyre-i-eddike.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 7.5: Eddikesyre i eddike</span></a>
+  <a href="../kapitler/8-5-korrosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Korrosion</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oevelser/8-2-spaendingsraekken.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 8.2: Spændingsrækken</span></a>
+  <a href="../opgaver/8-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/kapitel-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til kapitel 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../repetition/kapitel-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repetition af kapitel 8</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">Temaer</span></a>
+            <a href="../oevelser/oversigt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Laboratorieøvelser</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -834,46 +815,70 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./temaer/klima.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Klima</span></a>
+  <a href="../oevelser/1-3-flammefarver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 1.3: Flammefarver</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./temaer/fossile-braendstoffer-og-plast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Fossile brændstoffer og plast</span></a>
+  <a href="../oevelser/1-4-sker-der-en-kemisk-reaktion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 1.4: Sker der en kemisk reaktion?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./temaer/batterier-og-rust.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Batterier og rust</span></a>
+  <a href="../oevelser/2-1-leder-det-stroem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 2.1: Leder det strøm?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./temaer/sundhed-og-medicin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Sundhed og medicin</span></a>
+  <a href="../oevelser/2-3-salt-i-varmt-og-koldt-vand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 2.3: Salt i varmt og koldt vand</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/temaer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til temaerne</span></a>
+  <a href="../oevelser/2-4a-find-det-ukendte-salt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 2.4a: Find det ukendte salt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/2-4b-bundfald-i-draaber.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 2.4b: Bundfald i dråber</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/3-4-hvad-kan-blandes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 3.4: Hvad kan blandes?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/4-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 4.5: Ståluld på vægten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/7-5-eddikesyre-i-eddike.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 7.5: Eddikesyre i eddike</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/8-2-spaendingsraekken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 8.2: Spændingsrækken</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./videre-til-b.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Kemi B</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
- <span class="menu-text">Bilag</span></a>
+ <span class="menu-text">Temaer</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -881,38 +886,174 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bilag/grundstoffer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Det periodiske system</span></a>
+  <a href="../temaer/klima.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema: Klima</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bilag/ioner.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ioner og deres navne</span></a>
+  <a href="../temaer/fossile-braendstoffer-og-plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema: Fossile brændstoffer og plast</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bilag/faeldningstabel.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fældningstabellen</span></a>
+  <a href="../temaer/batterier-og-rust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema: Batterier og rust</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bilag/formler.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Formler og enheder</span></a>
+  <a href="../temaer/sundhed-og-medicin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema: Sundhed og medicin</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bilag/sikkerhed.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sikkerhed i laboratoriet</span></a>
+  <a href="../fagord/temaer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til temaerne</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../temaer/plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 1: Plast</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-1-gummi-og-celluloid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.1 Gummi og celluloid</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/bilag.html" class="sidebar-item-text sidebar-link">
+  <a href="../temaer/t1-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-2-bakelit-og-haerdeplast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.2 Bakelit og hærdeplast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.3 Kæmpemolekyler og nylon</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-3-opgaver.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Opgaver til T1.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-4-pvc-og-bloedgoerere.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.4 PVC og blødgørere</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-5-plastens-koder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.5 Plastens koder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-6-plast-i-dag.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.6 Plast i dag</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-oevelse-hvilken-plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T1.5: Hvilken slags plast?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-oevelse-plast-af-kartoffelmel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T1.6: Plast af kartoffelmel</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bilag</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bilag/grundstoffer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Det periodiske system</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bilag/ioner.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ioner og deres navne</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bilag/faeldningstabel.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fældningstabellen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bilag/formler.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Formler og enheder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bilag/sikkerhed.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sikkerhed i laboratoriet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/bilag.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fagord til bilaget om sikkerhed</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fagord/stikordsregister.html" class="sidebar-item-text sidebar-link">
+  <a href="../fagord/stikordsregister.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stikordsregister</span></a>
   </div>
 </li>
@@ -923,15 +1064,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">På denne side</h2>
+   
+  <ul class="collapse">
+  <li><a href="#T1.3.1" id="toc-T1.3.1" class="nav-link active" data-scroll-target="#T1.3.1">Opgave T1.3.1: De vigtigste ord</a></li>
+  <li><a href="#T1.3.2" id="toc-T1.3.2" class="nav-link" data-scroll-target="#T1.3.2">Opgave T1.3.2: Micelle eller makromolekyle?</a></li>
+  <li><a href="#T1.3.3" id="toc-T1.3.3" class="nav-link" data-scroll-target="#T1.3.3">Opgave T1.3.3: Fra gas til plast</a></li>
+  <li><a href="#T1.3.4" id="toc-T1.3.4" class="nav-link" data-scroll-target="#T1.3.4">Opgave T1.3.4: Hvor lang er en kæde i polyethen?</a></li>
+  <li><a href="#T1.3.5" id="toc-T1.3.5" class="nav-link" data-scroll-target="#T1.3.5">Opgave T1.3.5: Staudinger og makromolekylerne</a></li>
+  <li><a href="#T1.3.6" id="toc-T1.3.6" class="nav-link" data-scroll-target="#T1.3.6">Opgave T1.3.6: Plast gennem tiden</a></li>
+  <li><a href="#T1.3.7" id="toc-T1.3.7" class="nav-link" data-scroll-target="#T1.3.7">Opgave T1.3.7: Copolymerer i LEGO</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/plast.html">Tema 1: Plast</a></li><li class="breadcrumb-item"><a href="../temaer/t1-3-opgaver.html">Opgaver til T1.3</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Kemi B</h1>
+<h1 class="title">Opgaver til T1.3</h1>
 </div>
 
 
@@ -948,29 +1101,512 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Her slutter bogen til C-niveau. Kapitlerne til B-niveau ligger i en bog for sig, som er bygget op på samme måde.</p>
-<div class="til-opgaver">
-<p><span id="ord-fortsaet-i" class="fagord-anker"><strong>Fortsæt i:</strong></span> <a href="../b/index.html">Kemibogen B</a></p>
+<p>Opgaverne hører til siden <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html">T1.3 Kæmpemolekyler og nylon</a>. Prøv selv, før du åbner hjælpen under opgaven.</p>
+<section id="T1.3.1" class="level2">
+<h2 class="anchored" data-anchor-id="T1.3.1">Opgave T1.3.1: De vigtigste ord</h2>
+<ol type="a">
+<li>Hvad betyder ordet makromolekyle?</li>
+<li>Hvad er en micelle?</li>
+<li>Hvad kaldes en polymer, der er bygget af to eller flere slags monomerer?</li>
+<li>Hvilken tysk kemiker indførte ordet makromolekyle?</li>
+<li>Hvilken amerikansk kemiker stod bag nylon?</li>
+</ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Bogen til B-niveau har otte kapitler:</p>
-<ul>
-<li><a href="../b/kapitler/b1-1-reaktionshastighed.html">Kapitel B1: Reaktionshastighed</a> handler om, hvor hurtigt reaktioner forløber, og hvad koncentration, temperatur og katalysatorer betyder for farten.</li>
-<li><a href="../b/kapitler/b2-1-kemisk-ligevaegt.html">Kapitel B2: Kemisk ligevægt</a> handler om reaktioner, der går begge veje, om ligevægtsloven, om hvordan en ligevægt kan forskydes, og om tungtopløselige salte.</li>
-<li><a href="../b/kapitler/b3-1-stofklasser.html">Kapitel B3: Intermolekylære bindinger og isomeri</a> handler om de organiske stofklasser, om bindingerne mellem molekyler og om isomeri: stoffer med samme molekylformel, der er bygget forskelligt.</li>
-<li><a href="../b/kapitler/b4-1-carbonhydriders-reaktioner.html">Kapitel B4: Funktionelle grupper</a> handler om alkoholer, aldehyder, ketoner, carboxylsyrer, estere og aminer og om reaktionstyperne substitution, addition, elimination, kondensation og hydrolyse.</li>
-<li><a href="../b/kapitler/b5-1-lys-og-farver.html">Kapitel B5: Spektroskopi</a> handler om lys og farver, om absorptionsspektre, om Lambert-Beers lov og om, hvordan en standardkurve bruges til at måle koncentrationen af et farvet stof.</li>
-<li><a href="../b/kapitler/b6-1-syre-basereaktioner.html">Kapitel B6: Syrer og baser</a> handler om syrers og basers styrke, om beregning af pH i opløsninger af syrer og baser, om puffersystemer og om titrering af en svag syre.</li>
-<li><a href="../b/kapitler/b7-1-monosaccharider.html">Kapitel B7: Fødevarer</a> handler om de tre næringsstoffer i maden: om kulhydrater fra glucose til stivelse og Fehlings test, om fedtstoffer, iodtal og forsæbning og om aminosyrer og proteiner.</li>
-<li><a href="../b/kapitler/b8-1-laegemidler-og-receptorer.html">Kapitel B8: Medicin</a> handler om lægemidler: om receptorer, agonister og antagonister, om kiralitet, om lægemidler som syrer og baser, om log <em>P</em> og log <em>D</em>, om fremstillingen af acetylsalicylsyre og om, hvordan TLC og spektrofotometri bruges til at kontrollere et lægemiddel.</li>
-</ul>
-<p>Efter kapitlerne står tre temaer, som bruger stof fra flere kapitler på ét emne:</p>
-<ul>
-<li><a href="../b/temaer/fyrvaerkeri.html">Tema 1: Fyrværkeri</a> handler om krudt, om hvordan en raket er bygget, om farverne på himlen og om røgen bagefter.</li>
-<li><a href="../b/temaer/farvestoffer.html">Tema 2: Farvestoffer</a> handler om konjugerede systemer og chromofore grupper, om indikatorer og blegning, om farvning af tøj og om farvestoffer i maden.</li>
-<li><a href="../b/temaer/vandforurening.html">Tema 3: Vandforurening</a> handler om nitrogen fra gødning, om nitrat og nitrit i drikkevand og fjorde, om hvordan man måler de to stoffer, og om hårdt vand.</li>
-</ul>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ordene i a og c står med fed skrift på siden <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html">T1.3</a>. Micellerne står i afsnittet <em>Klumper af små molekyler?</em>, og nylon står i afsnittet <em>Carothers og nylon</em>.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Makro betyder stor. En micelle er ikke ét molekyle, men mange. Navnene i d og e står i overskrifterne på siden.</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Et stort molekyle, hvor tusindvis af atomer er bundet sammen med almindelige elektronparbindinger.</li>
+<li>En lille kugle af mange små molekyler, der klumper sig sammen.</li>
+<li>En copolymer.</li>
+<li>Hermann Staudinger.</li>
+<li>Wallace Carothers.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="T1.3.2" class="level2">
+<h2 class="anchored" data-anchor-id="T1.3.2">Opgave T1.3.2: Micelle eller makromolekyle?</h2>
+<p>Se på <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html#fig-tema-plast-micelle">figuren med de to forklaringer</a> på siden T1.3.</p>
+<ol type="a">
+<li>Hvad består en micelle af?</li>
+<li>Hvad holder atomerne sammen i et makromolekyle?</li>
+<li>Hvorfor mente de fleste kemikere, at store molekyler ikke kunne holde sammen?</li>
+<li>Forestil dig, at de små molekyler i en micelle slipper hinanden, fx fordi stoffet bliver opløst. Hvad sker der med micellen, og hvad sker der med et makromolekyle?</li>
+</ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Læs afsnittene <em>Klumper af små molekyler?</em> og <em>Staudingers kæmpemolekyler</em> på siden <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html">T1.3</a>.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I en micelle klumper små molekyler sig sammen, men de er ikke bundet til hinanden. I et makromolekyle er alle atomerne bundet sammen.</p>
+<p>Til d kan du begynde sådan: “Micellen falder fra hinanden i …, men makromolekylet …”</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Mange små molekyler, der klumper sig sammen til en lille kugle.</li>
+<li>Almindelige elektronparbindinger.</li>
+<li>De sammenlignede med atomkerner, hvor meget store kerner er ustabile og falder fra hinanden.</li>
+<li>Micellen falder fra hinanden i mange små molekyler, fordi de ikke er bundet til hinanden. Makromolekylet bliver ved med at være én lang kæde, fordi atomerne er bundet sammen med elektronparbindinger.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="T1.3.3" class="level2">
+<h2 class="anchored" data-anchor-id="T1.3.3">Opgave T1.3.3: Fra gas til plast</h2>
+<p>Brug tabellen med methan, octan, eicosan og polyethen i afsnittet <em>Staudingers kæmpemolekyler</em> på siden <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html">T1.3</a>.</p>
+<ol type="a">
+<li>Hvad sker der med smeltepunktet, når kæden bliver længere?</li>
+<li>Er eicosan fast eller flydende ved 20 °C og ved 50 °C?</li>
+<li>Er octan fast, flydende eller en gas ved 150 °C?</li>
+<li>Hvorfor koger polyethen aldrig?</li>
+</ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Under smeltepunktet er stoffet fast. Mellem smeltepunktet og kogepunktet er det flydende, og over kogepunktet er det en gas.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Eicosan smelter ved 37 °C og koger ved 343 °C. Octan koger ved 126 °C.</p>
+<p>Til d kan du begynde sådan: “Kæderne i polyethen holder så godt fast i hinanden, at …”</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Smeltepunktet stiger, når kæden bliver længere.</li>
+<li>Ved 20 °C er eicosan fast, fordi 20 °C er under smeltepunktet. Ved 50 °C er den flydende, fordi 50 °C ligger mellem smeltepunktet og kogepunktet.</li>
+<li>En gas, fordi 150 °C er over kogepunktet på 126 °C.</li>
+<li>Kæderne i polyethen holder så godt fast i hinanden, at bindingerne inde i kæden bliver brudt, før kæderne kan slippe hinanden. Plasten bliver derfor nedbrudt i stedet for at koge.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="T1.3.4" class="level2">
+<h2 class="anchored" data-anchor-id="T1.3.4">Opgave T1.3.4: Hvor lang er en kæde i polyethen?</h2>
+<p>Den enhed, der gentages i polyethen, har molekylformlen C<sub>2</sub>H<sub>4</sub> ligesom monomeren ethen. En kæde i en bærepose af polyethen har molarmassen 200 000 g/mol. Brug atommasserne C 12,01 u og H 1,008 u.</p>
+<ol type="a">
+<li>Forklar, hvorfor enheden i polyethen har samme molekylformel som ethen.</li>
+<li>Beregn molarmassen af enheden.</li>
+<li>Hvor mange enheder er der i kæden?</li>
+<li>Hvor mange carbonatomer er der i kæden?</li>
+<li>Hver enhed har 6 atomer. Hvor mange atomer er der i alt i kæden?</li>
+</ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Til a kan du læse om polyaddition på siden <a href="../temaer/fossile-braendstoffer-og-plast.html">Tema: Fossile brændstoffer og plast</a>. Molarmassen beregnes som i <a href="../kapitler/4-2-molarmasse.html">afsnit 4.2</a>. Én kæde er ét molekyle, så kæden har også en molarmasse.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I en polyaddition dannes der ikke andre stoffer end polymeren. Formlen for molarmassen er <em>M</em>(C<sub>2</sub>H<sub>4</sub>) = 2 · <em>M</em>(C) + 4 · <em>M</em>(H).</p>
+<p>Til c: Antallet af enheder er kædens molarmasse divideret med enhedens molarmasse.</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Polyethen dannes ved en polyaddition, hvor der ikke dannes andre stoffer end polymeren. Alle atomer fra hvert ethenmolekyle sidder derfor i kæden.</p></li>
+<li><p>Molarmassen er</p></li>
+</ol>
+<p><span class="math display">\[
+M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot 1{,}008\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 28{,}05\ \dfrac{\mathrm{g}}{\mathrm{mol}}
+\]</span></p>
+<ol start="3" type="a">
+<li>Antallet af enheder er</li>
+</ol>
+<p><span class="math display">\[
+\text{antal enheder} = \frac{M(\text{kæde})}{M(\mathrm{C_2H_4})} = \frac{200\,000\ \dfrac{\mathrm{g}}{\mathrm{mol}}}{28{,}05\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 7130
+\]</span></p>
+<p>Der er 7130 enheder i kæden.</p>
+<ol start="4" type="a">
+<li>Hver enhed har 2 carbonatomer.</li>
+</ol>
+<p><span class="math display">\[
+\text{antal carbonatomer} = 2 \cdot 7130 = 14\,260
+\]</span></p>
+<p>Der er 14 260 carbonatomer i kæden.</p>
+<ol start="5" type="a">
+<li>Hver enhed har 6 atomer.</li>
+</ol>
+<p><span class="math display">\[
+\text{antal atomer} = 6 \cdot 7130 = 42\,780
+\]</span></p>
+<p>Der er 42 780 atomer i kæden. Det passer med, at Staudinger kaldte den slags molekyler for kæmpestore molekyler.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="T1.3.5" class="level2">
+<h2 class="anchored" data-anchor-id="T1.3.5">Opgave T1.3.5: Staudinger og makromolekylerne</h2>
+<ol type="a">
+<li>Hvad mente de fleste kemikere omkring 1920, at gummi og cellulose bestod af?</li>
+<li>Hvad påstod Hermann Staudinger i stedet?</li>
+<li>Hvilken slags binding holder atomerne sammen i et makromolekyle?</li>
+<li>Hvornår viste nye målinger, at Staudinger havde ret, og hvornår fik han Nobelprisen i kemi?</li>
+<li>Forklar, hvorfor der kom mange nye slags plast, da kemikerne havde forstået, at plast består af lange kæder.</li>
+</ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Læs afsnittene <em>Klumper af små molekyler?</em> og <em>Staudingers kæmpemolekyler</em> på siden <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html">T1.3</a>. Svaret på e står i begyndelsen af afsnittet <em>Carothers og nylon</em>. Bindingen i c lærte du om i <a href="../kapitler/3-1-molekyler.html">afsnit 3.1</a>.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I a og b står to forklaringer over for hinanden: små molekyler, der klumper sig sammen, eller ét stort molekyle.</p>
+<p>Til e kan du begynde sådan: “Da kemikerne vidste, at plast består af …, kunne de …”</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Små molekyler, der klumpede sig sammen i miceller.</li>
+<li>At gummi og cellulose bestod af kæmpestore molekyler, hvor tusindvis af atomer var bundet sammen. Han kaldte dem makromolekyler.</li>
+<li>Almindelige elektronparbindinger.</li>
+<li>Nye målinger i løbet af 1930’erne viste, at han havde ret, og han fik Nobelprisen i kemi i 1953.</li>
+<li>Da kemikerne vidste, at plast består af lange kæder, kunne de begynde at bygge nye kæder med vilje. Derfor kom de fleste af de slags plast, vi bruger i dag, i løbet af 30 år.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="T1.3.6" class="level2">
+<h2 class="anchored" data-anchor-id="T1.3.6">Opgave T1.3.6: Plast gennem tiden</h2>
+<p>Brug tabellen over otte slags plast i afsnittet <em>Carothers og nylon</em> på siden <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html">T1.3</a>.</p>
+<ol type="a">
+<li>Hvilken plast i tabellen kom først frem, og hvad bruges den til i dag?</li>
+<li>Hvilken plast i tabellen kom sidst frem?</li>
+<li>Hvor mange af de otte slags plast kom frem i 1930’erne?</li>
+<li>Hvilken plast er en sodavandsflaske lavet af? Skriv både navn og forkortelse.</li>
+<li>Hvilke to slags plast i tabellen bliver dannet på en anden måde end polyethen?</li>
+<li>Hvilken plast blev brugt til faldskærme under 2. verdenskrig, og hvem opfandt den?</li>
+<li>Carothers’ gruppe lavede også et syntetisk gummi. Hvad hedder det, hvornår blev det lavet, og hvad bruges det til i dag?</li>
+</ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Læs kolonnen <em>Kom frem i</em> fra toppen af tabellen. Svarene på e, f og g står i teksten lige over tabellen.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Tabellen er ordnet efter årti, så den ældste plast står øverst. I c skal du tælle de rækker, hvor der står 1930’erne. I d skal du lede i kolonnen <em>Bruges i dag til</em>.</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Polyvinylchlorid, PVC, fra 1920’erne. Den bruges til rør, kabler og gulve.</li>
+<li>Polypropen, PP, fra 1950’erne.</li>
+<li>Fem: polystyren, plexiglas, polyethen, nylon og polyurethan.</li>
+<li>Polyester, PET.</li>
+<li>Nylon og polyester.</li>
+<li>Nylon. Den blev lavet i 1935 af Wallace Carothers’ gruppe hos det amerikanske kemifirma DuPont.</li>
+<li>Neopren fra 1930. I dag bruges det til våddragter.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="T1.3.7" class="level2">
+<h2 class="anchored" data-anchor-id="T1.3.7">Opgave T1.3.7: Copolymerer i LEGO</h2>
+<p>Kæderne i tabellen er skrevet med bogstaver. A står for én slags monomer, og B står for en anden slags.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Kæde</th>
+<th style="text-align: left;">Monomererne i kæden</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">−A−A−A−A−A−A−</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">−A−B−A−B−A−B−</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">−B−B−B−B−B−B−</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">−A−A−B−A−B−B−</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Hvilke af de fire kæder er copolymerer?</li>
+<li>LEGO-klodser er lavet af copolymeren ABS. Hvilke tre monomerer er ABS bygget af?</li>
+<li>Hvad giver styren plasten, og hvad giver butadien plasten?</li>
+<li>Forklar, hvorfor LEGO-klodser ikke er lavet af ren polystyren, som kun er bygget af styren.</li>
+</ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Læs afsnittet <em>Flere slags monomerer i samme kæde</em> på siden <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html">T1.3</a>, og se på <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html#fig-tema-plast-copolymer">figuren med en polymer og en copolymer</a>.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En copolymer har mindst to slags monomerer i den samme kæde. Det er ligegyldigt, i hvilken rækkefølge de sidder.</p>
+<p>Til d kan du begynde sådan: “Styren gør plasten …, men butadien …”</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Kæde 2 og kæde 4, fordi de har både A og B i den samme kæde. Kæde 1 og kæde 3 er bygget af én slags monomer.</li>
+<li>Acrylonitril, butadien og styren.</li>
+<li>Styren gør plasten hård og blank. Butadien er en slags gummi, som gør plasten sej.</li>
+<li>Styren gør plasten hård og blank, men butadien gør den sej, så klodserne ikke revner. I copolymeren får klodserne begge egenskaber.</li>
+</ol>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -2264,6 +2900,66 @@ document.addEventListener("DOMContentLoaded", function () {
   vis(location.hash === "#aaben" ? "aaben" : "lukket", false);
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -2671,20 +3367,33 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./fagord/temaer.html" class="pagination-link" aria-label="Fagord til temaerne">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fagord til temaerne</span>
+      <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html" class="pagination-link" aria-label="T1.3 Kæmpemolekyler og nylon">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">T1.3 Kæmpemolekyler og nylon</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bilag/grundstoffer.html" class="pagination-link" aria-label="Det periodiske system">
-        <span class="nav-page-text"><span class="chapter-title">Det periodiske system</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../temaer/t1-4-pvc-og-bloedgoerere.html" class="pagination-link" aria-label="T1.4 PVC og blødgørere">
+        <span class="nav-page-text">T1.4 PVC og blødgørere</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

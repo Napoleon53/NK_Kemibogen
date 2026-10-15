@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -2257,12 +2257,12 @@ Figur&nbsp;4: Limonen fra appelsinskal og carvon fra kommen.
 </ol>
 <p>Carvon har de samme to dobbeltbindinger mellem carbonatomer. Carvon har også en carbonylgruppe, C=O, i ringen. Carbonatomet i carbonylgruppen har to carbonatomer som naboer, så carvon er en keton.</p>
 <ol start="2" type="a">
-<li>Limonen har 10 carbonatomer: 6 i ringen, 1 i methylgruppen og 3 i sidegruppen. Hydrogenatomerne tælles på hvert carbonatom: i ringen er der 1 + 2 + 1 + 2 + 2 = 8, fordi carbonatomet med methylgruppen ikke har nogen. Methylgruppen har 3, og sidegruppen har 2 + 3 = 5. Det giver 8 + 3 + 5 = 16 hydrogenatomer. Molekylformlen for limonen er C<sub>10</sub>H<sub>16</sub>.</li>
+<li>Limonen har 10 carbonatomer: 6 i ringen, 1 i methylgruppen og 3 i sidegruppen. Hydrogenatomerne tælles på hvert carbonatom: i ringen er der 8: 1 på hvert af to carbonatomer og 2 på hvert af tre, mens carbonatomet med methylgruppen ikke har nogen. Methylgruppen har 3, og sidegruppen har 5: 2 på CH<sub>2</sub>-gruppen og 3 på CH<sub>3</sub>-gruppen. I alt er det 16 hydrogenatomer. Molekylformlen for limonen er C<sub>10</sub>H<sub>16</sub>.</li>
 </ol>
 <p><span class="math display">\[
 \mathrm{DBE} = \frac{2 \cdot 10 + 2 + 0 - 16}{2} = 3
 \]</span></p>
-<p>Strukturen har én ring og to dobbeltbindinger mellem carbonatomer. Det er 1 + 2 = 3 dobbeltbindingsækvivalenter, så beregningen passer med strukturen.</p>
+<p>Strukturen har én ring og to dobbeltbindinger mellem carbonatomer. Det er 3 dobbeltbindingsækvivalenter, så beregningen passer med strukturen.</p>
 <ol start="3" type="a">
 <li>Glasset indeholder carvon. Det orange bundfald med DNPH viser, at stoffet har en carbonylgruppe i et aldehyd eller en keton. Carvon har en carbonylgruppe i ringen, og limonen har ingen oxygenatomer. Limonen ville ikke give noget bundfald med DNPH.</li>
 </ol>
@@ -3821,6 +3821,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -4239,6 +4299,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

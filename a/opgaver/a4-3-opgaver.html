@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -2049,7 +2049,7 @@ Figur&nbsp;3: Zigzagformler for de tre stoffer A, B og C.
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Stof A har 2 + 1 + 1 + 2 = 6 hydrogenatomer. Stof B har 3 hydrogenatomer på carbonatom 1 og 1 hydrogenatom på carbonatom 4. Stof C har 1 hydrogenatom på hvert af de to carbonatomer i dobbeltbindingen og 2 hydrogenatomer på hvert af de fire andre carbonatomer.</p>
+<p>Stof A har 6 hydrogenatomer: 2 på carbonatom 1, 1 på carbonatom 2, 1 på carbonatom 3 og 2 på carbonatom 4. Stof B har 3 hydrogenatomer på carbonatom 1 og 1 hydrogenatom på carbonatom 4. Stof C har 1 hydrogenatom på hvert af de to carbonatomer i dobbeltbindingen og 2 hydrogenatomer på hvert af de fire andre carbonatomer.</p>
 <p>Husk C−H-bindingerne, når du tæller σ-bindinger i de tre stoffer. Kontrol: i et molekyle uden ringe er antallet af σ-bindinger én mindre end antallet af atomer. I et molekyle med én ring er antallet af σ-bindinger det samme som antallet af atomer.</p>
 </div>
 </div>
@@ -2095,7 +2095,7 @@ Figur&nbsp;3: Zigzagformler for de tre stoffer A, B og C.
 <td style="text-align: center;">6</td>
 <td style="text-align: left;">2 dobbeltbindinger og 1 enkeltbinding</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">6 + 3 = 9</td>
+<td style="text-align: center;">9</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
@@ -2103,15 +2103,15 @@ Figur&nbsp;3: Zigzagformler for de tre stoffer A, B og C.
 <td style="text-align: center;">4</td>
 <td style="text-align: left;">2 enkeltbindinger og 1 tripelbinding</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">4 + 3 + 1 = 8</td>
-<td style="text-align: center;">2 + 1 = 3</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">C, cyclohexen</td>
 <td style="text-align: center;">10</td>
 <td style="text-align: left;">5 enkeltbindinger og 1 dobbeltbinding</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">10 + 6 = 16</td>
+<td style="text-align: center;">16</td>
 <td style="text-align: center;">1</td>
 </tr>
 </tbody>
@@ -2341,7 +2341,7 @@ Figur&nbsp;5: 11-cis-retinal og trans-retinal.
 <p><span class="math display">\[
 \mathrm{DBE} = \frac{2 \cdot 20 + 2 + 0 - 28}{2} = 7
 \]</span></p>
-<p>Strukturen af retinal har 6 π-bindinger: 5 i dobbeltbindinger mellem carbonatomer og 1 i aldehydgruppen. Desuden har retinal én ring. Det er 6 + 1 = 7 dobbeltbindingsækvivalenter, så beregningen passer med strukturen.</p>
+<p>Strukturen af retinal har 6 π-bindinger: 5 i dobbeltbindinger mellem carbonatomer og 1 i aldehydgruppen. Desuden har retinal én ring. Hver π-binding og hver ring tæller 1, så strukturen har 7 dobbeltbindingsækvivalenter, og beregningen passer med strukturen.</p>
 </div>
 </div>
 </div>
@@ -3624,6 +3624,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -4042,6 +4102,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

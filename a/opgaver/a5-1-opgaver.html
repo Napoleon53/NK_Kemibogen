@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1072,7 +1072,7 @@ v = -\frac{\Delta[\mathrm{C_6H_{12}O_6}]}{\Delta t} = -\frac{1}{6} \cdot \frac{\
 v = -\frac{1}{6} \cdot \frac{\Delta[\mathrm{O_2}]}{\Delta t} = -\frac{1}{6} \cdot \left( -0{,}60\ \dfrac{\mathrm{mM}}{\mathrm{min}} \right) = 0{,}10\ \dfrac{\mathrm{mM}}{\mathrm{min}}
 \]</span></p>
 <ol start="3" type="a">
-<li><p>Glucose har koefficienten 1, så glucose forsvinder med 0,10 mM pr. minut. Carbondioxid har koefficienten 6, så carbondioxid dannes med 6 · 0,10 mM/min = 0,60 mM pr. minut.</p></li>
+<li><p>Glucose har koefficienten 1, så glucose forsvinder med 0,10 mM pr. minut. Carbondioxid har koefficienten 6, så carbondioxid dannes 6 gange så hurtigt, altså med 0,60 mM pr. minut.</p></li>
 <li><p>For hvert molekyle glucose bruges der 6 molekyler dioxygen, og der dannes 6 molekyler carbondioxid. Koncentrationen af dioxygen ændrer sig derfor 6 gange så hurtigt som koncentrationen af glucose. Når man dividerer med koefficienten, får forbrændingen af glucose den samme reaktionshastighed, uanset hvilket af stofferne man måler på.</p></li>
 </ol>
 </div>
@@ -1467,7 +1467,7 @@ Figur&nbsp;2: Koncentrationen af lidocain i blodplasma med en tangent i <em>t</e
 </table>
 <ol start="2" type="a">
 <li><p>For en reaktion af anden orden er <em>k</em> = <em>v</em> / [A]<sup>2</sup>. Med koncentrationen i mM og tiden i minutter har <em>v</em> enheden mM/min, og enheden for hastighedskonstanten bliver (mM/min) / mM<sup>2</sup> = mM<sup>−1</sup> · min<sup>−1</sup>.</p></li>
-<li><p>Den samlede orden for <em>v</em> = <em>k</em> · [A]<sup>2</sup> · [B] er 2 + 1 = 3. Hastighedskonstanten er <em>k</em> = <em>v</em> / ([A]<sup>2</sup> · [B]), og enheden bliver (M/s) / M<sup>3</sup> = M<sup>−2</sup> · s<sup>−1</sup>.</p></li>
+<li><p>Den samlede orden for <em>v</em> = <em>k</em> · [A]<sup>2</sup> · [B] er 3, fordi [A] står i anden potens og [B] i første. Hastighedskonstanten er <em>k</em> = <em>v</em> / ([A]<sup>2</sup> · [B]), og enheden bliver M<sup>−2</sup> · s<sup>−1</sup>, fordi M/s divideres med M<sup>3</sup>.</p></li>
 <li><p>Enheden for hastighedskonstanten afslører ordenen.</p></li>
 </ol>
 <ul>
@@ -1577,7 +1577,7 @@ Figur&nbsp;2: Koncentrationen af lidocain i blodplasma med en tangent i <em>t</e
 <p><span class="math display">\[
 v = k \cdot [\mathrm{S_2O_8^{2-}}] \cdot [\mathrm{I^-}]
 \]</span></p>
-<p>Den samlede orden er 1 + 1 = 2.</p>
+<p>Reaktionen er af første orden med hensyn til begge stoffer, så den samlede orden er 2.</p>
 <ol start="3" type="a">
 <li>Tallene fra forsøg 1 sættes ind. Starthastigheden er 8,0 µM/s = 8,0 · 10<sup>−6</sup> M/s.</li>
 </ol>
@@ -1593,7 +1593,7 @@ v = k \cdot [\mathrm{S_2O_8^{2-}}] \cdot [\mathrm{I^-}] = 4{,}0 \cdot 10^{-3}\ \
 \]</span></p>
 <p>Starthastigheden er 1,2 · 10<sup>−5</sup> M/s = 12 µM/s.</p>
 <ol start="5" type="a">
-<li>Iodid har koefficienten 2 i reaktionsskemaet, så <em>v</em> = −½ · Δ[I<sup>−</sup>]/Δ<em>t</em>. I forsøg 1 forsvinder iodid derfor med 2 · 8,0 µM/s = 16 µM/s fra start.</li>
+<li>Iodid har koefficienten 2 i reaktionsskemaet, så <em>v</em> = −½ · Δ[I<sup>−</sup>]/Δ<em>t</em>. I forsøg 1 forsvinder iodid derfor dobbelt så hurtigt som <em>v</em>, altså med 16 µM/s fra start.</li>
 </ol>
 <p>Iodid har altså koefficienten 2, men ordenen 1. Koefficienten fortæller, hvor meget iodid der bruges. Ordenen fortæller, hvordan hastigheden afhænger af koncentrationen af iodid.</p>
 </div>
@@ -1671,7 +1671,7 @@ v = k \cdot [\mathrm{S_2O_8^{2-}}] \cdot [\mathrm{I^-}] = 4{,}0 \cdot 10^{-3}\ \
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Fra forsøg 1 til forsøg 2 er starthastigheden for reaktionen mellem chlordioxid og hydroxid blevet 23 / 3,7 = 6,22 gange så stor, og [ClO<sub>2</sub>] er blevet 2,5 gange så stor. Ordenen bliver ln(6,22) / ln(2,5). Målte tal har en usikkerhed, så resultatet afrundes til nærmeste hele tal. Fra forsøg 1 til forsøg 3 er [OH<sup>−</sup>] tredoblet. Se, om starthastigheden er blevet 3 gange eller 9 gange så stor.</p>
+<p>Fra forsøg 1 til forsøg 2 er starthastigheden for reaktionen mellem chlordioxid og hydroxid blevet 6,22 gange så stor, fordi <em>v</em><sub>2</sub> / <em>v</em><sub>1</sub> = 23 / 3,7 = 6,22, og [ClO<sub>2</sub>] er blevet 2,5 gange så stor. Ordenen bliver ln(6,22) / ln(2,5). Målte tal har en usikkerhed, så resultatet afrundes til nærmeste hele tal. Fra forsøg 1 til forsøg 3 er [OH<sup>−</sup>] tredoblet. Se, om starthastigheden er blevet 3 gange eller 9 gange så stor.</p>
 </div>
 </div>
 </div>
@@ -1695,7 +1695,7 @@ x = \frac{\ln\left( \dfrac{v_2}{v_1} \right)}{\ln\left( \dfrac{[\mathrm{ClO_2}]_
 \]</span></p>
 <p>Målingerne har en lille usikkerhed, så resultatet afrundes til 2. Reaktionen er af anden orden med hensyn til ClO<sub>2</sub>.</p>
 <ol start="2" type="a">
-<li><p>Fra forsøg 1 til forsøg 3 er [OH<sup>−</sup>] tredoblet, og [ClO<sub>2</sub>] er den samme. Starthastigheden er blevet 11 / 3,7 = 3,0 gange så stor. Reaktionen er af første orden med hensyn til OH<sup>−</sup>.</p></li>
+<li><p>Fra forsøg 1 til forsøg 3 er [OH<sup>−</sup>] tredoblet, og [ClO<sub>2</sub>] er den samme. Forholdet mellem starthastighederne er <em>v</em><sub>3</sub> / <em>v</em><sub>1</sub> = 11 / 3,7 = 3,0, så starthastigheden er blevet 3,0 gange så stor. Reaktionen er af første orden med hensyn til OH<sup>−</sup>.</p></li>
 <li><p>Hastighedsudtrykket for reaktionen mellem chlordioxid og hydroxid er</p></li>
 </ol>
 <p><span class="math display">\[
@@ -1884,7 +1884,7 @@ v = k' \cdot [\mathrm{CO_2}] = 0{,}037\ \mathrm{s^{-1}} \cdot 1{,}2\ \mathrm{mM}
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Fra forsøg 1 til forsøg 2 er [penicillin] fordoblet. Fra forsøg 1 til forsøg 3 er [H<sub>3</sub>O<sup>+</sup>] blevet 2,5 gange så stor, og starthastigheden er blevet 0,205 / 0,080 = 2,56 gange så stor. Beregn hastighedskonstanten for nedbrydningen af penicillin ud fra hvert af de tre forsøg, og tag gennemsnittet. I spørgsmål d er [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup> M.</p>
+<p>Fra forsøg 1 til forsøg 2 er [penicillin] fordoblet. Fra forsøg 1 til forsøg 3 er [H<sub>3</sub>O<sup>+</sup>] blevet 2,5 gange så stor, og starthastigheden er blevet 2,56 gange så stor, fordi <em>v</em><sub>3</sub> / <em>v</em><sub>1</sub> = 0,205 / 0,080 = 2,56. Beregn hastighedskonstanten for nedbrydningen af penicillin ud fra hvert af de tre forsøg, og tag gennemsnittet. I spørgsmål d er [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup> M.</p>
 <p>Du kan begynde begrundelsen sådan: “Oxoniumionerne er katalysator, så de bliver ikke … Derfor er [H<sub>3</sub>O<sup>+</sup>] …, og den kan regnes med i …”</p>
 </div>
 </div>
@@ -2038,7 +2038,7 @@ Figur&nbsp;3: Koncentrationen af nitrogenoxid som funktion af tiden i forsøg 4 
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tangenten til kurven for nitrogenoxid i forsøg 4 går gennem punkterne (0 s; 2,0 mM) og (5,0 s; 0,6 mM). Fra forsøg 1 til forsøg 2 er [NO] tredoblet, og starthastigheden er blevet 0,126 / 0,014 = 9,0 gange så stor. Fra forsøg 1 til forsøg 3 er [O<sub>2</sub>] blevet 2,5 gange så stor. Du kan kontrollere ordenen med hensyn til NO med forsøg 3 og forsøg 4, hvor [NO] er fordoblet. I spørgsmål d dannes NO<sub>2</sub> dobbelt så hurtigt, som reaktionshastigheden siger, fordi NO<sub>2</sub> har koefficienten 2.</p>
+<p>Tangenten til kurven for nitrogenoxid i forsøg 4 går gennem punkterne (0 s; 2,0 mM) og (5,0 s; 0,6 mM). Fra forsøg 1 til forsøg 2 er [NO] tredoblet, og starthastigheden er blevet 9,0 gange så stor, fordi <em>v</em><sub>2</sub> / <em>v</em><sub>1</sub> = 0,126 / 0,014 = 9,0. Fra forsøg 1 til forsøg 3 er [O<sub>2</sub>] blevet 2,5 gange så stor. Du kan kontrollere ordenen med hensyn til NO med forsøg 3 og forsøg 4, hvor [NO] er fordoblet. I spørgsmål d dannes NO<sub>2</sub> dobbelt så hurtigt, som reaktionshastigheden siger, fordi NO<sub>2</sub> har koefficienten 2.</p>
 <p>Du kan begynde vurderingen sådan: “Reaktionen er af … orden med hensyn til NO. Bliver [NO] 100 gange større, bliver hastigheden …”</p>
 </div>
 </div>
@@ -2072,7 +2072,7 @@ v_0 = -\frac{1}{2} \cdot \frac{\mathrm{d}[\mathrm{NO}]}{\mathrm{d}t} = -\frac{1}
 <p><span class="math display">\[
 x = \frac{\ln\left( \dfrac{v_2}{v_1} \right)}{\ln\left( \dfrac{[\mathrm{NO}]_2}{[\mathrm{NO}]_1} \right)} = \frac{\ln\left( \dfrac{0{,}126\ \mathrm{mM/s}}{0{,}014\ \mathrm{mM/s}} \right)}{\ln\left( \dfrac{3{,}0\ \mathrm{mM}}{1{,}0\ \mathrm{mM}} \right)} = \frac{\ln(9{,}0)}{\ln(3{,}0)} = 2{,}0
 \]</span></p>
-<p>Reaktionen er af anden orden med hensyn til NO. Det passer med forsøg 3 og forsøg 4: her er [NO] fordoblet, [O<sub>2</sub>] er den samme, og starthastigheden er blevet 0,14 / 0,035 = 4 gange så stor.</p>
+<p>Reaktionen er af anden orden med hensyn til NO. Det passer med forsøg 3 og forsøg 4: her er [NO] fordoblet, [O<sub>2</sub>] er den samme, og starthastigheden er blevet 4 gange så stor, fordi <em>v</em><sub>4</sub> / <em>v</em><sub>3</sub> = 0,14 / 0,035 = 4.</p>
 <p>Fra forsøg 1 til forsøg 3 er [O<sub>2</sub>] blevet 2,5 gange så stor, og [NO] er den samme. <em>y</em> angiver her reaktionens orden med hensyn til O<sub>2</sub>.</p>
 <p><span class="math display">\[
 y = \frac{\ln\left( \dfrac{v_3}{v_1} \right)}{\ln\left( \dfrac{[\mathrm{O_2}]_3}{[\mathrm{O_2}]_1} \right)} = \frac{\ln\left( \dfrac{0{,}035\ \mathrm{mM/s}}{0{,}014\ \mathrm{mM/s}} \right)}{\ln\left( \dfrac{5{,}0\ \mathrm{mM}}{2{,}0\ \mathrm{mM}} \right)} = \frac{\ln(2{,}5)}{\ln(2{,}5)} = 1{,}0
@@ -2186,7 +2186,7 @@ v = k \cdot [\mathrm{NO}]^{2} \cdot [\mathrm{O_2}] = 7{,}0 \cdot 10^{-3}\ \mathr
 </div>
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Fra forsøg 1 til forsøg 2 er [BrO<sub>3</sub><sup>−</sup>] fordoblet, og fra forsøg 1 til forsøg 3 er [Br<sup>−</sup>] tredoblet. Fra forsøg 1 til forsøg 4 er [H<sup>+</sup>] blevet 2,5 gange så stor, og starthastigheden er blevet 2,50 / 0,40 = 6,25 gange så stor. Her skal du bruge formlen med ln. Regn starthastigheden om til M/s, før du beregner hastighedskonstanten: 0,40 mM/s = 4,0 · 10<sup>−4</sup> M/s. Ved pH 2,00 er [H<sup>+</sup>] = 0,010 M.</p>
+<p>Fra forsøg 1 til forsøg 2 er [BrO<sub>3</sub><sup>−</sup>] fordoblet, og fra forsøg 1 til forsøg 3 er [Br<sup>−</sup>] tredoblet. Fra forsøg 1 til forsøg 4 er [H<sup>+</sup>] blevet 2,5 gange så stor, og starthastigheden er blevet 6,25 gange så stor, fordi <em>v</em><sub>4</sub> / <em>v</em><sub>1</sub> = 2,50 / 0,40 = 6,25. Her skal du bruge formlen med ln. Regn starthastigheden om til M/s, før du beregner hastighedskonstanten: 0,40 mM/s = 4,0 · 10<sup>−4</sup> M/s. Ved pH 2,00 er [H<sup>+</sup>] = 0,010 M.</p>
 <p>Du kan begynde begrundelsen sådan: “I reaktionsskemaet har bromid koefficienten …, men ordenen med hensyn til bromid er … H<sup>+</sup> har koefficienten …, men …”</p>
 </div>
 </div>
@@ -2225,7 +2225,7 @@ x = \frac{\ln\left( \dfrac{v_4}{v_1} \right)}{\ln\left( \dfrac{[\mathrm{H^+}]_4}
 <p><span class="math display">\[
 v = k \cdot [\mathrm{BrO_3^-}] \cdot [\mathrm{Br^-}] \cdot [\mathrm{H^+}]^{2}
 \]</span></p>
-<p>Den samlede orden er 1 + 1 + 2 = 4. Tallene fra forsøg 1 sættes ind. Starthastigheden er 0,40 mM/s = 4,0 · 10<sup>−4</sup> M/s.</p>
+<p>Den samlede orden er 4: første orden med hensyn til BrO<sub>3</sub><sup>−</sup> og Br<sup>−</sup> og anden orden med hensyn til H<sup>+</sup>. Tallene fra forsøg 1 sættes ind. Starthastigheden er 0,40 mM/s = 4,0 · 10<sup>−4</sup> M/s.</p>
 <p><span class="math display">\[
 k = \frac{v}{[\mathrm{BrO_3^-}] \cdot [\mathrm{Br^-}] \cdot [\mathrm{H^+}]^{2}} = \frac{4{,}0 \cdot 10^{-4}\ \dfrac{\mathrm{M}}{\mathrm{s}}}{0{,}050\ \mathrm{M} \cdot 0{,}10\ \mathrm{M} \cdot (0{,}10\ \mathrm{M})^{2}} = 8{,}0\ \dfrac{1}{\mathrm{M^{3} \cdot s}}
 \]</span></p>
@@ -3355,6 +3355,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -3773,6 +3833,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

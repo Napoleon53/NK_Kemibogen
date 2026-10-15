@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,6 +80,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -129,13 +158,36 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../indledninger/kapitel-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 1: Kemi og atomet</span></a>
+            <a href="../indledninger/kapitel-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 0: Før du går i gang</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/0-1-hvorfor-kemi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.1 Hvorfor lære kemi?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/0-2-saadan-laerer-du-kemi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.2 Sådan lærer du kemi</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../indledninger/kapitel-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 1: Kemi og atomet</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/1-1-hvad-er-kemi.html" class="sidebar-item-text sidebar-link">
@@ -202,11 +254,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 2: Ioner og ionforbindelser</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/2-1-ioner.html" class="sidebar-item-text sidebar-link">
@@ -273,11 +325,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 3: Molekyler</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/3-1-molekyler.html" class="sidebar-item-text sidebar-link">
@@ -344,11 +396,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 4: Mængdeberegning</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/4-1-beregninger.html" class="sidebar-item-text sidebar-link">
@@ -439,11 +491,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 5: Koncentration</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/5-1-koncentration.html" class="sidebar-item-text sidebar-link">
@@ -498,11 +550,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 6: Organisk kemi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/6-1-alkaner.html" class="sidebar-item-text sidebar-link">
@@ -593,11 +645,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 7: Syrer og baser</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/7-1-syrer-og-baser.html" class="sidebar-item-text sidebar-link">
@@ -676,11 +728,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 8: Redoxreaktioner</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/8-1-redoxreaktioner.html" class="sidebar-item-text sidebar-link">
@@ -759,11 +811,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../oevelser/oversigt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Laboratorieøvelser</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../oevelser/1-3-flammefarver.html" class="sidebar-item-text sidebar-link">
@@ -828,13 +880,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Temaer</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../temaer/klima.html" class="sidebar-item-text sidebar-link">
@@ -867,21 +919,110 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../videre-til-b.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kemi B</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
- <span class="menu-text">Bilag</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <a href="../temaer/plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 1: Plast</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-1-gummi-og-celluloid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.1 Gummi og celluloid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-2-bakelit-og-haerdeplast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.2 Bakelit og hærdeplast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.3 Kæmpemolekyler og nylon</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-4-pvc-og-bloedgoerere.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.4 PVC og blødgørere</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-5-plastens-koder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.5 Plastens koder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-6-plast-i-dag.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.6 Plast i dag</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-oevelse-hvilken-plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T1.5: Hvilken slags plast?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-oevelse-plast-af-kartoffelmel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T1.6: Plast af kartoffelmel</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bilag</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bilag/grundstoffer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Det periodiske system</span></a>
@@ -961,25 +1102,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Det skal du kunne">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Det skal du kunne
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>tegne en <span class="fagord-peg" data-fagord="alkan">alkan</span> som <span class="fagord-peg" data-fagord="zigzagformel">zigzagformel</span></li>
-<li>finde molekylformlen ud fra en <span class="fagord-peg" data-fagord="zigzagformel">zigzagformel</span></li>
-<li>forklare, hvad <span class="fagord-peg" data-fagord="isomerer">isomerer</span> er</li>
-<li>give en <span class="fagord-peg" data-fagord="forgrenet">forgrenet</span> <span class="fagord-peg" data-fagord="alkan">alkan</span> et navn</li>
-<li>tegne en <span class="fagord-peg" data-fagord="zigzagformel">zigzagformel</span> ud fra et navn</li>
-</ul>
-</div>
-</div>
 <p>En <span class="fagord-peg" data-fagord="stregformel">stregformel</span> for octan har 26 atomer og 25 streger, og den tager lang tid at tegne. Kemikere bruger derfor en hurtigere tegnemåde, som hedder en <span class="fagord-peg" data-fagord="zigzagformel">zigzagformel</span>.</p>
 <section id="fra-stregformel-til-zigzagformel" class="level2">
 <h2 class="anchored" data-anchor-id="fra-stregformel-til-zigzagformel">Fra stregformel til zigzagformel</h2>
@@ -1045,7 +1167,7 @@ Figur&nbsp;2: Tæl stregerne ved hvert carbonatom. Resten op til fire er hydroge
 </figcaption>
 </figure>
 </div>
-<p><span class="fagord-peg" data-fagord="molekyle">Molekylet</span> i figuren har 5 carbonatomer. Der er tre ender, ét knæk og ét sted, hvor tre streger mødes. Det giver 3 + 3 + 3 + 2 + 1 = 12 hydrogenatomer, og molekylformlen er C<sub>5</sub>H<sub>12</sub>.</p>
+<p><span class="fagord-peg" data-fagord="molekyle">Molekylet</span> i figuren har 5 carbonatomer. Der er tre ender, ét knæk og ét sted, hvor tre streger mødes. De tre ender har 3 hydrogenatomer hver, knækket har 2, og stedet med tre streger har 1. Det er 12 hydrogenatomer i alt, og molekylformlen er C<sub>5</sub>H<sub>12</sub>.</p>
 </section>
 <section id="isomerer" class="level2">
 <h2 class="anchored" data-anchor-id="isomerer">Isomerer</h2>
@@ -1165,10 +1287,10 @@ Figur&nbsp;6: Fra navnet 2,3-dimethylbutan til zigzagformlen i tre trin.
 <li>Nummerér carbonatomerne.</li>
 <li>Sæt <span class="fagord-peg" data-fagord="sidegruppe">sidegrupperne</span> på. Her er det en methylgruppe på carbonatom nr. 2 og en på nr. 3.</li>
 </ol>
-<p>Tjek til sidst molekylformlen. <span class="fagord-peg" data-fagord="molekyle">Molekylet</span> har 4 + 2 = 6 carbonatomer. Formlen for en <span class="fagord-peg" data-fagord="alkan">alkan</span> giver 2 · 6 + 2 = 14 hydrogenatomer, så molekylformlen er C<sub>6</sub>H<sub>14</sub>.</p>
-<div class="proev-selv">
-<p><span id="ord-proev-selv" class="fagord-anker"><strong>Prøv selv:</strong></span> I animationen <a href="https://kemiformler.dk/animationer/superanimationer/sc6.2_zigzagformler/index.html">Zigzagformler</a> kan du træne zigzagformler, navne og <span class="fagord-peg" data-fagord="isomerer">isomerer</span>. På <a href="https://kemiformler.dk/animationer/superanimationer/tegnebraet/index.html">Tegnebrættet</a> kan du selv tegne et <span class="fagord-peg" data-fagord="molekyle">molekyle</span> og få dets navn, <span class="fagord-peg" data-fagord="molekylformel">molekylformel</span> og <span class="fagord-peg" data-fagord="molarmasse">molarmasse</span>.</p>
-</div>
+<p>Tjek til sidst molekylformlen. <span class="fagord-peg" data-fagord="molekyle">Molekylet</span> har 4 carbonatomer i <span class="fagord-peg" data-fagord="hovedkæde">hovedkæden</span> og 2 i <span class="fagord-peg" data-fagord="sidegruppe">sidegrupperne</span>, altså 6 i alt. <span class="fagord-peg" data-fagord="alkan">Alkaner</span> har molekylformlen C<sub><em>n</em></sub>H<sub>2<em>n</em>+2</sub>, så med <em>n</em> = 6 fås:</p>
+<p><span class="math display">\[
+\mathrm{C}_{6}\mathrm{H}_{2 \cdot 6 + 2} = \mathrm{C}_{6}\mathrm{H}_{14}
+\]</span></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1188,12 +1310,18 @@ Figur&nbsp;6: Fra navnet 2,3-dimethylbutan til zigzagformlen i tre trin.
 </ul>
 </div>
 </div>
+<div class="proev-selv">
+<p><strong>Prøv selv:</strong> <a href="https://kemiformler.dk/animationer/superanimationer/sc6.2_zigzagformler/index.html">Zigzagformler</a>: træn zigzagformler, navne og <span class="fagord-peg" data-fagord="isomerer">isomerer</span>.</p>
+</div>
+<div class="proev-selv">
+<p><strong>Prøv selv:</strong> <a href="https://kemiformler.dk/animationer/superanimationer/tegnebraet/index.html">Tegnebrættet</a>: tegn et <span class="fagord-peg" data-fagord="molekyle">molekyle</span>, og få dets navn og <span class="fagord-peg" data-fagord="molekylformel">molekylformel</span>.</p>
+</div>
 <div class="til-opgaver">
-<p><span id="ord-opgaver" class="fagord-anker"><strong>Opgaver:</strong></span> <a href="../opgaver/6-2-opgaver.html">Opgaver til 6.2</a></p>
+<p><a href="../opgaver/6-2-opgaver.html">Se alle opgaver til emnet “Zigzagformler og navngivning” (6.2)</a></p>
 </div>
 
 
-<script type="application/json" id="fagord-peg-data">{"alkan":{"afsnit":"6.1","forklaring":"Carbonhydrid, hvor alle bindinger er enkeltbindinger. Navnet ender på\n<em>-an<\/em>, for eksempel methan og propan.","maal":"../kapitler/6-1-alkaner.html#ord-alkaner","ord":"alkan"},"forgrenet":{"afsnit":"6.2","forklaring":"Siges om en alkan, hvor korte kæder sidder ude på siden af den lange\nkæde. 2-methylpropan er et eksempel.","maal":"../kapitler/6-2-zigzagformler.html#ord-forgrenet","ord":"forgrenet"},"hovedkæde":{"afsnit":"6.2","forklaring":"Den længste række af carbonatomer i et molekyle. Den giver den sidste\ndel af navnet.","maal":"../kapitler/6-2-zigzagformler.html#ord-hovedkaeden","ord":"hovedkæde"},"isomerer":{"afsnit":"6.2","forklaring":"Stoffer med samme molekylformel, men forskellig opbygning. Butan og\n2-methylpropan er et eksempel.","maal":"../kapitler/6-2-zigzagformler.html#ord-isomerer","ord":"isomerer"},"molarmasse":{"afsnit":"4.2","forklaring":"Det, ét mol af et stof vejer, målt i gram. Symbolet er <em>M<\/em>, og\nenheden er g/mol.","maal":"../kapitler/4-2-molarmasse.html#ord-molarmassen","ord":"molarmasse"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"molekylformel":{"afsnit":"6.1","forklaring":"Tæller kun, hvor mange atomer der er af hver slags i et stof, for\neksempel C<sub>5<\/sub>H<sub>12<\/sub>. Den viser ikke, hvordan atomerne\nsidder sammen.","maal":"../kapitler/6-1-alkaner.html#ord-molekylformel","ord":"molekylformel"},"sidegruppe":{"afsnit":"6.2","forklaring":"Kort kæde, der sidder ude på den længste kæde i en alkan. Navnet ender\npå <em>-yl<\/em>, for eksempel methyl.","maal":"../kapitler/6-2-zigzagformler.html#ord-sidegruppe","ord":"sidegruppe"},"stregformel":{"afsnit":"3.1","forklaring":"Tegning af et molekyle, hvor hvert fælles elektronpar er en linje mellem\natomerne. Den viser, hvilke atomer der sidder sammen.","maal":"../kapitler/3-1-molekyler.html#ord-stregformel","ord":"stregformel"},"tetraeder":{"afsnit":"3.2","forklaring":"Pyramide med fire ens, trekantede sider. Fire elektronpar omkring et\natom peger ud mod dens hjørner, som i methan.","maal":"../kapitler/3-2-molekylers-form.html#ord-tetraeder","ord":"tetraeder"},"zigzagformel":{"afsnit":"6.2","forklaring":"Hurtig måde at tegne en carbonkæde på. Hver ende og hvert knæk på\nstregen er et carbonatom, og hydrogenatomerne tegnes ikke.","maal":"../kapitler/6-2-zigzagformler.html#ord-zigzagformel","ord":"zigzagformel"}}</script>
+<script type="application/json" id="fagord-peg-data">{"alkan":{"afsnit":"6.1","forklaring":"Carbonhydrid, hvor alle bindinger er enkeltbindinger. Navnet ender på\n<em>-an<\/em>, for eksempel methan og propan.","maal":"../kapitler/6-1-alkaner.html#ord-alkaner","ord":"alkan"},"forgrenet":{"afsnit":"6.2","forklaring":"Siges om en alkan, hvor korte kæder sidder ude på siden af den lange\nkæde. 2-methylpropan er et eksempel.","maal":"../kapitler/6-2-zigzagformler.html#ord-forgrenet","ord":"forgrenet"},"hovedkæde":{"afsnit":"6.2","forklaring":"Den længste række af carbonatomer i et molekyle. Den giver den sidste\ndel af navnet.","maal":"../kapitler/6-2-zigzagformler.html#ord-hovedkaeden","ord":"hovedkæde"},"isomerer":{"afsnit":"6.2","forklaring":"Stoffer med samme molekylformel, men forskellig opbygning. Butan og\n2-methylpropan er et eksempel.","maal":"../kapitler/6-2-zigzagformler.html#ord-isomerer","ord":"isomerer"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"molekylformel":{"afsnit":"6.1","forklaring":"Tæller kun, hvor mange atomer der er af hver slags i et stof, for\neksempel C<sub>5<\/sub>H<sub>12<\/sub>. Den viser ikke, hvordan atomerne\nsidder sammen.","maal":"../kapitler/6-1-alkaner.html#ord-molekylformel","ord":"molekylformel"},"sidegruppe":{"afsnit":"6.2","forklaring":"Kort kæde, der sidder ude på den længste kæde i en alkan. Navnet ender\npå <em>-yl<\/em>, for eksempel methyl.","maal":"../kapitler/6-2-zigzagformler.html#ord-sidegruppe","ord":"sidegruppe"},"stregformel":{"afsnit":"3.1","forklaring":"Tegning af et molekyle, hvor hvert fælles elektronpar er en linje mellem\natomerne. Den viser, hvilke atomer der sidder sammen.","maal":"../kapitler/3-1-molekyler.html#ord-stregformel","ord":"stregformel"},"tetraeder":{"afsnit":"3.2","forklaring":"Pyramide med fire ens, trekantede sider. Fire elektronpar omkring et\natom peger ud mod dens hjørner, som i methan.","maal":"../kapitler/3-2-molekylers-form.html#ord-tetraeder","ord":"tetraeder"},"zigzagformel":{"afsnit":"6.2","forklaring":"Hurtig måde at tegne en carbonkæde på. Hver ende og hvert knæk på\nstregen er et carbonatom, og hydrogenatomerne tegnes ikke.","maal":"../kapitler/6-2-zigzagformler.html#ord-zigzagformel","ord":"zigzagformel"}}</script>
 </section>
 
 </main> <!-- /main -->
@@ -2488,6 +2616,66 @@ document.addEventListener("DOMContentLoaded", function () {
   vis(location.hash === "#aaben" ? "aaben" : "lukket", false);
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -2906,6 +3094,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

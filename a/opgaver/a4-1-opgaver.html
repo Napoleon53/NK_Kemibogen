@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b8f8d3ace0de2047d11de8857bbd15f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1bf05c8fad3aa932b2fd139f6a902baf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,6 +80,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1249,8 +1278,8 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Der er plads til 2 elektroner i én orbital. I de tre 2p-orbitaler er der tilsammen plads til 3 · 2 = 6 elektroner. I de fem 3d-orbitaler er der tilsammen plads til 5 · 2 = 10 elektroner.</p></li>
-<li><p>I 3. skal er der 1 + 3 + 5 = 9 orbitaler. Hver orbital har plads til 2 elektroner, så 3. skal har plads til 9 · 2 = 18 elektroner. Det samme tal fås ved at lægge s-orbitalens, p-orbitalernes og d-orbitalernes elektroner sammen: 2 + 6 + 10 = 18.</p></li>
+<li><p>Der er plads til 2 elektroner i én orbital. I de tre 2p-orbitaler er der tilsammen plads til 6 elektroner, 2 i hver. I de fem 3d-orbitaler er der tilsammen plads til 10 elektroner, 2 i hver.</p></li>
+<li><p>I 3. skal er der 9 orbitaler: én 3s-orbital, tre 3p-orbitaler og fem 3d-orbitaler. Hver orbital har plads til 2 elektroner, så 3. skal har plads til 18 elektroner. Det samme tal fås ved at lægge s-orbitalens, p-orbitalernes og d-orbitalernes elektroner sammen: 2, 6 og 10 giver 18.</p></li>
 <li><p>Orbitalerne bliver fyldt i rækkefølgen 1s, 2s, 2p, 3s, 3p, 4s, 3d og 4p.</p></li>
 <li><p>Efter 3p-orbitalerne bliver 4s-orbitalen fyldt, og først derefter kommer 3d-orbitalerne. Det særlige er, at 4s hører til 4. skal, men alligevel bliver fyldt før 3d, som hører til 3. skal. Grunden er, at 4s har lidt lavere energi end 3d, og orbitalerne fyldes nedefra.</p></li>
 </ol>
@@ -1357,6 +1386,11 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 <li>og b. Elektronkonfigurationerne og kontrollen:</li>
 </ol>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 45%">
+<col style="width: 38%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Grundstof</th>
@@ -1368,38 +1402,38 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 <tr class="odd">
 <td style="text-align: left;">lithium</td>
 <td style="text-align: left;">1s<sup>2</sup> 2s<sup>1</sup></td>
-<td style="text-align: left;">2 + 1 = 3</td>
+<td style="text-align: left;">sum = 2 + 1 = 3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">bor</td>
 <td style="text-align: left;">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>1</sup></td>
-<td style="text-align: left;">2 + 2 + 1 = 5</td>
+<td style="text-align: left;">sum = 2 + 2 + 1 = 5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fluor</td>
 <td style="text-align: left;">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>5</sup></td>
-<td style="text-align: left;">2 + 2 + 5 = 9</td>
+<td style="text-align: left;">sum = 2 + 2 + 5 = 9</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">magnesium</td>
 <td style="text-align: left;">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup></td>
-<td style="text-align: left;">2 + 2 + 6 + 2 = 12</td>
+<td style="text-align: left;">sum = 2 + 2 + 6 + 2 = 12</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">aluminium</td>
 <td style="text-align: left;">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>1</sup></td>
-<td style="text-align: left;">2 + 2 + 6 + 2 + 1 = 13</td>
+<td style="text-align: left;">sum = 2 + 2 + 6 + 2 + 1 = 13</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">argon</td>
 <td style="text-align: left;">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup></td>
-<td style="text-align: left;">2 + 2 + 6 + 2 + 6 = 18</td>
+<td style="text-align: left;">sum = 2 + 2 + 6 + 2 + 6 = 18</td>
 </tr>
 </tbody>
 </table>
 <p>Hver sum er lig med grundstoffets atomnummer.</p>
 <ol start="3" type="a">
-<li>Den yderste skal i et argonatom er 3. skal. Elektronkonfigurationen viser, at både 3s-orbitalen og de tre 3p-orbitaler er fyldt: 3s<sup>2</sup> 3p<sup>6</sup>. Argonatomet har altså 2 + 6 = 8 elektroner i den yderste skal, som ædelgasreglen fra C-niveau siger.</li>
+<li>Den yderste skal i et argonatom er 3. skal. Elektronkonfigurationen viser, at både 3s-orbitalen og de tre 3p-orbitaler er fyldt: 3s<sup>2</sup> 3p<sup>6</sup>. Argonatomet har altså 8 elektroner i den yderste skal, 2 i 3s og 6 i 3p, som ædelgasreglen fra C-niveau siger.</li>
 </ol>
 </div>
 </div>
@@ -1472,7 +1506,7 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Elektronstrukturen får du ved at lægge de hævede tal sammen for hver skal. Tallet foran bogstavet er skallens nummer. For atom 4 er det 2 elektroner i 1. skal, 2 + 6 = 8 elektroner i 2. skal og 2 + 3 = 5 elektroner i 3. skal.</p>
+<p>Elektronstrukturen får du ved at lægge de hævede tal sammen for hver skal. Tallet foran bogstavet er skallens nummer. For atom 4 er det 2 elektroner i 1. skal, 8 elektroner i 2. skal (2 i 2s og 6 i 2p) og 5 elektroner i 3. skal (2 i 3s og 3 i 3p).</p>
 <p>Nummeret på den yderste skal er perioden. Antallet af elektroner i den yderste skal er hovedgruppen. Grundstoffer i samme hovedgruppe ligner hinanden kemisk.</p>
 </div>
 </div>
@@ -1512,7 +1546,7 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">2 + 2 = 4</td>
+<td style="text-align: left;">sum = 2 + 2 = 4</td>
 <td style="text-align: left;">beryllium</td>
 <td style="text-align: center;">(2, 2)</td>
 <td style="text-align: center;">2</td>
@@ -1520,7 +1554,7 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">2 + 2 + 3 = 7</td>
+<td style="text-align: left;">sum = 2 + 2 + 3 = 7</td>
 <td style="text-align: left;">nitrogen</td>
 <td style="text-align: center;">(2, 5)</td>
 <td style="text-align: center;">2</td>
@@ -1528,7 +1562,7 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3</td>
-<td style="text-align: left;">2 + 2 + 6 = 10</td>
+<td style="text-align: left;">sum = 2 + 2 + 6 = 10</td>
 <td style="text-align: left;">neon</td>
 <td style="text-align: center;">(2, 8)</td>
 <td style="text-align: center;">2</td>
@@ -1536,7 +1570,7 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
-<td style="text-align: left;">2 + 2 + 6 + 2 + 3 = 15</td>
+<td style="text-align: left;">sum = 2 + 2 + 6 + 2 + 3 = 15</td>
 <td style="text-align: left;">phosphor</td>
 <td style="text-align: center;">(2, 8, 5)</td>
 <td style="text-align: center;">3</td>
@@ -1544,7 +1578,7 @@ Figur&nbsp;1: Fire atomorbitaler, som er mærket A til D.
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5</td>
-<td style="text-align: left;">2 + 2 + 6 + 2 + 6 + 1 = 19</td>
+<td style="text-align: left;">sum = 2 + 2 + 6 + 2 + 6 + 1 = 19</td>
 <td style="text-align: left;">kalium</td>
 <td style="text-align: center;">(2, 8, 8, 1)</td>
 <td style="text-align: center;">4</td>
@@ -1879,7 +1913,7 @@ Figur&nbsp;5: Omridset af det periodiske system med fem mærkede felter.
 </tbody>
 </table>
 <ol start="3" type="a">
-<li><p>Hver orbital har plads til 2 elektroner, og for hver kolonne mod højre i en blok har atomet én elektron mere. En s-orbital har plads til 2 elektroner, så s-blokken har 2 kolonner. De tre p-orbitaler i en skal har tilsammen plads til 3 · 2 = 6 elektroner, så p-blokken har 6 kolonner. De fem d-orbitaler i en skal har tilsammen plads til 5 · 2 = 10 elektroner, så d-blokken har 10 kolonner.</p></li>
+<li><p>Hver orbital har plads til 2 elektroner, og for hver kolonne mod højre i en blok har atomet én elektron mere. En s-orbital har plads til 2 elektroner, så s-blokken har 2 kolonner. De tre p-orbitaler i en skal har tilsammen plads til 6 elektroner, 2 i hver, så p-blokken har 6 kolonner. De fem d-orbitaler i en skal har tilsammen plads til 10 elektroner, 2 i hver, så d-blokken har 10 kolonner.</p></li>
 <li><p>I 2. skal er der kun én s-orbital og tre p-orbitaler. Der findes ingen d-orbitaler i 2. skal, så 2. periode kan ikke have grundstoffer i d-blokken. I 3. skal er der fem d-orbitaler, men 3d-orbitalerne har højere energi end 4s-orbitalen. Efter argon bliver 4s derfor fyldt først, med kalium og calcium, og først derefter bliver 3d fyldt. Det sker i 4. periode, og derfor begynder d-blokken først dér.</p></li>
 </ol>
 </div>
@@ -1946,7 +1980,11 @@ Figur&nbsp;5: Omridset af det periodiske system med fem mærkede felter.
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Silicium har 14 elektroner, og elektronkonfigurationen er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>2</sup>. Kontrol: 2 + 2 + 6 + 2 + 2 = 14. Den yderste skal er 3. skal, og her har siliciumatomet 2 + 2 = 4 elektroner. Silicium står derfor i hovedgruppe 4.</p></li>
+<li><p>Silicium har 14 elektroner, og elektronkonfigurationen er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>2</sup>. Kontrol:</p>
+<p><span class="math display">\[
+\text{antal elektroner} = 2 + 2 + 6 + 2 + 2 = 14
+\]</span></p>
+<p>Den yderste skal er 3. skal, og her har siliciumatomet 4 elektroner, 2 i 3s og 2 i 3p. Silicium står derfor i hovedgruppe 4.</p></li>
 <li><p>Orbitalkasserne for 3s og 3p i et siliciumatom:</p></li>
 </ol>
 <div id="fig-a4-opg-1-silicium-facit" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1963,9 +2001,9 @@ Figur&nbsp;6: Orbitalkasser for 3s-orbitalen og de tre 3p-orbitaler i silicium.
 <ol start="3" type="a">
 <li>Phosphor har 15 elektroner, og elektronkonfigurationen er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>3</sup>. Bor har 5 elektroner, og elektronkonfigurationen er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>1</sup>.</li>
 </ol>
-<p>Den yderste skal i phosphor er 3. skal med 2 + 3 = 5 elektroner. Det er én mere end de 4 elektroner i den yderste skal i silicium. Den yderste skal i bor er 2. skal med 2 + 1 = 3 elektroner. Det er én færre end de 4 elektroner i den yderste skal i silicium.</p>
+<p>Den yderste skal i phosphor er 3. skal med 5 elektroner, 2 i 3s og 3 i 3p. Det er én mere end de 4 elektroner i den yderste skal i silicium. Den yderste skal i bor er 2. skal med 3 elektroner, 2 i 2s og 1 i 2p. Det er én færre end de 4 elektroner i den yderste skal i silicium.</p>
 <ol start="4" type="a">
-<li>Silicium har de yderste elektroner 3s<sup>2</sup> 3p<sup>2</sup>, og germanium har de yderste elektroner 4s<sup>2</sup> 4p<sup>2</sup>. De to grundstoffer har altså samme antal elektroner i de yderste s- og p-orbitaler, nemlig 2 + 2 = 4, og de står begge i hovedgruppe 4. Det er de yderste elektroner, der danner bindinger. Derfor danner germanium og silicium bindinger på samme måde, og de to grundstoffer ligner hinanden kemisk.</li>
+<li>Silicium har de yderste elektroner 3s<sup>2</sup> 3p<sup>2</sup>, og germanium har de yderste elektroner 4s<sup>2</sup> 4p<sup>2</sup>. De to grundstoffer har altså samme antal elektroner i de yderste s- og p-orbitaler, nemlig 2 i s-orbitalen og 2 i p-orbitalerne, i alt 4, og de står begge i hovedgruppe 4. Det er de yderste elektroner, der danner bindinger. Derfor danner germanium og silicium bindinger på samme måde, og de to grundstoffer ligner hinanden kemisk.</li>
 </ol>
 </div>
 </div>
@@ -2026,10 +2064,16 @@ Figur&nbsp;6: Orbitalkasser for 3s-orbitalen og de tre 3p-orbitaler i silicium.
 <div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Elektronkonfigurationen for natrium er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>1</sup>. Kontrol: 2 + 2 + 6 + 1 = 11. Elektronkonfigurationen for kalium er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 4s<sup>1</sup>. Kontrol: 2 + 2 + 6 + 2 + 6 + 1 = 19.</p></li>
+<li><p>Elektronkonfigurationen for natrium er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>1</sup>. Elektronkonfigurationen for kalium er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 4s<sup>1</sup>. Kontrol:</p>
+<p><span class="math display">\[
+\text{antal elektroner i natrium} = 2 + 2 + 6 + 1 = 11
+\]</span></p>
+<p><span class="math display">\[
+\text{antal elektroner i kalium} = 2 + 2 + 6 + 2 + 6 + 1 = 19
+\]</span></p></li>
 <li><p>Natriumatomet har én elektron i den yderste orbital, 3s<sup>1</sup>, og kaliumatomet har én elektron i den yderste orbital, 4s<sup>1</sup>. Begge atomer har altså én elektron i den yderste skal, og derfor står natrium og kalium begge i hovedgruppe 1. Når atomet afgiver den ene elektron, har det én elektron mindre end protoner i kernen. Derfor danner natrium ionen Na<sup>+</sup>, og kalium danner ionen K<sup>+</sup>.</p></li>
 <li><p>Ionen Na<sup>+</sup> har 10 elektroner, og elektronkonfigurationen er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup>. Det er den samme elektronkonfiguration som i ædelgassen neon. Ionen K<sup>+</sup> har 18 elektroner, og elektronkonfigurationen er 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup>. Det er den samme elektronkonfiguration som i ædelgassen argon.</p></li>
-<li><p>I 3. skal er der 3s-orbitalen, de tre 3p-orbitaler og de fem 3d-orbitaler. I kaliumatomet er 3s og 3p fyldt med 2 + 6 = 8 elektroner. De sidste 10 pladser i 3. skal er i 3d-orbitalerne, men 3d har højere energi end 4s. Orbitalerne fyldes nedefra, så kaliumatomets elektron nummer 19 sætter sig i 4s og ikke i 3d. Derfor har kalium én elektron i 4. skal og står først i 4. periode.</p></li>
+<li><p>I 3. skal er der 3s-orbitalen, de tre 3p-orbitaler og de fem 3d-orbitaler. I kaliumatomet er 3s og 3p fyldt med 8 elektroner, 2 i 3s og 6 i 3p. De sidste 10 pladser i 3. skal er i 3d-orbitalerne, men 3d har højere energi end 4s. Orbitalerne fyldes nedefra, så kaliumatomets elektron nummer 19 sætter sig i 4s og ikke i 3d. Derfor har kalium én elektron i 4. skal og står først i 4. periode.</p></li>
 </ol>
 </div>
 </div>
@@ -2090,7 +2134,11 @@ Figur&nbsp;6: Orbitalkasser for 3s-orbitalen og de tre 3p-orbitaler i silicium.
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Jern står i d-blokken, fordi jern står i en af undergrupperne, hvor 3d-orbitalerne er ved at blive fyldt. De hævede tal i elektronkonfigurationen giver 2 + 2 + 6 + 2 + 6 + 2 + 6 = 26. Det er jerns atomnummer, så elektronkonfigurationen har det rigtige antal elektroner.</p></li>
+<li><p>Jern står i d-blokken, fordi jern står i en af undergrupperne, hvor 3d-orbitalerne er ved at blive fyldt. De hævede tal i elektronkonfigurationen lægges sammen:</p>
+<p><span class="math display">\[
+\text{antal elektroner} = 2 + 2 + 6 + 2 + 6 + 2 + 6 = 26
+\]</span></p>
+<p>Det er jerns atomnummer, så elektronkonfigurationen har det rigtige antal elektroner.</p></li>
 <li><p>Elektronerne lægges sammen for hver skal:</p></li>
 </ol>
 <table class="caption-top table">
@@ -2110,12 +2158,12 @@ Figur&nbsp;6: Orbitalkasser for 3s-orbitalen og de tre 3p-orbitaler i silicium.
 <tr class="even">
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">2s<sup>2</sup> 2p<sup>6</sup></td>
-<td style="text-align: center;">2 + 6 = 8</td>
+<td style="text-align: center;">sum = 2 + 6 = 8</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>6</sup></td>
-<td style="text-align: center;">2 + 6 + 6 = 14</td>
+<td style="text-align: center;">sum = 2 + 6 + 6 = 14</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
@@ -2140,7 +2188,7 @@ Figur&nbsp;7: Orbitalkasser for de fem 3d-orbitaler i jern.
 </div>
 <p>De seks elektroner i 3d sætter sig først én i hver af de fem 3d-orbitaler. Den sjette elektron danner par med én af dem. Jernatomet har derfor ét elektronpar og fire enlige elektroner i 3d-orbitalerne.</p>
 <ol start="4" type="a">
-<li>Der er fem 3d-orbitaler, og hver orbital har plads til 2 elektroner. Der er altså plads til 5 · 2 = 10 elektroner i 3d. For hvert grundstof mod højre i d-blokken kommer der én elektron mere, så der bliver ti grundstoffer, fra scandium til zink. Jern har seks elektroner i 3d og er derfor nummer seks af de ti grundstoffer i d-blokken i 4. periode. Det passer med atomnumrene: calcium har atomnummer 20, og 26 − 20 = 6.</li>
+<li>Der er fem 3d-orbitaler, og hver orbital har plads til 2 elektroner. Der er altså plads til 10 elektroner i 3d. For hvert grundstof mod højre i d-blokken kommer der én elektron mere, så der bliver ti grundstoffer, fra scandium til zink. Jern har seks elektroner i 3d og er derfor nummer seks af de ti grundstoffer i d-blokken i 4. periode. Det passer med atomnumrene: jern har atomnummer 26, seks mere end calcium med atomnummer 20.</li>
 </ol>
 </div>
 </div>
@@ -3259,6 +3307,66 @@ document.addEventListener("DOMContentLoaded", function () {
   opdater();
 });
 </script>
+<script>
+// Linkikonet ved en overskrift kopierer adressen til afsnittet.
+//
+// Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
+// afsnittet, men lægger nu også den fulde adresse i udklipsholderen og viser "Link kopieret" kort
+// nederst på skærmen. Uden https findes navigator.clipboard ikke, så her bruges den gamle måde.
+(function () {
+  var besked;
+  function vis(tekst) {
+    if (!besked) {
+      besked = document.createElement("div");
+      besked.className = "kopierlink-besked";
+      besked.setAttribute("role", "status");
+      document.body.appendChild(besked);
+    }
+    besked.textContent = tekst;
+    besked.classList.add("vist");
+    clearTimeout(besked.timer);
+    besked.timer = setTimeout(function () { besked.classList.remove("vist"); }, 1600);
+  }
+  function gammel_kopi(tekst) {
+    var felt = document.createElement("textarea");
+    felt.value = tekst;
+    felt.setAttribute("readonly", "");
+    felt.style.position = "fixed";
+    felt.style.opacity = "0";
+    document.body.appendChild(felt);
+    felt.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(felt);
+    return ok;
+  }
+  function kopier(tekst) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(tekst).then(function () { vis("Link kopieret"); },
+        function () { if (gammel_kopi(tekst)) vis("Link kopieret"); });
+    } else if (gammel_kopi(tekst)) {
+      vis("Link kopieret");
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (!a) return;
+    kopier(new URL(a.getAttribute("href"), location.href).href);
+  });
+  document.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchorjs-link");
+    if (a && !a.title) a.title = "Kopiér link til afsnittet";
+  });
+})();
+</script>
+<style>
+.kopierlink-besked {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  background: #14201f; color: #fff; padding: .45rem 1rem; border-radius: 6px;
+  font-size: .95rem; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.kopierlink-besked.vist { opacity: .92; }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -3677,6 +3785,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Skrevet af Niels Kræmmer</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
