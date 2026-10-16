@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6.3 Alkaners reaktioner – Kemibogen C</title>
+<title>6.2 Formel og aktuel koncentration – Kemibogen C</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../opgaver/6-3-opgaver.html" rel="next">
-<link href="../opgaver/6-2-opgaver.html" rel="prev">
+<link href="../opgaver/6-2-opgaver.html" rel="next">
+<link href="../opgaver/6-1-opgaver.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6f5271ed9d1b222440e9dd30dde7dfcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dc0945923608e546526efb69fbcc70cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,6 +80,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -92,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-6.html">Kapitel 6: Organisk kemi</a></li><li class="breadcrumb-item"><a href="../kapitler/6-3-alkaners-reaktioner.html">6.3 Alkaners reaktioner</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-6.html">Kapitel 6: Koncentration</a></li><li class="breadcrumb-item"><a href="../kapitler/6-2-formel-og-aktuel.html">6.2 Formel og aktuel koncentration</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søg" onclick="window.quartoOpenSearch();">
@@ -107,9 +136,6 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
 <div class="niveauer">
 <p><span class="her">Kemi C</span> <a href="../../b/index.html">Kemi B</a> <a href="../../a/index.html">Kemi A</a></p>
-</div>
-<div class="kompendielink">
-<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
 </div>
 </div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -241,20 +267,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/2-2-ioners-navne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.2 Ioners navne</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -265,14 +279,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.3</span></a>
+  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Fældningsreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.4 Fældningsreaktioner</span></a>
+  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -369,7 +395,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 4: Mængdeberegning</span></a>
+ <span class="menu-text">Kapitel 4: Organisk kemi</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -377,8 +403,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-1-beregninger.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.1 Beregninger i kemi</span></a>
+  <a href="../kapitler/4-1-alkaner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Carbonhydrider og alkaner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -389,8 +415,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-2-molarmasse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.2 Molarmasse</span></a>
+  <a href="../kapitler/4-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Zigzagformler og navngivning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -401,8 +427,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 Stofmængde</span></a>
+  <a href="../kapitler/4-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Alkaners reaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -413,8 +439,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.4 Ækvivalente mængder</span></a>
+  <a href="../kapitler/4-4-alkener.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Alkener og addition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -425,8 +451,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.5 Mængdeberegning</span></a>
+  <a href="../kapitler/4-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Alkoholer og carboxylsyrer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -437,8 +463,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-6-gasser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.6 Gasser</span></a>
+  <a href="../kapitler/4-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.6 Fedtstoffer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -464,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 5: Koncentration</span></a>
+ <span class="menu-text">Kapitel 5: Mængdeberegning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -472,8 +498,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-1-koncentration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.1 Koncentration</span></a>
+  <a href="../kapitler/5-1-beregninger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Beregninger i kemi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -484,8 +510,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.2 Formel og aktuel koncentration</span></a>
+  <a href="../kapitler/5-2-molarmasse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Molarmasse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -496,14 +522,50 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-3-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.3 Titrering</span></a>
+  <a href="../kapitler/5-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.3 Stofmængde</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.4 Ækvivalente mængder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.5 Mængdeberegning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-6-gasser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.6 Gasser</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -523,7 +585,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 6: Organisk kemi</span></a>
+ <span class="menu-text">Kapitel 6: Koncentration</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -531,8 +593,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-1-alkaner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.1 Carbonhydrider og alkaner</span></a>
+  <a href="../kapitler/6-1-koncentration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.1 Koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -543,8 +605,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.2 Zigzagformler og navngivning</span></a>
+  <a href="../kapitler/6-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">6.2 Formel og aktuel koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -555,50 +617,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">6.3 Alkaners reaktioner</span></a>
+  <a href="../kapitler/6-3-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/6-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 6.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-4-alkener.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Alkener og addition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Alkoholer og carboxylsyrer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.6 Fedtstoffer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -834,8 +860,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../oevelser/4-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 4.5: Ståluld på vægten</span></a>
+  <a href="../oevelser/5-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 5.5: Ståluld på vægten</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1044,7 +1070,11 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<div class="kompendielink">
+<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
+</div>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -1052,19 +1082,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#forbrænding" id="toc-forbrænding" class="nav-link active" data-scroll-target="#forbrænding">Forbrænding</a></li>
-  <li><a href="#sådan-afstemmer-du-en-forbrænding" id="toc-sådan-afstemmer-du-en-forbrænding" class="nav-link" data-scroll-target="#sådan-afstemmer-du-en-forbrænding">Sådan afstemmer du en forbrænding</a></li>
-  <li><a href="#ufuldstændig-forbrænding" id="toc-ufuldstændig-forbrænding" class="nav-link" data-scroll-target="#ufuldstændig-forbrænding">Ufuldstændig forbrænding</a></li>
-  <li><a href="#substitution" id="toc-substitution" class="nav-link" data-scroll-target="#substitution">Substitution</a></li>
+  <li><a href="#når-et-salt-opløses" id="toc-når-et-salt-opløses" class="nav-link active" data-scroll-target="#når-et-salt-opløses">Når et salt opløses</a></li>
+  <li><a href="#to-slags-koncentration" id="toc-to-slags-koncentration" class="nav-link" data-scroll-target="#to-slags-koncentration">To slags koncentration</a></li>
+  <li><a href="#tallet-foran-ionen" id="toc-tallet-foran-ionen" class="nav-link" data-scroll-target="#tallet-foran-ionen">Tallet foran ionen</a></li>
+  <li><a href="#stoffer-der-ikke-deler-sig" id="toc-stoffer-der-ikke-deler-sig" class="nav-link" data-scroll-target="#stoffer-der-ikke-deler-sig">Stoffer, der ikke deler sig</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-6.html">Kapitel 6: Organisk kemi</a></li><li class="breadcrumb-item"><a href="../kapitler/6-3-alkaners-reaktioner.html">6.3 Alkaners reaktioner</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-6.html">Kapitel 6: Koncentration</a></li><li class="breadcrumb-item"><a href="../kapitler/6-2-formel-og-aktuel.html">6.2 Formel og aktuel koncentration</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-alkaners-reaktioner" class="quarto-section-identifier">6.3 Alkaners reaktioner</span></h1>
+<h1 class="title"><span id="sec-formel-og-aktuel" class="quarto-section-identifier">6.2 Formel og aktuel koncentration</span></h1>
 </div>
 
 
@@ -1081,146 +1111,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><span class="fagord-peg" data-fagord="alkan">Alkaner</span> er ikke særligt reaktionsvillige og reagerer hverken med vand, <span class="fagord-peg" data-fagord="syre">syrer</span> eller <span class="fagord-peg" data-fagord="base">baser</span>. To reaktioner er dog vigtige, for <span class="fagord-peg" data-fagord="alkan">alkaner</span> kan brænde, og de kan reagere med chlor og brom, når der er lys.</p>
-<section id="forbrænding" class="level2">
-<h2 class="anchored" data-anchor-id="forbrænding">Forbrænding</h2>
-<p>Ved en <span id="ord-forbraending" class="fagord-anker"><strong>forbrænding</strong></span> reagerer et stof med oxygen fra luften, og der bliver afgivet varme. Derfor bruges <span class="fagord-peg" data-fagord="alkan">alkaner</span> som brændstof i gaskomfurer, biler og fly.</p>
-<p>Er der oxygen nok, er <span class="fagord-peg" data-fagord="forbrænding">forbrændingen</span> <span id="ord-fuldstaendig" class="fagord-anker"><strong>fuldstændig</strong></span>, og så bliver alt carbon til carbondioxid og alt hydrogen til vand.</p>
-<div id="fig-forbraending-methan" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-forbraending-methan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/forbraending-methan.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;1: Fuldstændig forbrænding af methan. Der er lige mange atomer af hver slags før og efter reaktionen."><img src="../figurer/forbraending-methan.svg" class="img-fluid figure-img"></a>
+<p>Når et <span class="fagord-peg" data-fagord="salt">salt</span> opløses i vand, findes der ikke længere hele <span class="fagord-peg" data-fagord="formelenhed">formelenheder</span> af <span class="fagord-peg" data-fagord="salt">saltet</span> i <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>, fordi <span class="fagord-peg" data-fagord="ion">ionerne</span> har sluppet hinanden. Derfor er der brug for to slags koncentration.</p>
+<section id="når-et-salt-opløses" class="level2">
+<h2 class="anchored" data-anchor-id="når-et-salt-opløses">Når et salt opløses</h2>
+<p>I vand slipper <span class="fagord-peg" data-fagord="ion">ionerne</span> i et <span class="fagord-peg" data-fagord="salt">salt</span> <span class="fagord-peg" data-fagord="iongitter">iongitteret</span> fra <a href="../kapitler/2-3-ionforbindelser.html">afsnit 2.3</a> og fordeler sig hver for sig mellem vandmolekylerne. Det skrives som et <span class="fagord-peg" data-fagord="reaktionsskema">reaktionsskema</span>, hvor (s) betyder fast stof og (aq) betyder opløst i vand.</p>
+<div class="reaktion">
+<p>NaCl(s) → Na<sup>+</sup>(aq) + Cl<sup>−</sup>(aq)</p>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forbraending-methan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;1: Fuldstændig forbrænding af methan. Der er lige mange atomer af hver slags før og efter reaktionen.
+<p>I dette afsnit ser vi kun på <span class="fagord-peg" data-fagord="salt">salte</span>, der opløses helt i vand.</p>
+</section>
+<section id="to-slags-koncentration" class="level2">
+<h2 class="anchored" data-anchor-id="to-slags-koncentration">To slags koncentration</h2>
+<p>Den <span id="ord-formelle-koncentration" class="fagord-anker"><strong>formelle koncentration</strong></span> er den koncentration, man regner sig frem til ud fra den mængde stof, der er hældt i. Det er den koncentration, du beregnede i <a href="../kapitler/6-1-koncentration.html">afsnit 6.1</a>. Den følger stoffets formel og skrives <em>c</em>(NaCl).</p>
+<p>Den <span id="ord-aktuelle-koncentration" class="fagord-anker"><strong>aktuelle koncentration</strong></span> er koncentrationen af de partikler, der faktisk findes i <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>. Den skrives med kantede parenteser om partiklens formel, så den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> af <span class="fagord-peg" data-fagord="natriumion">natriumioner</span> skrives [Na<sup>+</sup>].</p>
+<p>For natriumchlorid giver én <span class="fagord-peg" data-fagord="formelenhed">formelenhed</span> én <span class="fagord-peg" data-fagord="natriumion">natriumion</span> og én chloridion. Er den <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span> 0,10 M, er de <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentrationer</span> derfor:</p>
+<p>[Na<sup>+</sup>] = 0,10 M og [Cl<sup>−</sup>] = 0,10 M</p>
+<p>Der er ingen hele <span class="fagord-peg" data-fagord="formelenhed">formelenheder</span> af NaCl tilbage i <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>, og den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> af NaCl er derfor 0 M.</p>
+</section>
+<section id="tallet-foran-ionen" class="level2">
+<h2 class="anchored" data-anchor-id="tallet-foran-ionen">Tallet foran ionen</h2>
+<p>Calciumchlorid, CaCl<sub>2</sub>, indeholder to chloridioner for hver calciumion.</p>
+<div class="reaktion">
+<p>CaCl<sub>2</sub>(s) → Ca<sup>2+</sup>(aq) + 2 Cl<sup>−</sup>(aq)</p>
+</div>
+<div id="fig-formel-aktuel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-formel-aktuel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figurer/formel-aktuel.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;1: Hver formelenhed calciumchlorid giver én calciumion og to chloridioner."><img src="../figurer/formel-aktuel.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-formel-aktuel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;1: Hver formelenhed calciumchlorid giver én calciumion og to chloridioner.
 </figcaption>
 </figure>
 </div>
-<div class="reaktion">
-<p>CH<sub>4</sub>(g) + 2 O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2 H<sub>2</sub>O(g)</p>
-</div>
-<p>Alle <span class="fagord-peg" data-fagord="carbonhydrid">carbonhydrider</span> giver de samme to stoffer ved en fuldstændig <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span>: carbondioxid og vand.</p>
-</section>
-<section id="sådan-afstemmer-du-en-forbrænding" class="level2">
-<h2 class="anchored" data-anchor-id="sådan-afstemmer-du-en-forbrænding">Sådan afstemmer du en forbrænding</h2>
-<p>Som du lærte i <a href="../kapitler/1-4-reaktionsskemaer.html">afsnit 1.4</a>, skal et <span class="fagord-peg" data-fagord="reaktionsskema">reaktionsskema</span> være <span id="ord-afstemt" class="fagord-anker"><strong>afstemt</strong></span>, hvilket betyder, at der er lige mange atomer af hver slags på begge sider af pilen. Man <span class="fagord-peg" data-fagord="afstemt">afstemmer</span> ved at sætte <span class="fagord-peg" data-fagord="koefficient">koefficienter</span> foran formlerne, mens de små tal i formlerne ikke må ændres.</p>
-<p>Ved en <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span> er det lettest at tage <span class="fagord-peg" data-fagord="grundstof">grundstofferne</span> i en fast rækkefølge: først carbon, så hydrogen og til sidst oxygen.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: forbrænding af propan">
+<p><span class="fagord-peg" data-fagord="koefficient">Koefficienterne</span> i <span class="fagord-peg" data-fagord="reaktionsskema">reaktionsskemaet</span> viser, hvor mange <span class="fagord-peg" data-fagord="ion">ioner</span> hver <span class="fagord-peg" data-fagord="formelenhed">formelenhed</span> giver. Den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> af en <span class="fagord-peg" data-fagord="ion">ion</span> er derfor tallet foran <span class="fagord-peg" data-fagord="ion">ionen</span> ganget med <span class="fagord-peg" data-fagord="salt">saltets</span> <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="fagord-peg" data-fagord="formel koncentration">Formel koncentration</span></th>
+<th style="text-align: left;"><span class="fagord-peg" data-fagord="aktuel koncentration">Aktuelle koncentrationer</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>c</em>(NaCl) = 0,10 M</td>
+<td style="text-align: left;">[Na<sup>+</sup>] = 0,10 M og [Cl<sup>−</sup>] = 0,10 M</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>c</em>(CaCl<sub>2</sub>) = 0,10 M</td>
+<td style="text-align: left;">[Ca<sup>2+</sup>] = 0,10 M og [Cl<sup>−</sup>] = 0,20 M</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>c</em>(Na<sub>2</sub>SO<sub>4</sub>) = 0,10 M</td>
+<td style="text-align: left;">[Na<sup>+</sup>] = 0,20 M og [SO<sub>4</sub><sup>2−</sup>] = 0,10 M</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: aluminiumsulfat">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Eksempel: <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span> af propan
+<span class="screen-reader-only">Note</span>Eksempel: aluminiumsulfat
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Propan, C<sub>3</sub>H<sub>8</sub>, er gassen i en gasgrill.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 47%">
-<col style="width: 47%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Trin</th>
-<th style="text-align: left;">Det gør du</th>
-<th style="text-align: left;"><span class="fagord-peg" data-fagord="reaktionsskema">Reaktionsskema</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Skriv stofferne op.</td>
-<td style="text-align: left;">C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Carbon: 3 C til venstre kræver 3 CO<sub>2</sub>.</td>
-<td style="text-align: left;">C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> → <span id="ord-3" class="fagord-anker"><strong>3</strong></span> CO<sub>2</sub> + H<sub>2</sub>O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Hydrogen: 8 H til venstre kræver 4 H<sub>2</sub>O.</td>
-<td style="text-align: left;">C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> → 3 CO<sub>2</sub> + <span id="ord-4" class="fagord-anker"><strong>4</strong></span> H<sub>2</sub>O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">Oxygen: til højre er der 6 O i CO<sub>2</sub> og 4 O i H<sub>2</sub>O, i alt 10 O. Det kræver 5 O<sub>2</sub>.</td>
-<td style="text-align: left;">C<sub>3</sub>H<sub>8</sub> + <span id="ord-5" class="fagord-anker"><strong>5</strong></span> O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O</td>
-</tr>
-</tbody>
-</table>
-<p>Tjek: Der er 3 C, 8 H og 10 O på begge sider.</p>
-</div>
-</div>
-<p>Nogle gange bliver antallet af oxygenatomer et ulige tal. Ved <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span> af ethan, C<sub>2</sub>H<sub>6</sub>, er der 2 CO<sub>2</sub> og 3 H<sub>2</sub>O til højre. Det er 7 oxygenatomer, og det svarer til 3½ O<sub>2</sub>. Så ganger man alle tallene i skemaet med 2:</p>
+<p>En <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af aluminiumsulfat har den <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span> 0,050 M. Hvad er de <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentrationer</span> af <span class="fagord-peg" data-fagord="ion">ionerne</span>?</p>
+<p><span id="ord-reaktionsskema" class="fagord-anker"><strong>Reaktionsskema</strong></span></p>
 <div class="reaktion">
-<p>2 C<sub>2</sub>H<sub>6</sub>(g) + 7 O<sub>2</sub>(g) → 4 CO<sub>2</sub>(g) + 6 H<sub>2</sub>O(g)</p>
+<p>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(s) → 2 Al<sup>3+</sup>(aq) + 3 SO<sub>4</sub><sup>2−</sup>(aq)</p>
+</div>
+<p><span id="ord-beregning" class="fagord-anker"><strong>Beregning</strong></span></p>
+<p><span class="math display">\[
+[\mathrm{Al^{3+}}] = 2 \cdot 0{,}050\ \mathrm{M} = 0{,}10\ \mathrm{M}
+\]</span></p>
+<p><span class="math display">\[
+[\mathrm{SO_4^{2-}}] = 3 \cdot 0{,}050\ \mathrm{M} = 0{,}15\ \mathrm{M}
+\]</span></p>
+<p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion</strong></span></p>
+<p>Den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> er 0,10 M for aluminiumioner og 0,15 M for <span class="fagord-peg" data-fagord="sulfat">sulfat</span>.</p>
+</div>
 </div>
 </section>
-<section id="ufuldstændig-forbrænding" class="level2">
-<h2 class="anchored" data-anchor-id="ufuldstændig-forbrænding">Ufuldstændig forbrænding</h2>
-<p>Er der for lidt oxygen, er <span class="fagord-peg" data-fagord="forbrænding">forbrændingen</span> <span id="ord-ufuldstaendig" class="fagord-anker"><strong>ufuldstændig</strong></span>. Så dannes der ikke kun carbondioxid og vand, men også <span class="fagord-peg" data-fagord="carbonmonoxid">carbonmonoxid</span>, CO, og sod, som er rent carbon, C.</p>
-<div id="fig-forbraending-flammer" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-forbraending-flammer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/forbraending-flammer.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: Er der oxygen nok, dannes der ikke sod. Er der for lidt oxygen, bliver flammen gul og soder. Lupperne viser, hvad der kommer op fra flammen."><img src="../figurer/forbraending-flammer.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forbraending-flammer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;2: Er der oxygen nok, dannes der ikke sod. Er der for lidt oxygen, bliver flammen gul og soder. Lupperne viser, hvad der kommer op fra flammen.
-</figcaption>
-</figure>
-</div>
-<p>Den gule farve i flammen kommer fra små sodpartikler, der gløder. Holder man en kold ske ind i flammen fra et stearinlys, sætter soden sig på skeen som en sort belægning.</p>
-<p>Nogle stoffer soder mere end andre. Ethyn, C<sub>2</sub>H<sub>2</sub>, som også kaldes acetylen, er et <span class="fagord-peg" data-fagord="carbonhydrid">carbonhydrid</span> med en <span class="fagord-peg" data-fagord="tripelbinding">tripelbinding</span>, og du møder det igen i <a href="../kapitler/6-4-alkener.html">afsnit 6.4</a>. I ethyn er der lige så mange carbonatomer som hydrogenatomer, mens methan har fire hydrogenatomer for hvert carbonatom. Jo mere carbon et stof indeholder i forhold til hydrogen, jo lettere bliver noget af carbonet tilbage som sod. Derfor brænder ethyn med en kraftigt sodende flamme i luft, og ved svejsning blander man ethyn med ren oxygen.</p>
-<p>To eksempler på ufuldstændig <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span> af ethyn er:</p>
-<div class="reaktion">
-<p>2 C<sub>2</sub>H<sub>2</sub>(g) + 3 O<sub>2</sub>(g) → 4 CO(g) + 2 H<sub>2</sub>O(g)</p>
-<p>2 C<sub>2</sub>H<sub>2</sub>(g) + O<sub>2</sub>(g) → 4 C(s) + 2 H<sub>2</sub>O(g)</p>
-</div>
-<p>I virkeligheden sker flere af reaktionerne på samme tid, så der dannes en blanding af carbondioxid, <span class="fagord-peg" data-fagord="carbonmonoxid">carbonmonoxid</span> og sod.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Carbonmonoxid er giftig">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Vigtigt</span><span class="fagord-peg" data-fagord="carbonmonoxid">Carbonmonoxid</span> er giftig
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="fagord-peg" data-fagord="carbonmonoxid">Carbonmonoxid</span>, som også kaldes kulilte, er en giftig gas, der hverken kan ses eller lugtes. Den sætter sig fast på de røde blodlegemer, så de ikke kan transportere oxygen rundt i kroppen. Derfor må man aldrig bruge en grill eller en gasvarmer indendørs eller i et telt.</p>
-</div>
-</div>
-<p>Carbondioxid er ikke giftig i små mængder, men den er en drivhusgas. Når der brændes olie, kul og naturgas af, stiger mængden af carbondioxid i atmosfæren, og det er den vigtigste årsag til den globale opvarmning.</p>
-</section>
-<section id="substitution" class="level2">
-<h2 class="anchored" data-anchor-id="substitution">Substitution</h2>
-<p><span class="fagord-peg" data-fagord="alkan">Alkaner</span> kan reagere med chlor og brom, men kun når der er lys. I reaktionen bliver et hydrogenatom i <span class="fagord-peg" data-fagord="alkan">alkanen</span> skiftet ud med et chloratom eller et bromatom. Reaktionen kaldes en <span id="ord-substitution" class="fagord-anker"><strong>substitution</strong></span>, som betyder udskiftning.</p>
-<div id="fig-substitution" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-substitution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/substitution.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;3: Substitution i methan. Et hydrogenatom bliver skiftet ud med et bromatom."><img src="../figurer/substitution.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-substitution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;3: Substitution i methan. Et hydrogenatom bliver skiftet ud med et bromatom.
-</figcaption>
-</figure>
-</div>
-<div class="reaktion">
-<p>CH<sub>4</sub> + Br<sub>2</sub> → CH<sub>3</sub>Br + HBr</p>
-</div>
-<p>Bemærk, at der dannes to stoffer. Det ene bromatom sætter sig på carbonatomet, mens det andet tager det hydrogenatom, der blev skiftet ud, og danner hydrogenbromid, HBr.</p>
-<p>Lyset er nødvendigt, fordi det slår brommolekylerne i stykker. De løse bromatomer er meget reaktionsvillige og sætter reaktionen i gang.</p>
-<section id="forsøget-med-brom-og-hexan" class="level3">
-<h3 class="anchored" data-anchor-id="forsøget-med-brom-og-hexan">Forsøget med brom og hexan</h3>
-<p>Brom er gulbrunt, og lidt brom farver en væske gul. Blander man lidt brom i hexan og stiller glasset i mørke, sker der ingenting. Stiller man det derimod i sollys, forsvinder farven langsomt, fordi brom bliver brugt i reaktionen.</p>
-<div class="reaktion">
-<p>C<sub>6</sub>H<sub>14</sub> + Br<sub>2</sub> → C<sub>6</sub>H<sub>13</sub>Br + HBr</p>
-</div>
-<p>Hydrogenbromid er en <span class="fagord-peg" data-fagord="syre">syre</span>, og man kan derfor vise, at reaktionen er forløbet, med et stykke fugtigt indikatorpapir. Papiret skifter til den farve, der viser en <span class="fagord-peg" data-fagord="syre">syre</span>.</p>
+<section id="stoffer-der-ikke-deler-sig" class="level2">
+<h2 class="anchored" data-anchor-id="stoffer-der-ikke-deler-sig">Stoffer, der ikke deler sig</h2>
+<p>Sukker er et <span class="fagord-peg" data-fagord="molekyle">molekyle</span> og ikke et <span class="fagord-peg" data-fagord="salt">salt</span>. Når sukker opløses i vand, fordeler de hele <span class="fagord-peg" data-fagord="molekyle">molekyler</span> sig i vandet, men de går ikke i stykker. For sukker er den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> derfor den samme som den formelle.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1232,24 +1208,22 @@ Figur&nbsp;3: Substitution i methan. Et hydrogenatom bliver skiftet ud med et br
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Ved en fuldstændig <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span> bliver et <span class="fagord-peg" data-fagord="carbonhydrid">carbonhydrid</span> til carbondioxid og vand.</li>
-<li>En <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span> <span class="fagord-peg" data-fagord="afstemt">afstemmes</span> i rækkefølgen carbon, hydrogen og oxygen.</li>
-<li>Ved en ufuldstændig <span class="fagord-peg" data-fagord="forbrænding">forbrænding</span> er der for lidt oxygen, så der også dannes <span class="fagord-peg" data-fagord="carbonmonoxid">carbonmonoxid</span> og sod. Soden gør flammen gul.</li>
-<li><span class="fagord-peg" data-fagord="carbonmonoxid">Carbonmonoxid</span> er en giftig gas.</li>
-<li>I en <span class="fagord-peg" data-fagord="substitution">substitution</span> bliver et hydrogenatom i en <span class="fagord-peg" data-fagord="alkan">alkan</span> skiftet ud med et chloratom eller et bromatom, og reaktionen kræver lys.</li>
+<li>Når et <span class="fagord-peg" data-fagord="salt">salt</span> opløses, slipper <span class="fagord-peg" data-fagord="ion">ionerne</span> hinanden.</li>
+<li>Den <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span>, <em>c</em>(<span class="fagord-peg" data-fagord="salt">salt</span>), er regnet ud fra det, der er hældt i.</li>
+<li>Den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span>, skrevet med kantede parenteser, er koncentrationen af de partikler, der faktisk er i <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>.</li>
+<li>En <span class="fagord-peg" data-fagord="ion">ions</span> <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> er tallet foran <span class="fagord-peg" data-fagord="ion">ionen</span> i <span class="fagord-peg" data-fagord="reaktionsskema">reaktionsskemaet</span> ganget med <span class="fagord-peg" data-fagord="salt">saltets</span> <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span>.</li>
 </ul>
 </div>
 </div>
 <div class="proev-selv">
-<p><strong>Prøv selv:</strong> <a href="https://kemiformler.dk/animationer/superanimationer/sc1.4_afstemning/index.html">Afstem reaktioner</a>: træn i at <span class="fagord-peg" data-fagord="afstemt">afstemme</span> <span class="fagord-peg" data-fagord="reaktionsskema">reaktionsskemaer</span>.</p>
+<p><strong>Prøv selv:</strong> <a href="https://kemiformler.dk/animationer/superanimationer/sc6.2_formel_og_aktuel/index.html">Formel og aktuel koncentration</a>: opløs forskellige <span class="fagord-peg" data-fagord="salt">salte</span>.</p>
 </div>
 <div class="til-opgaver">
-<p><a href="../opgaver/6-3-opgaver.html">Se alle opgaver til emnet “Alkaners reaktioner” (6.3)</a></p>
+<p><a href="../opgaver/6-2-opgaver.html">Se alle opgaver til emnet “Formel og aktuel koncentration” (6.2)</a></p>
 </div>
 
 
-<script type="application/json" id="fagord-peg-data">{"afstemt":{"afsnit":"6.3","forklaring":"Siges om et reaktionsskema med lige mange atomer af hver slags på begge\nsider af pilen. Det klares med koefficienter foran formlerne.","maal":"../kapitler/6-3-alkaners-reaktioner.html#ord-afstemt","ord":"afstemt"},"alkan":{"afsnit":"6.1","forklaring":"Carbonhydrid, hvor alle bindinger er enkeltbindinger. Navnet ender på\n<em>-an<\/em>, for eksempel methan og propan.","maal":"../kapitler/6-1-alkaner.html#ord-alkaner","ord":"alkan"},"base":{"afsnit":"7.1","forklaring":"Stof, der kan optage en hydron. Ammoniak, NH<sub>3<\/sub>, er et\neksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-base","ord":"base"},"carbonhydrid":{"afsnit":"6.1","forklaring":"Stof, der kun består af C-atomer og H-atomer. Methan og butan er\neksempler.","maal":"../kapitler/6-1-alkaner.html#ord-carbonhydrid","ord":"carbonhydrid"},"carbonmonoxid":{"afsnit":"6.3","forklaring":"Giftig gas med formlen CO, som hverken kan ses eller lugtes. Den dannes,\nnår noget brænder med for lidt oxygen, og kaldes også kulilte.","maal":"../kapitler/6-3-alkaners-reaktioner.html#ufuldstændig-forbrænding","ord":"carbonmonoxid"},"forbrænding":{"afsnit":"6.3","forklaring":"Reaktion, hvor et stof reagerer med oxygen fra luften, og der bliver\nafgivet varme.","maal":"../kapitler/6-3-alkaners-reaktioner.html#ord-forbraending","ord":"forbrænding"},"grundstof":{"afsnit":"1.1","forklaring":"Består af kun én slags atomer. Guld og oxygen er eksempler.","maal":"../kapitler/1-1-hvad-er-kemi.html#ord-grundstof","ord":"grundstof"},"koefficient":{"afsnit":"1.4","forklaring":"Det store tal foran en formel. Det viser, hvor mange molekyler der er.","maal":"../kapitler/1-4-reaktionsskemaer.html#ord-koefficient","ord":"koefficient"},"reaktionsskema":{"afsnit":"1.4","forklaring":"Kemikerens opskrift: formler og en pil viser, hvad der reagerer, og hvad\nder dannes.","maal":"../kapitler/1-4-reaktionsskemaer.html#ord-reaktionsskema","ord":"reaktionsskema"},"substitution":{"afsnit":"6.3","forklaring":"Reaktion, hvor et hydrogenatom i en alkan bliver skiftet ud med chlor\neller brom. Den kræver lys.","maal":"../kapitler/6-3-alkaners-reaktioner.html#ord-substitution","ord":"substitution"},"syre":{"afsnit":"7.1","forklaring":"Stof, der kan afgive en hydron. Hydrogenchlorid, HCl, er et eksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-syre","ord":"syre"},"tripelbinding":{"afsnit":"3.1","forklaring":"Her deler to atomer tre elektronpar. Tegnes med tre streger, som i\nnitrogenmolekylet N<sub>2<\/sub>.","maal":"../kapitler/3-1-molekyler.html#ord-tripelbinding","ord":"tripelbinding"}}</script>
-</section>
+<script type="application/json" id="fagord-peg-data">{"aktuel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden i hver liter af de partikler, der faktisk findes i\nopløsningen. Skrives med kantede parenteser, for eksempel\n[Na<sup>+<\/sup>].","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-aktuelle-koncentration","ord":"aktuel koncentration"},"formel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden i hver liter, regnet ud fra den mængde salt, der er hældt i.\nSkrives <em>c<\/em>(NaCl) for natriumchlorid.","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-formelle-koncentration","ord":"formel koncentration"},"formelenhed":{"afsnit":"2.3","forklaring":"Den mindste portion af et salt med ionerne i det rigtige forhold. I NaCl\nbestår den af én natriumion og én chloridion.","maal":"../kapitler/2-3-ionforbindelser.html#ord-formelenhed","ord":"formelenhed"},"ion":{"afsnit":"2.1","forklaring":"Atom, der har afgivet eller optaget elektroner og derfor har en ladning.","maal":"../kapitler/2-1-ioner.html#ord-ion","ord":"ion"},"iongitter":{"afsnit":"2.3","forklaring":"Det regelmæssige mønster, som partiklerne i et salt sidder tæt pakket i.\nDe er skiftevis positive og negative.","maal":"../kapitler/2-3-ionforbindelser.html#ord-iongitter","ord":"iongitter"},"koefficient":{"afsnit":"1.4","forklaring":"Det store tal foran en formel. Det viser, hvor mange molekyler der er.","maal":"../kapitler/1-4-reaktionsskemaer.html#ord-koefficient","ord":"koefficient"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"natriumion":{"afsnit":"2.2","forklaring":"Partiklen Na<sup>+<\/sup>, som findes i maden. Den er ufarlig og\nlivsnødvendig, mens selve metallet reagerer voldsomt med vand.","maal":"../kapitler/2-2-ioners-navne.html#positive-ioner","ord":"natriumion"},"opløsning":{"afsnit":"6.1","forklaring":"Blanding, hvor et stof har fordelt sig jævnt i en væske. Salt, der er\nrørt ud i vand, er et eksempel.","maal":"../kapitler/6-1-koncentration.html#ord-oploesning","ord":"opløsning"},"reaktionsskema":{"afsnit":"1.4","forklaring":"Kemikerens opskrift: formler og en pil viser, hvad der reagerer, og hvad\nder dannes.","maal":"../kapitler/1-4-reaktionsskemaer.html#ord-reaktionsskema","ord":"reaktionsskema"},"salt":{"afsnit":"2.3","forklaring":"Andet navn for en ionforbindelse. Det, der bruges i køkkenet, hedder\nnatriumchlorid.","maal":"../kapitler/2-3-ionforbindelser.html#ord-salte","ord":"salt"},"sulfat":{"afsnit":"2.2","forklaring":"Den sammensatte ion SO<sub>4<\/sub><sup>2−<\/sup> med ladningen −2.","maal":"../kapitler/2-2-ioners-navne.html#sammensatte-ioner","ord":"sulfat"}}</script>
 </section>
 
 </main> <!-- /main -->
@@ -2605,18 +2579,25 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
-// Menuen i venstre side: "Til kapitlet" under afsnittene (Niels 15. okt. 2026, prøve i kapitel 1).
+// Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026, i kapitel 1 og 2).
 //
-// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, sættes rubrikken "Til kapitlet" ind
-// foran dem, og de fire linjer "Opgaver til 1.1" osv. bliver til én linje: "Opgaver 1.1 1.2 1.3 1.4".
-// Fagord og repetition står bagefter som før. Til sidst kommer linkene i EKSTRA (slides, modulplaner og
-// kapitlets animationer på kemiformler.dk). Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
+// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver de fire linjer "Opgaver til 1.1" osv.
+// til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
+// "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
+// kemiformler.dk). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+// før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
+// Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
 (function () {
   var EKSTRA = {
     "1": [
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
-      { tekst: "Animationer til kapitel 1", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+    ],
+    "2": [
+      { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
     ]
   };
 
@@ -2646,9 +2627,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var nr = (afsnit[0].textContent.trim().match(/^(\d+)\./) || [])[1];
     var rod = foerste.slice(0, foerste.search(/kapitler\//));
 
-    var rubrik = li("kapitelmenu-rubrik");
-    rubrik.textContent = "Til kapitlet";
-    ul.insertBefore(rubrik, opgaver[0]);
+    // Fagord og repetition: "Fagord til kapitel 1" bliver til "Fagord"
+    punkter.slice(foersteOpgave).forEach(function (p) {
+      if (opgaver.indexOf(p) >= 0) return;
+      p.classList.add("kapitelmenu-side");
+      var t = p.querySelector("a.sidebar-link .menu-text");
+      if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+\d+$/i, "");
+    });
 
     var raekke = li("kapitelmenu-opgaver");
     var navn = document.createElement("span");
@@ -3098,13 +3083,13 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../opgaver/6-2-opgaver.html" class="pagination-link" aria-label="Opgaver til 6.2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Opgaver til 6.2</span>
+      <a href="../opgaver/6-1-opgaver.html" class="pagination-link" aria-label="Opgaver til 6.1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Opgaver til 6.1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../opgaver/6-3-opgaver.html" class="pagination-link" aria-label="Opgaver til 6.3">
-        <span class="nav-page-text">Opgaver til 6.3</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../opgaver/6-2-opgaver.html" class="pagination-link" aria-label="Opgaver til 6.2">
+        <span class="nav-page-text">Opgaver til 6.2</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

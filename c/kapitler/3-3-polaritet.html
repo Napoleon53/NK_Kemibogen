@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6f5271ed9d1b222440e9dd30dde7dfcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dc0945923608e546526efb69fbcc70cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,6 +80,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -107,9 +136,6 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
 <div class="niveauer">
 <p><span class="her">Kemi C</span> <a href="../../b/index.html">Kemi B</a> <a href="../../a/index.html">Kemi A</a></p>
-</div>
-<div class="kompendielink">
-<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
 </div>
 </div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -241,20 +267,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/2-2-ioners-navne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.2 Ioners navne</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -265,14 +279,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.3</span></a>
+  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Fældningsreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.4 Fældningsreaktioner</span></a>
+  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -369,7 +395,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 4: Mængdeberegning</span></a>
+ <span class="menu-text">Kapitel 4: Organisk kemi</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -377,8 +403,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-1-beregninger.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.1 Beregninger i kemi</span></a>
+  <a href="../kapitler/4-1-alkaner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Carbonhydrider og alkaner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -389,8 +415,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-2-molarmasse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.2 Molarmasse</span></a>
+  <a href="../kapitler/4-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Zigzagformler og navngivning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -401,8 +427,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 Stofmængde</span></a>
+  <a href="../kapitler/4-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Alkaners reaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -413,8 +439,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.4 Ækvivalente mængder</span></a>
+  <a href="../kapitler/4-4-alkener.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Alkener og addition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -425,8 +451,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.5 Mængdeberegning</span></a>
+  <a href="../kapitler/4-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Alkoholer og carboxylsyrer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -437,8 +463,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-6-gasser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.6 Gasser</span></a>
+  <a href="../kapitler/4-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.6 Fedtstoffer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -464,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 5: Koncentration</span></a>
+ <span class="menu-text">Kapitel 5: Mængdeberegning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -472,8 +498,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-1-koncentration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.1 Koncentration</span></a>
+  <a href="../kapitler/5-1-beregninger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Beregninger i kemi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -484,8 +510,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.2 Formel og aktuel koncentration</span></a>
+  <a href="../kapitler/5-2-molarmasse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Molarmasse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -496,14 +522,50 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-3-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.3 Titrering</span></a>
+  <a href="../kapitler/5-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.3 Stofmængde</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.4 Ækvivalente mængder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.5 Mængdeberegning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-6-gasser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.6 Gasser</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -523,7 +585,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 6: Organisk kemi</span></a>
+ <span class="menu-text">Kapitel 6: Koncentration</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -531,8 +593,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-1-alkaner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.1 Carbonhydrider og alkaner</span></a>
+  <a href="../kapitler/6-1-koncentration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.1 Koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -543,8 +605,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.2 Zigzagformler og navngivning</span></a>
+  <a href="../kapitler/6-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.2 Formel og aktuel koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -555,50 +617,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Alkaners reaktioner</span></a>
+  <a href="../kapitler/6-3-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/6-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 6.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-4-alkener.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Alkener og addition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Alkoholer og carboxylsyrer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.6 Fedtstoffer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -834,8 +860,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../oevelser/4-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 4.5: Ståluld på vægten</span></a>
+  <a href="../oevelser/5-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 5.5: Ståluld på vægten</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1044,7 +1070,11 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<div class="kompendielink">
+<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
+</div>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -1101,17 +1131,7 @@ Figur&nbsp;1: Elektronegativitet for grundstofferne i hovedgruppe 1 til 7. Jo m�
 </section>
 <section id="tre-slags-bindinger" class="level2">
 <h2 class="anchored" data-anchor-id="tre-slags-bindinger">Tre slags bindinger</h2>
-<p>Forskellen i <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> mellem to atomer afgør, hvilken slags binding der er mellem dem. Forskellen skrives ΔEN og findes ved at trække den mindste <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> fra den største.</p>
-<div id="fig-bindingstyper" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bindingstyper-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/bindingstyper.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer."><img src="../figurer/bindingstyper.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bindingstyper-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;2: Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer.
-</figcaption>
-</figure>
-</div>
+<p>Forskellen i <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> mellem to atomer afgør, hvilken slags binding der er mellem dem. Forskellen skrives ΔEN og findes ved at trække den mindste <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> fra den største, og tabellen viser grænserne.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 40%">
@@ -1132,7 +1152,7 @@ Figur&nbsp;2: Jo større forskel i elektronegativitet, jo skævere ligger det f�
 <td style="text-align: left;">Det deles ligeligt.</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">fra 0,5 op til 2,0</td>
+<td style="text-align: center;">fra 0,5 til under 2,0</td>
 <td style="text-align: left;">polær <span class="fagord-peg" data-fagord="elektronparbinding">elektronparbinding</span></td>
 <td style="text-align: left;">Det ligger tættest på det mest elektronegative atom.</td>
 </tr>
@@ -1143,19 +1163,6 @@ Figur&nbsp;2: Jo større forskel i elektronegativitet, jo skævere ligger det f�
 </tr>
 </tbody>
 </table>
-<p>I en <span id="ord-polaer-binding" class="fagord-anker"><strong>polær binding</strong></span> er <span class="fagord-peg" data-fagord="elektron">elektronerne</span> skævt fordelt. Atomet med den højeste <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> får lidt ekstra negativ <span class="fagord-peg" data-fagord="ladning">ladning</span>, som skrives δ−, mens det andet atom får lidt positiv <span class="fagord-peg" data-fagord="ladning">ladning</span>, som skrives δ+. Tegnet δ er det græske bogstav delta og betyder her <em>en lille smule</em>.</p>
-<div class="pegefigur">
-<div id="fig-en-skala" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-en-skala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/en-skala.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;3: Skalaen for forskellen i elektronegativitet med seks eksempler."><img src="../figurer/en-skala.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-en-skala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;3: Skalaen for forskellen i elektronegativitet med seks eksempler.
-</figcaption>
-</figure>
-</div>
-</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: tre bindinger">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1166,17 +1173,58 @@ Figur&nbsp;3: Skalaen for forskellen i elektronegativitet med seks eksempler.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span id="ord-bindingen-o-h-i-vand" class="fagord-anker"><strong>Bindingen O−H i vand.</strong></span> Oxygen har <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativiteten</span> 3,5, og hydrogen har 2,1.</p>
-<p>ΔEN = 3,5 − 2,1 = 1,4</p>
-<p>Forskellen ligger mellem 0,5 og 2,0, så bindingen er polær.</p>
-<p><span id="ord-bindingen-c-h-i-methan" class="fagord-anker"><strong>Bindingen C−H i methan.</strong></span> Carbon har 2,5, og hydrogen har 2,1.</p>
-<p>ΔEN = 2,5 − 2,1 = 0,4</p>
-<p>Forskellen er under 0,5, så bindingen er upolær.</p>
-<p><span id="ord-natrium-og-chlor-i-koekkensalt" class="fagord-anker"><strong>Natrium og chlor i køkkensalt.</strong></span> Chlor har 3,0, og natrium har 0,9.</p>
-<p>ΔEN = 3,0 − 0,9 = 2,1</p>
-<p>Forskellen er over 2,0, så det er en <span class="fagord-peg" data-fagord="ionbinding">ionbinding</span>, som du lærte om i <a href="../kapitler/2-3-ionforbindelser.html">afsnit 2.3</a>.</p>
+<p>Hvilken slags binding er der i chlor, Cl<sub>2</sub>, i hydrogenchlorid, HCl, og mellem natrium og chlor i køkkensalt?</p>
+<p>I <a href="#fig-elektronegativitet">figuren med elektronegativiteter</a> kan du aflæse, at chlor har 3,0, hydrogen har 2,1, og natrium har 0,9. I beregningerne står EN(Cl) for <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativiteten</span> for chlor og tilsvarende EN(H) og EN(Na) for hydrogen og natrium.</p>
+<p><span id="ord-bindingen-cl-cl-i-chlor" class="fagord-anker"><strong>Bindingen Cl−Cl i chlor.</strong></span> De to atomer er ens og har samme <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span>, så forskellen er 0.</p>
+<p><span id="ord-bindingen-h-cl-i-hydrogenchlorid" class="fagord-anker"><strong>Bindingen H−Cl i hydrogenchlorid.</strong></span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta\mathrm{EN} &amp;= \mathrm{EN}(\mathrm{Cl}) - \mathrm{EN}(\mathrm{H}) \\
+\Delta\mathrm{EN} &amp;= 3{,}0 - 2{,}1 = 0{,}9
+\end{aligned}
+\]</span></p>
+<p><span id="ord-natrium-og-chlor-i-koekkensalt" class="fagord-anker"><strong>Natrium og chlor i køkkensalt.</strong></span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta\mathrm{EN} &amp;= \mathrm{EN}(\mathrm{Cl}) - \mathrm{EN}(\mathrm{Na}) \\
+\Delta\mathrm{EN} &amp;= 3{,}0 - 0{,}9 = 2{,}1
+\end{aligned}
+\]</span></p>
+<p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion</strong></span></p>
+<p>Bindingen i chlor er upolær, fordi forskellen er under 0,5. Bindingen i hydrogenchlorid er polær, fordi forskellen ligger mellem 0,5 og 2,0. Natrium og chlor danner en <span class="fagord-peg" data-fagord="ionbinding">ionbinding</span>, fordi forskellen er over 2,0, og <span class="fagord-peg" data-fagord="ionbinding">ionbindinger</span> kender du fra <a href="../kapitler/2-3-ionforbindelser.html">afsnit 2.3</a>.</p>
 </div>
 </div>
+<div id="fig-bindingstyper" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bindingstyper-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figurer/bindingstyper.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: De tre bindinger fra eksemplet. Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer."><img src="../figurer/bindingstyper.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bindingstyper-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;2: De tre bindinger fra eksemplet. Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer.
+</figcaption>
+</figure>
+</div>
+<p>I en <span id="ord-polaer-binding" class="fagord-anker"><strong>polær binding</strong></span> er <span class="fagord-peg" data-fagord="elektron">elektronerne</span> skævt fordelt. Atomet med den højeste <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> bliver delvist negativt, som skrives δ−, mens det andet atom bliver delvist positivt, som skrives δ+. Tegnet δ er det græske bogstav delta og betyder her <em>delvist</em>. I hydrogenchlorid får hydrogen δ+, fordi det delvist har mistet sin <span class="fagord-peg" data-fagord="elektron">elektron</span> til chlor, men ikke helt, som natrium har i køkkensalt.</p>
+<div class="pegefigur">
+<div id="fig-en-skala" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-en-skala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figurer/en-skala.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;3: Skalaen for forskellen i elektronegativitet med syv eksempler."><img src="../figurer/en-skala.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-en-skala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;3: Skalaen for forskellen i elektronegativitet med syv eksempler.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>På skalaen ligger bindingen C−Cl præcis på grænsen mellem upolær og polær, for carbon har <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativiteten</span> 2,5, og chlor har 3,0.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta\mathrm{EN} &amp;= \mathrm{EN}(\mathrm{Cl}) - \mathrm{EN}(\mathrm{C}) \\
+\Delta\mathrm{EN} &amp;= 3{,}0 - 2{,}5 = 0{,}5
+\end{aligned}
+\]</span></p>
+<p>Grænserne i tabellen er en tommelfingerregel, så en forskel tæt på 0,5 eller 2,0 er et grænsetilfælde. Ligger forskellen præcis på en grænse, regnes bindingen med til den slags, der ligger over grænsen. Bindingen C−Cl er derfor polær, og en forskel på præcis 2,0 giver en <span class="fagord-peg" data-fagord="ionbinding">ionbinding</span>.</p>
 </section>
 <section id="polære-molekyler" class="level2">
 <h2 class="anchored" data-anchor-id="polære-molekyler">Polære molekyler</h2>
@@ -1233,9 +1281,8 @@ Figur&nbsp;5: Carbondioxid er upolært, fordi de to bindinger trækker lige mege
 <p>Sådan bruges reglen:</p>
 <ol type="1">
 <li>Tæl carbonatomerne i <span class="fagord-peg" data-fagord="molekyle">molekylet</span>.</li>
-<li>Tæl de <span class="fagord-peg" data-fagord="polær gruppe">polære grupper</span>.</li>
-<li>Gang antallet af <span class="fagord-peg" data-fagord="polær gruppe">polære grupper</span> med 4.</li>
-<li>Er der færre carbonatomer end det tal, er <span class="fagord-peg" data-fagord="molekyle">molekylet</span> polært. Er der flere, er det upolært.</li>
+<li>Tæl de <span class="fagord-peg" data-fagord="polær gruppe">polære grupper</span>, og gang antallet med 4. Så mange carbonatomer skal der til for at ophæve dem.</li>
+<li>Sammenlign med antallet af carbonatomer. Er der færre, end der skal til, vinder de <span class="fagord-peg" data-fagord="polær gruppe">polære grupper</span>, og <span class="fagord-peg" data-fagord="molekyle">molekylet</span> er polært. Er der flere, vinder carbonkæden, og <span class="fagord-peg" data-fagord="molekyle">molekylet</span> er upolært.</li>
 </ol>
 <div id="fig-store-molekyler" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1260,7 +1307,7 @@ Figur&nbsp;6: Tommelfingerreglen brugt på to molekyler.
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="fagord-peg" data-fagord="elektronegativitet">Elektronegativitet</span> er et mål for, hvor kraftigt et atom trækker i de fælles <span class="fagord-peg" data-fagord="elektron">elektroner</span>.</li>
-<li>Forskellen i <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> afgør bindingen: under 0,5 upolær, fra 0,5 op til 2,0 polær, og 2,0 eller mere <span class="fagord-peg" data-fagord="ionbinding">ionbinding</span>.</li>
+<li>Forskellen i <span class="fagord-peg" data-fagord="elektronegativitet">elektronegativitet</span> afgør bindingen: under 0,5 upolær, fra 0,5 til under 2,0 polær, og 2,0 eller mere <span class="fagord-peg" data-fagord="ionbinding">ionbinding</span>.</li>
 <li>Et <span class="fagord-peg" data-fagord="polært molekyle">polært molekyle</span> har en positiv og en negativ ende.</li>
 <li><span class="fagord-peg" data-fagord="polær binding">Polære bindinger</span> kan ophæve hinanden, hvis de trækker lige meget i hver sin retning, som i carbondioxid.</li>
 <li>I store <span class="fagord-peg" data-fagord="molekyle">molekyler</span> skal der 4 carbonatomer til at ophæve virkningen af én <span class="fagord-peg" data-fagord="polær gruppe">polær gruppe</span>.</li>
@@ -1275,7 +1322,7 @@ Figur&nbsp;6: Tommelfingerreglen brugt på to molekyler.
 </div>
 
 
-<script type="application/json" id="fagord-peg-data">{"det periodiske system":{"afsnit":"1.1","forklaring":"Oversigten, hvor alle 118 grundstoffer står samlet.","maal":"../kapitler/1-1-hvad-er-kemi.html#ord-det-periodiske-system","ord":"det periodiske system"},"elektron":{"afsnit":"1.2","forklaring":"Partikel uden om atomets kerne. Den har ladningen −1 og vejer næsten\ningenting.","maal":"../kapitler/1-2-atomet.html#ord-elektroner","ord":"elektron"},"elektronegativitet":{"afsnit":"3.3","forklaring":"Mål for, hvor kraftigt et atom trækker i de fælles elektroner i en\nbinding. Fluor har den højeste af alle grundstoffer.","maal":"../kapitler/3-3-polaritet.html#ord-elektronegativitet","ord":"elektronegativitet"},"elektronparbinding":{"afsnit":"3.1","forklaring":"Det, der holder atomerne sammen i et molekyle. To ikke-metaller deler\nelektroner med hinanden.","maal":"../kapitler/3-1-molekyler.html#ord-elektronparbinding","ord":"elektronparbinding"},"grundstof":{"afsnit":"1.1","forklaring":"Består af kun én slags atomer. Guld og oxygen er eksempler.","maal":"../kapitler/1-1-hvad-er-kemi.html#ord-grundstof","ord":"grundstof"},"hovedgruppe":{"afsnit":"1.3","forklaring":"Lodret kolonne, hvor atomerne har lige mange elektroner i yderste skal.\nDer er 8 af dem i det periodiske system.","maal":"../kapitler/1-3-elektronskaller.html#ord-hovedgrupper","ord":"hovedgruppe"},"ionbinding":{"afsnit":"2.3","forklaring":"Den elektriske tiltrækning mellem partikler med modsat ladning, for\neksempel Na<sup>+<\/sup> og Cl<sup>−<\/sup>.","maal":"../kapitler/2-3-ionforbindelser.html#ord-ionbinding","ord":"ionbinding"},"ladning":{"afsnit":"2.1","forklaring":"Viser, hvor mange elektroner en ion har afgivet eller optaget. Skrives\nhævet efter atomsymbolet, for eksempel 2+ i Mg<sup>2+<\/sup>.","maal":"../kapitler/2-1-ioner.html#sådan-skrives-en-ion","ord":"ladning"},"lineær":{"afsnit":"3.2","forklaring":"Formen af carbondioxid. De tre atomer ligger på en ret linje.","maal":"../kapitler/3-2-molekylers-form.html#fire-molekyler","ord":"lineær"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"pol":{"afsnit":"3.3","forklaring":"Den positive eller den negative ende af et molekyle som vand.","maal":"../kapitler/3-3-polaritet.html#polære-molekyler","ord":"pol"},"polær binding":{"afsnit":"3.3","forklaring":"Her ligger det fælles elektronpar tættest på det ene atom, som får lidt\nnegativ ladning. O−H i vand er et eksempel.","maal":"../kapitler/3-3-polaritet.html#ord-polaer-binding","ord":"polær binding"},"polær gruppe":{"afsnit":"3.3","forklaring":"Del af et stort molekyle med oxygen eller fluor, for eksempel −OH. Der\nskal 4 carbonatomer til at ophæve virkningen af én.","maal":"../kapitler/3-3-polaritet.html#ord-polaer-gruppe","ord":"polær gruppe"},"polært molekyle":{"afsnit":"3.3","forklaring":"Partikel af flere atomer med en positiv og en negativ ende. Vand og\nammoniak er eksempler.","maal":"../kapitler/3-3-polaritet.html#ord-polaert-molekyle","ord":"polært molekyle"},"upolær binding":{"afsnit":"3.3","forklaring":"Her deler to atomer elektronparret ligeligt. Forskellen i\nelektronegativitet er under 0,5, som i C−H.","maal":"../kapitler/3-3-polaritet.html#tre-slags-bindinger","ord":"upolær binding"},"vinklet":{"afsnit":"3.2","forklaring":"Formen af et vandmolekyle. De frie elektronpar skubber de to bindinger\nsammen, så atomerne ikke ligger på en ret linje.","maal":"../kapitler/3-2-molekylers-form.html#fire-molekyler","ord":"vinklet"},"ædelgasreglen":{"afsnit":"1.3","forklaring":"Atomer er mest stabile, når yderste skal ligner den hos grundstofferne i\nhovedgruppe 8.","maal":"../kapitler/1-3-elektronskaller.html#ord-aedelgasreglen","ord":"ædelgasreglen"}}</script>
+<script type="application/json" id="fagord-peg-data">{"det periodiske system":{"afsnit":"1.1","forklaring":"Oversigten, hvor alle 118 grundstoffer står samlet.","maal":"../kapitler/1-1-hvad-er-kemi.html#ord-det-periodiske-system","ord":"det periodiske system"},"elektron":{"afsnit":"1.2","forklaring":"Partikel uden om atomets kerne. Den har ladningen −1 og vejer næsten\ningenting.","maal":"../kapitler/1-2-atomet.html#ord-elektroner","ord":"elektron"},"elektronegativitet":{"afsnit":"3.3","forklaring":"Mål for, hvor kraftigt et atom trækker i de fælles elektroner i en\nbinding. Fluor har den højeste af alle grundstoffer.","maal":"../kapitler/3-3-polaritet.html#ord-elektronegativitet","ord":"elektronegativitet"},"elektronparbinding":{"afsnit":"3.1","forklaring":"Det, der holder atomerne sammen i et molekyle. To ikke-metaller deler\nelektroner med hinanden.","maal":"../kapitler/3-1-molekyler.html#ord-elektronparbinding","ord":"elektronparbinding"},"grundstof":{"afsnit":"1.1","forklaring":"Består af kun én slags atomer. Guld og oxygen er eksempler.","maal":"../kapitler/1-1-hvad-er-kemi.html#ord-grundstof","ord":"grundstof"},"hovedgruppe":{"afsnit":"1.3","forklaring":"Lodret kolonne, hvor atomerne har lige mange elektroner i yderste skal.\nDer er 8 af dem i det periodiske system.","maal":"../kapitler/1-3-elektronskaller.html#ord-hovedgrupper","ord":"hovedgruppe"},"ionbinding":{"afsnit":"2.3","forklaring":"Den elektriske tiltrækning mellem partikler med modsat ladning, for\neksempel Na<sup>+<\/sup> og Cl<sup>−<\/sup>.","maal":"../kapitler/2-3-ionforbindelser.html#ord-ionbinding","ord":"ionbinding"},"lineær":{"afsnit":"3.2","forklaring":"Formen af carbondioxid. De tre atomer ligger på en ret linje.","maal":"../kapitler/3-2-molekylers-form.html#fire-molekyler","ord":"lineær"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"pol":{"afsnit":"3.3","forklaring":"Den positive eller den negative ende af et molekyle som vand.","maal":"../kapitler/3-3-polaritet.html#polære-molekyler","ord":"pol"},"polær binding":{"afsnit":"3.3","forklaring":"Her ligger det fælles elektronpar tættest på det ene atom, som får lidt\nnegativ ladning. O−H i vand er et eksempel.","maal":"../kapitler/3-3-polaritet.html#ord-polaer-binding","ord":"polær binding"},"polær gruppe":{"afsnit":"3.3","forklaring":"Del af et stort molekyle med oxygen eller fluor, for eksempel −OH. Der\nskal 4 carbonatomer til at ophæve virkningen af én.","maal":"../kapitler/3-3-polaritet.html#ord-polaer-gruppe","ord":"polær gruppe"},"polært molekyle":{"afsnit":"3.3","forklaring":"Partikel af flere atomer med en positiv og en negativ ende. Vand og\nammoniak er eksempler.","maal":"../kapitler/3-3-polaritet.html#ord-polaert-molekyle","ord":"polært molekyle"},"upolær binding":{"afsnit":"3.3","forklaring":"Her deler to atomer elektronparret ligeligt. Forskellen i\nelektronegativitet er under 0,5, som i C−H.","maal":"../kapitler/3-3-polaritet.html#tre-slags-bindinger","ord":"upolær binding"},"vinklet":{"afsnit":"3.2","forklaring":"Formen af et vandmolekyle. De frie elektronpar skubber de to bindinger\nsammen, så atomerne ikke ligger på en ret linje.","maal":"../kapitler/3-2-molekylers-form.html#fire-molekyler","ord":"vinklet"},"ædelgasreglen":{"afsnit":"1.3","forklaring":"Atomer er mest stabile, når yderste skal ligner den hos grundstofferne i\nhovedgruppe 8.","maal":"../kapitler/1-3-elektronskaller.html#ord-aedelgasreglen","ord":"ædelgasreglen"}}</script>
 </section>
 
 </main> <!-- /main -->
@@ -2631,18 +2678,25 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
-// Menuen i venstre side: "Til kapitlet" under afsnittene (Niels 15. okt. 2026, prøve i kapitel 1).
+// Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026, i kapitel 1 og 2).
 //
-// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, sættes rubrikken "Til kapitlet" ind
-// foran dem, og de fire linjer "Opgaver til 1.1" osv. bliver til én linje: "Opgaver 1.1 1.2 1.3 1.4".
-// Fagord og repetition står bagefter som før. Til sidst kommer linkene i EKSTRA (slides, modulplaner og
-// kapitlets animationer på kemiformler.dk). Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
+// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver de fire linjer "Opgaver til 1.1" osv.
+// til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
+// "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
+// kemiformler.dk). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+// før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
+// Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
 (function () {
   var EKSTRA = {
     "1": [
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
-      { tekst: "Animationer til kapitel 1", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+    ],
+    "2": [
+      { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
     ]
   };
 
@@ -2672,9 +2726,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var nr = (afsnit[0].textContent.trim().match(/^(\d+)\./) || [])[1];
     var rod = foerste.slice(0, foerste.search(/kapitler\//));
 
-    var rubrik = li("kapitelmenu-rubrik");
-    rubrik.textContent = "Til kapitlet";
-    ul.insertBefore(rubrik, opgaver[0]);
+    // Fagord og repetition: "Fagord til kapitel 1" bliver til "Fagord"
+    punkter.slice(foersteOpgave).forEach(function (p) {
+      if (opgaver.indexOf(p) >= 0) return;
+      p.classList.add("kapitelmenu-side");
+      var t = p.querySelector("a.sidebar-link .menu-text");
+      if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+\d+$/i, "");
+    });
 
     var raekke = li("kapitelmenu-opgaver");
     var navn = document.createElement("span");

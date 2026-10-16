@@ -24,7 +24,7 @@
     "href": "index.html#det-bygger-bogen-på",
     "title": "Kemibogen A",
     "section": "Det bygger bogen på",
-    "text": "Det bygger bogen på\nBogen regner med, at du kan stoffet fra C-niveau og B-niveau. Når teksten nævner et afsnit med B foran, fx afsnit B2.3 om beregninger med ligevægtskonstanten, står det i Kemibogen B. Et afsnit uden bogstav foran, fx afsnit 4.6 om gasser, står i Kemibogen til C-niveau.",
+    "text": "Det bygger bogen på\nBogen regner med, at du kan stoffet fra C-niveau og B-niveau. Når teksten nævner et afsnit med B foran, fx afsnit B2.3 om beregninger med ligevægtskonstanten, står det i Kemibogen B. Et afsnit uden bogstav foran, fx afsnit 5.6 om gasser, står i Kemibogen til C-niveau.",
     "crumbs": [
       "Forord"
     ]
@@ -50,11 +50,21 @@
     ]
   },
   {
+    "objectID": "index.html#om-forfatteren",
+    "href": "index.html#om-forfatteren",
+    "title": "Kemibogen A",
+    "section": "Om forfatteren",
+    "text": "Om forfatteren\nKemibogen A er skrevet af Niels Kræmmer, som er kemilærer i gymnasiet og også står bag animationerne på kemiformler.dk. Bøgerne til C-, B- og A-niveau er samlet i 2026 med et enkelt mål: at lave en gratis kemibog, der samler faget ét sted og forklarer det i et sprog, som er let at forstå.\nBogen er også lavet til den måde, der undervises på i dag. Teksten ligger frit på nettet, så den kan bruges sammen med AI, fx til at få et afsnit forklaret på en anden måde eller til at få flere opgaver at øve sig på. Samtidig må bogen frit deles og printes, så den også kan bruges i undervisning uden computer.",
+    "crumbs": [
+      "Forord"
+    ]
+  },
+  {
     "objectID": "indledninger/kapitel-a1.html",
     "href": "indledninger/kapitel-a1.html",
     "title": "Kapitel A1: Ligevægte fortsat",
     "section": "",
-    "text": "På en fabrik, der laver ammoniak, måler man tryk og ikke koncentrationer. I en elkedel falder kalk ud af vandet, og i dit blod holder et puffersystem pH på 7,4. Det ligner tre forskellige emner, men kemien er den samme: en ligevægt, en ligevægtskonstant og en beregning, der viser, hvor ligevægten ender.\nPå B-niveau lærte du at forudsige, hvilken vej en ligevægt bliver forskudt. I dette kapitel lærer du at beregne, hvor den ender. Værktøjet er det samme hele vejen: et skema med rækkerne start, ændring og ligevægt. Først bruger du det på gasser, derefter på tungtopløselige salte og til sidst på syrer og baser. Opgaver af den slags er blandt de mest almindelige i den skriftlige prøve.\n\n\n\nAfsnit\nDet finder du ud af\n\n\n\n\nA1.1 Partialtryk\nHvordan trykket i en blanding af gasser er fordelt på de enkelte gasser.\n\n\nA1.2 Gasligevægte\nHvordan ligevægtsloven skrives med tryk i stedet for koncentrationer.\n\n\nA1.3 SÆL-skemaet med gasser\nHvordan du beregner trykkene ved ligevægt.\n\n\nA1.4 Indgreb og ny ligevægt\nHvor ligevægten ender efter et indgreb.\n\n\nA1.5 Opløselighedsligevægte\nHvor meget af en ion der er tilbage i opløsningen, når bundfaldet er dannet.\n\n\nA1.6 Syre-baseligevægte\nHvordan pH i en syre eller en base beregnes med det samme skema.\n\n\nA1.7 Puffersystemer og fordelingsdiagrammer\nHvor meget af et stof der findes som syre og som base ved en bestemt pH.\n\n\nA1.8 Titrering af phosphorsyre\nHvordan titrerkurven ser ud for en syre, der kan afgive tre hydroner.\n\n\n\nKapitlet bygger på kapitel B2 om kemisk ligevægt og kapitel B6 om syrer og baser i bogen til B-niveau og på idealgasligningen fra afsnit 4.6 i bogen til C-niveau.",
+    "text": "På en fabrik, der laver ammoniak, måler man tryk og ikke koncentrationer. I en elkedel falder kalk ud af vandet, og i dit blod holder et puffersystem pH på 7,4. Det ligner tre forskellige emner, men kemien er den samme: en ligevægt, en ligevægtskonstant og en beregning, der viser, hvor ligevægten ender.\nPå B-niveau lærte du at forudsige, hvilken vej en ligevægt bliver forskudt. I dette kapitel lærer du at beregne, hvor den ender. Værktøjet er det samme hele vejen: et skema med rækkerne start, ændring og ligevægt. Først bruger du det på gasser, derefter på tungtopløselige salte og til sidst på syrer og baser. Opgaver af den slags er blandt de mest almindelige i den skriftlige prøve.\n\n\n\nAfsnit\nDet finder du ud af\n\n\n\n\nA1.1 Partialtryk\nHvordan trykket i en blanding af gasser er fordelt på de enkelte gasser.\n\n\nA1.2 Gasligevægte\nHvordan ligevægtsloven skrives med tryk i stedet for koncentrationer.\n\n\nA1.3 SÆL-skemaet med gasser\nHvordan du beregner trykkene ved ligevægt.\n\n\nA1.4 Indgreb og ny ligevægt\nHvor ligevægten ender efter et indgreb.\n\n\nA1.5 Opløselighedsligevægte\nHvor meget af en ion der er tilbage i opløsningen, når bundfaldet er dannet.\n\n\nA1.6 Syre-baseligevægte\nHvordan pH i en syre eller en base beregnes med det samme skema.\n\n\nA1.7 Puffersystemer og fordelingsdiagrammer\nHvor meget af et stof der findes som syre og som base ved en bestemt pH.\n\n\nA1.8 Titrering af phosphorsyre\nHvordan titrerkurven ser ud for en syre, der kan afgive tre hydroner.\n\n\n\nKapitlet bygger på kapitel B2 om kemisk ligevægt og kapitel B6 om syrer og baser i bogen til B-niveau og på idealgasligningen fra afsnit 5.6 i bogen til C-niveau.",
     "crumbs": [
       "Kapitel A1: Ligevægte fortsat"
     ]
@@ -64,7 +74,7 @@
     "href": "kapitler/a1-1-partialtryk.html",
     "title": "A1.1 Partialtryk",
     "section": "",
-    "text": "Idealgasligningen en gang til\nLuften omkring dig trykker med omkring 1 bar. Men luft er en blanding. Det meste er nitrogen, en femtedel er oxygen, og resten er små mængder af andre gasser. Hver gas står for sin del af trykket. I dette afsnit lærer du at regne på trykket fra én gas i en blanding. Det skal du bruge i afsnit A1.2 til A1.4, hvor ligevægtsloven skrives op med tryk i stedet for koncentrationer.\nI bogen til C-niveau, afsnit 4.6, lærte du idealgasligningen:\n\\[\np \\cdot V = n \\cdot R \\cdot T\n\\]\nTemperaturen skal stå i kelvin. Ved 25 °C er T = (273 + 25) K = 298 K.\nLigningen spørger ikke, hvilken gas der er tale om. Et mol oxygen giver samme tryk som et mol nitrogen, når volumen og temperatur er ens. Det er kun antallet af molekyler, der tæller.",
+    "text": "Idealgasligningen en gang til\nLuften omkring dig trykker med omkring 1 bar. Men luft er en blanding. Det meste er nitrogen, en femtedel er oxygen, og resten er små mængder af andre gasser. Hver gas står for sin del af trykket. I dette afsnit lærer du at regne på trykket fra én gas i en blanding. Det skal du bruge i afsnit A1.2 til A1.4, hvor ligevægtsloven skrives op med tryk i stedet for koncentrationer.\nI bogen til C-niveau, afsnit 5.6, lærte du idealgasligningen:\n\\[\np \\cdot V = n \\cdot R \\cdot T\n\\]\nTemperaturen skal stå i kelvin. Ved 25 °C er T = (273 + 25) K = 298 K.\nLigningen spørger ikke, hvilken gas der er tale om. Et mol oxygen giver samme tryk som et mol nitrogen, når volumen og temperatur er ens. Det er kun antallet af molekyler, der tæller.",
     "crumbs": [
       "Kapitel A1: Ligevægte fortsat",
       "A1.1 Partialtryk"

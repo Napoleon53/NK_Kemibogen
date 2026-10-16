@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4.6 Gasser – Kemibogen C</title>
+<title>4.6 Fedtstoffer – Kemibogen C</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6f5271ed9d1b222440e9dd30dde7dfcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dc0945923608e546526efb69fbcc70cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,35 +80,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -121,7 +92,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Mængdeberegning</a></li><li class="breadcrumb-item"><a href="../kapitler/4-6-gasser.html">4.6 Gasser</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Organisk kemi</a></li><li class="breadcrumb-item"><a href="../kapitler/4-6-fedtstoffer.html">4.6 Fedtstoffer</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søg" onclick="window.quartoOpenSearch();">
@@ -136,9 +107,6 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
 <div class="niveauer">
 <p><span class="her">Kemi C</span> <a href="../../b/index.html">Kemi B</a> <a href="../../a/index.html">Kemi A</a></p>
-</div>
-<div class="kompendielink">
-<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
 </div>
 </div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -270,20 +238,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/2-2-ioners-navne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.2 Ioners navne</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -294,14 +250,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.3</span></a>
+  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Fældningsreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.4 Fældningsreaktioner</span></a>
+  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -398,7 +366,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 4: Mængdeberegning</span></a>
+ <span class="menu-text">Kapitel 4: Organisk kemi</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -406,8 +374,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-1-beregninger.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.1 Beregninger i kemi</span></a>
+  <a href="../kapitler/4-1-alkaner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Carbonhydrider og alkaner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -418,8 +386,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-2-molarmasse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.2 Molarmasse</span></a>
+  <a href="../kapitler/4-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Zigzagformler og navngivning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -430,8 +398,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 Stofmængde</span></a>
+  <a href="../kapitler/4-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Alkaners reaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -442,8 +410,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.4 Ækvivalente mængder</span></a>
+  <a href="../kapitler/4-4-alkener.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Alkener og addition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -454,8 +422,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.5 Mængdeberegning</span></a>
+  <a href="../kapitler/4-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Alkoholer og carboxylsyrer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -466,8 +434,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-6-gasser.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">4.6 Gasser</span></a>
+  <a href="../kapitler/4-6-fedtstoffer.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">4.6 Fedtstoffer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -493,7 +461,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 5: Koncentration</span></a>
+ <span class="menu-text">Kapitel 5: Mængdeberegning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -501,8 +469,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-1-koncentration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.1 Koncentration</span></a>
+  <a href="../kapitler/5-1-beregninger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Beregninger i kemi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -513,8 +481,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.2 Formel og aktuel koncentration</span></a>
+  <a href="../kapitler/5-2-molarmasse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Molarmasse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -525,14 +493,50 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-3-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.3 Titrering</span></a>
+  <a href="../kapitler/5-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.3 Stofmængde</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.4 Ækvivalente mængder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.5 Mængdeberegning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-6-gasser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.6 Gasser</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -552,7 +556,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 6: Organisk kemi</span></a>
+ <span class="menu-text">Kapitel 6: Koncentration</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -560,8 +564,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-1-alkaner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.1 Carbonhydrider og alkaner</span></a>
+  <a href="../kapitler/6-1-koncentration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.1 Koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -572,8 +576,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.2 Zigzagformler og navngivning</span></a>
+  <a href="../kapitler/6-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.2 Formel og aktuel koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -584,50 +588,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Alkaners reaktioner</span></a>
+  <a href="../kapitler/6-3-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/6-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 6.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-4-alkener.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Alkener og addition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Alkoholer og carboxylsyrer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.6 Fedtstoffer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -863,8 +831,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../oevelser/4-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 4.5: Ståluld på vægten</span></a>
+  <a href="../oevelser/5-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 5.5: Ståluld på vægten</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1073,7 +1041,11 @@ window.Quarto = {
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<div class="kompendielink">
+<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
+</div>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -1081,20 +1053,21 @@ window.Quarto = {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#gasser-fylder-meget" id="toc-gasser-fylder-meget" class="nav-link active" data-scroll-target="#gasser-fylder-meget">Gasser fylder meget</a></li>
-  <li><a href="#fire-størrelser-hænger-sammen" id="toc-fire-størrelser-hænger-sammen" class="nav-link" data-scroll-target="#fire-størrelser-hænger-sammen">Fire størrelser hænger sammen</a></li>
-  <li><a href="#temperaturen-skal-stå-i-kelvin" id="toc-temperaturen-skal-stå-i-kelvin" class="nav-link" data-scroll-target="#temperaturen-skal-stå-i-kelvin">Temperaturen skal stå i kelvin</a></li>
-  <li><a href="#idealgasligningen" id="toc-idealgasligningen" class="nav-link" data-scroll-target="#idealgasligningen">Idealgasligningen</a></li>
-  <li><a href="#gasser-i-en-mængdeberegning" id="toc-gasser-i-en-mængdeberegning" class="nav-link" data-scroll-target="#gasser-i-en-mængdeberegning">Gasser i en mængdeberegning</a></li>
+  <li><a href="#fedtsyrer" id="toc-fedtsyrer" class="nav-link active" data-scroll-target="#fedtsyrer">Fedtsyrer</a></li>
+  <li><a href="#sådan-er-et-fedtstof-bygget" id="toc-sådan-er-et-fedtstof-bygget" class="nav-link" data-scroll-target="#sådan-er-et-fedtstof-bygget">Sådan er et fedtstof bygget</a></li>
+  <li><a href="#fast-eller-flydende" id="toc-fast-eller-flydende" class="nav-link" data-scroll-target="#fast-eller-flydende">Fast eller flydende?</a></li>
+  <li><a href="#fedt-og-vand" id="toc-fedt-og-vand" class="nav-link" data-scroll-target="#fedt-og-vand">Fedt og vand</a></li>
+  <li><a href="#fra-olie-til-fast-fedt" id="toc-fra-olie-til-fast-fedt" class="nav-link" data-scroll-target="#fra-olie-til-fast-fedt">Fra olie til fast fedt</a></li>
+  <li><a href="#fedt-i-maden" id="toc-fedt-i-maden" class="nav-link" data-scroll-target="#fedt-i-maden">Fedt i maden</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Mængdeberegning</a></li><li class="breadcrumb-item"><a href="../kapitler/4-6-gasser.html">4.6 Gasser</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Organisk kemi</a></li><li class="breadcrumb-item"><a href="../kapitler/4-6-fedtstoffer.html">4.6 Fedtstoffer</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-gasser" class="quarto-section-identifier">4.6 Gasser</span></h1>
+<h1 class="title"><span id="sec-fedtstoffer" class="quarto-section-identifier">4.6 Fedtstoffer</span></h1>
 </div>
 
 
@@ -1114,194 +1087,173 @@ window.Quarto = {
 <div class="kernestofmaerke kemi-a">
 <p>Kernestof på kemi A</p>
 </div>
-<p>Et fast stof eller en væske kan vejes, men en gas er lettere at måle i liter. For gasser bruger man derfor <span class="fagord-peg" data-fagord="volumen">volumenet</span>, når <span class="fagord-peg" data-fagord="stofmængde">stofmængden</span> skal findes.</p>
-<section id="gasser-fylder-meget" class="level2">
-<h2 class="anchored" data-anchor-id="gasser-fylder-meget">Gasser fylder meget</h2>
-<p>I en gas er <span class="fagord-peg" data-fagord="molekyle">molekylerne</span> langt fra hinanden, og mellem dem er der tomt rum. En gas fylder derfor meget mere end den samme <span class="fagord-peg" data-fagord="stofmængde">stofmængde</span> af en væske.</p>
-<div id="fig-molarvolumen" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-molarvolumen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/molarvolumen.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;1: Den samme stofmængde fylder over tusind gange så meget som gas. Lupperne viser, at molekylerne i en gas er langt fra hinanden."><img src="../figurer/molarvolumen.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-molarvolumen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;1: Den samme stofmængde fylder over tusind gange så meget som gas. Lupperne viser, at molekylerne i en gas er langt fra hinanden.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="fire-størrelser-hænger-sammen" class="level2">
-<h2 class="anchored" data-anchor-id="fire-størrelser-hænger-sammen">Fire størrelser hænger sammen</h2>
-<p>En gas’ <span class="fagord-peg" data-fagord="volumen">volumen</span> afhænger af, hvor mange <span class="fagord-peg" data-fagord="molekyle">molekyler</span> der er, hvor varmt der er, og hvor hårdt gassen bliver trykket sammen.</p>
-<div id="fig-gas-cylinder" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-gas-cylinder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/gas-cylinder.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: En gas i en cylinder med et stempel."><img src="../figurer/gas-cylinder.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gas-cylinder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;2: En gas i en cylinder med et stempel.
-</figcaption>
-</figure>
-</div>
+<p>Smør, olivenolie og fedtkanten på en kotelet er alle <span class="fagord-peg" data-fagord="fedtstof">fedtstoffer</span>. Smør er fast, og olie er flydende, men <span class="fagord-peg" data-fagord="molekyle">molekylerne</span> er bygget efter den samme opskrift.</p>
+<section id="fedtsyrer" class="level2">
+<h2 class="anchored" data-anchor-id="fedtsyrer">Fedtsyrer</h2>
+<p>En <span id="ord-fedtsyre" class="fagord-anker"><strong>fedtsyre</strong></span> er en <span class="fagord-peg" data-fagord="carboxylsyre">carboxylsyre</span> med en lang carbonkæde. <span class="fagord-peg" data-fagord="carboxylsyre">Carboxylsyrer</span> mødte du i <a href="../kapitler/4-5-alkoholer-og-syrer.html">afsnit 4.5</a>. De fleste <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> i maden har 16 eller 18 carbonatomer. Ordene <span class="fagord-peg" data-fagord="mættet">mættet</span> og <span class="fagord-peg" data-fagord="umættet">umættet</span> kender du fra <a href="../kapitler/4-4-alkener.html">afsnit 4.4</a>.</p>
 <ul>
-<li>Kommer der flere <span class="fagord-peg" data-fagord="molekyle">molekyler</span> i cylinderen, fylder gassen mere.</li>
-<li>Varmes gassen op, bevæger <span class="fagord-peg" data-fagord="molekyle">molekylerne</span> sig hurtigere, og gassen fylder mere.</li>
-<li>Trykkes stemplet ned, bliver trykket større, og gassen fylder mindre.</li>
+<li>En <span id="ord-maettet" class="fagord-anker"><strong>mættet</strong></span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyre</span> har kun <span class="fagord-peg" data-fagord="enkeltbinding">enkeltbindinger</span> mellem carbonatomerne, og kæden er lige.</li>
+<li>En <span id="ord-umaettet" class="fagord-anker"><strong>umættet</strong></span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyre</span> har en eller flere <span class="fagord-peg" data-fagord="dobbeltbinding">dobbeltbindinger</span>, som hver giver et knæk på kæden. Her betyder et knæk, at hele kæden bøjer af, og det er noget andet end de små knæk i en <span class="fagord-peg" data-fagord="zigzagformel">zigzagformel</span>.</li>
 </ul>
-</section>
-<section id="temperaturen-skal-stå-i-kelvin" class="level2">
-<h2 class="anchored" data-anchor-id="temperaturen-skal-stå-i-kelvin">Temperaturen skal stå i kelvin</h2>
-<p>I beregninger med gasser måles temperaturen i <span id="ord-kelvin" class="fagord-anker"><strong>kelvin</strong></span>, K. Kelvinskalaen begynder ved det <span class="fagord-peg" data-fagord="det absolutte nulpunkt">absolutte nulpunkt</span>, som er den laveste temperatur, der findes, og som ligger ved −273 °C.</p>
-<p>En temperatur i grader celsius regnes om til <span class="fagord-peg" data-fagord="kelvin">kelvin</span> ved at lægge 273 til talværdien for celsiustemperaturen.</p>
-<p><span class="math display">\[
-T = \left(273 + t/{}^{\circ}\mathrm{C}\right)\ \mathrm{K}
-\]</span></p>
-<p>Her betyder <em>t</em>/°C talværdien af celsiustemperaturen, altså tallet uden enhed. Ved 20 °C er <em>t</em>/°C = 20, og <em>T</em> = (273 + 20) K = 293 K.</p>
-</section>
-<section id="idealgasligningen" class="level2">
-<h2 class="anchored" data-anchor-id="idealgasligningen">Idealgasligningen</h2>
-<p>Sammenhængen mellem de fire størrelser kaldes <span id="ord-idealgasligningen" class="fagord-anker"><strong>idealgasligningen</strong></span>.</p>
-<p><span class="math display">\[
-p \cdot V = n \cdot R \cdot T
-\]</span></p>
+<p>En <span class="fagord-peg" data-fagord="fedtsyre">fedtsyre</span> med én <span class="fagord-peg" data-fagord="dobbeltbinding">dobbeltbinding</span> kaldes <span class="fagord-peg" data-fagord="enkeltumættet">enkeltumættet</span>, og en <span class="fagord-peg" data-fagord="fedtsyre">fedtsyre</span> med flere <span class="fagord-peg" data-fagord="dobbeltbinding">dobbeltbindinger</span> kaldes <span class="fagord-peg" data-fagord="flerumættet">flerumættet</span>.</p>
+<div id="fig-fedtsyrer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fedtsyrer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figurer/fedtsyrer.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;1: Tre fedtsyrer med 18 carbonatomer. Carbonatomet i carboxylgruppen tæller med."><img src="../figurer/fedtsyrer.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fedtsyrer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;1: Tre fedtsyrer med 18 carbonatomer. Carbonatomet i carboxylgruppen tæller med.
+</figcaption>
+</figure>
+</div>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: left;">Størrelse</th>
-<th style="text-align: left;">Enhed</th>
+<th style="text-align: left;"><span class="fagord-peg" data-fagord="fedtsyre">Fedtsyre</span></th>
+<th style="text-align: center;">Carbonatomer</th>
+<th style="text-align: center;"><span class="fagord-peg" data-fagord="dobbeltbinding">Dobbeltbindinger</span></th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Smeltepunkt</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><em>p</em></td>
-<td style="text-align: left;">tryk</td>
-<td style="text-align: left;">bar</td>
+<td style="text-align: left;">palmitinsyre</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;"><span class="fagord-peg" data-fagord="mættet">mættet</span></td>
+<td style="text-align: left;">63 °C</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><em>V</em></td>
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="volumen">volumen</span></td>
-<td style="text-align: left;">L</td>
+<td style="text-align: left;">stearinsyre</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;"><span class="fagord-peg" data-fagord="mættet">mættet</span></td>
+<td style="text-align: left;">69 °C</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><em>n</em></td>
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="stofmængde">stofmængde</span></td>
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="mol">mol</span></td>
+<td style="text-align: left;">oliesyre</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><span class="fagord-peg" data-fagord="enkeltumættet">enkeltumættet</span></td>
+<td style="text-align: left;">13 °C</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><em>T</em></td>
-<td style="text-align: left;">temperatur</td>
-<td style="text-align: left;">K</td>
+<td style="text-align: left;">linolsyre</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><span class="fagord-peg" data-fagord="flerumættet">flerumættet</span></td>
+<td style="text-align: left;">−5 °C</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><em>R</em></td>
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="gaskonstanten">gaskonstanten</span></td>
-<td style="text-align: left;">0,0831 L · bar/(mol · K)</td>
+<td style="text-align: left;">linolensyre</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><span class="fagord-peg" data-fagord="flerumættet">flerumættet</span></td>
+<td style="text-align: left;">−11 °C</td>
 </tr>
 </tbody>
 </table>
-<p><span class="fagord-peg" data-fagord="gaskonstanten">Gaskonstanten</span> <em>R</em> er det samme tal for alle gasser. Trykket i luften omkring os er cirka 1 bar, og det normale lufttryk er 1,013 bar.</p>
-<p>Kender man tre af de fire størrelser, kan man beregne den fjerde.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Du vil finde</th>
-<th style="text-align: left;">Formel</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="volumen">volumenet</span></td>
-<td style="text-align: left;"><span class="math inline">\(V = \dfrac{n \cdot R \cdot T}{p}\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="stofmængde">stofmængden</span></td>
-<td style="text-align: left;"><span class="math inline">\(n = \dfrac{p \cdot V}{R \cdot T}\)</span></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: volumenet af ét mol gas">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Eksempel: <span class="fagord-peg" data-fagord="volumen">volumenet</span> af ét <span class="fagord-peg" data-fagord="mol">mol</span> gas
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Hvor meget fylder 1,00 <span class="fagord-peg" data-fagord="mol">mol</span> gas ved 20 °C og trykket 1,013 bar?</p>
-<p><span id="ord-kendte-stoerrelser" class="fagord-anker"><strong>Kendte størrelser</strong></span></p>
-<p><em>n</em> = 1,00 <span class="fagord-peg" data-fagord="mol">mol</span>, <em>p</em> = 1,013 bar og <em>T</em> = (273 + 20) K = 293 K</p>
-<p><span id="ord-formel" class="fagord-anker"><strong>Formel</strong></span></p>
-<p><span class="math display">\[
-V = \frac{n \cdot R \cdot T}{p}
-\]</span></p>
-<p><span id="ord-beregning" class="fagord-anker"><strong>Beregning</strong></span></p>
-<p><span class="math display">\[
-V = \frac{1{,}00\ \mathrm{mol} \cdot 0{,}0831\ \dfrac{\mathrm{L \cdot bar}}{\mathrm{mol \cdot K}} \cdot 293\ \mathrm{K}}{1{,}013\ \mathrm{bar}} = 24{,}0\ \mathrm{L}
-\]</span></p>
-<p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion</strong></span></p>
-<p>Ét <span class="fagord-peg" data-fagord="mol">mol</span> gas fylder 24,0 L ved 20 °C og 1,013 bar. Det gælder for alle gasser.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: stofmængden i en ballon">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Eksempel: <span class="fagord-peg" data-fagord="stofmængde">stofmængden</span> i en ballon
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En ballon fylder 5,0 L. Temperaturen er 25 °C, og trykket er 1,013 bar. Hvor stor en <span class="fagord-peg" data-fagord="stofmængde">stofmængde</span> gas er der i ballonen?</p>
-<p><strong>Kendte størrelser</strong></p>
-<p><em>V</em> = 5,0 L, <em>p</em> = 1,013 bar og <em>T</em> = (273 + 25) K = 298 K</p>
-<p><strong>Formel</strong></p>
-<p><span class="math display">\[
-n = \frac{p \cdot V}{R \cdot T}
-\]</span></p>
-<p><strong>Beregning</strong></p>
-<p><span class="math display">\[
-n = \frac{1{,}013\ \mathrm{bar} \cdot 5{,}0\ \mathrm{L}}{0{,}0831\ \dfrac{\mathrm{L \cdot bar}}{\mathrm{mol \cdot K}} \cdot 298\ \mathrm{K}} = 0{,}20\ \mathrm{mol}
-\]</span></p>
-<p><strong>Konklusion</strong></p>
-<p>Der er 0,20 <span class="fagord-peg" data-fagord="mol">mol</span> gas i ballonen.</p>
-</div>
-</div>
+<p>Tabellen viser et mønster: Jo flere <span class="fagord-peg" data-fagord="dobbeltbinding">dobbeltbindinger</span> en <span class="fagord-peg" data-fagord="fedtsyre">fedtsyre</span> har, jo lavere er smeltepunktet.</p>
 </section>
-<section id="gasser-i-en-mængdeberegning" class="level2">
-<h2 class="anchored" data-anchor-id="gasser-i-en-mængdeberegning">Gasser i en mængdeberegning</h2>
-<p>Dannes der en gas i en reaktion, kan <span class="fagord-peg" data-fagord="volumen">volumenet</span> findes i to skridt. Først laves en <span class="fagord-peg" data-fagord="mængdeberegning">mængdeberegning</span> som i <a href="../kapitler/4-5-maengdeberegning.html">afsnit 4.5</a>, som giver gassens <span class="fagord-peg" data-fagord="stofmængde">stofmængde</span>, og derefter giver <span class="fagord-peg" data-fagord="idealgasligningen">idealgasligningen</span> <span class="fagord-peg" data-fagord="volumen">volumenet</span>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: zink og saltsyre">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="sådan-er-et-fedtstof-bygget" class="level2">
+<h2 class="anchored" data-anchor-id="sådan-er-et-fedtstof-bygget">Sådan er et fedtstof bygget</h2>
+<p>Et <span id="ord-fedtstof" class="fagord-anker"><strong>fedtstof</strong></span> er bygget af ét <span class="fagord-peg" data-fagord="molekyle">molekyle</span> <span class="fagord-peg" data-fagord="glycerol">glycerol</span> og tre <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span>. <span class="fagord-peg" data-fagord="glycerol">Glycerol</span> er en <span class="fagord-peg" data-fagord="alkohol">alkohol</span> med tre OH-grupper, som hver reagerer med <span class="fagord-peg" data-fagord="carboxylgruppe">carboxylgruppen</span> i en <span class="fagord-peg" data-fagord="fedtsyre">fedtsyre</span>. De to grupper bliver bundet sammen, og der bliver et vandmolekyle tilovers.</p>
+<div id="fig-triglycerid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-triglycerid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figurer/triglycerid.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: Glycerol og tre fedtsyrer bliver til et fedtstof og tre vandmolekyler. De tre steder, hvor molekylerne er bundet sammen, er fremhævet."><img src="../figurer/triglycerid.svg" class="img-fluid figure-img"></a>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Eksempel: zink og saltsyre
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-triglycerid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;2: Glycerol og tre fedtsyrer bliver til et fedtstof og tre vandmolekyler. De tre steder, hvor molekylerne er bundet sammen, er fremhævet.
+</figcaption>
+</figure>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>1,00 g zink reagerer med saltsyre, som er hydrogenchlorid, HCl, opløst i vand. Hvor mange liter hydrogen dannes der ved 20 °C og 1,013 bar?</p>
 <div class="reaktion">
-<p>Zn(s) + 2 HCl(aq) → ZnCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</p>
+<p>glycerol + 3 fedtsyrer → fedtstof + 3 H<sub>2</sub>O</p>
 </div>
-<p><span id="ord-trin-1-stofmaengden-af-zink" class="fagord-anker"><strong>Trin 1: stofmængden af zink</strong></span></p>
-<p><span class="math display">\[
-n(\mathrm{Zn}) = \frac{m}{M} = \frac{1{,}00\ \mathrm{g}}{65{,}38\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}0153\ \mathrm{mol}
-\]</span></p>
-<p><span id="ord-trin-2-stofmaengden-af-hydrogen" class="fagord-anker"><strong>Trin 2: stofmængden af hydrogen</strong></span></p>
-<p><span class="fagord-peg" data-fagord="koefficient">Koefficienterne</span> er 1 for Zn og 1 for H<sub>2</sub>. Der dannes derfor 0,0153 <span class="fagord-peg" data-fagord="mol">mol</span> H<sub>2</sub>.</p>
-<p><span id="ord-trin-3-volumenet-af-hydrogen" class="fagord-anker"><strong>Trin 3: volumenet af hydrogen</strong></span></p>
-<p><span class="math display">\[
-V(\mathrm{H_2}) = \frac{n \cdot R \cdot T}{p} = \frac{0{,}0153\ \mathrm{mol} \cdot 0{,}0831\ \dfrac{\mathrm{L \cdot bar}}{\mathrm{mol \cdot K}} \cdot 293\ \mathrm{K}}{1{,}013\ \mathrm{bar}} = 0{,}368\ \mathrm{L}
-\]</span></p>
-<p><strong>Konklusion</strong></p>
-<p>Der dannes 0,368 L hydrogen, altså 368 mL.</p>
+<p>Et <span class="fagord-peg" data-fagord="fedtstof">fedtstof</span> kaldes også et <span id="ord-triglycerid" class="fagord-anker"><strong>triglycerid</strong></span>. Tri betyder tre, og navnet fortæller, at der sidder tre <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> på <span class="fagord-peg" data-fagord="glycerol">glycerol</span>. De tre <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> behøver ikke være ens.</p>
+<p>Reaktionen kan også gå den anden vej. I fordøjelsen bliver <span class="fagord-peg" data-fagord="fedtstof">fedtstofferne</span> spaltet igen, så kroppen kan optage <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrerne</span>. Spaltningen bruger vand og kaldes en <span id="ord-hydrolyse" class="fagord-anker"><strong>hydrolyse</strong></span>.</p>
+</section>
+<section id="fast-eller-flydende" class="level2">
+<h2 class="anchored" data-anchor-id="fast-eller-flydende">Fast eller flydende?</h2>
+<div id="fig-fedt-pakning" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fedt-pakning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figurer/fedt-pakning.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;3: Lige kæder kan ligge tæt sammen. Det kan kæder med knæk ikke."><img src="../figurer/fedt-pakning.svg" class="img-fluid figure-img"></a>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fedt-pakning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;3: Lige kæder kan ligge tæt sammen. Det kan kæder med knæk ikke.
+</figcaption>
+</figure>
 </div>
-<p>Nu kan du regne fra <span class="fagord-peg" data-fagord="masse">masse</span> eller <span class="fagord-peg" data-fagord="volumen">volumen</span> af ét stof til <span class="fagord-peg" data-fagord="masse">masse</span> eller <span class="fagord-peg" data-fagord="volumen">volumen</span> af et andet, og vejen går hver gang over <span class="fagord-peg" data-fagord="stofmængde">stofmængden</span>.</p>
+<p><span class="fagord-peg" data-fagord="mættet">Mættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> har lige kæder, som kan ligge tæt op ad hinanden og røre hinanden over en stor flade. <span class="fagord-peg" data-fagord="molekyle">Molekylerne</span> holder derfor godt fast i hinanden, ligesom de lange <span class="fagord-peg" data-fagord="alkan">alkaner</span> i <a href="../kapitler/4-1-alkaner.html">afsnit 4.1</a>, så <span class="fagord-peg" data-fagord="fedtstof">fedtstoffer</span> med mange <span class="fagord-peg" data-fagord="mættet">mættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> er faste ved stuetemperatur.</p>
+<p><span class="fagord-peg" data-fagord="umættet">Umættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> har knæk på kæden, så kæderne ikke kan ligge tæt, og <span class="fagord-peg" data-fagord="molekyle">molekylerne</span> holder dårligere fast i hinanden. <span class="fagord-peg" data-fagord="fedtstof">Fedtstoffer</span> med mange <span class="fagord-peg" data-fagord="umættet">umættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> er derfor flydende ved stuetemperatur og kaldes <span id="ord-olier" class="fagord-anker"><strong>olier</strong></span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="fagord-peg" data-fagord="fedtstof">Fedtstof</span></th>
+<th style="text-align: center;"><span class="fagord-peg" data-fagord="mættet">Mættet</span></th>
+<th style="text-align: center;"><span class="fagord-peg" data-fagord="enkeltumættet">Enkeltumættet</span></th>
+<th style="text-align: center;"><span class="fagord-peg" data-fagord="flerumættet">Flerumættet</span></th>
+<th style="text-align: left;">Ved stuetemperatur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Kokosfedt</td>
+<td style="text-align: center;">91 %</td>
+<td style="text-align: center;">7 %</td>
+<td style="text-align: center;">2 %</td>
+<td style="text-align: left;">fast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smør</td>
+<td style="text-align: center;">66 %</td>
+<td style="text-align: center;">30 %</td>
+<td style="text-align: center;">4 %</td>
+<td style="text-align: left;">fast</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Olivenolie</td>
+<td style="text-align: center;">15 %</td>
+<td style="text-align: center;">75 %</td>
+<td style="text-align: center;">10 %</td>
+<td style="text-align: left;">flydende</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rapsolie</td>
+<td style="text-align: center;">7 %</td>
+<td style="text-align: center;">63 %</td>
+<td style="text-align: center;">30 %</td>
+<td style="text-align: left;">flydende</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Solsikkeolie</td>
+<td style="text-align: center;">10 %</td>
+<td style="text-align: center;">20 %</td>
+<td style="text-align: center;">70 %</td>
+<td style="text-align: left;">flydende</td>
+</tr>
+</tbody>
+</table>
+<p>Tabellen viser, hvor stor en del af <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrerne</span> der er <span class="fagord-peg" data-fagord="mættet">mættede</span> og <span class="fagord-peg" data-fagord="umættet">umættede</span> i fem <span class="fagord-peg" data-fagord="fedtstof">fedtstoffer</span>. Tallene er afrundede og varierer lidt fra produkt til produkt.</p>
+<p>Fedt fra dyr indeholder for det meste mange <span class="fagord-peg" data-fagord="mættet">mættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span>, mens fedt fra planter og fisk for det meste indeholder mange <span class="fagord-peg" data-fagord="umættet">umættede</span>. Kokosfedt og palmeolie er undtagelser, for de kommer fra planter, men er alligevel mest <span class="fagord-peg" data-fagord="mættet">mættede</span>.</p>
+</section>
+<section id="fedt-og-vand" class="level2">
+<h2 class="anchored" data-anchor-id="fedt-og-vand">Fedt og vand</h2>
+<p>Et <span class="fagord-peg" data-fagord="fedtstof">fedtstof</span> med tre stearinsyrer har 57 carbonatomer og kun 6 oxygenatomer. De få <span class="fagord-peg" data-fagord="polær gruppe">polære grupper</span> midt i <span class="fagord-peg" data-fagord="molekyle">molekylet</span> kan slet ikke opveje de tre lange, upolære kæder. <span class="fagord-peg" data-fagord="fedtstof">Fedtstoffer</span> er derfor upolære og kan ikke opløses i vand. Det er grunden til, at olien flyder ovenpå i en dressing, og at en fedtet pande ikke kan vaskes ren i vand uden sæbe.</p>
+</section>
+<section id="fra-olie-til-fast-fedt" class="level2">
+<h2 class="anchored" data-anchor-id="fra-olie-til-fast-fedt">Fra olie til fast fedt</h2>
+<p><span class="fagord-peg" data-fagord="dobbeltbinding">Dobbeltbindingerne</span> i en olie kan reagere med hydrogen i en <span class="fagord-peg" data-fagord="addition">addition</span>, som du læste om i <a href="../kapitler/4-4-alkener.html">afsnit 4.4</a>. De <span class="fagord-peg" data-fagord="umættet">umættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> bliver <span class="fagord-peg" data-fagord="mættet">mættede</span>, kæderne bliver lige, og olien bliver til et fast <span class="fagord-peg" data-fagord="fedtstof">fedtstof</span>. Metoden kaldes <span id="ord-haerdning" class="fagord-anker"><strong>hærdning</strong></span> og har været brugt til at lave margarine af planteolie.</p>
+<p>Man kan også undersøge et <span class="fagord-peg" data-fagord="fedtstof">fedtstof</span> med <span class="fagord-peg" data-fagord="bromvand">bromvand</span>. Olie med mange <span class="fagord-peg" data-fagord="dobbeltbinding">dobbeltbindinger</span> affarver <span class="fagord-peg" data-fagord="bromvand">bromvand</span> hurtigt, mens fedt med få <span class="fagord-peg" data-fagord="dobbeltbinding">dobbeltbindinger</span> ikke gør det.</p>
+</section>
+<section id="fedt-i-maden" class="level2">
+<h2 class="anchored" data-anchor-id="fedt-i-maden">Fedt i maden</h2>
+<p>Kroppen har brug for fedt, fordi det giver energi, indgår i alle kroppens celler og er nødvendigt for at optage vitaminerne A, D, E og K.</p>
+<p>Fedt indeholder meget energi. Et gram fedt giver 37 kJ, mens et gram sukker eller protein giver 17 kJ.</p>
+<p>De officielle kostråd anbefaler at vælge planteolier frem for smør og andet fast fedt. Meget <span class="fagord-peg" data-fagord="mættet">mættet</span> fedt i maden øger nemlig risikoen for sygdomme i hjertet og blodårerne. Nogle <span class="fagord-peg" data-fagord="flerumættet">flerumættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> kan kroppen ikke lave selv, så dem skal vi have fra maden, fx fra fed fisk, nødder og rapsolie.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1313,23 +1265,23 @@ V(\mathrm{H_2}) = \frac{n \cdot R \cdot T}{p} = \frac{0{,}0153\ \mathrm{mol} \cd
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>En gas fylder meget, fordi <span class="fagord-peg" data-fagord="molekyle">molekylerne</span> er langt fra hinanden.</li>
-<li><span class="fagord-peg" data-fagord="volumen">Volumenet</span> afhænger af <span class="fagord-peg" data-fagord="stofmængde">stofmængden</span>, temperaturen og trykket.</li>
-<li>Temperaturen skal stå i <span class="fagord-peg" data-fagord="kelvin">kelvin</span>. Man regner om fra grader celsius ved at lægge 273 til talværdien for celsiustemperaturen. 20 °C svarer til 293 K.</li>
-<li><span class="fagord-peg" data-fagord="idealgasligningen">Idealgasligningen</span> er <em>p</em> · <em>V</em> = <em>n</em> · <em>R</em> · <em>T</em> med <em>R</em> = 0,0831 L · bar/(mol · K).</li>
-<li>Ét <span class="fagord-peg" data-fagord="mol">mol</span> gas fylder omkring 24 L ved stuetemperatur og normalt tryk.</li>
+<li>En <span class="fagord-peg" data-fagord="fedtsyre">fedtsyre</span> er en <span class="fagord-peg" data-fagord="carboxylsyre">carboxylsyre</span> med en lang carbonkæde.</li>
+<li><span class="fagord-peg" data-fagord="mættet">Mættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> har kun <span class="fagord-peg" data-fagord="enkeltbinding">enkeltbindinger</span>, mens <span class="fagord-peg" data-fagord="umættet">umættede</span> <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> har <span class="fagord-peg" data-fagord="dobbeltbinding">dobbeltbindinger</span>, som giver knæk på kæden.</li>
+<li>Et <span class="fagord-peg" data-fagord="fedtstof">fedtstof</span> er bygget af <span class="fagord-peg" data-fagord="glycerol">glycerol</span> og tre <span class="fagord-peg" data-fagord="fedtsyre">fedtsyrer</span> og kaldes et <span class="fagord-peg" data-fagord="triglycerid">triglycerid</span>.</li>
+<li>Lige kæder ligger tæt, så <span class="fagord-peg" data-fagord="mættet">mættet</span> fedt er fast. Kæder med knæk ligger løst, så <span class="fagord-peg" data-fagord="umættet">umættet</span> fedt er flydende.</li>
+<li><span class="fagord-peg" data-fagord="fedtstof">Fedtstoffer</span> er upolære og kan ikke opløses i vand.</li>
 </ul>
 </div>
 </div>
 <div class="proev-selv">
-<p><strong>Prøv selv:</strong> <a href="https://kemiformler.dk/animationer/superanimationer/sc4.6_idealgasligningen/index.html">Idealgasligningen</a>: varm gassen op, og se tryk og <span class="fagord-peg" data-fagord="volumen">volumen</span> ændre sig.</p>
+<p><strong>Prøv selv:</strong> <a href="https://kemiformler.dk/animationer/superanimationer/sc4.6_fedtstoffer/index.html">Byg et fedtstof</a>: byg <span class="fagord-peg" data-fagord="fedtstof">fedtstoffer</span>, og se, om de er faste.</p>
 </div>
 <div class="til-opgaver">
-<p><a href="../opgaver/4-6-opgaver.html">Se alle opgaver til emnet “Gasser” (4.6)</a></p>
+<p><a href="../opgaver/4-6-opgaver.html">Se alle opgaver til emnet “Fedtstoffer” (4.6)</a></p>
 </div>
 
 
-<script type="application/json" id="fagord-peg-data">{"det absolutte nulpunkt":{"afsnit":"4.6","forklaring":"Den laveste temperatur, der findes, nemlig −273 °C. Her begynder\nkelvinskalaen.","maal":"../kapitler/4-6-gasser.html#temperaturen-skal-stå-i-kelvin","ord":"det absolutte nulpunkt"},"gaskonstanten":{"afsnit":"4.6","forklaring":"Tallet <em>R<\/em> i idealgasligningen, som er det samme for alle gasser.","maal":"../kapitler/4-6-gasser.html#idealgasligningen","ord":"gaskonstanten"},"idealgasligningen":{"afsnit":"4.6","forklaring":"Sammenhængen mellem en gas’ tryk, volumen, stofmængde og temperatur. Den\nskrives <em>p<\/em> · <em>V<\/em> = <em>n<\/em> · <em>R<\/em> · <em>T<\/em>.","maal":"../kapitler/4-6-gasser.html#ord-idealgasligningen","ord":"idealgasligningen"},"kelvin":{"afsnit":"4.6","forklaring":"Enhed for temperatur i beregninger med gasser. Man lægger 273 til tallet\ni grader celsius.","maal":"../kapitler/4-6-gasser.html#ord-kelvin","ord":"kelvin"},"koefficient":{"afsnit":"1.4","forklaring":"Det store tal foran en formel. Det viser, hvor mange molekyler der er.","maal":"../kapitler/1-4-reaktionsskemaer.html#ord-koefficient","ord":"koefficient"},"masse":{"afsnit":"4.1","forklaring":"Hvor meget noget vejer. Symbolet er <em>m<\/em>, og der måles i gram.","maal":"../kapitler/4-1-beregninger.html#størrelser-symboler-og-enheder","ord":"masse"},"mol":{"afsnit":"4.3","forklaring":"Enhed for et bestemt antal, ligesom et par og et dusin. Her er antallet\n6,02 · 10<sup>23<\/sup> stykker.","maal":"../kapitler/4-3-stofmaengde.html#ord-mol","ord":"mol"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"mængdeberegning":{"afsnit":"4.5","forklaring":"Her regner man fra massen af ét stof i en reaktion til massen af et\nandet. Vejen går over antallet af mol.","maal":"../kapitler/4-5-maengdeberegning.html#vejen-fra-gram-til-gram","ord":"mængdeberegning"},"stofmængde":{"afsnit":"4.3","forklaring":"Antallet af mol. Symbolet er <em>n<\/em>, og den findes ved at dividere\nmassen med molarmassen.","maal":"../kapitler/4-3-stofmaengde.html#ord-stofmaengden","ord":"stofmængde"},"volumen":{"afsnit":"4.1","forklaring":"Hvor meget noget fylder. Symbolet er <em>V<\/em>, og der måles i\nmilliliter eller liter.","maal":"../kapitler/4-1-beregninger.html#størrelser-symboler-og-enheder","ord":"volumen"}}</script>
+<script type="application/json" id="fagord-peg-data">{"addition":{"afsnit":"4.4","forklaring":"Reaktion, hvor en dobbeltbinding åbner sig, og to nye atomer sætter sig\npå. Der dannes kun ét stof.","maal":"../kapitler/4-4-alkener.html#ord-addition","ord":"addition"},"alkan":{"afsnit":"4.1","forklaring":"Carbonhydrid, hvor alle bindinger er enkeltbindinger. Navnet ender på\n<em>-an<\/em>, for eksempel methan og propan.","maal":"../kapitler/4-1-alkaner.html#ord-alkaner","ord":"alkan"},"alkohol":{"afsnit":"4.5","forklaring":"Organisk stof med en OH-gruppe, der sidder på et carbonatom. Navnet\nender på <em>-ol<\/em>, for eksempel ethanol.","maal":"../kapitler/4-5-alkoholer-og-syrer.html#ord-alkohol","ord":"alkohol"},"bromvand":{"afsnit":"4.4","forklaring":"Gul væske, der bruges til at undersøge, om et stof har dobbeltbindinger.\nFarven forsvinder med det samme, når væsken rystes med en alken.","maal":"../kapitler/4-4-alkener.html#bromvand-viser-om-et-stof-er-umættet","ord":"bromvand"},"carboxylgruppe":{"afsnit":"4.5","forklaring":"Atomerne −COOH, som sidder for enden af en organisk syre. C-atomet er\nbundet til et oxygenatom med dobbeltbinding og til OH.","maal":"../kapitler/4-5-alkoholer-og-syrer.html#ord-carboxylgruppe","ord":"carboxylgruppe"},"carboxylsyre":{"afsnit":"4.5","forklaring":"Organisk stof med gruppen −COOH. Det giver den sure smag i eddike,\ncitroner og yoghurt.","maal":"../kapitler/4-5-alkoholer-og-syrer.html#ord-carboxylsyre","ord":"carboxylsyre"},"dobbeltbinding":{"afsnit":"3.1","forklaring":"Her deler to atomer to elektronpar. Tegnes med to streger, som mellem C\nog O i carbondioxid.","maal":"../kapitler/3-1-molekyler.html#ord-dobbeltbinding","ord":"dobbeltbinding"},"enkeltbinding":{"afsnit":"3.1","forklaring":"Her deler to atomer kun ét elektronpar. Tegnes med én streg i en\nstregformel.","maal":"../kapitler/3-1-molekyler.html#ord-enkeltbinding","ord":"enkeltbinding"},"enkeltumættet":{"afsnit":"4.6","forklaring":"Siges om en fedtsyre med én dobbeltbinding. Oliesyre er et eksempel.","maal":"../kapitler/4-6-fedtstoffer.html#fedtsyrer","ord":"enkeltumættet"},"fedtstof":{"afsnit":"4.6","forklaring":"Stof bygget af ét molekyle glycerol og tre carboxylsyrer med lange\nkæder. Smør og olivenolie er eksempler.","maal":"../kapitler/4-6-fedtstoffer.html#ord-fedtstof","ord":"fedtstof"},"fedtsyre":{"afsnit":"4.6","forklaring":"Carboxylsyre med en lang carbonkæde. De fleste i maden har 16 eller 18\ncarbonatomer.","maal":"../kapitler/4-6-fedtstoffer.html#ord-fedtsyre","ord":"fedtsyre"},"flerumættet":{"afsnit":"4.6","forklaring":"Siges om en fedtsyre med mere end én dobbeltbinding. Linolsyre er et\neksempel.","maal":"../kapitler/4-6-fedtstoffer.html#fedtsyrer","ord":"flerumættet"},"glycerol":{"afsnit":"4.6","forklaring":"Alkohol med tre OH-grupper. Hver af dem kan binde en fedtsyre, så der\ndannes et fedtstof.","maal":"../kapitler/4-6-fedtstoffer.html#sådan-er-et-fedtstof-bygget","ord":"glycerol"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"mættet":{"afsnit":"4.4","forklaring":"Siges om et carbonhydrid, der har så mange hydrogenatomer, som der er\nplads til. Alle bindinger mellem carbonatomerne er enkeltbindinger.","maal":"../kapitler/4-4-alkener.html#ord-maettet","ord":"mættet"},"polær gruppe":{"afsnit":"3.3","forklaring":"Del af et stort molekyle med oxygen eller fluor, for eksempel −OH. Der\nskal 4 carbonatomer til at ophæve virkningen af én.","maal":"../kapitler/3-3-polaritet.html#ord-polaer-gruppe","ord":"polær gruppe"},"triglycerid":{"afsnit":"4.6","forklaring":"Andet navn for et fedtstof. Navnet fortæller, hvor mange fedtsyrer der\nsidder i molekylet.","maal":"../kapitler/4-6-fedtstoffer.html#ord-triglycerid","ord":"triglycerid"},"umættet":{"afsnit":"4.4","forklaring":"Siges om et carbonhydrid, der har færre hydrogenatomer, end der er plads\ntil. Der er en dobbeltbinding eller en tripelbinding i molekylet.","maal":"../kapitler/4-4-alkener.html#ord-umaettede","ord":"umættet"},"zigzagformel":{"afsnit":"4.2","forklaring":"Hurtig måde at tegne en carbonkæde på. Hver ende og hvert knæk på\nstregen er et carbonatom, og hydrogenatomerne tegnes ikke.","maal":"../kapitler/4-2-zigzagformler.html#ord-zigzagformel","ord":"zigzagformel"}}</script>
 </section>
 
 </main> <!-- /main -->
@@ -2685,18 +2637,25 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
-// Menuen i venstre side: "Til kapitlet" under afsnittene (Niels 15. okt. 2026, prøve i kapitel 1).
+// Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026, i kapitel 1 og 2).
 //
-// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, sættes rubrikken "Til kapitlet" ind
-// foran dem, og de fire linjer "Opgaver til 1.1" osv. bliver til én linje: "Opgaver 1.1 1.2 1.3 1.4".
-// Fagord og repetition står bagefter som før. Til sidst kommer linkene i EKSTRA (slides, modulplaner og
-// kapitlets animationer på kemiformler.dk). Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
+// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver de fire linjer "Opgaver til 1.1" osv.
+// til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
+// "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
+// kemiformler.dk). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+// før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
+// Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
 (function () {
   var EKSTRA = {
     "1": [
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
-      { tekst: "Animationer til kapitel 1", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+    ],
+    "2": [
+      { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
     ]
   };
 
@@ -2726,9 +2685,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var nr = (afsnit[0].textContent.trim().match(/^(\d+)\./) || [])[1];
     var rod = foerste.slice(0, foerste.search(/kapitler\//));
 
-    var rubrik = li("kapitelmenu-rubrik");
-    rubrik.textContent = "Til kapitlet";
-    ul.insertBefore(rubrik, opgaver[0]);
+    // Fagord og repetition: "Fagord til kapitel 1" bliver til "Fagord"
+    punkter.slice(foersteOpgave).forEach(function (p) {
+      if (opgaver.indexOf(p) >= 0) return;
+      p.classList.add("kapitelmenu-side");
+      var t = p.querySelector("a.sidebar-link .menu-text");
+      if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+\d+$/i, "");
+    });
 
     var raekke = li("kapitelmenu-opgaver");
     var navn = document.createElement("span");

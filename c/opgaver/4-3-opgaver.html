@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../kapitler/4-4-aekvivalente-maengder.html" rel="next">
-<link href="../kapitler/4-3-stofmaengde.html" rel="prev">
+<link href="../kapitler/4-4-alkener.html" rel="next">
+<link href="../kapitler/4-3-alkaners-reaktioner.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6f5271ed9d1b222440e9dd30dde7dfcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dc0945923608e546526efb69fbcc70cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,35 +77,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -118,7 +89,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Mængdeberegning</a></li><li class="breadcrumb-item"><a href="../opgaver/4-3-opgaver.html">Opgaver til 4.3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Organisk kemi</a></li><li class="breadcrumb-item"><a href="../opgaver/4-3-opgaver.html">Opgaver til 4.3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søg" onclick="window.quartoOpenSearch();">
@@ -133,9 +104,6 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="quarto-sidebar-header"><div class="sidebar-header-item">
 <div class="niveauer">
 <p><span class="her">Kemi C</span> <a href="../../b/index.html">Kemi B</a> <a href="../../a/index.html">Kemi A</a></p>
-</div>
-<div class="kompendielink">
-<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
 </div>
 </div></div>
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -267,20 +235,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/2-2-ioners-navne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.2 Ioners navne</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -291,14 +247,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 2.3</span></a>
+  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Fældningsreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/2-4-faeldningsreaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.4 Fældningsreaktioner</span></a>
+  <a href="../opgaver/2-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/2-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 2.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -395,7 +363,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 4: Mængdeberegning</span></a>
+ <span class="menu-text">Kapitel 4: Organisk kemi</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -403,8 +371,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-1-beregninger.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.1 Beregninger i kemi</span></a>
+  <a href="../kapitler/4-1-alkaner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Carbonhydrider og alkaner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -415,8 +383,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-2-molarmasse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.2 Molarmasse</span></a>
+  <a href="../kapitler/4-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Zigzagformler og navngivning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -427,8 +395,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 Stofmængde</span></a>
+  <a href="../kapitler/4-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Alkaners reaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -439,8 +407,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.4 Ækvivalente mængder</span></a>
+  <a href="../kapitler/4-4-alkener.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Alkener og addition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -451,8 +419,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.5 Mængdeberegning</span></a>
+  <a href="../kapitler/4-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Alkoholer og carboxylsyrer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -463,8 +431,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-6-gasser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.6 Gasser</span></a>
+  <a href="../kapitler/4-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.6 Fedtstoffer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -490,7 +458,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 5: Koncentration</span></a>
+ <span class="menu-text">Kapitel 5: Mængdeberegning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -498,8 +466,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-1-koncentration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.1 Koncentration</span></a>
+  <a href="../kapitler/5-1-beregninger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Beregninger i kemi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -510,8 +478,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.2 Formel og aktuel koncentration</span></a>
+  <a href="../kapitler/5-2-molarmasse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Molarmasse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -522,14 +490,50 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-3-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.3 Titrering</span></a>
+  <a href="../kapitler/5-3-stofmaengde.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.3 Stofmængde</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.4 Ækvivalente mængder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-5-maengdeberegning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.5 Mængdeberegning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/5-6-gasser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.6 Gasser</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -549,7 +553,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 6: Organisk kemi</span></a>
+ <span class="menu-text">Kapitel 6: Koncentration</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -557,8 +561,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-1-alkaner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.1 Carbonhydrider og alkaner</span></a>
+  <a href="../kapitler/6-1-koncentration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.1 Koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -569,8 +573,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.2 Zigzagformler og navngivning</span></a>
+  <a href="../kapitler/6-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.2 Formel og aktuel koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -581,50 +585,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-3-alkaners-reaktioner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Alkaners reaktioner</span></a>
+  <a href="../kapitler/6-3-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../opgaver/6-3-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 6.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-4-alkener.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.4 Alkener og addition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-5-alkoholer-og-syrer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.5 Alkoholer og carboxylsyrer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.6 Fedtstoffer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -860,8 +828,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../oevelser/4-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 4.5: Ståluld på vægten</span></a>
+  <a href="../oevelser/5-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 5.5: Ståluld på vægten</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1070,7 +1038,11 @@ window.Quarto = {
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<div class="kompendielink">
+<p><a href="https://kemiformler.dk/kompendier/">Byg dit kompendium</a></p>
+</div>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -1078,33 +1050,33 @@ window.Quarto = {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#4.3.1" id="toc-4.3.1" class="nav-link active" data-scroll-target="#4.3.1">Opgave 4.3.1: Tre størrelser</a></li>
-  <li><a href="#4.3.2" id="toc-4.3.2" class="nav-link" data-scroll-target="#4.3.2">Opgave 4.3.2: Vælg formlen</a></li>
-  <li><a href="#4.3.3" id="toc-4.3.3" class="nav-link" data-scroll-target="#4.3.3">Opgave 4.3.3: Beregn stofmængden</a></li>
-  <li><a href="#4.3.4" id="toc-4.3.4" class="nav-link" data-scroll-target="#4.3.4">Opgave 4.3.4: Beregn massen</a></li>
-  <li><a href="#4.3.5" id="toc-4.3.5" class="nav-link" data-scroll-target="#4.3.5">Opgave 4.3.5: Udfyld skemaet</a></li>
-  <li><a href="#4.3.6" id="toc-4.3.6" class="nav-link" data-scroll-target="#4.3.6">Opgave 4.3.6: Et ukendt stof</a></li>
-  <li><a href="#4.3.7" id="toc-4.3.7" class="nav-link" data-scroll-target="#4.3.7">Opgave 4.3.7: Hvor mange molekyler?</a></li>
-  <li><a href="#4.3.8" id="toc-4.3.8" class="nav-link" data-scroll-target="#4.3.8">Opgave 4.3.8: Jern og guld</a></li>
+  <li><a href="#4.3.1" id="toc-4.3.1" class="nav-link active" data-scroll-target="#4.3.1">Opgave 4.3.1: Hvad dannes der?</a></li>
+  <li><a href="#4.3.2" id="toc-4.3.2" class="nav-link" data-scroll-target="#4.3.2">Opgave 4.3.2: Er skemaet afstemt?</a></li>
+  <li><a href="#4.3.3" id="toc-4.3.3" class="nav-link" data-scroll-target="#4.3.3">Opgave 4.3.3: Afstem forbrændingen</a></li>
+  <li><a href="#4.3.4" id="toc-4.3.4" class="nav-link" data-scroll-target="#4.3.4">Opgave 4.3.4: Når det ikke går op</a></li>
+  <li><a href="#4.3.5" id="toc-4.3.5" class="nav-link" data-scroll-target="#4.3.5">Opgave 4.3.5: Ufuldstændig forbrænding</a></li>
+  <li><a href="#4.3.6" id="toc-4.3.6" class="nav-link" data-scroll-target="#4.3.6">Opgave 4.3.6: Substitution</a></li>
+  <li><a href="#4.3.7" id="toc-4.3.7" class="nav-link" data-scroll-target="#4.3.7">Opgave 4.3.7: To reagensglas</a></li>
   <li><a href="#opgaver-med-fødevaretema" id="toc-opgaver-med-fødevaretema" class="nav-link" data-scroll-target="#opgaver-med-fødevaretema">Opgaver med fødevaretema</a></li>
-  <li><a href="#4.3.mad.1" id="toc-4.3.mad.1" class="nav-link" data-scroll-target="#4.3.mad.1">Opgave 4.3.mad.1: En sukkerknald</a></li>
-  <li><a href="#4.3.mad.2" id="toc-4.3.mad.2" class="nav-link" data-scroll-target="#4.3.mad.2">Opgave 4.3.mad.2: Salt om dagen</a></li>
-  <li><a href="#4.3.mad.3" id="toc-4.3.mad.3" class="nav-link" data-scroll-target="#4.3.mad.3">Opgave 4.3.mad.3: Sukker i sodavand</a></li>
+  <li><a href="#4.3.mad.1" id="toc-4.3.mad.1" class="nav-link" data-scroll-target="#4.3.mad.1">Opgave 4.3.mad.1: En aften ved gasgrillen</a></li>
+  <li><a href="#4.3.mad.2" id="toc-4.3.mad.2" class="nav-link" data-scroll-target="#4.3.mad.2">Opgave 4.3.mad.2: Grillkul</a></li>
+  <li><a href="#4.3.mad.3" id="toc-4.3.mad.3" class="nav-link" data-scroll-target="#4.3.mad.3">Opgave 4.3.mad.3: Forbrænding i kroppen</a></li>
+  <li><a href="#4.3.mad.4" id="toc-4.3.mad.4" class="nav-link" data-scroll-target="#4.3.mad.4">Opgave 4.3.mad.4: Den sorte gryde</a></li>
   <li><a href="#opgaver-med-klimatema" id="toc-opgaver-med-klimatema" class="nav-link" data-scroll-target="#opgaver-med-klimatema">Opgaver med klimatema</a></li>
-  <li><a href="#4.3.klima.1" id="toc-4.3.klima.1" class="nav-link" data-scroll-target="#4.3.klima.1">Opgave 4.3.klima.1: En kilometer i bil</a></li>
-  <li><a href="#4.3.klima.2" id="toc-4.3.klima.2" class="nav-link" data-scroll-target="#4.3.klima.2">Opgave 4.3.klima.2: Udledninger i mol</a></li>
-  <li><a href="#4.3.klima.3" id="toc-4.3.klima.3" class="nav-link" data-scroll-target="#4.3.klima.3">Opgave 4.3.klima.3: Fra mol til gram</a></li>
-  <li><a href="#4.3.klima.4" id="toc-4.3.klima.4" class="nav-link" data-scroll-target="#4.3.klima.4">Opgave 4.3.klima.4: Skema med drivhusgasser</a></li>
-  <li><a href="#4.3.klima.5" id="toc-4.3.klima.5" class="nav-link" data-scroll-target="#4.3.klima.5">Opgave 4.3.klima.5: En ukendt drivhusgas</a></li>
-  <li><a href="#4.3.klima.6" id="toc-4.3.klima.6" class="nav-link" data-scroll-target="#4.3.klima.6">Opgave 4.3.klima.6: Et åndedrag</a></li>
-  <li><a href="#4.3.klima.7" id="toc-4.3.klima.7" class="nav-link" data-scroll-target="#4.3.klima.7">Opgave 4.3.klima.7: Carbondioxid og methan</a></li>
+  <li><a href="#4.3.klima.1" id="toc-4.3.klima.1" class="nav-link" data-scroll-target="#4.3.klima.1">Opgave 4.3.klima.1: Hvad kommer der ud af udstødningen?</a></li>
+  <li><a href="#4.3.klima.2" id="toc-4.3.klima.2" class="nav-link" data-scroll-target="#4.3.klima.2">Opgave 4.3.klima.2: Er forbrændingen afstemt?</a></li>
+  <li><a href="#4.3.klima.3" id="toc-4.3.klima.3" class="nav-link" data-scroll-target="#4.3.klima.3">Opgave 4.3.klima.3: Afstem tre brændstoffer</a></li>
+  <li><a href="#4.3.klima.4" id="toc-4.3.klima.4" class="nav-link" data-scroll-target="#4.3.klima.4">Opgave 4.3.klima.4: Når det ikke går op i benzin og diesel</a></li>
+  <li><a href="#4.3.klima.5" id="toc-4.3.klima.5" class="nav-link" data-scroll-target="#4.3.klima.5">Opgave 4.3.klima.5: For lidt oxygen</a></li>
+  <li><a href="#4.3.klima.6" id="toc-4.3.klima.6" class="nav-link" data-scroll-target="#4.3.klima.6">Opgave 4.3.klima.6: Kølemidler og ozonlaget</a></li>
+  <li><a href="#4.3.klima.7" id="toc-4.3.klima.7" class="nav-link" data-scroll-target="#4.3.klima.7">Opgave 4.3.klima.7: To glas med benzin</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Mængdeberegning</a></li><li class="breadcrumb-item"><a href="../opgaver/4-3-opgaver.html">Opgaver til 4.3</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../indledninger/kapitel-4.html">Kapitel 4: Organisk kemi</a></li><li class="breadcrumb-item"><a href="../opgaver/4-3-opgaver.html">Opgaver til 4.3</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Opgaver til 4.3</h1>
 </div>
@@ -1123,79 +1095,15 @@ window.Quarto = {
 </header>
 
 
-<p>Opgaverne hører til afsnit <a href="../kapitler/4-3-stofmaengde.html">4.3 Stofmængde</a>. Prøv selv, før du åbner hjælpen under opgaven. Skriv beregningerne op med formel, enheder og konklusion.</p>
-<p>De molarmasser, du skal bruge, står her:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 6%">
-<col style="width: 8%">
-<col style="width: 6%">
-<col style="width: 8%">
-<col style="width: 10%">
-<col style="width: 17%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Stof</th>
-<th style="text-align: center;">H<sub>2</sub>O</th>
-<th style="text-align: center;">CO<sub>2</sub></th>
-<th style="text-align: center;">NaCl</th>
-<th style="text-align: center;">CH<sub>4</sub></th>
-<th style="text-align: center;">O<sub>2</sub></th>
-<th style="text-align: center;">NH<sub>3</sub></th>
-<th style="text-align: center;">CaCO<sub>3</sub></th>
-<th style="text-align: center;">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></th>
-<th style="text-align: center;">C<sub>12</sub>H<sub>22</sub>O<sub>11</sub></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><em>M</em> (g/mol)</td>
-<td style="text-align: center;">18,02</td>
-<td style="text-align: center;">44,01</td>
-<td style="text-align: center;">58,44</td>
-<td style="text-align: center;">16,04</td>
-<td style="text-align: center;">32,00</td>
-<td style="text-align: center;">17,03</td>
-<td style="text-align: center;">100,09</td>
-<td style="text-align: center;">180,16</td>
-<td style="text-align: center;">342,30</td>
-</tr>
-</tbody>
-</table>
+<p>Opgaverne hører til afsnit <a href="../kapitler/4-3-alkaners-reaktioner.html">4.3 Alkaners reaktioner</a>. Prøv selv, før du åbner hjælpen under opgaven. Atommasserne står i <a href="../bilag/grundstoffer.html">det periodiske system bagest i bogen</a>.</p>
 <section id="4.3.1" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.1">Opgave 4.3.1: Tre størrelser</h2>
-<p>Udfyld skemaet.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Størrelse</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: left;">Enhed</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Masse</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Molarmasse</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Stofmængde</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
+<h2 class="anchored" data-anchor-id="4.3.1">Opgave 4.3.1: Hvad dannes der?</h2>
+<ol type="a">
+<li>Hvilke to stoffer dannes der ved en fuldstændig forbrænding af et carbonhydrid?</li>
+<li>Hvilke to stoffer kan der også dannes, når forbrændingen er ufuldstændig?</li>
+<li>Hvad er årsagen til, at en forbrænding bliver ufuldstændig?</li>
+<li>Hvordan kan man se på flammen, at forbrændingen er ufuldstændig?</li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1208,7 +1116,7 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To af symbolerne er det samme bogstav, det ene lille og det andet stort.</p>
+<p>Se på <a href="../kapitler/4-3-alkaners-reaktioner.html#fig-forbraending-flammer">figuren med de to flammer</a> i afsnit 4.3.</p>
 </div>
 </div>
 </div>
@@ -1224,7 +1132,7 @@ window.Quarto = {
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Massen er <em>m</em> og måles i gram. Molarmassen er <em>M</em>. Stofmængden måles i mol.</p>
+<p>Ved en fuldstændig forbrænding får hvert carbonatom to oxygenatomer. Når der mangler oxygen, får nogle carbonatomer kun ét oxygenatom eller slet ingen.</p>
 </div>
 </div>
 </div>
@@ -1240,43 +1148,23 @@ window.Quarto = {
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Størrelse</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: left;">Enhed</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Masse</td>
-<td style="text-align: center;"><em>m</em></td>
-<td style="text-align: left;">g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Molarmasse</td>
-<td style="text-align: center;"><em>M</em></td>
-<td style="text-align: left;">g/mol</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Stofmængde</td>
-<td style="text-align: center;"><em>n</em></td>
-<td style="text-align: left;">mol</td>
-</tr>
-</tbody>
-</table>
+<ol type="a">
+<li>Carbondioxid, CO<sub>2</sub>, og vand, H<sub>2</sub>O</li>
+<li>Carbonmonoxid, CO, og sod, C</li>
+<li>Der er for lidt oxygen.</li>
+<li>Flammen er gul og soder. Den gule farve kommer fra små sodpartikler, der gløder.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.2" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.2">Opgave 4.3.2: Vælg formlen</h2>
-<p>Skriv den formel, du skal bruge, når du vil finde</p>
+<h2 class="anchored" data-anchor-id="4.3.2">Opgave 4.3.2: Er skemaet afstemt?</h2>
+<p>Tæl atomerne på begge sider af pilen, og afgør, om reaktionsskemaet er afstemt.</p>
 <ol type="a">
-<li>stofmængden</li>
-<li>massen</li>
-<li>molarmassen</li>
+<li>CH<sub>4</sub> + 2 O<sub>2</sub> → CO<sub>2</sub> + 2 H<sub>2</sub>O</li>
+<li>C<sub>2</sub>H<sub>4</sub> + 2 O<sub>2</sub> → 2 CO<sub>2</sub> + 2 H<sub>2</sub>O</li>
+<li>C<sub>3</sub>H<sub>8</sub> + 5 O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1290,7 +1178,7 @@ window.Quarto = {
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Den størrelse, du vil finde, skal stå alene på venstre side af lighedstegnet.</p>
+<p>Lav et lille skema for hvert reaktionsskema med antallet af C, H og O på venstre side og på højre side.</p>
 </div>
 </div>
 </div>
@@ -1306,7 +1194,7 @@ window.Quarto = {
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Stofmængden er massen divideret med molarmassen. De to andre formler er den samme sammenhæng skrevet på en anden måde.</p>
+<p>Tallet foran en formel ganges med de små tal i formlen. 2 H<sub>2</sub>O indeholder altså 4 hydrogenatomer og 2 oxygenatomer.</p>
 </div>
 </div>
 </div>
@@ -1322,20 +1210,22 @@ window.Quarto = {
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-n = \frac{m}{M} \qquad\qquad m = n \cdot M \qquad\qquad M = \frac{m}{n}
-\]</span></p>
+<ol type="a">
+<li>Afstemt. Der er 1 C, 4 H og 4 O på begge sider.</li>
+<li>Ikke afstemt. Der er 4 O til venstre og 6 O til højre. Der skal stå 3 O<sub>2</sub>.</li>
+<li>Afstemt. Der er 3 C, 8 H og 10 O på begge sider.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.3" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.3">Opgave 4.3.3: Beregn stofmængden</h2>
-<p>Beregn stofmængden af</p>
+<h2 class="anchored" data-anchor-id="4.3.3">Opgave 4.3.3: Afstem forbrændingen</h2>
+<p>Skriv og afstem reaktionsskemaet for den fuldstændige forbrænding af de tre alkaner.</p>
 <ol type="a">
-<li>36,0 g vand, H<sub>2</sub>O</li>
-<li>10,0 g carbondioxid, CO<sub>2</sub></li>
-<li>25,0 g natriumchlorid, NaCl</li>
+<li>Pentan, C<sub>5</sub>H<sub>12</sub></li>
+<li>Heptan, C<sub>7</sub>H<sub>16</sub></li>
+<li>Nonan, C<sub>9</sub>H<sub>20</sub></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1349,7 +1239,7 @@ n = \frac{m}{M} \qquad\qquad m = n \cdot M \qquad\qquad M = \frac{m}{n}
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender massen og kan finde molarmassen i tabellen øverst. Du skal finde stofmængden.</p>
+<p>Skriv først stofferne op: alkanen og O<sub>2</sub> til venstre, CO<sub>2</sub> og H<sub>2</sub>O til højre. Afstem derefter i rækkefølgen carbon, hydrogen og oxygen.</p>
 </div>
 </div>
 </div>
@@ -1365,7 +1255,7 @@ n = \frac{m}{M} \qquad\qquad m = n \cdot M \qquad\qquad M = \frac{m}{n}
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Formlen begynder med <em>n</em> = <em>m</em> divideret med … For vand skal 36,0 g stå over brøkstregen og 18,02 g/mol under.</p>
+<p>Pentan har 5 carbonatomer, så der dannes 5 CO<sub>2</sub>. Pentan har 12 hydrogenatomer, så der dannes 6 H<sub>2</sub>O. Til højre er der nu 10 oxygenatomer i CO<sub>2</sub> og 6 i H<sub>2</sub>O, i alt 16. Hvor mange O<sub>2</sub> svarer det til?</p>
 </div>
 </div>
 </div>
@@ -1381,29 +1271,21 @@ n = \frac{m}{M} \qquad\qquad m = n \cdot M \qquad\qquad M = \frac{m}{n}
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-n = \frac{m}{M}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{H_2O}) = \frac{36{,}0\ \mathrm{g}}{18{,}02\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 2{,}00\ \mathrm{mol}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{CO_2}) = \frac{10{,}0\ \mathrm{g}}{44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}227\ \mathrm{mol}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{NaCl}) = \frac{25{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}428\ \mathrm{mol}
-\]</span></p>
+<ol type="a">
+<li>C<sub>5</sub>H<sub>12</sub> + 8 O<sub>2</sub> → 5 CO<sub>2</sub> + 6 H<sub>2</sub>O</li>
+<li>C<sub>7</sub>H<sub>16</sub> + 11 O<sub>2</sub> → 7 CO<sub>2</sub> + 8 H<sub>2</sub>O</li>
+<li>C<sub>9</sub>H<sub>20</sub> + 14 O<sub>2</sub> → 9 CO<sub>2</sub> + 10 H<sub>2</sub>O</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.4" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.4">Opgave 4.3.4: Beregn massen</h2>
-<p>Beregn massen af</p>
+<h2 class="anchored" data-anchor-id="4.3.4">Opgave 4.3.4: Når det ikke går op</h2>
+<p>Skriv og afstem reaktionsskemaet for den fuldstændige forbrænding af de to alkaner.</p>
 <ol type="a">
-<li>0,500 mol natriumchlorid, NaCl</li>
-<li>1,50 mol carbondioxid, CO<sub>2</sub></li>
-<li>0,250 mol glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></li>
+<li>Butan, C<sub>4</sub>H<sub>10</sub></li>
+<li>Octan, C<sub>8</sub>H<sub>18</sub></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1417,7 +1299,7 @@ n(\mathrm{NaCl}) = \frac{25{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender stofmængden og molarmassen og skal finde massen.</p>
+<p>Afstem carbon og hydrogen som i opgave 4.3.3. Antallet af oxygenatomer til højre bliver et ulige tal.</p>
 </div>
 </div>
 </div>
@@ -1433,7 +1315,7 @@ n(\mathrm{NaCl}) = \frac{25{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Formlen er <em>m</em> = <em>n</em> · <em>M</em>. Enheden mol går ud, så facit får enheden gram.</p>
+<p>For butan er der 4 CO<sub>2</sub> og 5 H<sub>2</sub>O til højre. Det er 13 oxygenatomer, og det svarer til 6½ O<sub>2</sub>. Gang alle tallene i skemaet med 2, så de bliver hele.</p>
 </div>
 </div>
 </div>
@@ -1449,61 +1331,31 @@ n(\mathrm{NaCl}) = \frac{25{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-m = n \cdot M
-\]</span></p>
-<p><span class="math display">\[
-m(\mathrm{NaCl}) = 0{,}500\ \mathrm{mol} \cdot 58{,}44\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 29{,}2\ \mathrm{g}
-\]</span></p>
-<p><span class="math display">\[
-m(\mathrm{CO_2}) = 1{,}50\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 66{,}0\ \mathrm{g}
-\]</span></p>
-<p><span class="math display">\[
-m(\mathrm{C_6H_{12}O_6}) = 0{,}250\ \mathrm{mol} \cdot 180{,}16\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 45{,}0\ \mathrm{g}
-\]</span></p>
+<ol type="a">
+<li>2 C<sub>4</sub>H<sub>10</sub> + 13 O<sub>2</sub> → 8 CO<sub>2</sub> + 10 H<sub>2</sub>O</li>
+<li>2 C<sub>8</sub>H<sub>18</sub> + 25 O<sub>2</sub> → 16 CO<sub>2</sub> + 18 H<sub>2</sub>O</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.5" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.5">Opgave 4.3.5: Udfyld skemaet</h2>
-<p>Udfyld de tomme felter.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Stof</th>
-<th style="text-align: center;">Molarmasse <em>M</em></th>
-<th style="text-align: center;">Stofmængde <em>n</em></th>
-<th style="text-align: center;">Masse <em>m</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CH<sub>4</sub></td>
-<td style="text-align: center;">16,04 g/mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">8,02 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">O<sub>2</sub></td>
-<td style="text-align: center;">32,00 g/mol</td>
-<td style="text-align: center;">0,200 mol</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NH<sub>3</sub></td>
-<td style="text-align: center;">17,03 g/mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">51,1 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CaCO<sub>3</sub></td>
-<td style="text-align: center;">100,09 g/mol</td>
-<td style="text-align: center;">0,150 mol</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
+<h2 class="anchored" data-anchor-id="4.3.5">Opgave 4.3.5: Ufuldstændig forbrænding</h2>
+<ol type="a">
+<li>Afstem reaktionsskemaet, hvor propan brænder med for lidt oxygen, og der dannes carbonmonoxid:</li>
+</ol>
+<div class="reaktion">
+<p>C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> → CO + H<sub>2</sub>O</p>
+</div>
+<ol start="2" type="a">
+<li>Afstem reaktionsskemaet, hvor ethan brænder med meget lidt oxygen, og der dannes sod:</li>
+</ol>
+<div class="reaktion">
+<p>C<sub>2</sub>H<sub>6</sub> + O<sub>2</sub> → C + H<sub>2</sub>O</p>
+</div>
+<ol start="3" type="a">
+<li>Forklar, hvorfor det er farligt at bruge en gasvarmer i et lukket telt.</li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1516,7 +1368,7 @@ m(\mathrm{C_6H_{12}O_6}) = 0{,}250\ \mathrm{mol} \cdot 180{,}16\ \dfrac{\mathrm{
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Se i hver række, om det er stofmængden eller massen, der mangler. Vælg formlen efter det.</p>
+<p>Brug den samme rækkefølge som før: carbon, hydrogen og oxygen. Husk, at CO kun har ét oxygenatom, og at sod slet ikke har nogen.</p>
 </div>
 </div>
 </div>
@@ -1532,7 +1384,7 @@ m(\mathrm{C_6H_{12}O_6}) = 0{,}250\ \mathrm{mol} \cdot 180{,}16\ \dfrac{\mathrm{
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I første række mangler stofmængden. Den findes ved at dividere 8,02 g med 16,04 g/mol. I anden række mangler massen. Den findes ved at gange 0,200 mol med 32,00 g/mol.</p>
+<p>I spørgsmål a er der 3 CO og 4 H<sub>2</sub>O til højre. Det er 7 oxygenatomer, altså 3½ O<sub>2</sub>. Gang alle tallene med 2.</p>
 </div>
 </div>
 </div>
@@ -1548,52 +1400,27 @@ m(\mathrm{C_6H_{12}O_6}) = 0{,}250\ \mathrm{mol} \cdot 180{,}16\ \dfrac{\mathrm{
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Stof</th>
-<th style="text-align: center;">Molarmasse <em>M</em></th>
-<th style="text-align: center;">Stofmængde <em>n</em></th>
-<th style="text-align: center;">Masse <em>m</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CH<sub>4</sub></td>
-<td style="text-align: center;">16,04 g/mol</td>
-<td style="text-align: center;">0,500 mol</td>
-<td style="text-align: center;">8,02 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">O<sub>2</sub></td>
-<td style="text-align: center;">32,00 g/mol</td>
-<td style="text-align: center;">0,200 mol</td>
-<td style="text-align: center;">6,40 g</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NH<sub>3</sub></td>
-<td style="text-align: center;">17,03 g/mol</td>
-<td style="text-align: center;">3,00 mol</td>
-<td style="text-align: center;">51,1 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CaCO<sub>3</sub></td>
-<td style="text-align: center;">100,09 g/mol</td>
-<td style="text-align: center;">0,150 mol</td>
-<td style="text-align: center;">15,0 g</td>
-</tr>
-</tbody>
-</table>
+<ol type="a">
+<li>2 C<sub>3</sub>H<sub>8</sub> + 7 O<sub>2</sub> → 6 CO + 8 H<sub>2</sub>O</li>
+<li>2 C<sub>2</sub>H<sub>6</sub> + 3 O<sub>2</sub> → 4 C + 6 H<sub>2</sub>O</li>
+<li>Gasvarmeren bruger oxygenet i teltet. Når der bliver for lidt oxygen, bliver forbrændingen ufuldstændig, og der dannes carbonmonoxid. Gassen er giftig og kan hverken ses eller lugtes.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.6" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.6">Opgave 4.3.6: Et ukendt stof</h2>
-<p>Et glas indeholder 0,250 mol af en gas. Gassen vejer 11,0 g.</p>
+<h2 class="anchored" data-anchor-id="4.3.6">Opgave 4.3.6: Substitution</h2>
+<p>Ethan reagerer med chlor, når der er lys.</p>
 <ol type="a">
-<li>Beregn gassens molarmasse.</li>
-<li>Gassen er enten oxygen, carbondioxid eller methan. Hvilken?</li>
+<li>Hvad kaldes reaktionstypen?</li>
+<li>Gør reaktionsskemaet færdigt:</li>
+</ol>
+<div class="reaktion">
+<p>C<sub>2</sub>H<sub>6</sub> + Cl<sub>2</sub> → …</p>
+</div>
+<ol start="3" type="a">
+<li>Hvorfor sker reaktionen ikke i mørke?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -1607,7 +1434,7 @@ m(\mathrm{C_6H_{12}O_6}) = 0{,}250\ \mathrm{mol} \cdot 180{,}16\ \dfrac{\mathrm{
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender massen og stofmængden og skal finde molarmassen.</p>
+<p>Se på <a href="../kapitler/4-3-alkaners-reaktioner.html#fig-substitution">figuren med methan og brom</a>. Her sker det samme, bare med ethan og chlor.</p>
 </div>
 </div>
 </div>
@@ -1623,7 +1450,7 @@ m(\mathrm{C_6H_{12}O_6}) = 0{,}250\ \mathrm{mol} \cdot 180{,}16\ \dfrac{\mathrm{
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Molarmassen er massen divideret med stofmængden. Sammenlign resultatet med molarmasserne i tabellen øverst.</p>
+<p>Der dannes to stoffer. Det ene chloratom tager pladsen efter et hydrogenatom i ethan. Det andet chloratom binder sig til det hydrogenatom, der blev skiftet ud.</p>
 </div>
 </div>
 </div>
@@ -1639,20 +1466,23 @@ m(\mathrm{C_6H_{12}O_6}) = 0{,}250\ \mathrm{mol} \cdot 180{,}16\ \dfrac{\mathrm{
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-M = \frac{m}{n}
-\]</span></p>
-<p><span class="math display">\[
-M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}}{\mathrm{mol}}
-\]</span></p>
-<p>Molarmassen er 44,0 g/mol. Det passer med carbondioxid, som har molarmassen 44,01 g/mol.</p>
+<ol type="a">
+<li>En substitution</li>
+<li>C<sub>2</sub>H<sub>6</sub> + Cl<sub>2</sub> → C<sub>2</sub>H<sub>5</sub>Cl + HCl</li>
+<li>Lyset slår chlormolekylerne i stykker til løse chloratomer. Uden dem kan reaktionen ikke komme i gang.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.7" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.7">Opgave 4.3.7: Hvor mange molekyler?</h2>
-<p>Et glas indeholder 0,50 mol vand. Hvor mange vandmolekyler er der i glasset?</p>
+<h2 class="anchored" data-anchor-id="4.3.7">Opgave 4.3.7: To reagensglas</h2>
+<p>Der hældes hexan og lidt brom i to reagensglas, så væsken i begge glas er gul. Glas 1 stilles ind i et mørkt skab. Glas 2 stilles i vindueskarmen i solen. Efter en time er væsken i glas 1 stadig gul, mens væsken i glas 2 er farveløs.</p>
+<ol type="a">
+<li>Forklar forskellen på de to glas.</li>
+<li>Skriv reaktionsskemaet for reaktionen i glas 2. Hexan har formlen C<sub>6</sub>H<sub>14</sub>.</li>
+<li>Et stykke fugtigt indikatorpapir holdes hen over glas 2. Det viser, at der er dannet en syre. Hvilket stof er det?</li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1665,7 +1495,7 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Ét mol er 6,02 · 10<sup>23</sup> stykker.</p>
+<p>Den gule farve kommer fra brom. Når farven forsvinder, er brommolekylerne blevet brugt i en reaktion.</p>
 </div>
 </div>
 </div>
@@ -1681,7 +1511,7 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Gang stofmængden med 6,02 · 10<sup>23</sup>. Et halvt mol er halvt så mange.</p>
+<p>Reaktionen er en substitution, og den kræver lys. Der dannes to stoffer: en alkan, hvor et hydrogenatom er skiftet ud med brom, og et lille molekyle med hydrogen og brom.</p>
 </div>
 </div>
 </div>
@@ -1697,18 +1527,26 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Antal molekyler = 0,50 · 6,02 · 10<sup>23</sup> = 3,0 · 10<sup>23</sup></p>
-<p>Der er 3,0 · 10<sup>23</sup> vandmolekyler i glasset.</p>
+<ol type="a">
+<li>Substitutionen kræver lys. I skabet sker der ingen reaktion, og brom beholder sin farve. I solen reagerer brom med hexan, og farven forsvinder.</li>
+<li>C<sub>6</sub>H<sub>14</sub> + Br<sub>2</sub> → C<sub>6</sub>H<sub>13</sub>Br + HBr</li>
+<li>Hydrogenbromid, HBr</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
-<section id="4.3.8" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.8">Opgave 4.3.8: Jern og guld</h2>
-<p>Ét mol jern vejer 55,85 g, og ét mol guld vejer 196,97 g.</p>
+<section id="opgaver-med-fødevaretema" class="level2 tema">
+<h2 class="tema anchored" data-anchor-id="opgaver-med-fødevaretema">Opgaver med fødevaretema</h2>
+<p>Når vi laver mad over ild, er det en forbrænding. Det er det også, når kroppen henter energi ud af maden.</p>
+</section>
+<section id="4.3.mad.1" class="level2">
+<h2 class="anchored" data-anchor-id="4.3.mad.1">Opgave 4.3.mad.1: En aften ved gasgrillen</h2>
+<p>En gasgrill brænder propan, C<sub>3</sub>H<sub>8</sub>.</p>
 <ol type="a">
-<li>Hvilken af de to portioner indeholder flest atomer?</li>
-<li>Forklar, hvorfor de to portioner ikke vejer det samme.</li>
+<li>Skriv og afstem reaktionsskemaet for den fuldstændige forbrænding af propan.</li>
+<li>Flammen i en gasgrill skal være blå. Hvad betyder det, hvis den bliver gul?</li>
+<li>Hvilke to stoffer dannes der ud over carbondioxid og vand, når der er for lidt oxygen?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
@@ -1722,7 +1560,7 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tænk på, hvad et mol er. Et dusin æg og et dusin kanonkugler er lige mange.</p>
+<p>Afstem i rækkefølgen carbon, hydrogen og oxygen. Til spørgsmål b og c skal du læse om ufuldstændig forbrænding.</p>
 </div>
 </div>
 </div>
@@ -1738,11 +1576,7 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kan begynde dine sætninger sådan:</p>
-<ul>
-<li>Ét mol er altid … stykker, så de to portioner indeholder …</li>
-<li>Et guldatom vejer … end et jernatom, og derfor …</li>
-</ul>
+<p>Der skal 3 CO<sub>2</sub> og 4 H<sub>2</sub>O til højre. Den gule farve kommer fra små partikler, der gløder i flammen.</p>
 </div>
 </div>
 </div>
@@ -1759,23 +1593,26 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>De indeholder lige mange atomer. Ét mol er altid 6,02 · 10<sup>23</sup> stykker.</li>
-<li>Et guldatom vejer mere end et jernatom. Når antallet er det samme, vejer portionen med guld derfor mest.</li>
+<li>C<sub>3</sub>H<sub>8</sub> + 5 O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O</li>
+<li>En gul flamme betyder, at forbrændingen er ufuldstændig, fordi der er for lidt oxygen. Den gule farve kommer fra små sodpartikler, der gløder.</li>
+<li>Carbonmonoxid, CO, og sod, som er rent carbon, C.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
-<section id="opgaver-med-fødevaretema" class="level2 tema">
-<h2 class="tema anchored" data-anchor-id="opgaver-med-fødevaretema">Opgaver med fødevaretema</h2>
-<p>Med stofmængden kan du tælle molekylerne i det, du spiser og drikker.</p>
-</section>
-<section id="4.3.mad.1" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.mad.1">Opgave 4.3.mad.1: En sukkerknald</h2>
-<p>En sukkerknald vejer 2,0 g og består af sukker, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>.</p>
+<section id="4.3.mad.2" class="level2">
+<h2 class="anchored" data-anchor-id="4.3.mad.2">Opgave 4.3.mad.2: Grillkul</h2>
+<p>Grillkul består næsten kun af carbon, C.</p>
 <ol type="a">
-<li>Beregn stofmængden af sukker i sukkerknalden.</li>
-<li>Hvor mange sukkermolekyler er der i sukkerknalden?</li>
+<li>Skriv reaktionsskemaet for den fuldstændige forbrænding af carbon.</li>
+<li>Når gløderne ligger tæt, og der ikke kommer luft nok til, dannes der carbonmonoxid. Afstem reaktionsskemaet:</li>
+</ol>
+<div class="reaktion">
+<p>C + O<sub>2</sub> → CO</p>
+</div>
+<ol start="3" type="a">
+<li>Forklar, hvorfor man aldrig må tage en grill med glødende kul med ind i et telt eller en stue for at holde varmen.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
@@ -1789,7 +1626,7 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Molarmassen for sukker står i tabellen øverst. Brug formlen for stofmængden.</p>
+<p>Ved en fuldstændig forbrænding bliver alt carbon til carbondioxid. Der er ingen hydrogen i kul, så der dannes ikke vand.</p>
 </div>
 </div>
 </div>
@@ -1805,7 +1642,7 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Divider 2,0 g med 342,30 g/mol. Gang derefter stofmængden med 6,02 · 10<sup>23</sup>. Massen har to betydende cifre, så begge svar skal have to.</p>
+<p>I spørgsmål b er der 2 oxygenatomer til venstre og kun 1 til højre. Sæt et 2-tal foran CO, og afstem derefter carbon.</p>
 </div>
 </div>
 </div>
@@ -1821,23 +1658,28 @@ M = \frac{11{,}0\ \mathrm{g}}{0{,}250\ \mathrm{mol}} = 44{,}0\ \dfrac{\mathrm{g}
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-n = \frac{m}{M}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{2{,}0\ \mathrm{g}}{342{,}30\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}0058\ \mathrm{mol}
-\]</span></p>
-<p>Sukkerknalden indeholder 0,0058 mol sukker. Antallet af molekyler er:</p>
-<p><span class="math display">\[
-\text{antal molekyler} = 0{,}0058 \cdot 6{,}02 \cdot 10^{23} = 3{,}5 \cdot 10^{21}
-\]</span></p>
+<ol type="a">
+<li>C + O<sub>2</sub> → CO<sub>2</sub></li>
+<li>2 C + O<sub>2</sub> → 2 CO</li>
+<li>Gløderne bruger oxygenet i rummet, og der dannes carbonmonoxid. Gassen er giftig og kan hverken ses eller lugtes, så man opdager ikke faren i tide.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
-<section id="4.3.mad.2" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.mad.2">Opgave 4.3.mad.2: Salt om dagen</h2>
-<p>Det anbefales at spise højst 6,0 g salt om dagen. Salt er natriumchlorid, NaCl. Hvor stor en stofmængde er 6,0 g natriumchlorid?</p>
+<section id="4.3.mad.3" class="level2">
+<h2 class="anchored" data-anchor-id="4.3.mad.3">Opgave 4.3.mad.3: Forbrænding i kroppen</h2>
+<p>Kroppen henter energi ved at forbrænde glucose fra maden. Der dannes de samme to stoffer som ved forbrænding af en alkan.</p>
+<ol type="a">
+<li>Hvilke to stoffer dannes der?</li>
+<li>Afstem reaktionsskemaet:</li>
+</ol>
+<div class="reaktion">
+<p>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</p>
+</div>
+<ol start="3" type="a">
+<li>Hvordan kommer kroppen af med den carbondioxid, der dannes?</li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1850,7 +1692,7 @@ n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{2{,}0\ \mathrm{g}}{342{,}30\ \dfrac{\math
 </div>
 <div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender massen og molarmassen og skal finde stofmængden.</p>
+<p>Afstem i rækkefølgen carbon, hydrogen og oxygen. Læg mærke til, at der også er oxygenatomer i glucose.</p>
 </div>
 </div>
 </div>
@@ -1866,7 +1708,7 @@ n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{2{,}0\ \mathrm{g}}{342{,}30\ \dfrac{\math
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Divider 6,0 g med 58,44 g/mol. Facit skal have to betydende cifre.</p>
+<p>Der dannes 6 CO<sub>2</sub> og 6 H<sub>2</sub>O. Til højre er der 12 oxygenatomer i CO<sub>2</sub> og 6 i H<sub>2</sub>O, i alt 18. Glucose har selv 6 oxygenatomer med, så O<sub>2</sub> skal kun levere de sidste 12.</p>
 </div>
 </div>
 </div>
@@ -1882,20 +1724,22 @@ n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{2{,}0\ \mathrm{g}}{342{,}30\ \dfrac{\math
 </div>
 <div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-n = \frac{m}{M}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{NaCl}) = \frac{6{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}10\ \mathrm{mol}
-\]</span></p>
-<p>6,0 g salt er 0,10 mol natriumchlorid.</p>
+<ol type="a">
+<li>Carbondioxid og vand</li>
+<li>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6 O<sub>2</sub> → 6 CO<sub>2</sub> + 6 H<sub>2</sub>O</li>
+<li>Blodet fører carbondioxiden til lungerne, og vi ånder den ud.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
-<section id="4.3.mad.3" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.mad.3">Opgave 4.3.mad.3: Sukker i sodavand</h2>
-<p>En halv liter sodavand indeholder 53 g sukker, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>. Hvor stor en stofmængde sukker er det?</p>
+<section id="4.3.mad.4" class="level2">
+<h2 class="anchored" data-anchor-id="4.3.mad.4">Opgave 4.3.mad.4: Den sorte gryde</h2>
+<p>En gryde, der har hængt over et bål, er sort i bunden. En gryde, der har stået på et gasblus, er ren.</p>
+<ol type="a">
+<li>Hvad er det sorte stof?</li>
+<li>Forklar forskellen på de to gryder.</li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1908,7 +1752,7 @@ n(\mathrm{NaCl}) = \frac{6{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm{
 </div>
 <div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender massen og molarmassen og skal finde stofmængden.</p>
+<p>Flammerne fra et bål er gule. Hvad fortæller farven om forbrændingen?</p>
 </div>
 </div>
 </div>
@@ -1924,7 +1768,12 @@ n(\mathrm{NaCl}) = \frac{6{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm{
 </div>
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Divider 53 g med 342,30 g/mol. Facit skal have to betydende cifre.</p>
+<p>Du kan begynde dine sætninger sådan:</p>
+<ul>
+<li>I bålet er forbrændingen …, fordi …</li>
+<li>Der dannes derfor …, som sætter sig på gryden.</li>
+<li>I gasblusset blandes gassen med …, før den brænder. Forbrændingen er derfor …, og der dannes kun …</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1940,28 +1789,25 @@ n(\mathrm{NaCl}) = \frac{6{,}0\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm{
 </div>
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-n = \frac{m}{M}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{53\ \mathrm{g}}{342{,}30\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}15\ \mathrm{mol}
-\]</span></p>
-<p>Sodavanden indeholder 0,15 mol sukker.</p>
+<ol type="a">
+<li>Sod, som er carbon</li>
+<li>I bålet er forbrændingen ufuldstændig, fordi der ikke kommer oxygen nok ind til alle dele af flammen. Der dannes derfor sod, som sætter sig på gryden. I gasblusset blandes gassen med luft, før den brænder. Forbrændingen er derfor fuldstændig, og der dannes kun carbondioxid og vand.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="opgaver-med-klimatema" class="level2 tema klima">
 <h2 class="tema klima anchored" data-anchor-id="opgaver-med-klimatema">Opgaver med klimatema</h2>
-<p>Et klimaregnskab opgøres i kilogram, men kemikere tæller molekylerne i mol. Opgaverne træner det samme som opgave 4.3.1 til 4.3.8, men handler alle om klima og miljø. Molarmasserne står i tabellen øverst på siden. Baggrunden står på siden <a href="../temaer/klima.html">Tema: Klima</a>.</p>
+<p>Når benzin, diesel og gas brænder, bliver carbonatomerne til carbondioxid. Opgaverne træner det samme som opgave 4.3.1 til 4.3.7, men handler alle om fossile brændstoffer. Baggrunden står på siden <a href="../temaer/fossile-braendstoffer-og-plast.html">Tema: Fossile brændstoffer og plast</a>.</p>
 </section>
 <section id="4.3.klima.1" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.klima.1">Opgave 4.3.klima.1: En kilometer i bil</h2>
-<p>En benzinbil udleder omkring 120 g carbondioxid for hver kilometer.</p>
+<h2 class="anchored" data-anchor-id="4.3.klima.1">Opgave 4.3.klima.1: Hvad kommer der ud af udstødningen?</h2>
 <ol type="a">
-<li>Hvilken størrelse er de 120 g? Skriv navn, symbol og enhed.</li>
-<li>Skriv symbol og enhed for molarmasse og for stofmængde.</li>
-<li>Hvilken formel skal du bruge for at finde stofmængden af carbondioxid?</li>
+<li>Hvilke to stoffer dannes der, når benzin brænder fuldstændigt i en bilmotor?</li>
+<li>Hvilke to stoffer kan der også dannes, når forbrændingen er ufuldstændig?</li>
+<li>Hvad er årsagen til, at en forbrænding bliver ufuldstændig?</li>
+<li>En gammel dieselbil sender sort røg ud af udstødningen. Hvad fortæller det om forbrændingen?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
@@ -1975,7 +1821,7 @@ n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{53\ \mathrm{g}}{342{,}30\ \dfrac{\mathrm{
 </div>
 <div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Se på enheden. Gram er enheden for masse.</p>
+<p>Læs afsnittene <em>Forbrænding</em> og <em>Ufuldstændig forbrænding</em> i afsnit 4.3.</p>
 </div>
 </div>
 </div>
@@ -1991,7 +1837,7 @@ n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{53\ \mathrm{g}}{342{,}30\ \dfrac{\mathrm{
 </div>
 <div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>De tre størrelser hænger sammen i formlen <em>n</em> = <em>m</em> divideret med <em>M</em>.</p>
+<p>Carbonatomerne i brændstoffet bliver til CO<sub>2</sub>, når der er oxygen nok. Er der for lidt oxygen, får hvert carbonatom kun ét oxygenatom eller slet ingen. Sod er sort.</p>
 </div>
 </div>
 </div>
@@ -2008,24 +1854,22 @@ n(\mathrm{C_{12}H_{22}O_{11}}) = \frac{53\ \mathrm{g}}{342{,}30\ \dfrac{\mathrm{
 <div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Masse, <em>m</em>, med enheden g.</p></li>
-<li><p>Molarmasse har symbolet <em>M</em> og enheden g/mol. Stofmængde har symbolet <em>n</em> og enheden mol.</p></li>
-<li><p>Formlen er</p></li>
+<li>Carbondioxid, CO<sub>2</sub>, og vand, H<sub>2</sub>O</li>
+<li>Carbonmonoxid, CO, og sod, som er carbon, C</li>
+<li>Der er for lidt oxygen.</li>
+<li>Den sorte røg er sod. Forbrændingen er altså ufuldstændig.</li>
 </ol>
-<p><span class="math display">\[
-n = \frac{m}{M}
-\]</span></p>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.klima.2" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.klima.2">Opgave 4.3.klima.2: Udledninger i mol</h2>
-<p>Beregn stofmængden af</p>
+<h2 class="anchored" data-anchor-id="4.3.klima.2">Opgave 4.3.klima.2: Er forbrændingen afstemt?</h2>
+<p>Tæl atomerne på begge sider af pilen, og afgør, om reaktionsskemaet er afstemt.</p>
 <ol type="a">
-<li>120 g carbondioxid, CO<sub>2</sub>, fra en kilometer i bil</li>
-<li>1000 g carbondioxid, CO<sub>2</sub></li>
-<li>250 g methan, CH<sub>4</sub>, som en ko udleder på en dag</li>
+<li>Ethan fra naturgas: C<sub>2</sub>H<sub>6</sub> + 3 O<sub>2</sub> → 2 CO<sub>2</sub> + 3 H<sub>2</sub>O</li>
+<li>Pentan fra benzin: C<sub>5</sub>H<sub>12</sub> + 8 O<sub>2</sub> → 5 CO<sub>2</sub> + 6 H<sub>2</sub>O</li>
+<li>Bioethanol: C<sub>2</sub>H<sub>5</sub>OH + 3 O<sub>2</sub> → 2 CO<sub>2</sub> + 3 H<sub>2</sub>O</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
@@ -2039,7 +1883,7 @@ n = \frac{m}{M}
 </div>
 <div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender massen og kan finde molarmassen i tabellen øverst. Du skal finde stofmængden.</p>
+<p>Tæl carbon, hydrogen og oxygen hver for sig. Tallet foran en formel skal ganges med det lille tal i formlen.</p>
 </div>
 </div>
 </div>
@@ -2055,7 +1899,7 @@ n = \frac{m}{M}
 </div>
 <div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Formlen begynder med <em>n</em> = <em>m</em> divideret med … For bilen skal 120 g stå over brøkstregen og 44,01 g/mol under.</p>
+<p>I skema a er der 6 oxygenatomer til venstre i de 3 O<sub>2</sub>. Til højre er der 4 i de 2 CO<sub>2</sub> og 3 i vand. I skema c skal du huske oxygenatomet i ethanol.</p>
 </div>
 </div>
 </div>
@@ -2071,29 +1915,22 @@ n = \frac{m}{M}
 </div>
 <div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-n = \frac{m}{M}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{CO_2}) = \frac{120\ \mathrm{g}}{44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 2{,}73\ \mathrm{mol}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{CO_2}) = \frac{1000\ \mathrm{g}}{44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 22{,}7\ \mathrm{mol}
-\]</span></p>
-<p><span class="math display">\[
-n(\mathrm{CH_4}) = \frac{250\ \mathrm{g}}{16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 15{,}6\ \mathrm{mol}
-\]</span></p>
+<ol type="a">
+<li>Nej. Der er 6 oxygenatomer til venstre og 7 til højre.</li>
+<li>Ja. Der er 5 C, 12 H og 16 O på begge sider.</li>
+<li>Ja. Der er 2 C, 6 H og 7 O på begge sider.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.klima.3" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.klima.3">Opgave 4.3.klima.3: Fra mol til gram</h2>
-<p>Beregn massen af</p>
+<h2 class="anchored" data-anchor-id="4.3.klima.3">Opgave 4.3.klima.3: Afstem tre brændstoffer</h2>
+<p>Skriv og afstem reaktionsskemaet for den fuldstændige forbrænding af de tre alkaner.</p>
 <ol type="a">
-<li>2,00 mol carbondioxid, CO<sub>2</sub></li>
-<li>0,500 mol methan, CH<sub>4</sub></li>
-<li>0,250 mol kalk, CaCO<sub>3</sub></li>
+<li>Propan fra flaskegas, C<sub>3</sub>H<sub>8</sub></li>
+<li>Undecan fra flybrændstof, C<sub>11</sub>H<sub>24</sub></li>
+<li>Pentadecan fra dieselolie, C<sub>15</sub>H<sub>32</sub></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
@@ -2107,7 +1944,7 @@ n(\mathrm{CH_4}) = \frac{250\ \mathrm{g}}{16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mo
 </div>
 <div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender stofmængden og kan finde molarmassen i tabellen øverst. Du skal finde massen.</p>
+<p>Følg rækkefølgen i afsnit 4.3: først carbon, så hydrogen og til sidst oxygen.</p>
 </div>
 </div>
 </div>
@@ -2123,7 +1960,7 @@ n(\mathrm{CH_4}) = \frac{250\ \mathrm{g}}{16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mo
 </div>
 <div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Formlen er <em>m</em> = <em>n</em> · <em>M</em>. For carbondioxid ganges 2,00 mol med 44,01 g/mol.</p>
+<p>For propan giver 3 carbonatomer 3 CO<sub>2</sub>, og 8 hydrogenatomer giver 4 H<sub>2</sub>O. Til højre er der så 6 oxygenatomer i CO<sub>2</sub> og 4 i H<sub>2</sub>O, i alt 10, og det svarer til 5 O<sub>2</sub>.</p>
 </div>
 </div>
 </div>
@@ -2139,61 +1976,22 @@ n(\mathrm{CH_4}) = \frac{250\ \mathrm{g}}{16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mo
 </div>
 <div id="callout-42" class="callout-42-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-m = n \cdot M
-\]</span></p>
-<p><span class="math display">\[
-m(\mathrm{CO_2}) = 2{,}00\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 88{,}0\ \mathrm{g}
-\]</span></p>
-<p><span class="math display">\[
-m(\mathrm{CH_4}) = 0{,}500\ \mathrm{mol} \cdot 16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 8{,}02\ \mathrm{g}
-\]</span></p>
-<p><span class="math display">\[
-m(\mathrm{CaCO_3}) = 0{,}250\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 25{,}0\ \mathrm{g}
-\]</span></p>
+<ol type="a">
+<li>C<sub>3</sub>H<sub>8</sub> + 5 O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O</li>
+<li>C<sub>11</sub>H<sub>24</sub> + 17 O<sub>2</sub> → 11 CO<sub>2</sub> + 12 H<sub>2</sub>O</li>
+<li>C<sub>15</sub>H<sub>32</sub> + 23 O<sub>2</sub> → 15 CO<sub>2</sub> + 16 H<sub>2</sub>O</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.klima.4" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.klima.4">Opgave 4.3.klima.4: Skema med drivhusgasser</h2>
-<p>Udfyld de tomme felter.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Stof</th>
-<th style="text-align: center;">Molarmasse <em>M</em></th>
-<th style="text-align: center;">Stofmængde <em>n</em></th>
-<th style="text-align: center;">Masse <em>m</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CO<sub>2</sub></td>
-<td style="text-align: center;">44,01 g/mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">11,0 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CH<sub>4</sub></td>
-<td style="text-align: center;">16,04 g/mol</td>
-<td style="text-align: center;">3,00 mol</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">N<sub>2</sub>O</td>
-<td style="text-align: center;">44,02 g/mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">22,0 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">H<sub>2</sub>O</td>
-<td style="text-align: center;">18,02 g/mol</td>
-<td style="text-align: center;">5,00 mol</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
+<h2 class="anchored" data-anchor-id="4.3.klima.4">Opgave 4.3.klima.4: Når det ikke går op i benzin og diesel</h2>
+<p>Skriv og afstem reaktionsskemaet for den fuldstændige forbrænding af de to alkaner.</p>
+<ol type="a">
+<li>Hexan fra benzin, C<sub>6</sub>H<sub>14</sub></li>
+<li>Decan fra dieselolie, C<sub>10</sub>H<sub>22</sub></li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2206,7 +2004,7 @@ m(\mathrm{CaCO_3}) = 0{,}250\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\m
 </div>
 <div id="callout-43" class="callout-43-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Se i hver række, hvilken størrelse der mangler. Mangler stofmængden, skal du dividere. Mangler massen, skal du gange.</p>
+<p>Afstem carbon og hydrogen som i opgave 4.3.klima.3. Antallet af oxygenatomer til højre bliver et ulige tal.</p>
 </div>
 </div>
 </div>
@@ -2222,7 +2020,7 @@ m(\mathrm{CaCO_3}) = 0{,}250\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\m
 </div>
 <div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I første række er <em>n</em> = 11,0 g divideret med 44,01 g/mol. I anden række er <em>m</em> = 3,00 mol ganget med 16,04 g/mol.</p>
+<p>For hexan er der 6 CO<sub>2</sub> og 7 H<sub>2</sub>O til højre. Det er 19 oxygenatomer, og det svarer til 9½ O<sub>2</sub>. Gang alle tallene i skemaet med 2, så de bliver hele.</p>
 </div>
 </div>
 </div>
@@ -2238,52 +2036,30 @@ m(\mathrm{CaCO_3}) = 0{,}250\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\m
 </div>
 <div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Stof</th>
-<th style="text-align: center;">Molarmasse <em>M</em></th>
-<th style="text-align: center;">Stofmængde <em>n</em></th>
-<th style="text-align: center;">Masse <em>m</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CO<sub>2</sub></td>
-<td style="text-align: center;">44,01 g/mol</td>
-<td style="text-align: center;">0,250 mol</td>
-<td style="text-align: center;">11,0 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CH<sub>4</sub></td>
-<td style="text-align: center;">16,04 g/mol</td>
-<td style="text-align: center;">3,00 mol</td>
-<td style="text-align: center;">48,1 g</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">N<sub>2</sub>O</td>
-<td style="text-align: center;">44,02 g/mol</td>
-<td style="text-align: center;">0,500 mol</td>
-<td style="text-align: center;">22,0 g</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">H<sub>2</sub>O</td>
-<td style="text-align: center;">18,02 g/mol</td>
-<td style="text-align: center;">5,00 mol</td>
-<td style="text-align: center;">90,1 g</td>
-</tr>
-</tbody>
-</table>
+<ol type="a">
+<li>2 C<sub>6</sub>H<sub>14</sub> + 19 O<sub>2</sub> → 12 CO<sub>2</sub> + 14 H<sub>2</sub>O</li>
+<li>2 C<sub>10</sub>H<sub>22</sub> + 31 O<sub>2</sub> → 20 CO<sub>2</sub> + 22 H<sub>2</sub>O</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.klima.5" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.klima.5">Opgave 4.3.klima.5: En ukendt drivhusgas</h2>
-<p>En prøve indeholder 0,500 mol af en drivhusgas. Prøven vejer 8,02 g.</p>
+<h2 class="anchored" data-anchor-id="4.3.klima.5">Opgave 4.3.klima.5: For lidt oxygen</h2>
 <ol type="a">
-<li>Beregn gassens molarmasse.</li>
-<li>Gassen er enten vanddamp, carbondioxid eller methan. Hvilken?</li>
+<li>Afstem reaktionsskemaet, hvor naturgas brænder med for lidt oxygen, og der dannes carbonmonoxid:</li>
+</ol>
+<div class="reaktion">
+<p>CH<sub>4</sub> + O<sub>2</sub> → CO + H<sub>2</sub>O</p>
+</div>
+<ol start="2" type="a">
+<li>Afstem reaktionsskemaet, hvor propan brænder med meget lidt oxygen, og der dannes sod:</li>
+</ol>
+<div class="reaktion">
+<p>C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> → C + H<sub>2</sub>O</p>
+</div>
+<ol start="3" type="a">
+<li>Forklar, hvorfor en bil ikke må stå med motoren tændt i en lukket garage.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
@@ -2297,7 +2073,7 @@ m(\mathrm{CaCO_3}) = 0{,}250\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\m
 </div>
 <div id="callout-46" class="callout-46-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du kender massen og stofmængden. Molarmassen er massen divideret med stofmængden.</p>
+<p>Afstem carbon først, så hydrogen og til sidst oxygen. Læg mærke til, at der kun er ét oxygenatom i CO og slet ingen i C.</p>
 </div>
 </div>
 </div>
@@ -2313,7 +2089,7 @@ m(\mathrm{CaCO_3}) = 0{,}250\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\m
 </div>
 <div id="callout-47" class="callout-47-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sammenlign dit resultat med molarmasserne i tabellen øverst på siden.</p>
+<p>I skema a giver 1 CO og 2 H<sub>2</sub>O i alt 3 oxygenatomer. Det svarer til 1½ O<sub>2</sub>, så alle tal skal ganges med 2. Til spørgsmål c: Tænk på, hvad der sker med mængden af oxygen i et lukket rum.</p>
 </div>
 </div>
 </div>
@@ -2330,21 +2106,28 @@ m(\mathrm{CaCO_3}) = 0{,}250\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\m
 <div id="callout-48" class="callout-48-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Molarmassen er</li>
-</ol>
-<p><span class="math display">\[
-M = \frac{m}{n} = \frac{8{,}02\ \mathrm{g}}{0{,}500\ \mathrm{mol}} = 16{,}0\ \dfrac{\mathrm{g}}{\mathrm{mol}}
-\]</span></p>
-<ol start="2" type="a">
-<li>Gassen er methan, CH<sub>4</sub>, som har molarmassen 16,04 g/mol.</li>
+<li>2 CH<sub>4</sub> + 3 O<sub>2</sub> → 2 CO + 4 H<sub>2</sub>O</li>
+<li>C<sub>3</sub>H<sub>8</sub> + 2 O<sub>2</sub> → 3 C + 4 H<sub>2</sub>O</li>
+<li>Motoren bruger oxygenet i garagen. Når der er for lidt oxygen, bliver forbrændingen ufuldstændig, og der dannes carbonmonoxid. Gassen er giftig, og den kan hverken ses eller lugtes.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.klima.6" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.klima.6">Opgave 4.3.klima.6: Et åndedrag</h2>
-<p>I ét åndedrag ånder du omkring 0,0010 mol carbondioxid ud. Hvor mange molekyler carbondioxid er det?</p>
+<h2 class="anchored" data-anchor-id="4.3.klima.6">Opgave 4.3.klima.6: Kølemidler og ozonlaget</h2>
+<p>Methan reagerer med chlor, når der er lys.</p>
+<ol type="a">
+<li>Hvad kaldes reaktionstypen?</li>
+<li>Gør reaktionsskemaet færdigt:</li>
+</ol>
+<div class="reaktion">
+<p>CH<sub>4</sub> + Cl<sub>2</sub> → …</p>
+</div>
+<ol start="3" type="a">
+<li>Hvorfor sker reaktionen ikke i mørke?</li>
+<li>I gamle køleskabe brugte man kølemidlet CCl<sub>2</sub>F<sub>2</sub>, som skadede ozonlaget. Hvor mange af hydrogenatomerne i methan er skiftet ud med andre atomer i det stof?</li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2357,7 +2140,7 @@ M = \frac{m}{n} = \frac{8{,}02\ \mathrm{g}}{0{,}500\ \mathrm{mol}} = 16{,}0\ \df
 </div>
 <div id="callout-49" class="callout-49-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Ét mol er 6,02 · 10<sup>23</sup> stykker.</p>
+<p>Se på <a href="../kapitler/4-3-alkaners-reaktioner.html#fig-substitution">figuren med substitution</a>. Ét hydrogenatom bliver skiftet ud med et chloratom.</p>
 </div>
 </div>
 </div>
@@ -2373,7 +2156,7 @@ M = \frac{m}{n} = \frac{8{,}02\ \mathrm{g}}{0{,}500\ \mathrm{mol}} = 16{,}0\ \df
 </div>
 <div id="callout-50" class="callout-50-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Gang stofmængden med 6,02 · 10<sup>23</sup>.</p>
+<p>Der dannes to stoffer. Det hydrogenatom, der forlader methan, binder sig til det andet chloratom. Til spørgsmål d: Methan har fire hydrogenatomer.</p>
 </div>
 </div>
 </div>
@@ -2389,19 +2172,23 @@ M = \frac{m}{n} = \frac{8{,}02\ \mathrm{g}}{0{,}500\ \mathrm{mol}} = 16{,}0\ \df
 </div>
 <div id="callout-51" class="callout-51-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Antal molekyler = 0,0010 · 6,02 · 10<sup>23</sup> = 6,0 · 10<sup>20</sup></p>
-<p>Der er 6,0 · 10<sup>20</sup> molekyler carbondioxid i ét åndedrag.</p>
+<ol type="a">
+<li>Substitution</li>
+<li>CH<sub>4</sub> + Cl<sub>2</sub> → CH<sub>3</sub>Cl + HCl</li>
+<li>Lyset skal til for at sætte reaktionen i gang.</li>
+<li>Alle fire. To er skiftet ud med chlor, og to er skiftet ud med fluor.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="4.3.klima.7" class="level2">
-<h2 class="anchored" data-anchor-id="4.3.klima.7">Opgave 4.3.klima.7: Carbondioxid og methan</h2>
-<p>Ét mol carbondioxid vejer 44,01 g, og ét mol methan vejer 16,04 g.</p>
+<h2 class="anchored" data-anchor-id="4.3.klima.7">Opgave 4.3.klima.7: To glas med benzin</h2>
+<p>Der hældes heptan, som findes i benzin, og lidt brom i to reagensglas, så væsken i begge glas er gul. Glas 1 pakkes ind i sølvpapir. Glas 2 stilles under en kraftig lampe. Efter en time er væsken i glas 1 stadig gul, mens væsken i glas 2 er farveløs.</p>
 <ol type="a">
-<li>Hvilken af de to portioner indeholder flest molekyler?</li>
-<li>Forklar, hvorfor de to portioner ikke vejer det samme.</li>
-<li>Der slippes 1000 g af hver gas ud. Beregn de to stofmængder. Hvilken gas er der flest molekyler af?</li>
+<li>Forklar forskellen på de to glas.</li>
+<li>Skriv reaktionsskemaet for reaktionen i glas 2. Heptan har formlen C<sub>7</sub>H<sub>16</sub>.</li>
+<li>Et stykke fugtigt indikatorpapir holdes hen over glas 2. Det viser, at der er dannet en syre. Hvilket stof er det?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
@@ -2415,7 +2202,7 @@ M = \frac{m}{n} = \frac{8{,}02\ \mathrm{g}}{0{,}500\ \mathrm{mol}} = 16{,}0\ \df
 </div>
 <div id="callout-52" class="callout-52-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Ét mol er altid det samme antal, uanset hvilket stof det er.</p>
+<p>Den gule farve kommer fra brom. Når farven forsvinder, er brommolekylerne blevet brugt i en reaktion.</p>
 </div>
 </div>
 </div>
@@ -2431,7 +2218,7 @@ M = \frac{m}{n} = \frac{8{,}02\ \mathrm{g}}{0{,}500\ \mathrm{mol}} = 16{,}0\ \df
 </div>
 <div id="callout-53" class="callout-53-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Til spørgsmål c: Brug <em>n</em> = <em>m</em> divideret med <em>M</em> for hver gas. Det stof, der har den mindste molarmasse, giver flest mol pr. gram.</p>
+<p>Reaktionen er en substitution, og den kræver lys. Der dannes to stoffer: en alkan, hvor et hydrogenatom er skiftet ud med brom, og et lille molekyle med hydrogen og brom.</p>
 </div>
 </div>
 </div>
@@ -2448,16 +2235,10 @@ M = \frac{m}{n} = \frac{8{,}02\ \mathrm{g}}{0{,}500\ \mathrm{mol}} = 16{,}0\ \df
 <div id="callout-54" class="callout-54-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>De indeholder lige mange molekyler. Ét mol er 6,02 · 10<sup>23</sup> molekyler, uanset stoffet.</p></li>
-<li><p>Et molekyle carbondioxid vejer mere end et molekyle methan. Lige mange molekyler vejer derfor ikke det samme.</p></li>
-<li><p>Stofmængderne er</p></li>
+<li>Substitutionen kræver lys. I sølvpapiret sker der ingen reaktion, og brom beholder sin farve. Under lampen reagerer brom med heptan, og farven forsvinder.</li>
+<li>C<sub>7</sub>H<sub>16</sub> + Br<sub>2</sub> → C<sub>7</sub>H<sub>15</sub>Br + HBr</li>
+<li>Hydrogenbromid, HBr</li>
 </ol>
-<p><span class="math display">\[
-n(\mathrm{CO_2}) = \frac{1000\ \mathrm{g}}{44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 22{,}7\ \mathrm{mol}
-\qquad
-n(\mathrm{CH_4}) = \frac{1000\ \mathrm{g}}{16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 62{,}3\ \mathrm{mol}
-\]</span></p>
-<p>Der er flest molekyler methan.</p>
 </div>
 </div>
 </div>
@@ -3818,18 +3599,25 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
-// Menuen i venstre side: "Til kapitlet" under afsnittene (Niels 15. okt. 2026, prøve i kapitel 1).
+// Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026, i kapitel 1 og 2).
 //
-// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, sættes rubrikken "Til kapitlet" ind
-// foran dem, og de fire linjer "Opgaver til 1.1" osv. bliver til én linje: "Opgaver 1.1 1.2 1.3 1.4".
-// Fagord og repetition står bagefter som før. Til sidst kommer linkene i EKSTRA (slides, modulplaner og
-// kapitlets animationer på kemiformler.dk). Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
+// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver de fire linjer "Opgaver til 1.1" osv.
+// til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
+// "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
+// kemiformler.dk). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+// før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
+// Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
 (function () {
   var EKSTRA = {
     "1": [
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
-      { tekst: "Animationer til kapitel 1", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+    ],
+    "2": [
+      { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
     ]
   };
 
@@ -3859,9 +3647,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var nr = (afsnit[0].textContent.trim().match(/^(\d+)\./) || [])[1];
     var rod = foerste.slice(0, foerste.search(/kapitler\//));
 
-    var rubrik = li("kapitelmenu-rubrik");
-    rubrik.textContent = "Til kapitlet";
-    ul.insertBefore(rubrik, opgaver[0]);
+    // Fagord og repetition: "Fagord til kapitel 1" bliver til "Fagord"
+    punkter.slice(foersteOpgave).forEach(function (p) {
+      if (opgaver.indexOf(p) >= 0) return;
+      p.classList.add("kapitelmenu-side");
+      var t = p.querySelector("a.sidebar-link .menu-text");
+      if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+\d+$/i, "");
+    });
 
     var raekke = li("kapitelmenu-opgaver");
     var navn = document.createElement("span");
@@ -4311,13 +4103,13 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../kapitler/4-3-stofmaengde.html" class="pagination-link" aria-label="4.3 Stofmængde">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4.3 Stofmængde</span>
+      <a href="../kapitler/4-3-alkaners-reaktioner.html" class="pagination-link" aria-label="4.3 Alkaners reaktioner">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4.3 Alkaners reaktioner</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../kapitler/4-4-aekvivalente-maengder.html" class="pagination-link" aria-label="4.4 Ækvivalente mængder">
-        <span class="nav-page-text">4.4 Ækvivalente mængder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../kapitler/4-4-alkener.html" class="pagination-link" aria-label="4.4 Alkener og addition">
+        <span class="nav-page-text">4.4 Alkener og addition</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
