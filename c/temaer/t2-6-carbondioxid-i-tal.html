@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tema: Fossile brændstoffer og plast – Kemibogen C</title>
+<title>T2.6 Carbondioxid i tal – Kemibogen C</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../temaer/batterier-og-rust.html" rel="next">
-<link href="../temaer/klima.html" rel="prev">
+<link href="../temaer/t2-1-opgaver.html" rel="next">
+<link href="../temaer/t2-5-braendstoffer-og-carbondioxid.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -47,10 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dc0945923608e546526efb69fbcc70cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-07a511302329b8cd0ce8873d6f0ab76c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,10 +77,39 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked tema tema-klima quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -92,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/klima.html">Temaer</a></li><li class="breadcrumb-item"><a href="../temaer/fossile-braendstoffer-og-plast.html">Tema: Fossile brændstoffer og plast</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/klima.html">Tema: Klima</a></li><li class="breadcrumb-item"><a href="../temaer/t2-6-carbondioxid-i-tal.html">T2.6 Carbondioxid i tal</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søg" onclick="window.quartoOpenSearch();">
@@ -309,20 +335,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/3-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 3.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/3-2-molekylers-form.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3.2 Molekylers form</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/3-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 3.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -333,14 +347,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/3-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 3.3</span></a>
+  <a href="../kapitler/3-4-blandbarhed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.4 Blandbarhed</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/3-4-blandbarhed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.4 Blandbarhed</span></a>
+  <a href="../opgaver/3-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 3.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/3-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 3.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/3-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 3.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -380,20 +406,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/4-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/4-2-zigzagformler.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4.2 Zigzagformler og navngivning</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/4-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -404,20 +418,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/4-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/4-4-alkener.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4.4 Alkener og addition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/4-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -428,14 +430,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/4-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 4.5</span></a>
+  <a href="../kapitler/4-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.6 Fedtstoffer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/4-6-fedtstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.6 Fedtstoffer</span></a>
+  <a href="../opgaver/4-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/4-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/4-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/4-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/4-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 4.5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -475,20 +501,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/5-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/5-2-molarmasse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5.2 Molarmasse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/5-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -499,20 +513,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/5-4-aekvivalente-maengder.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5.4 Ækvivalente mængder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/5-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -523,14 +525,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/5-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 5.5</span></a>
+  <a href="../kapitler/5-6-gasser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.6 Gasser</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/5-6-gasser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5.6 Gasser</span></a>
+  <a href="../opgaver/5-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/5-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 5.5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -570,26 +596,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/6-2-formel-og-aktuel.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6.2 Formel og aktuel koncentration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/6-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 6.2</span></a>
+  <a href="../kapitler/6-3-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.3 Titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/6-3-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6.3 Titrering</span></a>
+  <a href="../opgaver/6-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/6-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 6.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -629,20 +655,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/7-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/7-2-staerke-og-svage-syrer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7.2 Stærke og svage syrer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/7-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -653,26 +667,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/7-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/7-4-ph-beregninger.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7.4 pH-beregninger</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/7-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 7.4</span></a>
+  <a href="../kapitler/7-5-syre-base-titrering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.5 Syre/base-titrering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/7-5-syre-base-titrering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7.5 Syre/base-titrering</span></a>
+  <a href="../opgaver/7-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/7-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/7-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/7-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 7.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -712,20 +738,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/8-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/8-2-spaendingsraekken.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8.2 Spændingsrækken</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/8-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -736,26 +750,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/8-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../kapitler/8-4-redoxafstemning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8.4 Afstemning af redoxreaktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../opgaver/8-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.4</span></a>
+  <a href="../kapitler/8-5-korrosion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5 Korrosion</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/8-5-korrosion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.5 Korrosion</span></a>
+  <a href="../opgaver/8-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/8-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/8-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../opgaver/8-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til 8.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -780,13 +806,267 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../oevelser/oversigt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Laboratorieøvelser</span></a>
+            <a href="../temaer/plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema: Plastic</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-1-fra-olie-til-plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.1 Fra olie til plast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-2-gummi-og-celluloid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.2 Gummi og celluloid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-3-bakelit-og-haerdeplast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.3 Bakelit og hærdeplast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-4-kaempemolekyler-og-nylon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.4 Kæmpemolekyler og nylon</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-5-pvc-og-bloedgoerere.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.5 PVC og blødgørere</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-6-plastens-koder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.6 Plastens koder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-7-plast-i-dag.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.7 Plast i dag</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-7-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/tema-plastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Plastic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-oevelse-hvilken-plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T1.6: Hvilken slags plast?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-oevelse-plast-af-kartoffelmel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T1.7: Plast af kartoffelmel</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../temaer/klima.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema: Klima</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-1-drivhuseffekten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.1 Drivhuseffekten og luftens molekyler</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-2-drivhusgassernes-form.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.2 Drivhusgassernes form</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-3-havet-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.3 Havet og carbondioxid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-4-klimaets-historie-i-isen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.4 Klimaets historie i isen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-5-braendstoffer-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.5 Brændstoffer og carbondioxid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-6-carbondioxid-i-tal.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">T2.6 Carbondioxid i tal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/tema-klima.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Klima</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-oevelse-carbondioxid-i-vand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T2.3: Carbondioxid i koldt og varmt vand</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Tema: Sundhed</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/sundhed-og-medicin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sundhed og medicin</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/tema-sundhed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Sundhed</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Tema: Batterier</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/batterier-og-rust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Batterier og rust</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/tema-batterier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Batterier</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../oevelser/oversigt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Laboratorieøvelser</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../oevelser/1-3-flammefarver.html" class="sidebar-item-text sidebar-link">
@@ -831,8 +1111,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../oevelser/5-5-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 5.5: Ståluld på vægten</span></a>
+  <a href="../oevelser/5-4-krystalvand-i-kobbersulfat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 5.4: Krystalvand i kobber(II)sulfat</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/5-5a-staaluld-paa-vaegten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 5.5a: Ståluld på vægten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/5-5b-natron-i-diglen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 5.5b: Natron i diglen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -849,142 +1141,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">Temaer</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Skift sektion">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/klima.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Klima</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/fossile-braendstoffer-og-plast.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Tema: Fossile brændstoffer og plast</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/batterier-og-rust.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Batterier og rust</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/sundhed-og-medicin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Sundhed og medicin</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../fagord/temaer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til temaerne</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../temaer/plast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema 1: Plast</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-1-gummi-og-celluloid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.1 Gummi og celluloid</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T1.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-2-bakelit-og-haerdeplast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.2 Bakelit og hærdeplast</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T1.2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-3-kaempemolekyler-og-nylon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.3 Kæmpemolekyler og nylon</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T1.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-4-pvc-og-bloedgoerere.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.4 PVC og blødgørere</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T1.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-5-plastens-koder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.5 Plastens koder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T1.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-6-plast-i-dag.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.6 Plast i dag</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T1.6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-oevelse-hvilken-plast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse T1.5: Hvilken slags plast?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-oevelse-plast-af-kartoffelmel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse T1.6: Plast af kartoffelmel</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../eksamen/eksamen.html" class="sidebar-item-text sidebar-link">
@@ -993,13 +1149,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
  <span class="menu-text">Bilag</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bilag/grundstoffer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Det periodiske system</span></a>
@@ -1053,22 +1209,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#kul-olie-og-naturgas" id="toc-kul-olie-og-naturgas" class="nav-link active" data-scroll-target="#kul-olie-og-naturgas">Kul, olie og naturgas</a></li>
-  <li><a href="#fra-råolie-til-benzin" id="toc-fra-råolie-til-benzin" class="nav-link" data-scroll-target="#fra-råolie-til-benzin">Fra råolie til benzin</a></li>
-  <li><a href="#når-brændstoffet-brænder" id="toc-når-brændstoffet-brænder" class="nav-link" data-scroll-target="#når-brændstoffet-brænder">Når brændstoffet brænder</a></li>
-  <li><a href="#fra-olie-til-plast" id="toc-fra-olie-til-plast" class="nav-link" data-scroll-target="#fra-olie-til-plast">Fra olie til plast</a></li>
-  <li><a href="#forskellige-slags-plast" id="toc-forskellige-slags-plast" class="nav-link" data-scroll-target="#forskellige-slags-plast">Forskellige slags plast</a></li>
-  <li><a href="#når-plasten-er-brugt" id="toc-når-plasten-er-brugt" class="nav-link" data-scroll-target="#når-plasten-er-brugt">Når plasten er brugt</a></li>
-  <li><a href="#her-finder-du-opgaverne" id="toc-her-finder-du-opgaverne" class="nav-link" data-scroll-target="#her-finder-du-opgaverne">Her finder du opgaverne</a></li>
+  <li><a href="#eksempel-naturgas-brænder" id="toc-eksempel-naturgas-brænder" class="nav-link active" data-scroll-target="#eksempel-naturgas-brænder">Eksempel: naturgas brænder</a></li>
+  <li><a href="#hvilket-brændstof-er-bedst-for-klimaet" id="toc-hvilket-brændstof-er-bedst-for-klimaet" class="nav-link" data-scroll-target="#hvilket-brændstof-er-bedst-for-klimaet">Hvilket brændstof er bedst for klimaet?</a></li>
+  <li><a href="#eksempel-en-skov-binder-carbondioxid" id="toc-eksempel-en-skov-binder-carbondioxid" class="nav-link" data-scroll-target="#eksempel-en-skov-binder-carbondioxid">Eksempel: en skov binder carbondioxid</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/klima.html">Temaer</a></li><li class="breadcrumb-item"><a href="../temaer/fossile-braendstoffer-og-plast.html">Tema: Fossile brændstoffer og plast</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/klima.html">Tema: Klima</a></li><li class="breadcrumb-item"><a href="../temaer/t2-6-carbondioxid-i-tal.html">T2.6 Carbondioxid i tal</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-tema-fossil-plast" class="quarto-section-identifier">Tema: Fossile brændstoffer og plast</span></h1>
+<h1 class="title"><span id="sec-t2-carbondioxid-i-tal" class="quarto-section-identifier">T2.6 Carbondioxid i tal</span></h1>
 </div>
 
 
@@ -1085,197 +1237,212 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Det handler temaet om">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<p>I nyhederne bliver klimaet ofte gjort op i tons carbondioxid: et fly til Spanien, en bøf, et kraftværk. Tallene kommer fra de samme mængdeberegninger, som du kender fra kapitel 5. Med et afstemt reaktionsskema og nogle molarmasser kan du selv regne ud, hvor meget carbondioxid et brændstof giver, og hvor meget en skov kan optage.</p>
+<p>Siden er en ekstra side til <a href="../indledninger/kapitel-5.html">kapitel 5</a> og bygger på <a href="../kapitler/5-5-maengdeberegning.html">afsnit 5.5 Mængdeberegning</a>, hvor du også finder eksemplet med benzin.</p>
+<section id="eksempel-naturgas-brænder" class="level2">
+<h2 class="anchored" data-anchor-id="eksempel-naturgas-brænder">Eksempel: naturgas brænder</h2>
+<p>Naturgas er mest methan, CH<sub>4</sub>. Hvor meget carbondioxid dannes der, når 1,00 kg methan brænder i et gasfyr?</p>
+<div class="reaktion">
+<p>CH<sub>4</sub>(g) + 2 O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2 H<sub>2</sub>O(g)</p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Det handler temaet om
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>hvad fossile brændstoffer er, og hvordan råolie bliver til benzin</li>
-<li>hvorfor de giver carbondioxid, når de brænder</li>
-<li>hvordan plast laves af olie ved en polyaddition</li>
-<li>hvad der sker med plasten, når den er brugt</li>
-</ul>
-</div>
-</div>
-<p>Benzin, naturgas og plastikposer kommer fra det samme sted: olie og gas, som er hentet op fra undergrunden. De består af de carbonhydrider, du kender fra kapitel 4. Denne side giver baggrunden for opgaverne med klimatema i kapitel 4.</p>
-<section id="kul-olie-og-naturgas" class="level2">
-<h2 class="anchored" data-anchor-id="kul-olie-og-naturgas">Kul, olie og naturgas</h2>
-<p>Kul, olie og naturgas kaldes <span id="ord-fossile-braendstoffer" class="fagord-anker"><strong>fossile brændstoffer</strong></span>, fordi de er rester af planter og små havdyr, som har ligget dybt i jorden i millioner af år.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 41%">
-<col style="width: 30%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Brændstof</th>
-<th style="text-align: left;">Består mest af</th>
-<th style="text-align: left;">Bruges til</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">CH<sub>4</sub>(g)</th>
+<th style="text-align: center;">+</th>
+<th style="text-align: center;">2 O<sub>2</sub>(g)</th>
+<th style="text-align: center;">→</th>
+<th style="text-align: center;">CO<sub>2</sub>(g)</th>
+<th style="text-align: center;">+</th>
+<th style="text-align: center;">2 H<sub>2</sub>O(g)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">naturgas</td>
-<td style="text-align: left;">methan, CH<sub>4</sub></td>
-<td style="text-align: left;">opvarmning og madlavning</td>
+<td style="text-align: left;"><em>m</em></td>
+<td style="text-align: center;">1000 g</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">råolie</td>
-<td style="text-align: left;">alkaner med mange forskellige længder</td>
-<td style="text-align: left;">benzin, diesel, flybrændstof og plast</td>
+<td style="text-align: left;"><em>M</em></td>
+<td style="text-align: center;">16,04 g/mol</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">44,01 g/mol</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">kul</td>
-<td style="text-align: left;">carbon</td>
-<td style="text-align: left;">kraftværker</td>
+<td style="text-align: left;"><em>n</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-<p>Alkanerne kan du læse om i afsnit <a href="../kapitler/4-1-alkaner.html">4.1 Carbonhydrider og alkaner</a>.</p>
+<p><span id="ord-trin-1-ned" class="fagord-anker"><strong>Trin 1: ned.</strong></span> Stofmængden af methan beregnes.</p>
+<p><span class="math display">\[
+n(\mathrm{CH_4}) = \frac{m}{M} = \frac{1000\ \mathrm{g}}{16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 62{,}3\ \mathrm{mol}
+\]</span></p>
+<p><span id="ord-trin-2-paa-tvaers" class="fagord-anker"><strong>Trin 2: på tværs.</strong></span> Koefficienterne er 1 for CH<sub>4</sub> og 1 for CO<sub>2</sub>, så der dannes lige så mange mol carbondioxid, som der brænder methan.</p>
+<p><span class="math display">\[
+n(\mathrm{CO_2}) = \frac{1}{1} \cdot 62{,}3\ \mathrm{mol} = 62{,}3\ \mathrm{mol}
+\]</span></p>
+<p><span id="ord-trin-3-op" class="fagord-anker"><strong>Trin 3: op.</strong></span> Massen af carbondioxid beregnes.</p>
+<p><span class="math display">\[
+m(\mathrm{CO_2}) = n \cdot M = 62{,}3\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 2{,}74 \cdot 10^{3}\ \mathrm{g}
+\]</span></p>
+<p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion.</strong></span> Der dannes 2,74 kg carbondioxid, når 1,00 kg methan brænder.</p>
 </section>
-<section id="fra-råolie-til-benzin" class="level2">
-<h2 class="anchored" data-anchor-id="fra-råolie-til-benzin">Fra råolie til benzin</h2>
-<p>Råolie er en tyk, sort blanding af flere hundrede forskellige carbonhydrider. På et <span id="ord-raffinaderi" class="fagord-anker"><strong>raffinaderi</strong></span> bliver blandingen skilt ad efter kogepunkt.</p>
-<p>Olien varmes op, så det meste fordamper, og dampen ledes ind i et højt tårn, som er varmest forneden og koldest foroven. De lange molekyler har et højt kogepunkt, så de bliver til væske igen allerede nederst i tårnet. De korte molekyler har et lavt kogepunkt og når helt til tops.</p>
-<div class="pegefigur">
-<div id="fig-plast-destillation" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-plast-destillation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/plast-destillation.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;1: På raffinaderiet bliver råolien skilt ad efter kogepunkt. De korteste kæder kommer ud øverst."><img src="../figurer/plast-destillation.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plast-destillation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;1: På raffinaderiet bliver råolien skilt ad efter kogepunkt. De korteste kæder kommer ud øverst.
-</figcaption>
-</figure>
-</div>
-</div>
-<p>Det er den regel, du kender fra afsnit 4.1: Jo længere kæden er, jo højere er kogepunktet.</p>
+<section id="hvilket-brændstof-er-bedst-for-klimaet" class="level2">
+<h2 class="anchored" data-anchor-id="hvilket-brændstof-er-bedst-for-klimaet">Hvilket brændstof er bedst for klimaet?</h2>
+<p>Regnes på samme måde for andre brændstoffer, får man tabellens anden kolonne. Men et brændstof bruges for at få energi, og brændstofferne giver ikke lige meget energi pr. kilogram. Derfor er den sidste kolonne den vigtigste: Den viser, hvor meget carbondioxid der dannes for hver megajoule, MJ, energi.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 35%">
+<col style="width: 28%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Brændstof</th>
+<th style="text-align: center;">Carbondioxid pr. kg brændstof</th>
+<th style="text-align: center;">Energi pr. kg brændstof</th>
+<th style="text-align: center;">Carbondioxid pr. MJ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">methan, CH<sub>4</sub></td>
+<td style="text-align: center;">2,74 kg</td>
+<td style="text-align: center;">55,5 MJ</td>
+<td style="text-align: center;">49 g</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">octan, C<sub>8</sub>H<sub>18</sub></td>
+<td style="text-align: center;">3,08 kg</td>
+<td style="text-align: center;">47,9 MJ</td>
+<td style="text-align: center;">64 g</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ethanol, C<sub>2</sub>H<sub>5</sub>OH</td>
+<td style="text-align: center;">1,91 kg</td>
+<td style="text-align: center;">29,7 MJ</td>
+<td style="text-align: center;">64 g</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">kul, regnet som C</td>
+<td style="text-align: center;">3,66 kg</td>
+<td style="text-align: center;">32,8 MJ</td>
+<td style="text-align: center;">112 g</td>
+</tr>
+</tbody>
+</table>
+<p>Energien i tabellen er regnet med, at vandet fra forbrændingen ender som væske.</p>
+<p>Kul giver mere end dobbelt så meget carbondioxid som naturgas for den samme energi. Det skyldes, at methan har fire hydrogenatomer for hvert carbonatom, og en del af energien kommer fra hydrogenatomerne, som bliver til vand og ikke til carbondioxid. Kul er næsten rent carbon.</p>
+<p>Ethanol giver lige så meget carbondioxid pr. MJ som octan. Fordelen ved bioethanol er altså ikke, at den giver mindre carbondioxid, men at carbonatomerne kom fra luften kort tid før, som du kan læse om i <a href="../temaer/t2-5-braendstoffer-og-carbondioxid.html">T2.5</a>.</p>
 </section>
-<section id="når-brændstoffet-brænder" class="level2">
-<h2 class="anchored" data-anchor-id="når-brændstoffet-brænder">Når brændstoffet brænder</h2>
-<p>Når et carbonhydrid brænder, bliver det til carbondioxid og vand. Sådan ser det ud for octan, som der er meget af i benzin:</p>
+<section id="eksempel-en-skov-binder-carbondioxid" class="level2">
+<h2 class="anchored" data-anchor-id="eksempel-en-skov-binder-carbondioxid">Eksempel: en skov binder carbondioxid</h2>
+<p>Træer bygger glucose af carbondioxid og vand ved fotosyntese og laver glucosen om til træ. Hvor meget carbondioxid skal en skov optage for at danne 1,00 kg glucose?</p>
 <div class="reaktion">
-<p>2 C<sub>8</sub>H<sub>18</sub> + 25 O<sub>2</sub> → 16 CO<sub>2</sub> + 18 H<sub>2</sub>O</p>
+<p>6 CO<sub>2</sub>(g) + 6 H<sub>2</sub>O(l) → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(aq) + 6 O<sub>2</sub>(g)</p>
 </div>
-<p>Carbonatomerne har ligget i undergrunden i millioner af år, men nu ender de i luften som carbondioxid. Det forstærker drivhuseffekten, som du kan læse om på siden <a href="../temaer/klima.html">Tema: Klima</a>. Forbrændinger lærer du at afstemme i afsnit <a href="../kapitler/4-3-alkaners-reaktioner.html">4.3 Alkaners reaktioner</a>.</p>
-</section>
-<section id="fra-olie-til-plast" class="level2">
-<h2 class="anchored" data-anchor-id="fra-olie-til-plast">Fra olie til plast</h2>
-<p>En mindre del af olien bliver ikke brændt af, men bliver til plast. Først varmes de lange alkaner op, så de knækker i mindre stykker, hvilket kaldes krakning. Nogle af stykkerne er alkener, for eksempel ethen.</p>
-<p>Ethen har en dobbeltbinding, og den kan åbne sig, som du lærte i afsnit <a href="../kapitler/4-4-alkener.html">4.4 Alkener og addition</a>. I en almindelig addition sætter to nye atomer sig på de ledige pladser, men ethenmolekylerne kan også sætte sig på hinanden. Så bliver tusindvis af små molekyler lagt sammen til ét meget langt molekyle, og reaktionen kaldes en <span id="ord-polyaddition" class="fagord-anker"><strong>polyaddition</strong></span>. Poly betyder mange, så ordet betyder mange additioner.</p>
-<div id="fig-plast-polyaddition" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-plast-polyaddition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/plast-polyaddition.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: En polyaddition i tre trin. Der dannes ikke andre stoffer end polymeren."><img src="../figurer/plast-polyaddition.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plast-polyaddition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;2: En polyaddition i tre trin. Der dannes ikke andre stoffer end polymeren.
-</figcaption>
-</figure>
-</div>
-<p>De små molekyler kaldes <span id="ord-monomerer" class="fagord-anker"><strong>monomerer</strong></span>, og det lange molekyle kaldes en <span id="ord-polymer" class="fagord-anker"><strong>polymer</strong></span>. Polymeren af ethen hedder polyethen. Reaktionsskemaet skrives sådan:</p>
-<div class="reaktion">
-<p><em>n</em> CH<sub>2</sub>=CH<sub>2</sub> → [−CH<sub>2</sub>−CH<sub>2</sub>−]<sub><em>n</em></sub></p>
-</div>
-<p>Bogstavet <em>n</em> står for et stort tal, ofte flere tusinde. De kantede parenteser viser den enhed, der bliver gentaget gennem hele kæden.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Sådan kender du en polyaddition">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 18%">
+<col style="width: 4%">
+<col style="width: 18%">
+<col style="width: 4%">
+<col style="width: 28%">
+<col style="width: 4%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">6 CO<sub>2</sub>(g)</th>
+<th style="text-align: center;">+</th>
+<th style="text-align: center;">6 H<sub>2</sub>O(l)</th>
+<th style="text-align: center;">→</th>
+<th style="text-align: center;">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(aq)</th>
+<th style="text-align: center;">+</th>
+<th style="text-align: center;">6 O<sub>2</sub>(g)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>m</em></td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1000 g</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>M</em></td>
+<td style="text-align: center;">44,01 g/mol</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">180,16 g/mol</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>n</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Trin 1: ned.</strong> Stofmængden af glucose beregnes.</p>
+<p><span class="math display">\[
+n(\mathrm{C_6H_{12}O_6}) = \frac{m}{M} = \frac{1000\ \mathrm{g}}{180{,}16\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 5{,}55\ \mathrm{mol}
+\]</span></p>
+<p><strong>Trin 2: på tværs.</strong> Koefficienterne er 6 for CO<sub>2</sub> og 1 for C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, så der skal bruges 6 gange så mange mol carbondioxid.</p>
+<p><span class="math display">\[
+n(\mathrm{CO_2}) = \frac{6}{1} \cdot 5{,}55\ \mathrm{mol} = 33{,}3\ \mathrm{mol}
+\]</span></p>
+<p><strong>Trin 3: op.</strong> Massen af carbondioxid beregnes.</p>
+<p><span class="math display">\[
+m(\mathrm{CO_2}) = n \cdot M = 33{,}3\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 1{,}47 \cdot 10^{3}\ \mathrm{g}
+\]</span></p>
+<p><strong>Konklusion.</strong> Skoven skal optage 1,47 kg carbondioxid for at danne 1,00 kg glucose.</p>
+<p>Når træet til sidst rådner eller bliver brændt, kommer den samme mængde carbondioxid tilbage. En skov binder kun carbondioxid, så længe den vokser.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Afrund først til sidst">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Vigtigt</span>Sådan kender du en polyaddition
+<span class="screen-reader-only">Vigtigt</span>Afrund først til sidst
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>Monomeren har en dobbeltbinding mellem to carbonatomer.</li>
-<li>Dobbeltbindingen bliver til en enkeltbinding.</li>
-<li>Der dannes kun ét stof. Alle atomer fra monomererne sidder i polymeren.</li>
-</ul>
+<p>Mellemresultaterne er skrevet med tre betydende cifre, men der er regnet videre med alle lommeregnerens cifre.</p>
 </div>
 </div>
-</section>
-<section id="forskellige-slags-plast" class="level2">
-<h2 class="anchored" data-anchor-id="forskellige-slags-plast">Forskellige slags plast</h2>
-<p>Skifter man et af hydrogenatomerne i ethen ud med noget andet, får man en ny monomer og en ny slags plast. Det, der sidder på carbonatomerne, følger med ind i kæden.</p>
-<div id="fig-plast-typer" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-plast-typer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/plast-typer.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figur&nbsp;3: Tre monomerer og den enhed, der bliver gentaget i hver slags plast."><img src="../figurer/plast-typer.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plast-typer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;3: Tre monomerer og den enhed, der bliver gentaget i hver slags plast.
-</figcaption>
-</figure>
-</div>
-<p>Chlorethen kaldes også vinylchlorid, og deraf kommer navnet polyvinylchlorid.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Plast</th>
-<th style="text-align: center;">Forkortelse</th>
-<th style="text-align: left;">Monomer</th>
-<th style="text-align: left;">Bruges til</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">polyethen</td>
-<td style="text-align: center;">PE</td>
-<td style="text-align: left;">ethen</td>
-<td style="text-align: left;">poser, flasker og legetøj</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">polypropen</td>
-<td style="text-align: center;">PP</td>
-<td style="text-align: left;">propen</td>
-<td style="text-align: left;">madkasser, låg og tovværk</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">polyvinylchlorid</td>
-<td style="text-align: center;">PVC</td>
-<td style="text-align: left;">chlorethen</td>
-<td style="text-align: left;">rør, kabler og regntøj</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">polystyren</td>
-<td style="text-align: center;">PS</td>
-<td style="text-align: left;">styren</td>
-<td style="text-align: left;">flamingo og engangsbestik</td>
-</tr>
-</tbody>
-</table>
-<p>Forkortelsen står ofte i en lille trekant i bunden af emballagen og fortæller, hvilken slags plast det er, så plasten kan sorteres.</p>
-</section>
-<section id="når-plasten-er-brugt" class="level2">
-<h2 class="anchored" data-anchor-id="når-plasten-er-brugt">Når plasten er brugt</h2>
-<p>Polymerkæderne i plast ligner meget lange alkaner, for de er upolære og reagerer næsten ikke med noget. Det gør plast holdbar, men det betyder også, at naturen ikke kan nedbryde den. En plastikflaske i havet går langsomt i stykker og bliver til små stumper, som kaldes <span id="ord-mikroplast" class="fagord-anker"><strong>mikroplast</strong></span>, men selve molekylerne forsvinder ikke.</p>
-<div class="pegefigur">
-<div id="fig-plast-veje" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-plast-veje-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/plast-veje.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;4: Brugt plast kan gå tre veje."><img src="../figurer/plast-veje.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plast-veje-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;4: Brugt plast kan gå tre veje.
-</figcaption>
-</figure>
-</div>
-</div>
-<ul>
-<li><span id="ord-genbrug" class="fagord-anker"><strong>Genbrug.</strong></span> Mange slags plast kan smeltes om og formes til nye ting. Det kræver, at plasten er sorteret, for de forskellige slags kan ikke blandes.</li>
-<li><span id="ord-forbraending" class="fagord-anker"><strong>Forbrænding.</strong></span> Plast brænder ligesom olie og giver varme til fjernvarmen, men carbonatomerne kommer fra olie, så der dannes carbondioxid.</li>
-<li><span id="ord-naturen" class="fagord-anker"><strong>Naturen.</strong></span> Plast, der ender i naturen, bliver liggende i hundreder af år.</li>
-</ul>
-<p>Plast kan også laves af planter i stedet for olie. Ethen kan for eksempel fremstilles af bioethanol fra sukkerrør. Polyethen lavet på den måde er præcis den samme polymer, så den kan genbruges på samme måde, men den nedbrydes heller ikke i naturen.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1287,53 +1454,16 @@ Figur&nbsp;4: Brugt plast kan gå tre veje.
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Kul, olie og naturgas er fossile brændstoffer. Olie og naturgas består af carbonhydrider.</li>
-<li>På et raffinaderi skilles råolien ad efter kogepunkt, og de korteste kæder koger lavest.</li>
-<li>Når fossile brændstoffer brænder, dannes der carbondioxid.</li>
-<li>I en polyaddition lægges mange monomerer med dobbeltbinding sammen til én lang polymer.</li>
-<li>Det, der sidder på monomerens carbonatomer, følger med ind i kæden.</li>
-<li>Plast nedbrydes ikke i naturen. Den kan genbruges eller brændes af.</li>
+<li>Med et afstemt reaktionsskema og molarmasser kan man beregne, hvor meget carbondioxid et brændstof giver.</li>
+<li>1,00 kg methan giver 2,74 kg carbondioxid, når det brænder.</li>
+<li>For den samme energi giver kul mere end dobbelt så meget carbondioxid som naturgas.</li>
+<li>Når en skov danner 1,00 kg glucose, optager den 1,47 kg carbondioxid.</li>
 </ul>
 </div>
 </div>
-</section>
-<section id="her-finder-du-opgaverne" class="level2">
-<h2 class="anchored" data-anchor-id="her-finder-du-opgaverne">Her finder du opgaverne</h2>
-<p>Opgaverne med klimatema i kapitel 4 handler om fossile brændstoffer og plast. De står sidst på opgavesiderne.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Afsnit</th>
-<th style="text-align: left;">Opgaver med klimatema</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">4.1 Carbonhydrider og alkaner</td>
-<td style="text-align: left;"><a href="../opgaver/4-1-opgaver.html#opgaver-med-klimatema">naturgas, flaskegas og benzin</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4.2 Zigzagformler og navngivning</td>
-<td style="text-align: left;"><a href="../opgaver/4-2-opgaver.html#opgaver-med-klimatema">molekylerne i benzin</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">4.3 Alkaners reaktioner</td>
-<td style="text-align: left;"><a href="../opgaver/4-3-opgaver.html#opgaver-med-klimatema">forbrænding af brændstoffer</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4.4 Alkener og addition</td>
-<td style="text-align: left;"><a href="../opgaver/4-4-opgaver.html#opgaver-med-klimatema">alkener, plast og polyaddition</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">4.5 Alkoholer og carboxylsyrer</td>
-<td style="text-align: left;"><a href="../opgaver/4-5-opgaver.html#opgaver-med-klimatema">bioethanol og methanol</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4.6 Fedtstoffer</td>
-<td style="text-align: left;"><a href="../opgaver/4-6-opgaver.html#opgaver-med-klimatema">planteolie og biodiesel</a></td>
-</tr>
-</tbody>
-</table>
+<div class="til-opgaver">
+<p><a href="../temaer/t2-6-opgaver.html">Se alle opgaver til emnet “Carbondioxid i tal” (T2.6)</a></p>
+</div>
 
 
 </section>
@@ -2691,14 +2821,17 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
-// Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026, i kapitel 1 og 2).
+// Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026 i kapitel 1 og 2,
+// 16. okt. 2026 i alle kapitler i de tre bøger).
 //
-// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver de fire linjer "Opgaver til 1.1" osv.
+// Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver linjerne "Opgaver til 1.1" osv.
 // til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
 // "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
-// kemiformler.dk). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+// kemiformler.dk; kun C-bogen har dem). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
 // før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
-// Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke.
+// Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke. Temaerne Plastic og Klima i C-bogen er bygget
+// som kapitler (temaer/t1-1-....html og temaer/t1-1-opgaver.html) og får samme menu; "Fagord til Tema: Klima" bliver
+// til "Fagord", også i de små temaer uden opgaver (Niels 16. okt. 2026, noter/temaer-c-oprydning.md).
 (function () {
   var EKSTRA = {
     "1": [
@@ -2710,6 +2843,28 @@ document.addEventListener("DOMContentLoaded", function () {
       { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
+    ],
+    "3": [
+      { tekst: "Slides", sti: "slides/kapitel-3.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-3.html", ikon: "modulplaner" },
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c3.html", ikon: "animationer" }
+    ],
+    "4": [
+      { tekst: "Slides", sti: "slides/kapitel-4.html", ikon: "slides" },
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c4.html", ikon: "animationer" }
+    ],
+    "5": [
+      { tekst: "Slides", sti: "slides/kapitel-5.html", ikon: "slides" },
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c5.html", ikon: "animationer" }
+    ],
+    "6": [
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c6.html", ikon: "animationer" }
+    ],
+    "7": [
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c7.html", ikon: "animationer" }
+    ],
+    "8": [
+      { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c8.html", ikon: "animationer" }
     ]
   };
 
@@ -2726,8 +2881,8 @@ document.addEventListener("DOMContentLoaded", function () {
       var a = p.querySelector("a.sidebar-link");
       if (!a) return;
       var href = a.getAttribute("href") || "";
-      if (/(^|\/)kapitler\//.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
-      else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href)) {
+      if (/(^|\/)kapitler\//.test(href) || /(^|\/)temaer\/t\d+-\d+-(?!opgaver)[^\/]*\.html/.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
+      else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href) || /(^|\/)temaer\/t\d+-\d+-opgaver\.html/.test(href)) {
         opgaver.push(p);
         if (foersteOpgave < 0) foersteOpgave = i;
       }
@@ -2735,16 +2890,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
 
     // Kapitlets nummer og vejen til bogens rod tages fra første afsnit ("../kapitler/1-1-....html").
+    // I B- og A-bogen hedder afsnittene "B1.1" og "A1.1"; dér er nummeret "B1" og "A1", som ikke står i EKSTRA.
     var foerste = afsnit[0].getAttribute("href");
-    var nr = (afsnit[0].textContent.trim().match(/^(\d+)\./) || [])[1];
-    var rod = foerste.slice(0, foerste.search(/kapitler\//));
+    var nr = (afsnit[0].textContent.trim().match(/^([AB]?\d+)\./) || [])[1];
+    var rod = foerste.slice(0, foerste.search(/(kapitler|temaer)\//));
 
     // Fagord og repetition: "Fagord til kapitel 1" bliver til "Fagord"
     punkter.slice(foersteOpgave).forEach(function (p) {
       if (opgaver.indexOf(p) >= 0) return;
       p.classList.add("kapitelmenu-side");
       var t = p.querySelector("a.sidebar-link .menu-text");
-      if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+\d+$/i, "");
+      if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+[AB]?\d+$/i, "").replace(/\s+til\s+Tema:.*$/, "");
     });
 
     var raekke = li("kapitelmenu-opgaver");
@@ -2783,6 +2939,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function start() {
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
+    // De små temaer har ingen opgavesider, men fagordssiden hedder også bare "Fagord" dér.
+    Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar a.sidebar-link .menu-text"), function (t) {
+      if (/^Fagord til Tema:/.test(t.textContent.trim())) {
+        t.textContent = "Fagord";
+        var p = t.closest("li");
+        if (p) p.classList.add("kapitelmenu-side");
+      }
+    });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
@@ -3195,49 +3359,17 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../temaer/klima.html" class="pagination-link" aria-label="Tema: Klima">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tema: Klima</span>
+      <a href="../temaer/t2-5-braendstoffer-og-carbondioxid.html" class="pagination-link" aria-label="T2.5 Brændstoffer og carbondioxid">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">T2.5 Brændstoffer og carbondioxid</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../temaer/batterier-og-rust.html" class="pagination-link" aria-label="Tema: Batterier og rust">
-        <span class="nav-page-text">Tema: Batterier og rust</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../temaer/t2-1-opgaver.html" class="pagination-link" aria-label="Opgaver til T2.1">
+        <span class="nav-page-text">Opgaver til T2.1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

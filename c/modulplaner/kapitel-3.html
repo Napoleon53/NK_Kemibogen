@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modulplaner kapitel 3</title>
+<style>
+/* Layout: én plan ad gangen (kort eller lang); hvert modul er et A4-ark med tidslinje til venstre og indhold til højre. */
+:root {
+  --bord: #e6ecea;
+  --ark: #ffffff;
+  --blæk: #14201f;
+  --dæmpet: #55635f;
+  --streg: #d3dcd9;
+  --accent: #0f766e;
+  --accent-svag: #e3f1ef;
+  --på-accent: #ffffff;
+  --tavle: #1d4ed8;  --tavle-bg: #e7eefc;
+  --par: #0f766e;    --par-bg: #e3f1ef;
+  --lab: #b45309;    --lab-bg: #fbefe1;
+  --klasse: #7c3aed; --klasse-bg: #f0eafd;
+  --start: #4b5563;  --start-bg: #eceff1;
+  --fokus-bg: #f6f8f7;
+  --skrift: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bord); color: var(--blæk);
+  font: 15px/1.5 var(--skrift);
+  padding-inline: 16px; padding-block: 24px 48px;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.side { max-width: 210mm; margin: 0 auto; display: grid; gap: 24px; }
+
+/* Forside */
+.forside { padding-block: 8px; display: grid; gap: 12px; }
+.forside h1 { margin: 0; font-size: 1.75rem; line-height: 1.2; text-wrap: balance; }
+.forside p { margin: 0; max-width: 65ch; color: var(--dæmpet); }
+.skifter {
+  display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; justify-self: start;
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 10px;
+}
+.skifter button {
+  font: inherit; cursor: pointer; border: 0; border-radius: 7px; padding: 8px 16px;
+  background: transparent; color: var(--blæk); display: grid; text-align: left; gap: 0;
+}
+.skifter button span { font-size: .8rem; color: var(--dæmpet); }
+.skifter button[aria-pressed="true"] { background: var(--accent); color: var(--på-accent); }
+.skifter button[aria-pressed="true"] span { color: var(--på-accent); opacity: .85; }
+.materialer { margin: 0; font-size: .9rem; max-width: 65ch; }
+.signatur { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .8rem; color: var(--dæmpet); align-items: center; }
+
+.plan { display: grid; gap: 24px; }
+
+/* Arket */
+.modul {
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 6px;
+  padding: 28px 32px; display: grid; gap: 18px;
+}
+.modul > header { display: grid; gap: 4px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+.øverst { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.etiket { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.modul h3 { margin: 0; font-size: 1.4rem; line-height: 1.25; text-wrap: balance; }
+.afsnit { font-size: .85rem; color: var(--dæmpet); }
+
+.før { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: .88rem; }
+.før > div { min-width: 0; }
+.før h4, .fokus h4, .bagefter h4 {
+  margin: 0 0 2px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600;
+}
+.før p, .før ul { margin: 0; }
+.før ul { padding-left: 1.1em; }
+
+/* Tidslinje */
+.forløb { list-style: none; margin: 0; padding: 0; display: grid; }
+.forløb li {
+  display: grid; grid-template-columns: 74px 1fr; gap: 16px;
+  padding-block: 10px; border-top: 1px solid var(--streg);
+}
+.forløb li:first-child { border-top: 0; padding-top: 0; }
+.tid { font-variant-numeric: tabular-nums; display: grid; align-content: start; }
+.tid b { font-size: 1.15rem; line-height: 1.1; }
+.tid span { font-size: .75rem; color: var(--dæmpet); }
+.trin { min-width: 0; display: grid; gap: 3px; }
+.trin-hoved { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.trin-hoved strong { font-size: 1rem; }
+.form { font-size: .7rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; }
+.form.tavle { color: var(--tavle); background: var(--tavle-bg); }
+.form.par { color: var(--par); background: var(--par-bg); }
+.form.lab { color: var(--lab); background: var(--lab-bg); }
+.form.klasse { color: var(--klasse); background: var(--klasse-bg); }
+.form.start { color: var(--start); background: var(--start-bg); }
+.trin p { margin: 0; font-size: .9rem; }
+.trin .ekstra { color: var(--dæmpet); font-size: .84rem; }
+.ord { font-weight: 600; }
+
+.fokus { background: var(--fokus-bg); border-radius: 6px; padding: 12px 16px; display: grid; gap: 6px; }
+.fokus ul { margin: 0; padding-left: 1.1em; font-size: .88rem; display: grid; gap: 2px; }
+.fokus p { margin: 0; font-size: .88rem; }
+
+.bagefter { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; font-size: .88rem; }
+.bagefter > div { min-width: 0; }
+.bagefter p { margin: 0; }
+
+@media (max-width: 640px) {
+  .modul { padding: 20px 16px; }
+  .før { grid-template-columns: 1fr; }
+  .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
+}
+
+@page { size: A4; margin: 12mm; }
+@media print {
+  body { background: #fff; padding: 0; font-size: 10.5pt; }
+  .forside { display: none; }
+  .side, .plan { gap: 0; max-width: none; }
+  .modul { border: 0; padding: 0; gap: 4mm; break-after: page; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<main class="side">
+
+<section class="forside">
+  <span class="etiket"><a href="https://kemibogen.dk/c/" style="color: inherit; text-decoration: none;">Kemibogen C</a> · lærerens udgave</span>
+  <h1>Modulplaner til kapitel 3: Molekyler</h1>
+  <p>Vælg den plan, der passer til holdet. Hvert modul er 90 minutter og fylder ét ark. Tiderne er et forslag: spring et punkt over eller brug mere tid, når klassen har brug for det.</p>
+  <div class="skifter" role="group" aria-label="Vælg plan">
+    <button type="button" id="knap-kort" data-plan="kort" aria-pressed="true">Kort · 3 moduler<span>Højt tempo og øvelse 3.4</span></button>
+    <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 4 moduler<span>Byggesæt, vandstrålen og øvelse 3.4</span></button>
+  </div>
+  <p class="materialer">
+    <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-3-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 19 sider).</span>
+    <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-3-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 20 sider).</span>
+    Du kan også sætte dit eget kompendium sammen på <a href="https://kemiformler.dk/kompendier/" target="_blank">Byg dit kompendium</a>.
+  </p>
+  <div class="signatur">
+    <span><span class="form start">Start</span> fravær og repetition</span>
+    <span><span class="form tavle">Tavle</span> læreren styrer</span>
+    <span><span class="form par">Par</span> eleverne arbejder</span>
+    <span><span class="form lab">Lab</span> laboratoriet</span>
+    <span><span class="form klasse">Klassen</span> fælles aktivitet</span>
+  </div>
+</section>
+
+<!-- ============================ KORT ============================ -->
+<div class="plan" id="kort">
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 3 · kort plan · modul 1 af 3</span><span class="afsnit">Afsnit 3.1 og 3.2 · 90 min</span></div>
+    <h3>Molekyler og deres form</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen, eller læs <a href="https://kemibogen.dk/c/kapitler/3-1-molekyler.html">3.1 Molekyler</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-3-kort.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-3.html#/2" target="_blank">Slides 2–12</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc3.1_elektronprikformler/index.html">Elektronprikformler</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 2: <span class="ord">ion, ionforbindelse, ædelgasreglen</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvor mange elektroner har oxygen og nitrogen i yderste skal, og hvor mange mangler de for at opfylde ædelgasreglen?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Atomer, der deler elektroner</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/2" target="_blank">Slides 2–9</a>: at dele elektroner, molekyle eller ionforbindelse, prikformler og stregformler, dobbelt- og tripelbindinger og reglen om antallet af bindinger.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 3, 4 og 9. På slide 7 tegner klassen methan, før figuren kommer frem.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Prikformler og stregformler</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/3-1-opgaver.html">Opgave 3.1.2, 3.1.5 og 3.1.7</a>. Stop klassen, hvis mange laver samme fejl.</p>
+        <p class="ekstra">Hurtige par: 3.1.6 eller <em>Elektronprikformler</em>.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>55–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Molekylers form</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/10" target="_blank">Slides 10–12</a>: elektronpar frastøder hinanden, de fire molekyler, og hvorfor vand er vinklet, når CO₂ er lineært.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 12, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>65–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fire former</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/3-2-opgaver.html">Opgave 3.2.1 og 3.2.4</a>.</p>
+        <p class="ekstra">Hurtige par: 3.2.3.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/fagord/kapitel-3.html">Fagordsiden</a>, afsnit 3.1 og 3.2. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad en elektronparbinding og et molekyle er</li>
+      <li>tegne elektronprikformler og stregformler for små molekyler</li>
+      <li>bruge reglen om, at carbon danner 4 bindinger, nitrogen 3, oxygen 2 og hydrogen 1</li>
+      <li>forklare, at elektronparrene frastøder hinanden, og beskrive formen af methan, ammoniak, vand og carbondioxid</li>
+    </ul>
+    <p><b>Centrale fagord:</b> elektronparbinding, molekyle, frit elektronpar, stregformel, dobbeltbinding, tetraeder, vinklet, lineær</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-3-polaritet.html">3.3 Polære bindinger og polære molekyler</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Vinklerne 109,5° og 104,5° kan nøjes med et blik. Formen og grunden til den er det vigtigste.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 3 · kort plan · modul 2 af 3</span><span class="afsnit">Afsnit 3.3 · 90 min</span></div>
+    <h3>Polære bindinger og polære molekyler</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-3-polaritet.html">3.3 Polære bindinger og polære molekyler</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-3.html#/13" target="_blank">Slides 13–21</a></li><li>Elektronegativiteterne bagest i kompendiet</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc3.3_polaere_molekyler/index.html#en">Polære molekyler</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">elektronparbinding, frit elektronpar, vinklet, lineær</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn stregformlerne for vand og carbondioxid. Hvilken form har de to molekyler?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Elektronegativitet</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/13" target="_blank">Slides 13–16</a>: elektronegativitet, ΔEN og de tre slags bindinger, δ+ og δ−.</p>
+        <p class="ekstra">På slide 16 regner klassen med, række for række.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvilken slags binding?</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/3-3-opgaver.html">Opgave 3.3.2, 3.3.4 og 3.3.5</a>.</p>
+        <p class="ekstra">Hurtige par: <em>Polære molekyler</em>, fanen Elektronegativitet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>55–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Polære molekyler</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/17" target="_blank">Slides 17–21</a>: polære molekyler, carbondioxid, hvor bindingerne ophæver hinanden, og tommelfingerreglen for store molekyler.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 18, 19 og 21, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Polært eller upolært?</strong><span class="form par">Par</span></div>
+        <p>Opgave 3.3.6 og 3.3.8.</p>
+        <p class="ekstra">Sidste 5 min: udgangsbillet. Hver elev skriver på en seddel, om hydrogenfluorid, HF, er et polært molekyle, og begrunder med ΔEN. Læs sedlerne før næste modul.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad elektronegativitet er</li>
+      <li>beregne ΔEN og afgøre, om bindingen er upolær, polær eller en ionbinding</li>
+      <li>afgøre, om et lille molekyle er polært, også når bindingerne ophæver hinanden</li>
+      <li>bruge tommelfingerreglen for store molekyler</li>
+    </ul>
+    <p><b>Centrale fagord:</b> elektronegativitet, upolær binding, polær binding, polært molekyle, pol, polær gruppe</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-4-blandbarhed.html">3.4 Blandbarhed</a> og fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/3-4-hvad-kan-blandes.html">øvelse 3.4</a>. Skriv dit gæt i skemaet.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Ionbindingen på skalaen kender eleverne fra kapitel 2. Den kan nøjes med en sætning.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 3 · kort plan · modul 3 af 3</span><span class="afsnit">Afsnit 3.4 · 90 min</span></div>
+    <h3>Hvad kan blandes?</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-4-blandbarhed.html">3.4 Blandbarhed</a>, og skriv dit gæt i skemaet i <a href="https://kemibogen.dk/c/oevelser/3-4-hvad-kan-blandes.html">øvelse 3.4</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-3.html#/22" target="_blank">Slides 22–25</a></li><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/3-4-hvad-kan-blandes.html">Øvelse 3.4 Hvad kan blandes?</a>, den lukkede udgave: seks reagensglas med prop pr. par, vand farvet rødt, husholdningssprit farvet blå, madolie og rensebenzin</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc3.5_vand_eller_heptan/index.html#gaet">Vand eller heptan</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">elektronegativitet, polært molekyle, polær gruppe</span>. Tag fejlene fra udgangsbilletterne op.</p>
+        <p class="ekstra">Mens du tager fravær: Er ethanol polært? Et ethanolmolekyle har 2 carbonatomer og én OH-gruppe.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Det, der ligner hinanden</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/22" target="_blank">Slides 22–25</a>: reglen om blandbarhed, olie og vand på mikroniveau, densiteten og blandbarhed i hverdagen.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 23 og 25, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>25–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad kan blandes?</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 3.4 i par. Eleverne har skrevet deres gæt hjemme.</p>
+        <p class="ekstra">Briller og kittel. Ingen åben ild i lokalet, og glas med rensebenzin står i stinkskabet.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>55–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Efterbehandling</strong><span class="form par">Par</span></div>
+        <p>Efterbehandling 1 til 4 af øvelse 3.4.</p>
+        <p class="ekstra">Hurtige par: <em>Vand eller heptan</em>, fanen Gæt polaritet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
+        <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-3.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>bruge reglen om, at polære stoffer blandes med polære, og upolære med upolære</li>
+      <li>forklare på mikroniveau, hvorfor vand og olie ikke kan blandes</li>
+      <li>forudsige ud fra et stofs polaritet, om det kan opløses i vand</li>
+    </ul>
+    <p><b>Centrale fagord:</b> blandbarhed, polært stof, upolært stof, densitet</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Resten af efterbehandlingen af øvelse 3.4 og <a href="https://kemibogen.dk/c/opgaver/3-4-opgaver.html">opgave 3.4.5 og 3.4.6</a>. <a href="https://kemibogen.dk/c/repetition/kapitel-3.html">Repetition af kapitel 3</a> med øveprøven.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Lad eleverne lave forsøget i <a href="https://kemiformler.dk/animationer/superanimationer/sc3.5_vand_eller_heptan/index.html#forsoeg">Vand eller heptan</a>, fanen Forsøget (25 min), eller vis glas 1, 2 og 6 som demo i stinkskabet (10 min).</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Hvilket lag der ligger øverst (slide 24), kan nøjes med en sætning: det afgøres af densiteten og ikke af polariteten.</p></div>
+  </div>
+</article>
+
+</div>
+
+<!-- ============================ LANG ============================ -->
+<div class="plan" id="lang" hidden>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 3 · lang plan · modul 1 af 4</span><span class="afsnit">Afsnit 3.1 · 90 min</span></div>
+    <h3>Atomer, der deler elektroner</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-3-lang.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-3.html#/2" target="_blank">Slides 2–9</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc3.1_elektronprikformler/index.html#fejl">Elektronprikformler</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 1 og 2: <span class="ord">valenselektroner, ædelgasreglen, ion</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv elektronstrukturen for carbon (atomnummer 6) og oxygen (atomnummer 8). Hvor mange elektroner mangler de i yderste skal?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>At dele elektroner</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/2" target="_blank">Slides 2–6</a>: at dele elektroner, molekyle eller ionforbindelse, vandmolekylet med skaller, prikformler og stregformler.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 3 og 4, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>30–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Molekyle eller ionforbindelse?</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/3-1-opgaver.html">Opgave 3.1.1 og 3.1.2</a>.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>50–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Flere bindinger</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/7" target="_blank">Slides 7–9</a>: methan, dobbelt- og tripelbindinger og reglen om antallet af bindinger.</p>
+        <p class="ekstra">På slide 7 tegner klassen methan, før figuren kommer frem. Klassen svarer på slide 9.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tegn molekylerne</strong><span class="form par">Par</span></div>
+        <p>Opgave 3.1.5, 3.1.6 og 3.1.7. Stop klassen, hvis mange laver samme fejl. Eleverne arbejder, til klokken ringer.</p>
+        <p class="ekstra">Hurtige par: <em>Elektronprikformler</em>, fanen Find fejlen, eller ekstraopgaven bagest i kompendiet.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad en elektronparbinding og et molekyle er</li>
+      <li>kende forskel på et molekyle og en ionforbindelse</li>
+      <li>tegne elektronprikformler og stregformler for små molekyler</li>
+      <li>kende enkelt-, dobbelt- og tripelbindinger og reglen om, at carbon danner 4 bindinger, nitrogen 3, oxygen 2 og hydrogen 1</li>
+    </ul>
+    <p><b>Centrale fagord:</b> fælles elektronpar, elektronparbinding, molekyle, frit elektronpar, elektronprikformel, stregformel, dobbeltbinding, tripelbinding</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-1-molekyler.html">3.1 Molekyler</a> og <a href="https://kemibogen.dk/c/kapitler/3-2-molekylers-form.html">3.2 Molekylers form</a>, og lær reglen om antallet af bindinger udenad.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Vandmolekylet med skaller (slide 4) kan nøjes med et blik. Det er prikformlerne, eleverne skal bruge resten af kapitlet.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 3 · lang plan · modul 2 af 4</span><span class="afsnit">Afsnit 3.2 og begyndelsen af 3.3 · 90 min</span></div>
+    <h3>Molekylers form og elektronegativitet</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-1-molekyler.html">3.1</a> og <a href="https://kemibogen.dk/c/kapitler/3-2-molekylers-form.html">3.2</a>, og lær reglen om antallet af bindinger udenad.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-3.html#/10" target="_blank">Slides 10–16</a></li><li>Molekylebyggesæt, hvis skolen har dem</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc3.2_rumlig_opbygning/index.html#molekyler">Molekylers rumlige opbygning</a> (animation)</li><li>Elektronegativiteterne bagest i kompendiet</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">elektronparbinding, frit elektronpar, stregformel, dobbeltbinding</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn stregformlerne for ammoniak og carbondioxid. Hvor mange frie elektronpar har atomet i midten?</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Elektronpar frastøder hinanden</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/10" target="_blank">Slides 10–12</a>: frastødningen, de fire molekyler, og hvorfor vand er vinklet, når CO₂ er lineært.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 12, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>20–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Byg de fire molekyler</strong><span class="form par">Par</span></div>
+        <p>Eleverne bygger methan, ammoniak, vand og carbondioxid med molekylebyggesæt og sammenligner med figuren på slide 11. Derefter <a href="https://kemibogen.dk/c/opgaver/3-2-opgaver.html">opgave 3.2.1, 3.2.2 og 3.2.4</a>.</p>
+        <p class="ekstra">Hurtige par: <em>Molekylers rumlige opbygning</em>, fanen Molekylerne. Drej molekylerne, og mål vinklerne.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>45–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Elektronegativitet</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/13" target="_blank">Slides 13–16</a>: elektronegativitet, ΔEN og de tre slags bindinger, δ+ og δ−.</p>
+        <p class="ekstra">På slide 16 regner klassen med, række for række.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>60–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Find ΔEN</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/3-3-opgaver.html">Opgave 3.3.1 og 3.3.2</a>.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc3.3_polaere_molekyler/index.html#en">Polære molekyler</a>, fanen Elektronegativitet.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fagord</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Quiz: fem hurtige</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-3.html">fagordsiden</a>, afsnit 3.1 og 3.2. Klassen stemmer med fingre (1–4).</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, at elektronparrene frastøder hinanden og derfor bestemmer molekylets form</li>
+      <li>beskrive formen af methan, ammoniak, vand og carbondioxid</li>
+      <li>forklare, hvad elektronegativitet er, og beregne ΔEN for en binding</li>
+    </ul>
+    <p><b>Centrale fagord:</b> tetraeder, trekantet pyramide, vinklet, lineær, elektronegativitet</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-3-polaritet.html">3.3 Polære bindinger og polære molekyler</a>.</p></div>
+    <div><h4>Uden byggesæt</h4><p>Lad eleverne bygge de fire molekyler i <a href="https://kemiformler.dk/animationer/superanimationer/sc3.2_rumlig_opbygning/index.html">Molekylers rumlige opbygning</a>, fanen Byg molekylet.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Vinklerne 109,5° og 104,5° kan nøjes med et blik. Formen og grunden til den er det vigtigste.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 3 · lang plan · modul 3 af 4</span><span class="afsnit">Resten af 3.3 · 90 min</span></div>
+    <h3>Polære molekyler</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-3-polaritet.html">3.3 Polære bindinger og polære molekyler</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-3.html#/17" target="_blank">Slides 17–21</a></li><li>En burette med vand og en plastikstang eller ballon til vandstrålen</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc3.3_polaere_molekyler/index.html#polaritet">Polære molekyler</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">elektronegativitet, tetraeder, vinklet, lineær</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Beregn ΔEN for O−H og C−H. Hvilken slags binding er det?</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Vandstrålen</strong><span class="form klasse">Klassen</span></div>
+        <p>Demo: lad en tynd stråle vand løbe fra buretten, og hold en plastikstang eller ballon, der er gnedet mod en trøje, tæt på strålen. Strålen bøjer. Lad klassen gætte hvorfor, og gem svaret til slide 17.</p>
+        <p class="ekstra">Uden udstyr: <em>Polære molekyler</em>, fanen Forsøg: vandstrålen, på projektoren.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>20–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Polære molekyler</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/17" target="_blank">Slides 17–19</a>: polære molekyler, og carbondioxid, hvor bindingerne ophæver hinanden.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 18 og 19, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>35–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Polær eller upolær?</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/3-3-opgaver.html">Opgave 3.3.4, 3.3.5 og 3.3.6</a>. Stop klassen, hvis mange laver samme fejl.</p>
+        <p class="ekstra">Hurtige par: <em>Polære molekyler</em>, fanen Polær eller upolær?</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>60–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Store molekyler</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/20" target="_blank">Slides 20–21</a>: carbonkæden og de polære grupper og tommelfingerreglen.</p>
+        <p class="ekstra">På slide 21 tæller klassen med.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tommelfingerreglen</strong><span class="form par">Par</span></div>
+        <p>Opgave 3.3.8 og 3.3.mad.1.</p>
+        <p class="ekstra">Sidste 5 min: udgangsbillet. Hver elev skriver på en seddel, om hydrogenfluorid, HF, er et polært molekyle, og begrunder med ΔEN. Læs sedlerne før næste modul.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad δ+ og δ− betyder i en polær binding</li>
+      <li>afgøre, om et lille molekyle er polært</li>
+      <li>forklare, hvorfor carbondioxid er upolært, selvom bindingerne er polære</li>
+      <li>bruge tommelfingerreglen for store molekyler</li>
+    </ul>
+    <p><b>Centrale fagord:</b> upolær binding, polær binding, polært molekyle, pol, polær gruppe</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-4-blandbarhed.html">3.4 Blandbarhed</a> og fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/3-4-hvad-kan-blandes.html">øvelse 3.4</a>. Skriv dit gæt i skemaet.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Vandstrålen kan vises i animationen på få minutter. Den er et eksempel og ikke noget, eleverne skal kunne forklare.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 3 · lang plan · modul 4 af 4</span><span class="afsnit">Afsnit 3.4 · 90 min</span></div>
+    <h3>Hvad kan blandes?</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/3-4-blandbarhed.html">3.4 Blandbarhed</a>, og skriv dit gæt i skemaet i <a href="https://kemibogen.dk/c/oevelser/3-4-hvad-kan-blandes.html">øvelse 3.4</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-3.html#/22" target="_blank">Slides 22–25</a></li><li>Laboratoriet booket i første halvdel</li><li><a href="https://kemibogen.dk/c/oevelser/3-4-hvad-kan-blandes.html">Øvelse 3.4 Hvad kan blandes?</a>, den åbne udgave: seks reagensglas med prop pr. par, vand farvet rødt, husholdningssprit farvet blå, madolie og rensebenzin</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">polært molekyle, pol, polær gruppe</span>. Tag fejlene fra udgangsbilletterne op.</p>
+        <p class="ekstra">Mens du tager fravær: Er ethanol polært? Et ethanolmolekyle har 2 carbonatomer og én OH-gruppe.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Reglen om blandbarhed</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/22" target="_blank">Slides 22–23</a>: reglen og olie og vand på mikroniveau.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 23, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>20–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad kan blandes?</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 3.4 i par. Eleverne har skrevet deres gæt hjemme.</p>
+        <p class="ekstra">Briller og kittel. Ingen åben ild i lokalet, og glas med rensebenzin står i stinkskabet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>50–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Passede gættet?</strong><span class="form klasse">Klassen</span></div>
+        <p>Klassen samler resultaterne for de seks glas på tavlen. Hvilke glas passede ikke med gættet, og hvad kan grunden være?</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>65–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Lag og hverdag</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-3.html#/24" target="_blank">Slides 24–25</a>: densiteten og blandbarhed i hverdagen.</p>
+        <p class="ekstra">Lad klassen svare højt på begge slides.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
+        <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-3.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>bruge reglen om, at polære stoffer blandes med polære, og upolære med upolære</li>
+      <li>forklare på mikroniveau, hvorfor vand og olie ikke kan blandes</li>
+      <li>forudsige ud fra et stofs polaritet, om det kan opløses i vand</li>
+    </ul>
+    <p><b>Centrale fagord:</b> blandbarhed, polært stof, upolært stof, densitet</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 3.4 og <a href="https://kemibogen.dk/c/opgaver/3-4-opgaver.html">opgave 3.4.4 og 3.4.5</a>. <a href="https://kemibogen.dk/c/repetition/kapitel-3.html">Repetition af kapitel 3</a> med øveprøven.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Lad eleverne lave forsøget i <a href="https://kemiformler.dk/animationer/superanimationer/sc3.5_vand_eller_heptan/index.html#forsoeg">Vand eller heptan</a>, fanen Forsøget (25 min).</p></div>
+  </div>
+</article>
+
+</div>
+
+</main>
+
+<script>
+(function () {
+  // Slides ligger i ../slides/ i bogens mappe og på kemibogen.dk, men ved siden af siden i et artifact på claude.ai.
+  if (location.protocol !== "file:" && !/kemibogen|localhost|127\.0\.0\.1/.test(location.hostname)) {
+    document.querySelectorAll("a.sl").forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("href").replace("../slides/", "slides/"));
+    });
+  }
+
+  var knapper = document.querySelectorAll(".skifter button");
+  function vis(plan) {
+    knapper.forEach(function (k) { k.setAttribute("aria-pressed", String(k.dataset.plan === plan)); });
+    document.getElementById("kort").hidden = plan !== "kort";
+    document.getElementById("lang").hidden = plan !== "lang";
+    document.querySelectorAll(".materialer [data-plan]").forEach(function (el) { el.hidden = el.dataset.plan !== plan; });
+  }
+  knapper.forEach(function (k) {
+    k.addEventListener("click", function () {
+      vis(k.dataset.plan);
+      try { localStorage.setItem("modulplan-plan", k.dataset.plan); } catch (e) {}
+    });
+  });
+
+  var start = location.hash === "#lang" ? "lang" : location.hash === "#kort" ? "kort" : null;
+  if (!start) { try { start = localStorage.getItem("modulplan-plan"); } catch (e) {} }
+  vis(start === "lang" ? "lang" : "kort");
+})();
+</script>
+</body>
+</html>
