@@ -4183,7 +4183,7 @@
     "href": "kapitler/4-1-alkaner.html",
     "title": "4.1 Carbonhydrider og alkaner",
     "section": "",
-    "text": "Organisk kemi\nLightergas, benzin, fyrfadslys og plastikposer ligner ikke hinanden, men de er i familie, fordi deres molekyler alle er bygget af carbonatomer og hydrogenatomer.\nOrganisk kemi er kemien om stoffer, der er bygget op omkring carbonatomer. I et organisk stof er carbonatomerne bundet til hinanden og til hydrogenatomer, og ofte er der også oxygenatomer eller nitrogenatomer i molekylet.\nStoffer, der ikke indeholder carbonatomer, kaldes uorganiske, fx vand, metaller og salte. Nogle få simple stoffer med carbon regnes dog også som uorganiske, nemlig carbondioxid og carbonater som kalk.\nOrdet organisk kommer af organisme, fordi man engang troede, at stofferne kun kunne dannes i levende organismer. I dag kan langt de fleste fremstilles i et laboratorium.",
+    "text": "Organisk kemi\nLightergas, benzin, fyrfadslys og plastikposer ligner ikke hinanden, men de er i familie, fordi deres molekyler alle er bygget af carbonatomer og hydrogenatomer.\nOrganisk kemi er kemien om stoffer, der er bygget op omkring carbonatomer. I et organisk stof er carbonatomerne bundet til hinanden og til hydrogenatomer, og ofte er der også oxygenatomer eller nitrogenatomer i molekylet.\nSom udgangspunkt er et stof organisk, når dets molekyler har mindst én binding mellem et carbonatom og et hydrogenatom, en C−H-binding. Stoffer uden C−H-bindinger kaldes uorganiske, fx vand, metaller og salte, og derfor er carbondioxid og carbonater som kalk også uorganiske, selv om de indeholder carbon. Der er få undtagelser fra reglen, fx urinstof, CO(NH2)2, som regnes som organisk, selv om det ikke har nogen C−H-binding.\nOrdet organisk kommer af organisme, fordi man engang troede, at stofferne kun kunne dannes i levende organismer. I dag kan langt de fleste fremstilles i et laboratorium.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.1 Carbonhydrider og alkaner"
@@ -4205,7 +4205,7 @@
     "href": "kapitler/4-1-alkaner.html#carbonhydrider-og-alkaner",
     "title": "4.1 Carbonhydrider og alkaner",
     "section": "Carbonhydrider og alkaner",
-    "text": "Carbonhydrider og alkaner\nEt carbonhydrid er et stof, der kun består af carbon og hydrogen. De enkleste carbonhydrider hedder alkaner, og i en alkan er alle bindinger enkeltbindinger.\n\n\n\n\n\n\nFigur 1: De fire mindste alkaner tegnet som stregformler. Hvert carbonatom har fire bindinger.\n\n\n\nHvert carbonatom i kæden har to hydrogenatomer, og de to carbonatomer i enderne har ét ekstra hver. Derfor følger alle alkaner den samme formel:\n\\[\n\\mathrm{C}_{n}\\mathrm{H}_{2n+2}\n\\]\nHer er n antallet af carbonatomer. En alkan med 5 carbonatomer har n = 5, og formlen bliver:\n\\[\n\\mathrm{C}_{5}\\mathrm{H}_{2 \\cdot 5 + 2} = \\mathrm{C}_{5}\\mathrm{H}_{12}\n\\]\nEn formel, der kun tæller atomerne i molekylet, kaldes en molekylformel.\n\n\n\n\n\n\nVigtigtCarbonhydrid eller alkan?\n\n\n\nAlle alkaner er carbonhydrider, men ikke alle carbonhydrider er alkaner. Et carbonhydrid med en dobbeltbinding er ikke en alkan, men en alken, og dem møder du i afsnit 4.4.",
+    "text": "Carbonhydrider og alkaner\nEt carbonhydrid er et stof, der kun består af carbon og hydrogen. Alle carbonhydrider er altså organiske, men ikke alle organiske stoffer er carbonhydrider.\n\n\n\nStof\nFormel\nOrganisk?\nCarbonhydrid?\n\n\n\n\nmethan\nCH4\nja\nja\n\n\nbutan\nC4H10\nja\nja\n\n\nethanol\nC2H5OH\nja\nnej\n\n\nglucose\nC6H12O6\nja\nnej\n\n\nvand\nH2O\nnej\nnej\n\n\ncarbondioxid\nCO2\nnej\nnej\n\n\nkalk\nCaCO3\nnej\nnej\n\n\n\nDe enkleste carbonhydrider hedder alkaner, og i en alkan er alle bindinger enkeltbindinger.\n\n\n\n\n\n\nFigur 1: De fire mindste alkaner tegnet som stregformler. Hvert carbonatom har fire bindinger.\n\n\n\nHvert carbonatom i kæden har to hydrogenatomer, og de to carbonatomer i enderne har ét ekstra hver. Derfor følger alle alkaner den samme formel:\n\\[\n\\mathrm{C}_{n}\\mathrm{H}_{2n+2}\n\\]\nHer er n antallet af carbonatomer. En alkan med 5 carbonatomer har n = 5, og formlen bliver:\n\\[\n\\mathrm{C}_{5}\\mathrm{H}_{2 \\cdot 5 + 2} = \\mathrm{C}_{5}\\mathrm{H}_{12}\n\\]\nEn formel, der kun tæller atomerne i molekylet, kaldes en molekylformel.\n\n\n\n\n\n\nVigtigtCarbonhydrid eller alkan?\n\n\n\nAlle alkaner er carbonhydrider, men ikke alle carbonhydrider er alkaner. Et carbonhydrid med en dobbeltbinding er ikke en alkan, men en alken, og dem møder du i afsnit 4.4.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.1 Carbonhydrider og alkaner"
@@ -4249,7 +4249,7 @@
     "href": "kapitler/4-1-alkaner.html#alkaner-er-upolære",
     "title": "4.1 Carbonhydrider og alkaner",
     "section": "Alkaner er upolære",
-    "text": "Alkaner er upolære\nCarbon har elektronegativiteten 2,5 og hydrogen 2,1. Forskellen på 0,4 er under 0,5, så bindingen mellem carbon og hydrogen er upolær, som du lærte i afsnit 3.3. Bindingen mellem to carbonatomer er også upolær, for her er forskellen 0.\nEt carbonhydrid har altså kun upolære bindinger og er et upolært molekyle. Da upolære stoffer ikke kan opløses i vand, lægger benzin og olie sig i et lag for sig, når de hældes i vand. Laget ligger altid øverst, fordi benzin og olie har en lavere densitet end vand, som du så i afsnit 3.4.\nAlkaner kan til gengæld opløse andre upolære stoffer som fedt og olie, og derfor kan rensebenzin fjerne fedtpletter.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nOrganisk kemi handler om stoffer, der er bygget op omkring carbonatomer.\nEt carbonatom danner altid fire bindinger.\nEt carbonhydrid består kun af carbon og hydrogen, og en alkan er et carbonhydrid med kun enkeltbindinger.\nAlkaner har molekylformlen CnH2n+2, og navnene ender på -an.\nJo længere kæden er, jo højere er kogepunktet.\nAlkaner er upolære og kan ikke opløses i vand.\n\n\n\n\nPrøv selv: Alkaners kogepunkt: varm alkaner op, og se, hvornår de koger.\n\n\nSe alle opgaver til emnet “Carbonhydrider og alkaner” (4.1)",
+    "text": "Alkaner er upolære\nCarbon har elektronegativiteten 2,5 og hydrogen 2,1. Forskellen på 0,4 er under 0,5, så bindingen mellem carbon og hydrogen er upolær, som du lærte i afsnit 3.3. Bindingen mellem to carbonatomer er også upolær, for her er forskellen 0.\nEt carbonhydrid har altså kun upolære bindinger og er et upolært molekyle. Da upolære stoffer ikke kan opløses i vand, lægger benzin og olie sig i et lag for sig, når de hældes i vand. Laget ligger altid øverst, fordi benzin og olie har en lavere densitet end vand, som du så i afsnit 3.4.\nAlkaner kan til gengæld opløse andre upolære stoffer som fedt og olie, og derfor kan rensebenzin fjerne fedtpletter.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nOrganisk kemi handler om stoffer, der er bygget op omkring carbonatomer, og som udgangspunkt har et organisk stof mindst én C−H-binding.\nEt carbonatom danner altid fire bindinger.\nEt carbonhydrid består kun af carbon og hydrogen, og en alkan er et carbonhydrid med kun enkeltbindinger.\nAlkaner har molekylformlen CnH2n+2, og navnene ender på -an.\nJo længere kæden er, jo højere er kogepunktet.\nAlkaner er upolære og kan ikke opløses i vand.\n\n\n\n\nPrøv selv: Alkaners kogepunkt: varm alkaner op, og se, hvornår de koger.\n\n\nSe alle opgaver til emnet “Carbonhydrider og alkaner” (4.1)",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.1 Carbonhydrider og alkaner"
@@ -4260,7 +4260,7 @@
     "href": "kapitler/4-2-zigzagformler.html",
     "title": "4.2 Zigzagformler og navngivning",
     "section": "",
-    "text": "Fra stregformel til zigzagformel\nEn stregformel for octan har 26 atomer og 25 streger og tager lang tid at tegne. Kemikere bruger derfor en hurtigere tegnemåde, som hedder en zigzagformel.\nEn zigzagformel tegnes efter to regler:\nHver ende og hvert knæk i en zigzagformel er altså et carbonatom.\nKæden tegnes i zigzag, fordi de fire bindinger omkring et carbonatom peger ud mod hjørnerne i et tetraeder, som du så i afsnit 3.2. En carbonkæde er derfor ikke lige, men bugter sig.",
+    "text": "Fra stregformel til zigzagformel\nEn stregformel for octan har 26 atomer og 25 streger og tager lang tid at tegne. Kemikere bruger derfor en hurtigere tegnemåde, som hedder en zigzagformel.\nEn zigzagformel tegnes efter to regler:\nHver ende og hvert knæk i en zigzagformel er altså et carbonatom.\nKæden tegnes i zigzag, fordi de fire bindinger omkring et carbonatom peger ud mod hjørnerne i et tetraeder, hvor vinklen mellem bindingerne er 109,5°, som du så i afsnit 3.2. En carbonkæde er derfor ikke lige, men bugter sig.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.2 Zigzagformler og navngivning"
@@ -4300,11 +4300,22 @@
     ]
   },
   {
+    "objectID": "kapitler/4-2-zigzagformler.html#sidegrupper",
+    "href": "kapitler/4-2-zigzagformler.html#sidegrupper",
+    "title": "4.2 Zigzagformler og navngivning",
+    "section": "Sidegrupper",
+    "text": "Sidegrupper\nDen længste kæde af carbonatomer i et molekyle kaldes hovedkæden, og en sidegren på hovedkæden kaldes en sidegruppe. En sidegruppe har navn efter alkanen med samme antal carbonatomer, men endelsen er -yl i stedet for -an.\n\n\n\n\n\n\nFigur 5: En methylgruppe og en ethylgruppe (blå) på en hovedkæde (grøn).\n\n\n\n\n\n\nSidegruppe\nAntal carbonatomer\nFormel\n\n\n\n\nmethyl\n1\n−CH3\n\n\nethyl\n2\n−CH2CH3",
+    "crumbs": [
+      "Kapitel 4: Organisk kemi",
+      "4.2 Zigzagformler og navngivning"
+    ]
+  },
+  {
     "objectID": "kapitler/4-2-zigzagformler.html#sådan-får-en-forgrenet-alkan-sit-navn",
     "href": "kapitler/4-2-zigzagformler.html#sådan-får-en-forgrenet-alkan-sit-navn",
     "title": "4.2 Zigzagformler og navngivning",
     "section": "Sådan får en forgrenet alkan sit navn",
-    "text": "Sådan får en forgrenet alkan sit navn\nNavnet på en forgrenet alkan har to dele. Den sidste del er navnet på den længste kæde i molekylet, som kaldes hovedkæden. Den første del fortæller, hvilke sidegrene der sidder på hovedkæden, og hvor de sidder. I et navn kaldes en sidegren en sidegruppe.\nEn sidegruppe har navn efter alkanen med samme antal carbonatomer, men endelsen er -yl i stedet for -an.\n\n\n\nSidegruppe\nAntal carbonatomer\nFormel\n\n\n\n\nmethyl\n1\n−CH3\n\n\nethyl\n2\n−CH2CH3\n\n\n\nNavnet findes i tre trin:\n\nFind den længste kæde af carbonatomer. Det er hovedkæden, og den giver den sidste del af navnet.\nNummerér carbonatomerne i hovedkæden. Begynd i den ende, der er nærmest en sidegruppe.\nSkriv sidegruppens nummer og navn foran hovedkædens navn.\n\n\n\n\n\n\n\nFigur 5: Navngivning af 3-methylhexan. Hovedkæden er grøn, og sidegruppen er blå.\n\n\n\nDer gælder tre regler mere for navnene:\n\nFlere ens sidegrupper. Skriv di for to, tri for tre og tetra for fire, og giv hver sidegruppe sit eget nummer. Et molekyle med methylgrupper på carbonatom nr. 2 og nr. 3 i butan hedder derfor 2,3-dimethylbutan.\nForskellige sidegrupper. De står i alfabetisk rækkefølge, fx 3-ethyl-2-methylpentan.\nTegn. Der står komma mellem to tal og bindestreg mellem et tal og et bogstav.\n\n\n\n\n\n\n\nVigtigtHovedkæden må gerne gå om et hjørne\n\n\n\nDen længste kæde er ikke altid den, der er tegnet vandret. Tæl altid efter, om en anden vej gennem molekylet giver en længere kæde.",
+    "text": "Sådan får en forgrenet alkan sit navn\nNavnet på en forgrenet alkan har to dele: den sidste del er hovedkædens navn, og den første del fortæller, hvilke sidegrupper der sidder på hovedkæden, og hvor de sidder.\nNavnet findes i tre trin:\n\nFind den længste kæde af carbonatomer. Det er hovedkæden, og den giver den sidste del af navnet.\nNummerér carbonatomerne i hovedkæden. Begynd i den ende, der er nærmest en sidegruppe.\nSkriv sidegruppens nummer og navn foran hovedkædens navn.\n\n\n\n\n\n\n\nFigur 6: Navngivning af 3-methylhexan. Hovedkæden er grøn, og sidegruppen er blå.\n\n\n\nDer gælder tre regler mere for navnene:\n\nFlere ens sidegrupper. Skriv di for to, tri for tre og tetra for fire, og giv hver sidegruppe sit eget nummer. Et molekyle med methylgrupper på carbonatom nr. 2 og nr. 3 i butan hedder derfor 2,3-dimethylbutan.\nForskellige sidegrupper. De står i alfabetisk rækkefølge, fx 3-ethyl-2-methylpentan.\nTegn. Der står komma mellem to tal og bindestreg mellem et tal og et bogstav.\n\n\n\n\n\n\n\nVigtigtHovedkæden må gerne gå om et hjørne\n\n\n\nDen længste kæde er ikke altid den, der er tegnet vandret. Tæl altid efter, om en anden vej gennem molekylet giver en længere kæde.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.2 Zigzagformler og navngivning"
@@ -4315,7 +4326,7 @@
     "href": "kapitler/4-2-zigzagformler.html#fra-navn-til-zigzagformel",
     "title": "4.2 Zigzagformler og navngivning",
     "section": "Fra navn til zigzagformel",
-    "text": "Fra navn til zigzagformel\nDu kan også gå den anden vej og tegne et molekyle ud fra dets navn. Begynd bagfra med hovedkæden.\n\n\n\n\n\n\nFigur 6: Fra navnet 2,3-dimethylbutan til zigzagformlen i tre trin.\n\n\n\n\nTegn hovedkæden. Butan har 4 carbonatomer.\nNummerér carbonatomerne.\nSæt sidegrupperne på. Her er det en methylgruppe på carbonatom nr. 2 og en på nr. 3.\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nI en zigzagformel er hver ende og hvert knæk et carbonatom, og hydrogenatomerne tegnes ikke.\nHvert carbonatom har fire bindinger, så de bindinger, der ikke er tegnet, går til hydrogenatomer.\nIsomerer har samme molekylformel, men forskellig opbygning.\nNavnet på en forgrenet alkan består af sidegruppernes numre og navne og til sidst hovedkædens navn.\nHovedkæden er den længste kæde og nummereres fra den ende, der er nærmest en sidegruppe.\n\n\n\n\nPrøv selv: Zigzagformler: træn zigzagformler, navne og isomerer.\n\n\nPrøv selv: Tegnebrættet: tegn et molekyle, og få dets navn og molekylformel.\n\n\nSe alle opgaver til emnet “Zigzagformler og navngivning” (4.2)",
+    "text": "Fra navn til zigzagformel\nDu kan også gå den anden vej og tegne et molekyle ud fra dets navn. Begynd bagfra med hovedkæden.\n\n\n\n\n\n\nFigur 7: Fra navnet 2,3-dimethylbutan til zigzagformlen i tre trin.\n\n\n\n\nTegn hovedkæden. Butan har 4 carbonatomer.\nNummerér carbonatomerne.\nSæt sidegrupperne på. Her er det en methylgruppe på carbonatom nr. 2 og en på nr. 3.\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nI en zigzagformel er hver ende og hvert knæk et carbonatom, og hydrogenatomerne tegnes ikke.\nHvert carbonatom har fire bindinger, så de bindinger, der ikke er tegnet, går til hydrogenatomer.\nIsomerer har samme molekylformel, men forskellig opbygning.\nNavnet på en forgrenet alkan består af sidegruppernes numre og navne og til sidst hovedkædens navn.\nHovedkæden er den længste kæde og nummereres fra den ende, der er nærmest en sidegruppe.\n\n\n\n\nPrøv selv: Zigzagformler: træn zigzagformler, navne og isomerer.\n\n\nPrøv selv: Tegnebrættet: tegn et molekyle, og få dets navn og molekylformel.\n\n\nSe alle opgaver til emnet “Zigzagformler og navngivning” (4.2)",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.2 Zigzagformler og navngivning"
@@ -4370,7 +4381,7 @@
     "href": "kapitler/4-3-alkaners-reaktioner.html#substitution",
     "title": "4.3 Alkaners reaktioner",
     "section": "Substitution",
-    "text": "Substitution\nBortset fra forbrændingen er alkaner reaktionstræge og reagerer næsten ikke med andre stoffer. Derfor er oliespild og plastikaffald et problem i naturen, for alkanerne i olie og de lange carbonkæder i plastik bliver kun meget langsomt nedbrudt.\nAlkaner kan dog reagere med chlor og brom, men kun i lys. I reaktionen bliver et hydrogenatom i alkanen skiftet ud med et chloratom eller et bromatom. Reaktionen kaldes en substitution, som betyder udskiftning.\nReaktionen kan ses, når man blander lidt brom i hexan. Brom er gulbrunt og farver hexanen gul, og i mørke sker der ingenting. I sollys forsvinder farven derimod langsomt, fordi bromen bliver brugt i reaktionen.\n\n\n\n\n\n\nFigur 3: Substitution i hexan. Et hydrogenatom bliver skiftet ud med et bromatom.\n\n\n\n\nC6H14 + Br2 → C6H13Br + HBr\n\nDer dannes to stoffer, for det ene bromatom sætter sig på carbonatomet, mens det andet bromatom danner hydrogenbromid, HBr, med det hydrogenatom, der blev skiftet ud.\nLyset er nødvendigt, fordi det spalter brommolekylerne i frie bromatomer, som er meget reaktionsvillige og sætter reaktionen i gang.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nVed en fuldstændig forbrænding bliver et carbonhydrid til carbondioxid og vand.\nEn forbrænding afstemmes i rækkefølgen carbon, hydrogen og oxygen.\nVed en ufuldstændig forbrænding er der for lidt oxygen, så der også dannes carbonmonoxid og sod. Soden gør flammen gul.\nCarbonmonoxid er en giftig gas.\nBortset fra forbrændingen er alkaner reaktionstræge, så olie og plastik bliver kun langsomt nedbrudt i naturen.\nI en substitution bliver et hydrogenatom i en alkan skiftet ud med et chloratom eller et bromatom, og reaktionen kræver lys.\n\n\n\n\nPrøv selv: Afstem reaktioner: træn i at afstemme reaktionsskemaer.\n\n\nSe alle opgaver til emnet “Alkaners reaktioner” (4.3)",
+    "text": "Substitution\nBortset fra forbrændingen er alkaner reaktionstræge og reagerer næsten ikke med andre stoffer. Derfor er oliespild og plastikaffald et problem i naturen, for alkanerne i olie og de lange carbonkæder i plastik bliver kun meget langsomt nedbrudt.\nAlkaner kan dog reagere med dichlor, Cl2, og dibrom, Br2, men kun i sollys eller andet stærkt lys. I reaktionen bliver et hydrogenatom i alkanen skiftet ud med et chloratom eller et bromatom. Reaktionen kaldes en substitution, som betyder udskiftning.\nMed dibrom kan man se, at reaktionen forløber. Dibrom er gulbrunt og farver hexanen gul, mens begge produkter er farveløse. I mørke sker der ingenting, men i sollys aftager farven langsomt i takt med, at dibrom bliver brugt, og til sidst er blandingen farveløs.\n\n\n\n\n\n\nFigur 3: Substitution i hexan. Et hydrogenatom bliver skiftet ud med et bromatom.\n\n\n\n\nC6H14 + Br2 → C6H13Br + HBr\n\nDer dannes to stoffer, for det ene bromatom sætter sig på carbonatomet, mens det andet bromatom danner hydrogenbromid, HBr, med det hydrogenatom, der blev skiftet ud.\nLyset er nødvendigt, fordi det spalter brommolekylerne i frie bromatomer, som er meget reaktionsvillige og sætter reaktionen i gang.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nVed en fuldstændig forbrænding bliver et carbonhydrid til carbondioxid og vand.\nEn forbrænding afstemmes i rækkefølgen carbon, hydrogen og oxygen.\nVed en ufuldstændig forbrænding er der for lidt oxygen, så der også dannes carbonmonoxid og sod. Soden gør flammen gul.\nCarbonmonoxid er en giftig gas.\nBortset fra forbrændingen er alkaner reaktionstræge, så olie og plastik bliver kun langsomt nedbrudt i naturen.\nI en substitution bliver et hydrogenatom i en alkan skiftet ud med et chloratom eller et bromatom, og reaktionen kræver lys.\n\n\n\n\nPrøv selv: Afstem reaktioner: træn i at afstemme reaktionsskemaer.\n\n\nSe alle opgaver til emnet “Alkaners reaktioner” (4.3)\n\n\nI laboratoriet: Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.3 Alkaners reaktioner"
@@ -4381,7 +4392,7 @@
     "href": "kapitler/4-4-alkener.html",
     "title": "4.4 Alkener og addition",
     "section": "",
-    "text": "Dobbeltbindinger og tripelbindinger\nNår en banan modner, afgiver den gassen ethen, som også får de andre frugter i skålen til at modne. Ethen er det mindste medlem af en ny familie af carbonhydrider, som hedder alkenerne.\nEn alken er et carbonhydrid med en dobbeltbinding mellem to carbonatomer. En alkyn er et carbonhydrid med en tripelbinding mellem to carbonatomer.\nI ethen tæller dobbeltbindingen for to bindinger, så hvert carbonatom kun har plads til to hydrogenatomer. I ethyn tæller tripelbindingen for tre, og der er kun plads til ét hydrogenatom.\nEn alkan har så mange hydrogenatomer, som der er plads til, og kaldes derfor mættet. Alkener og alkyner har færre hydrogenatomer, end der er plads til, og kaldes umættede.\nEn alken med én dobbeltbinding har to hydrogenatomer færre end alkanen med samme antal carbonatomer, så molekylformlen er CnH2n.\nEthen og ethyn har også ældre navne, som stadig bruges, nemlig ethylen og acetylen, og acetylen bruges til svejsning, fordi flammen bliver meget varm.",
+    "text": "Dobbeltbindinger og tripelbindinger\nNår en banan modner, afgiver den gassen ethen, som også får de andre frugter i skålen til at modne. Ethen er det mindste medlem af en ny familie af carbonhydrider, som hedder alkenerne.\nEn alken er et carbonhydrid med en dobbeltbinding mellem to carbonatomer. En alkyn er et carbonhydrid med en tripelbinding mellem to carbonatomer.\nI ethen tæller dobbeltbindingen for to bindinger, så hvert carbonatom kun har plads til to hydrogenatomer. I ethyn tæller tripelbindingen for tre, og der er kun plads til ét hydrogenatom.\nEn alkan har kun enkeltbindinger mellem carbonatomerne og dermed det største antal hydrogenatomer, som carbonatomerne kan binde, og derfor kaldes den mættet. Alkener og alkyner har en dobbeltbinding eller en tripelbinding og dermed færre hydrogenatomer, og de kaldes umættede.\nEn alken med én dobbeltbinding har to hydrogenatomer færre end alkanen med samme antal carbonatomer, så molekylformlen er CnH2n.\nEthen og ethyn har også ældre navne, som stadig bruges, nemlig ethylen og acetylen, og acetylen bruges til svejsning, fordi flammen bliver meget varm.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.4 Alkener og addition"
@@ -4414,7 +4425,7 @@
     "href": "kapitler/4-4-alkener.html#addition",
     "title": "4.4 Alkener og addition",
     "section": "Addition",
-    "text": "Addition\nAlkener reagerer meget lettere end alkaner, fordi dobbeltbindingen kan åbne sig. Når den åbner sig, får hvert af de to carbonatomer en ledig plads, hvor et nyt atom kan sætte sig på. Reaktionen kaldes en addition, fordi noget bliver lagt til molekylet.\n\n\n\n\n\n\nFigur 3: Addition af brom til ethen. Der dannes kun ét stof.\n\n\n\n\nC2H4 + Br2 → C2H4Br2\n\nFlere stoffer kan sætte sig på en dobbeltbinding:\n\n\n\n\n\n\n\n\nAlkenen reagerer med\nProdukt\nEksempel med ethen\n\n\n\n\nbrom, Br2\nen alkan med to bromatomer\nC2H4 + Br2 → C2H4Br2\n\n\nhydrogen, H2\nen alkan\nC2H4 + H2 → C2H6\n\n\nvand, H2O\nen alkohol\nC2H4 + H2O → C2H5OH\n\n\n\nVed addition af hydrogen bliver et umættet stof til et mættet stof, og det udnyttes til at gøre planteolie fast, som du kan læse om i afsnit 4.6.\n\nSubstitution og addition\n\n\n\n\n\n\n\n\n\nSubstitution\nAddition\n\n\n\n\nSker med\nalkaner\nalkener og alkyner\n\n\nDet sker der\net hydrogenatom bliver skiftet ud\nto atomer sætter sig på dobbeltbindingen\n\n\nAntal produkter\nto\nét\n\n\nKræver lys\nja\nnej",
+    "text": "Addition\nAlkener reagerer meget lettere end alkaner, fordi dobbeltbindingen kan åbne sig. Når den åbner sig, får hvert af de to carbonatomer en ledig plads, hvor et nyt atom kan sætte sig på. Reaktionen kaldes en addition, fordi noget bliver lagt til molekylet. I modsætning til substitutionen kræver additionen ikke lys, for den sker spontant, altså med det samme.\n\n\n\n\n\n\nFigur 3: Addition af brom til ethen. Der dannes kun ét stof.\n\n\n\n\nC2H4 + Br2 → C2H4Br2\n\nFlere stoffer kan sætte sig på en dobbeltbinding:\n\n\n\n\n\n\n\n\nAlkenen reagerer med\nProdukt\nEksempel med ethen\n\n\n\n\nbrom, Br2\nen alkan med to bromatomer\nC2H4 + Br2 → C2H4Br2\n\n\nhydrogen, H2\nen alkan\nC2H4 + H2 → C2H6\n\n\nvand, H2O\nen alkohol\nC2H4 + H2O → C2H5OH\n\n\n\nVed addition af hydrogen bliver et umættet stof til et mættet stof, og det udnyttes til at gøre planteolie fast, som du kan læse om i afsnit 4.6.\n\nSubstitution og addition\n\n\n\n\n\n\n\n\n\nSubstitution\nAddition\n\n\n\n\nSker med\nalkaner\nalkener og alkyner\n\n\nDet sker der\net hydrogenatom bliver skiftet ud\nto atomer sætter sig på dobbeltbindingen\n\n\nAntal produkter\nto\nét\n\n\nKræver lys\nja\nnej",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.4 Alkener og addition"
@@ -4425,7 +4436,7 @@
     "href": "kapitler/4-4-alkener.html#bromvand-viser-om-et-stof-er-umættet",
     "title": "4.4 Alkener og addition",
     "section": "Bromvand viser, om et stof er umættet",
-    "text": "Bromvand viser, om et stof er umættet\nBromvand er vand med lidt opløst brom, som farver det gult, og det bruges til at undersøge, om et stof har dobbeltbindinger.\n\n\n\n\n\n\nFigur 4: Test med bromvand, øverst med en alkan og nederst med en alken. Carbonhydridet ligger øverst, fordi det ikke kan blandes med vand og har en lavere densitet. Luppen viser molekylerne i det øverste lag efter omrystningen.\n\n\n\n\nMed en alken forsvinder farven med det samme, når glasset rystes, fordi brom bliver brugt i additionen, og produktet er farveløst.\nMed en alkan forsvinder farven ikke. Brom er et upolært stof, så det flytter op i det upolære lag med alkanen, men det reagerer ikke.\n\nStår glasset med alkanen længe i stærkt lys, forsvinder farven langsomt, men det skyldes en substitution, som du læste om i afsnit 4.3.",
+    "text": "Bromvand viser, om et stof er umættet\nBromvand er vand med lidt opløst brom, som farver det gult, og det bruges til at undersøge, om et stof har dobbeltbindinger.\n\n\n\n\n\n\nFigur 4: Test med bromvand, øverst med en alkan og nederst med en alken. Carbonhydridet ligger øverst, fordi det ikke kan blandes med vand og har en lavere densitet. Lupperne viser molekylerne i det øverste lag. Til højre har glasset med alkanen stået i sollys.\n\n\n\n\nMed en alken forsvinder farven med det samme, når glasset rystes, fordi brom bliver brugt i additionen, og produktet er farveløst.\nMed en alkan forsvinder farven ikke. Brom er et upolært stof, så det flytter op i det upolære lag med alkanen, men det reagerer ikke.\n\nStår glasset med alkanen længe i stærkt lys, forsvinder farven langsomt, men det skyldes en substitution, som du læste om i afsnit 4.3.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.4 Alkener og addition"
@@ -4447,7 +4458,7 @@
     "href": "kapitler/4-4-alkener.html#carbonatomer-i-ring",
     "title": "4.4 Alkener og addition",
     "section": "Carbonatomer i ring",
-    "text": "Carbonatomer i ring\nEn carbonkæde kan også lukke sig, så den danner en ring.\n\n\n\n\n\n\nFigur 6: To ringe med seks carbonatomer. Hvert hjørne er et carbonatom.\n\n\n\nCyclohexan er en alkan i ring, som kun har enkeltbindinger og reagerer som de andre alkaner. Molekylformlen er C6H12, fordi der ikke er nogen ender med et ekstra hydrogenatom.\nBenzen tegnes med tre dobbeltbindinger, men ringen er særlig stabil, så benzen reagerer ikke som en alken og affarver ikke bromvand. Stoffet findes i små mængder i benzin og er kræftfremkaldende. Stoffer med en benzenring kaldes aromatiske, og ringen indgår i mange stoffer i naturen.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nEn alken har en dobbeltbinding mellem to carbonatomer, og navnet ender på -en. En alkyn har en tripelbinding, og navnet ender på -yn.\nAlkaner er mættede, mens alkener og alkyner er umættede.\nI en addition åbner dobbeltbindingen sig, og to atomer sætter sig på. Der dannes kun ét stof.\nEn alken affarver bromvand, men det gør en alkan ikke.\nPlastik som polyethen dannes, når mange alkenmolekyler sætter sig sammen til en lang kæde.\n\n\n\n\nPrøv selv: Addition og plastik: addition, bromvand og polyethen.\n\n\nPrøv selv: Tegnebrættet: tegn but-1-en og but-2-en, og se navnene.\n\n\nSe alle opgaver til emnet “Alkener og addition” (4.4)",
+    "text": "Carbonatomer i ring\nEn carbonkæde kan også lukke sig, så den danner en ring.\n\n\n\n\n\n\nFigur 6: To ringe med seks carbonatomer. Hvert hjørne er et carbonatom.\n\n\n\nCyclohexan er en alkan i ring, som kun har enkeltbindinger og reagerer som de andre alkaner. Molekylformlen er C6H12, fordi der ikke er nogen ender med et ekstra hydrogenatom.\nBenzen tegnes med tre dobbeltbindinger, men ringen er særlig stabil, så benzen reagerer ikke som en alken og affarver ikke bromvand. Stoffet findes i små mængder i benzin og er kræftfremkaldende. Stoffer med en benzenring kaldes aromatiske, og ringen indgår i mange stoffer i naturen.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nEn alken har en dobbeltbinding mellem to carbonatomer, og navnet ender på -en. En alkyn har en tripelbinding, og navnet ender på -yn.\nAlkaner er mættede, mens alkener og alkyner er umættede.\nI en addition åbner dobbeltbindingen sig, og to atomer sætter sig på. Der dannes kun ét stof.\nEn alken affarver bromvand, men det gør en alkan ikke.\nPlastik som polyethen dannes, når mange alkenmolekyler sætter sig sammen til en lang kæde.\n\n\n\n\nPrøv selv: Addition og plastik: addition, bromvand og polyethen.\n\n\nPrøv selv: Tegnebrættet: tegn but-1-en og but-2-en, og se navnene.\n\n\nSe alle opgaver til emnet “Alkener og addition” (4.4)\n\n\nI laboratoriet: Øvelse 4.4: Substitution eller addition?",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.4 Alkener og addition"
@@ -4480,7 +4491,7 @@
     "href": "kapitler/4-5-alkoholer-og-syrer.html#alkoholer",
     "title": "4.5 Alkoholer og carboxylsyrer",
     "section": "Alkoholer",
-    "text": "Alkoholer\nEn alkohol er et organisk stof med en OH-gruppe, der sidder på et carbonatom. Navnet dannes af alkanens navn og endelsen -ol. Fra tre carbonatomer viser et tal i navnet, hvilket carbonatom OH-gruppen sidder på.\n\n\n\nNavn\nFormel\nKendes fra\n\n\n\n\nmethanol\nCH3OH\ntræsprit. Den er meget giftig.\n\n\nethanol\nCH3CH2OH\nøl, vin og håndsprit\n\n\npropan-2-ol\nCH3CH(OH)CH3\nrensevæske til skærme og elektronik\n\n\nglycerol\nC3H5(OH)3\nfedtstoffer, cremer og slik\n\n\n\nI daglig tale betyder alkohol stoffet ethanol, som dannes, når gærceller omdanner sukker uden oxygen. Det kaldes gæring:\n\nC6H12O6 → 2 C2H5OH + 2 CO2\n\nGlycerol har tre carbonatomer og en OH-gruppe på hvert af dem. Det er en tyk væske, der smager sødt, og en vigtig del af fedtstofferne i afsnit 4.6.\n\n\n\n\n\n\nFigur 2: Zigzagformler for to alkoholer og to carboxylsyrer. Den funktionelle gruppe skrives med bogstaver.\n\n\n\nCarbonkæden i en zigzagformel tælles som før: hver ende og hvert knæk er et carbonatom, men en ende, hvor der står OH, er ikke et carbonatom.",
+    "text": "Alkoholer\nEn alkohol er et organisk stof med en OH-gruppe, der sidder på et carbonatom. OH-gruppen kaldes en hydroxygruppe. Navnet dannes af alkanens navn og endelsen -ol. Fra tre carbonatomer viser et tal i navnet, hvilket carbonatom OH-gruppen sidder på.\n\n\n\nNavn\nFormel\nKendes fra\n\n\n\n\nmethanol\nCH3OH\ntræsprit. Den er meget giftig.\n\n\nethanol\nCH3CH2OH\nøl, vin og håndsprit\n\n\npropan-2-ol\nCH3CH(OH)CH3\nrensevæske til skærme og elektronik\n\n\nglycerol\nC3H5(OH)3\nfedtstoffer, cremer og slik\n\n\n\nI daglig tale betyder alkohol stoffet ethanol, som dannes, når gærceller omdanner sukker uden oxygen. Det kaldes gæring:\n\nC6H12O6 → 2 C2H5OH + 2 CO2\n\nGlycerol har tre carbonatomer og en hydroxygruppe på hvert af dem. Det er en tyk væske, der smager sødt, og en vigtig del af fedtstofferne i afsnit 4.6.\n\n\n\n\n\n\nFigur 2: Zigzagformler for to alkoholer og to carboxylsyrer. Den funktionelle gruppe skrives med bogstaver.\n\n\n\nCarbonkæden i en zigzagformel tælles som før: hver ende og hvert knæk er et carbonatom, men en ende, hvor der står OH, er ikke et carbonatom.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.5 Alkoholer og carboxylsyrer"
@@ -4502,7 +4513,7 @@
     "href": "kapitler/4-5-alkoholer-og-syrer.html#kan-stoffet-opløses-i-vand",
     "title": "4.5 Alkoholer og carboxylsyrer",
     "section": "Kan stoffet opløses i vand?",
-    "text": "Kan stoffet opløses i vand?\nOxygen har en meget højere elektronegativitet end både carbon og hydrogen. OH-gruppen og carboxylgruppen er derfor polære grupper, mens carbonkæden er upolær. Et molekyle af en alkohol har altså en polær ende og en upolær ende.\nOm stoffet kan opløses i vand, afgør du med tommelfingerreglen fra afsnit 3.3: Der skal 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\n\nStof\nCarbonatomer\nPolære grupper\nOpløses i vand?\n\n\n\n\nethanol\n2\n1\nja\n\n\nbutan-1-ol\n4\n1\nkun delvist. Stoffet ligger på grænsen.\n\n\noctan-1-ol\n8\n1\nnej\n\n\nglycerol\n3\n3\nja\n\n\n\nKorte alkoholer og carboxylsyrer kan blandes med vand. Jo længere carbonkæden bliver, jo mere ligner stoffet en alkan, og jo dårligere kan det opløses i vand.",
+    "text": "Kan stoffet opløses i vand?\nOxygen har en meget højere elektronegativitet end både carbon og hydrogen. Hydroxygruppen og carboxylgruppen er derfor polære grupper, mens carbonkæden er upolær. Et molekyle af en alkohol har altså en polær ende og en upolær ende.\nOm stoffet kan opløses i vand, afgør du med tommelfingerreglen fra afsnit 3.3: Der skal 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\n\nStof\nCarbonatomer\nPolære grupper\nOpløses i vand?\n\n\n\n\nethanol\n2\n1\nja\n\n\nbutan-1-ol\n4\n1\nkun delvist. Stoffet ligger på grænsen.\n\n\noctan-1-ol\n8\n1\nnej\n\n\nglycerol\n3\n3\nja\n\n\n\nKorte alkoholer og carboxylsyrer kan blandes med vand. Jo længere carbonkæden bliver, jo mere ligner stoffet en alkan, og jo dårligere kan det opløses i vand.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.5 Alkoholer og carboxylsyrer"
@@ -4513,7 +4524,7 @@
     "href": "kapitler/4-5-alkoholer-og-syrer.html#kogepunktet-er-højere-end-hos-alkanerne",
     "title": "4.5 Alkoholer og carboxylsyrer",
     "section": "Kogepunktet er højere end hos alkanerne",
-    "text": "Kogepunktet er højere end hos alkanerne\nDe polære grupper får molekylerne til at holde bedre fast i hinanden, og derfor har alkoholer og carboxylsyrer meget højere kogepunkter end alkaner af samme størrelse.\n\n\n\nStof\nMasse af ét molekyle\nKogepunkt\n\n\n\n\npropan, C3H8\n44,1 u\n−42 °C\n\n\nethanol, C2H5OH\n46,1 u\n78 °C\n\n\nmethansyre, HCOOH\n46,0 u\n101 °C\n\n\n\nDe tre molekyler vejer næsten det samme, og alligevel er propan en gas ved stuetemperatur, mens ethanol og methansyre er væsker.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nEn funktionel gruppe er en gruppe af atomer, der giver et organisk stof særlige egenskaber.\nEn alkohol har gruppen −OH, og navnet ender på -ol.\nEn carboxylsyre har gruppen −COOH, og navnet ender på -syre.\nBegge grupper er polære. Korte alkoholer og carboxylsyrer kan opløses i vand, mens lange ikke kan.\nDe polære grupper giver et højere kogepunkt end hos alkaner af samme størrelse.\n\n\n\n\nPrøv selv: Organiske grupper: sorter molekyler efter stofklasse.\n\n\nPrøv selv: Zigzagformler: se under Opløselighed, om et stof opløses i vand.\n\n\nSe alle opgaver til emnet “Alkoholer og carboxylsyrer” (4.5)",
+    "text": "Kogepunktet er højere end hos alkanerne\nDe polære grupper får molekylerne til at holde bedre fast i hinanden, og derfor har alkoholer og carboxylsyrer meget højere kogepunkter end alkaner af samme størrelse.\n\n\n\nStof\nMasse af ét molekyle\nKogepunkt\n\n\n\n\npropan, C3H8\n44,1 u\n−42 °C\n\n\nethanol, C2H5OH\n46,1 u\n78 °C\n\n\nmethansyre, HCOOH\n46,0 u\n101 °C\n\n\n\nDe tre molekyler vejer næsten det samme, og alligevel er propan en gas ved stuetemperatur, mens ethanol og methansyre er væsker.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nEn funktionel gruppe er en gruppe af atomer, der giver et organisk stof særlige egenskaber.\nEn alkohol har en hydroxygruppe, −OH, og navnet ender på -ol.\nEn carboxylsyre har gruppen −COOH, og navnet ender på -syre.\nBegge grupper er polære. Korte alkoholer og carboxylsyrer kan opløses i vand, mens lange ikke kan.\nDe polære grupper giver et højere kogepunkt end hos alkaner af samme størrelse.\n\n\n\n\nPrøv selv: Organiske grupper: sorter molekyler efter stofklasse.\n\n\nPrøv selv: Zigzagformler: se under Opløselighed, om et stof opløses i vand.\n\n\nSe alle opgaver til emnet “Alkoholer og carboxylsyrer” (4.5)\n\n\nI laboratoriet: Øvelse 4.5: Find kogepunktet",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.5 Alkoholer og carboxylsyrer"
@@ -4557,7 +4568,7 @@
     "href": "kapitler/4-6-fedtstoffer.html#fast-eller-flydende",
     "title": "4.6 Fedtstoffer",
     "section": "Fast eller flydende?",
-    "text": "Fast eller flydende?\n\n\n\n\n\n\nFigur 3: Lige kæder kan ligge tæt sammen. Det kan kæder med knæk ikke.\n\n\n\nMættede fedtsyrer har lige kæder, som kan ligge tæt op ad hinanden og røre hinanden over en stor flade. Molekylerne holder derfor godt fast i hinanden, ligesom de lange alkaner i afsnit 4.1, så fedtstoffer med mange mættede fedtsyrer er faste ved stuetemperatur.\nUmættede fedtsyrer har knæk på kæden, så kæderne ikke kan ligge tæt, og molekylerne holder dårligere fast i hinanden. Fedtstoffer med mange umættede fedtsyrer er derfor flydende ved stuetemperatur og kaldes olier.\n\n\n\nFedtstof\nMættet\nEnkeltumættet\nFlerumættet\nVed stuetemperatur\n\n\n\n\nKokosfedt\n91 %\n7 %\n2 %\nfast\n\n\nSmør\n66 %\n30 %\n4 %\nfast\n\n\nOlivenolie\n15 %\n75 %\n10 %\nflydende\n\n\nRapsolie\n7 %\n63 %\n30 %\nflydende\n\n\nSolsikkeolie\n10 %\n20 %\n70 %\nflydende\n\n\n\nTabellen viser, hvor stor en del af fedtsyrerne der er mættede og umættede i fem fedtstoffer. Tallene er afrundede og varierer lidt fra produkt til produkt.\nFedt fra dyr indeholder mest mættede fedtsyrer, mens fedt fra planter og fisk mest indeholder umættede. Kokosfedt og palmeolie er undtagelser, for selv om de kommer fra planter, er de mest mættede.",
+    "text": "Fast eller flydende?\n\n\n\n\n\n\nFigur 3: Fedtstofmolekyler med lige kæder kan ligge tæt sammen. Det kan molekyler med knæk på kæderne ikke.\n\n\n\nMættede fedtsyrer har lige kæder, som kan ligge tæt op ad hinanden og røre hinanden over en stor flade. Molekylerne holder derfor godt fast i hinanden, ligesom de lange alkaner i afsnit 4.1, så fedtstoffer med mange mættede fedtsyrer er faste ved stuetemperatur.\nUmættede fedtsyrer har knæk på kæden, så kæderne ikke kan ligge tæt, og molekylerne holder dårligere fast i hinanden. Fedtstoffer med mange umættede fedtsyrer er derfor flydende ved stuetemperatur og kaldes olier.\n\n\n\nFedtstof\nMættet\nEnkeltumættet\nFlerumættet\nVed stuetemperatur\n\n\n\n\nKokosfedt\n91 %\n7 %\n2 %\nfast\n\n\nSmør\n66 %\n30 %\n4 %\nfast\n\n\nOlivenolie\n15 %\n75 %\n10 %\nflydende\n\n\nRapsolie\n7 %\n63 %\n30 %\nflydende\n\n\nSolsikkeolie\n10 %\n20 %\n70 %\nflydende\n\n\n\nTabellen viser, hvor stor en del af fedtsyrerne der er mættede og umættede i fem fedtstoffer. Tallene er afrundede og varierer lidt fra produkt til produkt.\nFedt fra dyr indeholder mest mættede fedtsyrer, mens fedt fra planter og fisk mest indeholder umættede. Kokosfedt og palmeolie er undtagelser, for selv om de kommer fra planter, er de mest mættede.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.6 Fedtstoffer"
@@ -4579,7 +4590,7 @@
     "href": "kapitler/4-6-fedtstoffer.html#fra-olie-til-fast-fedt",
     "title": "4.6 Fedtstoffer",
     "section": "Fra olie til fast fedt",
-    "text": "Fra olie til fast fedt\nDobbeltbindingerne i en olie kan reagere med hydrogen i en addition, som du læste om i afsnit 4.4. De umættede fedtsyrer bliver mættede, kæderne bliver lige, og olien bliver til et fast fedtstof. Metoden kaldes hærdning og har været brugt til at lave margarine af planteolie.\nBromvand kan også vise, om et fedtstof er umættet: olie med mange dobbeltbindinger affarver bromvand hurtigt, mens fedt med få dobbeltbindinger ikke gør det.",
+    "text": "Fra olie til fast fedt\nDobbeltbindingerne i en olie kan reagere med hydrogen i en addition, som du læste om i afsnit 4.4. De umættede fedtsyrer bliver mættede, kæderne bliver lige, og olien bliver til et fast fedtstof. Metoden kaldes hærdning og har været brugt til at lave margarine af planteolie.\n\n\n\n\n\n\nFigur 4: Hærdning af en olie, hvor hver fedtsyre har én dobbeltbinding.\n\n\n\nBromvand kan også vise, om et fedtstof er umættet: olie med mange dobbeltbindinger affarver bromvand hurtigt, mens fedt med få dobbeltbindinger ikke gør det.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.6 Fedtstoffer"
@@ -4590,7 +4601,7 @@
     "href": "kapitler/4-6-fedtstoffer.html#fedt-i-maden",
     "title": "4.6 Fedtstoffer",
     "section": "Fedt i maden",
-    "text": "Fedt i maden\nKroppen har brug for fedt, fordi det giver energi, indgår i alle kroppens celler og er nødvendigt for at optage vitaminerne A, D, E og K.\nFedt indeholder meget energi, for et gram fedt giver 37 kJ, mens et gram sukker eller protein giver 17 kJ.\nDe officielle kostråd anbefaler at vælge planteolier frem for smør og andet fast fedt, fordi meget mættet fedt i maden øger risikoen for sygdomme i hjertet og blodårerne. Nogle flerumættede fedtsyrer kan kroppen ikke lave selv, så dem skal vi have fra maden, fx fra fed fisk, nødder og rapsolie.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nEn fedtsyre er en carboxylsyre med en lang carbonkæde.\nMættede fedtsyrer har kun enkeltbindinger, mens umættede fedtsyrer har dobbeltbindinger, som giver knæk på kæden.\nEt fedtstof er bygget af glycerol og tre fedtsyrer og kaldes et triglycerid.\nLige kæder ligger tæt, så mættet fedt er fast. Kæder med knæk ligger løst, så umættet fedt er flydende.\nFedtstoffer er upolære og kan ikke opløses i vand.\n\n\n\n\nPrøv selv: Byg et fedtstof: byg fedtstoffer, og se, om de er faste.\n\n\nSe alle opgaver til emnet “Fedtstoffer” (4.6)",
+    "text": "Fedt i maden\nKroppen har brug for fedt, fordi det giver energi, indgår i alle kroppens celler og er nødvendigt for at optage vitaminerne A, D, E og K.\nFedt indeholder meget energi, for et gram fedt giver 37 kJ, mens et gram sukker eller protein giver 17 kJ.\nDe officielle kostråd anbefaler at vælge planteolier frem for smør og andet fast fedt, fordi meget mættet fedt i maden øger risikoen for sygdomme i hjertet og blodårerne. Nogle flerumættede fedtsyrer kan kroppen ikke lave selv, så dem skal vi have fra maden, fx fra fed fisk, nødder og rapsolie.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nEn fedtsyre er en carboxylsyre med en lang carbonkæde.\nMættede fedtsyrer har kun enkeltbindinger, mens umættede fedtsyrer har dobbeltbindinger, som giver knæk på kæden.\nEt fedtstof er bygget af glycerol og tre fedtsyrer og kaldes et triglycerid.\nLige kæder ligger tæt, så mættet fedt er fast. Kæder med knæk ligger løst, så umættet fedt er flydende.\nFedtstoffer er upolære og kan ikke opløses i vand.\n\n\n\n\nPrøv selv: Byg et fedtstof: byg fedtstoffer, og se, om de er faste.\n\n\nSe alle opgaver til emnet “Fedtstoffer” (4.6)\n\n\nI laboratoriet: Øvelse 4.6: Fedt i chips",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "4.6 Fedtstoffer"
@@ -6042,7 +6053,7 @@
     "href": "fagord/kapitel-4.html#carbonhydrider-og-alkaner",
     "title": "Fagord til kapitel 4",
     "section": "",
-    "text": "Fagord\nForklaring\n\n\n\n\norganisk kemi\nLæren om stoffer, der er bygget op omkring carbonatomer. Sukker, fedt, benzin og plastik er eksempler på stofferne.\n\n\nuorganisk\nSiges om stoffer, der ikke indeholder carbonatomer. Vand, metaller og salte er eksempler, og carbondioxid og kalk regnes også med.\n\n\ncarbonhydrid\nStof, der kun består af C-atomer og H-atomer. Methan og butan er eksempler.\n\n\nalkan\nCarbonhydrid, hvor alle bindinger er enkeltbindinger. Navnet ender på -an, for eksempel methan og propan.\n\n\nmolekylformel\nTæller kun, hvor mange atomer der er af hver slags i et stof, for eksempel C5H12. Den viser ikke, hvordan atomerne sidder sammen.",
+    "text": "Fagord\nForklaring\n\n\n\n\norganisk kemi\nLæren om stoffer, der er bygget op omkring carbonatomer. Sukker, fedt, benzin og plastik er eksempler på stofferne.\n\n\nuorganisk\nSiges om stoffer uden bindinger mellem carbon og hydrogen. Vand, metaller og salte er eksempler, og carbondioxid og kalk regnes også med.\n\n\ncarbonhydrid\nStof, der kun består af C-atomer og H-atomer. Methan og butan er eksempler.\n\n\nalkan\nCarbonhydrid, hvor alle bindinger er enkeltbindinger. Navnet ender på -an, for eksempel methan og propan.\n\n\nmolekylformel\nTæller kun, hvor mange atomer der er af hver slags i et stof, for eksempel C5H12. Den viser ikke, hvordan atomerne sidder sammen.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "Fagord til kapitel 4"
@@ -6075,7 +6086,7 @@
     "href": "fagord/kapitel-4.html#alkener-og-addition",
     "title": "Fagord til kapitel 4",
     "section": "4.4 Alkener og addition",
-    "text": "4.4 Alkener og addition\n\n\n\nFagord\nForklaring\n\n\n\n\nalken\nCarbonhydrid med en dobbeltbinding mellem to carbonatomer. Navnet ender på -en, for eksempel ethen.\n\n\nalkyn\nCarbonhydrid med en tripelbinding mellem to carbonatomer. Navnet ender på -yn, for eksempel ethyn.\n\n\nmættet\nSiges om et carbonhydrid, der har så mange hydrogenatomer, som der er plads til. Alle bindinger mellem carbonatomerne er enkeltbindinger.\n\n\numættet\nSiges om et carbonhydrid, der har færre hydrogenatomer, end der er plads til. Der er en dobbeltbinding eller en tripelbinding i molekylet.\n\n\naddition\nReaktion, hvor en dobbeltbinding åbner sig, og to nye atomer sætter sig på. Der dannes kun ét stof.\n\n\nbromvand\nGul væske, der bruges til at undersøge, om et stof har dobbeltbindinger. Farven forsvinder med det samme, når væsken rystes med en alken.\n\n\npolymerisation\nReaktion, hvor mange tusinde små molekyler sætter sig sammen til én lang kæde. Sådan laves plastik af ethen.\n\n\npolymer\nDet lange molekyle, der dannes, når mange tusinde ethenmolekyler sætter sig sammen. Bæreposer og flasker er lavet af det.\n\n\npolyaddition\nAndet navn for den reaktion, der laver plastik af alkener. Navnet fortæller, at mange molekyler bliver lagt sammen.\n\n\nkrakning\nMetode, hvor lange alkaner varmes op, så kæderne knækker i mindre stykker. Nogle af stykkerne er alkener.\n\n\naromatisk\nSiges om stoffer med en benzenring, som er en særlig stabil ring af seks carbonatomer.",
+    "text": "4.4 Alkener og addition\n\n\n\nFagord\nForklaring\n\n\n\n\nalken\nCarbonhydrid med en dobbeltbinding mellem to carbonatomer. Navnet ender på -en, for eksempel ethen.\n\n\nalkyn\nCarbonhydrid med en tripelbinding mellem to carbonatomer. Navnet ender på -yn, for eksempel ethyn.\n\n\nmættet\nSiges om et carbonhydrid med kun enkeltbindinger mellem carbonatomerne. Det har det største antal hydrogenatomer, som carbonatomerne kan binde.\n\n\numættet\nSiges om et carbonhydrid med en dobbeltbinding eller en tripelbinding. Det har færre hydrogenatomer end alkanen med samme antal carbonatomer.\n\n\naddition\nReaktion, hvor en dobbeltbinding åbner sig, og to nye atomer sætter sig på. Der dannes kun ét stof.\n\n\nbromvand\nGul væske, der bruges til at undersøge, om et stof har dobbeltbindinger. Farven forsvinder med det samme, når væsken rystes med en alken.\n\n\npolymerisation\nReaktion, hvor mange tusinde små molekyler sætter sig sammen til én lang kæde. Sådan laves plastik af ethen.\n\n\npolymer\nDet lange molekyle, der dannes, når mange tusinde ethenmolekyler sætter sig sammen. Bæreposer og flasker er lavet af det.\n\n\npolyaddition\nAndet navn for den reaktion, der laver plastik af alkener. Navnet fortæller, at mange molekyler bliver lagt sammen.\n\n\nkrakning\nMetode, hvor lange alkaner varmes op, så kæderne knækker i mindre stykker. Nogle af stykkerne er alkener.\n\n\naromatisk\nSiges om stoffer med en benzenring, som er en særlig stabil ring af seks carbonatomer.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "Fagord til kapitel 4"
@@ -6086,7 +6097,7 @@
     "href": "fagord/kapitel-4.html#alkoholer-og-carboxylsyrer",
     "title": "Fagord til kapitel 4",
     "section": "4.5 Alkoholer og carboxylsyrer",
-    "text": "4.5 Alkoholer og carboxylsyrer\n\n\n\nFagord\nForklaring\n\n\n\n\nfunktionel gruppe\nNogle få atomer i et organisk molekyle, som giver stoffet særlige egenskaber. −OH i ethanol er et eksempel.\n\n\nstofklasse\nFamilie af organiske forbindelser med den samme funktionelle gruppe. Alkoholer er et eksempel.\n\n\nalkohol\nOrganisk stof med en OH-gruppe, der sidder på et carbonatom. Navnet ender på -ol, for eksempel ethanol.\n\n\ncarboxylsyre\nOrganisk stof med gruppen −COOH. Det giver den sure smag i eddike, citroner og yoghurt.\n\n\ncarboxylgruppe\nAtomerne −COOH, som sidder for enden af en organisk syre. C-atomet er bundet til et oxygenatom med dobbeltbinding og til OH.",
+    "text": "4.5 Alkoholer og carboxylsyrer\n\n\n\nFagord\nForklaring\n\n\n\n\nfunktionel gruppe\nNogle få atomer i et organisk molekyle, som giver stoffet særlige egenskaber. −OH i ethanol er et eksempel.\n\n\nstofklasse\nFamilie af organiske forbindelser med den samme funktionelle gruppe. Alkoholer er et eksempel.\n\n\nalkohol\nOrganisk stof med en OH-gruppe, der sidder på et carbonatom. Navnet ender på -ol, for eksempel ethanol.\n\n\nhydroxygruppe\nAtomerne −OH, som sidder på et carbonatom i en alkohol. De gør den del af molekylet polær.\n\n\ncarboxylsyre\nOrganisk stof med gruppen −COOH. Det giver den sure smag i eddike, citroner og yoghurt.\n\n\ncarboxylgruppe\nAtomerne −COOH, som sidder for enden af en organisk syre. C-atomet er bundet til et oxygenatom med dobbeltbinding og til OH.",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "Fagord til kapitel 4"
@@ -6119,7 +6130,7 @@
     "href": "repetition/kapitel-4.html#rep-4-1",
     "title": "Repetition af kapitel 4",
     "section": "",
-    "text": "Det skal du kunne\n\nforklare, hvad organisk kemi handler om\nforklare, hvad et carbonhydrid og en alkan er\nskrive navn og molekylformel for de ti første alkaner\nforklare, hvorfor kogepunktet stiger, når kæden bliver længere\nforklare, hvorfor alkaner ikke kan opløses i vand\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\n\n\nOrganisk kemi handler om stoffer, der er bygget op omkring carbonatomer.\nEt carbonatom danner altid fire bindinger.\nEt carbonhydrid består kun af carbon og hydrogen, og en alkan er et carbonhydrid med kun enkeltbindinger.\nAlkaner har molekylformlen CnH2n+2, og navnene ender på -an.\nJo længere kæden er, jo højere er kogepunktet.\nAlkaner er upolære og kan ikke opløses i vand.\n\n\n\n\n\nLæs afsnit 4.1 · Opgaver til 4.1",
+    "text": "Det skal du kunne\n\nforklare, hvad organisk kemi handler om\nforklare, hvad et carbonhydrid og en alkan er\nskrive navn og molekylformel for de ti første alkaner\nforklare, hvorfor kogepunktet stiger, når kæden bliver længere\nforklare, hvorfor alkaner ikke kan opløses i vand\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\n\n\nOrganisk kemi handler om stoffer, der er bygget op omkring carbonatomer, og som udgangspunkt har et organisk stof mindst én C−H-binding.\nEt carbonatom danner altid fire bindinger.\nEt carbonhydrid består kun af carbon og hydrogen, og en alkan er et carbonhydrid med kun enkeltbindinger.\nAlkaner har molekylformlen CnH2n+2, og navnene ender på -an.\nJo længere kæden er, jo højere er kogepunktet.\nAlkaner er upolære og kan ikke opløses i vand.\n\n\n\n\n\nLæs afsnit 4.1 · Opgaver til 4.1",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "Repetition af kapitel 4"
@@ -6163,7 +6174,7 @@
     "href": "repetition/kapitel-4.html#rep-4-5",
     "title": "Repetition af kapitel 4",
     "section": "4.5 Alkoholer og carboxylsyrer",
-    "text": "4.5 Alkoholer og carboxylsyrer\n\nDet skal du kunne\n\nforklare, hvad en funktionel gruppe er\ngenkende en alkohol og en carboxylsyre på den funktionelle gruppe\ngive simple alkoholer og carboxylsyrer et navn\nvurdere, om en alkohol eller en carboxylsyre kan opløses i vand\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\n\n\nEn funktionel gruppe er en gruppe af atomer, der giver et organisk stof særlige egenskaber.\nEn alkohol har gruppen −OH, og navnet ender på -ol.\nEn carboxylsyre har gruppen −COOH, og navnet ender på -syre.\nBegge grupper er polære. Korte alkoholer og carboxylsyrer kan opløses i vand, mens lange ikke kan.\nDe polære grupper giver et højere kogepunkt end hos alkaner af samme størrelse.\n\n\n\n\n\nLæs afsnit 4.5 · Opgaver til 4.5",
+    "text": "4.5 Alkoholer og carboxylsyrer\n\nDet skal du kunne\n\nforklare, hvad en funktionel gruppe er\ngenkende en alkohol og en carboxylsyre på den funktionelle gruppe\ngive simple alkoholer og carboxylsyrer et navn\nvurdere, om en alkohol eller en carboxylsyre kan opløses i vand\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\n\n\nEn funktionel gruppe er en gruppe af atomer, der giver et organisk stof særlige egenskaber.\nEn alkohol har en hydroxygruppe, −OH, og navnet ender på -ol.\nEn carboxylsyre har gruppen −COOH, og navnet ender på -syre.\nBegge grupper er polære. Korte alkoholer og carboxylsyrer kan opløses i vand, mens lange ikke kan.\nDe polære grupper giver et højere kogepunkt end hos alkaner af samme størrelse.\n\n\n\n\n\nLæs afsnit 4.5 · Opgaver til 4.5",
     "crumbs": [
       "Kapitel 4: Organisk kemi",
       "Repetition af kapitel 4"
@@ -8284,7 +8295,7 @@
     "href": "kapitler/6-3-titrering.html#sammenlign-med-varedeklarationen",
     "title": "6.3 Titrering",
     "section": "Sammenlign med varedeklarationen",
-    "text": "Sammenlign med varedeklarationen\nResultatet kan sammenlignes med det tal, der står på posen, og forskellen regnes om til en afvigelse i procent.\n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\nStår der 1,3 % salt på posen, er afvigelsen i eksemplet 8 %. En lille afvigelse betyder, at målingen passer godt med varedeklarationen.\nTitrering møder du igen med syrer og baser i afsnit 7.5.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nI en titrering bestemmes mængden af et stof ved at lade det reagere med en opløsning, der har en kendt koncentration.\nOpløsningen dryppes fra en burette, til indikatoren skifter farve, og så er ækvivalenspunktet nået.\nForbruget aflæses på buretten og giver stofmængden: n = c · V.\nI en Mohrtitrering reagerer sølvioner med chlorid i forholdet 1 : 1.\n\n\n\n\nPrøv selv: Mohrtitrering: titrer selv, og regn saltindholdet ud.\n\n\nSe alle opgaver til emnet “Titrering” (6.3)",
+    "text": "Sammenlign med varedeklarationen\nResultatet kan sammenlignes med det tal, der står på posen, og forskellen regnes om til en afvigelse i procent.\n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\nStår der 1,3 % salt på posen, er afvigelsen i eksemplet 8 %. En lille afvigelse betyder, at målingen passer godt med varedeklarationen.\nTitrering møder du igen med syrer og baser i afsnit 7.5.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nI en titrering bestemmes mængden af et stof ved at lade det reagere med en opløsning, der har en kendt koncentration.\nOpløsningen dryppes fra en burette, til indikatoren skifter farve, og så er ækvivalenspunktet nået.\nForbruget aflæses på buretten og giver stofmængden: n = c · V.\nI en Mohrtitrering reagerer sølvioner med chlorid i forholdet 1 : 1.\n\n\n\n\nPrøv selv: Mohrtitrering: titrer selv, og regn saltindholdet ud.\n\n\nSe alle opgaver til emnet “Titrering” (6.3)\n\n\nI laboratoriet: Øvelse 6.3a: Mohrtitrering af øjenskyllevand og Øvelse 6.3b: Mohrtitrering af chips",
     "crumbs": [
       "Kapitel 6: Koncentration",
       "6.3 Titrering"
@@ -14886,7 +14897,7 @@
     "href": "oevelser/oversigt.html",
     "title": "Laboratorieøvelser",
     "section": "",
-    "text": "Sådan er en øvelse bygget op\nI laboratoriet prøver du selv det af, som bogen forklarer. Her er tolv øvelser. Hver øvelse hører til et afsnit i bogen og har samme nummer som afsnittet. Har et afsnit to øvelser, hedder de a og b. Der er et link til øvelsen nederst i afsnittet.\nNogle øvelser findes i to udgaver. I den ene bliver du ført trin for trin gennem efterbehandlingen, og i den anden er spørgsmålene mere åbne. Du skifter udgave med de to knapper under øvelsens overskrift.\nDin lærer fortæller, hvilken udgave du skal bruge, og om øvelsen skal afleveres som journal eller som rapport.\nAlle øvelser er bygget op på samme måde. Du kan bruge de samme overskrifter, når du skriver journal eller rapport.",
+    "text": "Sådan er en øvelse bygget op\nI laboratoriet prøver du selv det af, som bogen forklarer. Her er atten øvelser. Hver øvelse hører til et afsnit i bogen og har samme nummer som afsnittet. Har et afsnit to øvelser, hedder de a og b. Der er et link til øvelsen nederst i afsnittet.\nNogle øvelser findes i to udgaver. I den ene bliver du ført trin for trin gennem efterbehandlingen, og i den anden er spørgsmålene mere åbne. Du skifter udgave med de to knapper under øvelsens overskrift.\nDin lærer fortæller, hvilken udgave du skal bruge, og om øvelsen skal afleveres som journal eller som rapport.\nAlle øvelser er bygget op på samme måde. Du kan bruge de samme overskrifter, når du skriver journal eller rapport.",
     "crumbs": [
       "Laboratorieøvelser"
     ]
@@ -15220,6 +15231,182 @@
     ]
   },
   {
+    "objectID": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html",
+    "href": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html",
+    "title": "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?",
+    "section": "",
+    "text": "Fremgangsmåde\nVæskerne brænder i et digellåg, der ligger omvendt på en digel. Hvis der dannes sod, sætter den sig som en sort belægning på en kold porcelænsskål, der holdes over flammen.\nApparatur og kemikalier: tre digler med låg, porcelænsskål, digeltang, lighter, papir, tre engangspipetter, ethanol, heptan og hex-1-en.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html#fremgangsmåde",
+    "href": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html#fremgangsmåde",
+    "title": "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?",
+    "section": "",
+    "text": "Figur 1: Forbrændingen. Flammen er kun tegnet som et omrids.\n\n\n\n\nSkriv først dit gæt i skemaet: Hvilke stoffer soder?\nLæg låget omvendt på hver af de tre digler i stinkskabet. Dryp 5 dråber ethanol i det første låg, luk flasken, og stil den væk.\nTænd væsken med lighteren, og skriv flammens farve i skemaet.\nHold porcelænsskålen med digeltangen 2 cm over flammen i 2 sekunder (figur 1). Se på undersiden af skålen, og skriv i skemaet, om der er en sort belægning.\nLad flammen brænde ud. Tør skålen af med et stykke papir.\nGentag trin 2 til 5 med heptan i den anden digel og med hex-1-en i den tredje.\nLad diglerne og lågene køle af, og vask dem og skålen.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html#resultater",
+    "href": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html#resultater",
+    "title": "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\n\n\n\n\n\n\n\nStof\nFormel\nGæt: soder stoffet?\nFlammens farve\nSort belægning på skålen?\n\n\n\n\nethanol\nC2H5OH\n\n\n\n\n\nheptan\nC7H16\n\n\n\n\n\nhex-1-en\nC6H12",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html#efterbehandling",
+    "href": "oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html#efterbehandling",
+    "title": "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\n\nVed en fuldstændig forbrænding dannes der carbondioxid og vand. Afstem reaktionsskemaerne. Afstem først carbon, så hydrogen og til sidst oxygen. Første række er udfyldt, og et tomt felt betyder 1.\n\n\n\n\n\n\n\n\n\nStof\nReaktionsskema\n\n\n\n\nethanol\nC2H5OH + 3 O2 → 2 CO2 + 3 H2O\n\n\nheptan\n C7H16 +  O2 →  CO2 +  H2O\n\n\nhex-1-en\n C6H12 +  O2 →  CO2 +  H2O\n\n\n\n\n\nVed en ufuldstændig forbrænding kan der dannes sod, C. Afstem reaktionsskemaet for hex-1-en, hvor der kun dannes sod og vand. \n\n\n C6H12 +  O2 →  C +  H2O\n\n\nTæl atomerne i hvert molekyle, og udfyld skemaet. Første række er udfyldt.\n\n\n\n\n\nStof\nAntal C\nAntal H\nH-atomer pr. C-atom\nSort belægning?\n\n\n\n\nethanol\n2\n6\n3\n\n\n\nheptan\n\n\n\n\n\n\nhex-1-en\n\n\n\n\n\n\n\n\n\nHvilket stof har færrest hydrogenatomer pr. carbonatom? Passer det med, hvilket stof der sodede mest? \nVed en ufuldstændig forbrænding dannes der også carbonmonoxid, CO. Hvorfor kunne du ikke se det i forsøget?",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.3: Fuldstændig eller ufuldstændig forbrænding?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-4-substitution-eller-addition.html",
+    "href": "oevelser/4-4-substitution-eller-addition.html",
+    "title": "Øvelse 4.4: Substitution eller addition?",
+    "section": "",
+    "text": "Fremgangsmåde\nBromvand er vand med lidt opløst brom, som farver det gult. HBr er en syre, så vandet bliver surt, og i vand danner HBr bromidioner, Br−. Bromidioner danner et bundfald med sølvioner fra sølvnitrat:\nApparatur og kemikalier: tre reagensglas med prop, stativ, tusch, alufolie, kraftig lampe, tre engangspipetter, pH-papir, to rene reagensglas, bromvand, hexan, hex-1-en og sølvnitrat.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.4: Substitution eller addition?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-4-substitution-eller-addition.html#fremgangsmåde",
+    "href": "oevelser/4-4-substitution-eller-addition.html#fremgangsmåde",
+    "title": "Øvelse 4.4: Substitution eller addition?",
+    "section": "",
+    "text": "Figur 1: De tre reagensglas. Glas 1 og 2 står under lampen, og glas 1 er pakket ind i alufolie.\n\n\n\n\nSkriv først dit gæt i skemaet: Forsvinder den gule farve i glasset?\nSkriv numrene 1 til 3 på glassene, og hæld 2 mL bromvand i hvert glas. Hæld 2 mL hexan i glas 1 og 2 og 2 mL hex-1-en i glas 3.\nSæt en prop i hvert glas, hold på proppen, og ryst glasset i 10 sekunder. Skriv farven på det øverste og det nederste lag i skemaet.\nPak glas 1 ind i alufolie, og stil glas 1 og 2 under lampen (figur 1). Ryst begge glas hvert 5. minut, og skriv i skemaet, hvor lang tid der går, før farven er væk i glas 2. Stop efter 20 minutter.\nTag folien af glas 1, og skriv farven på de to lag i glas 1 og 2.\nUndersøg vandet i glas 1 og 2: Stik en engangspipette ned gennem det øverste lag, og tag lidt af det nederste lag op. Dryp én dråbe på et stykke pH-papir, og dryp resten i et rent reagensglas. Tilsæt 3 dråber sølvnitrat.\nHæld alle glassene i beholderen til halogenholdigt organisk affald.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.4: Substitution eller addition?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-4-substitution-eller-addition.html#resultater",
+    "href": "oevelser/4-4-substitution-eller-addition.html#resultater",
+    "title": "Øvelse 4.4: Substitution eller addition?",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\n\n\n\n\n\n\n\nGlas\nIndhold\nGæt: forsvinder farven?\nFarve efter rystning, øverst og nederst\nFarve til sidst, øverst og nederst\n\n\n\n\n1\nbromvand og hexan, i folie\n\n\n\n\n\n2\nbromvand og hexan, i lys\n\n\n\n\n\n3\nbromvand og hex-1-en\n\n\n\n\n\n\n\n\n\n\n\nGlas\nTid, før farven var væk\npH\nBundfald med sølvnitrat?\n\n\n\n\n1\n\n\n\n\n\n2",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.4: Substitution eller addition?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-4-substitution-eller-addition.html#efterbehandling",
+    "href": "oevelser/4-4-substitution-eller-addition.html#efterbehandling",
+    "title": "Øvelse 4.4: Substitution eller addition?",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\n\n\nAfgør, om stofferne er polære eller upolære. Første række er udfyldt.\n\n\n\n\n\nStof\nPolært eller upolært?\n\n\n\n\nvand, H2O\npolært\n\n\nbrom, Br2\n\n\n\nhexan, C6H14\n\n\n\n\n\n\nEfter rystningen er den gule farve flyttet fra det nederste lag til det øverste i glas 1 og 2. Forklar med skemaet, hvorfor brom flytter op i hexanen. \nSkriv produkterne i de to reaktionsskemaer. I glas 2 er det ene produkt skrevet.\n\n\n\n\n\nGlas\nReaktanter\nProdukter\n\n\n\n\n2\nC6H14 + Br2 →\n+ HBr\n\n\n3\nC6H12 + Br2 →\n\n\n\n\n\n\nSammenlign reaktionerne i glas 2 og 3. Første række er udfyldt.\n\n\n\n\n\n\nGlas 2\nGlas 3\n\n\n\n\nStoffet er en\nalkan\nalken\n\n\nForsvandt farven hurtigt eller langsomt?\n\n\n\n\nAntal produkter\n\n\n\n\nReaktionen er en\n\n\n\n\n\n\n\nSe på resultaterne for glas 2. Hvad viser pH-papiret, og hvilken ion viser bundfaldet? Hvilket produkt fra reaktionsskemaet giver begge dele? \nGlas 1 stod i mørke. Hvorfor er det vigtigt at have glas 1 med i forsøget? \n\n\n\n\nForklar med molekylernes polaritet, hvad der skete, da glassene blev rystet.\nSkriv reaktionsskemaerne for reaktionerne i glas 2 og 3, og tegn zigzagformlen for ét af produkterne i hvert glas. \n\n\nEt produkt i glas 2\nProduktet i glas 3\n\n\nForklar resultaterne med pH-papir og sølvnitrat i glas 1 og 2. Skriv ionskemaet for bundfaldet.\nForklar, hvordan forsøget viser forskellen på en substitution og en addition. Kom ind på lys, hastighed og antal produkter.\nNævn en fejlkilde i forsøget, og forklar, hvordan den kan påvirke resultatet.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.4: Substitution eller addition?"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-5-find-kogepunktet.html",
+    "href": "oevelser/4-5-find-kogepunktet.html",
+    "title": "Øvelse 4.5: Find kogepunktet",
+    "section": "",
+    "text": "Fremgangsmåde\nEt lille kapillarrør står med den åbne ende nedad i stoffet. Når vandbadet er varmere end stoffets kogepunkt, bobler der damp ud af røret, og når vandbadet køler af, holder boblerne op, og væsken bliver suget op i røret. Det sker ved stoffets kogepunkt.\nApparatur og kemikalier: stativ med klemme, termometer, elastik, bægerglas på 400 mL, lille bægerglas, glasspatel, elkedel, tre små reagensglas, tre kapillarrør med den ene ende lukket, tre engangspipetter, pentan, hexan og ethanol.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.5: Find kogepunktet"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-5-find-kogepunktet.html#fremgangsmåde",
+    "href": "oevelser/4-5-find-kogepunktet.html#fremgangsmåde",
+    "title": "Øvelse 4.5: Find kogepunktet",
+    "section": "",
+    "text": "Figur 1: Opstillingen. Det lille reagensglas sidder fast på termometeret og står i vandbadet.\n\n\n\n\nSkriv først dit gæt i skemaet: Hvilket stof har det laveste kogepunkt, og hvilket har det højeste?\nKog vand i elkedlen. Hæld 100 mL vand fra hanen i det store bægerglas.\nDryp 5 dråber pentan i et lille reagensglas, og sæt et kapillarrør ned i det med den åbne ende nedad. Sæt det lille glas fast på termometeret med elastikken, så bunden af glasset er ud for kuglen. Sæt termometeret i klemmen, så det lille glas står i vandet (figur 1).\nHæld varmt vand fra elkedlen i bægerglasset lidt ad gangen, og rør rundt med glasspatlen. Stop, når der kommer en tæt strøm af bobler ud af kapillarrøret (figur 2). Øs noget af vandet op med det lille bægerglas, hvis bægerglasset bliver for fyldt.\nHold øje med røret, mens vandbadet køler af. Aflæs temperaturen, i det øjeblik boblerne holder op, og væsken bliver suget op i røret.\nGentag trin 3 til 5 med hexan og derefter med ethanol. Brug et nyt lille glas og et nyt kapillarrør hver gang.\nLæg de små glas og kapillarrørene i den beholder, din lærer viser dig.\n\n\n\n\n\n\n\nFigur 2: Sådan ser du kogepunktet i kapillarrøret.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.5: Find kogepunktet"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-5-find-kogepunktet.html#resultater",
+    "href": "oevelser/4-5-find-kogepunktet.html#resultater",
+    "title": "Øvelse 4.5: Find kogepunktet",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\nStof\nGæt: lavest, midt eller højest?\nMålt kogepunkt\n\n\n\n\npentan\n\n°C\n\n\nhexan\n\n°C\n\n\nethanol\n\n°C",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.5: Find kogepunktet"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-5-find-kogepunktet.html#efterbehandling",
+    "href": "oevelser/4-5-find-kogepunktet.html#efterbehandling",
+    "title": "Øvelse 4.5: Find kogepunktet",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\n\nUdfyld skemaet. En polær gruppe er en gruppe af atomer med polære bindinger, fx en OH-gruppe. Første række er udfyldt.\n\n\n\n\n\n\n\n\n\n\n\n\n\nStof\nFormel\nAntal C\nMasse af ét molekyle\nPolær gruppe?\nMålt kogepunkt\n\n\n\n\npentan\nC5H12\n5\n72,2 u\nnej\n\n\n\nhexan\nC6H14\n\n86,2 u\n\n\n\n\nethanol\nC2H5OH\n\n46,1 u\n\n\n\n\n\n\n\nPentan og hexan er begge alkaner. Hvilket af de to stoffer har det højeste kogepunkt? Forklar med kædens længde og den flade, hvor to molekyler rører hinanden. \nSe på pentan og ethanol. Hvilket af de to molekyler vejer mest, og hvilket stof har det højeste kogepunkt? \nHvad har ethanol, som pentan ikke har? Forklar, hvorfor det giver ethanol et højere kogepunkt. \nSammenlign med kogepunkterne i en tabel: pentan 36 °C, hexan 69 °C og ethanol 78 °C.\n\n\n\n\n\nStof\nMålt kogepunkt\nKogepunkt i tabellen\nForskel\n\n\n\n\npentan\n°C\n36 °C\n°C\n\n\nhexan\n°C\n69 °C\n°C\n\n\nethanol\n°C\n78 °C\n°C\n\n\n\n\n\nGassen i en lighter er butan, C4H10. Er kogepunktet for butan højere eller lavere end for pentan? Forklar, hvorfor butan er en gas, når den kommer ud af lighteren.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.5: Find kogepunktet"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-6-fedt-i-chips.html",
+    "href": "oevelser/4-6-fedt-i-chips.html",
+    "title": "Øvelse 4.6: Fedt i chips",
+    "section": "",
+    "text": "Fremgangsmåde\nFedtet i chipsene kan opløses i rensebenzin, men resten af chipsene kan ikke. Når rensebenzinen er fordampet, ligger fedtet tilbage i petriskålen og kan vejes.\nApparatur og kemikalier: vægt, morter med pistil, bægerglas på 100 mL, petriskål af glas, tusch, tragt, glasuld, glasspatel, chips og rensebenzin.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.6: Fedt i chips"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-6-fedt-i-chips.html#fremgangsmåde",
+    "href": "oevelser/4-6-fedt-i-chips.html#fremgangsmåde",
+    "title": "Øvelse 4.6: Fedt i chips",
+    "section": "",
+    "text": "Figur 1: Fedtet trækkes ud af chipsene og samles i petriskålen.\n\n\n\n\nSkriv chipsenes mærke og fedtindholdet pr. 100 g fra posen i skemaet.\nKnus en håndfuld chips i morteren. Afvej omkring 5 g knuste chips i bægerglasset, og skriv massen i skemaet.\nSkriv dit navn på petriskålen med tusch, vej den, og skriv massen i skemaet.\nHæld omkring 20 mL rensebenzin over chipsene under punktsuget, og rør i 2 minutter med glasspatlen (figur 1).\nLæg en lille tot glasuld i tragten, og hæld væsken gennem tragten ned i petriskålen. Hæld langsomt, så chipsene bliver i bægerglasset.\nGentag trin 4 og 5 med 20 mL ny rensebenzin. Pres til sidst glasulden let med glasspatlen.\nStil petriskålen og bægerglasset med chipsrester i stinkskabet til næste gang. Vej petriskålen, når rensebenzinen er fordampet, og smid chipsrester og glasuld i den beholder, din lærer viser dig.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.6: Fedt i chips"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-6-fedt-i-chips.html#resultater",
+    "href": "oevelser/4-6-fedt-i-chips.html#resultater",
+    "title": "Øvelse 4.6: Fedt i chips",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\nChipsenes mærke\nFedt pr. 100 g ifølge posen\n\n\n\n\n\ng\n\n\n\n\n\n\n\n\nVejning\nMasse\n\n\n\n\nChips\ng\n\n\nTom petriskål\ng\n\n\nPetriskål med fedt, næste gang\ng",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.6: Fedt i chips"
+    ]
+  },
+  {
+    "objectID": "oevelser/4-6-fedt-i-chips.html#efterbehandling",
+    "href": "oevelser/4-6-fedt-i-chips.html#efterbehandling",
+    "title": "Øvelse 4.6: Fedt i chips",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\n\n\nBeregn massen af det fedt, der ligger i petriskålen. \n\\[\nm(\\text{fedt}) = m(\\text{skål med fedt}) - m(\\text{skål}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}00}}\\ \\mathrm{g}\n\\]\nBeregn, hvor mange procent fedt chipsene indeholder. \n\\[\n\\text{fedtindhold} = \\frac{m(\\text{fedt})}{m(\\text{chips})} \\cdot 100\\ \\%\n\\]\n\\[\n\\text{fedtindhold} = \\frac{\\boxed{\\phantom{0{,}00}}\\ \\mathrm{g}}{\\boxed{\\phantom{0{,}00}}\\ \\mathrm{g}} \\cdot 100\\ \\% = \\boxed{\\phantom{00}}\\ \\%\n\\]\nPosen viser fedtet pr. 100 g chips, og det er det samme som procent. Er dit resultat højere eller lavere end tallet på posen? \nAfgør, om stofferne er polære eller upolære. Første række er udfyldt.\n\n\n\n\n\nStof\nPolært eller upolært?\n\n\n\n\nvand\npolært\n\n\nfedtstof\n\n\n\nrensebenzin\n\n\n\n\n\n\nForklar med skemaet, hvorfor fedtet kan opløses i rensebenzinen. \nHvorfor hælder man rensebenzin på chipsene to gange? \n\n\n\n\nBeregn, hvor mange procent fedt chipsene indeholder.\nForklar med molekylernes polaritet, hvorfor rensebenzin kan trække fedtet ud af chipsene.\nKunne man have brugt vand i stedet for rensebenzin? Begrund dit svar.\nSammenlign dit resultat med tallet på posen. Nævn mindst to fejlkilder, og forklar, om de giver et for højt eller et for lavt resultat.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 4.6: Fedt i chips"
+    ]
+  },
+  {
     "objectID": "oevelser/5-4-krystalvand-i-kobbersulfat.html",
     "href": "oevelser/5-4-krystalvand-i-kobbersulfat.html",
     "title": "Øvelse 5.4: Krystalvand i kobber(II)sulfat",
@@ -15257,7 +15444,7 @@
     "href": "oevelser/5-4-krystalvand-i-kobbersulfat.html#efterbehandling",
     "title": "Øvelse 5.4: Krystalvand i kobber(II)sulfat",
     "section": "Efterbehandling",
-    "text": "Efterbehandling\n\n\nBeregn massen af det vandholdige salt før opvarmningen og massen af det vandfri salt efter. \n\\[\nm(\\text{før}) = m(\\text{digel før}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\n\\[\nm(\\mathrm{CuSO_4}) = m(\\text{digel efter}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nDet, der forsvandt, er krystalvandet. Beregn massen af vandet. \n\\[\nm(\\mathrm{H_2O}) = m(\\text{før}) - m(\\mathrm{CuSO_4}) = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g} - \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nBeregn stofmængden af det vandfri kobber(II)sulfat og af vandet. Skriv tallene i skemaet. \n\n\n\n\n\n\nm i g\nM i g/mol\nn i mol\n\n\n\n\nCuSO4\n\n159,62\n\n\n\nH2O\n\n18,02\n\n\n\n\n\n\\[\nn(\\mathrm{CuSO_4}) = \\frac{m(\\mathrm{CuSO_4})}{M(\\mathrm{CuSO_4})} = \\frac{\\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}}{159{,}62\\ \\mathrm{g/mol}} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\\[\nn(\\mathrm{H_2O}) = \\frac{m(\\mathrm{H_2O})}{M(\\mathrm{H_2O})} = \\frac{\\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}}{18{,}02\\ \\mathrm{g/mol}} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\nx er forholdet mellem stofmængderne, som du kender fra koefficienterne i et reaktionsskema. Beregn x, og skriv formlen for saltet med x rundet til et helt tal. \n\\[\nx = \\frac{n(\\mathrm{H_2O})}{n(\\mathrm{CuSO_4})} = \\frac{\\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}}{\\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}} = \\boxed{\\phantom{0{,}00}}\n\\]\nFormlen er CuSO4 ·  H2O.\nHvad skete der, da du dryppede vand på det vandfri salt? \n\n\n\n\nBeregn massen af det vandfri kobber(II)sulfat og massen af det krystalvand, der fordampede.\nBestem x, og skriv formlen for det vandholdige salt. Vis beregningen med formler, tal og enheder.\nSpørg din lærer om formlen på flasken, og beregn afvigelsen mellem dit x og flaskens.\nGiv to fejlkilder, og forklar for hver af dem, om den gør dit x for stort eller for lille.\nBeskriv, hvad der skete, da du dryppede vand på det vandfri salt, og forklar det med reaktionsskemaet.",
+    "text": "Efterbehandling\n\n\nBeregn massen af det vandholdige salt før opvarmningen og massen af det vandfri salt efter. \n\\[\nm(\\text{før}) = m(\\text{digel før}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\n\\[\nm(\\mathrm{CuSO_4}) = m(\\text{digel efter}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nDet, der forsvandt, er krystalvandet. Beregn massen af vandet. \n\\[\nm(\\mathrm{H_2O}) = m(\\text{før}) - m(\\mathrm{CuSO_4}) = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g} - \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nBeregn molarmasserne og stofmængderne af det vandfri kobber(II)sulfat og af vandet. Find grundstoffernes molarmasser i det periodiske system og formlerne i bilaget Formler og enheder. Skriv tallene i skemaet. I de store felter skriver du først formlen og så tallene med enheder. \n\n\n\n\n\n\nm i g\nM i g/mol\nn i mol\n\n\n\n\nCuSO4\n\n\n\n\n\nH2O\n\n\n\n\n\n\n\n\\[\nM(\\mathrm{CuSO_4}) = M(\\mathrm{Cu}) + M(\\mathrm{S}) + 4 \\cdot M(\\mathrm{O})\n\\]\n\\[\nM(\\mathrm{CuSO_4}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} + \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} + 4 \\cdot \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} = \\boxed{\\phantom{000{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nM(\\mathrm{H_2O}) = 2 \\cdot M(\\mathrm{H}) + M(\\mathrm{O}) = 2 \\cdot \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g/mol} + \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nn(\\mathrm{CuSO_4}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\\[\nn(\\mathrm{H_2O}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\nx er forholdet mellem stofmængderne, som du kender fra koefficienterne i et reaktionsskema. Beregn x, og skriv formlen for saltet med x rundet til et helt tal. \n\\[\nx = \\frac{n(\\mathrm{H_2O})}{n(\\mathrm{CuSO_4})} = \\frac{\\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}}{\\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}} = \\boxed{\\phantom{0{,}00}}\n\\]\nFormlen er CuSO4 ·  H2O.\nHvad skete der, da du dryppede vand på det vandfri salt? \n\n\n\n\nBeregn massen af det vandfri kobber(II)sulfat og massen af det krystalvand, der fordampede.\nBestem x, og skriv formlen for det vandholdige salt. Vis beregningen med formler, tal og enheder.\nSpørg din lærer om formlen på flasken, og beregn afvigelsen mellem dit x og flaskens.\nGiv to fejlkilder, og forklar for hver af dem, om den gør dit x for stort eller for lille.\nBeskriv, hvad der skete, da du dryppede vand på det vandfri salt, og forklar det med reaktionsskemaet.",
     "crumbs": [
       "Laboratorieøvelser",
       "Øvelse 5.4: Krystalvand i kobber(II)sulfat"
@@ -15301,7 +15488,7 @@
     "href": "oevelser/5-5a-staaluld-paa-vaegten.html#efterbehandling",
     "title": "Øvelse 5.5a: Ståluld på vægten",
     "section": "Efterbehandling",
-    "text": "Efterbehandling\n\n\nBeregn massen af stålulden før forsøget. \n\\[\nm(\\text{ståluld}) = m(\\text{skål med ståluld}) - m(\\text{skål}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}\n\\]\nBeregn massen af det stof, der ligger i skålen efter forsøget. \n\\[\nm(\\text{efter}) = m(\\text{skål med indhold}) - m(\\text{skål}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}\n\\]\nBlev massen større eller mindre? Passede dit gæt? \nReaktionsskemaet viser, at jernet har reageret med et stof fra luften. Hvilket stof er det? \nBeregn, hvor mange gram jern(II)oxid der kan dannes af din ståluld, hvis alt jernet reagerer. Skriv først massen af din ståluld i skemaet. Regn så ned, på tværs og op med de fire beregninger under skemaet, og skriv tallene i skemaet undervejs.\n\n\n\n\n\n\n2 Fe(s)\n+ O2(g)\n→ 2 FeO(s)\n\n\n\n\nm i g\n\n–\n\n\n\nM i g/mol\n55,85\n–\n\n\n\nn i mol\n\n–\n\n\n\n\n\n\\[\nn(\\mathrm{Fe}) = \\frac{m(\\mathrm{Fe})}{M(\\mathrm{Fe})} = \\frac{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}}{55{,}85\\ \\mathrm{g/mol}} = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{mol}\n\\]\n\\[\nn(\\mathrm{FeO}) = n(\\mathrm{Fe}) = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{mol}\n\\]\n\\[\nM(\\mathrm{FeO}) = 55{,}85\\ \\mathrm{g/mol} + 16{,}00\\ \\mathrm{g/mol} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nm(\\mathrm{FeO}) = n(\\mathrm{FeO}) \\cdot M(\\mathrm{FeO}) = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{mol} \\cdot \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}\n\\]\n\nBeregn afvigelsen mellem den masse, du målte efter forsøget, og den beregnede masse af jern(II)oxid. Den beregnede masse er den forventede værdi. \n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\n\\[\n\\text{afvigelse} = \\frac{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}}{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}} \\cdot 100\\ \\% = \\boxed{\\phantom{00{,}0}}\\ \\%\n\\]\n\n\n\n\nBeregn massen af stålulden før forsøget og massen af det stof, der ligger i skålen efter forsøget. Passede dit gæt?\nForklar med reaktionsskemaet, hvorfor massen ændrede sig.\nBeregn, hvor mange gram jern(II)oxid der kan dannes af din ståluld, hvis alt jernet reagerer. Stil beregningen op i et mængdeberegningsskema.\nBeregn afvigelsen mellem den masse, du målte, og den beregnede masse, og giv to mulige forklaringer på afvigelsen.\nJern kan også danne jern(III)oxid, Fe2O3. Afstem reaktionsskemaet for den reaktion, og undersøg med en beregning, om din måling passer bedre med Fe2O3 end med FeO.",
+    "text": "Efterbehandling\n\n\nBeregn massen af stålulden før forsøget. \n\\[\nm(\\text{ståluld}) = m(\\text{skål med ståluld}) - m(\\text{skål}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}\n\\]\nBeregn massen af det stof, der ligger i skålen efter forsøget. \n\\[\nm(\\text{efter}) = m(\\text{skål med indhold}) - m(\\text{skål}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}\n\\]\nBlev massen større eller mindre? Passede dit gæt? \nReaktionsskemaet viser, at jernet har reageret med et stof fra luften. Hvilket stof er det? \nBeregn, hvor mange gram jern(II)oxid der kan dannes af din ståluld, hvis alt jernet reagerer. Find molarmasserne i det periodiske system og formlerne i bilaget Formler og enheder. Skriv først massen af din ståluld i skemaet. Regn så ned, på tværs og op med de fire beregninger under skemaet, og skriv tallene i skemaet undervejs. I de store felter skriver du først formlen og så tallene med enheder.\n\n\n\n\n\n\n2 Fe(s)\n+ O2(g)\n→ 2 FeO(s)\n\n\n\n\nm i g\n\n–\n\n\n\nM i g/mol\n\n–\n\n\n\nn i mol\n\n–\n\n\n\n\n\n\\[\nn(\\mathrm{Fe}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{mol}\n\\]\n\\[\nn(\\mathrm{FeO}) = n(\\mathrm{Fe}) = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{mol}\n\\]\n\\[\nM(\\mathrm{FeO}) = M(\\mathrm{Fe}) + M(\\mathrm{O}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} + \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nm(\\mathrm{FeO}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}\n\\]\n\nBeregn afvigelsen mellem den masse, du målte efter forsøget, og den beregnede masse af jern(II)oxid. Den beregnede masse er den forventede værdi. \n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\n\\[\n\\text{afvigelse} = \\frac{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}}{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{g}} \\cdot 100\\ \\% = \\boxed{\\phantom{00{,}0}}\\ \\%\n\\]\n\n\n\n\nBeregn massen af stålulden før forsøget og massen af det stof, der ligger i skålen efter forsøget. Passede dit gæt?\nForklar med reaktionsskemaet, hvorfor massen ændrede sig.\nBeregn, hvor mange gram jern(II)oxid der kan dannes af din ståluld, hvis alt jernet reagerer. Stil beregningen op i et mængdeberegningsskema.\nBeregn afvigelsen mellem den masse, du målte, og den beregnede masse, og giv to mulige forklaringer på afvigelsen.\nJern kan også danne jern(III)oxid, Fe2O3. Afstem reaktionsskemaet for den reaktion, og undersøg med en beregning, om din måling passer bedre med Fe2O3 end med FeO.",
     "crumbs": [
       "Laboratorieøvelser",
       "Øvelse 5.5a: Ståluld på vægten"
@@ -15345,10 +15532,98 @@
     "href": "oevelser/5-5b-natron-i-diglen.html#efterbehandling",
     "title": "Øvelse 5.5b: Natron i diglen",
     "section": "Efterbehandling",
-    "text": "Efterbehandling\n\n\nBeregn massen af natron før opvarmningen og massen af det faste stof efter. \n\\[\nm(\\mathrm{NaHCO_3}) = m(\\text{digel før}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\n\\[\nm(\\text{fast stof}) = m(\\text{digel efter}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nDet faste stof kan være natriumoxid, Na2O, eller natriumcarbonat, Na2CO3. Afstem de to reaktionsskemaer. Lad feltet stå tomt, hvis koefficienten er 1.\n\n\n\n\n\n\n\n\n\nSkema\nReaktionsskema\n\n\n\n\nA\n NaHCO3(s) →  Na2O(s) +  H2O(g) +  CO2(g)\n\n\nB\n NaHCO3(s) →  Na2CO3(s) +  H2O(g) +  CO2(g)\n\n\n\n\n\nBeregn, hvor meget natriumoxid der bliver tilbage, hvis skema A er det rigtige. Regn ned, på tværs og op, og skriv tallene i skemaet undervejs. \n\n\n\n\n\n\nNaHCO3(s)\n→ Na2O(s)\n\n\n\n\nm i g\n\n\n\n\nM i g/mol\n84,01\n\n\n\nn i mol\n\n\n\n\n\n\n\\[\nn(\\mathrm{NaHCO_3}) = \\frac{m(\\mathrm{NaHCO_3})}{M(\\mathrm{NaHCO_3})} = \\frac{\\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}}{84{,}01\\ \\mathrm{g/mol}} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\\[\nn(\\mathrm{Na_2O}) = \\frac{\\boxed{\\phantom{0}}}{\\boxed{\\phantom{0}}} \\cdot n(\\mathrm{NaHCO_3}) = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\\[\nM(\\mathrm{Na_2O}) = 2 \\cdot M(\\mathrm{Na}) + M(\\mathrm{O}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nm(\\mathrm{Na_2O}) = n(\\mathrm{Na_2O}) \\cdot M(\\mathrm{Na_2O}) = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol} \\cdot \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\n\nRegn på samme måde i skemaet, hvor meget natriumcarbonat der bliver tilbage, hvis skema B er det rigtige. \n\n\n\n\n\n\nNaHCO3(s)\n→ Na2CO3(s)\n\n\n\n\nm i g\n\n\n\n\nM i g/mol\n84,01\n\n\n\nn i mol\n\n\n\n\n\n\n\nSkriv den målte og de to beregnede masser i skemaet. Hvilket stof blev der dannet i diglen? \n\n\n\n\n\n\n\n\n\n\nMålt masse af det faste stof\nBeregnet masse, skema A\nBeregnet masse, skema B\n\n\n\n\ng\ng\ng\n\n\n\n\n\n\nDet faste stof kan være natriumoxid, Na2O, natriumhydroxid, NaOH, eller natriumcarbonat, Na2CO3.\n\nNaHCO3(s) → Na2O(s) + H2O(g) + CO2(g)\n\n\nNaHCO3(s) → NaOH(s) + CO2(g)\n\n\nNaHCO3(s) → Na2CO3(s) + H2O(g) + CO2(g)\n\n\nBeregn massen af natron før opvarmningen og massen af det faste stof efter.\nAfstem de tre reaktionsskemaer. \nBeregn for hvert reaktionsskema, hvor meget fast stof der burde blive tilbage. Stil hver beregning op i et mængdeberegningsskema. \nBeregn afvigelsen mellem den målte masse og hver af de tre beregnede masser, og afgør, hvilket reaktionsskema der passer bedst.\nGiv en fejlkilde, og forklar, om den gør den målte masse for stor eller for lille.",
+    "text": "Efterbehandling\n\n\nBeregn massen af natron før opvarmningen og massen af det faste stof efter. \n\\[\nm(\\mathrm{NaHCO_3}) = m(\\text{digel før}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\n\\[\nm(\\text{fast stof}) = m(\\text{digel efter}) - m(\\text{digel}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nDet faste stof kan være natriumoxid, Na2O, eller natriumcarbonat, Na2CO3. Afstem de to reaktionsskemaer. Lad feltet stå tomt, hvis koefficienten er 1.\n\n\n\n\n\n\n\n\n\nSkema\nReaktionsskema\n\n\n\n\nA\n NaHCO3(s) →  Na2O(s) +  H2O(g) +  CO2(g)\n\n\nB\n NaHCO3(s) →  Na2CO3(s) +  H2O(g) +  CO2(g)\n\n\n\n\n\nBeregn, hvor meget natriumoxid der bliver tilbage, hvis skema A er det rigtige. Find molarmasserne i det periodiske system og formlerne i bilaget Formler og enheder. Regn ned, på tværs og op, og skriv tallene i skemaet undervejs. I de store felter skriver du først formlen og så tallene med enheder. \n\n\n\n\n\n\nNaHCO3(s)\n→ Na2O(s)\n\n\n\n\nm i g\n\n\n\n\nM i g/mol\n\n\n\n\nn i mol\n\n\n\n\n\n\n\\[\nM(\\mathrm{NaHCO_3}) = M(\\mathrm{Na}) + M(\\mathrm{H}) + M(\\mathrm{C}) + 3 \\cdot M(\\mathrm{O}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nn(\\mathrm{NaHCO_3}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\\[\nn(\\mathrm{Na_2O}) = \\frac{\\boxed{\\phantom{0}}}{\\boxed{\\phantom{0}}} \\cdot n(\\mathrm{NaHCO_3}) = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\n\\[\nM(\\mathrm{Na_2O}) = 2 \\cdot M(\\mathrm{Na}) + M(\\mathrm{O}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nm(\\mathrm{Na_2O}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\n\nRegn på samme måde i skemaet, hvor meget natriumcarbonat der bliver tilbage, hvis skema B er det rigtige. \n\n\n\n\n\n\nNaHCO3(s)\n→ Na2CO3(s)\n\n\n\n\nm i g\n\n\n\n\nM i g/mol\n\n\n\n\nn i mol\n\n\n\n\n\n\n\nSkriv den målte og de to beregnede masser i skemaet. Hvilket stof blev der dannet i diglen? \n\n\n\n\n\n\n\n\n\n\nMålt masse af det faste stof\nBeregnet masse, skema A\nBeregnet masse, skema B\n\n\n\n\ng\ng\ng\n\n\n\n\n\n\nDet faste stof kan være natriumoxid, Na2O, natriumhydroxid, NaOH, eller natriumcarbonat, Na2CO3.\n\nNaHCO3(s) → Na2O(s) + H2O(g) + CO2(g)\n\n\nNaHCO3(s) → NaOH(s) + CO2(g)\n\n\nNaHCO3(s) → Na2CO3(s) + H2O(g) + CO2(g)\n\n\nBeregn massen af natron før opvarmningen og massen af det faste stof efter.\nAfstem de tre reaktionsskemaer. \nBeregn for hvert reaktionsskema, hvor meget fast stof der burde blive tilbage. Stil hver beregning op i et mængdeberegningsskema. \nBeregn afvigelsen mellem den målte masse og hver af de tre beregnede masser, og afgør, hvilket reaktionsskema der passer bedst.\nGiv en fejlkilde, og forklar, om den gør den målte masse for stor eller for lille.",
     "crumbs": [
       "Laboratorieøvelser",
       "Øvelse 5.5b: Natron i diglen"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html",
+    "href": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html",
+    "title": "Øvelse 6.3a: Mohrtitrering af øjenskyllevand",
+    "section": "",
+    "text": "Fremgangsmåde\nChloridionerne i øjenskyllevandet reagerer med sølvionerne fra buretten i forholdet 1 : 1, og der dannes et hvidt bundfald af sølv(I)chlorid. Indikatoren dichlorfluorescein farver opløsningen gulgrøn. Den sætter sig først på bundfaldet, når der ikke er mere chlorid i kolben, og så bliver bundfaldet lyserødt.\nApparatur og kemikalier: burette i et stativ, lille tragt, pipette på 5,00 mL med pipettesuger, konisk kolbe på 100 mL, magnetomrører med magnet, bægerglas, spatel, øjenskyllevand, 0,0500 M sølv(I)nitrat, indikatoren 2′,7′‑dichlorfluorescein, dextrin og demineraliseret vand.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3a: Mohrtitrering af øjenskyllevand"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html#fremgangsmåde",
+    "href": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html#fremgangsmåde",
+    "title": "Øvelse 6.3a: Mohrtitrering af øjenskyllevand",
+    "section": "",
+    "text": "Figur 1: Opstillingen til titreringen.\n\n\n\n\nLæs på flasken, hvor mange procent natriumchlorid øjenskyllevandet indeholder, og skriv tallet i skemaet.\nMål 5,00 mL øjenskyllevand af med pipetten, og tøm den i den koniske kolbe. Tilsæt omkring 25 mL demineraliseret vand, 10 til 15 dråber dichlorfluorescein, en spatelspids dextrin og magneten.\nFyld buretten med sølv(I)nitrat gennem tragten, og tag tragten af. Lad lidt opløsning løbe ud i et bægerglas, så spidsen under hanen er fyldt. Aflæs buretten.\nStil kolben på magnetomrøreren, og lad sølv(I)nitrat dryppe ned i kolben (figur 1). Dryp én dråbe ad gangen, når der kommer lyserøde skyer, som forsvinder igen.\nLuk hanen, når hele indholdet i kolben er lyserødt, og farven bliver der i 30 sekunder (figur 2). Aflæs buretten.\nTag magneten op, og hæld indholdet af kolben i den beholder, din lærer viser dig. Det må ikke komme i vasken. Skyl kolben og magneten med demineraliseret vand, og gentag trin 2 til 5 med en ny portion øjenskyllevand.\nTøm kolben i beholderen på samme måde efter anden titrering, og tøm buretten, som din lærer viser dig.\n\n\n\n\n\n\n\nFigur 2: Sådan ser du, hvornår du skal stoppe.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3a: Mohrtitrering af øjenskyllevand"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html#resultater",
+    "href": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html#resultater",
+    "title": "Øvelse 6.3a: Mohrtitrering af øjenskyllevand",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\nAflæst på flasken\nResultat\n\n\n\n\nNatriumchlorid i øjenskyllevandet\n%\n\n\n\n\n\n\n\n\n\nTitrering 1\nTitrering 2\n\n\n\n\nBuretten ved start\nmL\nmL\n\n\nBuretten ved omslaget\nmL\nmL\n\n\nForbrug af sølv(I)nitrat\nmL\nmL",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3a: Mohrtitrering af øjenskyllevand"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html#efterbehandling",
+    "href": "oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html#efterbehandling",
+    "title": "Øvelse 6.3a: Mohrtitrering af øjenskyllevand",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\n\nBeregn forbruget i hver titrering, og skriv det i resultatskemaet. Forbruget er buretten ved omslaget minus buretten ved start. Beregn derefter gennemsnittet af de to forbrug, og regn det om til liter. \n\\[\nV(\\mathrm{AgNO_3}) = \\frac{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} + \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL}}{2} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{L}\n\\]\nTrin 1: Beregn stofmængden af sølv(I)nitrat. Find formlerne i bilaget Formler og enheder. I de store felter skriver du først formlen og så tallene med enheder. \n\\[\nn(\\mathrm{AgNO_3}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}000000}}\\ \\mathrm{mol}\n\\]\nTrin 2: Sølvioner og chloridioner reagerer i forholdet 1 : 1. Skriv stofmængden af natriumchlorid. \n\\[\nn(\\mathrm{NaCl}) = n(\\mathrm{AgNO_3}) = \\boxed{\\phantom{0{,}000000}}\\ \\mathrm{mol}\n\\]\nTrin 3: Beregn molarmassen og massen af natriumchlorid. Find molarmasserne for Na og Cl i det periodiske system. \n\\[\nM(\\mathrm{NaCl}) = M(\\mathrm{Na}) + M(\\mathrm{Cl}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nm(\\mathrm{NaCl}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{g}\n\\]\nTrin 4: Beregn masseprocenten. Øjenskyllevand har næsten samme densitet som vand, så 5,00 mL øjenskyllevand vejer 5,00 g. \n\\[\n\\text{masseprocent} = \\boxed{\\phantom{\\dfrac{0000000000}{0000000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}00}}\\ \\%\n\\]\nBeregn afvigelsen fra tallet på flasken. Tallet på flasken er den forventede værdi. \n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\n\\[\n\\text{afvigelse} = \\frac{\\boxed{\\phantom{0{,}00}}\\ \\% - \\boxed{\\phantom{0{,}00}}\\ \\%}{\\boxed{\\phantom{0{,}00}}\\ \\%} \\cdot 100\\ \\% = \\boxed{\\phantom{00{,}0}}\\ \\%\n\\]",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3a: Mohrtitrering af øjenskyllevand"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3b-mohrtitrering-af-chips.html",
+    "href": "oevelser/6-3b-mohrtitrering-af-chips.html",
+    "title": "Øvelse 6.3b: Mohrtitrering af chips",
+    "section": "",
+    "text": "Fremgangsmåde\nChloridionerne fra saltet reagerer med sølvionerne fra buretten i forholdet 1 : 1, og der dannes et hvidt bundfald af sølv(I)chlorid. Indikatoren dichlorfluorescein farver opløsningen gulgrøn. Den sætter sig først på bundfaldet, når der ikke er mere chlorid i kolben, og så bliver bundfaldet lyserødt.\nApparatur og kemikalier: vægt, burette i et stativ, lille tragt, konisk kolbe på 100 mL, måleglas på 50 mL, magnetomrører med magnet, bægerglas, spatel, chips, 0,0500 M sølv(I)nitrat, indikatoren 2′,7′‑dichlorfluorescein, dextrin og demineraliseret vand.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3b: Mohrtitrering af chips"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3b-mohrtitrering-af-chips.html#fremgangsmåde",
+    "href": "oevelser/6-3b-mohrtitrering-af-chips.html#fremgangsmåde",
+    "title": "Øvelse 6.3b: Mohrtitrering af chips",
+    "section": "",
+    "text": "Figur 1: Opstillingen til titreringen.\n\n\n\n\nSkriv chipsenes mærke og saltindholdet pr. 100 g fra posen i skemaet.\nStil den koniske kolbe på vægten, og nulstil vægten. Smuldr omkring 2 g chips ned i kolben, og skriv massen i skemaet.\nTilsæt omkring 50 mL demineraliseret vand og magneten. Stil kolben på magnetomrøreren, og lad den røre i 5 minutter, så saltet bliver opløst.\nFyld imens buretten med sølv(I)nitrat gennem tragten, og tag tragten af. Lad lidt opløsning løbe ud i et bægerglas, så spidsen under hanen er fyldt. Aflæs buretten.\nTilsæt 10 til 15 dråber dichlorfluorescein og en spatelspids dextrin til kolben, og lad sølv(I)nitrat dryppe ned i kolben (figur 1). Dryp én dråbe ad gangen, når der kommer lyserøde skyer, som forsvinder igen.\nLuk hanen, når hele indholdet i kolben er lyserødt, og farven bliver der i 30 sekunder (figur 2). Aflæs buretten.\nTag magneten op, og hæld indholdet af kolben i den beholder, din lærer viser dig. Det må ikke komme i vasken. Tøm buretten, som din lærer viser dig.\n\n\n\n\n\n\n\nFigur 2: Sådan ser du, hvornår du skal stoppe.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3b: Mohrtitrering af chips"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3b-mohrtitrering-af-chips.html#resultater",
+    "href": "oevelser/6-3b-mohrtitrering-af-chips.html#resultater",
+    "title": "Øvelse 6.3b: Mohrtitrering af chips",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\nChipsenes mærke\nSalt pr. 100 g ifølge posen\n\n\n\n\n\ng\n\n\n\n\n\n\n\n\nMåling\nResultat\n\n\n\n\nMasse af chips\ng\n\n\nBuretten ved start\nmL\n\n\nBuretten ved omslaget\nmL\n\n\nForbrug af sølv(I)nitrat\nmL",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3b: Mohrtitrering af chips"
+    ]
+  },
+  {
+    "objectID": "oevelser/6-3b-mohrtitrering-af-chips.html#efterbehandling",
+    "href": "oevelser/6-3b-mohrtitrering-af-chips.html#efterbehandling",
+    "title": "Øvelse 6.3b: Mohrtitrering af chips",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\n\n\nBeregn forbruget, og skriv det i resultatskemaet. Forbruget er buretten ved omslaget minus buretten ved start. Regn derefter forbruget om til liter. \n\\[\nV(\\mathrm{AgNO_3}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} - \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{L}\n\\]\nTrin 1: Beregn stofmængden af sølv(I)nitrat. Find formlerne i bilaget Formler og enheder. I de store felter skriver du først formlen og så tallene med enheder. \n\\[\nn(\\mathrm{AgNO_3}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}000000}}\\ \\mathrm{mol}\n\\]\nTrin 2: Sølvioner og chloridioner reagerer i forholdet 1 : 1. Skriv stofmængden af natriumchlorid. \n\\[\nn(\\mathrm{NaCl}) = n(\\mathrm{AgNO_3}) = \\boxed{\\phantom{0{,}000000}}\\ \\mathrm{mol}\n\\]\nTrin 3: Beregn molarmassen og massen af natriumchlorid. Find molarmasserne for Na og Cl i det periodiske system. \n\\[\nM(\\mathrm{NaCl}) = M(\\mathrm{Na}) + M(\\mathrm{Cl}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nm(\\mathrm{NaCl}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{g}\n\\]\nTrin 4: Beregn, hvor mange procent salt chipsene indeholder. \n\\[\n\\text{masseprocent} = \\boxed{\\phantom{\\dfrac{0000000000}{0000000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}00}}\\ \\%\n\\]\nPosen viser saltet pr. 100 g chips, og det er det samme som procent. Beregn afvigelsen fra tallet på posen. Tallet på posen er den forventede værdi. \n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\n\\[\n\\text{afvigelse} = \\frac{\\boxed{\\phantom{0{,}00}}\\ \\% - \\boxed{\\phantom{0{,}00}}\\ \\%}{\\boxed{\\phantom{0{,}00}}\\ \\%} \\cdot 100\\ \\% = \\boxed{\\phantom{00{,}0}}\\ \\%\n\\]\nHvad sker der med dit resultat, hvis du lukker hanen ved de første lyserøde skyer, som forsvinder igen? \n\n\n\n\nBeregn forbruget af sølv(I)nitrat.\nBeregn, hvor mange procent salt chipsene indeholder. Skriv beregningen med formler, tal og enheder.\nSammenlign dit resultat med tallet på posen, og beregn afvigelsen i procent.\nDu hældte omkring 50 mL vand i kolben uden at måle det præcist. Forklar, hvorfor det ikke ændrer resultatet.\nNævn to fejlkilder, og forklar for hver af dem, om den gør resultatet for højt eller for lavt.",
+    "crumbs": [
+      "Laboratorieøvelser",
+      "Øvelse 6.3b: Mohrtitrering af chips"
     ]
   },
   {
@@ -15389,7 +15664,7 @@
     "href": "oevelser/7-5-eddikesyre-i-eddike.html#efterbehandling",
     "title": "Øvelse 7.5: Eddikesyre i eddike",
     "section": "Efterbehandling",
-    "text": "Efterbehandling\n\n\nBeregn forbruget i hver titrering, og skriv det i resultatskemaet. Forbruget er buretten ved omslaget minus buretten ved start. Beregn derefter gennemsnittet af de to forbrug, og regn det om til liter. \n\\[\nV(\\mathrm{NaOH}) = \\frac{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} + \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL}}{2} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{L}\n\\]\nTrin 1: Beregn stofmængden af natriumhydroxid. \n\\[\nn(\\mathrm{NaOH}) = c(\\mathrm{NaOH}) \\cdot V(\\mathrm{NaOH}) = 0{,}100\\ \\mathrm{mol/L} \\cdot \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{L} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\nTrin 2: Eddikesyre og hydroxid reagerer i forholdet 1 : 1. Skriv stofmængden af eddikesyre. \n\\[\nn(\\mathrm{CH_3COOH}) = n(\\mathrm{NaOH}) = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\nTrin 3: Beregn massen af eddikesyre. Molarmassen for eddikesyre er 60,05 g/mol. \n\\[\nm(\\mathrm{CH_3COOH}) = n(\\mathrm{CH_3COOH}) \\cdot M(\\mathrm{CH_3COOH})\n\\]\n\\[\nm(\\mathrm{CH_3COOH}) = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol} \\cdot 60{,}05\\ \\mathrm{g/mol} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nTrin 4: Beregn masseprocenten. Eddike har næsten samme densitet som vand, så 2,00 mL eddike vejer 2,00 g. \n\\[\n\\text{masseprocent} = \\frac{m(\\mathrm{CH_3COOH})}{m(\\text{eddike})} \\cdot 100\\ \\% = \\frac{\\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}}{2{,}00\\ \\mathrm{g}} \\cdot 100\\ \\% = \\boxed{\\phantom{0{,}00}}\\ \\%\n\\]\nBeregn afvigelsen fra tallet på flasken. Tallet på flasken er den forventede værdi. \n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\n\\[\n\\text{afvigelse} = \\frac{\\boxed{\\phantom{0{,}00}}\\ \\% - \\boxed{\\phantom{0{,}00}}\\ \\%}{\\boxed{\\phantom{0{,}00}}\\ \\%} \\cdot 100\\ \\% = \\boxed{\\phantom{00{,}0}}\\ \\%\n\\]\nHvad sker der med dit resultat, hvis du drypper videre, til opløsningen er kraftigt lyserød? \n\n\n\n\nBeregn forbruget i hver titrering og gennemsnittet af forbruget.\nBeregn, hvor mange procent eddikesyre eddiken indeholder. Skriv beregningen med formler, tal og enheder. Du kan regne med, at 2,00 mL eddike vejer 2,00 g.\nSammenlign dit resultat med tallet på flasken, og beregn afvigelsen i procent.\nDu hældte omkring 25 mL vand i kolben uden at måle det præcist. Forklar, hvorfor det ikke ændrer resultatet.\nNævn to fejlkilder, og forklar for hver af dem, om den gør resultatet for højt eller for lavt.",
+    "text": "Efterbehandling\n\n\nBeregn forbruget i hver titrering, og skriv det i resultatskemaet. Forbruget er buretten ved omslaget minus buretten ved start. Beregn derefter gennemsnittet af de to forbrug, og regn det om til liter. \n\\[\nV(\\mathrm{NaOH}) = \\frac{\\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} + \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL}}{2} = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{mL} = \\boxed{\\phantom{0{,}0000}}\\ \\mathrm{L}\n\\]\nTrin 1: Beregn stofmængden af natriumhydroxid. Find formlerne i bilaget Formler og enheder. I de store felter skriver du først formlen og så tallene med enheder. \n\\[\nn(\\mathrm{NaOH}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\nTrin 2: Eddikesyre og hydroxid reagerer i forholdet 1 : 1. Skriv stofmængden af eddikesyre. \n\\[\nn(\\mathrm{CH_3COOH}) = n(\\mathrm{NaOH}) = \\boxed{\\phantom{0{,}00000}}\\ \\mathrm{mol}\n\\]\nTrin 3: Beregn molarmassen og massen af eddikesyre. Find molarmasserne for C, H og O i det periodiske system. \n\\[\nM(\\mathrm{CH_3COOH}) = 2 \\cdot M(\\mathrm{C}) + 4 \\cdot M(\\mathrm{H}) + 2 \\cdot M(\\mathrm{O}) = \\boxed{\\phantom{00{,}00}}\\ \\mathrm{g/mol}\n\\]\n\\[\nm(\\mathrm{CH_3COOH}) = \\boxed{\\phantom{\\dfrac{000000}{000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}000}}\\ \\mathrm{g}\n\\]\nTrin 4: Beregn masseprocenten. Eddike har næsten samme densitet som vand, så 2,00 mL eddike vejer 2,00 g. \n\\[\n\\text{masseprocent} = \\boxed{\\phantom{\\dfrac{0000000000}{0000000000}}} = \\boxed{\\phantom{\\dfrac{00000000000}{00000000000}}} = \\boxed{\\phantom{0{,}00}}\\ \\%\n\\]\nBeregn afvigelsen fra tallet på flasken. Tallet på flasken er den forventede værdi. \n\\[\n\\text{afvigelse} = \\frac{\\text{målt værdi} - \\text{forventet værdi}}{\\text{forventet værdi}} \\cdot 100\\ \\%\n\\]\n\\[\n\\text{afvigelse} = \\frac{\\boxed{\\phantom{0{,}00}}\\ \\% - \\boxed{\\phantom{0{,}00}}\\ \\%}{\\boxed{\\phantom{0{,}00}}\\ \\%} \\cdot 100\\ \\% = \\boxed{\\phantom{00{,}0}}\\ \\%\n\\]\nHvad sker der med dit resultat, hvis du drypper videre, til opløsningen er kraftigt lyserød? \n\n\n\n\nBeregn forbruget i hver titrering og gennemsnittet af forbruget.\nBeregn, hvor mange procent eddikesyre eddiken indeholder. Skriv beregningen med formler, tal og enheder. Du kan regne med, at 2,00 mL eddike vejer 2,00 g.\nSammenlign dit resultat med tallet på flasken, og beregn afvigelsen i procent.\nDu hældte omkring 25 mL vand i kolben uden at måle det præcist. Forklar, hvorfor det ikke ændrer resultatet.\nNævn to fejlkilder, og forklar for hver af dem, om den gør resultatet for højt eller for lavt.",
     "crumbs": [
       "Laboratorieøvelser",
       "Øvelse 7.5: Eddikesyre i eddike"
@@ -15901,7 +16176,7 @@
     "href": "fagord/stikordsregister.html#stikord-h",
     "title": "Stikordsregister",
     "section": "H",
-    "text": "H\n\n\nhalogener 1.3\nhalvmetal 1.1\nhalvsyntetisk T1.2\nhavforsuring T2.3\nhovedgruppe 1.3\nhovedkæde 4.2\nH-sætning Sikkerhed i laboratoriet\nhydrolyse 4.6\nhydron 7.1\nhydroxid 2.2\nhydroxidion 7.1\nhærdeplast T1.3\nhærdning 4.6",
+    "text": "H\n\n\nhalogener 1.3\nhalvmetal 1.1\nhalvsyntetisk T1.2\nhavforsuring T2.3\nhovedgruppe 1.3\nhovedkæde 4.2\nH-sætning Sikkerhed i laboratoriet\nhydrolyse 4.6\nhydron 7.1\nhydroxid 2.2\nhydroxidion 7.1\nhydroxygruppe 4.5\nhærdeplast T1.3\nhærdning 4.6",
     "crumbs": [
       "Bilag",
       "Stikordsregister"
