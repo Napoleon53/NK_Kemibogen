@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modulplaner kapitel 4</title>
+<style>
+/* Layout: én plan ad gangen (kort eller lang); hvert modul er et A4-ark med tidslinje til venstre og indhold til højre. */
+:root {
+  --bord: #e6ecea;
+  --ark: #ffffff;
+  --blæk: #14201f;
+  --dæmpet: #55635f;
+  --streg: #d3dcd9;
+  --accent: #0f766e;
+  --accent-svag: #e3f1ef;
+  --på-accent: #ffffff;
+  --tavle: #1d4ed8;  --tavle-bg: #e7eefc;
+  --par: #0f766e;    --par-bg: #e3f1ef;
+  --lab: #b45309;    --lab-bg: #fbefe1;
+  --klasse: #7c3aed; --klasse-bg: #f0eafd;
+  --start: #4b5563;  --start-bg: #eceff1;
+  --fokus-bg: #f6f8f7;
+  --skrift: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bord); color: var(--blæk);
+  font: 15px/1.5 var(--skrift);
+  padding-inline: 16px; padding-block: 24px 48px;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.side { max-width: 210mm; margin: 0 auto; display: grid; gap: 24px; }
+
+/* Forside */
+.forside { padding-block: 8px; display: grid; gap: 12px; }
+.forside h1 { margin: 0; font-size: 1.75rem; line-height: 1.2; text-wrap: balance; }
+.forside p { margin: 0; max-width: 65ch; color: var(--dæmpet); }
+.skifter {
+  display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; justify-self: start;
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 10px;
+}
+.skifter button {
+  font: inherit; cursor: pointer; border: 0; border-radius: 7px; padding: 8px 16px;
+  background: transparent; color: var(--blæk); display: grid; text-align: left; gap: 0;
+}
+.skifter button span { font-size: .8rem; color: var(--dæmpet); }
+.skifter button[aria-pressed="true"] { background: var(--accent); color: var(--på-accent); }
+.skifter button[aria-pressed="true"] span { color: var(--på-accent); opacity: .85; }
+.materialer { margin: 0; font-size: .9rem; max-width: 65ch; }
+.signatur { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .8rem; color: var(--dæmpet); align-items: center; }
+
+.plan { display: grid; gap: 24px; }
+
+/* Arket */
+.modul {
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 6px;
+  padding: 28px 32px; display: grid; gap: 18px;
+}
+.modul > header { display: grid; gap: 4px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+.øverst { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.etiket { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.modul h3 { margin: 0; font-size: 1.4rem; line-height: 1.25; text-wrap: balance; }
+.afsnit { font-size: .85rem; color: var(--dæmpet); }
+
+.før { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: .88rem; }
+.før > div { min-width: 0; }
+.før h4, .fokus h4, .bagefter h4 {
+  margin: 0 0 2px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600;
+}
+.før p, .før ul { margin: 0; }
+.før ul { padding-left: 1.1em; }
+
+/* Tidslinje */
+.forløb { list-style: none; margin: 0; padding: 0; display: grid; }
+.forløb li {
+  display: grid; grid-template-columns: 74px 1fr; gap: 16px;
+  padding-block: 10px; border-top: 1px solid var(--streg);
+}
+.forløb li:first-child { border-top: 0; padding-top: 0; }
+.tid { font-variant-numeric: tabular-nums; display: grid; align-content: start; }
+.tid b { font-size: 1.15rem; line-height: 1.1; }
+.tid span { font-size: .75rem; color: var(--dæmpet); }
+.trin { min-width: 0; display: grid; gap: 3px; }
+.trin-hoved { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.trin-hoved strong { font-size: 1rem; }
+.form { font-size: .7rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; }
+.form.tavle { color: var(--tavle); background: var(--tavle-bg); }
+.form.par { color: var(--par); background: var(--par-bg); }
+.form.lab { color: var(--lab); background: var(--lab-bg); }
+.form.klasse { color: var(--klasse); background: var(--klasse-bg); }
+.form.start { color: var(--start); background: var(--start-bg); }
+.trin p { margin: 0; font-size: .9rem; }
+.trin .ekstra { color: var(--dæmpet); font-size: .84rem; }
+.ord { font-weight: 600; }
+
+.fokus { background: var(--fokus-bg); border-radius: 6px; padding: 12px 16px; display: grid; gap: 6px; }
+.fokus ul { margin: 0; padding-left: 1.1em; font-size: .88rem; display: grid; gap: 2px; }
+.fokus p { margin: 0; font-size: .88rem; }
+
+.bagefter { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; font-size: .88rem; }
+.bagefter > div { min-width: 0; }
+.bagefter p { margin: 0; }
+
+@media (max-width: 640px) {
+  .modul { padding: 20px 16px; }
+  .før { grid-template-columns: 1fr; }
+  .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
+}
+
+@page { size: A4; margin: 12mm; }
+@media print {
+  body { background: #fff; padding: 0; font-size: 10.5pt; }
+  .forside { display: none; }
+  .side, .plan { gap: 0; max-width: none; }
+  .modul { border: 0; padding: 0; gap: 4mm; break-after: page; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<main class="side">
+
+<section class="forside">
+  <span class="etiket"><a href="https://kemibogen.dk/c/" style="color: inherit; text-decoration: none;">Kemibogen C</a> · lærerens udgave</span>
+  <h1>Modulplaner til kapitel 4: Organisk kemi</h1>
+  <p>Vælg den plan, der passer til holdet. Hvert modul er 90 minutter og fylder ét ark. Tiderne er et forslag: spring et punkt over eller brug mere tid, når klassen har brug for det. Begge planer har substitutionsforsøget (øvelse 4.4), hvor hexan og hex-1-en rystes med bromvand i lys og i mørke. Den lange plan er tænkt til et hold, der har brug for mere hjælp: øvelserne er i trin for trin-udgaven, der er en øvelse mere om forbrænding, og der er tid til at bygge molekyler.</p>
+  <div class="skifter" role="group" aria-label="Vælg plan">
+    <button type="button" id="knap-kort" data-plan="kort" aria-pressed="true">Kort · 5 moduler<span>Højt tempo, substitutionsforsøget i den åbne udgave</span></button>
+    <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 7 moduler<span>Flere trin, forbrænding og substitution trin for trin</span></button>
+  </div>
+  <p class="materialer">
+    <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-4-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 34 sider).</span>
+    <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-4-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 35 sider).</span>
+    Du kan også sætte dit eget kompendium sammen på <a href="https://kemiformler.dk/kompendier/" target="_blank">Byg dit kompendium</a>.
+  </p>
+  <div class="signatur">
+    <span><span class="form start">Start</span> fravær og repetition</span>
+    <span><span class="form tavle">Tavle</span> læreren styrer</span>
+    <span><span class="form par">Par</span> eleverne arbejder</span>
+    <span><span class="form lab">Lab</span> laboratoriet</span>
+    <span><span class="form klasse">Klassen</span> fælles aktivitet</span>
+  </div>
+</section>
+
+<!-- ============================ KORT ============================ -->
+<div class="plan" id="kort">
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · kort plan · modul 1 af 5</span><span class="afsnit">Afsnit 4.1 · 90 min</span></div>
+    <h3>Organisk kemi og alkaner</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen, eller læs <a href="https://kemibogen.dk/c/kapitler/4-1-alkaner.html">4.1 Carbonhydrider og alkaner</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-4-kort.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-4.html#/2" target="_blank">Slides 2–8</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc4.1_kogepunkt/index.html">Alkaners kogepunkt</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 3: <span class="ord">elektronparbinding, elektronegativitet, upolær</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn stregformlen for methan, CH₄. Hvor mange bindinger har carbonatomet?</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Organisk eller ej?</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/2" target="_blank">Slides 2–6</a>: organisk kemi og C−H-bindingen, carbonhydrid, tabellen med syv stoffer, alkaner, formlen C<sub><i>n</i></sub>H<sub>2<i>n</i>+2</sub> og de ti første alkaner.</p>
+        <p class="ekstra">Klassen svarer højt i tabellen på slide 3, først kolonnen Organisk og så Carbonhydrid. Octan på slide 5 regnes i par, før svaret kommer.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>35–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Navne og formler</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-1-opgaver.html">Opgave 4.1.2, 4.1.3, 4.1.4 og 4.1.5</a>.</p>
+        <p class="ekstra">Hurtige par: 4.1.klima.2 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>60–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Kogepunkt og opløselighed</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/7" target="_blank">Slides 7–8</a>: kontaktfladen mellem kæderne og benzin i vand med ΔEN i tabellen.</p>
+        <p class="ekstra">Vis <em>Alkaners kogepunkt</em> på projektoren, og lad klassen gætte, om pentan er en gas eller en væske ved stuetemperatur.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Forklar kogepunktet</strong><span class="form par">Par</span></div>
+        <p>Opgave 4.1.6 og 4.1.7. Eleverne arbejder, til klokken ringer.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad der gør et stof organisk, og hvad et carbonhydrid og en alkan er</li>
+      <li>skrive navn og molekylformel for de ti første alkaner</li>
+      <li>forklare, hvorfor kogepunktet stiger med kædens længde, og hvorfor alkaner ikke kan opløses i vand</li>
+    </ul>
+    <p><b>Centrale fagord:</b> organisk kemi, uorganisk, carbonhydrid, alkan, molekylformel</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-2-zigzagformler.html">4.2 Zigzagformler og navngivning</a>, og lær navnene på de fire første alkaner udenad.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>"Alkaner i hverdagen" i 4.1 (gas, væske eller fast stof) kan blive en del af lektien.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · kort plan · modul 2 af 5</span><span class="afsnit">Afsnit 4.2 · 90 min</span></div>
+    <h3>Zigzagformler, isomerer og navne</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-2-zigzagformler.html">4.2 Zigzagformler og navngivning</a>, og lær de fire første navne udenad.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/9" target="_blank">Slides 9–15</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc4.2_zigzagformler/index.html#navne">Zigzagformler</a> (animation)</li><li>Små sedler til udgangsbilletten</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">carbonhydrid, alkan, molekylformel</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv navn og molekylformel for alkanerne med 3, 6 og 10 carbonatomer.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Zigzagformler og isomerer</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/9" target="_blank">Slides 9–12</a>: fra stregformel til zigzagformel (vinklen 109,5°), hydrogenatomerne ved hvert carbonatom, isomerer og sidegrupper.</p>
+        <p class="ekstra">På slide 11 regner klassen molekylformlen for butan og 2-methylpropan, før svaret kommer.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>30–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tæl og tegn</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-2-opgaver.html">Opgave 4.2.1, 4.2.2 og 4.2.6</a>.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>50–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Sådan får en alkan sit navn</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/13" target="_blank">Slides 13–15</a>: navnet i tre trin, de tre isomerer med C₅H₁₂ og 2,3-dimethylbutan som fællesopgave.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>65–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra zigzagformel til navn og tilbage</strong><span class="form par">Par</span></div>
+        <p>Opgave 4.2.3, 4.2.4 og 4.2.8.</p>
+        <p class="ekstra">Hurtige par: <em>Zigzagformler</em>, fanen Navne. Sidste 5 min: udgangsbillet. Hver elev tegner zigzagformlen for 2-methylpentan på en seddel og skriver molekylformlen. Læs sedlerne før næste modul.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>tegne en alkan som zigzagformel og finde molekylformlen ud fra den</li>
+      <li>forklare, hvad isomerer er</li>
+      <li>give en forgrenet alkan et navn og tegne den ud fra navnet</li>
+    </ul>
+    <p><b>Centrale fagord:</b> zigzagformel, uforgrenet, forgrenet, isomerer, hovedkæde, sidegruppe</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-3-alkaners-reaktioner.html">4.3 Alkaners reaktioner</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Reglen om forskellige sidegrupper i alfabetisk rækkefølge kan vente, til eleverne møder den i en opgave.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · kort plan · modul 3 af 5</span><span class="afsnit">Afsnit 4.3 · 90 min</span></div>
+    <h3>Forbrænding og substitution</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-3-alkaners-reaktioner.html">4.3 Alkaners reaktioner</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/16" target="_blank">Slides 16–20</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc1.4_afstemning/index.html">Afstem reaktioner</a> (animation)</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc_spil5_syregalgen/index.html#c4">Syregalgen</a> (spil)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">isomerer, hovedkæde, sidegruppe</span>. Tag fejlene fra udgangsbilletterne op.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn en isomer af hexan, og giv den et navn.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fuldstændig forbrænding</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/16" target="_blank">Slides 16–18</a>: forbrænding, propan afstemt trin for trin og butan sammen i klassen.</p>
+        <p class="ekstra">Fast rækkefølge: carbon, hydrogen og oxygen til sidst. Butan giver 6½ O₂, så klassen skal selv komme på at gange med 2.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Afstem forbrændingen</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-3-opgaver.html">Opgave 4.3.1, 4.3.2, 4.3.3 og 4.3.4</a>. Stop klassen, hvis mange ændrer de små tal i formlerne.</p>
+        <p class="ekstra">Hurtige par: <em>Afstem reaktioner</em>.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Sod og substitution</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/19" target="_blank">Slides 19–20</a> (10 min): ufuldstændig forbrænding, carbonmonoxid og substitution med dibrom og dichlor. Derefter opgave 4.3.6 og 4.3.7.</p>
+        <p class="ekstra">Spørg på slide 20, før svaret kommer: Hvordan kan man se, at reaktionen med dibrom forløber?</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Syregalgen</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Syregalgen</em> med kapitel 4's ord på projektoren. Klassen gætter et bogstav ad gangen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>skrive og afstemme reaktionsskemaet for en fuldstændig forbrænding i rækkefølgen carbon, hydrogen, oxygen</li>
+      <li>forklare forskellen på en fuldstændig og en ufuldstændig forbrænding</li>
+      <li>forklare, hvad der sker i en substitution, og hvorfor farven af dibrom aftager</li>
+    </ul>
+    <p><b>Centrale fagord:</b> forbrænding, fuldstændig, ufuldstændig, afstemt, substitution</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-4-alkener.html">4.4 Alkener og addition</a> og <a href="https://kemibogen.dk/c/oevelser/4-4-substitution-eller-addition.html">øvelse 4.4</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Ethyn, der soder kraftigt, og de to skemaer for ufuldstændig forbrænding kan nævnes kort.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · kort plan · modul 4 af 5</span><span class="afsnit">Afsnit 4.4 og øvelse 4.4 · 90 min</span></div>
+    <h3>Substitution eller addition?</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-4-alkener.html">4.4 Alkener og addition</a> og <a href="https://kemibogen.dk/c/oevelser/4-4-substitution-eller-addition.html">øvelse 4.4</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/21" target="_blank">Slides 21–25</a></li><li>Laboratoriet med stinkskabe booket fra minut 30</li><li><a href="https://kemibogen.dk/c/oevelser/4-4-substitution-eller-addition.html">Øvelse 4.4 Substitution eller addition?</a>, den åbne udgave: tre reagensglas med prop, alufolie, en kraftig lampe, bromvand, hexan, hex-1-en, pH-papir og sølvnitrat til hvert par</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">forbrænding, ufuldstændig, substitution</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Afstem forbrændingen af pentan, C₅H₁₂.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Alkener og addition</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/21" target="_blank">Slides 21–24</a>: alkener og alkyner, mættet og umættet, alkeners navne, addition og tabellen med substitution og addition.</p>
+        <p class="ekstra">Lad klassen udfylde tabellen på slide 24 højt. Den er facit til øvelsen, så gem rækken "Kræver lys" til sidst.</p></div></li>
+    <li><div class="tid"><b>40 min</b><span>30–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Substitution eller addition?</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 4.4, den åbne udgave, i par. Glas 1 og 2 står 20 minutter under lampen og rystes hvert 5. minut. Mens de står: <a href="https://kemibogen.dk/c/opgaver/4-4-opgaver.html">opgave 4.4.1 og 4.4.5</a>.</p>
+        <p class="ekstra">Briller, kittel og handsker. Alt med brom står i stinkskabet, og der må ikke være åben ild. Resterne i dunken til halogenholdigt organisk affald.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>70–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad så vi?</strong><span class="form klasse">Klassen</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/25" target="_blank">Slide 25</a> klik for klik: parrene sammenligner deres egne glas med figuren, også glasset i sollys.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Efterbehandling</strong><span class="form par">Par</span></div>
+        <p>Efterbehandling 1 og 2 af øvelse 4.4. Eleverne arbejder, til klokken ringer, og resten er lektie.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare forskellen på mættede og umættede carbonhydrider og give en simpel alken et navn</li>
+      <li>skrive reaktionsskemaet for en addition og forklare forskellen på substitution og addition: lys, hastighed og antal produkter</li>
+      <li>forklare, hvordan bromvand viser, om et stof er umættet</li>
+    </ul>
+    <p><b>Centrale fagord:</b> alken, alkyn, mættet, umættet, addition, bromvand</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Skriv efterbehandlingen af øvelse 4.4 færdig, og læs <a href="https://kemibogen.dk/c/kapitler/4-5-alkoholer-og-syrer.html">4.5 Alkoholer og carboxylsyrer</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p><a href="https://kemiformler.dk/animationer/v2/superlab/sc4.8_substitution/index.html">Substitution i benzin</a> (virtuelt forsøg, 25 min): eleverne ryster hexan med bromvand i lys og mørke og påviser HBr. Alkenen ses i <a href="https://kemiformler.dk/animationer/superanimationer/sc4.4_addition_og_plastik/index.html#bromvand">Addition og plastik</a>, fanen Bromvand.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · kort plan · modul 5 af 5</span><span class="afsnit">Afsnit 4.5 og 4.6 · 90 min</span></div>
+    <h3>Alkoholer, syrer og fedtstoffer</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Efterbehandlingen af øvelse 4.4, og læs <a href="https://kemibogen.dk/c/kapitler/4-5-alkoholer-og-syrer.html">4.5 Alkoholer og carboxylsyrer</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/27" target="_blank">Slides 27–34</a></li><li>Et Quizlet-sæt med kapitlets fagord</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">mættet, umættet, addition</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvilket glas i øvelse 4.4 gav HBr, og hvordan kunne I se det?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Funktionelle grupper</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/27" target="_blank">Slides 27–30</a>: hydroxygruppen og syregruppen, hvilken stofklasse og opløselighed med tommelfingerreglen.</p>
+        <p class="ekstra">På slide 29 kommer zigzagformlerne én ad gangen. Lad klassen gætte stofklassen, før du klikker.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>30–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Stofklasse og opløselighed</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-5-opgaver.html">Opgave 4.5.2 og 4.5.6</a>.</p>
+        <p class="ekstra">Hurtige par: 4.5.7 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>45–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fedtstoffer</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/31" target="_blank">Slides 31–34</a> (15 min): fedtsyrer, triglycerider, smør og olie og hærdning. Derefter <a href="https://kemibogen.dk/c/opgaver/4-6-opgaver.html">opgave 4.6.1, 4.6.3 og 4.6.7</a>.</p>
+        <p class="ekstra">Hurtige par: 4.6.4 og 4.6.8 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
+        <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-4.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>genkende en alkohol og en carboxylsyre på den funktionelle gruppe</li>
+      <li>vurdere med tommelfingerreglen, om et stof kan opløses i vand</li>
+      <li>forklare, hvordan et fedtstof er bygget, og hvorfor smør er fast og olie flydende</li>
+    </ul>
+    <p><b>Centrale fagord:</b> funktionel gruppe, stofklasse, alkohol, hydroxygruppe, carboxylsyre, fedtsyre, fedtstof, triglycerid</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-4.html">Repetition af kapitel 4</a>: sæt flueben ved det, du kan.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Hærdning (slide 34) og alkoholernes høje kogepunkter kan nævnes kort.</p></div>
+  </div>
+</article>
+
+</div>
+
+<!-- ============================ LANG ============================ -->
+<div class="plan" id="lang" hidden>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · lang plan · modul 1 af 7</span><span class="afsnit">Afsnit 4.1 · 90 min</span></div>
+    <h3>Organisk kemi og alkaner</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-4-lang.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-4.html#/2" target="_blank">Slides 2–6</a></li><li>Et molekylebyggesæt til hvert par</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 3: <span class="ord">elektronparbinding, elektronegativitet, upolær</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvor mange bindinger danner et hydrogenatom, et oxygenatom og et carbonatom?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad er organisk kemi?</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/2" target="_blank">Slides 2–4</a>: organisk kemi og C−H-bindingen, carbonhydrid, tabellen med syv stoffer og alkaner.</p>
+        <p class="ekstra">Klassen svarer højt i tabellen på slide 3, først kolonnen Organisk og så Carbonhydrid.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Byg alkanerne</strong><span class="form par">Par</span></div>
+        <p>Parrene bygger methan, ethan, propan og butan med byggesættet. De tæller hydrogenatomerne og skriver molekylformlerne i kompendiets noter.</p>
+        <p class="ekstra">Spørg til sidst: Hvor mange hydrogenatomer får en alkan med 5 carbonatomer? Lad parrene bygge den og tælle efter.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>55–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Formlen og de ti første</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/5" target="_blank">Slides 5–6</a>: octan med formlen C<sub><i>n</i></sub>H<sub>2<i>n</i>+2</sub> og de ti første alkaner.</p>
+        <p class="ekstra">Octan regnes i par, før svaret kommer.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Navne og formler</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-1-opgaver.html">Opgave 4.1.2, 4.1.3 og 4.1.4</a>. Eleverne arbejder, til klokken ringer.</p>
+        <p class="ekstra">Hurtige par: 4.1.klima.2 bagest i kompendiet.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad der gør et stof organisk</li>
+      <li>forklare, hvad et carbonhydrid og en alkan er, og hvorfor carbon danner fire bindinger</li>
+      <li>skrive navn og molekylformel for de ti første alkaner</li>
+    </ul>
+    <p><b>Centrale fagord:</b> organisk kemi, uorganisk, carbonhydrid, alkan, molekylformel</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-1-alkaner.html">4.1 Carbonhydrider og alkaner</a>, og lær navnene på de fire første alkaner udenad.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Ordets historie (organisk af organisme) kan nævnes kort.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · lang plan · modul 2 af 7</span><span class="afsnit">Afsnit 4.1 og 4.2 · 90 min</span></div>
+    <h3>Kogepunkt, opløselighed og zigzagformler</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-1-alkaner.html">4.1 Carbonhydrider og alkaner</a>, og lær de fire første navne udenad.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/7" target="_blank">Slides 7–10</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc4.1_kogepunkt/index.html">Alkaners kogepunkt</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">carbonhydrid, alkan, molekylformel</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv navn og molekylformel for alkanerne med 3, 6 og 8 carbonatomer.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvornår koger de?</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/7" target="_blank">Slide 7</a> (5 min): kurven og kontaktfladen. Derefter <em>Alkaners kogepunkt</em> på egen computer: parrene varmer alkanerne op og ser, hvornår molekylerne slipper hinanden.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Benzin og vand</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/8" target="_blank">Slide 8</a> (5 min): klassen udfylder tabellen med elektronegativiteter og ΔEN. Derefter <a href="https://kemibogen.dk/c/opgaver/4-1-opgaver.html">opgave 4.1.6 og 4.1.7</a>.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>55–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Zigzagformler</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/9" target="_blank">Slides 9–10</a>: fra stregformel til zigzagformel (vinklen 109,5°) og hydrogenatomerne ved hvert carbonatom.</p>
+        <p class="ekstra">Klassen tæller hydrogenatomerne på slide 10, før svaret kommer.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tæl atomerne</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-2-opgaver.html">Opgave 4.2.1 og 4.2.2</a>.</p>
+        <p class="ekstra">Sidste 5 min: <em>Quiz: fem hurtige</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-4.html">fagordsiden</a>, kun afsnit 4.1. Klassen stemmer med fingre (1–4).</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvorfor kogepunktet stiger med kædens længde</li>
+      <li>forklare med elektronegativitet, hvorfor alkaner er upolære og ikke kan opløses i vand</li>
+      <li>tegne en alkan som zigzagformel og finde molekylformlen ud fra den</li>
+    </ul>
+    <p><b>Centrale fagord:</b> upolær, zigzagformel</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-2-zigzagformler.html">4.2 Zigzagformler og navngivning</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>"Alkaner i hverdagen" i 4.1 (gas, væske eller fast stof) kan blive en del af lektien.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · lang plan · modul 3 af 7</span><span class="afsnit">Afsnit 4.2 · 90 min</span></div>
+    <h3>Isomerer og navne</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-2-zigzagformler.html">4.2 Zigzagformler og navngivning</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/11" target="_blank">Slides 11–15</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/tegnebraet/index.html">Tegnebrættet</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">upolær, zigzagformel</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn zigzagformlen for pentan. Hvor mange hydrogenatomer sidder på carbonatomerne i enderne og i knækkene?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Isomerer og sidegrupper</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/11" target="_blank">Slides 11–12</a>: butan og 2-methylpropan trin for trin og sidegrupper.</p>
+        <p class="ekstra">På slide 11 regner parrene molekylformlen for begge stoffer, før svaret kommer. Pointen er, at forgreningen ikke ændrer formlen.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Navnet i tre trin</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/13" target="_blank">Slides 13–14</a> (10 min): de tre trin og de tre isomerer med C₅H₁₂. Derefter <a href="https://kemibogen.dk/c/opgaver/4-2-opgaver.html">opgave 4.2.3 og 4.2.6</a>.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra navn til zigzagformel</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/15" target="_blank">Slide 15</a> som fællesopgave (5 min): tegn 2,3-dimethylbutan, og find molekylformlen. Derefter opgave 4.2.4.</p>
+        <p class="ekstra">Hurtige par: <em>Tegnebrættet</em>. Tegn et molekyle, gæt navnet, og se, om brættet er enigt. Eller 4.2.klima.7 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/fagord/kapitel-4.html">Fagordsiden</a>, afsnit 4.1 og 4.2. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad isomerer er, og vise, at de har samme molekylformel</li>
+      <li>give en forgrenet alkan et navn i tre trin</li>
+      <li>tegne zigzagformlen ud fra et navn</li>
+    </ul>
+    <p><b>Centrale fagord:</b> uforgrenet, forgrenet, isomerer, hovedkæde, sidegruppe</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-3-alkaners-reaktioner.html">4.3 Alkaners reaktioner</a> til og med "Ufuldstændig forbrænding" og <a href="https://kemibogen.dk/c/oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html">øvelse 4.3</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Reglen om forskellige sidegrupper i alfabetisk rækkefølge kan vente, til eleverne møder den i en opgave.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · lang plan · modul 4 af 7</span><span class="afsnit">Afsnit 4.3 og øvelse 4.3 · 90 min</span></div>
+    <h3>Forbrænding</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs 4.3 til og med "Ufuldstændig forbrænding" og <a href="https://kemibogen.dk/c/oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html">øvelse 4.3</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/16" target="_blank">Slides 16–19</a></li><li>Laboratoriet med stinkskabe booket fra minut 30</li><li><a href="https://kemibogen.dk/c/oevelser/4-3-fuldstaendig-eller-ufuldstaendig-forbraending.html">Øvelse 4.3 Fuldstændig eller ufuldstændig forbrænding?</a>: digellåg, digeltang, en kold porcelænsskål og en lighter til hvert par og heptan, hex-1-en og ethanol i dråbeflasker</li><li>Små sedler til udgangsbilletten</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">isomerer, hovedkæde, sidegruppe</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn 2-methylbutan, og skriv molekylformlen.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fuldstændig forbrænding</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/16" target="_blank">Slides 16–18</a>: forbrænding, propan afstemt trin for trin og butan sammen i klassen.</p>
+        <p class="ekstra">Fast rækkefølge: carbon, hydrogen og oxygen til sidst. Skriv rækkefølgen på tavlen, så den står der resten af modulet.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>30–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fuldstændig eller ufuldstændig?</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 4.3, i par, i stinkskabet. Parrene brænder 5 dråber af hvert stof i det omvendte digellåg og holder den kolde skål over flammen.</p>
+        <p class="ekstra">Briller og opsat hår. Kun 5 dråber ad gangen, og flaskerne står langt fra flammen. Vent, til låget er koldt, før næste stof.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>60–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Sod og carbonmonoxid</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/19" target="_blank">Slide 19</a> (5 min): de to flammer og carbonmonoxid. Derefter efterbehandlingen af øvelse 4.3.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Afstem selv</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-3-opgaver.html">Opgave 4.3.1 og 4.3.3</a>.</p>
+        <p class="ekstra">Sidste 5 min: udgangsbillet. Hver elev afstemmer forbrændingen af pentan, C₅H₁₂, på en seddel. Læs sedlerne før næste modul.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>skrive og afstemme reaktionsskemaet for en fuldstændig forbrænding i rækkefølgen carbon, hydrogen, oxygen</li>
+      <li>forklare, hvorfor nogle stoffer soder mere end andre, og hvorfor carbonmonoxid er farlig</li>
+    </ul>
+    <p><b>Centrale fagord:</b> forbrænding, fuldstændig, ufuldstændig, afstemt, carbonmonoxid</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Opgave 4.3.2 og 4.3.4. Læs "Substitution" sidst i <a href="https://kemibogen.dk/c/kapitler/4-3-alkaners-reaktioner.html#substitution">4.3</a> og <a href="https://kemibogen.dk/c/oevelser/4-4-substitution-eller-addition.html">øvelse 4.4</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Lav forsøget som demonstration i stinkskabet: brænd de tre stoffer efter hinanden, og lad klassen udfylde skemaet i øvelse 4.3.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · lang plan · modul 5 af 7</span><span class="afsnit">Afsnit 4.3, 4.4 og øvelse 4.4 · 90 min</span></div>
+    <h3>Substitution eller addition?</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Opgave 4.3.2 og 4.3.4. Læs "Substitution" i 4.3 og <a href="https://kemibogen.dk/c/oevelser/4-4-substitution-eller-addition.html">øvelse 4.4</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/20" target="_blank">Slides 20–25</a></li><li>Laboratoriet med stinkskabe booket fra minut 30</li><li><a href="https://kemibogen.dk/c/oevelser/4-4-substitution-eller-addition.html">Øvelse 4.4 Substitution eller addition?</a>, trin for trin: tre reagensglas med prop, alufolie, en kraftig lampe, bromvand, hexan, hex-1-en, pH-papir og sølvnitrat til hvert par</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">forbrænding, ufuldstændig, afstemt</span>. Tag fejlene fra udgangsbilletterne op.</p>
+        <p class="ekstra">Mens du tager fravær: Hvilke to stoffer dannes der altid ved en fuldstændig forbrænding af et carbonhydrid?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>To måder at reagere med brom</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/20" target="_blank">Slides 20–21 og 23–24</a>: substitution med dibrom, alkener og alkyner, mættet og umættet, addition og tabellen med de to reaktioner.</p>
+        <p class="ekstra">Klassen udfylder tabellen på slide 24 højt. Den er facit til øvelsen, så gem rækken "Kræver lys" til efter forsøget.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>30–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Substitution eller addition?</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 4.4, trin for trin, i par. Glas 1 og 2 står 20 minutter under lampen og rystes hvert 5. minut. Mens de står: efterbehandling 1 og 2.</p>
+        <p class="ekstra">Briller, kittel og handsker. Alt med brom står i stinkskabet, og der må ikke være åben ild. Resterne i dunken til halogenholdigt organisk affald.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>65–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad skete der?</strong><span class="form par">Par</span></div>
+        <p>Efterbehandling 3–6. Stop klassen ved spørgsmål 4: lys, hastighed og antal produkter er det, der skiller de to reaktioner.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Bromvandstesten</strong><span class="form klasse">Klassen</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/25" target="_blank">Slide 25</a> klik for klik: parrene sammenligner deres egne glas med figuren og tæller bromatomerne i lupperne. Slut med rækken "Kræver lys" på slide 24.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare forskellen på mættede og umættede carbonhydrider</li>
+      <li>forklare, hvad der sker i en substitution og i en addition, og hvad der skiller dem: lys, hastighed og antal produkter</li>
+      <li>forklare, hvordan bromvand viser, om et stof er umættet</li>
+    </ul>
+    <p><b>Centrale fagord:</b> substitution, alken, alkyn, mættet, umættet, addition, bromvand</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Opgave 4.3.6. Læs "Alkeners navne" og "Plastik laves af alkener" i <a href="https://kemibogen.dk/c/kapitler/4-4-alkener.html">4.4</a> og "Funktionelle grupper" og "Alkoholer" i <a href="https://kemibogen.dk/c/kapitler/4-5-alkoholer-og-syrer.html">4.5</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p><a href="https://kemiformler.dk/animationer/v2/superlab/sc4.8_substitution/index.html">Substitution i benzin</a> (virtuelt forsøg, 25 min): eleverne ryster hexan med bromvand i lys og mørke og påviser HBr. Alkenen ses i <a href="https://kemiformler.dk/animationer/superanimationer/sc4.4_addition_og_plastik/index.html#bromvand">Addition og plastik</a>, fanen Bromvand.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · lang plan · modul 6 af 7</span><span class="afsnit">Afsnit 4.4 og 4.5 · 90 min</span></div>
+    <h3>Alkeners navne og funktionelle grupper</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Opgave 4.3.6. Læs "Alkeners navne" og "Plastik laves af alkener" i 4.4 og "Funktionelle grupper" og "Alkoholer" i 4.5.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/22" target="_blank">Slide 22</a> og <a class="sl" href="../slides/kapitel-4.html#/26" target="_blank">slides 26–30</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc_spil4_organiske_grupper/index.html">Organiske grupper</a> (spil)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">substitution, addition, umættet</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv reaktionsskemaet for addition af brom til ethen, C₂H₄.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Alkeners navne og plastik</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/22" target="_blank">Slide 22</a> og <a class="sl" href="../slides/kapitel-4.html#/26" target="_blank">slide 26</a> (10 min): but-1-en, but-2-en, propen og polyethen. Derefter <a href="https://kemibogen.dk/c/opgaver/4-4-opgaver.html">opgave 4.4.3 og 4.4.5</a>.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>35–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Funktionelle grupper</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/27" target="_blank">Slides 27–29</a>: hydroxygruppen og syregruppen og hvilken stofklasse.</p>
+        <p class="ekstra">På slide 29 kommer zigzagformlerne én ad gangen. Lad klassen gætte stofklassen, før du klikker.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>55–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Kan det opløses i vand?</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/30" target="_blank">Slide 30</a> i fællesskab (5 min): tommelfingerreglen. Derefter <a href="https://kemibogen.dk/c/opgaver/4-5-opgaver.html">opgave 4.5.2 og 4.5.6</a>.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Organiske grupper</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Organiske grupper</em> på egen computer: sortér molekylerne efter stofklasse. Klassen sammenligner point til sidst.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>give en simpel alken et navn og forklare, hvordan polyethen dannes af ethen</li>
+      <li>genkende en alkohol og en carboxylsyre på den funktionelle gruppe</li>
+      <li>vurdere med tommelfingerreglen, om et stof kan opløses i vand</li>
+    </ul>
+    <p><b>Centrale fagord:</b> polymer, funktionel gruppe, stofklasse, alkohol, hydroxygruppe, carboxylsyre</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-6-fedtstoffer.html">4.6 Fedtstoffer</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Krakning, ringe og benzen i 4.4 og alkoholernes høje kogepunkter i 4.5 kan nævnes kort.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 4 · lang plan · modul 7 af 7</span><span class="afsnit">Afsnit 4.6 · 90 min</span></div>
+    <h3>Fedtstoffer</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/4-6-fedtstoffer.html">4.6 Fedtstoffer</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-4.html#/31" target="_blank">Slides 31–34</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc4.6_fedtstoffer/index.html">Byg et fedtstof</a> (animation)</li><li>Et Quizlet-sæt med kapitlets fagord</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">funktionel gruppe, hydroxygruppe, stofklasse</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvilken stofklasse hører glycerol til, og hvor mange hydroxygrupper har det?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fedtsyrer og fedtstoffer</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-4.html#/31" target="_blank">Slides 31–34</a>: fedtsyrer, triglycerider, smør og olie og hærdning.</p>
+        <p class="ekstra">På slide 33 svarer klassen, før figuren kommer: Hvorfor er smør fast og olie flydende?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>30–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Byg et fedtstof</strong><span class="form par">Par</span></div>
+        <p><em>Byg et fedtstof</em> på egen computer: byg fedtstoffer i Fabrikken, og stil dem i Køleskabet.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>50–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fedt i maden</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/4-6-opgaver.html">Opgave 4.6.1, 4.6.3, 4.6.4 og 4.6.7</a>.</p>
+        <p class="ekstra">Hurtige par: 4.6.8 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
+        <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-4.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvordan et fedtstof er bygget af glycerol og tre fedtsyrer</li>
+      <li>forklare, hvorfor fedt med mættede fedtsyrer er fast, og fedt med umættede fedtsyrer er flydende</li>
+      <li>forklare hærdning som en addition af hydrogen</li>
+    </ul>
+    <p><b>Centrale fagord:</b> fedtsyre, enkeltumættet, flerumættet, fedtstof, glycerol, triglycerid</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-4.html">Repetition af kapitel 4</a>: sæt flueben ved det, du kan.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Hydrolysen og "Fedt i maden" (energi og kostråd) kan nævnes kort.</p></div>
+  </div>
+</article>
+
+</div>
+
+</main>
+
+
+<script>
+(function () {
+  // Slides ligger i ../slides/ i bogens mappe og på kemibogen.dk, men ved siden af siden i et artifact på claude.ai.
+  if (location.protocol !== "file:" && !/kemibogen|localhost|127\.0\.0\.1/.test(location.hostname)) {
+    document.querySelectorAll("a.sl").forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("href").replace("../slides/", "slides/"));
+    });
+  }
+
+  var knapper = document.querySelectorAll(".skifter button");
+  function vis(plan) {
+    knapper.forEach(function (k) { k.setAttribute("aria-pressed", String(k.dataset.plan === plan)); });
+    document.getElementById("kort").hidden = plan !== "kort";
+    document.getElementById("lang").hidden = plan !== "lang";
+    document.querySelectorAll(".materialer [data-plan]").forEach(function (el) { el.hidden = el.dataset.plan !== plan; });
+  }
+  knapper.forEach(function (k) {
+    k.addEventListener("click", function () {
+      vis(k.dataset.plan);
+      try { localStorage.setItem("modulplan-plan", k.dataset.plan); } catch (e) {}
+    });
+  });
+
+  var start = location.hash === "#lang" ? "lang" : location.hash === "#kort" ? "kort" : null;
+  if (!start) { try { start = localStorage.getItem("modulplan-plan"); } catch (e) {} }
+  vis(start === "lang" ? "lang" : "kort");
+})();
+</script>
+</body>
+</html>

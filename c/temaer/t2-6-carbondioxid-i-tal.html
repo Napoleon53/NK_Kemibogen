@@ -48,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-f112ceaab9d8a18e8af4658d857234d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -1396,74 +1399,38 @@ m(\mathrm{CO_2}) = n \cdot M = 62{,}3\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathr
 <div class="reaktion">
 <p>6 CO<sub>2</sub>(g) + 6 H<sub>2</sub>O(l) → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(aq) + 6 O<sub>2</sub>(g)</p>
 </div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 18%">
-<col style="width: 4%">
-<col style="width: 18%">
-<col style="width: 4%">
-<col style="width: 28%">
-<col style="width: 4%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: center;">6 CO<sub>2</sub>(g)</th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">6 H<sub>2</sub>O(l)</th>
-<th style="text-align: center;">→</th>
-<th style="text-align: center;">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(aq)</th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">6 O<sub>2</sub>(g)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><em>m</em></td>
-<td style="text-align: center;">?</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">1000 g</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><em>M</em></td>
-<td style="text-align: center;">44,01 g/mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">180,16 g/mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><em>n</em></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Trin 1: ned.</strong> Stofmængden af glucose beregnes.</p>
+<p>Følg beregningen trin for trin med knapperne.</p>
+<div class="trinvis">
+<div class="trin" data-knap="Skema">
+<p><strong>Skemaet stilles op</strong></p>
+<p><a href="../figurer/skov-trin-0.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../figurer/skov-trin-0.svg" class="img-fluid" alt="Skemaet er stillet op. Massen af glucose, 1000 gram, og de to molarmasser er skrevet ind, og der står et spørgsmålstegn ved massen af carbondioxid."></a></p>
+<p>Det kendte tal er massen af glucose, og det står i den stiplede ramme. Massen af carbondioxid skal findes og har et spørgsmålstegn. Vand og oxygen skal ikke bruges i beregningen, så deres felter er tomme.</p>
+</div>
+<div class="trin" data-knap="1">
+<p><strong>Trin 1: ned</strong></p>
+<p><a href="../figurer/skov-trin-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../figurer/skov-trin-1.svg" class="img-fluid" alt="Trin 1, ned. En pil går ned gennem kolonnen med glucose, og stofmængden 5,55 mol er skrevet ind."></a></p>
+<p>Gå ned gennem kolonnen med glucose. Stofmængden beregnes ud fra massen og molarmassen.</p>
 <p><span class="math display">\[
 n(\mathrm{C_6H_{12}O_6}) = \frac{m}{M} = \frac{1000\ \mathrm{g}}{180{,}16\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 5{,}55\ \mathrm{mol}
 \]</span></p>
-<p><strong>Trin 2: på tværs.</strong> Koefficienterne er 6 for CO<sub>2</sub> og 1 for C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, så der skal bruges 6 gange så mange mol carbondioxid.</p>
+</div>
+<div class="trin" data-knap="2">
+<p><strong>Trin 2: på tværs</strong></p>
+<p><a href="../figurer/skov-trin-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../figurer/skov-trin-2.svg" class="img-fluid" alt="Trin 2, på tværs. En pil går fra stofmængden af glucose til stofmængden af carbondioxid, som er 6 gange så stor, 33,3 mol."></a></p>
+<p>Gå på tværs i rækken med stofmængder, her fra højre mod venstre. Koefficienterne er 6 for CO<sub>2</sub> og 1 for C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, så der skal bruges 6 gange så mange mol carbondioxid.</p>
 <p><span class="math display">\[
 n(\mathrm{CO_2}) = \frac{6}{1} \cdot 5{,}55\ \mathrm{mol} = 33{,}3\ \mathrm{mol}
 \]</span></p>
-<p><strong>Trin 3: op.</strong> Massen af carbondioxid beregnes.</p>
+</div>
+<div class="trin" data-knap="3">
+<p><strong>Trin 3: op</strong></p>
+<p><a href="../figurer/skov-trin-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../figurer/skov-trin-3.svg" class="img-fluid" alt="Trin 3, op. En pil går op gennem kolonnen med carbondioxid, og massen 1,47 gange 10 i tredje gram er skrevet ind."></a></p>
+<p>Gå op gennem kolonnen med carbondioxid. Massen beregnes ud fra stofmængden og molarmassen.</p>
 <p><span class="math display">\[
 m(\mathrm{CO_2}) = n \cdot M = 33{,}3\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 1{,}47 \cdot 10^{3}\ \mathrm{g}
 \]</span></p>
+</div>
+</div>
 <p><strong>Konklusion.</strong> Skoven skal optage 1,47 kg carbondioxid for at danne 1,00 kg glucose.</p>
 <p>Når træet til sidst rådner eller bliver brændt, kommer den samme mængde carbondioxid tilbage. En skov binder kun carbondioxid, så længe den vokser.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Afrund først til sidst">
@@ -2502,10 +2469,12 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
     "4": [
       { tekst: "Slides", sti: "slides/kapitel-4.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-4.html", ikon: "modulplaner" },
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c4.html", ikon: "animationer" }
     ],
     "5": [
       { tekst: "Slides", sti: "slides/kapitel-5.html", ikon: "slides" },
+      { tekst: "Modulplaner", sti: "modulplaner/kapitel-5.html", ikon: "modulplaner" },
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c5.html", ikon: "animationer" }
     ],
     "6": [
@@ -3021,6 +2990,38 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

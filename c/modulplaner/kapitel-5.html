@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modulplaner kapitel 5</title>
+<style>
+/* Layout: én plan ad gangen (kort eller lang); hvert modul er et A4-ark med tidslinje til venstre og indhold til højre. */
+:root {
+  --bord: #e6ecea;
+  --ark: #ffffff;
+  --blæk: #14201f;
+  --dæmpet: #55635f;
+  --streg: #d3dcd9;
+  --accent: #0f766e;
+  --accent-svag: #e3f1ef;
+  --på-accent: #ffffff;
+  --tavle: #1d4ed8;  --tavle-bg: #e7eefc;
+  --par: #0f766e;    --par-bg: #e3f1ef;
+  --lab: #b45309;    --lab-bg: #fbefe1;
+  --klasse: #7c3aed; --klasse-bg: #f0eafd;
+  --start: #4b5563;  --start-bg: #eceff1;
+  --fokus-bg: #f6f8f7;
+  --skrift: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bord); color: var(--blæk);
+  font: 15px/1.5 var(--skrift);
+  padding-inline: 16px; padding-block: 24px 48px;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.side { max-width: 210mm; margin: 0 auto; display: grid; gap: 24px; }
+
+/* Forside */
+.forside { padding-block: 8px; display: grid; gap: 12px; }
+.forside h1 { margin: 0; font-size: 1.75rem; line-height: 1.2; text-wrap: balance; }
+.forside p { margin: 0; max-width: 65ch; color: var(--dæmpet); }
+.skifter {
+  display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; justify-self: start;
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 10px;
+}
+.skifter button {
+  font: inherit; cursor: pointer; border: 0; border-radius: 7px; padding: 8px 16px;
+  background: transparent; color: var(--blæk); display: grid; text-align: left; gap: 0;
+}
+.skifter button span { font-size: .8rem; color: var(--dæmpet); }
+.skifter button[aria-pressed="true"] { background: var(--accent); color: var(--på-accent); }
+.skifter button[aria-pressed="true"] span { color: var(--på-accent); opacity: .85; }
+.materialer { margin: 0; font-size: .9rem; max-width: 65ch; }
+.signatur { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .8rem; color: var(--dæmpet); align-items: center; }
+
+.plan { display: grid; gap: 24px; }
+
+/* Arket */
+.modul {
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 6px;
+  padding: 28px 32px; display: grid; gap: 18px;
+}
+.modul > header { display: grid; gap: 4px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+.øverst { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.etiket { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.modul h3 { margin: 0; font-size: 1.4rem; line-height: 1.25; text-wrap: balance; }
+.afsnit { font-size: .85rem; color: var(--dæmpet); }
+
+.før { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: .88rem; }
+.før > div { min-width: 0; }
+.før h4, .fokus h4, .bagefter h4 {
+  margin: 0 0 2px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600;
+}
+.før p, .før ul { margin: 0; }
+.før ul { padding-left: 1.1em; }
+
+/* Tidslinje */
+.forløb { list-style: none; margin: 0; padding: 0; display: grid; }
+.forløb li {
+  display: grid; grid-template-columns: 74px 1fr; gap: 16px;
+  padding-block: 10px; border-top: 1px solid var(--streg);
+}
+.forløb li:first-child { border-top: 0; padding-top: 0; }
+.tid { font-variant-numeric: tabular-nums; display: grid; align-content: start; }
+.tid b { font-size: 1.15rem; line-height: 1.1; }
+.tid span { font-size: .75rem; color: var(--dæmpet); }
+.trin { min-width: 0; display: grid; gap: 3px; }
+.trin-hoved { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.trin-hoved strong { font-size: 1rem; }
+.form { font-size: .7rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; }
+.form.tavle { color: var(--tavle); background: var(--tavle-bg); }
+.form.par { color: var(--par); background: var(--par-bg); }
+.form.lab { color: var(--lab); background: var(--lab-bg); }
+.form.klasse { color: var(--klasse); background: var(--klasse-bg); }
+.form.start { color: var(--start); background: var(--start-bg); }
+.trin p { margin: 0; font-size: .9rem; }
+.trin .ekstra { color: var(--dæmpet); font-size: .84rem; }
+.ord { font-weight: 600; }
+
+.fokus { background: var(--fokus-bg); border-radius: 6px; padding: 12px 16px; display: grid; gap: 6px; }
+.fokus ul { margin: 0; padding-left: 1.1em; font-size: .88rem; display: grid; gap: 2px; }
+.fokus p { margin: 0; font-size: .88rem; }
+
+.bagefter { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; font-size: .88rem; }
+.bagefter > div { min-width: 0; }
+.bagefter p { margin: 0; }
+
+@media (max-width: 640px) {
+  .modul { padding: 20px 16px; }
+  .før { grid-template-columns: 1fr; }
+  .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
+}
+
+@page { size: A4; margin: 12mm; }
+@media print {
+  body { background: #fff; padding: 0; font-size: 10.5pt; }
+  .forside { display: none; }
+  .side, .plan { gap: 0; max-width: none; }
+  .modul { border: 0; padding: 0; gap: 4mm; break-after: page; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<main class="side">
+
+<section class="forside">
+  <span class="etiket"><a href="https://kemibogen.dk/c/" style="color: inherit; text-decoration: none;">Kemibogen C</a> · lærerens udgave</span>
+  <h1>Modulplaner til kapitel 5: Mængdeberegning</h1>
+  <p>Vælg den plan, der passer til holdet. Hvert modul er 90 minutter og fylder ét ark. Tiderne er et forslag: spring et punkt over eller brug mere tid, når klassen har brug for det. Den lange plan er tænkt til et hold, der har brug for mere hjælp: øvelserne begynder trin for trin, og den åbne udgave kommer sidst. Afsnit 5.6 Gasser er kernestof på kemi A og er kun med i den lange plan.</p>
+  <div class="skifter" role="group" aria-label="Vælg plan">
+    <button type="button" id="knap-kort" data-plan="kort" aria-pressed="true">Kort · 5 moduler<span>Højt tempo, to digeløvelser</span></button>
+    <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 8 moduler<span>Flere trin, to øvelser og en øveprøve</span></button>
+  </div>
+  <p class="materialer">
+    <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-5-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 32 sider).</span>
+    <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-5-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 39 sider).</span>
+    Du kan også sætte dit eget kompendium sammen på <a href="https://kemiformler.dk/kompendier/" target="_blank">Byg dit kompendium</a>.
+  </p>
+  <div class="signatur">
+    <span><span class="form start">Start</span> fravær og repetition</span>
+    <span><span class="form tavle">Tavle</span> læreren styrer</span>
+    <span><span class="form par">Par</span> eleverne arbejder</span>
+    <span><span class="form lab">Lab</span> laboratoriet</span>
+    <span><span class="form klasse">Klassen</span> fælles aktivitet</span>
+  </div>
+</section>
+
+<!-- ============================ KORT ============================ -->
+<div class="plan" id="kort">
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · kort plan · modul 1 af 5</span><span class="afsnit">Afsnit 5.1 og 5.2 · 90 min</span></div>
+    <h3>Pæne beregninger og molarmasse</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen, eller læs <a href="https://kemibogen.dk/c/kapitler/5-1-beregninger.html">5.1 Beregninger i kemi</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-5-kort.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-5.html#/2" target="_blank">Slides 2–11</a></li><li>Det periodiske system bagest i kompendiet</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 2: <span class="ord">formelenhed, ionforbindelse, sammensat ion</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvor mange atomer af hver slags er der i Ca(OH)₂ og i Al₂(SO₄)₃?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Størrelser og pæne beregninger</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/2" target="_blank">Slides 2–7</a>: størrelse, symbol og enhed, densitet, de fire trin i en pæn beregning, madolien og betydende cifre.</p>
+        <p class="ekstra">Lad klassen svare højt på slide 2, 5 og 6, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>30–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Densitet og betydende cifre</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-1-opgaver.html">Opgave 5.1.2, 5.1.3, 5.1.5 og 5.1.6</a>. Kræv de fire trin i hver beregning.</p>
+        <p class="ekstra">Hurtige par: 5.1.7 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>50–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra u til g/mol</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/8" target="_blank">Slides 8–11</a>: formelmassen for vand, fra u til gram og molarmassen for CO₂ og Ca(OH)₂.</p>
+        <p class="ekstra">Klassen tæller atomerne på slide 10 og 11, før beregningen kommer.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>65–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Beregn molarmassen</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-2-opgaver.html">Opgave 5.2.2, 5.2.3, 5.2.5 og 5.2.7</a>. Eleverne arbejder, til klokken ringer.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc5.1_molarmasse/index.html#ukendt">Molarmasse</a>, fanen Ukendt stof.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>skrive en beregning i fire trin: kendte størrelser, formel, beregning med enheder og konklusion</li>
+      <li>beregne densitet og masse og afrunde facit til det rigtige antal betydende cifre</li>
+      <li>forklare forskellen på formelmasse og molarmasse og beregne molarmassen ud fra formlen</li>
+    </ul>
+    <p><b>Centrale fagord:</b> størrelse, symbol, enhed, densitet, betydende cifre, formelmasse, molarmasse</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-2-molarmasse.html">5.2 Molarmasse</a> og <a href="https://kemibogen.dk/c/kapitler/5-3-stofmaengde.html">5.3 Stofmængde</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Slide 7 (hvorfor 23 g og ikke 23,0 g) kan tages i næste opstart.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · kort plan · modul 2 af 5</span><span class="afsnit">Afsnit 5.3 · 90 min</span></div>
+    <h3>Stofmængde</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-2-molarmasse.html">5.2 Molarmasse</a> og <a href="https://kemibogen.dk/c/kapitler/5-3-stofmaengde.html">5.3 Stofmængde</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-5.html#/12" target="_blank">Slides 12–17</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.3_stofmaengdeberegning/index.html#hurtig">Stofmængdeberegning</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">densitet, betydende cifre, molarmasse</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Beregn molarmassen for NaCl og H₂O.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Et mol og tre størrelser</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/12" target="_blank">Slides 12–15</a>: et mol, masse, molarmasse og stofmængde, vand i portioner på 18 g og formlen på tre måder.</p>
+        <p class="ekstra">Klassen udfylder tabellen på slide 14, før formlen kommer: hvis 1 mol vejer 18 g, hvad vejer så 2, 3 og 10 mol?</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>35–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Regn med formlen</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/16" target="_blank">Slides 16–17</a> (5 min): 10,0 g NaCl og 2,00 mol vand i fællesskab. Derefter <a href="https://kemibogen.dk/c/opgaver/5-3-opgaver.html">opgave 5.3.1 og 5.3.2</a>.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra gram til mol og tilbage</strong><span class="form par">Par</span></div>
+        <p>Opgave 5.3.3, 5.3.4, 5.3.5 og 5.3.6. Stop klassen, hvis mange laver samme fejl.</p>
+        <p class="ekstra">Hurtige par: 5.3.8.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hurtigrunden</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Stofmængdeberegning</em>, fanen Hurtigrunden. Alle regner på egen computer, og klassen sammenligner point til sidst.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad et mol og en stofmængde er</li>
+      <li>beregne en stofmængde ud fra en masse og en masse ud fra en stofmængde</li>
+      <li>vælge den rigtige udgave af formlen ud fra det, der skal findes</li>
+    </ul>
+    <p><b>Centrale fagord:</b> mol, stofmængde</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-4-aekvivalente-maengder.html">5.4 Ækvivalente mængder</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Antallet af molekyler (6,02 · 10²³ i "Hvor mange er det?") kan nøjes med en sætning. Resten af kapitlet regner i mol.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · kort plan · modul 3 af 5</span><span class="afsnit">Afsnit 5.4 og begyndelsen af 5.5 · 90 min</span></div>
+    <h3>Ækvivalente mængder og skemaet</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-4-aekvivalente-maengder.html">5.4 Ækvivalente mængder</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-5.html#/18" target="_blank">Slides 18–23</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.5_maengdeberegning/index.html#skema">Mængdeberegning</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">mol, stofmængde</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvor stor en stofmængde er 9,01 g vand? Vand har molarmassen 18,02 g/mol.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opskriften og den begrænsende faktor</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/18" target="_blank">Slides 18–22</a>: hotdogs til 5 pølser, koefficienterne gælder stofmængder, ammoniak og den begrænsende faktor.</p>
+        <p class="ekstra">Klassen udfylder hotdogrækken på slide 18 tal for tal og svarer på slide 20 og 22.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra mol til mol</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-4-opgaver.html">Opgave 5.4.1, 5.4.2, 5.4.3 og 5.4.4</a>.</p>
+        <p class="ekstra">Hurtige par: 5.4.6.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>55–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Ned, på tværs og op</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/23" target="_blank">Slide 23</a>: magnesium brænder, trin for trin.</p>
+        <p class="ekstra">Lad klassen sige tallet, før du klikker.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Det første skema</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-5-opgaver.html">Opgave 5.5.1 og 5.5.3</a>. Kræv skemaet med <i>m</i>, <i>M</i> og <i>n</i> hver gang.</p>
+        <p class="ekstra">Hurtige par: <em>Mængdeberegning</em>, fanen Skemaet. Sidste 5 min: udgangsbillet. Hver elev skriver på en seddel: 2 H₂ + O₂ → 2 H₂O. Hvor mange mol O₂ reagerer med 6 mol H₂, og hvor mange mol vand dannes der? Læs sedlerne før næste modul.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>læse et afstemt reaktionsskema som et forhold mellem stofmængder</li>
+      <li>beregne stofmængden af ét stof ud fra stofmængden af et andet</li>
+      <li>forklare, hvad den begrænsende faktor er</li>
+      <li>stille et mængdeberegningsskema op under et reaktionsskema</li>
+    </ul>
+    <p><b>Centrale fagord:</b> ækvivalente mængder, begrænsende faktor, i overskud, mængdeberegningsskema</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/opgaver/5-5-opgaver.html">Opgave 5.5.4</a>, og læs <a href="https://kemibogen.dk/c/oevelser/5-5b-natron-i-diglen.html">øvelse 5.5b Natron i diglen</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Den begrænsende faktor (slide 21–22) kan vente. Den kommer igen i 5.5 som to kendte masser.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · kort plan · modul 4 af 5</span><span class="afsnit">Afsnit 5.5 · 90 min</span></div>
+    <h3>Natron i diglen</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Opgave 5.5.4, og læs <a href="https://kemibogen.dk/c/oevelser/5-5b-natron-i-diglen.html">øvelse 5.5b</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-5.html#/24" target="_blank">Slide 24</a></li><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/5-5b-natron-i-diglen.html">Øvelse 5.5b Natron i diglen</a>, trin for trin: digel, digeltrekant, trefod, bunsenbrænder og vægt med to decimaler til hvert par og omkring 2 g natron</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.7_natron/index.html#fejl">Natron i diglen</a> (animation)</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc_spil5_syregalgen/index.html#c5">Syregalgen</a> (spil)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">ækvivalente mængder, mængdeberegningsskema</span>. Tag fejlene fra udgangsbilletterne op.</p>
+        <p class="ekstra">Mens du tager fravær: Hvad skal I veje i natronforsøget, og hvorfor bliver massen mindre?</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Benzin brænder</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/24" target="_blank">Slide 24</a>: klassen udfylder skemaet for en liter benzin med dig. Koefficienterne 2 og 16 giver 8 gange så mange mol.</p>
+        <p class="ekstra">Spørg til sidst, hvorfor CO₂ vejer mere end benzinen.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>20–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Natron i diglen</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 5.5b, trin for trin, i par. Mens diglen varmes og køler af: efterbehandling 1 og 2.</p>
+        <p class="ekstra">Briller. Varm kraftigt i mindst 5 minutter. For kort opvarmning giver for stor masse til sidst.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvilket skema passer?</strong><span class="form par">Par</span></div>
+        <p>Efterbehandling 3–5 af øvelse 5.5b. Stop klassen efter spørgsmål 3: begge skemaer har forholdet 2 : 1, så kun molarmassen skiller dem.</p>
+        <p class="ekstra">Hurtige par: <em>Natron i diglen</em>, fanen Fejlkilder.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Syregalgen</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Syregalgen</em> med kapitel 5's ord på projektoren. Klassen gætter et bogstav ad gangen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>beregne massen af ét stof i en reaktion ud fra massen af et andet</li>
+      <li>bruge en mængdeberegning til at afgøre, hvilket reaktionsskema der passer med en måling</li>
+      <li>forklare, hvorfor massen bliver mindre, når natron varmes op</li>
+    </ul>
+    <p><b>Centrale fagord:</b> mængdeberegning, mængdeberegningsskema</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs "Vejeanalyse" i <a href="https://kemibogen.dk/c/kapitler/5-5-maengdeberegning.html#vejeanalyse">5.5</a> og <a href="https://kemibogen.dk/c/oevelser/5-4-krystalvand-i-kobbersulfat.html">øvelse 5.4 Krystalvand i kobber(II)sulfat</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p><a href="https://kemiformler.dk/animationer/superanimationer/sc5.7_natron/index.html#forsoeg">Natron i diglen</a> (animation, 25 min): eleverne laver forsøget på skærmen i fanen Forsøget og regner på hypoteserne med deres egen digel.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · kort plan · modul 5 af 5</span><span class="afsnit">Afsnit 5.5 og øvelse 5.4 · 90 min</span></div>
+    <h3>Vejeanalyse og krystalvand</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs "Vejeanalyse" i 5.5 og <a href="https://kemibogen.dk/c/oevelser/5-4-krystalvand-i-kobbersulfat.html">øvelse 5.4</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="https://kemibogen.dk/c/kapitler/5-5-maengdeberegning.html#vejeanalyse">Figuren med vejeanalysens fire trin</a> i bogen</li><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/5-4-krystalvand-i-kobbersulfat.html">Øvelse 5.4 Krystalvand i kobber(II)sulfat</a>, den åbne udgave: samme udstyr som i øvelse 5.5b og omkring 2 g vandholdigt kobber(II)sulfat til hvert par. Dæk formlen på flasken.</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">mængdeberegning, mængdeberegningsskema</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvilket stof blev natron til? Skriv det rigtige reaktionsskema.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Vejeanalyse</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p>Vis figuren med de fire trin (5 min): fældning, filtrering, tørring og vejning. Derefter <a href="https://kemibogen.dk/c/opgaver/5-5-opgaver.html">opgave 5.5.8</a>.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>25–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Krystalvand i kobber(II)sulfat</strong><span class="form tavle">Tavle</span><span class="form lab">Lab</span></div>
+        <p>Skriv først reaktionsskemaet på tavlen: CuSO₄ · <i>x</i> H₂O → CuSO₄ + <i>x</i> H₂O. <i>x</i> er forholdet mellem stofmængderne af vand og kobber(II)sulfat, ligesom en koefficient. Derefter øvelse 5.4, den åbne udgave, i par.</p>
+        <p class="ekstra">Briller. Varm forsigtigt: bliver saltet sort, er det varmet for kraftigt. Kobber(II)sulfat må ikke i vasken.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>55–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Bestem x</strong><span class="form par">Par</span></div>
+        <p>Efterbehandling 1 og 2 af øvelse 5.4: massen af vandet, <i>x</i> og formlen.</p>
+        <p class="ekstra">Hurtige par: spørgsmål 3. Vis flaskens formel for dem, der er nået dertil.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
+        <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-5.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt. Fjern ordene fra 5.6 først.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>beskrive de fire trin i en vejeanalyse</li>
+      <li>bestemme antallet af vandmolekyler i et salt ud fra to vejninger</li>
+      <li>vurdere, om en fejlkilde gør resultatet for stort eller for lille</li>
+    </ul>
+    <p><b>Centrale fagord:</b> vejeanalyse, stofmængde</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandling 3–5 af øvelse 5.4 og <a href="https://kemibogen.dk/c/repetition/kapitel-5.html#oeveproeve">øveprøven</a> på repetitionssiden. Spørgsmål 6 om gasser er ikke med i denne plan.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Vis forsøget som demo med én digel (10 min), og giv klassen målingen: 2,00 g før og 1,28 g efter. Eleverne regner efterbehandlingen med de tal.</p></div>
+  </div>
+</article>
+
+</div>
+
+<!-- ============================ LANG ============================ -->
+<div class="plan" id="lang" hidden>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 1 af 8</span><span class="afsnit">Afsnit 5.1 · 90 min</span></div>
+    <h3>Størrelser og pæne beregninger</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-5-lang.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-5.html#/2" target="_blank">Slides 2–7</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.10_betydende_cifre/index.html#tael">Afrunding og opskrivning</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 2: <span class="ord">formelenhed, ionforbindelse, sammensat ion</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvor mange atomer af hver slags er der i Ca(OH)₂ og i Al₂(SO₄)₃?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Størrelser og densitet</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/2" target="_blank">Slides 2–5</a>: størrelse, symbol og enhed, densitet og de fire trin i en pæn beregning.</p>
+        <p class="ekstra">Klassen svarer på slide 2 og regner madolien på slide 5 med dig.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Densitet</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-1-opgaver.html">Opgave 5.1.1, 5.1.2, 5.1.3 og 5.1.4</a>. Kræv de fire trin i hver beregning.</p>
+        <p class="ekstra">Hurtige par: 5.1.8 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Betydende cifre</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/6" target="_blank">Slides 6–7</a> (10 min): tæl cifrene, og afrund facit til det mindste antal betydende cifre. Klassen svarer på begge slides. Derefter opgave 5.1.5, 5.1.6 og 5.1.7.</p>
+        <p class="ekstra">Hurtige par: <em>Afrunding og opskrivning</em>, fanen Blandet.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/fagord/kapitel-5.html">Fagordsiden</a>, afsnit 5.1. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>kende størrelserne masse, volumen og densitet med symbol og enhed</li>
+      <li>skrive en beregning i fire trin: kendte størrelser, formel, beregning med enheder og konklusion</li>
+      <li>tælle betydende cifre og afrunde facit</li>
+    </ul>
+    <p><b>Centrale fagord:</b> størrelse, symbol, enhed, densitet, betydende cifre</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-2-molarmasse.html">5.2 Molarmasse</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Slide 7 (hvorfor 23 g og ikke 23,0 g) kan tages i næste opstart.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 2 af 8</span><span class="afsnit">Afsnit 5.2 · 90 min</span></div>
+    <h3>Formelmasse og molarmasse</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-2-molarmasse.html">5.2 Molarmasse</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-5.html#/8" target="_blank">Slides 8–11</a></li><li>Det periodiske system bagest i kompendiet</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.1_molarmasse/index.html#vaegt">Molarmasse</a> (animation)</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc_spil9_kemikort/index.html#beregninger&amp;vendespil">Kort og godt</a> (spil)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">densitet, betydende cifre</span>.</p>
+        <p class="ekstra">Mens du tager fravær: 50,0 mL madolie vejer 46,0 g. Beregn densiteten med det rigtige antal betydende cifre.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra u til gram</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/8" target="_blank">Slides 8–9</a>: atommasserne i det periodiske system, formelmassen for vand og kasserne fra u til g/mol én ad gangen.</p>
+        <p class="ekstra">Lad klassen svare på slide 8, før beregningen kommer.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>25–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Molarmassen i fællesskab</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/10" target="_blank">Slides 10–11</a> (5 min): klassen tæller atomerne i CO₂ og Ca(OH)₂ med dig. Derefter <a href="https://kemibogen.dk/c/opgaver/5-2-opgaver.html">opgave 5.2.1, 5.2.2 og 5.2.3</a>.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Beregn molarmassen</strong><span class="form par">Par</span></div>
+        <p>Opgave 5.2.4, 5.2.5, 5.2.6 og 5.2.7. Stop klassen, hvis mange glemmer, at tallet efter en parentes gælder alle atomer i den.</p>
+        <p class="ekstra">Hurtige par: <em>Molarmasse</em>, fanen Ukendt stof, eller ekstraopgaverne bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Kort og godt</strong><span class="form klasse">Klassen</span></div>
+        <p>Vendespil i par med størrelser, symboler og enheder i <em>Kort og godt</em>. Sættet har også et par kort fra kapitel 6 om koncentration.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>finde atommasser i det periodiske system og beregne en formelmasse i u</li>
+      <li>forklare forskellen på formelmasse og molarmasse</li>
+      <li>beregne molarmassen ud fra formlen, også når formlen har en parentes</li>
+    </ul>
+    <p><b>Centrale fagord:</b> formelmasse, molarmasse</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-3-stofmaengde.html">5.3 Stofmængde</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Formelmassen af NaCl (én natriumion og én chloridion) kan nøjes med en sætning. Vand på slide 8 er nok.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 3 af 8</span><span class="afsnit">Afsnit 5.3 · 90 min</span></div>
+    <h3>Stofmængde</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-3-stofmaengde.html">5.3 Stofmængde</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-5.html#/12" target="_blank">Slides 12–17</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.2_stofmaengde/index.html#vaegt">Stofmængde</a> (animation)</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.3_stofmaengdeberegning/index.html#hurtig">Stofmængdeberegning</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">formelmasse, molarmasse</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Beregn molarmassen for CO₂ og NaCl.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Et mol og tre størrelser</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/12" target="_blank">Slides 12–14</a>: et mol, tabellen med masse, molarmasse og stofmængde og vand i portioner på 18 g. Vis <em>Stofmængde</em>, fanen Vægten, på projektoren, mens klassen svarer.</p>
+        <p class="ekstra">Klassen udfylder tabellen på slide 14, før formlen kommer.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>35–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Formlen</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/15" target="_blank">Slides 15–17</a>: formlen på tre måder. Klassen regner 10,0 g NaCl og 2,00 mol vand med dig.</p>
+        <p class="ekstra">Spørg: Hvilken udgave af formlen bruger I, når massen skal findes?</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra gram til mol og tilbage</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-3-opgaver.html">Opgave 5.3.1, 5.3.2, 5.3.3, 5.3.4, 5.3.5 og 5.3.6</a>. Stop klassen, hvis mange laver samme fejl.</p>
+        <p class="ekstra">Hurtige par: 5.3.7 og 5.3.8.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hurtigrunden</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Stofmængdeberegning</em>, fanen Hurtigrunden. Alle regner på egen computer, og klassen sammenligner point til sidst.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad et mol og en stofmængde er</li>
+      <li>beregne en stofmængde ud fra en masse og en masse ud fra en stofmængde</li>
+      <li>forklare, hvorfor samme stofmængde af to stoffer ikke vejer det samme</li>
+    </ul>
+    <p><b>Centrale fagord:</b> mol, stofmængde</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-4-aekvivalente-maengder.html">5.4 Ækvivalente mængder</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Antallet af molekyler (6,02 · 10²³ i "Hvor mange er det?") kan nøjes med en sætning. Resten af kapitlet regner i mol.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 4 af 8</span><span class="afsnit">Afsnit 5.4 · 90 min</span></div>
+    <h3>Ækvivalente mængder</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-4-aekvivalente-maengder.html">5.4 Ækvivalente mængder</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-5.html#/18" target="_blank">Slides 18–22</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.4_aekvivalente_maengder/index.html#hotdog">Ækvivalente mængder</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">mol, stofmængde</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvor stor en stofmængde er 9,01 g vand? Hvor meget vejer 0,250 mol NaCl?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Reaktionsskemaet er en opskrift</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/18" target="_blank">Slides 18–20</a>: hotdogs til 5 pølser, koefficienterne gælder stofmængder og ammoniak.</p>
+        <p class="ekstra">Klassen udfylder hotdogrækken på slide 18 tal for tal og svarer på slide 20.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra mol til mol</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-4-opgaver.html">Opgave 5.4.1, 5.4.2, 5.4.3, 5.4.4 og 5.4.5</a>.</p>
+        <p class="ekstra">Hurtige par: <em>Ækvivalente mængder</em>, fanen Pølsevognen.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>55–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Den begrænsende faktor</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/21" target="_blank">Slides 21–22</a> (10 min): hvad slipper op først, og hvad er i overskud? Klassen svarer på slide 22. Derefter opgave 5.4.6 og 5.4.7.</p>
+        <p class="ekstra">Hurtige par: <em>Ækvivalente mængder</em>, fanen Tavlen. Sidste 5 min: udgangsbillet. Hver elev skriver på en seddel: N₂ + 3 H₂ → 2 NH₃. Der er 2 mol N₂ og 3 mol H₂. Hvilket stof slipper op først? Læs sedlerne før næste modul.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>læse et afstemt reaktionsskema som et forhold mellem stofmængder</li>
+      <li>beregne stofmængden af ét stof ud fra stofmængden af et andet</li>
+      <li>finde den begrænsende faktor, og forklare, hvad der er i overskud</li>
+    </ul>
+    <p><b>Centrale fagord:</b> ækvivalente mængder, begrænsende faktor, i overskud</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-5-maengdeberegning.html">5.5 Mængdeberegning</a>.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 5 af 8</span><span class="afsnit">Afsnit 5.5 · 90 min</span></div>
+    <h3>Mængdeberegningsskemaet</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/5-5-maengdeberegning.html">5.5 Mængdeberegning</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-5.html#/23" target="_blank">Slides 23–24</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc5.5_maengdeberegning/index.html#vej">Mængdeberegning</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">ækvivalente mængder, begrænsende faktor, i overskud</span>. Tag fejlene fra udgangsbilletterne op.</p>
+        <p class="ekstra">Mens du tager fravær: 2 Mg + O₂ → 2 MgO. Hvor stor en stofmængde magnesiumoxid dannes der af 0,50 mol magnesium?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Ned, på tværs og op</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/23" target="_blank">Slide 23</a>: magnesium brænder, trin for trin. Vis derefter <em>Mængdeberegning</em>, fanen Vejen, med et nyt tal, og lad klassen tage trinene i samme rækkefølge.</p>
+        <p class="ekstra">Lad klassen sige tallet, før du klikker. Skriv de tre trin op i hjørnet af tavlen, så de står der resten af modulet.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Det første skema</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/5-5-opgaver.html">Opgave 5.5.1 og 5.5.3</a>. Opgave 5.5.1 tager trinene ét ad gangen. Stop klassen, når de fleste er færdige med den.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>55–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Benzin brænder</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/24" target="_blank">Slide 24</a>: klassen udfylder skemaet for en liter benzin med dig. Koefficienterne 2 og 16 giver 8 gange så mange mol.</p>
+        <p class="ekstra">Spørg til sidst, hvorfor CO₂ vejer mere end benzinen.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>65–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Flere skemaer</strong><span class="form par">Par</span></div>
+        <p>Opgave 5.5.4 og 5.5.5. Eleverne arbejder, til klokken ringer.</p>
+        <p class="ekstra">Hurtige par: <em>Mængdeberegning</em>, fanen Skemaet.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>stille et mængdeberegningsskema op under et reaktionsskema</li>
+      <li>regne ned, på tværs og op, og skrive hvert trin som en pæn beregning</li>
+      <li>forklare, hvorfor produkterne kan veje mere end det stof, der brænder</li>
+    </ul>
+    <p><b>Centrale fagord:</b> mængdeberegning, mængdeberegningsskema</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/oevelser/5-5a-staaluld-paa-vaegten.html">øvelse 5.5a Ståluld på vægten</a>.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 6 af 8</span><span class="afsnit">Afsnit 5.5 og øvelse 5.5a · 90 min</span></div>
+    <h3>Ståluld på vægten</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/oevelser/5-5a-staaluld-paa-vaegten.html">øvelse 5.5a</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li>Laboratoriet booket til første halvdel</li><li><a href="https://kemibogen.dk/c/oevelser/5-5a-staaluld-paa-vaegten.html">Øvelse 5.5a Ståluld på vægten</a>, trin for trin: porcelænsskål, trefod med trådnet, bunsenbrænder, digeltang og vægt til hvert par og 1–2 g ståluld</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">mængdeberegning, mængdeberegningsskema</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv dit gæt i kompendiet. Bliver ståluld tungere, lettere eller lige tung, når den brænder?</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>10–40</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Ståluld på vægten</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 5.5a, trin for trin, i par.</p>
+        <p class="ekstra">Briller, og langt hår sat op. Fjern papir fra bordet. Skålen er varm længe efter.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>40–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra gram til gram</strong><span class="form par">Par</span></div>
+        <p>Efterbehandling 1–6 af øvelse 5.5a. Stop klassen ved spørgsmål 5: det er de samme tre trin som med magnesium.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>To kendte masser</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p>Forklar med "To kendte masser" i <a href="https://kemibogen.dk/c/kapitler/5-5-maengdeberegning.html">5.5</a> (5 min): regn stofmængden af begge stoffer, og find først det, der slipper op. Derefter <a href="https://kemibogen.dk/c/opgaver/5-5-opgaver.html">opgave 5.5.7</a>. Eleverne arbejder, til klokken ringer.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvorfor ståluld bliver tungere, når det brænder</li>
+      <li>stille et mængdeberegningsskema op for deres egen måling og beregne en afvigelse</li>
+      <li>finde den begrænsende faktor, når massen af begge stoffer er kendt</li>
+    </ul>
+    <p><b>Centrale fagord:</b> mængdeberegningsskema, begrænsende faktor</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/oevelser/5-5b-natron-i-diglen.html">øvelse 5.5b Natron i diglen</a>, og afstem de tre reaktionsskemaer i den åbne udgave.</p></div>
+    <div><h4>Uden laboratorium</h4><p><a href="https://kemiformler.dk/animationer/superanimationer/sc5.8_staaluld/index.html#forsoeg">Afbrænding af ståluld</a> (animation): eleverne brænder stålulden på skærmen og regner efterbehandlingen med deres egne tal.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 7 af 8</span><span class="afsnit">Øvelse 5.5b · 90 min</span></div>
+    <h3>Natron i diglen</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/oevelser/5-5b-natron-i-diglen.html">øvelse 5.5b</a>, og afstem de tre reaktionsskemaer.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/5-5b-natron-i-diglen.html">Øvelse 5.5b Natron i diglen</a>, den åbne udgave: digel, digeltrekant, trefod, bunsenbrænder og vægt med to decimaler til hvert par og omkring 2 g natron</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc_spil5_syregalgen/index.html#c5">Syregalgen</a> (spil)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">mængdeberegningsskema, begrænsende faktor</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tjek afstemningen af de tre skemaer fra lektien med sidemanden.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tre muligheder</strong><span class="form tavle">Tavle</span></div>
+        <p>Skriv de tre afstemte reaktionsskemaer på tavlen. Spørg: Hvordan kan en vægt afgøre, hvilket af dem der er det rigtige? Lad svaret stå åbent, til eleverne har regnet.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>20–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Natron i diglen</strong><span class="form lab">Lab</span></div>
+        <p>Øvelse 5.5b, den åbne udgave, i par. Mens diglen varmes og køler af: efterbehandling 1.</p>
+        <p class="ekstra">Briller. Varm kraftigt i mindst 5 minutter. For kort opvarmning giver for stor masse til sidst.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvilket skema passer?</strong><span class="form par">Par</span></div>
+        <p>Efterbehandling 3 og 4: tre mængdeberegningsskemaer og en afvigelse for hvert. Stop klassen, når de fleste har regnet det første skema, og gennemgå det på tavlen.</p>
+        <p class="ekstra">Hurtige par: spørgsmål 5.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Syregalgen</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Syregalgen</em> med kapitel 5's ord på projektoren. Klassen gætter et bogstav ad gangen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>bruge mængdeberegninger til at afgøre, hvilket af flere reaktionsskemaer der passer med en måling</li>
+      <li>beregne afvigelsen mellem en målt og en beregnet masse</li>
+      <li>forklare, hvordan en fejlkilde påvirker den målte masse</li>
+    </ul>
+    <p><b>Centrale fagord:</b> mængdeberegning, mængdeberegningsskema</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Færdiggør efterbehandlingen af øvelse 5.5b. Læs "Vejeanalyse" i <a href="https://kemibogen.dk/c/kapitler/5-5-maengdeberegning.html#vejeanalyse">5.5</a> og <a href="https://kemibogen.dk/c/kapitler/5-6-gasser.html">5.6 Gasser</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p><a href="https://kemiformler.dk/animationer/superanimationer/sc5.7_natron/index.html#forsoeg">Natron i diglen</a> (animation, 25 min): eleverne laver forsøget på skærmen og regner på hypoteserne med deres egen digel.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 5 · lang plan · modul 8 af 8</span><span class="afsnit">Afsnit 5.5 og 5.6 · 90 min</span></div>
+    <h3>Vejeanalyse, gasser og øveprøve</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Færdiggør øvelse 5.5b. Læs "Vejeanalyse" i 5.5 og <a href="https://kemibogen.dk/c/kapitler/5-6-gasser.html">5.6 Gasser</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="https://kemibogen.dk/c/kapitler/5-5-maengdeberegning.html#vejeanalyse">Figuren med vejeanalysens fire trin</a> i bogen</li><li><a class="sl" href="../slides/kapitel-5.html#/25" target="_blank">Slides 25–26</a></li><li><a href="https://kemibogen.dk/c/repetition/kapitel-5.html#oeveproeve">Øveprøven</a> på repetitionssiden</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">mængdeberegningsskema, begrænsende faktor</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvilket stof blev natron til? Skriv det rigtige reaktionsskema.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Vejeanalyse</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p>Vis figuren med de fire trin (5 min): fældning, filtrering, tørring og vejning. Derefter <a href="https://kemibogen.dk/c/opgaver/5-5-opgaver.html">opgave 5.5.8</a>.</p>
+        <p class="ekstra">Hurtige par: 5.5.9 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>30–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Gasser</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-5.html#/25" target="_blank">Slides 25–26</a> (10 min): størrelserne én ad gangen og ét mol gas ved 20 °C. Derefter <a href="https://kemibogen.dk/c/opgaver/5-6-opgaver.html">opgave 5.6.1 og 5.6.4</a>.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>50–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Øveprøve</strong><span class="form par">Par</span></div>
+        <p>Øveprøven uden hjælpemidler (20 min), hver for sig. Gennemgå facit sammen de sidste 5 min.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
+        <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-5.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>beskrive de fire trin i en vejeanalyse og beregne massen af en ion ud fra bundfaldets masse</li>
+      <li>regne en temperatur om til kelvin og bruge idealgasligningen</li>
+      <li>løse kapitlets typiske opgaver uden hjælpemidler</li>
+    </ul>
+    <p><b>Centrale fagord:</b> vejeanalyse, kelvin, idealgasligningen</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-5.html">Repetition af kapitel 5</a>: sæt flueben ved det, du kan.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Gasser (5.6) er kernestof på kemi A og kan springes over. Giv vejeanalysen og øveprøven tiden.</p></div>
+  </div>
+</article>
+
+</div>
+
+</main>
+
+
+<script>
+(function () {
+  // Slides ligger i ../slides/ i bogens mappe og på kemibogen.dk, men ved siden af siden i et artifact på claude.ai.
+  if (location.protocol !== "file:" && !/kemibogen|localhost|127\.0\.0\.1/.test(location.hostname)) {
+    document.querySelectorAll("a.sl").forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("href").replace("../slides/", "slides/"));
+    });
+  }
+
+  var knapper = document.querySelectorAll(".skifter button");
+  function vis(plan) {
+    knapper.forEach(function (k) { k.setAttribute("aria-pressed", String(k.dataset.plan === plan)); });
+    document.getElementById("kort").hidden = plan !== "kort";
+    document.getElementById("lang").hidden = plan !== "lang";
+    document.querySelectorAll(".materialer [data-plan]").forEach(function (el) { el.hidden = el.dataset.plan !== plan; });
+  }
+  knapper.forEach(function (k) {
+    k.addEventListener("click", function () {
+      vis(k.dataset.plan);
+      try { localStorage.setItem("modulplan-plan", k.dataset.plan); } catch (e) {}
+    });
+  });
+
+  var start = location.hash === "#lang" ? "lang" : location.hash === "#kort" ? "kort" : null;
+  if (!start) { try { start = localStorage.getItem("modulplan-plan"); } catch (e) {} }
+  vis(start === "lang" ? "lang" : "kort");
+})();
+</script>
+</body>
+</html>
