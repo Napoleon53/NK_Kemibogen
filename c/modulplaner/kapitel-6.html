@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modulplaner kapitel 6</title>
+<style>
+/* Layout: én plan ad gangen (kort eller lang); hvert modul er et A4-ark med tidslinje til venstre og indhold til højre. */
+:root {
+  --bord: #e6ecea;
+  --ark: #ffffff;
+  --blæk: #14201f;
+  --dæmpet: #55635f;
+  --streg: #d3dcd9;
+  --accent: #0f766e;
+  --accent-svag: #e3f1ef;
+  --på-accent: #ffffff;
+  --tavle: #1d4ed8;  --tavle-bg: #e7eefc;
+  --par: #0f766e;    --par-bg: #e3f1ef;
+  --lab: #b45309;    --lab-bg: #fbefe1;
+  --klasse: #7c3aed; --klasse-bg: #f0eafd;
+  --start: #4b5563;  --start-bg: #eceff1;
+  --fokus-bg: #f6f8f7;
+  --skrift: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bord); color: var(--blæk);
+  font: 15px/1.5 var(--skrift);
+  padding-inline: 16px; padding-block: 24px 48px;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.side { max-width: 210mm; margin: 0 auto; display: grid; gap: 24px; }
+
+/* Forside */
+.forside { padding-block: 8px; display: grid; gap: 12px; }
+.forside h1 { margin: 0; font-size: 1.75rem; line-height: 1.2; text-wrap: balance; }
+.forside p { margin: 0; max-width: 65ch; color: var(--dæmpet); }
+.skifter {
+  display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; justify-self: start;
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 10px;
+}
+.skifter button {
+  font: inherit; cursor: pointer; border: 0; border-radius: 7px; padding: 8px 16px;
+  background: transparent; color: var(--blæk); display: grid; text-align: left; gap: 0;
+}
+.skifter button span { font-size: .8rem; color: var(--dæmpet); }
+.skifter button[aria-pressed="true"] { background: var(--accent); color: var(--på-accent); }
+.skifter button[aria-pressed="true"] span { color: var(--på-accent); opacity: .85; }
+.materialer { margin: 0; font-size: .9rem; max-width: 65ch; }
+.signatur { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .8rem; color: var(--dæmpet); align-items: center; }
+
+.plan { display: grid; gap: 24px; }
+
+/* Arket */
+.modul {
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 6px;
+  padding: 28px 32px; display: grid; gap: 18px;
+}
+.modul > header { display: grid; gap: 4px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+.øverst { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.etiket { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.modul h3 { margin: 0; font-size: 1.4rem; line-height: 1.25; text-wrap: balance; }
+.afsnit { font-size: .85rem; color: var(--dæmpet); }
+
+.før { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: .88rem; }
+.før > div { min-width: 0; }
+.før h4, .fokus h4, .bagefter h4 {
+  margin: 0 0 2px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600;
+}
+.før p, .før ul { margin: 0; }
+.før ul { padding-left: 1.1em; }
+
+/* Tidslinje */
+.forløb { list-style: none; margin: 0; padding: 0; display: grid; }
+.forløb li {
+  display: grid; grid-template-columns: 74px 1fr; gap: 16px;
+  padding-block: 10px; border-top: 1px solid var(--streg);
+}
+.forløb li:first-child { border-top: 0; padding-top: 0; }
+.tid { font-variant-numeric: tabular-nums; display: grid; align-content: start; }
+.tid b { font-size: 1.15rem; line-height: 1.1; }
+.tid span { font-size: .75rem; color: var(--dæmpet); }
+.trin { min-width: 0; display: grid; gap: 3px; }
+.trin-hoved { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.trin-hoved strong { font-size: 1rem; }
+.form { font-size: .7rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; }
+.form.tavle { color: var(--tavle); background: var(--tavle-bg); }
+.form.par { color: var(--par); background: var(--par-bg); }
+.form.lab { color: var(--lab); background: var(--lab-bg); }
+.form.klasse { color: var(--klasse); background: var(--klasse-bg); }
+.form.start { color: var(--start); background: var(--start-bg); }
+.trin p { margin: 0; font-size: .9rem; }
+.trin .ekstra { color: var(--dæmpet); font-size: .84rem; }
+.ord { font-weight: 600; }
+
+.fokus { background: var(--fokus-bg); border-radius: 6px; padding: 12px 16px; display: grid; gap: 6px; }
+.fokus ul { margin: 0; padding-left: 1.1em; font-size: .88rem; display: grid; gap: 2px; }
+.fokus p { margin: 0; font-size: .88rem; }
+
+.bagefter { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; font-size: .88rem; }
+.bagefter > div { min-width: 0; }
+.bagefter p { margin: 0; }
+
+@media (max-width: 640px) {
+  .modul { padding: 20px 16px; }
+  .før { grid-template-columns: 1fr; }
+  .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
+}
+
+@page { size: A4; margin: 12mm; }
+@media print {
+  body { background: #fff; padding: 0; font-size: 10.5pt; }
+  .forside { display: none; }
+  .side, .plan { gap: 0; max-width: none; }
+  .modul { border: 0; padding: 0; gap: 4mm; break-after: page; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<main class="side">
+
+<section class="forside">
+  <span class="etiket"><a href="https://kemibogen.dk/c/" style="color: inherit; text-decoration: none;">Kemibogen C</a> · lærerens udgave</span>
+  <h1>Modulplaner til kapitel 6: Koncentration</h1>
+  <p>Vælg den plan, der passer til holdet. Hvert modul er 90 minutter og fylder ét ark. Tiderne er et forslag: spring et punkt over eller brug mere tid, når klassen har brug for det. I begge planer laver eleverne selv en opløsning i en målekolbe og fortynder den, og titreringen foregår på to hold: det ene hold titrerer, mens det andet regner opgaver, og midt i modulet bytter de. Så skal der kun bruges burettes til halvdelen af klassen. Den lange plan er tænkt til et hold, der har brug for mere hjælp: koncentration får to moduler, titreringen regnes igennem på papir, før holdet kommer i laboratoriet, og øvelsen er i trin for trin-udgaven.</p>
+  <div class="skifter" role="group" aria-label="Vælg plan">
+    <button type="button" id="knap-kort" data-plan="kort" aria-pressed="true">Kort · 4 moduler<span>Højt tempo og øvelse 6.3b</span></button>
+    <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 5 moduler<span>Titrering på papir først og øvelse 6.3a</span></button>
+  </div>
+  <p class="materialer">
+    <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-6-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 22 sider).</span>
+    <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-6-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 25 sider).</span>
+    Du kan også sætte dit eget kompendium sammen på <a href="https://kemiformler.dk/kompendier/" target="_blank">Byg dit kompendium</a>.
+  </p>
+  <div class="signatur">
+    <span><span class="form start">Start</span> fravær og repetition</span>
+    <span><span class="form tavle">Tavle</span> læreren styrer</span>
+    <span><span class="form par">Par</span> eleverne arbejder</span>
+    <span><span class="form lab">Lab</span> laboratoriet</span>
+    <span><span class="form klasse">Klassen</span> fælles aktivitet</span>
+  </div>
+</section>
+
+<!-- ============================ KORT ============================ -->
+<div class="plan" id="kort">
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · kort plan · modul 1 af 4</span><span class="afsnit">Afsnit 6.1 · 90 min</span></div>
+    <h3>Opløsninger og koncentration</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen, eller læs <a href="https://kemibogen.dk/c/kapitler/6-1-koncentration.html">6.1 Koncentration</a> til og med "Stofmængdekoncentration".</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-6-kort.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-6.html#/2" target="_blank">Slides 2–9</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc6.1_koncentration/index.html#glas">Koncentration</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 5: <span class="ord">stofmængde, molarmasse, mol</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv symbol og enhed for masse, molarmasse og stofmængde.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>10–40</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opløsning og masseprocent</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/2" target="_blank">Slides 2–4</a> (15 min): opløst stof og opløsningsmiddel og masseprocent. Derefter <a href="https://kemibogen.dk/c/opgaver/6-1-opgaver.html">opgave 6.1.1 og 6.1.2</a>.</p>
+        <p class="ekstra">Klassen svarer højt på slide 2 og regner selv på slide 4. Hurtige par: 6.1.mad.1 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>40–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Stofmængdekoncentration</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/5" target="_blank">Slides 5–9</a>: <i>c</i> = <i>n</i> / <i>V</i>, koncentrationen i et glas, formlen på tre måder, <i>c</i>, <i>n</i> eller <i>V</i>? og koncentrationen ud fra massen.</p>
+        <p class="ekstra">Klassen svarer højt på slide 6 og 8, før du klikker. På slide 8 opstår de fleste fejl: mol og M blandes sammen, og milliliter regnes ikke om til liter.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>60–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Regn med formlen</strong><span class="form par">Par</span></div>
+        <p>Opgave 6.1.3, 6.1.4 og 6.1.6. Stop klassen, hvis mange glemmer at regne om til liter.</p>
+        <p class="ekstra">Hurtige par: <em>Koncentration</em>, fanen c eller n?</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/fagord/kapitel-6.html">Fagordsiden</a>, afsnit 6.1. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad en opløsning er, og beregne en masseprocent</li>
+      <li>beregne en stofmængdekoncentration med <i>c</i> = <i>n</i> / <i>V</i> og skrive formlen om</li>
+      <li>regne milliliter om til liter og kende forskel på mol og M</li>
+    </ul>
+    <p><b>Centrale fagord:</b> opløsning, opløst stof, opløsningsmiddel, masseprocent, stofmængdekoncentration, molær</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs "<a href="https://kemibogen.dk/c/kapitler/6-1-koncentration.html#sådan-fremstilles-en-opløsning">Sådan fremstilles en opløsning</a>" og "Fortynding" i 6.1, og regn opgave 6.1.5.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Promille og ppm på slide 3 kan nøjes med en sætning. Formlen og omregningen til liter er det vigtigste.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · kort plan · modul 2 af 4</span><span class="afsnit">Afsnit 6.1 og begyndelsen af 6.2 · 90 min</span></div>
+    <h3>Lav en opløsning, og fortynd den</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs "Sådan fremstilles en opløsning" og "Fortynding" i <a href="https://kemibogen.dk/c/kapitler/6-1-koncentration.html#sådan-fremstilles-en-opløsning">6.1</a>, og regn opgave 6.1.5.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-6.html#/10" target="_blank">Slides 10–16</a></li><li>Laboratoriet booket midt i modulet</li><li>Til hvert par: to målekolber på 100 mL, en fuldpipette på 10 mL og omkring 3 g kobber(II)sulfat-pentahydrat, CuSO₄ · 5 H₂O</li><li>Vægte og en beholder til affaldet</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">masseprocent, stofmængdekoncentration, molær</span>.</p>
+        <p class="ekstra">Mens du tager fravær: 0,050 mol stof er opløst, så opløsningen fylder 250 mL. Hvad er koncentrationen?</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Målekolbe og fortynding</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/10" target="_blank">Slides 10–13</a>: målekolben, hvor meget der skal vejes af, og fortynding.</p>
+        <p class="ekstra">På slide 11 og 13 regner klassen, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>50 min</b><span>25–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Lav en opløsning</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hvert par laver 100 mL 0,100 M kobber(II)sulfat i en målekolbe og regner selv massen ud. Skriv <i>M</i> = 249,69 g/mol på tavlen, for saltet indeholder krystalvand. Derefter fortynder parret 10,0 mL til 100 mL, beregner den nye koncentration og sammenligner farverne (30 min). Bagefter <a href="https://kemibogen.dk/c/opgaver/6-1-opgaver.html#6.1.7">opgave 6.1.7 og 6.1.8</a>, som ligner det, parret lige har lavet.</p>
+        <p class="ekstra">Briller. Kobber(II)sulfat må ikke i vasken. Facit: 2,50 g og 0,0100 M.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad er der i målekolben?</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/14" target="_blank">Slides 14–16</a>: ionerne slipper hinanden, formel og aktuel koncentration, og hvad der er i glasset.</p>
+        <p class="ekstra">Spørg til sidst: Hvilke partikler er der i jeres første målekolbe, og hvad er [Cu²⁺]?</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>fremstille en opløsning i en målekolbe og beregne, hvor mange gram der skal vejes af</li>
+      <li>regne på en fortynding, hvor stofmængden er den samme før og efter</li>
+      <li>forklare forskellen på formel og aktuel koncentration</li>
+    </ul>
+    <p><b>Centrale fagord:</b> målekolbe, fortynde, formel koncentration, aktuel koncentration</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/6-2-formel-og-aktuel.html">6.2 Formel og aktuel koncentration</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Lav opløsningen og fortyndingen som demo (10 min), og lad klassen regne. Eller brug <a href="https://kemiformler.dk/animationer/superanimationer/sc6.1_koncentration/index.html#kolbe">Koncentration</a>, fanerne Målekolben og Fortynding (20 min).</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · kort plan · modul 3 af 4</span><span class="afsnit">Afsnit 6.2 og begyndelsen af 6.3 · 90 min</span></div>
+    <h3>Formel og aktuel koncentration</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/6-2-formel-og-aktuel.html">6.2 Formel og aktuel koncentration</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-6.html#/17" target="_blank">Slides 17–28</a></li><li>En tom burette, som kan gå rundt i klassen</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc6.2_formel_og_aktuel/index.html#ioner">Formel og aktuel koncentration</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">formel koncentration, aktuel koncentration, fortynde</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv reaktionsskemaet for kaliumchlorid, KCl, der opløses i vand. Hvad er [K⁺] og [Cl⁻], når <i>c</i>(KCl) = 0,20 M?</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tallet foran ionen</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/17" target="_blank">Slides 17–20</a>: calciumchlorid, aluminiumchlorid i et lille skema, fire reaktionsskemaer og de aktuelle koncentrationer i fire salte.</p>
+        <p class="ekstra">På slide 19 og 20 skriver eleverne svaret i kompendiet, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>25–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra formel til aktuel</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/6-2-opgaver.html">Opgave 6.2.1 og 6.2.3</a>. Stop klassen, hvis mange glemmer tallet foran ionen.</p>
+        <p class="ekstra">Hurtige par: <em>Formel og aktuel koncentration</em>, fanen Ionerne, niveau 2 og 3.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>45–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Find fejlen</strong><span class="form klasse">Klassen</span></div>
+        <p>Skriv tre forkerte svar på tavlen: <i>c</i>(CaCl₂) = 0,10 M, så [Cl⁻] = 0,10 M. <i>c</i>(NaCl) = 0,10 M, så [NaCl] = 0,10 M. <i>c</i>(C₆H₁₂O₆) = 0,10 M, så [C₆H₁₂O₆] = 0 M. Parrene finder fejlen i hvert svar, og klassen siger den højt. Vis derefter <a class="sl" href="../slides/kapitel-6.html#/21" target="_blank">slides 21–22</a>.</p>
+        <p class="ekstra">Fejlene: tallet foran ionen er glemt, der findes ingen hele formelenheder, og glucose deler sig ikke.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Sådan foregår en titrering</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/23" target="_blank">Slides 23–28</a> (20 min): analyse, opstillingen, buretten, Mohrtitreringen, omslaget, og hvornår man stopper. Derefter <a href="https://kemibogen.dk/c/opgaver/6-3-opgaver.html">opgave 6.3.1 og 6.3.2</a>.</p>
+        <p class="ekstra">Lad buretten gå rundt under slide 24 og 25.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>skrive reaktionsskemaet for et salt, der opløses i vand, og beregne ionernes aktuelle koncentrationer</li>
+      <li>forklare, hvorfor glucose har samme aktuelle og formelle koncentration</li>
+      <li>bruge ordene burette, indikator, omslag og ækvivalenspunkt</li>
+    </ul>
+    <p><b>Centrale fagord:</b> formel koncentration, aktuel koncentration, titrering, burette, ækvivalenspunkt, indikator, omslag</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Opgave 6.2.5 og 6.2.6. Læs fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/6-3b-mohrtitrering-af-chips.html">øvelse 6.3b Mohrtitrering af chips</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Slide 23 kan nøjes med en sætning. Slide 25 og 28 skal nås før laboratoriet.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · kort plan · modul 4 af 4</span><span class="afsnit">Afsnit 6.3 og øvelse 6.3b · 90 min</span></div>
+    <h3>Mohrtitrering af chips</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Opgave 6.2.5 og 6.2.6, og læs fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/6-3b-mohrtitrering-af-chips.html">øvelse 6.3b</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-6.html#/29" target="_blank">Slides 29–31</a></li><li>Laboratoriet booket hele modulet og klassen delt i hold A og B</li><li><a href="https://kemibogen.dk/c/oevelser/6-3b-mohrtitrering-af-chips.html">Øvelse 6.3b Mohrtitrering af chips</a>, den åbne udgave, med udstyr til halvdelen af klassen</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">burette, indikator, omslag, ækvivalenspunkt</span>. Sig, hvem der er på hold A og hold B.</p>
+        <p class="ekstra">Mens du tager fravær: Sæt trinene i opgave 6.3.6 i rækkefølge.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Salt i chips på papir</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/29" target="_blank">Slides 29–31</a>: beregningen i fire trin og saltet i chips.</p>
+        <p class="ekstra">Afvigelsen (slide 32) møder eleverne i opgave 6.3.mad.2.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>20–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hold A titrerer, hold B regner</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold A laver øvelse 6.3b i par. Hold B regner <a href="https://kemibogen.dk/c/opgaver/6-3-opgaver.html#6.3.3">opgave 6.3.3, 6.3.4, 6.3.mad.1 og 6.3.mad.2</a>.</p>
+        <p class="ekstra">Briller og kittel. Sølv(I)nitrat giver sorte pletter, og affaldet må ikke i vasken. Ved de første lyserøde skyer drypper de fleste for meget.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>55–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Holdene bytter</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold B titrerer, og hold A regner de samme opgaver.</p>
+        <p class="ekstra">Hurtige par: 6.3.5 bagest i kompendiet. De sidste 5 minutter rydder hold B op.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>titrere med en burette og aflæse forbruget</li>
+      <li>beregne stofmængden af sølv(I)nitrat med <i>n</i> = <i>c</i> · <i>V</i> og bruge forholdet 1 : 1</li>
+      <li>beregne masseprocenten af salt i en fødevare og afvigelsen fra varedeklarationen</li>
+    </ul>
+    <p><b>Centrale fagord:</b> titrering, forbrug, Mohrtitrering, afvigelse</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 6.3b og <a href="https://kemibogen.dk/c/repetition/kapitel-6.html#oeveproeve">øveprøven</a> på repetitionssiden.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Titrér én prøve som demo (15 min), og giv klassen massen og forbruget. Animationen <a href="https://kemiformler.dk/animationer/superanimationer/sc6.3_mohrtitrering/index.html">Mohrtitrering</a> viser stadig den gamle indikator med rødbrunt omslag.</p></div>
+    <div><h4>Med burettes til alle</h4><p>Hele klassen titrerer på samme tid i 40 min, og opgaverne regnes bagefter.</p></div>
+  </div>
+</article>
+
+</div>
+
+<!-- ============================ LANG ============================ -->
+<div class="plan" id="lang" hidden>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · lang plan · modul 1 af 5</span><span class="afsnit">Afsnit 6.1 · 90 min</span></div>
+    <h3>Opløsninger og koncentration</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-6-lang.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-6.html#/2" target="_blank">Slides 2–8</a></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc6.1_koncentration/index.html">Koncentration</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 5: <span class="ord">stofmængde, molarmasse, mol</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv symbol og enhed for masse, molarmasse og stofmængde.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>10–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad er opløst i hvad?</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/2" target="_blank">Slides 2–4</a> (15 min): opløst stof og opløsningsmiddel og masseprocent. Derefter <a href="https://kemibogen.dk/c/opgaver/6-1-opgaver.html">opgave 6.1.1 og 6.1.2</a>.</p>
+        <p class="ekstra">Klassen svarer højt på slide 2 og regner med på slide 4, linje for linje. Hurtige par: 6.1.mad.1 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>45–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Stofmængdekoncentration</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/5" target="_blank">Slides 5–8</a>: <i>c</i> = <i>n</i> / <i>V</i>, hvad der sker med koncentrationen, formlen på tre måder og <i>c</i>, <i>n</i> eller <i>V</i>?</p>
+        <p class="ekstra">Klassen svarer højt på slide 6, før farven kommer frem. På slide 8 skriver eleverne svarene, før du klikker.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>60–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra milliliter til liter</strong><span class="form par">Par</span></div>
+        <p>Opgave 6.1.3 og 6.1.4. Stop klassen, hvis mange glemmer at regne om til liter.</p>
+        <p class="ekstra">Hurtige par: <em>Koncentration</em>, fanen Karret. Hæld stof og vand i, og følg tallene.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/fagord/kapitel-6.html">Fagordsiden</a>, afsnit 6.1. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad en opløsning er, og beregne en masseprocent</li>
+      <li>bruge <i>c</i> = <i>n</i> / <i>V</i> og forklare, hvad der sker med koncentrationen, når der kommer mere stof eller mere vand i</li>
+      <li>regne milliliter om til liter og kende forskel på mol og M</li>
+    </ul>
+    <p><b>Centrale fagord:</b> opløsning, opløst stof, opløsningsmiddel, masseprocent, stofmængdekoncentration, molær</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs "Opløsninger", "Masseprocent" og "Stofmængdekoncentration" i <a href="https://kemibogen.dk/c/kapitler/6-1-koncentration.html">6.1 Koncentration</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Promille og ppm (slide 3) kan nøjes med en sætning. Giv hellere slide 6 tid.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · lang plan · modul 2 af 5</span><span class="afsnit">Afsnit 6.1 · 90 min</span></div>
+    <h3>Lav en opløsning, og fortynd den</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs "Opløsninger", "Masseprocent" og "Stofmængdekoncentration" i <a href="https://kemibogen.dk/c/kapitler/6-1-koncentration.html">6.1</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-6.html#/9" target="_blank">Slides 9–13</a></li><li>Laboratoriet booket midt i modulet</li><li>Til hvert par: to målekolber på 100 mL, en fuldpipette på 10 mL og omkring 3 g kobber(II)sulfat-pentahydrat, CuSO₄ · 5 H₂O</li><li>Vægte og en beholder til affaldet</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">opløst stof, masseprocent, stofmængdekoncentration, molær</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvad er forskellen på 0,20 mol og 0,20 M?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra masse til koncentration</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/9" target="_blank">Slides 9–13</a>: koncentrationen ud fra massen, målekolben, hvor meget der skal vejes af, og fortynding.</p>
+        <p class="ekstra">Klassen siger den næste kendte størrelse, før du klikker, og skriver med i kompendiet.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>30–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Lav en opløsning</strong><span class="form tavle">Tavle</span><span class="form lab">Lab</span></div>
+        <p>Regn massen til 100 mL 0,100 M kobber(II)sulfat ud på tavlen sammen med klassen: <i>M</i> = 249,69 g/mol, for saltet indeholder krystalvand. Derefter laver parrene opløsningen, fortynder 10,0 mL til 100 mL og sammenligner farverne.</p>
+        <p class="ekstra">Briller. Vis først målekolben og pipetten. Kobber(II)sulfat må ikke i vasken. Facit: 2,50 g og 0,0100 M.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>60–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Som i laboratoriet</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/6-1-opgaver.html#6.1.7">Opgave 6.1.7 og 6.1.8</a>. Stop klassen efter 6.1.7 a, og gennemgå den på tavlen.</p>
+        <p class="ekstra">Hurtige par: <em>Koncentration</em>, fanen Målekolben.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quiz: fem hurtige</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Quiz: fem hurtige</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-6.html">fagordsiden</a>, afsnit 6.1. Klassen stemmer med fingre (1–4).</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>beregne en koncentration ud fra massen af det opløste stof</li>
+      <li>fremstille en opløsning i en målekolbe og beregne, hvor mange gram der skal vejes af</li>
+      <li>regne på en fortynding og forklare, at stofmængden er den samme før og efter</li>
+    </ul>
+    <p><b>Centrale fagord:</b> målekolbe, fortynde</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Opgave 6.1.5 og 6.1.6. Læs "<a href="https://kemibogen.dk/c/kapitler/6-1-koncentration.html#sådan-fremstilles-en-opløsning">Sådan fremstilles en opløsning</a>" og "Fortynding" i 6.1.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Lav opløsningen og fortyndingen som demo (10 min), og lad klassen regne. Eller brug <a href="https://kemiformler.dk/animationer/superanimationer/sc6.1_koncentration/index.html#kolbe">Koncentration</a>, fanerne Målekolben og Fortynding (20 min).</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · lang plan · modul 3 af 5</span><span class="afsnit">Afsnit 6.2 · 90 min</span></div>
+    <h3>Formel og aktuel koncentration</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Opgave 6.1.5 og 6.1.6. Læs "Sådan fremstilles en opløsning" og "Fortynding" i <a href="https://kemibogen.dk/c/kapitler/6-1-koncentration.html#sådan-fremstilles-en-opløsning">6.1</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-6.html#/14" target="_blank">Slides 14–22</a></li><li>Papir til tegningerne</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc6.2_formel_og_aktuel/index.html">Formel og aktuel koncentration</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">målekolbe, fortynde, stofmængdekoncentration</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvilken formel har saltet af Ca²⁺ og Cl⁻, og hvor mange chloridioner er der for hver calciumion?</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tegn glasset</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/14" target="_blank">Slides 14–17</a> (15 min): ionerne slipper hinanden, to slags koncentration og tallet foran ionen. Derefter tegner parrene tre glas på mikroniveau med 2 formelenheder NaCl, 2 CaCl₂ og 2 AlCl₃ opløst, og tæller chloridionerne.</p>
+        <p class="ekstra">Hurtige par: <em>Formel og aktuel koncentration</em>, fanen Opløsningen.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>35–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra formel til aktuel</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/18" target="_blank">Slides 18–22</a>: aluminiumchlorid, fire salte, flest chloridioner og glucose.</p>
+        <p class="ekstra">Sammenlign slide 18 med tegningen af AlCl₃. På slide 19 og 20 skriver eleverne svaret, før du klikker.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Beregn ionerne</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/6-2-opgaver.html">Opgave 6.2.1, 6.2.2, 6.2.3 og 6.2.5</a>. Stop klassen efter 6.2.1, og gennemgå et af skemaerne på tavlen.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc6.2_formel_og_aktuel/index.html#ioner">Formel og aktuel koncentration</a>, fanen Ionerne, niveau 1 og 2.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Find fejlen</strong><span class="form klasse">Klassen</span></div>
+        <p>Skriv tre forkerte svar på tavlen: <i>c</i>(CaCl₂) = 0,10 M, så [Cl⁻] = 0,10 M. <i>c</i>(NaCl) = 0,10 M, så [NaCl] = 0,10 M. <i>c</i>(C₆H₁₂O₆) = 0,10 M, så [C₆H₁₂O₆] = 0 M. Parrene finder fejlen i hvert svar, og klassen siger den højt.</p>
+        <p class="ekstra">Fejlene: tallet foran ionen er glemt, der findes ingen hele formelenheder, og glucose deler sig ikke.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>skrive reaktionsskemaet for et salt, der opløses i vand</li>
+      <li>forklare forskellen på formel og aktuel koncentration</li>
+      <li>beregne ionernes aktuelle koncentrationer ud fra saltets formelle koncentration</li>
+    </ul>
+    <p><b>Centrale fagord:</b> formel koncentration, aktuel koncentration</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/6-2-formel-og-aktuel.html">6.2 Formel og aktuel koncentration</a>, og regn opgave 6.2.6.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Na₃PO₄ og Ca(NO₃)₂ på slide 19 og 20 kan springes over. NaCl, CaCl₂ og AlCl₃ er nok til at se mønstret.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · lang plan · modul 4 af 5</span><span class="afsnit">Afsnit 6.3 · 90 min</span></div>
+    <h3>Titrering på papir</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/6-2-formel-og-aktuel.html">6.2</a>, og regn opgave 6.2.6.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-6.html#/23" target="_blank">Slides 23–32</a></li><li>En tom burette, som kan gå rundt i klassen</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc_spil5_syregalgen/index.html#c6">Syregalgen</a> (spil)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">formel koncentration, aktuel koncentration</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv reaktionsskemaet for magnesiumchlorid, MgCl₂, der opløses i vand. Hvad er [Cl⁻], når <i>c</i>(MgCl₂) = 0,10 M?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Sådan foregår en titrering</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/23" target="_blank">Slides 23–28</a>: kvalitativ og kvantitativ analyse, opstillingen, aflæsning af buretten, Mohrtitreringen, hvorfor farven skifter, og hvornår man stopper.</p>
+        <p class="ekstra">Lad buretten gå rundt under slide 24 og 25. Klassen svarer højt på slide 23 og 25.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>30–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Ordene og buretten</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/6-3-opgaver.html">Opgave 6.3.1, 6.3.2 og 6.3.6</a>.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>45–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Beregningen i fire trin</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-6.html#/29" target="_blank">Slides 29–32</a>: de fire trin, stofmængderne og procenten af salt i chips og afvigelsen fra posen.</p>
+        <p class="ekstra">Skriv de fire trin på tavlen, og lad dem stå. Klassen siger næste trin højt, før du klikker.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>60–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Regn titreringen</strong><span class="form par">Par</span></div>
+        <p>Opgave 6.3.3 og 6.3.4. Stop klassen, hvis mange glemmer at regne forbruget om til liter.</p>
+        <p class="ekstra">Hurtige par: 6.3.5 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Syregalgen</strong><span class="form klasse">Klassen</span></div>
+        <p><em>Syregalgen</em> med kapitel 6's ord på projektoren. Klassen gætter et bogstav ad gangen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare forskellen på en kvalitativ og en kvantitativ analyse</li>
+      <li>bruge ordene burette, indikator, omslag, ækvivalenspunkt og forbrug</li>
+      <li>aflæse en burette og beregne forbruget</li>
+      <li>beregne stofmængden af natriumchlorid i en prøve ud fra forbruget</li>
+    </ul>
+    <p><b>Centrale fagord:</b> kvalitativ analyse, kvantitativ analyse, titrering, burette, ækvivalenspunkt, indikator, omslag, forbrug, Mohrtitrering, afvigelse</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/6-3-titrering.html">6.3 Titrering</a> og fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html">øvelse 6.3a Mohrtitrering af øjenskyllevand</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Afvigelsen (slide 32) kan vente til efterbehandlingen af øvelse 6.3a.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 6 · lang plan · modul 5 af 5</span><span class="afsnit">Øvelse 6.3a og øveprøve · 90 min</span></div>
+    <h3>Mohrtitrering af øjenskyllevand</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs 6.3 og fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html">øvelse 6.3a</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li>Laboratoriet booket hele modulet og klassen delt i hold A og B</li><li><a href="https://kemibogen.dk/c/oevelser/6-3a-mohrtitrering-af-oejenskyllevand.html">Øvelse 6.3a Mohrtitrering af øjenskyllevand</a> med udstyr til halvdelen af klassen</li><li>Et øjenskyllevand med natriumchlorid. Nogle er en fosfatbuffer uden chlorid</li><li><a href="https://kemibogen.dk/c/repetition/kapitel-6.html#oeveproeve">Øveprøven</a> på repetitionssiden</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">burette, indikator, omslag, forbrug</span>. Sig, hvem der er på hold A og hold B.</p>
+        <p class="ekstra">Mens du tager fravær: Hvad gør du, når der kommer lyserøde skyer i kolben, og hvornår lukker du hanen?</p></div></li>
+    <li><div class="tid"><b>40 min</b><span>10–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hold A titrerer, hold B regner</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold A laver øvelse 6.3a i par med to titreringer. Hold B regner <a href="https://kemibogen.dk/c/opgaver/6-3-opgaver.html#6.3.mad.1">opgave 6.3.mad.1</a> og tager derefter øveprøven hver for sig.</p>
+        <p class="ekstra">Briller og kittel. Sølv(I)nitrat giver sorte pletter, og affaldet må ikke i vasken. Hjælp med pipetten og med at aflæse buretten.</p></div></li>
+    <li><div class="tid"><b>40 min</b><span>50–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Holdene bytter</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold B titrerer, og hold A regner det samme.</p>
+        <p class="ekstra">Efter øveprøven åbner eleverne facit på repetitionssiden og retter selv. De sidste 5 minutter rydder hold B op.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>titrere med en burette og aflæse forbruget</li>
+      <li>regne gennemsnittet af to forbrug om til liter og beregne stofmængden af sølv(I)nitrat</li>
+      <li>løse kapitlets typiske opgaver uden hjælpemidler</li>
+    </ul>
+    <p><b>Centrale fagord:</b> titrering, forbrug, Mohrtitrering</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 6.3a. <a href="https://kemibogen.dk/c/repetition/kapitel-6.html">Repetition af kapitel 6</a>: sæt flueben ved det, du kan.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Titrér øjenskyllevand som demo under dokumentkameraet (15 min), og giv klassen forbruget fra to titreringer, så efterbehandlingen kan regnes.</p></div>
+    <div><h4>Med burettes til alle</h4><p>Hele klassen titrerer på samme tid i 45 min, og øveprøven tages bagefter.</p></div>
+  </div>
+</article>
+
+</div>
+
+</main>
+
+
+<script>
+(function () {
+  // Slides ligger i ../slides/ i bogens mappe og på kemibogen.dk, men ved siden af siden i et artifact på claude.ai.
+  if (location.protocol !== "file:" && !/kemibogen|localhost|127\.0\.0\.1/.test(location.hostname)) {
+    document.querySelectorAll("a.sl").forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("href").replace("../slides/", "slides/"));
+    });
+  }
+
+  var knapper = document.querySelectorAll(".skifter button");
+  function vis(plan) {
+    knapper.forEach(function (k) { k.setAttribute("aria-pressed", String(k.dataset.plan === plan)); });
+    document.getElementById("kort").hidden = plan !== "kort";
+    document.getElementById("lang").hidden = plan !== "lang";
+    document.querySelectorAll(".materialer [data-plan]").forEach(function (el) { el.hidden = el.dataset.plan !== plan; });
+  }
+  knapper.forEach(function (k) {
+    k.addEventListener("click", function () {
+      vis(k.dataset.plan);
+      try { localStorage.setItem("modulplan-plan", k.dataset.plan); } catch (e) {}
+    });
+  });
+
+  var start = location.hash === "#lang" ? "lang" : location.hash === "#kort" ? "kort" : null;
+  if (!start) { try { start = localStorage.getItem("modulplan-plan"); } catch (e) {} }
+  vis(start === "lang" ? "lang" : "kort");
+})();
+</script>
+</body>
+</html>
