@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ffbea07eab84161773e00bdba276a772.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-081c5d34689f6612341a65f79dfb69a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1952,6 +1952,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke. Temaerne Plastic og Klima i C-bogen er bygget
 // som kapitler (temaer/t1-1-....html og temaer/t1-1-opgaver.html) og får samme menu; "Fagord til Tema: Klima" bliver
 // til "Fagord", også i de små temaer uden opgaver (Niels 16. okt. 2026, noter/temaer-c-oprydning.md).
+//
+// Øvelser (Niels 18. okt. 2026): efter repetitionen står siden "Øvelser til kapitel 7", som bliver til "Øvelser", og
+// bagefter kapitlets øvelser (oevelser/7-5-....html). Øvelserne selv tages ud af menuen; står man på en af dem, er
+// "Øvelser" fremhævet. Kapitlernes navne mister ordet "Kapitel" ("7: Syrer og baser"), så de kan stå på én linje, og
+// delen Materialer (den fulde liste over øvelser) flyttes ned under Bilag.
 (function () {
   var EKSTRA = {
     "1": [
@@ -2019,13 +2024,26 @@ document.addEventListener("DOMContentLoaded", function () {
     var nr = (afsnit[0].textContent.trim().match(/^([AB]?\d+)\./) || [])[1];
     var rod = foerste.slice(0, foerste.search(/(kapitler|temaer)\//));
 
-    // Fagord og repetition: "Fagord til kapitel 1" bliver til "Fagord"
+    // Fagord, repetition og øvelser: "Fagord til kapitel 1" bliver til "Fagord". De enkelte øvelser tages ud.
+    var oevelsesside = null, oevelseAktiv = false;
     punkter.slice(foersteOpgave).forEach(function (p) {
       if (opgaver.indexOf(p) >= 0) return;
+      var a = p.querySelector("a.sidebar-link");
+      var href = a ? a.getAttribute("href") || "" : "";
+      if (/(^|\/)oevelser\/\d[^\/]*\.html/.test(href)) {
+        if (a.classList.contains("active")) oevelseAktiv = true;
+        p.remove();
+        return;
+      }
+      if (/(^|\/)oevelser\/kapitel-[^\/]*\.html/.test(href)) oevelsesside = a;
       p.classList.add("kapitelmenu-side");
       var t = p.querySelector("a.sidebar-link .menu-text");
       if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+[AB]?\d+$/i, "").replace(/\s+til\s+Tema:.*$/, "");
     });
+    if (oevelseAktiv && oevelsesside) {
+      oevelsesside.classList.add("active");
+      oevelsesside.setAttribute("aria-current", "page");
+    }
 
     var raekke = li("kapitelmenu-opgaver");
     var navn = document.createElement("span");
@@ -2071,6 +2089,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (p) p.classList.add("kapitelmenu-side");
       }
     });
+    // "Kapitel 7: Syrer og baser" bliver til "7: Syrer og baser" (kun i menuen; siden hedder stadig "Kapitel 7").
+    Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar li.sidebar-item-section > .sidebar-item-container .menu-text"), function (t) {
+      t.textContent = t.textContent.trim().replace(/^Kapitel\s+([AB]?\d+):/, "$1:");
+    });
+    // Materialer står sidst i menuen, under Bilag.
+    var liste = document.querySelector('#quarto-sidebar a.sidebar-link[href$="oevelser/oversigt.html"]');
+    var del = liste && liste.closest("ul.sidebar-section.depth1");
+    del = del && del.closest("li.sidebar-item-section");
+    if (del && del.parentNode) del.parentNode.appendChild(del);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
