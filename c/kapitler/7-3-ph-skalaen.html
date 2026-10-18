@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f112ceaab9d8a18e8af4658d857234d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ffbea07eab84161773e00bdba276a772.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,6 +80,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -146,6 +175,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../kapitler/0-2-saadan-laerer-du-kemi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">0.2 Sådan lærer du kemi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapitler/0-3-sikkerhed-i-laboratoriet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.3 Sikkerhed i laboratoriet</span></a>
   </div>
 </li>
       </ul>
@@ -730,12 +765,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../kapitler/8-5-korrosion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8.5 Korrosion</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../opgaver/8-1-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 8.1</span></a>
   </div>
@@ -756,12 +785,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../opgaver/8-4-opgaver.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Opgaver til 8.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../opgaver/8-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til 8.5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -988,13 +1011,108 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
- <span class="menu-text">Tema: Sundhed</span></a>
+            <a href="../temaer/metaller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema: Metaller</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-1-metaller-og-elektroner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.1 Metaller og elektroner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-2-oldtidens-metaller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.2 Oldtidens syv metaller</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-3-kobber-og-bronze.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.3 Kobber og bronze</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-4-jern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.4 Jern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-5-kviksoelv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.5 Kviksølv</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-6-rust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.6 Rust</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/tema-metaller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Metaller</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-oevelse-hvor-ruster-jernet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T3.6: Hvor ruster jernet?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Tema: Sundhed</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../temaer/sundhed-og-medicin.html" class="sidebar-item-text sidebar-link">
@@ -1005,29 +1123,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../fagord/tema-sundhed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fagord til Tema: Sundhed</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
- <span class="menu-text">Tema: Batterier</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/batterier-og-rust.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Batterier og rust</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../fagord/tema-batterier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til Tema: Batterier</span></a>
   </div>
 </li>
       </ul>
@@ -1049,14 +1144,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../oevelser/1-3a-alkalimetaller-i-vand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demoforsøg 1.3a: Alkalimetaller i vand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/1-3b-regnbueflammen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demoforsøg 1.3b: Regnbueflammen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../oevelser/1-4-sker-der-en-kemisk-reaktion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Øvelse 1.4: Sker der en kemisk reaktion?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../oevelser/1-4a-hydrogen-og-oxygen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demoforsøg 1.4a: Hvor meget oxygen skal hydrogen bruge?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../oevelser/2-1-leder-det-stroem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Øvelse 2.1: Leder det strøm?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/2-2a-jern-ii-eller-jern-iii.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demoforsøg 2.2a: Jern(II) eller jern(III)?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1075,6 +1194,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../oevelser/2-4b-bundfald-i-draaber.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Øvelse 2.4b: Bundfald i dråber</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oevelser/2-4c-rens-det-blaa-vand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 2.4c: Rens det blå vand</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1222,7 +1347,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sur-neutral-og-basisk" id="toc-sur-neutral-og-basisk" class="nav-link active" data-scroll-target="#sur-neutral-og-basisk">Sur, neutral og basisk</a></li>
   <li><a href="#ph-skalaen" id="toc-ph-skalaen" class="nav-link" data-scroll-target="#ph-skalaen">pH-skalaen</a></li>
   <li><a href="#ét-trin-er-ti-gange" id="toc-ét-trin-er-ti-gange" class="nav-link" data-scroll-target="#ét-trin-er-ti-gange">Ét trin er ti gange</a></li>
-  <li><a href="#fortynding" id="toc-fortynding" class="nav-link" data-scroll-target="#fortynding">Fortynding</a></li>
   <li><a href="#sådan-måles-ph" id="toc-sådan-måles-ph" class="nav-link" data-scroll-target="#sådan-måles-ph">Sådan måles pH</a></li>
   <li><a href="#ph-i-kroppen-og-i-naturen" id="toc-ph-i-kroppen-og-i-naturen" class="nav-link" data-scroll-target="#ph-i-kroppen-og-i-naturen">pH i kroppen og i naturen</a></li>
   </ul>
@@ -1298,20 +1422,22 @@ Figur&nbsp;1: I alle opløsninger i vand findes der både oxoniumioner og hydrox
 </section>
 <section id="ph-skalaen" class="level2">
 <h2 class="anchored" data-anchor-id="ph-skalaen">pH-skalaen</h2>
-<p><span id="ord-ph" class="fagord-anker"><strong>pH</strong></span> er et tal, der fortæller, hvor høj koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> er. Jo flere <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span>, jo lavere er <span class="fagord-peg" data-fagord="ph">pH</span>. I naturen og i hverdagen ligger <span class="fagord-peg" data-fagord="ph">pH</span> næsten altid mellem 0 og 14.</p>
-<div class="pegefigur">
+<p><span id="ord-ph" class="fagord-anker"><strong>pH</strong></span> er et tal, der fortæller, hvor høj koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> er. Det er defineret ved formlen</p>
+<p><span class="math display">\[
+\mathrm{pH} = -\log_{10}[\mathrm{H_3O^+}]
+\]</span></p>
+<p>hvor [H<sub>3</sub>O<sup>+</sup>] er den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span>, som du lærte om i <a href="../kapitler/6-2-formel-og-aktuel.html">afsnit 6.2</a>. Hvordan du regner med formlen, lærer du i <a href="../kapitler/7-4-ph-beregninger.html">afsnit 7.4</a>. Her er det nok at vide, at jo flere <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> der er, jo lavere er <span class="fagord-peg" data-fagord="ph">pH</span>. I naturen og i hverdagen ligger <span class="fagord-peg" data-fagord="ph">pH</span> næsten altid mellem 0 og 14.</p>
 <div id="fig-ph-skala" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ph-skala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/ph-skala.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: pH-skalaen med stoffer fra hverdagen og to opløsninger fra laboratoriet. Tallene er omtrentlige, og skalaen fortsætter i begge ender."><img src="../figurer/ph-skala.svg" class="img-fluid figure-img"></a>
+<a href="../figurer/ph-skala.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figur&nbsp;2: pH-skalaen med stoffer fra hverdagen og skalaens to yderpunkter. Under skalaen står koncentrationen af oxoniumioner og hydroxidioner ved hver pH. Stoffernes pH er omtrentlig."><img src="../figurer/ph-skala.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ph-skala-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;2: pH-skalaen med stoffer fra hverdagen og to opløsninger fra laboratoriet. Tallene er omtrentlige, og skalaen fortsætter i begge ender.
+Figur&nbsp;2: pH-skalaen med stoffer fra hverdagen og skalaens to yderpunkter. Under skalaen står koncentrationen af oxoniumioner og hydroxidioner ved hver pH. Stoffernes pH er omtrentlig.
 </figcaption>
 </figure>
 </div>
-</div>
-<p>Læg mærke til, at skalaen vender omvendt af, hvad man måske venter: En <em>lav</em> <span class="fagord-peg" data-fagord="ph">pH</span> betyder <em>meget</em> <span class="fagord-peg" data-fagord="syre">syre</span>.</p>
+<p>Læg mærke til, at skalaen vender omvendt af, hvad man måske venter: En <em>lav</em> <span class="fagord-peg" data-fagord="ph">pH</span> betyder <em>meget</em> <span class="fagord-peg" data-fagord="syre">syre</span>. Rækkerne under skalaen viser også, at jo flere <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> der er, jo færre <span class="fagord-peg" data-fagord="hydroxidion">hydroxidioner</span> er der, og at de to koncentrationer er lige store ved <span class="fagord-peg" data-fagord="ph">pH</span> 7. Hvorfor de hænger sådan sammen, lærer du i <a href="../kapitler/7-4-ph-beregninger.html">afsnit 7.4</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="pH kan godt være under 0">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1322,8 +1448,7 @@ Figur&nbsp;2: pH-skalaen med stoffer fra hverdagen og to opløsninger fra labora
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>pH-skalaen har ikke noget fast start og slut. En meget koncentreret <span class="fagord-peg" data-fagord="syre">syre</span> har en <span class="fagord-peg" data-fagord="ph">pH</span> under 0, og en meget koncentreret <span class="fagord-peg" data-fagord="base">base</span> har en <span class="fagord-peg" data-fagord="ph">pH</span> over 14. I laboratoriet findes der saltsyre med koncentrationen 10 M. Den har en <span class="fagord-peg" data-fagord="ph">pH</span> omkring −1. En <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af natriumhydroxid med koncentrationen 10 M har en <span class="fagord-peg" data-fagord="ph">pH</span> omkring 15.</p>
-<p>De mest koncentrerede <span class="fagord-peg" data-fagord="syre">syrer</span> og <span class="fagord-peg" data-fagord="base">baser</span> kommer endnu lidt længere ud. I praksis går <span class="fagord-peg" data-fagord="ph">pH</span> fra lidt under −1 til over 15.</p>
+<p>pH-skalaen har ikke noget fast start og slut. I praksis er yderpunkterne ved stuetemperatur koncentreret saltsyre (12 M), som har en <span class="fagord-peg" data-fagord="ph">pH</span> på ca. −1,1, mens en <span class="fagord-peg" data-fagord="mættet">mættet</span> <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af NaOH har en pH-værdi på omtrent 15,3.</p>
 </div>
 </div>
 </section>
@@ -1355,34 +1480,24 @@ Figur&nbsp;3: Fra pH 1 til pH 3 bliver der 100 gange færre oxoniumioner.
 <td style="text-align: left;">10<sup>1</sup> M</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: left;">1 M</td>
-<td style="text-align: left;">10<sup>0</sup> M</td>
-</tr>
-<tr class="odd">
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">0,1 M</td>
 <td style="text-align: left;">10<sup>−1</sup> M</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">0,01 M</td>
 <td style="text-align: left;">10<sup>−2</sup> M</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">0,001 M</td>
 <td style="text-align: left;">10<sup>−3</sup> M</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">0,0000001 M</td>
 <td style="text-align: left;">10<sup>−7</sup> M</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">14</td>
-<td style="text-align: left;">0,00000000000001 M</td>
-<td style="text-align: left;">10<sup>−14</sup> M</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">15</td>
@@ -1391,13 +1506,8 @@ Figur&nbsp;3: Fra pH 1 til pH 3 bliver der 100 gange færre oxoniumioner.
 </tr>
 </tbody>
 </table>
-<p>De kantede parenteser betyder den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span>, som du lærte i <a href="../kapitler/6-2-formel-og-aktuel.html">afsnit 6.2</a>. Sammenhængen ses tydeligst i den sidste kolonne: <span class="fagord-peg" data-fagord="ph">pH</span> er det tal, der står oppe i tierpotensen, med modsat fortegn. Derfor er <span class="fagord-peg" data-fagord="ph">pH</span> −1, når koncentrationen er 10 M.</p>
-<p>Hvert trin er 10 gange, så to trin på skalaen er 100 gange, og tre trin er 1000 gange. En <span class="fagord-peg" data-fagord="opløsning">opløsning</span> med <span class="fagord-peg" data-fagord="ph">pH</span> 2 har altså 1000 gange så mange <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> som en <span class="fagord-peg" data-fagord="opløsning">opløsning</span> med <span class="fagord-peg" data-fagord="ph">pH</span> 5.</p>
-</section>
-<section id="fortynding" class="level2">
-<h2 class="anchored" data-anchor-id="fortynding">Fortynding</h2>
-<p><span class="fagord-peg" data-fagord="fortynde">Fortyndes</span> en <span class="fagord-peg" data-fagord="sur">sur</span> <span class="fagord-peg" data-fagord="opløsning">opløsning</span> 10 gange med vand, bliver koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> 10 gange mindre, og <span class="fagord-peg" data-fagord="ph">pH</span> stiger med 1. <span class="fagord-peg" data-fagord="fortynde">Fortyndes</span> den 10 gange mere, stiger <span class="fagord-peg" data-fagord="ph">pH</span> med 1 igen.</p>
-<p>En <span class="fagord-peg" data-fagord="syre">syre</span> kan dog aldrig blive <span class="fagord-peg" data-fagord="basisk">basisk</span> af at blive <span class="fagord-peg" data-fagord="fortynde">fortyndet</span>. Jo mere vand der kommer i, jo mere ligner <span class="fagord-peg" data-fagord="opløsning">opløsningen</span> rent vand, og <span class="fagord-peg" data-fagord="ph">pH</span> nærmer sig 7 uden at komme over. På samme måde nærmer en <span class="fagord-peg" data-fagord="basisk">basisk</span> <span class="fagord-peg" data-fagord="opløsning">opløsning</span> sig <span class="fagord-peg" data-fagord="ph">pH</span> 7 oppefra, når den <span class="fagord-peg" data-fagord="fortynde">fortyndes</span>.</p>
+<p>Sammenhængen ses tydeligst i den sidste kolonne: <span class="fagord-peg" data-fagord="ph">pH</span> er det tal, der står oppe i tierpotensen, med modsat fortegn, og det er netop det, formlen <span class="fagord-peg" data-fagord="ph">pH</span> = −log₁₀[H<sub>3</sub>O<sup>+</sup>] udtrykker. Derfor er <span class="fagord-peg" data-fagord="ph">pH</span> −1, når koncentrationen er 10 M.</p>
+<p>Da hvert trin er en faktor 10, er to trin en faktor 100 og tre trin en faktor 1000, så en <span class="fagord-peg" data-fagord="opløsning">opløsning</span> med <span class="fagord-peg" data-fagord="ph">pH</span> 2 har 1000 gange så mange <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> som en <span class="fagord-peg" data-fagord="opløsning">opløsning</span> med <span class="fagord-peg" data-fagord="ph">pH</span> 5. Det samme gælder, når en <span class="fagord-peg" data-fagord="sur">sur</span> <span class="fagord-peg" data-fagord="opløsning">opløsning</span> <span class="fagord-peg" data-fagord="fortynde">fortyndes</span>: 10 gange så meget vand gør koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> 10 gange mindre, og <span class="fagord-peg" data-fagord="ph">pH</span> stiger med 1. En <span class="fagord-peg" data-fagord="syre">syre</span> bliver dog aldrig <span class="fagord-peg" data-fagord="basisk">basisk</span> af at blive <span class="fagord-peg" data-fagord="fortynde">fortyndet</span>, for jo mere vand der kommer i, jo mere ligner <span class="fagord-peg" data-fagord="opløsning">opløsningen</span> rent vand, og <span class="fagord-peg" data-fagord="ph">pH</span> nærmer sig 7 uden at komme over. En <span class="fagord-peg" data-fagord="basisk">basisk</span> <span class="fagord-peg" data-fagord="opløsning">opløsning</span> nærmer sig på samme måde <span class="fagord-peg" data-fagord="ph">pH</span> 7 oppefra.</p>
 </section>
 <section id="sådan-måles-ph" class="level2">
 <h2 class="anchored" data-anchor-id="sådan-måles-ph">Sådan måles pH</h2>
@@ -1406,20 +1516,14 @@ Figur&nbsp;3: Fra pH 1 til pH 3 bliver der 100 gange færre oxoniumioner.
 <div id="fig-indikatorer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-indikatorer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figurer/indikatorer.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;4: Fire indikatorers farve ved forskellig pH."><img src="../figurer/indikatorer.svg" class="img-fluid figure-img"></a>
+<a href="../figurer/indikatorer.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figur&nbsp;4: Fem indikatorers farve ved forskellig pH."><img src="../figurer/indikatorer.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-indikatorer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figur&nbsp;4: Fire indikatorers farve ved forskellig pH.
+Figur&nbsp;4: Fem indikatorers farve ved forskellig pH.
 </figcaption>
 </figure>
 </div>
 </div>
-<ul>
-<li><span id="ord-lakmus" class="fagord-anker"><strong>Lakmus</strong></span> er rød i <span class="fagord-peg" data-fagord="syre">syre</span> og blå i <span class="fagord-peg" data-fagord="base">base</span>.</li>
-<li><span id="ord-bromthymolblaat" class="fagord-anker"><strong>Bromthymolblåt</strong></span>, som ofte kaldes BTB, er gul i <span class="fagord-peg" data-fagord="syre">syre</span>, grøn omkring <span class="fagord-peg" data-fagord="ph">pH</span> 7 og blå i <span class="fagord-peg" data-fagord="base">base</span>.</li>
-<li><span id="ord-phenolphthalein" class="fagord-anker"><strong>Phenolphthalein</strong></span> er farveløs i <span class="fagord-peg" data-fagord="sur">sure</span> og neutrale <span class="fagord-peg" data-fagord="opløsning">opløsninger</span> og lyserød i <span class="fagord-peg" data-fagord="basisk">basiske</span>. I meget <span class="fagord-peg" data-fagord="basisk">basiske</span> <span class="fagord-peg" data-fagord="opløsning">opløsninger</span> med <span class="fagord-peg" data-fagord="ph">pH</span> over 13 bliver den farveløs igen, og i meget <span class="fagord-peg" data-fagord="sur">sure</span> <span class="fagord-peg" data-fagord="opløsning">opløsninger</span> med <span class="fagord-peg" data-fagord="ph">pH</span> under 0 bliver den rød. Den bruges til <span class="fagord-peg" data-fagord="titrering">titreringer</span>, som du kan læse om i <a href="../kapitler/7-5-syre-base-titrering.html">afsnit 7.5</a>.</li>
-<li><span id="ord-roedkaalssaft" class="fagord-anker"><strong>Rødkålssaft</strong></span> indeholder et naturligt farvestof, der skifter farve mange gange hen over skalaen.</li>
-</ul>
 <p>Universalindikatorpapir er papir med en blanding af flere <span class="fagord-peg" data-fagord="indikator">indikatorer</span>. Papiret dyppes i <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>, og farven sammenlignes med en farveskala på pakken, hvilket giver <span class="fagord-peg" data-fagord="ph">pH</span> som et helt tal.</p>
 <p>Et <span id="ord-ph-meter" class="fagord-anker"><strong>pH-meter</strong></span> måler mere præcist. Det har en elektrode, som holdes ned i <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>, og <span class="fagord-peg" data-fagord="ph">pH</span> kan aflæses med en eller to decimaler. I meget koncentrerede <span class="fagord-peg" data-fagord="syre">syrer</span> og <span class="fagord-peg" data-fagord="base">baser</span> måler et <span class="fagord-peg" data-fagord="ph-meter">pH-meter</span> dog dårligt. Det er en af grundene til, at mange pH-skalaer kun går fra 0 til 14, selv om <span class="fagord-peg" data-fagord="ph">pH</span> godt kan være både lavere og højere.</p>
 </section>
@@ -1442,7 +1546,7 @@ Figur&nbsp;4: Fire indikatorers farve ved forskellig pH.
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><span class="fagord-peg" data-fagord="ph">pH</span> fortæller, hvor høj koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> er. Jo lavere <span class="fagord-peg" data-fagord="ph">pH</span>, jo <span class="fagord-peg" data-fagord="sur">surere</span> er <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>.</li>
+<li><span class="fagord-peg" data-fagord="ph">pH</span> er defineret som <span class="fagord-peg" data-fagord="ph">pH</span> = −log₁₀[H<sub>3</sub>O<sup>+</sup>] og fortæller, hvor høj koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> er. Jo lavere <span class="fagord-peg" data-fagord="ph">pH</span>, jo <span class="fagord-peg" data-fagord="sur">surere</span> er <span class="fagord-peg" data-fagord="opløsning">opløsningen</span>.</li>
 <li>En <span class="fagord-peg" data-fagord="sur">sur</span> <span class="fagord-peg" data-fagord="opløsning">opløsning</span> har <span class="fagord-peg" data-fagord="ph">pH</span> under 7, en neutral har <span class="fagord-peg" data-fagord="ph">pH</span> 7, og en <span class="fagord-peg" data-fagord="basisk">basisk</span> har <span class="fagord-peg" data-fagord="ph">pH</span> over 7.</li>
 <li>I naturen og i hverdagen ligger <span class="fagord-peg" data-fagord="ph">pH</span> næsten altid mellem 0 og 14, men skalaen har ikke noget fast start og slut. I praksis går <span class="fagord-peg" data-fagord="ph">pH</span> fra lidt under −1 til over 15.</li>
 <li>Når <span class="fagord-peg" data-fagord="ph">pH</span> falder med 1, bliver koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> 10 gange større.</li>
@@ -1459,7 +1563,7 @@ Figur&nbsp;4: Fire indikatorers farve ved forskellig pH.
 </div>
 
 
-<script type="application/json" id="fagord-peg-data">{"aktuel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden i hver liter af de partikler, der faktisk findes i\nopløsningen. Skrives med kantede parenteser, for eksempel\n[Na<sup>+<\/sup>].","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-aktuelle-koncentration","ord":"aktuel koncentration"},"amfolyt":{"afsnit":"7.1","forklaring":"Stof, der både kan afgive og optage en hydron. Vand er et eksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-amfolyt","ord":"amfolyt"},"base":{"afsnit":"7.1","forklaring":"Stof, der kan optage en hydron. Ammoniak, NH<sub>3<\/sub>, er et\neksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-base","ord":"base"},"basisk":{"afsnit":"7.3","forklaring":"Siges om en opløsning, der har flere hydroxidioner end oxoniumioner. Den\nhar pH over 7.","maal":"../kapitler/7-3-ph-skalaen.html#ord-basisk","ord":"basisk"},"fortynde":{"afsnit":"6.1","forklaring":"At hælde mere vand i en opløsning, så koncentrationen bliver lavere.\nStofmængden er den samme før og efter.","maal":"../kapitler/6-1-koncentration.html#ord-fortyndes","ord":"fortynde"},"hydron":{"afsnit":"7.1","forklaring":"Partiklen H<sup>+<\/sup>, som flytter fra en syre til en base. Den er en\nenkelt proton uden nogen elektron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydron","ord":"hydron"},"hydroxidion":{"afsnit":"7.1","forklaring":"Partiklen OH<sup>−<\/sup>. Den er tilbage, når et vandmolekyle har\nafgivet H<sup>+<\/sup> til en base.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydroxidion","ord":"hydroxidion"},"indikator":{"afsnit":"6.3","forklaring":"Stof, der skifter farve, når alt stoffet i prøven har reageret. I en\nMohrtitrering bruges dichlorfluorescein.","maal":"../kapitler/6-3-titrering.html#ord-indikator","ord":"indikator"},"ion":{"afsnit":"2.1","forklaring":"Atom, der har afgivet eller optaget elektroner og derfor har en ladning.","maal":"../kapitler/2-1-ioner.html#ord-ion","ord":"ion"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"opløsning":{"afsnit":"6.1","forklaring":"Blanding, hvor et stof har fordelt sig jævnt i en væske. Salt, der er\nrørt ud i vand, er et eksempel.","maal":"../kapitler/6-1-koncentration.html#ord-oploesning","ord":"opløsning"},"oxoniumion":{"afsnit":"7.1","forklaring":"Partiklen H<sub>3<\/sub>O<sup>+<\/sup>. Den dannes, når et vandmolekyle\noptager en hydron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-oxoniumion","ord":"oxoniumion"},"ph":{"afsnit":"7.3","forklaring":"Tal, der fortæller, hvor høj koncentrationen af oxoniumioner er. Jo\nflere oxoniumioner, jo lavere er tallet.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph","ord":"pH"},"ph-meter":{"afsnit":"7.3","forklaring":"Apparat, der måler, hvor sur eller basisk en opløsning er. Det har en\nelektrode, som holdes ned i opløsningen.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph-meter","ord":"pH-meter"},"sur":{"afsnit":"7.3","forklaring":"Siges om en opløsning, der har flere oxoniumioner end hydroxidioner. Den\nhar pH under 7.","maal":"../kapitler/7-3-ph-skalaen.html#ord-sur","ord":"sur"},"syre":{"afsnit":"7.1","forklaring":"Stof, der kan afgive en hydron. Hydrogenchlorid, HCl, er et eksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-syre","ord":"syre"},"titrering":{"afsnit":"6.3","forklaring":"Metode til at måle, hvor meget stof en prøve indeholder. En opløsning\nmed kendt koncentration dryppes i, til alt stoffet har reageret.","maal":"../kapitler/6-3-titrering.html#ord-titrering","ord":"titrering"}}</script>
+<script type="application/json" id="fagord-peg-data">{"aktuel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden i hver liter af de partikler, der faktisk findes i\nopløsningen. Skrives med kantede parenteser, for eksempel\n[Na<sup>+<\/sup>].","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-aktuelle-koncentration","ord":"aktuel koncentration"},"amfolyt":{"afsnit":"7.1","forklaring":"Stof, der både kan afgive og optage en hydron. Vand er et eksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-amfolyt","ord":"amfolyt"},"base":{"afsnit":"7.1","forklaring":"Stof, der kan optage en hydron. Ammoniak, NH<sub>3<\/sub>, er et\neksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-base","ord":"base"},"basisk":{"afsnit":"7.3","forklaring":"Siges om en opløsning, der har flere hydroxidioner end oxoniumioner. Den\nhar pH over 7.","maal":"../kapitler/7-3-ph-skalaen.html#ord-basisk","ord":"basisk"},"fortynde":{"afsnit":"6.1","forklaring":"At hælde mere vand i en opløsning, så koncentrationen bliver lavere.\nStofmængden er den samme før og efter.","maal":"../kapitler/6-1-koncentration.html#ord-fortyndes","ord":"fortynde"},"hydron":{"afsnit":"7.1","forklaring":"Partiklen H<sup>+<\/sup>, som flytter fra en syre til en base. Den er en\nenkelt proton uden nogen elektron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydron","ord":"hydron"},"hydroxidion":{"afsnit":"7.1","forklaring":"Partiklen OH<sup>−<\/sup>. Den er tilbage, når et vandmolekyle har\nafgivet H<sup>+<\/sup> til en base.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydroxidion","ord":"hydroxidion"},"indikator":{"afsnit":"6.3","forklaring":"Stof, der skifter farve, når alt stoffet i prøven har reageret. I en\nMohrtitrering bruges dichlorfluorescein.","maal":"../kapitler/6-3-titrering.html#ord-indikator","ord":"indikator"},"ion":{"afsnit":"2.1","forklaring":"Atom, der har afgivet eller optaget elektroner og derfor har en ladning.","maal":"../kapitler/2-1-ioner.html#ord-ion","ord":"ion"},"molekyle":{"afsnit":"3.1","forklaring":"Gruppe af atomer, der holdes sammen af elektronparbindinger. Kun\nikke-metaller danner dem.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"mættet":{"afsnit":"4.4","forklaring":"Siges om et carbonhydrid med kun enkeltbindinger mellem carbonatomerne.\nDet har det største antal hydrogenatomer, som carbonatomerne kan binde.","maal":"../kapitler/4-4-alkener.html#ord-maettet","ord":"mættet"},"opløsning":{"afsnit":"6.1","forklaring":"Blanding, hvor et stof har fordelt sig jævnt i en væske. Salt, der er\nrørt ud i vand, er et eksempel.","maal":"../kapitler/6-1-koncentration.html#ord-oploesning","ord":"opløsning"},"oxoniumion":{"afsnit":"7.1","forklaring":"Partiklen H<sub>3<\/sub>O<sup>+<\/sup>. Den dannes, når et vandmolekyle\noptager en hydron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-oxoniumion","ord":"oxoniumion"},"ph":{"afsnit":"7.3","forklaring":"Tal, der fortæller, hvor høj koncentrationen af oxoniumioner er. Jo\nflere oxoniumioner, jo lavere er tallet.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph","ord":"pH"},"ph-meter":{"afsnit":"7.3","forklaring":"Apparat, der måler, hvor sur eller basisk en opløsning er. Det har en\nelektrode, som holdes ned i opløsningen.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph-meter","ord":"pH-meter"},"sur":{"afsnit":"7.3","forklaring":"Siges om en opløsning, der har flere oxoniumioner end hydroxidioner. Den\nhar pH under 7.","maal":"../kapitler/7-3-ph-skalaen.html#ord-sur","ord":"sur"},"syre":{"afsnit":"7.1","forklaring":"Stof, der kan afgive en hydron. Hydrogenchlorid, HCl, er et eksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-syre","ord":"syre"},"titrering":{"afsnit":"6.3","forklaring":"Metode til at måle, hvor meget stof en prøve indeholder. En opløsning\nmed kendt koncentration dryppes i, til alt stoffet har reageret.","maal":"../kapitler/6-3-titrering.html#ord-titrering","ord":"titrering"}}</script>
 </section>
 
 </main> <!-- /main -->
@@ -2469,9 +2573,11 @@ document.addEventListener("DOMContentLoaded", function () {
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c5.html", ikon: "animationer" }
     ],
     "6": [
+      { tekst: "Slides", sti: "slides/kapitel-6.html", ikon: "slides" },
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c6.html", ikon: "animationer" }
     ],
     "7": [
+      { tekst: "Slides", sti: "slides/kapitel-7.html", ikon: "slides" },
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c7.html", ikon: "animationer" }
     ],
     "8": [
@@ -2562,6 +2668,23 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })();
+</script>
+<script>
+// Kernestofmærkaten ("Kernestof på kemi B", "Kernestof på kemi A" eller "Supplerende stof") står i .qmd-filen lige
+// under afsnittets overskrift. Dette script flytter den op til højre for overskriften som en lille, diskret ring
+// (Niels 18. okt. 2026: "lidt mere diskret ... til højre for overskriften og ikke nedenunder"). Uden JavaScript
+// bliver den stående under overskriften. I PDF'en er den ikke med. Se noter/kernestof.md.
+document.addEventListener("DOMContentLoaded", function () {
+  var titel = document.querySelector("main h1.title") || document.querySelector("main h1");
+  if (!titel) return;
+  Array.prototype.forEach.call(document.querySelectorAll("main div.kernestofmaerke"), function (maerke) {
+    var ring = document.createElement("span");
+    ring.className = maerke.className;
+    ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+    titel.appendChild(ring);
+    maerke.parentNode.removeChild(maerke);
+  });
+});
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

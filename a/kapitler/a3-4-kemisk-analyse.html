@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f112ceaab9d8a18e8af4658d857234d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ffbea07eab84161773e00bdba276a772.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1049,7 +1049,7 @@ Figur&nbsp;1: Fem test før og efter, når testen er positiv.
 </tr>
 <tr class="even">
 <td style="text-align: left;">Tollens’ test</td>
-<td style="text-align: left;">sølvioner i basisk ammoniakvand</td>
+<td style="text-align: left;">sølv(I)ioner i basisk ammoniakvand</td>
 <td style="text-align: left;">sølvspejl på glasset</td>
 <td style="text-align: left;">aldehyd</td>
 </tr>
@@ -1106,11 +1106,11 @@ Figur&nbsp;1: Fem test før og efter, når testen er positiv.
 </section>
 <section id="tollens-test" class="level3">
 <h3 class="anchored" data-anchor-id="tollens-test">Tollens’ test</h3>
-<p>Et aldehyd bliver oxideret til carboxylsyrens ion, og sølvionerne bliver reduceret til frit sølv, som sætter sig som et spejl på glasset:</p>
+<p>Et aldehyd bliver oxideret til carboxylsyrens ion, og sølv(I)ionerne bliver reduceret til frit sølv, som sætter sig som et spejl på glasset:</p>
 <div class="reaktion">
 <p>R−CHO + 2 Ag<sup>+</sup> + 3 OH<sup>−</sup> → R−COO<sup>−</sup> + 2 Ag(s) + 2 H<sub>2</sub>O</p>
 </div>
-<p>Reaktionen er en redoxreaktion. Carbonatomet i aldehydgruppen stiger fra +I til +III, og hver sølvion falder fra +I til 0. En keton kan ikke oxideres på den måde og giver ikke noget sølvspejl.</p>
+<p>Reaktionen er en redoxreaktion. Carbonatomet i aldehydgruppen stiger fra +I til +III, og hver sølv(I)ion falder fra +I til 0. En keton kan ikke oxideres på den måde og giver ikke noget sølvspejl.</p>
 </section>
 <section id="fehlings-test" class="level3">
 <h3 class="anchored" data-anchor-id="fehlings-test">Fehlings test</h3>
@@ -1166,7 +1166,7 @@ Figur&nbsp;2: Geraniol og citral har samme carbonskelet.
 <p><span id="ord-trin-3-testen" class="fagord-anker"><strong>Trin 3: testen</strong></span></p>
 <p>Tollens’ test påviser aldehyder.</p>
 <p><span id="ord-trin-4-det-man-ser" class="fagord-anker"><strong>Trin 4: det, man ser</strong></span></p>
-<p>Med citral dannes der et sølvspejl på glasset, fordi aldehydgruppen bliver oxideret til en carboxylatgruppe, mens sølvionerne bliver reduceret til sølv. Med geraniol sker der ingenting, fordi geraniol ikke har nogen aldehydgruppe.</p>
+<p>Med citral dannes der et sølvspejl på glasset, fordi aldehydgruppen bliver oxideret til en carboxylatgruppe, mens sølv(I)ionerne bliver reduceret til sølv. Med geraniol sker der ingenting, fordi geraniol ikke har nogen aldehydgruppe.</p>
 <p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion</strong></span></p>
 <p>Tollens’ test kan skelne mellem de to stoffer. DNPH kan også bruges: citral giver et gult bundfald, og geraniol giver intet.</p>
 </div>
@@ -2111,9 +2111,11 @@ document.addEventListener("DOMContentLoaded", function () {
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c5.html", ikon: "animationer" }
     ],
     "6": [
+      { tekst: "Slides", sti: "slides/kapitel-6.html", ikon: "slides" },
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c6.html", ikon: "animationer" }
     ],
     "7": [
+      { tekst: "Slides", sti: "slides/kapitel-7.html", ikon: "slides" },
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c7.html", ikon: "animationer" }
     ],
     "8": [
@@ -2204,6 +2206,23 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })();
+</script>
+<script>
+// Kernestofmærkaten ("Kernestof på kemi B", "Kernestof på kemi A" eller "Supplerende stof") står i .qmd-filen lige
+// under afsnittets overskrift. Dette script flytter den op til højre for overskriften som en lille, diskret ring
+// (Niels 18. okt. 2026: "lidt mere diskret ... til højre for overskriften og ikke nedenunder"). Uden JavaScript
+// bliver den stående under overskriften. I PDF'en er den ikke med. Se noter/kernestof.md.
+document.addEventListener("DOMContentLoaded", function () {
+  var titel = document.querySelector("main h1.title") || document.querySelector("main h1");
+  if (!titel) return;
+  Array.prototype.forEach.call(document.querySelectorAll("main div.kernestofmaerke"), function (maerke) {
+    var ring = document.createElement("span");
+    ring.className = maerke.className;
+    ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+    titel.appendChild(ring);
+    maerke.parentNode.removeChild(maerke);
+  });
+});
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
