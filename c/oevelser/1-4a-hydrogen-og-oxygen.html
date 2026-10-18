@@ -47,7 +47,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-53255b082ff067ddd004cd758e1f9a98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ef8d3709b93ebba7326c36240e53fb22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -1646,11 +1649,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="fremgangsmåde" class="level2">
 <h2 class="anchored" data-anchor-id="fremgangsmåde">Fremgangsmåde</h2>
+<div id="fig-oevelse-knaldgas" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-oevelse-knaldgas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figurer/oevelse-knaldgas.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figur&nbsp;1: Øverst ses de fire glas med hydrogen og oxygen i tre lige store dele. Nederst fyldes et glas med gas over vand, lukkes med en prop under vandet og holdes med mundingen nedad ved flammen."><img src="../figurer/oevelse-knaldgas.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oevelse-knaldgas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;1: Øverst ses de fire glas med hydrogen og oxygen i tre lige store dele. Nederst fyldes et glas med gas over vand, lukkes med en prop under vandet og holdes med mundingen nedad ved flammen.
+</figcaption>
+</figure>
+</div>
 <ol type="1">
-<li>Gæt først: I hvilket glas bliver knaldet kraftigst? Brug reaktionsskemaet 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O, og sæt et kryds i skemaet.</li>
+<li>Gæt først: I hvilket glas bliver knaldet kraftigst? Se de fire glas øverst i figur 1, brug reaktionsskemaet 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O, og sæt et kryds i skemaet.</li>
 <li>Læreren fylder glassene med vand og vender dem med mundingen nedad i baljen.</li>
-<li>Læreren leder hydrogen og oxygen ind i glassene, så de får de mængder, der står i skemaet, sætter en prop i under vandet og lukker flaskernes ventiler.</li>
-<li>Læreren tænder brænderen, holder et glas med mundingen nedad, tager proppen ud og fører mundingen hen til flammen. Glas 4 bliver i stedet testet med en glødende træspån.</li>
+<li>Læreren leder først hydrogen og så oxygen ind i glassene, så de får de mængder, der står i skemaet, sætter en prop i under vandet og lukker flaskernes ventiler (figur 1).</li>
+<li>Læreren tænder brænderen, holder et glas med mundingen nedad, tager proppen ud og fører mundingen hen til flammen (figur 1). Glas 4 bliver i stedet testet med en glødende træspån.</li>
 <li>Se på glassene indvendigt, når alle fire er testet.</li>
 </ol>
 </section>
@@ -3286,6 +3299,38 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
