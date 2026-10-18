@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modulplaner kapitel 7</title>
+<style>
+/* Layout: én plan ad gangen (kort eller lang); hvert modul er et A4-ark med tidslinje til venstre og indhold til højre. */
+:root {
+  --bord: #e6ecea;
+  --ark: #ffffff;
+  --blæk: #14201f;
+  --dæmpet: #55635f;
+  --streg: #d3dcd9;
+  --accent: #0f766e;
+  --accent-svag: #e3f1ef;
+  --på-accent: #ffffff;
+  --tavle: #1d4ed8;  --tavle-bg: #e7eefc;
+  --par: #0f766e;    --par-bg: #e3f1ef;
+  --lab: #b45309;    --lab-bg: #fbefe1;
+  --klasse: #7c3aed; --klasse-bg: #f0eafd;
+  --start: #4b5563;  --start-bg: #eceff1;
+  --fokus-bg: #f6f8f7;
+  --skrift: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bord: #0e1514; --ark: #172120; --blæk: #e4ecea; --dæmpet: #9fb0ab; --streg: #2c3a38;
+  --accent: #4fc2b5; --accent-svag: #1b3532; --på-accent: #0e1514;
+  --tavle: #8fb0ff; --tavle-bg: #1d2a47; --par: #4fc2b5; --par-bg: #1b3532;
+  --lab: #f0a95a; --lab-bg: #3a2a17; --klasse: #c4a6ff; --klasse-bg: #2c2342;
+  --start: #c3ccd0; --start-bg: #263130; --fokus-bg: #1c2827;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bord); color: var(--blæk);
+  font: 15px/1.5 var(--skrift);
+  padding-inline: 16px; padding-block: 24px 48px;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.side { max-width: 210mm; margin: 0 auto; display: grid; gap: 24px; }
+
+/* Forside */
+.forside { padding-block: 8px; display: grid; gap: 12px; }
+.forside h1 { margin: 0; font-size: 1.75rem; line-height: 1.2; text-wrap: balance; }
+.forside p { margin: 0; max-width: 65ch; color: var(--dæmpet); }
+.skifter {
+  display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; justify-self: start;
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 10px;
+}
+.skifter button {
+  font: inherit; cursor: pointer; border: 0; border-radius: 7px; padding: 8px 16px;
+  background: transparent; color: var(--blæk); display: grid; text-align: left; gap: 0;
+}
+.skifter button span { font-size: .8rem; color: var(--dæmpet); }
+.skifter button[aria-pressed="true"] { background: var(--accent); color: var(--på-accent); }
+.skifter button[aria-pressed="true"] span { color: var(--på-accent); opacity: .85; }
+.materialer { margin: 0; font-size: .9rem; max-width: 65ch; }
+.signatur { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .8rem; color: var(--dæmpet); align-items: center; }
+
+.plan { display: grid; gap: 24px; }
+
+/* Arket */
+.modul {
+  background: var(--ark); border: 1px solid var(--streg); border-radius: 6px;
+  padding: 28px 32px; display: grid; gap: 18px;
+}
+.modul > header { display: grid; gap: 4px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+.øverst { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.etiket { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.modul h3 { margin: 0; font-size: 1.4rem; line-height: 1.25; text-wrap: balance; }
+.afsnit { font-size: .85rem; color: var(--dæmpet); }
+
+.før { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: .88rem; }
+.før > div { min-width: 0; }
+.før h4, .fokus h4, .bagefter h4 {
+  margin: 0 0 2px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600;
+}
+.før p, .før ul { margin: 0; }
+.før ul { padding-left: 1.1em; }
+
+/* Tidslinje */
+.forløb { list-style: none; margin: 0; padding: 0; display: grid; }
+.forløb li {
+  display: grid; grid-template-columns: 74px 1fr; gap: 16px;
+  padding-block: 10px; border-top: 1px solid var(--streg);
+}
+.forløb li:first-child { border-top: 0; padding-top: 0; }
+.tid { font-variant-numeric: tabular-nums; display: grid; align-content: start; }
+.tid b { font-size: 1.15rem; line-height: 1.1; }
+.tid span { font-size: .75rem; color: var(--dæmpet); }
+.trin { min-width: 0; display: grid; gap: 3px; }
+.trin-hoved { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.trin-hoved strong { font-size: 1rem; }
+.form { font-size: .7rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; }
+.form.tavle { color: var(--tavle); background: var(--tavle-bg); }
+.form.par { color: var(--par); background: var(--par-bg); }
+.form.lab { color: var(--lab); background: var(--lab-bg); }
+.form.klasse { color: var(--klasse); background: var(--klasse-bg); }
+.form.start { color: var(--start); background: var(--start-bg); }
+.trin p { margin: 0; font-size: .9rem; }
+.trin .ekstra { color: var(--dæmpet); font-size: .84rem; }
+.ord { font-weight: 600; }
+
+.fokus { background: var(--fokus-bg); border-radius: 6px; padding: 12px 16px; display: grid; gap: 6px; }
+.fokus ul { margin: 0; padding-left: 1.1em; font-size: .88rem; display: grid; gap: 2px; }
+.fokus p { margin: 0; font-size: .88rem; }
+
+.bagefter { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; font-size: .88rem; }
+.bagefter > div { min-width: 0; }
+.bagefter p { margin: 0; }
+
+@media (max-width: 640px) {
+  .modul { padding: 20px 16px; }
+  .før { grid-template-columns: 1fr; }
+  .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
+}
+
+@page { size: A4; margin: 12mm; }
+@media print {
+  body { background: #fff; padding: 0; font-size: 10.5pt; }
+  .forside { display: none; }
+  .side, .plan { gap: 0; max-width: none; }
+  .modul { border: 0; padding: 0; gap: 4mm; break-after: page; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<main class="side">
+
+<section class="forside">
+  <span class="etiket"><a href="https://kemibogen.dk/c/" style="color: inherit; text-decoration: none;">Kemibogen C</a> · lærerens udgave</span>
+  <h1>Modulplaner til kapitel 7: Syrer og baser</h1>
+  <p>Vælg den plan, der passer til holdet. Hvert modul er 90 minutter og fylder ét ark. Tiderne er et forslag: spring et punkt over eller brug mere tid, når klassen har brug for det. Begge planer har de to demoforsøg med ammoniak og øvelserne med rødkål og pH-meter, og titreringen foregår på to hold: det ene hold titrerer, mens det andet regner opgaver, og midt i modulet bytter de. Den korte plan slutter med citronsyre i citroner i den åbne udgave. Den lange plan er tænkt til et hold, der har brug for mere hjælp: pH-beregningerne får mere tid, titreringen regnes igennem på papir først, og holdet indstiller selv natriumhydroxiden med benzoesyre, før det titrerer eddike i trin for trin-udgaven.</p>
+  <div class="skifter" role="group" aria-label="Vælg plan">
+    <button type="button" id="knap-kort" data-plan="kort" aria-pressed="true">Kort · 5 moduler<span>Højt tempo og øvelse 7.5c</span></button>
+    <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 7 moduler<span>Indstilling og øvelse 7.5a og 7.5b</span></button>
+  </div>
+  <p class="materialer">
+    <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-7-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 35 sider).</span>
+    <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-7-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 42 sider).</span>
+    Du kan også sætte dit eget kompendium sammen på <a href="https://kemiformler.dk/kompendier/" target="_blank">Byg dit kompendium</a>.
+  </p>
+  <div class="signatur">
+    <span><span class="form start">Start</span> fravær og repetition</span>
+    <span><span class="form tavle">Tavle</span> læreren styrer</span>
+    <span><span class="form par">Par</span> eleverne arbejder</span>
+    <span><span class="form lab">Lab</span> laboratoriet</span>
+    <span><span class="form klasse">Klassen</span> fælles aktivitet</span>
+  </div>
+</section>
+
+<!-- ============================ KORT ============================ -->
+<div class="plan" id="kort">
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · kort plan · modul 1 af 5</span><span class="afsnit">Afsnit 7.1 og demoforsøg 7.1a · 90 min</span></div>
+    <h3>Syrer og baser</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen, eller læs <a href="https://kemibogen.dk/c/kapitler/7-1-syrer-og-baser.html">7.1 Syrer og baser</a> til og med "En base optager en hydron".</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-7-kort.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-7.html#/2" target="_blank">Slides 2–9</a></li><li><a href="https://kemibogen.dk/c/oevelser/7-1a-saltsyre-moeder-ammoniak.html">Demoforsøg 7.1a Saltsyre møder ammoniak</a> med udstyret fra vejledningen og et stinkskab</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.1_syrebasereaktioner/index.html">Syre/base-reaktioner</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 2 og 3: <span class="ord">ion, frit elektronpar, prikformel</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn prikformlen for vand og for ammoniak, og sæt en ring om de frie elektronpar.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hydronen flytter</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/2" target="_blank">Slides 2–6</a>: hydronen, syren afgiver, formlen og ladningen, basen optager, og hvem er syren?</p>
+        <p class="ekstra">Klassen svarer højt på slide 4 og 6, før du klikker.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>30–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Saltsyre møder ammoniak</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-1a-saltsyre-moeder-ammoniak.html">Demoforsøg 7.1a Saltsyre møder ammoniak</a>. Eleverne skriver deres gæt i kompendiet, før du viser vattotterne og bægerglasset.</p>
+        <p class="ekstra">Stinkskab eller punktudsug, briller og handsker. Bægerglasset står 5 minutter.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>45–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Syre/base-par og amfolyt</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/7" target="_blank">Slides 7–9</a>: korresponderende syre/base-par, find den anden i parret, og vand er en amfolyt.</p>
+        <p class="ekstra">Løft bægerglasset fra demoforsøget undervejs, og lad klassen se på indersiden.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Find syren og basen</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-1-opgaver.html#7.1.2">Opgave 7.1.2, 7.1.4 og 7.1.6</a> og efterbehandlingen af demoforsøget i kompendiet.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc7.1_syrebasereaktioner/index.html#produkter">Syre/base-reaktioner</a>, fanen Produkterne.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad en syre og en base er, ud fra hydronen</li>
+      <li>finde syren og basen i en reaktion og skrive produkterne</li>
+      <li>finde den korresponderende base til en syre og forklare, at vand er en amfolyt</li>
+    </ul>
+    <p><b>Centrale fagord:</b> hydron, syre, base, oxoniumion, hydroxidion, syre/base-reaktion, korresponderende syre/base-par, amfolyt</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-1-syrer-og-baser.html">7.1 Syrer og baser</a>, og regn opgave 7.1.7.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Slide 9 kan nøjes med en sætning. Efterbehandlingen af demoforsøget kan blive lektie.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · kort plan · modul 2 af 5</span><span class="afsnit">Afsnit 7.2 og demoforsøg 7.1b · 90 min</span></div>
+    <h3>Stærke og svage syrer</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-1-syrer-og-baser.html">7.1 Syrer og baser</a>, og regn opgave 7.1.7.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/10" target="_blank">Slides 10–17</a></li><li><a href="https://kemibogen.dk/c/oevelser/7-1b-kolben-med-ammoniak.html">Demoforsøg 7.1b Kolben med ammoniak</a> med udstyret fra vejledningen. Kolben fyldes med ammoniak i stinkskabet lige før modulet</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.1_syrebasereaktioner/index.html">Syre/base-reaktioner</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">hydron, korresponderende syre/base-par, amfolyt</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv reaktionsskemaet for ammoniak og vand. Hvilket stof er syren?</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Kolben med ammoniak</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-1b-kolben-med-ammoniak.html">Demoforsøg 7.1b Kolben med ammoniak</a>. Eleverne skriver deres gæt, før du trykker vandet ind i kolben. Spørg bagefter: Hvilken ion gør vandet lyserødt?</p>
+        <p class="ekstra">Kun en rundkolbe uden ridser.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>25–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Stærk eller svag?</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/10" target="_blank">Slides 10–13</a>: stærk syre, svag syre, de almindelige syrer og baser, og stærk eller koncentreret?</p>
+        <p class="ekstra">Klassen svarer højt på slide 12 og 13, før du klikker. Stærk og koncentreret er det, eleverne oftest blander sammen.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>45–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Den rigtige pil</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-2-opgaver.html#7.2.2">Opgave 7.2.2, 7.2.3 og 7.2.5</a>. Stop klassen, hvis mange bruger dobbeltpil ved en stærk syre.</p>
+        <p class="ekstra">Hurtige par: 7.2.mad.1 bagest i kompendiet.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>65–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Neutralisation og kalk</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/14" target="_blank">Slides 14–17</a>: neutralisation, og hvorfor kalk bruser i syre. Derefter <a href="https://kemibogen.dk/c/opgaver/7-2-opgaver.html#7.2.6">opgave 7.2.6 og 7.2.8</a>.</p>
+        <p class="ekstra">På slide 15 gætter klassen, hvorfor det bruser, før trinene kommer frem.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare forskellen på en stærk og en svag syre og vælge enkeltpil eller dobbeltpil</li>
+      <li>kende de almindelige stærke og svage syrer og baser og kende forskel på stærk og koncentreret</li>
+      <li>skrive en neutralisation og forklare, hvorfor kalk bruser i syre</li>
+    </ul>
+    <p><b>Centrale fagord:</b> stærk syre, svag syre, stærk base, svag base, neutralisation</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-2-staerke-og-svage-syrer.html">7.2 Stærke og svage syrer</a>, og regn opgave 7.2.7. Læs fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/7-3-roedkaal-som-indikator.html">Øvelse 7.3 Rødkål som indikator</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Slide 16 og 17 kan vente: eleverne kan klikke sig gennem kalk i syre trin for trin i afsnit 7.2.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · kort plan · modul 3 af 5</span><span class="afsnit">Afsnit 7.3 og øvelse 7.3 · 90 min</span></div>
+    <h3>pH-skalaen og rødkål</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-2-staerke-og-svage-syrer.html">7.2 Stærke og svage syrer</a>, regn opgave 7.2.7, og læs fremgangsmåden i øvelse 7.3.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/18" target="_blank">Slides 18–24</a></li><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/7-3-roedkaal-som-indikator.html">Øvelse 7.3 Rødkål som indikator</a> med udstyr til hvert par (se vejledningen)</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.2_ph_skalaen/index.html">pH-skalaen</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">stærk syre, svag syre, neutralisation</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Sæt saltsyre, eddikesyre, natriumhydroxid og ammoniak i fire bokse: stærk syre, svag syre, stærk base og svag base.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>pH-skalaen</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/18" target="_blank">Slides 18–24</a>: sur, neutral og basisk, pH, pH-skalaen, ét trin er ti gange, fortynding og indikatorer.</p>
+        <p class="ekstra">Klassen svarer højt på slide 22 og 23, før du klikker. Indikatorerne på slide 24 bruges i øvelsen bagefter.</p></div></li>
+    <li><div class="tid"><b>40 min</b><span>35–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Rødkål som indikator</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-3-roedkaal-som-indikator.html">Øvelse 7.3 Rødkål som indikator</a>. Parrene laver en farveskala med fem opløsninger, hvor pH er kendt, og finder pH i syv stoffer fra hverdagen.</p>
+        <p class="ekstra">Briller. Er der travlt, så lav rødkålssaften før modulet (trin 2). Natriumhydroxid skader øjnene, også fortyndet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Ti gange for hvert trin</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-3-opgaver.html#7.3.3">Opgave 7.3.3 og 7.3.4</a>.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc7.2_ph_skalaen/index.html#lup">pH-skalaen</a>, fanen Luppen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>afgøre, om en opløsning er sur, neutral eller basisk, ud fra pH</li>
+      <li>bruge, at koncentrationen af oxoniumioner bliver 10 gange større, når pH falder med 1</li>
+      <li>forklare, at en syre ikke bliver basisk, når den fortyndes</li>
+      <li>bestemme pH med en indikator</li>
+    </ul>
+    <p><b>Centrale fagord:</b> sur, neutral, basisk, pH, syre/base-indikator, pH-meter</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 7.3 og opgave 7.3.5. Læs <a href="https://kemibogen.dk/c/kapitler/7-4-ph-beregninger.html">7.4 pH-beregninger</a> til og med "pH i en stærk syre".</p></div>
+    <div><h4>Uden laboratorium</h4><p>Lav farveskalaen med rødkålssaft som demo (15 min), og lad klassen gætte pH i tre stoffer fra hverdagen, før du hælder saften i. Eller brug <a href="https://kemiformler.dk/animationer/superanimationer/sc7.2_ph_skalaen/index.html">pH-skalaen</a>, fanen pH-skalaen (20 min).</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · kort plan · modul 4 af 5</span><span class="afsnit">Afsnit 7.4 og øvelse 7.4 · 90 min</span></div>
+    <h3>pH-beregninger og pH-meteret</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Efterbehandlingen af øvelse 7.3 og opgave 7.3.5. Læs <a href="https://kemibogen.dk/c/kapitler/7-4-ph-beregninger.html">7.4 pH-beregninger</a> til og med "pH i en stærk syre".</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/25" target="_blank">Slides 25–31</a></li><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/7-4-hvor-surt-er-det.html">Øvelse 7.4 Hvor surt er det?</a> med pH-metre, som er kalibreret før modulet, og lommeregnere med log og 10<sup>x</sup></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.3_ph_beregninger/index.html">pH-beregninger</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">pH, syre/base-indikator, pH-meter</span>.</p>
+        <p class="ekstra">Mens du tager fravær: En opløsning har pH 3, og en anden har pH 5. Hvilken har flest oxoniumioner, og hvor mange gange flere?</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra koncentration til pH og tilbage</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/25" target="_blank">Slides 25–27</a>: pH ud fra koncentrationen, koncentrationen ud fra pH og pH i en stærk syre.</p>
+        <p class="ekstra">Tjek, at alle kan finde log og 10<sup>x</sup> på lommeregneren. Slide 26 viser, hvad 5,0E−5 betyder.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>25–40</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Regn selv</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-4-opgaver.html#7.4.1">Opgave 7.4.1 og 7.4.2</a>.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc7.3_ph_beregninger/index.html#konc">pH-beregninger</a>, fanen Find koncentrationen.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>40–65</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvor surt er det?</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-4-hvor-surt-er-det.html">Øvelse 7.4 Hvor surt er det?</a>. Parrene gætter og måler pH i syv væsker.</p>
+        <p class="ekstra">Har I få pH-metre, så lad parrene gå rundt til væskerne. Beregningerne af [H₃O⁺] er lektie.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>65–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Baser og vands ionprodukt</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/28" target="_blank">Slides 28–31</a>: vands ionprodukt, regnevejen, pH i natriumhydroxid og eddikesyre som svag syre. Derefter <a href="https://kemibogen.dk/c/opgaver/7-4-opgaver.html#7.4.6">opgave 7.4.6</a>.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>beregne pH ud fra [H₃O⁺] og [H₃O⁺] ud fra pH, også i en stærk syre</li>
+      <li>beregne pH i en stærk base med vands ionprodukt</li>
+      <li>måle pH med et pH-meter</li>
+    </ul>
+    <p><b>Centrale fagord:</b> vands ionprodukt, pH-meter</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 7.4 og opgave 7.4.3. Læs <a href="https://kemibogen.dk/c/kapitler/7-5-syre-base-titrering.html">7.5 Syre/base-titrering</a> og fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/7-5c-citronsyre-i-citroner.html">Øvelse 7.5c Citronsyre i citroner</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Mål pH i tre af væskerne med ét pH-meter under dokumentkameraet (10 min), og giv klassen tallene for de andre fire.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · kort plan · modul 5 af 5</span><span class="afsnit">Afsnit 7.5 og øvelse 7.5c · 90 min</span></div>
+    <h3>Citronsyre i citroner</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Efterbehandlingen af øvelse 7.4 og opgave 7.4.3. Læs <a href="https://kemibogen.dk/c/kapitler/7-5-syre-base-titrering.html">7.5 Syre/base-titrering</a> og fremgangsmåden i øvelse 7.5c.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/32" target="_blank">Slides 32–37</a></li><li>Laboratoriet booket hele modulet og klassen delt i hold A og B</li><li><a href="https://kemibogen.dk/c/oevelser/7-5c-citronsyre-i-citroner.html">Øvelse 7.5c Citronsyre i citroner</a>, den åbne udgave, med udstyr til halvdelen af klassen og en citron til hvert par</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.4_titrering_eddike/index.html">Titrering af eddike</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 6: <span class="ord">burette, indikator, omslag</span>. Sig, hvem der er på hold A og hold B.</p>
+        <p class="ekstra">Mens du tager fravær: Skriv reaktionsskemaet for eddikesyre og hydroxid. Hvorfor er forholdet 1 : 1?</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Titrering af en syre</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/32" target="_blank">Slides 32–37</a>: titrering af eddike, den lyserøde sky, titrerkurven, beregningen af masseprocenten og hvad fejl betyder. Slut med, at citronsyre kan afgive tre hydroner, så forholdet i øvelsen er 1 : 3.</p>
+        <p class="ekstra">Klassen svarer højt på slide 33 og 37, før du klikker.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>30–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hold A titrerer, hold B regner</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold A laver øvelse 7.5c i par. Hold B regner <a href="https://kemibogen.dk/c/opgaver/7-5-opgaver.html#7.5.5">opgave 7.5.5, 7.5.6, 7.5.8 og 7.5.mad.3</a>. Den sidste handler om citronsyre i surt slik og bruger også forholdet 1 : 3.</p>
+        <p class="ekstra">Briller. Omslaget kommer mere gradvist end med eddike, så parrene skal dryppe langsomt til sidst.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Holdene bytter</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold B titrerer, og hold A regner de samme opgaver.</p>
+        <p class="ekstra">De sidste 5 minutter rydder hold B op.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad der sker ved ækvivalenspunktet, og hvorfor indikatoren skifter farve</li>
+      <li>beregne masseprocenten af en syre ud fra forbruget af natriumhydroxid</li>
+      <li>bruge forholdet 1 : 3 mellem citronsyre og hydroxid</li>
+      <li>forklare, om en fejl gør resultatet for højt eller for lavt</li>
+    </ul>
+    <p><b>Centrale fagord:</b> ækvivalenspunkt, phenolphthalein, omslag, titrerkurve</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 7.5c og <a href="https://kemibogen.dk/c/repetition/kapitel-7.html#oeveproeve">øveprøven</a> på repetitionssiden.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Titrér saften fra én citron som demo (15 min), og giv klassen forbruget. Eller lad eleverne titrere i <a href="https://kemiformler.dk/animationer/superanimationer/sc7.4_titrering_eddike/index.html">Titrering af eddike</a> (20 min).</p></div>
+    <div><h4>Med et modul mere</h4><p>Lav <a href="https://kemibogen.dk/c/oevelser/7-5a-indstilling-af-natriumhydroxid.html">Øvelse 7.5a Indstilling af natriumhydroxid</a> før citronerne, så eleverne regner med deres egen koncentration af natriumhydroxid.</p></div>
+  </div>
+</article>
+
+</div>
+
+<!-- ============================ LANG ============================ -->
+<div class="plan" id="lang" hidden>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · lang plan · modul 1 af 7</span><span class="afsnit">Afsnit 7.1 og demoforsøg 7.1a · 90 min</span></div>
+    <h3>Syrer og baser</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Ingen.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-7-lang.pdf" target="_blank">Kompendiet</a> til hele forløbet (bogens opgavenumre står med gråt)</li><li><a class="sl" href="../slides/kapitel-7.html#/2" target="_blank">Slides 2–9</a></li><li><a href="https://kemibogen.dk/c/oevelser/7-1a-saltsyre-moeder-ammoniak.html">Demoforsøg 7.1a Saltsyre møder ammoniak</a> med udstyret fra vejledningen og et stinkskab</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.1_syrebasereaktioner/index.html">Syre/base-reaktioner</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra kapitel 2 og 3: <span class="ord">ion, frit elektronpar, prikformel</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Tegn prikformlen for vand og for ammoniak, og sæt en ring om de frie elektronpar.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Syren afgiver, basen optager</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/2" target="_blank">Slides 2–6</a>: hydronen, saltsyre og vand, formlen og ladningen, ammoniak og vand, og hvem er syren?</p>
+        <p class="ekstra">Skriv tabellen fra slide 4 på tavlen, og lad den stå. Klassen siger syren og basen højt på slide 6.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>30–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>De vigtigste ord</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-1-opgaver.html#7.1.1">Opgave 7.1.1 og 7.1.2</a>. Stop klassen efter 7.1.2 a, og gennemgå den på tavlen.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>45–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Saltsyre møder ammoniak</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-1a-saltsyre-moeder-ammoniak.html">Demoforsøg 7.1a Saltsyre møder ammoniak</a>. Eleverne skriver deres gæt i kompendiet, før du viser vattotterne og bægerglasset.</p>
+        <p class="ekstra">Stinkskab eller punktudsug, briller og handsker.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Fra syre til base</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/7" target="_blank">Slides 7–9</a>: korresponderende syre/base-par og amfolyt. Derefter <a href="https://kemibogen.dk/c/opgaver/7-1-opgaver.html#7.1.4">opgave 7.1.4</a> og efterbehandlingen af demoforsøget.</p>
+        <p class="ekstra">På slide 8 skriver eleverne svaret i kompendiet, før du klikker.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvad en syre og en base er, ud fra hydronen</li>
+      <li>finde syren og basen i en reaktion og skrive produkterne</li>
+      <li>finde den korresponderende base til en syre og omvendt</li>
+    </ul>
+    <p><b>Centrale fagord:</b> hydron, syre, base, oxoniumion, hydroxidion, syre/base-reaktion, korresponderende syre/base-par, amfolyt</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-1-syrer-og-baser.html">7.1 Syrer og baser</a>, og regn opgave 7.1.3 og 7.1.5.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Efterbehandlingen af demoforsøget kan blive lektie, men selve forsøget skal nås.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · lang plan · modul 2 af 7</span><span class="afsnit">Afsnit 7.2 og demoforsøg 7.1b · 90 min</span></div>
+    <h3>Stærke og svage syrer</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-1-syrer-og-baser.html">7.1 Syrer og baser</a>, og regn opgave 7.1.3 og 7.1.5.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/10" target="_blank">Slides 10–14</a></li><li><a href="https://kemibogen.dk/c/oevelser/7-1b-kolben-med-ammoniak.html">Demoforsøg 7.1b Kolben med ammoniak</a> med udstyret fra vejledningen. Kolben fyldes med ammoniak i stinkskabet lige før modulet</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">syre, base, hydron, korresponderende syre/base-par</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Opgave 7.1.6 i kompendiet.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Kolben med ammoniak</strong><span class="form klasse">Klassen</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-1b-kolben-med-ammoniak.html">Demoforsøg 7.1b Kolben med ammoniak</a>. Eleverne skriver deres gæt, før du trykker vandet ind i kolben. Spørg bagefter: Hvilken ion gør vandet lyserødt?</p>
+        <p class="ekstra">Kun en rundkolbe uden ridser.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>25–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Stærk og svag</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/10" target="_blank">Slides 10–12</a>: stærk syre, svag syre og de almindelige syrer og baser.</p>
+        <p class="ekstra">Klassen svarer højt på slide 12.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>45–60</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Tegn glasset</strong><span class="form par">Par</span></div>
+        <p>Parrene tegner to glas på mikroniveau med 10 molekyler hydrogenchlorid og 10 molekyler eddikesyre i vand og sammenligner med figurerne i afsnit 7.2.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Stærk eller koncentreret?</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/13" target="_blank">Slides 13–14</a>: stærk eller koncentreret, og neutralisation. Derefter <a href="https://kemibogen.dk/c/opgaver/7-2-opgaver.html#7.2.2">opgave 7.2.2, 7.2.3 og 7.2.5</a>.</p>
+        <p class="ekstra">Klassen svarer på slide 13, før du klikker. Hurtige par: 7.2.7 bagest i kompendiet.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare forskellen på en stærk og en svag syre og vælge enkeltpil eller dobbeltpil</li>
+      <li>kende de almindelige stærke og svage syrer og baser og kende forskel på stærk og koncentreret</li>
+      <li>skrive en neutralisation</li>
+    </ul>
+    <p><b>Centrale fagord:</b> stærk syre, svag syre, stærk base, svag base, neutralisation</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-2-staerke-og-svage-syrer.html">7.2 Stærke og svage syrer</a> til og med "Neutralisation", og regn opgave 7.2.6. Læs fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/7-3-roedkaal-som-indikator.html">Øvelse 7.3 Rødkål som indikator</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Tegningerne kan laves hjemme. Slide 14 om neutralisation kan vente til næste modul.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · lang plan · modul 3 af 7</span><span class="afsnit">Afsnit 7.2 og 7.3 og øvelse 7.3 · 90 min</span></div>
+    <h3>pH-skalaen og rødkål</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-2-staerke-og-svage-syrer.html">7.2 Stærke og svage syrer</a> til og med "Neutralisation", regn opgave 7.2.6, og læs fremgangsmåden i øvelse 7.3.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/15" target="_blank">Slides 15–24</a></li><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/7-3-roedkaal-som-indikator.html">Øvelse 7.3 Rødkål som indikator</a> med udstyr til hvert par (se vejledningen)</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.2_ph_skalaen/index.html">pH-skalaen</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">stærk syre, svag syre, neutralisation</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Sæt saltsyre, eddikesyre, natriumhydroxid og ammoniak i fire bokse: stærk syre, svag syre, stærk base og svag base.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvorfor bruser kalk?</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/15" target="_blank">Slides 15–17</a>: kalk i syre i to trin og totalreaktionen.</p>
+        <p class="ekstra">Klassen gætter på slide 15, før trinene kommer frem.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>20–40</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>pH-skalaen</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/18" target="_blank">Slides 18–21</a>: sur, neutral og basisk, pH, pH-skalaen og ét trin er ti gange.</p>
+        <p class="ekstra">Tegn en pH-skala på tavlen, og lad den stå resten af modulet.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>40–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Rødkål som indikator</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-3-roedkaal-som-indikator.html">Øvelse 7.3 Rødkål som indikator</a>. Parrene laver en farveskala med fem opløsninger, hvor pH er kendt, og finder pH i syv stoffer fra hverdagen.</p>
+        <p class="ekstra">Briller. Lav rødkålssaften før modulet (trin 2), så parrene kan gå direkte til farveskalaen.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvor mange gange flere?</strong><span class="form klasse">Klassen</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/22" target="_blank">Slides 22–24</a>: hvor mange gange flere, fortynding og indikatorer. Klassen svarer højt, før du klikker.</p>
+        <p class="ekstra">Sammenlign slide 24 med farveskalaen fra øvelsen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvorfor kalk bruser i syre</li>
+      <li>bruge, at koncentrationen af oxoniumioner bliver 10 gange større, når pH falder med 1</li>
+      <li>bestemme pH med en indikator</li>
+    </ul>
+    <p><b>Centrale fagord:</b> pH, syre/base-indikator, sur, neutral, basisk</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 7.3 og opgave 7.2.8, 7.3.1 og 7.3.2. Læs <a href="https://kemibogen.dk/c/kapitler/7-3-ph-skalaen.html">7.3 pH-skalaen</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Lav farveskalaen med rødkålssaft som demo (15 min), og lad klassen gætte pH i tre stoffer fra hverdagen, før du hælder saften i. Eller brug <a href="https://kemiformler.dk/animationer/superanimationer/sc7.2_ph_skalaen/index.html">pH-skalaen</a>, fanen pH-skalaen (20 min).</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · lang plan · modul 4 af 7</span><span class="afsnit">Afsnit 7.4 og øvelse 7.4 · 90 min</span></div>
+    <h3>Fra pH til koncentration</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Efterbehandlingen af øvelse 7.3 og opgave 7.2.8, 7.3.1 og 7.3.2. Læs <a href="https://kemibogen.dk/c/kapitler/7-3-ph-skalaen.html">7.3 pH-skalaen</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/25" target="_blank">Slides 25–27</a></li><li>Laboratoriet booket midt i modulet</li><li><a href="https://kemibogen.dk/c/oevelser/7-4-hvor-surt-er-det.html">Øvelse 7.4 Hvor surt er det?</a> med pH-metre, som er kalibreret før modulet, og lommeregnere med log og 10<sup>x</sup></li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.3_ph_beregninger/index.html">pH-beregninger</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">pH, syre/base-indikator, pH-meter</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Opgave 7.3.3 i kompendiet.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvad er pH?</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/25" target="_blank">Slides 25–26</a>: pH ud fra koncentrationen og koncentrationen ud fra pH, linje for linje.</p>
+        <p class="ekstra">Alle taster med på lommeregneren. Slide 26 viser, hvad 5,0E−5 betyder.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>30–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Regn selv</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-4-opgaver.html#7.4.1">Opgave 7.4.1 og 7.4.2</a>. Stop klassen efter 7.4.1 a, og gennemgå den på tavlen.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc7.3_ph_beregninger/index.html#konc">pH-beregninger</a>, fanen Find koncentrationen.</p></div></li>
+    <li><div class="tid"><b>30 min</b><span>45–75</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvor surt er det?</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/oevelser/7-4-hvor-surt-er-det.html">Øvelse 7.4 Hvor surt er det?</a>. Parrene gætter og måler pH i syv væsker.</p>
+        <p class="ekstra">Har I få pH-metre, så lad parrene gå rundt til væskerne. Beregningerne af [H₃O⁺] er lektie.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>pH i en stærk syre</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/27" target="_blank">Slide 27</a>: pH i salpetersyre. Derefter <a href="https://kemibogen.dk/c/opgaver/7-4-opgaver.html#7.4.3">opgave 7.4.3</a>.</p>
+        <p class="ekstra">Sammenlign med saltsyren, som parrene lige har målt pH i.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>beregne pH ud fra [H₃O⁺] og [H₃O⁺] ud fra pH</li>
+      <li>bruge, at [H₃O⁺] er lig med syrens koncentration i en stærk syre</li>
+      <li>måle pH med et pH-meter</li>
+    </ul>
+    <p><b>Centrale fagord:</b> pH, pH-meter</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 7.4 og opgave 7.4.4. Læs "Vands ionprodukt" og "pH i en stærk base" i <a href="https://kemibogen.dk/c/kapitler/7-4-ph-beregninger.html#vands-ionprodukt">7.4</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Mål pH i tre af væskerne med ét pH-meter under dokumentkameraet (10 min), og giv klassen tallene for de andre fire.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · lang plan · modul 5 af 7</span><span class="afsnit">Afsnit 7.4 og 7.5 · 90 min</span></div>
+    <h3>Baser og titrering på papir</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Efterbehandlingen af øvelse 7.4 og opgave 7.4.4. Læs "Vands ionprodukt" og "pH i en stærk base" i <a href="https://kemibogen.dk/c/kapitler/7-4-ph-beregninger.html#vands-ionprodukt">7.4</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a class="sl" href="../slides/kapitel-7.html#/28" target="_blank">Slides 28–37</a></li><li>Lommeregnere</li><li><a href="https://kemiformler.dk/animationer/superanimationer/sc7.4_titrering_eddike/index.html">Titrering af eddike</a> (animation)</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">pH, oxoniumion, stærk syre</span>.</p>
+        <p class="ekstra">Mens du tager fravær: Hvad er pH i 0,010 M saltsyre? Regn uden lommeregner.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Vands ionprodukt</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/28" target="_blank">Slides 28–30</a>: vands ionprodukt, regnevejen og pH i natriumhydroxid.</p>
+        <p class="ekstra">Skriv regnevejen fra slide 29 på tavlen, og lad den stå.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>30–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>pH i en base</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-4-opgaver.html#7.4.5">Opgave 7.4.5 og 7.4.6</a>.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc7.3_ph_beregninger/index.html#staerk">pH-beregninger</a>, fanen Stærke syrer og baser.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>45–70</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Titrering på papir</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kapitel-7.html#/32" target="_blank">Slides 32–37</a>: titrering af eddike, den lyserøde sky, titrerkurven, beregningen af masseprocenten og hvad fejl betyder.</p>
+        <p class="ekstra">Skriv de to trin i beregningen på tavlen. Klassen siger næste trin højt, før du klikker.</p></div></li>
+    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Regn titreringen</strong><span class="form par">Par</span></div>
+        <p><a href="https://kemibogen.dk/c/opgaver/7-5-opgaver.html#7.5.1">Opgave 7.5.1, 7.5.2 og 7.5.5</a>. Stop klassen, hvis mange glemmer at regne forbruget om til liter.</p>
+        <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc7.4_titrering_eddike/index.html#beregning">Titrering af eddike</a>, fanen Beregningen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>beregne pH i en stærk base med vands ionprodukt</li>
+      <li>forklare, hvad der sker ved ækvivalenspunktet, og hvorfor indikatoren skifter farve</li>
+      <li>beregne masseprocenten af eddikesyre ud fra forbruget</li>
+    </ul>
+    <p><b>Centrale fagord:</b> vands ionprodukt, ækvivalenspunkt, phenolphthalein, omslag, titrerkurve</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-5-syre-base-titrering.html">7.5 Syre/base-titrering</a> og fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/7-5a-indstilling-af-natriumhydroxid.html">Øvelse 7.5a Indstilling af natriumhydroxid</a>, og regn opgave 7.4.7.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Slide 31 om eddikesyre som svag syre er sprunget over med vilje. Opgave 7.5.5 kan blive lektie.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · lang plan · modul 6 af 7</span><span class="afsnit">Afsnit 7.5 og øvelse 7.5a · 90 min</span></div>
+    <h3>Indstilling af natriumhydroxid</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/7-5-syre-base-titrering.html">7.5 Syre/base-titrering</a> og fremgangsmåden i øvelse 7.5a, og regn opgave 7.4.7.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li>Laboratoriet booket hele modulet og klassen delt i hold A og B</li><li><a href="https://kemibogen.dk/c/oevelser/7-5a-indstilling-af-natriumhydroxid.html">Øvelse 7.5a Indstilling af natriumhydroxid</a> med udstyr til halvdelen af klassen: analysevægte med 3 decimaler, benzoesyre, 50 % ethanol og en flaske natriumhydroxid, som klassen også bruger i øvelse 7.5b</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">ækvivalenspunkt, omslag, titrerkurve</span>. Sig, hvem der er på hold A og hold B.</p>
+        <p class="ekstra">Mens du tager fravær: Hvorfor kan en flaske natriumhydroxid have en lavere koncentration end tallet på etiketten? Svaret står øverst i øvelse 7.5a.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hvorfor indstille?</strong><span class="form tavle">Tavle</span></div>
+        <p>Vis, hvordan benzoesyren vejes af med 3 decimaler og opløses, og sig, at klassens resultat skal bruges i øvelse 7.5b næste gang.</p>
+        <p class="ekstra">Skriv flaskens nummer på tavlen, så alle bruger den samme flaske.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>20–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hold A indstiller, hold B regner</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold A laver øvelse 7.5a i par. Hold B regner <a href="https://kemibogen.dk/c/opgaver/7-5-opgaver.html#7.5.3">opgave 7.5.3, 7.5.4 og 7.5.6</a>.</p>
+        <p class="ekstra">Briller. Ethanol er brændbar, så ingen åben ild. Benzoesyren skal være helt opløst, før parret titrerer.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>55–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Holdene bytter</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold B indstiller, og hold A regner de samme opgaver.</p>
+        <p class="ekstra">De sidste 5 minutter rydder hold B op. Saml parrenes koncentrationer på tavlen.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>forklare, hvorfor en opløsning af natriumhydroxid skal indstilles</li>
+      <li>afveje en prøve med 3 decimaler og titrere den</li>
+      <li>beregne koncentrationen af natriumhydroxid ud fra massen af benzoesyre og forbruget</li>
+    </ul>
+    <p><b>Centrale fagord:</b> ækvivalenspunkt, omslag</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 7.5a. Læs fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/7-5b-eddikesyre-i-eddike.html">Øvelse 7.5b Eddikesyre i eddike</a>.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Indstil natriumhydroxiden som demo (15 min), og giv klassen massen af benzoesyre og forbruget.</p></div>
+    <div><h4>Med burettes til alle</h4><p>Hele klassen indstiller på samme tid i 45 min, og opgaverne regnes bagefter.</p></div>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kapitel 7 · lang plan · modul 7 af 7</span><span class="afsnit">Øvelse 7.5b og øveprøve · 90 min</span></div>
+    <h3>Eddikesyre i eddike</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Efterbehandlingen af øvelse 7.5a, og læs fremgangsmåden i <a href="https://kemibogen.dk/c/oevelser/7-5b-eddikesyre-i-eddike.html">Øvelse 7.5b Eddikesyre i eddike</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li>Laboratoriet booket hele modulet og klassen delt i hold A og B</li><li><a href="https://kemibogen.dk/c/oevelser/7-5b-eddikesyre-i-eddike.html">Øvelse 7.5b Eddikesyre i eddike</a> med udstyr til halvdelen af klassen og samme flaske natriumhydroxid som i øvelse 7.5a</li><li><a href="https://kemibogen.dk/c/repetition/kapitel-7.html#oeveproeve">Øveprøven</a> på repetitionssiden</li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
+        <p>Skriv klassens koncentrationer af natriumhydroxid fra øvelse 7.5a på tavlen, og beregn gennemsnittet sammen. Sig, hvem der er på hold A og hold B.</p>
+        <p class="ekstra">Eleverne regner med gennemsnittet i stedet for 0,100 M, som øvelse 7.5b siger over efterbehandlingen.</p></div></li>
+    <li><div class="tid"><b>40 min</b><span>10–50</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Hold A titrerer, hold B tager øveprøven</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold A laver øvelse 7.5b i par med to titreringer. Hold B regner <a href="https://kemibogen.dk/c/opgaver/7-5-opgaver.html#7.5.8">opgave 7.5.8</a> og tager derefter øveprøven hver for sig.</p>
+        <p class="ekstra">Briller. Hjælp med pipetten og med at aflæse buretten.</p></div></li>
+    <li><div class="tid"><b>40 min</b><span>50–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Holdene bytter</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
+        <p>Hold B titrerer, og hold A regner det samme.</p>
+        <p class="ekstra">Efter øveprøven åbner eleverne facit på repetitionssiden og retter selv. De sidste 5 minutter rydder hold B op.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>titrere med en burette og aflæse forbruget</li>
+      <li>beregne masseprocenten af eddikesyre med deres egen koncentration af natriumhydroxid</li>
+      <li>løse kapitlets typiske opgaver uden hjælpemidler</li>
+    </ul>
+    <p><b>Centrale fagord:</b> ækvivalenspunkt, omslag, phenolphthalein</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af øvelse 7.5b. <a href="https://kemibogen.dk/c/repetition/kapitel-7.html">Repetition af kapitel 7</a>: sæt flueben ved det, du kan.</p></div>
+    <div><h4>Uden laboratorium</h4><p>Titrér eddike som demo under dokumentkameraet (15 min), og giv klassen forbruget fra to titreringer. Eller lad eleverne titrere i <a href="https://kemiformler.dk/animationer/superanimationer/sc7.4_titrering_eddike/index.html">Titrering af eddike</a> (20 min).</p></div>
+    <div><h4>Med burettes til alle</h4><p>Hele klassen titrerer på samme tid i 45 min, og øveprøven tages bagefter.</p></div>
+  </div>
+</article>
+
+</div>
+
+</main>
+
+
+<script>
+(function () {
+  // Slides ligger i ../slides/ i bogens mappe og på kemibogen.dk, men ved siden af siden i et artifact på claude.ai.
+  if (location.protocol !== "file:" && !/kemibogen|localhost|127\.0\.0\.1/.test(location.hostname)) {
+    document.querySelectorAll("a.sl").forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("href").replace("../slides/", "slides/"));
+    });
+  }
+
+  var knapper = document.querySelectorAll(".skifter button");
+  function vis(plan) {
+    knapper.forEach(function (k) { k.setAttribute("aria-pressed", String(k.dataset.plan === plan)); });
+    document.getElementById("kort").hidden = plan !== "kort";
+    document.getElementById("lang").hidden = plan !== "lang";
+    document.querySelectorAll(".materialer [data-plan]").forEach(function (el) { el.hidden = el.dataset.plan !== plan; });
+  }
+  knapper.forEach(function (k) {
+    k.addEventListener("click", function () {
+      vis(k.dataset.plan);
+      try { localStorage.setItem("modulplan-plan", k.dataset.plan); } catch (e) {}
+    });
+  });
+
+  var start = location.hash === "#lang" ? "lang" : location.hash === "#kort" ? "kort" : null;
+  if (!start) { try { start = localStorage.getItem("modulplan-plan"); } catch (e) {} }
+  vis(start === "lang" ? "lang" : "kort");
+})();
+</script>
+</body>
+</html>
