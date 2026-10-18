@@ -3667,7 +3667,7 @@
     "href": "kapitler/3-1-molekyler.html#hvor-mange-bindinger",
     "title": "3.1 Molekyler",
     "section": "Hvor mange bindinger?",
-    "text": "Hvor mange bindinger?\nEt atom danner lige så mange bindinger, som det mangler elektroner i yderste skal. For de grundstoffer, der er flest af i levende organismer, giver det en enkel regel.\n\n\n\nGrundstof\nElektroner i yderste skal\nMangler\nAntal bindinger\n\n\n\n\nHydrogen, H\n1\n1\n1\n\n\nChlor, Cl\n7\n1\n1\n\n\nOxygen, O\n6\n2\n2\n\n\nNitrogen, N\n5\n3\n3\n\n\nCarbon, C\n4\n4\n4\n\n\n\nEn dobbeltbinding tæller som to bindinger, og en tripelbinding tæller som tre. I CO2 har carbon to dobbeltbindinger, altså fire bindinger i alt.\n\n\n\n\n\n\nVigtigtLær dem udenad\n\n\n\nCarbon danner 4 bindinger, nitrogen 3, oxygen 2 og hydrogen 1.\n\n\nReglen er god til at kontrollere en stregformel, for har et carbonatom tre eller fem streger, er der en fejl i tegningen.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nIkke-metaller deler elektroner med hinanden, og et fælles elektronpar er en elektronparbinding.\nEt molekyle er en gruppe af atomer, der holdes sammen af elektronparbindinger.\nI en elektronprikformel tegnes elektronerne i yderste skal som prikker, mens hvert fælles elektronpar er en streg i en stregformel.\nAtomer kan dele ét, to eller tre elektronpar: enkeltbinding, dobbeltbinding og tripelbinding.\nCarbon danner 4 bindinger, nitrogen 3, oxygen 2 og hydrogen 1.\n\n\n\n\nPrøv selv: Elektronprikformler: byg molekyler, og find fejl i prikformler.\n\n\nSe alle opgaver til emnet “Molekyler” (3.1)",
+    "text": "Hvor mange bindinger?\nEt atom danner lige så mange bindinger, som det mangler elektroner i yderste skal. For de ikke-metaller, du oftest møder, giver det en enkel regel.\n\n\n\nGrundstof\nElektroner i yderste skal\nMangler\nAntal bindinger\n\n\n\n\nHydrogen, H\n1\n1\n1\n\n\nChlor, Cl\n7\n1\n1\n\n\nOxygen, O\n6\n2\n2\n\n\nNitrogen, N\n5\n3\n3\n\n\nCarbon, C\n4\n4\n4\n\n\n\nEn dobbeltbinding tæller som to bindinger, og en tripelbinding tæller som tre. I CO2 har carbon to dobbeltbindinger, altså fire bindinger i alt.\n\n\n\n\n\n\nVigtigtLær dem udenad\n\n\n\nCarbon danner 4 bindinger, nitrogen 3, oxygen 2 og hydrogen 1.\n\n\nReglen er god til at kontrollere en stregformel, for har et carbonatom tre eller fem streger, er der en fejl i tegningen.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nIkke-metaller deler elektroner med hinanden, og et fælles elektronpar er en elektronparbinding.\nEt molekyle er en gruppe af atomer, der holdes sammen af elektronparbindinger.\nI en elektronprikformel tegnes elektronerne i yderste skal som prikker, mens hvert fælles elektronpar er en streg i en stregformel.\nAtomer kan dele ét, to eller tre elektronpar: enkeltbinding, dobbeltbinding og tripelbinding.\nCarbon danner 4 bindinger, nitrogen 3, oxygen 2 og hydrogen 1.\n\n\n\n\nPrøv selv: Elektronprikformler: byg molekyler, og find fejl i prikformler.\n\n\nSe alle opgaver til emnet “Molekyler” (3.1)",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.1 Molekyler"
@@ -3678,7 +3678,7 @@
     "href": "kapitler/3-2-molekylers-form.html",
     "title": "3.2 Molekylers form",
     "section": "",
-    "text": "Elektronpar frastøder hinanden\nEn stregformel er en flad tegning, men et molekyle er ikke fladt, for det har en bestemt form i rummet. Formen har betydning for, hvordan molekylet opfører sig, og den bruges i afsnit 3.3 til at afgøre, om et molekyle er polært.\nElektroner er negative, og negative ladninger frastøder hinanden. Elektronparrene omkring et atom stiller sig derfor så langt fra hinanden, som de kan komme. Det gælder både de fælles elektronpar i bindingerne og de frie elektronpar.\nEt tetraeder er en pyramide med fire ens, trekantede sider. Når der er fire elektronpar omkring et atom, peger de ud mod tetraederets fire hjørner, og vinklen mellem dem er 109,5°.",
+    "text": "Elektronpar frastøder hinanden\nEn stregformel er en flad tegning, men et molekyle er ikke fladt, for det har en bestemt form i rummet. Formen har betydning for, hvordan molekylet opfører sig, og den bruges i afsnit 3.3 til at afgøre, om et molekyle er polært.\nElektroner er negative, og negative ladninger frastøder hinanden. Elektronparrene omkring et atom stiller sig derfor så langt fra hinanden, som de kan komme. Det gælder både de fælles elektronpar i bindingerne og de frie elektronpar fra afsnit 3.1. Når formen skal findes, tæller man grupper af elektroner: en binding er én gruppe, uanset om den er en enkeltbinding, en dobbeltbinding eller en tripelbinding, og et frit elektronpar er også én gruppe.\nEt tetraeder er en pyramide med fire ens, trekantede sider. Når der er fire grupper omkring et atom, peger de ud mod tetraederets fire hjørner, og vinklen mellem dem er 109,5°.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.2 Molekylers form"
@@ -3700,7 +3700,7 @@
     "href": "kapitler/3-2-molekylers-form.html#fire-molekyler",
     "title": "3.2 Molekylers form",
     "section": "Fire molekyler",
-    "text": "Fire molekyler\n\n\n\n\n\n\nFigur 2: Formen af fire molekyler. De lyseblå skyer er frie elektronpar.\n\n\n\nMethan. Carbonatomet har fire fælles elektronpar og ingen frie, så de fire hydrogenatomer sidder i hjørnerne af et tetraeder.\nAmmoniak. Nitrogenatomet har også fire elektronpar omkring sig, men kun de tre er bindinger, mens det fjerde er et frit elektronpar. De tre hydrogenatomer danner derfor bunden i en pyramide med nitrogen i toppen.\nVand. Oxygenatomet har to bindinger og to frie elektronpar. De frie elektronpar skubber bindingerne sammen, så molekylet bliver vinklet og ikke ret. Vinklen mellem de to bindinger er 104,5°.\nCarbondioxid. Carbonatomet har to dobbeltbindinger og ingen frie elektronpar. En dobbeltbinding tæller som én gruppe af elektroner, så de to grupper stiller sig over for hinanden. Molekylet bliver derfor lineært, hvilket betyder, at de tre atomer ligger på en ret linje.\n\n\n\nMolekyle\nBindinger fra atomet i midten\nFrie elektronpar\nForm\n\n\n\n\nMethan, CH4\n4 enkeltbindinger\n0\ntetraeder\n\n\nAmmoniak, NH3\n3 enkeltbindinger\n1\ntrekantet pyramide\n\n\nVand, H2O\n2 enkeltbindinger\n2\nvinklet\n\n\nCarbondioxid, CO2\n2 dobbeltbindinger\n0\nlineært\n\n\n\n\n\n\n\n\n\nVigtigtHusk de frie elektronpar\n\n\n\nDe frie elektronpar ses ikke i stregformlen, men de fylder lige så meget som bindingerne. Det er dem, der gør vandmolekylet vinklet.\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nElektronpar frastøder hinanden og stiller sig så langt fra hinanden som muligt.\nBåde bindinger og frie elektronpar tæller med, når formen skal findes.\nMethan er et tetraeder, ammoniak er en trekantet pyramide, vand er vinklet, og carbondioxid er lineært.\n\n\n\n\nPrøv selv: Molekylers rumlige opbygning: drej molekylerne, og mål vinklerne.\n\n\nSe alle opgaver til emnet “Molekylers form” (3.2)",
+    "text": "Fire molekyler\n\n\n\n\n\n\nFigur 2: Formen af fire molekyler. De lyseblå skyer er frie elektronpar.\n\n\n\nMethan. Carbonatomet har fire fælles elektronpar og ingen frie, så de fire hydrogenatomer sidder i hjørnerne af et tetraeder.\nAmmoniak. Nitrogenatomet har også fire elektronpar omkring sig, men kun de tre er bindinger, mens det fjerde er et frit elektronpar. De tre hydrogenatomer danner derfor bunden i en pyramide med nitrogen i toppen.\nVand. Oxygenatomet har to bindinger og to frie elektronpar. De frie elektronpar skubber bindingerne sammen, så molekylet bliver vinklet og ikke ret. Vinklen mellem de to bindinger er 104,5°.\nCarbondioxid. Carbonatomet har to dobbeltbindinger og ingen frie elektronpar. En dobbeltbinding tæller som én gruppe af elektroner, så de to grupper stiller sig over for hinanden. Molekylet bliver derfor lineært, hvilket betyder, at de tre atomer ligger på en ret linje.\n\n\n\nMolekyle\nBindinger fra atomet i midten\nFrie elektronpar\nForm\n\n\n\n\nMethan, CH4\n4 enkeltbindinger\n0\ntetraeder\n\n\nAmmoniak, NH3\n3 enkeltbindinger\n1\ntrekantet pyramide\n\n\nVand, H2O\n2 enkeltbindinger\n2\nvinklet\n\n\nCarbondioxid, CO2\n2 dobbeltbindinger\n0\nlineært\n\n\n\nVinklen mellem bindingerne bliver mindre fra methan over ammoniak til vand, som figuren med de fire molekyler viser, fordi de frie elektronpar skubber bindingerne tættere sammen.\n\n\n\n\n\n\nVigtigtHusk de frie elektronpar\n\n\n\nDe frie elektronpar ses ikke i stregformlen, men de fylder lige så meget som bindingerne. Det er dem, der gør vandmolekylet vinklet.\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nElektronpar frastøder hinanden og stiller sig så langt fra hinanden som muligt.\nBåde bindinger og frie elektronpar tæller med, når formen skal findes.\nMethan er et tetraeder, ammoniak er en trekantet pyramide, vand er vinklet, og carbondioxid er lineært.\n\n\n\n\nPrøv selv: Molekylers rumlige opbygning: drej molekylerne, og mål vinklerne.\n\n\nSe alle opgaver til emnet “Molekylers form” (3.2)",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.2 Molekylers form"
@@ -3733,7 +3733,7 @@
     "href": "kapitler/3-3-polaritet.html#tre-slags-bindinger",
     "title": "3.3 Polære bindinger og polære molekyler",
     "section": "Tre slags bindinger",
-    "text": "Tre slags bindinger\nForskellen i elektronegativitet mellem to atomer afgør, hvilken slags binding der er mellem dem. Forskellen skrives ΔEN og findes ved at trække den mindste elektronegativitet fra den største, og tabellen viser grænserne.\n\n\n\n\n\n\n\n\nForskel i elektronegativitet\nBinding\nHvad sker der med elektronparret?\n\n\n\n\nunder 0,5\nupolær elektronparbinding\nDet deles ligeligt.\n\n\nfra 0,5 til under 2,0\npolær elektronparbinding\nDet ligger tættest på det mest elektronegative atom.\n\n\n2,0 eller mere\nionbinding\nDet mest elektronegative atom tager elektronerne helt.\n\n\n\n\n\n\n\n\n\nNoteEksempel: tre bindinger\n\n\n\nHvilken slags binding er der i chlor, Cl2, i hydrogenchlorid, HCl, og mellem natrium og chlor i køkkensalt?\nI figuren med elektronegativiteter kan du aflæse, at chlor har 3,0, hydrogen har 2,1, og natrium har 0,9. I beregningerne står EN(Cl) for elektronegativiteten for chlor og tilsvarende EN(H) og EN(Na) for hydrogen og natrium.\nBindingen Cl−Cl i chlor. De to atomer er ens og har samme elektronegativitet, så forskellen er 0.\nBindingen H−Cl i hydrogenchlorid.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 2{,}1 = 0{,}9\n\\end{aligned}\n\\]\nNatrium og chlor i køkkensalt.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{Na}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 0{,}9 = 2{,}1\n\\end{aligned}\n\\]\nKonklusion\nBindingen i chlor er upolær, fordi forskellen er under 0,5. Bindingen i hydrogenchlorid er polær, fordi forskellen ligger mellem 0,5 og 2,0. Natrium og chlor danner en ionbinding, fordi forskellen er over 2,0, og ionbindinger kender du fra afsnit 2.3.\n\n\n\n\n\n\n\n\nFigur 2: De tre bindinger fra eksemplet. Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer.\n\n\n\nI en polær binding er elektronerne skævt fordelt. Atomet med den højeste elektronegativitet bliver delvist negativt, som skrives δ−, mens det andet atom bliver delvist positivt, som skrives δ+. Tegnet δ er det græske bogstav delta og betyder her delvist. I hydrogenchlorid får hydrogen δ+, fordi det delvist har mistet sin elektron til chlor, men ikke helt, som natrium har i køkkensalt.\n\n\n\n\n\n\n\nFigur 3: Skalaen for forskellen i elektronegativitet med syv eksempler.\n\n\n\n\nPå skalaen ligger bindingen C−Cl præcis på grænsen mellem upolær og polær, for carbon har elektronegativiteten 2,5, og chlor har 3,0.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{C}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 2{,}5 = 0{,}5\n\\end{aligned}\n\\]\nGrænserne i tabellen er en tommelfingerregel, så en forskel tæt på 0,5 eller 2,0 er et grænsetilfælde. Ligger forskellen præcis på en grænse, regnes bindingen med til den slags, der ligger over grænsen. Bindingen C−Cl er derfor polær, og en forskel på præcis 2,0 giver en ionbinding.",
+    "text": "Tre slags bindinger\nForskellen i elektronegativitet mellem to atomer afgør, hvilken slags binding der er mellem dem. Forskellen skrives ΔEN og findes ved at trække den mindste elektronegativitet fra den største, og tabellen viser grænserne.\n\n\n\n\n\n\n\n\nForskel i elektronegativitet\nBinding\nHvad sker der med elektronparret?\n\n\n\n\nunder 0,5\nupolær elektronparbinding\nDet deles ligeligt.\n\n\nfra 0,5 til under 2,0\npolær elektronparbinding\nDet ligger tættest på det mest elektronegative atom.\n\n\n2,0 eller mere\nionbinding\nDet mest elektronegative atom tager elektronerne helt.\n\n\n\n\n\n\n\n\n\nVigtigtMetal og ikke-metal\n\n\n\nMellem et metal og et ikke-metal er der altid en ionbinding, som i afsnit 2.3, også når forskellen er lidt under 2,0. Det gælder fx kaliumiodid, KI, hvor forskellen er 1,7. Tabellen bruges derfor mest til at afgøre, om en binding mellem to ikke-metaller er upolær eller polær.\n\n\n\n\n\n\n\n\nNoteEksempel: tre bindinger\n\n\n\nHvilken slags binding er der i chlor, Cl2, i hydrogenchlorid, HCl, og mellem natrium og chlor i køkkensalt?\nI figuren med elektronegativiteter kan du aflæse, at chlor har 3,0, hydrogen har 2,1, og natrium har 0,9. I beregningerne står EN(Cl) for elektronegativiteten for chlor og tilsvarende EN(H) og EN(Na) for hydrogen og natrium.\nBindingen Cl−Cl i chlor. De to atomer er ens og har samme elektronegativitet, så forskellen er 0.\nBindingen H−Cl i hydrogenchlorid.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 2{,}1 = 0{,}9\n\\end{aligned}\n\\]\nNatrium og chlor i køkkensalt.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{Na}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 0{,}9 = 2{,}1\n\\end{aligned}\n\\]\nKonklusion\nBindingen i chlor er upolær, fordi forskellen er under 0,5. Bindingen i hydrogenchlorid er polær, fordi forskellen ligger mellem 0,5 og 2,0. Natrium og chlor danner en ionbinding, fordi forskellen er over 2,0, og ionbindinger kender du fra afsnit 2.3.\n\n\n\n\n\n\n\n\nFigur 2: De tre bindinger fra eksemplet. Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer.\n\n\n\nI en polær binding er elektronerne skævt fordelt. Atomet med den højeste elektronegativitet bliver delvist negativt, som skrives δ−, mens det andet atom bliver delvist positivt, som skrives δ+. Tegnet δ er det græske bogstav delta og betyder her delvist. I hydrogenchlorid får hydrogen δ+, fordi det delvist har mistet sin elektron til chlor, men ikke helt, som natrium har i køkkensalt.\n\n\n\n\n\n\n\nFigur 3: Skalaen for forskellen i elektronegativitet med syv eksempler.\n\n\n\n\nPå skalaen ligger bindingen C−Cl præcis på grænsen mellem upolær og polær, for carbon har elektronegativiteten 2,5, og chlor har 3,0.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{C}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 2{,}5 = 0{,}5\n\\end{aligned}\n\\]\nGrænserne i tabellen er en tommelfingerregel, så en forskel tæt på 0,5 eller 2,0 er et grænsetilfælde. Ligger forskellen præcis på en grænse, regnes bindingen med til den slags, der ligger over grænsen. Bindingen C−Cl er derfor polær, og en forskel på præcis 2,0 giver en ionbinding.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.3 Polære bindinger og polære molekyler"
@@ -3744,7 +3744,7 @@
     "href": "kapitler/3-3-polaritet.html#polære-molekyler",
     "title": "3.3 Polære bindinger og polære molekyler",
     "section": "Polære molekyler",
-    "text": "Polære molekyler\nI vandmolekylet trækker oxygen elektronerne til sig fra begge hydrogenatomer, så molekylet får en negativ ende ved oxygen og en positiv ende ved hydrogenatomerne. Et molekyle med en positiv og en negativ ende kaldes et polært molekyle, og de to ender kaldes poler.\n\n\n\n\n\n\nFigur 4: Vand er et polært molekyle.\n\n\n\nFor små molekyler gælder som udgangspunkt:\n\nHar molekylet mindst én polær binding, er det polært.\nHar molekylet kun upolære bindinger, er det upolært.\n\nAmmoniak, NH3, er polært, fordi bindingerne mellem nitrogen og hydrogen er polære. Methan, CH4, er upolært, fordi bindingerne mellem carbon og hydrogen er upolære.\n\nNår bindingerne ophæver hinanden\nDer er en vigtig undtagelse. I nogle molekyler er de polære bindinger placeret, så de trækker lige meget i hver sin retning. Dermed ophæver de hinanden, og molekylet er upolært, selv om bindingerne er polære.\n\n\n\n\n\n\nFigur 5: Carbondioxid er upolært, fordi de to bindinger trækker lige meget i hver sin retning. I vand peger begge træk mod oxygen.\n\n\n\nCarbondioxid er lineært, og de to oxygenatomer trækker i hver sin retning som to lige stærke hold i en tovtrækning. Vand er vinklet, og derfor ophæver de to træk ikke hinanden. Formerne kender du fra afsnit 3.2.",
+    "text": "Polære molekyler\nI vandmolekylet trækker oxygen elektronerne til sig fra begge hydrogenatomer, så molekylet får en negativ ende ved oxygen og en positiv ende ved hydrogenatomerne. Et molekyle med en positiv og en negativ ende kaldes et polært molekyle, og de to ender kaldes poler.\n\n\n\n\n\n\nFigur 4: Vand er et polært molekyle.\n\n\n\nFor små molekyler gælder som udgangspunkt:\n\nHar molekylet mindst én polær binding, er det polært.\nHar molekylet kun upolære bindinger, er det upolært.\n\nAmmoniak, NH3, er polært, fordi bindingerne mellem nitrogen og hydrogen er polære, og fordi alle tre trækker elektronerne mod nitrogenatomet i toppen af pyramiden. Methan, CH4, er upolært, fordi bindingerne mellem carbon og hydrogen er upolære.\n\nNår bindingerne ophæver hinanden\nDer er en vigtig undtagelse. I nogle molekyler er de polære bindinger placeret, så de trækker lige meget i hver sin retning. Dermed ophæver de hinanden, og molekylet er upolært, selv om bindingerne er polære.\n\n\n\n\n\n\nFigur 5: Carbondioxid er upolært, fordi de to bindinger trækker lige meget i hver sin retning. I vand peger begge træk mod oxygen.\n\n\n\nCarbondioxid er lineært, og de to oxygenatomer trækker i hver sin retning som to lige stærke hold i en tovtrækning. Vand er vinklet, og derfor ophæver de to træk ikke hinanden. Formerne kender du fra afsnit 3.2.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.3 Polære bindinger og polære molekyler"
@@ -3755,7 +3755,7 @@
     "href": "kapitler/3-3-polaritet.html#store-molekyler",
     "title": "3.3 Polære bindinger og polære molekyler",
     "section": "Store molekyler",
-    "text": "Store molekyler\nStore molekyler består ofte af en lang kæde af carbonatomer med hydrogenatomer på. Bindingerne C−C og C−H er upolære, så carbonkæden er en upolær del af molekylet. Sidder der en gruppe som −OH eller −F på kæden, er den en polær gruppe, fordi oxygen og fluor har høj elektronegativitet.\nEt stort molekyle har altså både upolære og polære dele. En tommelfingerregel afgør, hvad der vinder.\n\n\n\n\n\n\nVigtigtTommelfingerregel\n\n\n\nDer skal 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\nSådan bruges reglen:\n\nTæl carbonatomerne i molekylet.\nTæl de polære grupper, og gang antallet med 4. Så mange carbonatomer skal der til for at ophæve dem.\nSammenlign med antallet af carbonatomer. Er der færre, end der skal til, vinder de polære grupper, og molekylet er polært. Er der flere, vinder carbonkæden, og molekylet er upolært.\n\n\n\n\n\n\n\nFigur 6: Tommelfingerreglen brugt på to molekyler.\n\n\n\nReglen giver et skøn og ikke et præcist svar. Er der netop 4 carbonatomer for hver polær gruppe, ligger molekylet på grænsen.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nElektronegativitet er et mål for, hvor kraftigt et atom trækker i de fælles elektroner.\nForskellen i elektronegativitet afgør bindingen: under 0,5 upolær, fra 0,5 til under 2,0 polær, og 2,0 eller mere ionbinding.\nEt polært molekyle har en positiv og en negativ ende.\nPolære bindinger kan ophæve hinanden, hvis de trækker lige meget i hver sin retning, som i carbondioxid.\nI store molekyler skal der 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\n\n\nPrøv selv: Polære molekyler: lad atomerne trække i elektronparret.\n\n\nSe alle opgaver til emnet “Polære bindinger og polære molekyler” (3.3)",
+    "text": "Store molekyler\nStore molekyler består ofte af en lang kæde af carbonatomer med hydrogenatomer på. Bindingerne C−C og C−H er upolære, så carbonkæden er en upolær del af molekylet. Sidder der en gruppe med et oxygenatom på kæden, for eksempel −OH, er den en polær gruppe, fordi oxygen har en høj elektronegativitet.\nEt stort molekyle har altså både upolære og polære dele. En tommelfingerregel afgør, hvad der vinder.\n\n\n\n\n\n\nVigtigtTommelfingerregel\n\n\n\nDer skal 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\nSådan bruges reglen:\n\nTæl carbonatomerne i molekylet.\nTæl de polære grupper, og gang antallet med 4. Så mange carbonatomer skal der til for at ophæve dem.\nSammenlign med antallet af carbonatomer. Er der færre, end der skal til, vinder de polære grupper, og molekylet er polært. Er der flere, vinder carbonkæden, og molekylet er upolært.\n\n\n\n\n\n\n\nFigur 6: Tommelfingerreglen brugt på to molekyler.\n\n\n\nReglen giver et skøn og ikke et præcist svar. Er der netop 4 carbonatomer for hver polær gruppe, ligger molekylet på grænsen.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nElektronegativitet er et mål for, hvor kraftigt et atom trækker i de fælles elektroner.\nForskellen i elektronegativitet afgør bindingen: under 0,5 upolær, fra 0,5 til under 2,0 polær, og 2,0 eller mere ionbinding. Mellem et metal og et ikke-metal er der altid en ionbinding.\nEt polært molekyle har en positiv og en negativ ende.\nPolære bindinger kan ophæve hinanden, hvis de trækker lige meget i hver sin retning, som i carbondioxid.\nI store molekyler skal der 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\n\n\nPrøv selv: Polære molekyler: lad atomerne trække i elektronparret.\n\n\nSe alle opgaver til emnet “Polære bindinger og polære molekyler” (3.3)\n\n\nDemoforsøg: 3.3a Vandstrålen og ballonen",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.3 Polære bindinger og polære molekyler"
@@ -3788,7 +3788,7 @@
     "href": "kapitler/3-4-blandbarhed.html#forklaringen-på-mikroniveau",
     "title": "3.4 Blandbarhed",
     "section": "Forklaringen på mikroniveau",
-    "text": "Forklaringen på mikroniveau\nVandmolekyler er polære, så den positive ende af ét vandmolekyle tiltrækker den negative ende af et andet. Vandmolekylerne holder derfor godt fast i hinanden.\nEthanol er alkoholen i sprit, og det er også et polært stof. Et ethanolmolekyle har en positiv og en negativ ende, som vandmolekylerne kan holde fast i. Ethanolmolekylerne kan derfor fordele sig mellem vandmolekylerne, og de to væsker blandes.\nOliemolekyler er lange carbonkæder uden polære grupper og er derfor upolære. De har ingen ladede ender, som vandmolekylerne kan holde fast i, så vandmolekylerne holder sig til hinanden og skubber oliemolekylerne ud. Resultatet er to lag.",
+    "text": "Forklaringen på mikroniveau\nVandmolekyler er polære, så den positive ende af ét vandmolekyle tiltrækker den negative ende af et andet. Vandmolekylerne holder derfor godt fast i hinanden.\nEthanol er alkoholen i sprit, og det er også et polært stof. Et ethanolmolekyle har en positiv og en negativ ende, som vandmolekylerne kan holde fast i. Ethanolmolekylerne kan derfor fordele sig mellem vandmolekylerne, og de to væsker blandes.\nOliemolekyler har lange carbonkæder og kun få polære grupper, så efter tommelfingerreglen i afsnit 3.3 er de upolære. De har ingen ladede ender, som vandmolekylerne kan holde fast i, så vandmolekylerne holder sig til hinanden og skubber oliemolekylerne ud. Resultatet er to lag.\nSalte består ikke af molekyler, men vandmolekylernes ladede ender kan også holde fast i ioner. Derfor kan mange salte opløses i vand, som du så i afsnit 2.4, mens de ikke kan opløses i en upolær væske som heptan.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.4 Blandbarhed"
@@ -3810,7 +3810,7 @@
     "href": "kapitler/3-4-blandbarhed.html#blandbarhed-i-hverdagen",
     "title": "3.4 Blandbarhed",
     "section": "Blandbarhed i hverdagen",
-    "text": "Blandbarhed i hverdagen\n\nSukker opløses i vand. Sukkermolekyler har mange polære OH-grupper og er derfor polære.\nFedtpletter kan ikke vaskes af med rent vand. Fedt er upolært og opløses derfor ikke i vand, men en upolær væske som rensebenzin kan opløse fedtet.\nOlie og eddike skiller i en dressing. Eddike består mest af vand, og olien er upolær.\n\nPolaritet og blandbarhed bruger du igen i kapitel 4, hvor de forklarer, hvorfor benzin og fedt ikke kan blandes med vand, mens korte alkoholer kan.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nPolære stoffer blandes med polære stoffer, og upolære stoffer blandes med upolære.\nEt polært og et upolært stof blandes ikke, men danner to lag.\nVandmolekyler holder fast i hinanden og i andre polære molekyler, men ikke i upolære molekyler.\nDensiteten afgør, hvilket lag der ligger øverst.\n\n\n\n\nPrøv selv: Blandbarhed: hæld vand, ethanol og olie sammen, og se molekylerne.\n\n\nPrøv selv: Vand eller heptan: forudsig, hvilken væske et stof opløses i.\n\n\nSe alle opgaver til emnet “Blandbarhed” (3.4)\n\n\nI laboratoriet: Øvelse 3.4: Hvad kan blandes?",
+    "text": "Blandbarhed i hverdagen\n\nSukker opløses i vand. Sukkermolekyler har mange polære OH-grupper og er derfor polære.\nFedtpletter kan ikke vaskes af med rent vand. Fedt er upolært og opløses derfor ikke i vand, men en upolær væske som rensebenzin kan opløse fedtet.\nOlie og eddike skiller i en dressing. Eddike består mest af vand, og olien er upolær.\n\nPolaritet og blandbarhed bruger du igen i kapitel 4, hvor de forklarer, hvorfor benzin og fedt ikke kan blandes med vand, mens korte alkoholer kan.\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nPolære stoffer blandes med polære stoffer, og upolære stoffer blandes med upolære.\nEt polært og et upolært stof blandes ikke, men danner to lag.\nVandmolekyler holder fast i hinanden og i andre polære molekyler, men ikke i upolære molekyler.\nDensiteten afgør, hvilket lag der ligger øverst.\n\n\n\n\nPrøv selv: Blandbarhed: hæld vand, ethanol og olie sammen, og se molekylerne.\n\n\nPrøv selv: Vand eller heptan: forudsig, hvilken væske et stof opløses i.\n\n\nSe alle opgaver til emnet “Blandbarhed” (3.4)\n\n\nI laboratoriet: Øvelse 3.4a: Hvad kan blandes? og Øvelse 3.4b: Rødbede og paprika",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "3.4 Blandbarhed"
@@ -4114,6 +4114,17 @@
     ]
   },
   {
+    "objectID": "opgaver/3-2-opgaver.html#3.2.6",
+    "href": "opgaver/3-2-opgaver.html#3.2.6",
+    "title": "Opgaver til 3.2",
+    "section": "Opgave 3.2.6: Ethyn til svejsning",
+    "text": "Opgave 3.2.6: Ethyn til svejsning\nEthyn bruges som gas til svejsning og har formlen C2H2. Stregformlen er H−C≡C−H.\n\nHvor mange grupper af elektroner er der omkring hvert carbonatom?\nHvilken form har molekylet omkring hvert carbonatom?\nLigger alle fire atomer på en ret linje?\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl bindingerne og de frie elektronpar omkring ét af carbonatomerne. En binding er én gruppe, uanset om den er en enkeltbinding, en dobbeltbinding eller en tripelbinding.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nHvert carbonatom har en enkeltbinding til et hydrogenatom og en tripelbinding til det andet carbonatom, og det har ingen frie elektronpar. Sammenlign med carbonatomet i carbondioxid.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nDer er to grupper omkring hvert carbonatom: enkeltbindingen til hydrogen og tripelbindingen til det andet carbonatom.\nFormen er lineær, fordi de to grupper stiller sig over for hinanden ligesom i carbondioxid.\nJa. Alle fire atomer ligger på en ret linje.",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Opgaver til 3.2"
+    ]
+  },
+  {
     "objectID": "opgaver/3-2-opgaver.html#opgaver-med-fødevaretema",
     "href": "opgaver/3-2-opgaver.html#opgaver-med-fødevaretema",
     "title": "Opgaver til 3.2",
@@ -4151,7 +4162,7 @@
     "href": "opgaver/3-2-opgaver.html#opgaver-med-sundhedstema",
     "title": "Opgaver til 3.2",
     "section": "Opgaver med sundhedstema",
-    "text": "Opgaver med sundhedstema\nKroppen er fuld af små molekyler som vand, carbondioxid og ammoniak. De har hver sin form. Opgaverne træner det samme som opgave 3.2.1 til 3.2.5, men handler alle om sundhed og medicin. Baggrunden står på siden T4.7 Molekyler i kroppen i Tema: Sundhed.",
+    "text": "Opgaver med sundhedstema\nKroppen er fuld af små molekyler som vand, carbondioxid og ammoniak. De har hver sin form. Opgaverne træner det samme som opgave 3.2.1 til 3.2.6, men handler alle om sundhed og medicin. Baggrunden står på siden T4.7 Molekyler i kroppen i Tema: Sundhed.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "Opgaver til 3.2"
@@ -4207,6 +4218,17 @@
     "title": "Opgaver til 3.2",
     "section": "Opgave 3.2.sundhed.5: Sandt eller falsk?",
     "text": "Opgave 3.2.sundhed.5: Sandt eller falsk?\nAfgør, om hver påstand er sand eller falsk. Ret de falske påstande.\n\nVandmolekylerne i din krop er lineære.\nCarbonatomet i det carbondioxid, du ånder ud, har ingen frie elektronpar.\nAmmoniak fra lugtesalt er et fladt molekyle.\nI methan fra tarmluft er vinklen mellem bindingerne 109,5°.\nElektronparrene omkring et atom stiller sig så tæt på hinanden som muligt.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nSammenlign påstandene med figuren og tabellen over de fire molekyler i afsnit 3.2.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nTo af påstandene er sande, og tre er falske.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nFalsk. Vand er vinklet.\nSand.\nFalsk. Ammoniak er en trekantet pyramide.\nSand.\nFalsk. Elektronparrene stiller sig så langt fra hinanden som muligt.",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Opgaver til 3.2"
+    ]
+  },
+  {
+    "objectID": "opgaver/3-2-opgaver.html#3.2.sundhed.6",
+    "href": "opgaver/3-2-opgaver.html#3.2.sundhed.6",
+    "title": "Opgaver til 3.2",
+    "section": "Opgave 3.2.sundhed.6: Blåsyre i abrikoskerner",
+    "text": "Opgave 3.2.sundhed.6: Blåsyre i abrikoskerner\nAbrikoskerner og bitre mandler indeholder et stof, som i kroppen kan danne den giftige blåsyre, hydrogencyanid, HCN. Carbonatomet sidder i midten, og stregformlen er H−C≡N.\n\nHvor mange grupper af elektroner er der omkring carbonatomet?\nHvilken form har molekylet?\nVand har også tre atomer. Forklar, hvorfor hydrogencyanid ikke er vinklet ligesom vand.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl bindingerne og de frie elektronpar omkring carbonatomet. En binding er én gruppe, uanset om den er en enkeltbinding, en dobbeltbinding eller en tripelbinding.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nCarbonatomet har en enkeltbinding til hydrogen og en tripelbinding til nitrogen, og det har ingen frie elektronpar. Oxygenatomet i vand har to bindinger og to frie elektronpar.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nDer er to grupper omkring carbonatomet: enkeltbindingen til hydrogen og tripelbindingen til nitrogen.\nHydrogencyanid er lineært.\nCarbonatomet har ingen frie elektronpar, så de to grupper stiller sig over for hinanden. Oxygenatomet i vand har to frie elektronpar, og de skubber de to bindinger sammen, så vandmolekylet bliver vinklet.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "Opgaver til 3.2"
@@ -4338,7 +4360,7 @@
     "href": "opgaver/3-3-opgaver.html#3.3.mad.2",
     "title": "Opgaver til 3.3",
     "section": "Opgave 3.3.mad.2: Fedt",
-    "text": "Opgave 3.3.mad.2: Fedt\nEt fedtmolekyle fra smør eller olie har omkring 55 carbonatomer og 3 polære grupper.\n\nBrug tommelfingerreglen til at afgøre, om fedt er polært eller upolært.\nDet meste af molekylet består af lange kæder af carbon og hydrogen. Hvorfor er de kæder upolære?\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGang antallet af polære grupper med 4, og sammenlign med antallet af carbonatomer.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nHver polær gruppe kan opveje 4 carbonatomer, så 3 polære grupper kan opveje 12. Til spørgsmål b skal du se på bindingerne C−C og C−H.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nDe 3 polære grupper kan kun opveje 12 carbonatomer. Der er omkring 55, så fedt er upolært.\nKæderne består af bindingerne C−C med ΔEN = 0 og C−H med ΔEN = 0,4. Begge er upolære.",
+    "text": "Opgave 3.3.mad.2: Fedt\nEt fedtmolekyle fra smør eller olie har omkring 57 carbonatomer og 3 polære grupper.\n\nBrug tommelfingerreglen til at afgøre, om fedt er polært eller upolært.\nDet meste af molekylet består af lange kæder af carbon og hydrogen. Hvorfor er de kæder upolære?\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGang antallet af polære grupper med 4, og sammenlign med antallet af carbonatomer.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nHver polær gruppe kan opveje 4 carbonatomer, så 3 polære grupper kan opveje 12. Til spørgsmål b skal du se på bindingerne C−C og C−H.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nDe 3 polære grupper kan kun opveje 12 carbonatomer. Der er omkring 57, så fedt er upolært.\nKæderne består af bindingerne C−C med ΔEN = 0 og C−H med ΔEN = 0,4. Begge er upolære.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "Opgaver til 3.3"
@@ -4591,7 +4613,7 @@
     "href": "opgaver/3-4-opgaver.html#3.4.sundhed.1",
     "title": "Opgaver til 3.4",
     "section": "Opgave 3.4.sundhed.1: Lægemidler i blodet",
-    "text": "Opgave 3.4.sundhed.1: Lægemidler i blodet\n\nUdfyld skemaet med blandes eller blandes ikke.\n\n\n\n\nStofferne\nResultat\n\n\n\n\nPolært og polært\n\n\n\nUpolært og upolært\n\n\n\nPolært og upolært\n\n\n\n\n\nBlodet består mest af vand. Er blod en polær eller en upolær væske?\nEt lægemiddel skal kunne opløses i blodet for at komme rundt i kroppen. Skal lægemidlets molekyler være polære eller upolære?\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nStoffer, der ligner hinanden, blandes med hinanden.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nKun én af de tre kombinationer giver to lag. Til spørgsmål b skal du huske, at vand er et polært stof.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n\n\nStofferne\nResultat\n\n\n\n\nPolært og polært\nblandes\n\n\nUpolært og upolært\nblandes\n\n\nPolært og upolært\nblandes ikke\n\n\n\n\nBlod er en polær væske, fordi det mest består af vand, og vand er polært.\nMolekylerne skal være polære. Polære stoffer blandes med polære stoffer, så et polært lægemiddel kan opløses i blodet.",
+    "text": "Opgave 3.4.sundhed.1: Lægemidler i blodet\n\nUdfyld skemaet med blandes eller blandes ikke.\n\n\n\n\nStofferne\nResultat\n\n\n\n\nPolært og polært\n\n\n\nUpolært og upolært\n\n\n\nPolært og upolært\n\n\n\n\n\nBlodet består mest af vand. Er blod en polær eller en upolær væske?\nEt lægemiddel skal kunne opløses i blodet for at komme rundt i kroppen. Skal lægemidlets molekyler være polære eller upolære?\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nStoffer, der ligner hinanden, blandes med hinanden.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nKun én af de tre kombinationer giver to lag. Til spørgsmål b skal du huske, at vand er et polært stof.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n\n\nStofferne\nResultat\n\n\n\n\nPolært og polært\nblandes\n\n\nUpolært og upolært\nblandes\n\n\nPolært og upolært\nblandes ikke\n\n\n\n\nBlod er en polær væske, fordi det mest består af vand, og vand er polært.\nMolekylerne skal være så polære, at de kan opløses i blodet, for polære stoffer blandes med polære stoffer. Mange lægemidler har dog også en upolær del, så de kan komme igennem cellernes fedtholdige overflade.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "Opgaver til 3.4"
@@ -4690,7 +4712,7 @@
     "href": "fagord/kapitel-3.html#polære-bindinger-og-polære-molekyler",
     "title": "Fagord til kapitel 3",
     "section": "3.3 Polære bindinger og polære molekyler",
-    "text": "3.3 Polære bindinger og polære molekyler\n\n\n\nFagord\nForklaring\n\n\n\n\nelektronegativitet\nMål for, hvor kraftigt et atom trækker i de fælles elektroner i en binding. Fluor har den højeste af alle grundstoffer.\n\n\nupolær binding\nHer deler to atomer elektronparret ligeligt. Forskellen i elektronegativitet er under 0,5, som i C−H.\n\n\npolær binding\nHer ligger det fælles elektronpar tættest på det ene atom, som får lidt negativ ladning. O−H i vand er et eksempel.\n\n\npolært molekyle\nPartikel af flere atomer med en positiv og en negativ ende. Vand og ammoniak er eksempler.\n\n\npol\nDen positive eller den negative ende af et molekyle som vand.\n\n\npolær gruppe\nDel af et stort molekyle med oxygen eller fluor, for eksempel −OH. Der skal 4 carbonatomer til at ophæve virkningen af én.",
+    "text": "3.3 Polære bindinger og polære molekyler\n\n\n\nFagord\nForklaring\n\n\n\n\nelektronegativitet\nMål for, hvor kraftigt et atom trækker i de fælles elektroner i en binding. Fluor har den højeste af alle grundstoffer.\n\n\nupolær binding\nHer deler to atomer elektronparret ligeligt. Forskellen i elektronegativitet er under 0,5, som i C−H.\n\n\npolær binding\nHer ligger det fælles elektronpar tættest på det ene atom, som får lidt negativ ladning. O−H i vand er et eksempel.\n\n\npolært molekyle\nPartikel af flere atomer med en positiv og en negativ ende. Vand og ammoniak er eksempler.\n\n\npol\nDen positive eller den negative ende af et molekyle som vand.\n\n\npolær gruppe\nDel af et stort molekyle med et oxygenatom, for eksempel −OH. Der skal 4 carbonatomer til at ophæve virkningen af én.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "Fagord til kapitel 3"
@@ -4745,7 +4767,7 @@
     "href": "repetition/kapitel-3.html#rep-3-3",
     "title": "Repetition af kapitel 3",
     "section": "3.3 Polære bindinger og polære molekyler",
-    "text": "3.3 Polære bindinger og polære molekyler\n\nDet skal du kunne\n\nforklare, hvad elektronegativitet er\nberegne forskellen i elektronegativitet og afgøre, hvilken slags binding der er tale om\nafgøre, om et lille molekyle er polært eller upolært\nbruge tommelfingerreglen for store molekyler\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\n\n\nElektronegativitet er et mål for, hvor kraftigt et atom trækker i de fælles elektroner.\nForskellen i elektronegativitet afgør bindingen: under 0,5 upolær, fra 0,5 til under 2,0 polær, og 2,0 eller mere ionbinding.\nEt polært molekyle har en positiv og en negativ ende.\nPolære bindinger kan ophæve hinanden, hvis de trækker lige meget i hver sin retning, som i carbondioxid.\nI store molekyler skal der 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\n\n\n\nLæs afsnit 3.3 · Opgaver til 3.3",
+    "text": "3.3 Polære bindinger og polære molekyler\n\nDet skal du kunne\n\nforklare, hvad elektronegativitet er\nberegne forskellen i elektronegativitet og afgøre, hvilken slags binding der er tale om\nafgøre, om et lille molekyle er polært eller upolært\nbruge tommelfingerreglen for store molekyler\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\n\n\nElektronegativitet er et mål for, hvor kraftigt et atom trækker i de fælles elektroner.\nForskellen i elektronegativitet afgør bindingen: under 0,5 upolær, fra 0,5 til under 2,0 polær, og 2,0 eller mere ionbinding. Mellem et metal og et ikke-metal er der altid en ionbinding.\nEt polært molekyle har en positiv og en negativ ende.\nPolære bindinger kan ophæve hinanden, hvis de trækker lige meget i hver sin retning, som i carbondioxid.\nI store molekyler skal der 4 carbonatomer til at ophæve virkningen af én polær gruppe.\n\n\n\n\n\nLæs afsnit 3.3 · Opgaver til 3.3",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "Repetition af kapitel 3"
@@ -4778,54 +4800,142 @@
     "href": "oevelser/kapitel-3.html",
     "title": "Øvelser til kapitel 3",
     "section": "",
-    "text": "Her står laboratorieøvelserne til kapitel 3, Molekyler. Hver øvelse har samme nummer som det afsnit i kapitlet, den hører til.\n\n\n\nØvelse\nAfsnit\nDet undersøger du\n\n\n\n\nØvelse 3.4: Hvad kan blandes?\n3.4\nHvilke af fire væsker kan blandes med hinanden?\n\n\n\nLæs de faste regler i laboratoriet, før du går i gang. Alle bogens øvelser står samlet på siden Laboratorieøvelser under Materialer nederst i menuen.",
+    "text": "Her står laboratorieøvelserne til kapitel 3, Molekyler. Hver øvelse har samme nummer som det afsnit i kapitlet, den hører til.\n\n\n\nØvelse\nAfsnit\nDet undersøger du\n\n\n\n\nDemoforsøg 3.3a: Vandstrålen og ballonen\n3.3\nHvad gør en ballon med elektrisk ladning ved en stråle vand?\n\n\nØvelse 3.4a: Hvad kan blandes?\n3.4\nHvilke af fire væsker kan blandes med hinanden?\n\n\nØvelse 3.4b: Rødbede og paprika\n3.4\nEr farvestofferne i rødbede og paprika polære eller upolære?\n\n\n\nEt demoforsøg er et forsøg, som din lærer viser, mens du skriver ned, hvad du ser.\nLæs de faste regler i laboratoriet, før du går i gang. Alle bogens øvelser står samlet på siden Laboratorieøvelser under Materialer nederst i menuen.",
     "crumbs": [
       "Kapitel 3: Molekyler",
       "Øvelser til kapitel 3"
     ]
   },
   {
-    "objectID": "oevelser/3-4-hvad-kan-blandes.html",
-    "href": "oevelser/3-4-hvad-kan-blandes.html",
-    "title": "Øvelse 3.4: Hvad kan blandes?",
+    "objectID": "oevelser/3-3a-vandstraalen-og-ballonen.html",
+    "href": "oevelser/3-3a-vandstraalen-og-ballonen.html",
+    "title": "Demoforsøg 3.3a: Vandstrålen og ballonen",
+    "section": "",
+    "text": "Fremgangsmåde\nNår en ballon gnides mod en uldtrøje eller mod håret, flytter der elektroner over på ballonen, så den bliver negativt ladet. Forsøget lykkes bedst, når luften i lokalet er tør, og ballonen ikke er våd.\nApparatur og kemikalier: en vandhane med en vask, en oppustet ballon og en uldtrøje (eller tørt hår).",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Demoforsøg 3.3a: Vandstrålen og ballonen"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-3a-vandstraalen-og-ballonen.html#fremgangsmåde",
+    "href": "oevelser/3-3a-vandstraalen-og-ballonen.html#fremgangsmåde",
+    "title": "Demoforsøg 3.3a: Vandstrålen og ballonen",
+    "section": "",
+    "text": "Figur 1: Først gnides ballonen, og så holdes den tæt på en tynd stråle vand.\n\n\n\n\nGæt først: Hvad sker der med vandstrålen, når den gnedne ballon kommer tæt på? Skriv dit gæt i skemaet.\nLæreren åbner vandhanen lidt, så der løber en tynd, jævn stråle, som figur 1 viser.\nLæreren holder ballonen tæt på strålen, før den er gnedet. Ballonen må ikke røre vandet.\nLæreren gnider ballonen mod uldtrøjen eller håret i 10 sekunder og holder den igen tæt på strålen.\nLæreren flytter ballonen langsomt tættere på strålen og længere væk igen.\nLæreren lukker for vandet og tørrer ballonen af.",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Demoforsøg 3.3a: Vandstrålen og ballonen"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-3a-vandstraalen-og-ballonen.html#resultater",
+    "href": "oevelser/3-3a-vandstraalen-og-ballonen.html#resultater",
+    "title": "Demoforsøg 3.3a: Vandstrålen og ballonen",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\nForsøg\nGæt: Hvad sker der med strålen?\nDet skete med strålen\n\n\n\n\nBallonen er ikke gnedet\n\n\n\n\nBallonen er gnedet\n\n\n\n\nBallonen flyttes tættere på",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Demoforsøg 3.3a: Vandstrålen og ballonen"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-3a-vandstraalen-og-ballonen.html#efterbehandling",
+    "href": "oevelser/3-3a-vandstraalen-og-ballonen.html#efterbehandling",
+    "title": "Demoforsøg 3.3a: Vandstrålen og ballonen",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\n\nHvorfor sker der noget med strålen, når ballonen er gnedet, men ikke før? \nVandmolekyler er polære. Forklar med figuren af vandmolekylet i afsnit 3.3, hvad et polært molekyle har, som et upolært molekyle ikke har. \nÅbn animationen Polære molekyler på kemiformler.dk, fanen Forsøg: vandstrålen, og prøv med heptan i stedet for vand. Hvad sker der med strålen af heptan, og hvordan passer det med, at heptan er upolært?",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Demoforsøg 3.3a: Vandstrålen og ballonen"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-4a-hvad-kan-blandes.html",
+    "href": "oevelser/3-4a-hvad-kan-blandes.html",
+    "title": "Øvelse 3.4a: Hvad kan blandes?",
     "section": "",
     "text": "Fremgangsmåde\nVandet er farvet rødt, og spritten er farvet blå med frugtfarve, så du kan se, hvor de to væsker er, når glasset har stået lidt.\nApparatur og kemikalier: seks reagensglas med prop, stativ, tusch, fire engangspipetter, vand farvet rødt, husholdningssprit farvet blå, madolie og rensebenzin.",
     "crumbs": [
       "Kapitel 3: Molekyler",
-      "Øvelse 3.4: Hvad kan blandes?"
+      "Øvelse 3.4a: Hvad kan blandes?"
     ]
   },
   {
-    "objectID": "oevelser/3-4-hvad-kan-blandes.html#fremgangsmåde",
-    "href": "oevelser/3-4-hvad-kan-blandes.html#fremgangsmåde",
-    "title": "Øvelse 3.4: Hvad kan blandes?",
+    "objectID": "oevelser/3-4a-hvad-kan-blandes.html#fremgangsmåde",
+    "href": "oevelser/3-4a-hvad-kan-blandes.html#fremgangsmåde",
+    "title": "Øvelse 3.4a: Hvad kan blandes?",
     "section": "",
     "text": "Figur 1: De seks reagensglas og de to væsker, hvert glas skal have.\n\n\n\n\nSkriv først dit gæt i skemaet: Bliver der ét lag eller to lag i glasset?\nSkriv numrene 1 til 6 på glassene, og hæld de to væsker i hvert glas, som figur 1 viser. Brug omkring 2 mL af hver væske.\nSæt en prop i glasset, hold på proppen, og ryst glasset i 10 sekunder.\nVent 1 minut. Skriv i skemaet, hvor mange lag der er, og hvilken farve hvert lag har.\nTag et billede af de seks glas.\nTøm glas 1 i vasken og de fem andre glas i beholderen til organisk affald.",
     "crumbs": [
       "Kapitel 3: Molekyler",
-      "Øvelse 3.4: Hvad kan blandes?"
+      "Øvelse 3.4a: Hvad kan blandes?"
     ]
   },
   {
-    "objectID": "oevelser/3-4-hvad-kan-blandes.html#resultater",
-    "href": "oevelser/3-4-hvad-kan-blandes.html#resultater",
-    "title": "Øvelse 3.4: Hvad kan blandes?",
+    "objectID": "oevelser/3-4a-hvad-kan-blandes.html#resultater",
+    "href": "oevelser/3-4a-hvad-kan-blandes.html#resultater",
+    "title": "Øvelse 3.4a: Hvad kan blandes?",
     "section": "Resultater",
     "text": "Resultater\n\n\n\n\n\n\n\n\n\n\nGlas\nVæsker\nGæt: ét eller to lag?\nAntal lag og lagenes farver\n\n\n\n\n1\nvand og sprit\n\n\n\n\n2\nvand og olie\n\n\n\n\n3\nvand og rensebenzin\n\n\n\n\n4\nsprit og olie\n\n\n\n\n5\nsprit og rensebenzin\n\n\n\n\n6\nolie og rensebenzin",
     "crumbs": [
       "Kapitel 3: Molekyler",
-      "Øvelse 3.4: Hvad kan blandes?"
+      "Øvelse 3.4a: Hvad kan blandes?"
     ]
   },
   {
-    "objectID": "oevelser/3-4-hvad-kan-blandes.html#efterbehandling",
-    "href": "oevelser/3-4-hvad-kan-blandes.html#efterbehandling",
-    "title": "Øvelse 3.4: Hvad kan blandes?",
+    "objectID": "oevelser/3-4a-hvad-kan-blandes.html#efterbehandling",
+    "href": "oevelser/3-4a-hvad-kan-blandes.html#efterbehandling",
+    "title": "Øvelse 3.4a: Hvad kan blandes?",
     "section": "Efterbehandling",
     "text": "Efterbehandling\n\n\n\n\n\n\n\nFigur 2: Stregformler for molekylerne i de fire væsker.\n\n\n\n\nBeregn forskellen i elektronegativitet for de tre bindinger, og afgør, om bindingen er polær. Første række er udfyldt.\n\n\n\n\n\n\n\n\n\n\n\nBinding\nElektronegativiteter\nForskel\nPolær eller upolær binding?\n\n\n\n\nO−H\n3,5 og 2,1\n1,4\npolær\n\n\nC−H\n2,5 og 2,1\n\n\n\n\nC−O\n3,5 og 2,5\n\n\n\n\n\n\n\nEn polær gruppe er en gruppe af atomer med polære bindinger. Sæt ring om de polære grupper i de fire stregformler i figur 2. \nTæl de polære grupper og carbonatomerne i hvert molekyle, og udfyld skemaet. Er antallet af C-atomer mindre end antallet af polære grupper gange 4, er molekylet polært. Ellers er det upolært. Første række er udfyldt.\n\n\n\n\n\n\n\n\n\n\n\n\nMolekyle\nPolære grupper\nPolære grupper · 4\nAntal C\nPolært eller upolært?\n\n\n\n\nVand\n1\n4\n0\npolært\n\n\nEthanol\n\n\n\n\n\n\nHeptan\n\n\n\n\n\n\nFedtstof\n\n\n57\n\n\n\n\n\n\nPolære væsker blandes med polære væsker, og upolære væsker blandes med upolære. Forklar med skemaet, hvorfor vand og olie ikke blandes i glas 2.\nSe på glas 1, 4 og 5. Opfører sprit sig mest som en polær eller som en upolær væske? Begrund med dine resultater.\nHvor er den røde og den blå farve i glassene med to lag? Er frugtfarvens molekyler polære eller upolære? \n\n\n\n\nTegn stregformlerne for vand, ethanol og heptan.\n\n\nVand, H2O\nEthanol, CH3CH2OH\nHeptan, C7H16\n\n\nAfgør med teorien om polaritet i afsnit 3.3, om molekylerne i de fire væsker er polære eller upolære. Et fedtstofmolekyle har omkring 57 carbonatomer og 3 polære grupper.\nForudsig ud fra molekylernes polaritet, hvilke af de seks blandinger der giver ét lag. Stemmer dine observationer overens med forventningerne?\nForklar de observationer, der ikke passer med forventningerne.",
     "crumbs": [
       "Kapitel 3: Molekyler",
-      "Øvelse 3.4: Hvad kan blandes?"
+      "Øvelse 3.4a: Hvad kan blandes?"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-4b-roedbede-og-paprika.html",
+    "href": "oevelser/3-4b-roedbede-og-paprika.html",
+    "title": "Øvelse 3.4b: Rødbede og paprika",
+    "section": "",
+    "text": "Fremgangsmåde\nForsøget bruger kun stoffer fra køkkenet. Paprika er et pulver, som ikke selv bliver opløst, men farvestoffet i pulveret kan gå over i en af de to væsker. Glas 1 og 2 viser hvert farvestof for sig, og glas 3 viser dem begge i samme glas.\nApparatur og kemikalier: tre reagensglas med prop, stativ, tusch, tre engangspipetter, spatel, vand, madolie, rødbedesaft (fx lagen fra et glas rødbeder) og paprikapulver.",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Øvelse 3.4b: Rødbede og paprika"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-4b-roedbede-og-paprika.html#fremgangsmåde",
+    "href": "oevelser/3-4b-roedbede-og-paprika.html#fremgangsmåde",
+    "title": "Øvelse 3.4b: Rødbede og paprika",
+    "section": "",
+    "text": "Figur 1: De tre reagensglas, og hvad hvert glas skal have.\n\n\n\n\nSkriv først dit gæt i skemaet: Går farven over i vandet eller i olien?\nSkriv numrene 1 til 3 på glassene, og hæld 3 mL vand og 3 mL madolie i hvert glas.\nKom 10 dråber rødbedesaft i glas 1, en knivspids paprika i glas 2 og begge dele i glas 3, som figur 1 viser. En knivspids er så meget, der kan ligge på spidsen af spatlen.\nSæt en prop i glasset, hold på proppen, og ryst glasset i 10 sekunder. Gør det med alle tre glas.\nVent 2 minutter. Skriv i skemaet, hvilken farve vandlaget og olielaget har, og tag et billede af de tre glas.\nTøm glassene i den beholder, din lærer viser dig, for madolie må ikke hældes i vasken.",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Øvelse 3.4b: Rødbede og paprika"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-4b-roedbede-og-paprika.html#resultater",
+    "href": "oevelser/3-4b-roedbede-og-paprika.html#resultater",
+    "title": "Øvelse 3.4b: Rødbede og paprika",
+    "section": "Resultater",
+    "text": "Resultater\n\n\n\n\n\n\n\n\n\n\n\nGlas\nIndhold\nGæt: vand eller olie?\nFarven i vandlaget\nFarven i olielaget\n\n\n\n\n1\nvand, olie og rødbedesaft\n\n\n\n\n\n2\nvand, olie og paprika\n\n\n\n\n\n3\nvand, olie, rødbedesaft og paprika",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Øvelse 3.4b: Rødbede og paprika"
+    ]
+  },
+  {
+    "objectID": "oevelser/3-4b-roedbede-og-paprika.html#efterbehandling",
+    "href": "oevelser/3-4b-roedbede-og-paprika.html#efterbehandling",
+    "title": "Øvelse 3.4b: Rødbede og paprika",
+    "section": "Efterbehandling",
+    "text": "Efterbehandling\nEfterbehandlingen er din minijournal. Aflever den sammen med billedet af de tre glas.\n\nTegn de tre glas på makroniveau, og farvelæg lagene, som de så ud efter 2 minutter.\n\n\nGlas 1\nGlas 2\nGlas 3\n\n\nTegn glas 3 på mikroniveau: vandmolekylerne og oliemolekylerne i hvert sit lag og farvestofferne som små, farvede prikker der, hvor farven var. Brug figuren med de tre glas i afsnit 3.4 som forbillede.\n\n\nGlas 3 på mikroniveau\n\n\nEr farvestoffet fra rødbede polært eller upolært, og hvad med farvestoffet fra paprika? Begrund med dit resultat og reglen om blandbarhed. \nHvorfor ligger olielaget øverst i glassene? \nKonklusion: Skriv to sætninger, der svarer på formålet.",
+    "crumbs": [
+      "Kapitel 3: Molekyler",
+      "Øvelse 3.4b: Rødbede og paprika"
     ]
   },
   {
@@ -14699,7 +14809,7 @@
     "href": "temaer/t2-2-drivhusgassernes-form.html#nogle-atomer-trækker-hårdere",
     "title": "T2.2 Drivhusgassernes form",
     "section": "Nogle atomer trækker hårdere",
-    "text": "Nogle atomer trækker hårdere\nI en elektronparbinding deler to atomer et elektronpar, men de deler ikke altid lige. Elektronegativitet er et mål for, hvor kraftigt et atom trækker i de fælles elektroner. Den er størst øverst til højre i det periodiske system.\n\n\n\nGrundstof\nH\nC\nN\nO\n\n\n\n\nElektronegativitet\n2,1\n2,5\n3,0\n3,5\n\n\n\nForskellen i elektronegativitet mellem de to atomer, ΔEN, afgør, hvilken slags binding der er tale om:\n\n\n\n\n\n\n\nΔEN\nBinding\n\n\n\n\nunder 0,5\nupolær elektronparbinding: elektronparret deles ligeligt\n\n\nfra 0,5 til under 2,0\npolær elektronparbinding: elektronparret ligger tættest på det mest elektronegative atom\n\n\n2,0 eller mere\nionbinding\n\n\n\n\n\n\n\n\n\nNoteEksempel: bindingerne i tre drivhusgasser\n\n\n\nBindingen C=O i carbondioxid:\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{O}) - \\mathrm{EN}(\\mathrm{C}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}5 - 2{,}5 = 1{,}0\n\\end{aligned}\n\\]\nBindingen O−H i vand:\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{O}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}5 - 2{,}1 = 1{,}4\n\\end{aligned}\n\\]\nBindingen C−H i methan:\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{C}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 2{,}5 - 2{,}1 = 0{,}4\n\\end{aligned}\n\\]\nKonklusion. Bindingerne i carbondioxid og vand er polære, fordi forskellen ligger mellem 0,5 og 2,0. Bindingerne i methan er upolære, fordi forskellen er under 0,5. I N2 og O2 er de to atomer ens, så forskellen er 0, og bindingen er upolær.\n\n\nI en polær binding bliver det mest elektronegative atom delvist negativt, som skrives δ−, og det andet atom bliver delvist positivt, δ+. Tegnet δ er det græske bogstav delta og betyder her delvist.",
+    "text": "Nogle atomer trækker hårdere\nI en elektronparbinding deler to atomer et elektronpar, men de deler ikke altid lige. Elektronegativitet er et mål for, hvor kraftigt et atom trækker i de fælles elektroner. Den er størst øverst til højre i det periodiske system.\n\n\n\nGrundstof\nH\nC\nN\nO\n\n\n\n\nElektronegativitet\n2,1\n2,5\n3,0\n3,5\n\n\n\nForskellen i elektronegativitet mellem de to atomer, ΔEN, afgør, hvilken slags binding der er tale om:\n\n\n\n\n\n\n\nΔEN\nBinding\n\n\n\n\nunder 0,5\nupolær elektronparbinding: elektronparret deles ligeligt\n\n\nfra 0,5 til under 2,0\npolær elektronparbinding: elektronparret ligger tættest på det mest elektronegative atom\n\n\n2,0 eller mere\nionbinding\n\n\n\nMellem et metal og et ikke-metal er der altid en ionbinding, som i afsnit 2.3, også når forskellen er lidt under 2,0.\n\n\n\n\n\n\nNoteEksempel: bindingerne i tre drivhusgasser\n\n\n\nBindingen C=O i carbondioxid:\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{O}) - \\mathrm{EN}(\\mathrm{C}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}5 - 2{,}5 = 1{,}0\n\\end{aligned}\n\\]\nBindingen O−H i vand:\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{O}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}5 - 2{,}1 = 1{,}4\n\\end{aligned}\n\\]\nBindingen C−H i methan:\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{C}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 2{,}5 - 2{,}1 = 0{,}4\n\\end{aligned}\n\\]\nKonklusion. Bindingerne i carbondioxid og vand er polære, fordi forskellen ligger mellem 0,5 og 2,0. Bindingerne i methan er upolære, fordi forskellen er under 0,5. I N2 og O2 er de to atomer ens, så forskellen er 0, og bindingen er upolær.\n\n\nI en polær binding bliver det mest elektronegative atom delvist negativt, som skrives δ−, og det andet atom bliver delvist positivt, δ+. Tegnet δ er det græske bogstav delta og betyder her delvist.",
     "crumbs": [
       "Tema: Klima",
       "T2.2 Drivhusgassernes form"
@@ -16707,7 +16817,7 @@
     "href": "temaer/sundhed.html#forsøg",
     "title": "Tema: Sundhed",
     "section": "Forsøg",
-    "text": "Forsøg\n\nØvelse 1.3: Flammefarver, hvor du ser, hvilken farve natrium, kalium og andre metaller giver en flamme.\nØvelse 1.4: Sker der en kemisk reaktion?, hvor du leder efter kendetegnene på en kemisk reaktion.\nØvelse 2.1: Leder det strøm?, hvor du undersøger, hvilke opløsninger der indeholder ioner.\nØvelse 3.4: Hvad kan blandes?, hvor du blander polære og upolære væsker.\nØvelse 4.6: Fedt i chips, hvor du bestemmer, hvor mange procent fedt der er i chips.\nØvelse 6.3a: Mohrtitrering af øjenskyllevand, hvor du måler saltindholdet i øjenskyllevand.",
+    "text": "Forsøg\n\nØvelse 1.3: Flammefarver, hvor du ser, hvilken farve natrium, kalium og andre metaller giver en flamme.\nØvelse 1.4: Sker der en kemisk reaktion?, hvor du leder efter kendetegnene på en kemisk reaktion.\nØvelse 2.1: Leder det strøm?, hvor du undersøger, hvilke opløsninger der indeholder ioner.\nØvelse 3.4a: Hvad kan blandes?, hvor du blander polære og upolære væsker.\nØvelse 4.6: Fedt i chips, hvor du bestemmer, hvor mange procent fedt der er i chips.\nØvelse 6.3a: Mohrtitrering af øjenskyllevand, hvor du måler saltindholdet i øjenskyllevand.",
     "crumbs": [
       "Tema: Sundhed"
     ]
@@ -17332,7 +17442,7 @@
     "href": "temaer/t4-8-polaere-molekyler-i-maden.html#tre-slags-bindinger",
     "title": "T4.8 Polære molekyler i maden",
     "section": "Tre slags bindinger",
-    "text": "Tre slags bindinger\nForskellen i elektronegativitet mellem to atomer afgør, hvilken slags binding der er mellem dem. Forskellen skrives ΔEN og findes ved at trække den mindste elektronegativitet fra den største.\n\n\n\n\n\n\n\n\nForskel i elektronegativitet\nBinding\nHvad sker der med elektronparret?\n\n\n\n\nunder 0,5\nupolær elektronparbinding\nDet deles ligeligt.\n\n\nfra 0,5 til under 2,0\npolær elektronparbinding\nDet ligger tættest på det mest elektronegative atom.\n\n\n2,0 eller mere\nionbinding\nDet mest elektronegative atom tager elektronerne helt.\n\n\n\n\n\n\n\n\n\nNoteEksempel: tre bindinger\n\n\n\nHvilken slags binding er der i chlor, Cl2, i hydrogenchlorid, HCl, og mellem natrium og chlor i køkkensalt? Hydrogenchlorid er det stof, der gør mavesaften sur.\nI figuren med elektronegativiteter kan du aflæse, at chlor har 3,0, hydrogen har 2,1, og natrium har 0,9. I beregningerne står EN(Cl) for elektronegativiteten for chlor og tilsvarende EN(H) og EN(Na) for hydrogen og natrium.\nBindingen Cl−Cl i chlor. De to atomer er ens og har samme elektronegativitet, så forskellen er 0.\nBindingen H−Cl i hydrogenchlorid.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 2{,}1 = 0{,}9\n\\end{aligned}\n\\]\nNatrium og chlor i køkkensalt.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{Na}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 0{,}9 = 2{,}1\n\\end{aligned}\n\\]\nKonklusion\nBindingen i chlor er upolær, fordi forskellen er under 0,5. Bindingen i hydrogenchlorid er polær, fordi forskellen ligger mellem 0,5 og 2,0. Natrium og chlor danner en ionbinding, fordi forskellen er over 2,0, og ionbindinger kender du fra T4.6.\n\n\n\n\n\n\n\n\nFigur 2: De tre bindinger fra eksemplet. Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer.\n\n\n\nI en polær binding er elektronerne skævt fordelt. Atomet med den højeste elektronegativitet bliver delvist negativt, som skrives δ−, mens det andet atom bliver delvist positivt, som skrives δ+. Tegnet δ er det græske bogstav delta og betyder her delvist.\n\n\n\n\n\n\n\nFigur 3: Skalaen for forskellen i elektronegativitet med syv eksempler.\n\n\n\n\nGrænserne i tabellen er en tommelfingerregel. Ligger forskellen præcis på en grænse, regnes bindingen med til den slags, der ligger over grænsen, så en forskel på præcis 0,5 giver en polær binding, og en forskel på præcis 2,0 giver en ionbinding.",
+    "text": "Tre slags bindinger\nForskellen i elektronegativitet mellem to atomer afgør, hvilken slags binding der er mellem dem. Forskellen skrives ΔEN og findes ved at trække den mindste elektronegativitet fra den største.\n\n\n\n\n\n\n\n\nForskel i elektronegativitet\nBinding\nHvad sker der med elektronparret?\n\n\n\n\nunder 0,5\nupolær elektronparbinding\nDet deles ligeligt.\n\n\nfra 0,5 til under 2,0\npolær elektronparbinding\nDet ligger tættest på det mest elektronegative atom.\n\n\n2,0 eller mere\nionbinding\nDet mest elektronegative atom tager elektronerne helt.\n\n\n\nMellem et metal og et ikke-metal er der altid en ionbinding, som i afsnit 2.3, også når forskellen er lidt under 2,0.\n\n\n\n\n\n\nNoteEksempel: tre bindinger\n\n\n\nHvilken slags binding er der i chlor, Cl2, i hydrogenchlorid, HCl, og mellem natrium og chlor i køkkensalt? Hydrogenchlorid er det stof, der gør mavesaften sur.\nI figuren med elektronegativiteter kan du aflæse, at chlor har 3,0, hydrogen har 2,1, og natrium har 0,9. I beregningerne står EN(Cl) for elektronegativiteten for chlor og tilsvarende EN(H) og EN(Na) for hydrogen og natrium.\nBindingen Cl−Cl i chlor. De to atomer er ens og har samme elektronegativitet, så forskellen er 0.\nBindingen H−Cl i hydrogenchlorid.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{H}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 2{,}1 = 0{,}9\n\\end{aligned}\n\\]\nNatrium og chlor i køkkensalt.\n\\[\n\\begin{aligned}\n\\Delta\\mathrm{EN} &= \\mathrm{EN}(\\mathrm{Cl}) - \\mathrm{EN}(\\mathrm{Na}) \\\\\n\\Delta\\mathrm{EN} &= 3{,}0 - 0{,}9 = 2{,}1\n\\end{aligned}\n\\]\nKonklusion\nBindingen i chlor er upolær, fordi forskellen er under 0,5. Bindingen i hydrogenchlorid er polær, fordi forskellen ligger mellem 0,5 og 2,0. Natrium og chlor danner en ionbinding, fordi forskellen er over 2,0, og ionbindinger kender du fra T4.6.\n\n\n\n\n\n\n\n\nFigur 2: De tre bindinger fra eksemplet. Jo større forskel i elektronegativitet, jo skævere ligger det fælles elektronpar. Den stiplede linje viser midten mellem de to atomer.\n\n\n\nI en polær binding er elektronerne skævt fordelt. Atomet med den højeste elektronegativitet bliver delvist negativt, som skrives δ−, mens det andet atom bliver delvist positivt, som skrives δ+. Tegnet δ er det græske bogstav delta og betyder her delvist.\n\n\n\n\n\n\n\nFigur 3: Skalaen for forskellen i elektronegativitet med syv eksempler.\n\n\n\n\nGrænserne i tabellen er en tommelfingerregel. Ligger forskellen præcis på en grænse, regnes bindingen med til den slags, der ligger over grænsen, så en forskel på præcis 0,5 giver en polær binding, og en forskel på præcis 2,0 giver en ionbinding.",
     "crumbs": [
       "Tema: Sundhed",
       "T4.8 Polære molekyler i maden"
@@ -17431,7 +17541,7 @@
     "href": "temaer/t4-9-vand-eller-fedt.html#håndsprit",
     "title": "T4.9 Vand eller fedt?",
     "section": "Håndsprit",
-    "text": "Håndsprit\nHåndsprit indeholder mest ethanol. Mange virus og bakterier er pakket ind i et tyndt lag af fedtstoffer, og ethanol kan ødelægge det lag, så de går i stykker. Derfor virker håndsprit godt mod fx influenzavirus, men dårligere mod virus uden et fedtlag, som det norovirus, der giver roskildesyge. Mod den slags virus er det bedre at vaske hænderne grundigt med vand og sæbe.\n\nVidste du?\n\nIsbjørnelever indeholder så meget A-vitamin, at den er giftig for mennesker, og flere polarforskere er blevet alvorligt syge af at spise den.\nSpiser man rigtig mange gulerødder, kan huden blive gullig. Det orange farvestof i gulerødder er upolært og bliver gemt i kroppens fedt, men det er helt ufarligt.\nFlamingoer bliver lyserøde af farvestoffer fra de små krebsdyr og alger, de spiser. Farvestofferne er upolære ligesom farven i gulerødder og bliver gemt i fjerene.\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nPolære stoffer blandes med polære stoffer, og upolære stoffer blandes med upolære.\nEt polært og et upolært stof blandes ikke, men danner to lag.\nVandmolekyler holder fast i hinanden og i andre polære molekyler, men ikke i upolære molekyler.\nDensiteten afgør, hvilket lag der ligger øverst.\nPolære vitaminer som C-vitamin opløses i vand, mens upolære vitaminer som A-vitamin opløses i fedt.\n\n\n\n\nPrøv selv: Blandbarhed: hæld vand, ethanol og olie sammen, og se molekylerne.\n\n\nPrøv selv: Vand eller heptan: forudsig, hvilken væske et stof opløses i.\n\n\nSe alle opgaver til emnet “Vand eller fedt?” (T4.9)\n\n\nI laboratoriet: Øvelse 3.4: Hvad kan blandes?",
+    "text": "Håndsprit\nHåndsprit indeholder mest ethanol. Mange virus og bakterier er pakket ind i et tyndt lag af fedtstoffer, og ethanol kan ødelægge det lag, så de går i stykker. Derfor virker håndsprit godt mod fx influenzavirus, men dårligere mod virus uden et fedtlag, som det norovirus, der giver roskildesyge. Mod den slags virus er det bedre at vaske hænderne grundigt med vand og sæbe.\n\nVidste du?\n\nIsbjørnelever indeholder så meget A-vitamin, at den er giftig for mennesker, og flere polarforskere er blevet alvorligt syge af at spise den.\nSpiser man rigtig mange gulerødder, kan huden blive gullig. Det orange farvestof i gulerødder er upolært og bliver gemt i kroppens fedt, men det er helt ufarligt.\nFlamingoer bliver lyserøde af farvestoffer fra de små krebsdyr og alger, de spiser. Farvestofferne er upolære ligesom farven i gulerødder og bliver gemt i fjerene.\n\n\n\n\n\n\n\n\nNoteKort sagt\n\n\n\n\nPolære stoffer blandes med polære stoffer, og upolære stoffer blandes med upolære.\nEt polært og et upolært stof blandes ikke, men danner to lag.\nVandmolekyler holder fast i hinanden og i andre polære molekyler, men ikke i upolære molekyler.\nDensiteten afgør, hvilket lag der ligger øverst.\nPolære vitaminer som C-vitamin opløses i vand, mens upolære vitaminer som A-vitamin opløses i fedt.\n\n\n\n\nPrøv selv: Blandbarhed: hæld vand, ethanol og olie sammen, og se molekylerne.\n\n\nPrøv selv: Vand eller heptan: forudsig, hvilken væske et stof opløses i.\n\n\nSe alle opgaver til emnet “Vand eller fedt?” (T4.9)\n\n\nI laboratoriet: Øvelse 3.4a: Hvad kan blandes?",
     "crumbs": [
       "Tema: Sundhed",
       "T4.9 Vand eller fedt?"
@@ -18680,7 +18790,7 @@
     "href": "oevelser/oversigt.html",
     "title": "Laboratorieøvelser",
     "section": "",
-    "text": "Sådan er en øvelse bygget op\nI laboratoriet prøver du selv det af, som bogen forklarer. Her er nitten øvelser, som du selv laver, og fire demoforsøg, som din lærer viser, mens du skriver ned, hvad du ser. Hver øvelse hører til et afsnit i bogen og har samme nummer som afsnittet. Har et afsnit flere øvelser, hedder de a, b og c, og et demoforsøg har altid et bogstav efter nummeret. Der er et link til øvelsen nederst i afsnittet, og i menuen til venstre har hvert kapitel en side med sine øvelser.\nNogle øvelser findes i to udgaver. I den ene bliver du ført trin for trin gennem efterbehandlingen, og i den anden er spørgsmålene mere åbne. Du skifter udgave med de to knapper under øvelsens overskrift.\nDin lærer fortæller, hvilken udgave du skal bruge, og om øvelsen skal afleveres som journal eller som rapport.\nAlle øvelser er bygget op på samme måde. Du kan bruge de samme overskrifter, når du skriver journal eller rapport.",
+    "text": "Sådan er en øvelse bygget op\nI laboratoriet prøver du selv det af, som bogen forklarer. Her er tyve øvelser, som du selv laver, og fem demoforsøg, som din lærer viser, mens du skriver ned, hvad du ser. Hver øvelse hører til et afsnit i bogen og har samme nummer som afsnittet. Har et afsnit flere øvelser, hedder de a, b og c, og et demoforsøg har altid et bogstav efter nummeret. Der er et link til øvelsen nederst i afsnittet, og i menuen til venstre har hvert kapitel en side med sine øvelser.\nNogle øvelser findes i to udgaver. I den ene bliver du ført trin for trin gennem efterbehandlingen, og i den anden er spørgsmålene mere åbne. Du skifter udgave med de to knapper under øvelsens overskrift.\nDin lærer fortæller, hvilken udgave du skal bruge, og om øvelsen skal afleveres som journal eller som rapport.\nAlle øvelser er bygget op på samme måde. Du kan bruge de samme overskrifter, når du skriver journal eller rapport.",
     "crumbs": [
       "Materialer",
       "Laboratorieøvelser"
