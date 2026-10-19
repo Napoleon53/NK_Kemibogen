@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ef8d3709b93ebba7326c36240e53fb22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-38407c8f2a86490ed112d04d4ecfcf6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -3025,16 +3025,17 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 // Fagordlister (sider med "body-classes: fagord" og en tabel under hver overskrift).
 //
-// Over tabellerne sættes en bjælke med knapper. "Quiz: fem hurtige" åbner en lille quiz på
-// selve siden: en forklaring og fire fagord at vælge imellem. "Speedtalk" viser fagordene på hele
-// skærmen ét ad gangen med en klokke imellem, til en øvelse for hele klassen (Niels 15. okt. 2026).
-// "Kort og godt" åbner spillet på kemiformler.dk
-// (vendekort, vendespil og parring) med fagordene som et sæt: hele sættet står i linket. De to andre
-// kopierer fagordene som tekst, der passer til Quizlet (fagord, tabulator, forklaring) eller til
-// Crossword Labs (svar, mellemrum, ledetråd). Knappen "Vælg fagord" folder en oversigt ud med et
-// flueben ved hvert afsnit og ved hvert fagord, så man kan tage hele kapitlet, nogle afsnit eller
-// enkelte fagord med (Niels 12. okt. 2026). Teksten vises også i et felt, så den kan markeres og
-// kopieres i hånden. Uden JavaScript og på print er siden bare tabellerne.
+// Over tabellerne sættes en bjælke med to rækker (lagt om 19. okt. 2026, Niels: menuen var "lidt
+// broken, og det er uklart hvad man har trykket på"). Rækken "Fagord" vælger, hvilke fagord der er
+// med: en knap pr. afsnit og "Vælg enkelte fagord", som folder et flueben ved hvert fagord ud (Niels
+// 12. okt. 2026). Rækken "Aktivitet" har fem faner, og kun én er åben ad gangen, med sit felt lige
+// under bjælken. "Quiz: fem hurtige" er en lille quiz på selve siden: en forklaring og fire fagord at
+// vælge imellem. "Speedtalk" viser fagordene på hele skærmen ét ad gangen med en klokke imellem, til
+// en øvelse for hele klassen (Niels 15. okt. 2026). "Kort og godt" åbner spillet på kemiformler.dk
+// (vendekort, vendespil og parring) med fagordene som et sæt: hele sættet står i linket. Quizlet og
+// Crossword Labs viser fagordene som tekst, der passer til Quizlet (fagord, tabulator, forklaring)
+// eller til Crossword Labs (svar, mellemrum, ledetråd), med en knap, der kopierer den.
+// Uden JavaScript og på print er siden bare tabellerne.
 document.addEventListener("DOMContentLoaded", function () {
   if (!document.body.classList.contains("fagord")) return;
   var main = document.querySelector("main");
@@ -3085,42 +3086,56 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   var boks = el("div", "fagord-eksport");
-  var linje = el("div", "fe-linje");
-  var quizStart = el("button", "fe-knap fe-quizstart", "Quiz: fem hurtige");
-  quizStart.type = "button";
-  linje.appendChild(quizStart);
-  var speedStart = el("button", "fe-knap fe-speedstart", "Speedtalk");
-  speedStart.type = "button";
-  linje.appendChild(speedStart);
-  linje.appendChild(el("span", "fe-tekst", "Brug fagordene i"));
-  // Kort og godt er et rigtigt link, så adressen også kan kopieres og deles med en klasse.
-  var tilSpil = el("a", "fe-knap fe-spil", "Kort og godt");
-  tilSpil.target = "_blank";
-  tilSpil.rel = "noopener";
-  var tilQuizlet = el("button", "fe-knap", "Quizlet");
-  var tilKryds = el("button", "fe-knap", "Crossword Labs");
-  tilQuizlet.type = tilKryds.type = "button";
-  linje.appendChild(tilSpil);
-  linje.appendChild(tilQuizlet);
-  linje.appendChild(tilKryds);
 
-  // Knappen, der folder oversigten ud. På knappen står, hvor mange fagord der er valgt.
-  var vaelg = el("button", "fe-knap fe-vaelg");
-  vaelg.type = "button";
-  vaelg.setAttribute("aria-expanded", "false");
-  var vaelgTekst = el("span", "fe-vaelgtekst");
-  vaelg.appendChild(vaelgTekst);
-  linje.appendChild(vaelg);
-  boks.appendChild(linje);
+  function raekke(etiket) {
+    var r = el("div", "fe-raekke");
+    r.appendChild(el("span", "fe-etiket", etiket));
+    var indhold = el("div", "fe-indhold");
+    r.appendChild(indhold);
+    boks.appendChild(r);
+    return indhold;
+  }
 
-  // Oversigten: et flueben ved hvert afsnit og under det et flueben ved hvert fagord i afsnittet.
-  // Fra start er alle fagord valgt, og oversigten er klappet sammen.
+  // ----- Rækken "Fagord" ----------------------------------------------------------------------
+  // Afsnittenes knapper virker som et filter. Fra start er "Alle afsnit" valgt. Et tryk på et afsnit
+  // tager kun det afsnit, flere tryk lægger afsnit til, og fjernes det sidste afsnit, er alle med
+  // igen. Et afsnit, hvor kun nogle af fagordene er valgt, viser antallet på knappen ("7.2 3/5").
+  // Har siden kun ét afsnit, er der ingen knapper.
+  var ordRaekke = raekke("Fagord");
+  var alleChip = el("button", "fe-chip", "Alle afsnit");
+  alleChip.type = "button";
+  if (afsnit.length > 1) {
+    var chips = el("div", "fe-chips");
+    chips.appendChild(alleChip);
+    afsnit.forEach(function (a) {
+      var nr = a.titel.split(" ")[0];
+      a.chip = el("button", "fe-chip", /^[A-Z]?\d+(\.\d+)+$/.test(nr) ? nr : a.titel);
+      a.chip.type = "button";
+      a.chip.title = a.titel;
+      a.chipAntal = el("span", "fe-chipantal");
+      a.chip.appendChild(a.chipAntal);
+      a.chip.addEventListener("click", function () { vaelgAfsnit(a); });
+      chips.appendChild(a.chip);
+    });
+    ordRaekke.appendChild(chips);
+  }
+  var valgLinje = el("div", "fe-valglinje");
+  var antalTekst = el("span", "fe-antal");
+  antalTekst.setAttribute("role", "status");
+  var enkelte = el("button", "fe-link fe-enkelte", "Vælg enkelte fagord");
+  enkelte.type = "button";
+  enkelte.setAttribute("aria-expanded", "false");
+  valgLinje.appendChild(antalTekst);
+  valgLinje.appendChild(enkelte);
+  ordRaekke.appendChild(valgLinje);
+
+  // Oversigten over de enkelte fagord: afsnittets titel og et flueben ved hvert af dets fagord.
   var oversigt = el("div", "fe-oversigt");
   oversigt.id = "fagord-oversigt";
   oversigt.hidden = true;
-  vaelg.setAttribute("aria-controls", oversigt.id);
+  enkelte.setAttribute("aria-controls", oversigt.id);
   var oversigtTop = el("div", "fe-oversigttop");
-  oversigtTop.appendChild(el("span", "fe-oversigttekst", "Sæt flueben ved de afsnit eller de fagord, der skal med."));
+  oversigtTop.appendChild(el("span", "fe-oversigttekst", "Sæt flueben ved de fagord, der skal med."));
   var alleTil = el("button", "fe-link", "Vælg alle");
   var alleFra = el("button", "fe-link", "Fravælg alle");
   alleTil.type = alleFra.type = "button";
@@ -3129,15 +3144,7 @@ document.addEventListener("DOMContentLoaded", function () {
   oversigt.appendChild(oversigtTop);
   afsnit.forEach(function (a) {
     var gruppe = el("div", "fe-gruppe");
-    var hoved = el("label", "fe-gruppehoved");
-    a.felt = el("input");
-    a.felt.type = "checkbox";
-    a.felt.checked = true;
-    a.antal = el("span", "fe-gruppeantal");
-    hoved.appendChild(a.felt);
-    hoved.appendChild(el("span", "fe-gruppetitel", a.titel));
-    hoved.appendChild(a.antal);
-    gruppe.appendChild(hoved);
+    if (afsnit.length > 1) gruppe.appendChild(el("div", "fe-gruppetitel", a.titel));
     var ordene = el("div", "fe-ordene");
     a.ord.forEach(function (o) {
       var maerke = el("label", "fe-ord");
@@ -3153,71 +3160,95 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     gruppe.appendChild(ordene);
     oversigt.appendChild(gruppe);
-    // Afsnittets flueben vælger alle afsnittets fagord til eller fra.
-    a.felt.addEventListener("change", function () {
-      a.ord.forEach(function (o) { o.valgt = a.felt.checked; });
-      valgAendret();
-    });
   });
-  boks.appendChild(oversigt);
-  vaelg.addEventListener("click", function () {
+  ordRaekke.appendChild(oversigt);
+  enkelte.addEventListener("click", function () {
     oversigt.hidden = !oversigt.hidden;
-    vaelg.setAttribute("aria-expanded", oversigt.hidden ? "false" : "true");
+    enkelte.setAttribute("aria-expanded", oversigt.hidden ? "false" : "true");
   });
 
-  // Quizzen står i sit eget felt under knapperne og er skjult, til den bliver startet.
-  var fq = el("div", "fq");
-  fq.hidden = true;
-  var fqHoved = el("div", "fq-hoved");
-  fqHoved.appendChild(el("span", "fq-titel", "Quiz"));
-  var fqPrikker = el("span", "fq-prikker");
+  // ----- Rækken "Aktivitet" -------------------------------------------------------------------
+  // En aktivitet er en fane og et felt under bjælkens rækker. Kun én er åben ad gangen: et tryk på
+  // en anden fane skifter, og et tryk på den åbne fane eller på Luk lukker feltet. aabn kaldes, når
+  // feltet åbnes, opdater, når valget af fagord ændres, mens det er åbent, og luk, når det lukkes.
+  var faner = el("div", "fe-faner");
+  raekke("Aktivitet").appendChild(faner);
+  var aktiviteter = [], aaben = null;
+  function aktivitet(navn, id) {
+    var fane = el("button", "fe-fane", navn);
+    fane.type = "button";
+    fane.setAttribute("aria-expanded", "false");
+    var panel = el("div", "fe-panel");
+    panel.id = "fagord-" + id;
+    panel.hidden = true;
+    fane.setAttribute("aria-controls", panel.id);
+    var luk = el("button", "fe-luk", "Luk");
+    luk.type = "button";
+    panel.appendChild(luk);
+    faner.appendChild(fane);
+    boks.appendChild(panel);
+    var a = { fane: fane, panel: panel, aabn: function () {}, opdater: function () {}, luk: function () {} };
+    fane.addEventListener("click", function () {
+      if (aaben === a) lukAktivitet(); else aabnAktivitet(a);
+    });
+    luk.addEventListener("click", function () { lukAktivitet(); fane.focus(); });
+    aktiviteter.push(a);
+    return a;
+  }
+  function aabnAktivitet(a) {
+    lukAktivitet();
+    aaben = a;
+    a.fane.setAttribute("aria-expanded", "true");
+    a.panel.hidden = false;
+    a.aabn();
+    if (a.panel.scrollIntoView) a.panel.scrollIntoView({ block: "nearest" });
+  }
+  function lukAktivitet() {
+    if (!aaben) return;
+    var a = aaben;
+    aaben = null;
+    a.fane.setAttribute("aria-expanded", "false");
+    a.panel.hidden = true;
+    a.luk();
+  }
+
+  // Quizzen: prikkerne øverst, så forklaringen og de fire svar, og nederst beskeden og knappen til
+  // næste spørgsmål på samme linje.
+  var quizAkt = aktivitet("Quiz: fem hurtige", "quiz");
+  var fq = quizAkt.panel;
+  fq.classList.add("fq");
+  var fqPrikker = el("div", "fq-prikker");
   fqPrikker.setAttribute("aria-hidden", "true");
-  fqHoved.appendChild(fqPrikker);
-  var fqLuk = el("button", "fq-luk", "Luk");
-  fqLuk.type = "button";
-  fqHoved.appendChild(fqLuk);
+  fq.appendChild(fqPrikker);
   var fqSpoergsmaal = el("div", "fq-spoergsmaal");
   fqSpoergsmaal.appendChild(el("p", "fq-ledetekst", "Hvilket fagord passer til forklaringen?"));
   var fqTekst = el("p", "fq-tekst");
   var fqSvar = el("div", "fq-svarene");
   fqSpoergsmaal.appendChild(fqTekst);
   fqSpoergsmaal.appendChild(fqSvar);
+  fq.appendChild(fqSpoergsmaal);
+  var fqBund = el("div", "fq-bund");
   var fqBesked = el("p", "fq-besked");
   fqBesked.setAttribute("role", "status");
   var fqKnapper = el("div", "fq-knapper");
-  var fqNaeste = el("button", "fe-knap fq-naeste", "Næste spørgsmål →");
+  var fqNaeste = el("button", "fe-knap fe-fyldt fq-naeste", "Næste spørgsmål →");
   fqNaeste.type = "button";
   fqNaeste.hidden = true;
   fqKnapper.appendChild(fqNaeste);
-  fq.appendChild(fqHoved);
-  fq.appendChild(fqSpoergsmaal);
-  fq.appendChild(fqBesked);
-  fq.appendChild(fqKnapper);
-  boks.appendChild(fq);
+  fqBund.appendChild(fqBesked);
+  fqBund.appendChild(fqKnapper);
+  fq.appendChild(fqBund);
 
-  // Speedtalk har også sit eget felt under knapperne: en kort beskrivelse til læreren, tiden pr.
-  // fagord, om rækkefølgen skal blandes, og knappen, der viser fagordene på hele skærmen.
-  var fs = el("div", "fq fs-panel");
-  fs.hidden = true;
-  var fsHoved = el("div", "fq-hoved");
-  fsHoved.appendChild(el("span", "fq-titel fs-titel", "Speedtalk"));
-  var fsLuk = el("button", "fq-luk", "Luk");
-  fsLuk.type = "button";
-  fsHoved.appendChild(fsLuk);
-  fs.appendChild(fsHoved);
-  fs.appendChild(el("p", "fs-om", "De valgte fagord kommer på tavlen ét ad gangen uden forklaring. Eleverne sidder to og to. " +
-    "Den ene taler så hurtigt og så meget som muligt om fagordet, og den anden lytter og hjælper, hvis makkeren går i stå. " +
-    "Når klokken ringer, kommer næste fagord, og de bytter."));
+  // Speedtalk: en kort beskrivelse til læreren, tiden pr. fagord, om rækkefølgen skal blandes, og
+  // knappen, der viser fagordene på hele skærmen. Valgene i tidslisten sættes i Speedtalk-delen.
+  var speedAkt = aktivitet("Speedtalk", "speedtalk");
+  var fs = speedAkt.panel;
+  fs.appendChild(el("p", "fe-om", "De valgte fagord kommer på tavlen ét ad gangen, og eleverne forklarer dem for hinanden to og to. " +
+    "Når klokken ringer, kommer næste fagord, og de bytter. Reglerne står på tavlen, før I starter."));
   var fsValg = el("div", "fs-valg");
   var fsTidFelt = el("label", "fs-felt");
   fsTidFelt.appendChild(el("span", null, "Tid pr. fagord"));
   var fsTid = el("select");
-  [["efter", "15 til 30 sekunder efter fagordet"], ["15", "15 sekunder"], ["20", "20 sekunder"],
-   ["25", "25 sekunder"], ["30", "30 sekunder"]].forEach(function (v) {
-    var mulighed = el("option", null, v[1]);
-    mulighed.value = v[0];
-    fsTid.appendChild(mulighed);
-  });
   fsTidFelt.appendChild(fsTid);
   fsValg.appendChild(fsTidFelt);
   var fsBlandFelt = el("label", "fs-felt");
@@ -3228,26 +3259,69 @@ document.addEventListener("DOMContentLoaded", function () {
   fsBlandFelt.appendChild(el("span", null, "Bland fagordene"));
   fsValg.appendChild(fsBlandFelt);
   fs.appendChild(fsValg);
-  var fsKnapper = el("div", "fq-knapper fs-knapper");
-  var fsVis = el("button", "fe-knap fs-vis", "Vis på tavlen");
+  var fsHandling = el("div", "fe-handling");
+  var fsVis = el("button", "fe-knap fe-fyldt", "Vis på tavlen");
   fsVis.type = "button";
-  var fsOmfang = el("span", "fs-omfang");
-  fsKnapper.appendChild(fsVis);
-  fsKnapper.appendChild(fsOmfang);
-  fs.appendChild(fsKnapper);
-  boks.appendChild(fs);
+  var fsOmfang = el("span", "fe-note");
+  fsHandling.appendChild(fsVis);
+  fsHandling.appendChild(fsOmfang);
+  fs.appendChild(fsHandling);
 
-  var resultat = el("div", "fe-resultat");
-  resultat.hidden = true;
-  var status = el("p", "fe-status");
-  status.setAttribute("role", "status");
-  var felt = el("textarea", "fe-felt");
-  felt.readOnly = true;
-  felt.rows = 6;
-  felt.setAttribute("aria-label", "Fagordene som tekst");
-  resultat.appendChild(status);
-  resultat.appendChild(felt);
-  boks.appendChild(resultat);
+  // Kort og godt: en kort beskrivelse og et rigtigt link, så adressen også kan kopieres og deles med
+  // en klasse. Under linket står, hvor mange fagord der kommer med, og hvad der er afkortet.
+  var kortAkt = aktivitet("Kort og godt", "kort");
+  kortAkt.panel.appendChild(el("p", "fe-om", "Spillet Kort og godt på kemiformler.dk åbner i en ny fane med de valgte fagord som vendekort. " +
+    "Det begynder i Vendespil, og Træn og Parring står øverst i spillet."));
+  var kortHandling = el("div", "fe-handling");
+  var tilSpil = el("a", "fe-knap fe-fyldt", "Åbn Kort og godt");
+  tilSpil.target = "_blank";
+  tilSpil.rel = "noopener";
+  var kortNote = el("span", "fe-note");
+  kortHandling.appendChild(tilSpil);
+  kortHandling.appendChild(kortNote);
+  kortAkt.panel.appendChild(kortHandling);
+
+  // Quizlet og Crossword Labs: en kort vejledning, en knap, der kopierer teksten, og selve teksten i
+  // et felt, så den også kan markeres og kopieres i hånden.
+  function kopiAktivitet(navn, id, om, lav) {
+    var a = aktivitet(navn, id);
+    a.panel.appendChild(el("p", "fe-om", om));
+    var handling = el("div", "fe-handling");
+    var kopier = el("button", "fe-knap fe-fyldt");
+    kopier.type = "button";
+    var note = el("span", "fe-note");
+    note.setAttribute("role", "status");
+    handling.appendChild(kopier);
+    handling.appendChild(note);
+    a.panel.appendChild(handling);
+    var tekst = el("textarea", "fe-felt");
+    tekst.readOnly = true;
+    tekst.rows = 6;
+    tekst.setAttribute("aria-label", "Fagordene som tekst til " + navn);
+    a.panel.appendChild(tekst);
+    var udeladt = el("p", "fe-udeladt");
+    a.panel.appendChild(udeladt);
+    a.aabn = a.opdater = function () {
+      var r = lav();
+      tekst.value = r.tekst;
+      tekst.scrollTop = 0;
+      tekst.scrollLeft = 0;
+      kopier.textContent = "Kopiér " + r.antal + " fagord";
+      kopier.disabled = !r.antal;
+      note.textContent = "";
+      udeladt.textContent = r.udeladt && r.udeladt.length ?
+        "Ikke med, fordi de har tal eller tegn eller er for lange: " + r.udeladt.join(", ") + "." : "";
+      udeladt.hidden = !udeladt.textContent;
+    };
+    kopier.addEventListener("click", function () { kopierTekst(tekst, note); });
+    return a;
+  }
+  kopiAktivitet("Quizlet", "quizlet",
+    "Kopiér teksten, og sæt den ind på quizlet.com under Importér, når du opretter et sæt. Hver linje er et fagord, en tabulator og forklaringen.",
+    function () { return quizlet(); });
+  kopiAktivitet("Crossword Labs", "crosswordlabs",
+    "Kopiér teksten, og sæt den ind i det store felt på crosswordlabs.com. Hver linje er svaret, et mellemrum og ledetråden. Fagord i flere ord er skrevet i ét.",
+    function () { return kryds(); });
 
   var foerste = main.querySelector("section.level2");
   foerste.parentNode.insertBefore(boks, foerste);
@@ -3279,8 +3353,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var ord = valgte();
     return {
       tekst: ord.map(function (o) { return o.ord + "\t" + o.forklaring; }).join("\n"),
-      antal: ord.length,
-      vejledning: "Sæt teksten ind i Quizlet under Importér, når du opretter et sæt. Hver linje er et fagord, en tabulator og forklaringen."
+      antal: ord.length
     };
   }
 
@@ -3295,9 +3368,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!/^[a-zæøåé]+$/.test(svar) || svar.length > 20) { udeladt.push(o.ord); return; }
       linjer.push(svar + " " + o.forklaring + (dele.length > 1 ? " (" + dele.length + " ord)" : ""));
     });
-    var vejledning = "Sæt teksten ind i det store felt på crosswordlabs.com. Hver linje er svaret, et mellemrum og ledetråden.";
-    if (udeladt.length) vejledning += " Ikke med, fordi de har tal eller tegn eller er for lange: " + udeladt.join(", ") + ".";
-    return { tekst: linjer.join("\n"), antal: linjer.length, vejledning: vejledning };
+    return { tekst: linjer.join("\n"), antal: linjer.length, udeladt: udeladt };
   }
 
   // ----- Kort og godt ---------------------------------------------------------------------
@@ -3358,46 +3429,41 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  // Linket følger valget af afsnit. Er der for få fagord til et sæt, er knappen mat.
+  // Linket følger valget af fagord. Er der for få fagord til et sæt, er knappen mat, og teksten ved
+  // siden af siger hvorfor.
   function opdaterSpil() {
     var s = spil();
     if (s.link) tilSpil.href = s.link; else tilSpil.removeAttribute("href");
     tilSpil.classList.toggle("fe-tom", !s.link);
-  }
-
-  function visSpil(e) {
-    var s = spil();
-    felt.hidden = true;
-    resultat.hidden = false;
+    tilSpil.setAttribute("aria-disabled", s.link ? "false" : "true");
+    var t;
     if (!s.link) {
-      e.preventDefault();
-      status.textContent = "Kort og godt skal have mindst " + KORT_MINDST + " kort, og her er " + s.antal + ". Vælg flere fagord.";
-      return;
+      t = "Kort og godt skal have mindst " + KORT_MINDST + " fagord, og der er valgt " + s.antal + ". Vælg flere fagord.";
+    } else {
+      t = s.antal + " fagord kommer med.";
+      if (s.afkortet) t += " Et kort har plads til 90 tegn, så på " + s.afkortet + " af kortene står kun første sætning af forklaringen.";
+      if (s.udeladt.length) t += " Ikke med: " + s.udeladt.join(", ") + ".";
     }
-    var t = "Kort og godt er åbnet i en ny fane med " + s.antal + " fagord i Vendespil. Træn og Parring står øverst i spillet.";
-    if (s.afkortet) t += " Et kort har plads til 90 tegn, så på " + s.afkortet + " af kortene står kun første sætning af forklaringen.";
-    if (s.udeladt.length) t += " Ikke med: " + s.udeladt.join(", ") + ".";
-    status.textContent = t;
+    kortNote.textContent = t;
   }
+  kortAkt.aabn = kortAkt.opdater = opdaterSpil;
+  tilSpil.addEventListener("click", function (e) { if (!tilSpil.getAttribute("href")) e.preventDefault(); });
 
-  function vis(resultatet) {
-    felt.value = resultatet.tekst;
-    felt.hidden = false;
-    resultat.hidden = false;
-    function faerdig(kopieret) {
-      felt.scrollTop = 0;
-      felt.scrollLeft = 0;
-      status.textContent = (kopieret ? "Kopieret: " : "Markér teksten herunder, og kopiér den: ") + resultatet.antal + " fagord. " + resultatet.vejledning;
+  // Knappen Kopiér under Quizlet og Crossword Labs. Kan teksten ikke kopieres direkte, markeres
+  // den i feltet, så den kan kopieres i hånden.
+  function kopierTekst(tekst, note) {
+    function faerdig(ok) {
+      note.textContent = ok ? "Kopieret. Sæt teksten ind med Ctrl+V." : "Markér teksten i feltet herunder, og kopiér den.";
     }
     function iHaanden() {
-      felt.focus();
-      felt.select();
+      tekst.focus();
+      tekst.select();
       var ok = false;
       try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
       faerdig(ok);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(resultatet.tekst).then(function () { faerdig(true); }, iHaanden);
+      navigator.clipboard.writeText(tekst.value).then(function () { faerdig(true); }, iHaanden);
     } else {
       iHaanden();
     }
@@ -3465,10 +3531,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (var i = 0; i < quiz.iAlt; i++) fqPrikker.appendChild(el("span", "fq-prik"));
     Array.prototype.forEach.call(fq.querySelectorAll(".fq-konfetti"), function (k) { k.parentNode.removeChild(k); });
     fq.classList.remove("fq-slut");
-    fq.hidden = false;
-    quizStart.hidden = true;
     visSpoergsmaal();
-    if (fq.scrollIntoView) fq.scrollIntoView({ block: "nearest" });
   }
 
   function visSpoergsmaal() {
@@ -3558,33 +3621,28 @@ document.addEventListener("DOMContentLoaded", function () {
     igen.focus();
   }
 
-  function lukQuiz() {
-    fq.hidden = true;
-    quizStart.hidden = false;
-    quiz = null;
-  }
-
-  quizStart.addEventListener("click", startQuiz);
+  // Quizzen begynder, når fanen åbnes, og begynder forfra med de nye fagord, når valget ændres.
+  quizAkt.aabn = quizAkt.opdater = startQuiz;
+  quizAkt.luk = function () { quiz = null; };
   fqNaeste.addEventListener("click", function () { if (quiz && quiz.koe.length) visSpoergsmaal(); });
-  fqLuk.addEventListener("click", lukQuiz);
-
-  var sidst = null;
-  tilSpil.addEventListener("click", function (e) { sidst = null; visSpil(e); });
-  tilQuizlet.addEventListener("click", function () { sidst = quizlet; vis(quizlet()); });
-  tilKryds.addEventListener("click", function () { sidst = kryds; vis(kryds()); });
 
   // ----- Speedtalk --------------------------------------------------------------------------
   // Læreren viser de valgte fagord på tavlen ét ad gangen, uden forklaring og på hele skærmen
   // (Niels 15. okt. 2026). Eleverne sidder to og to: den ene taler så hurtigt og så meget som
   // muligt om fagordet, og den anden lytter og hjælper. Når tiden er gået, ringer en klokke, næste
-  // fagord kommer, og de bytter. Tiden følger fagordet: 15 sekunder til et enkelt ord som hydron
-  // og op til 30 til et stort begreb som vands selvionisering. Et fagord, der ikke står i
-  // SPEEDTALK_TID, får 20 sekunder. Læreren kan også give alle fagord samme tid.
+  // fagord kommer, og de bytter. Tiden følger fagordet: 10 sekunder til et enkelt ord som hydron
+  // og op til 25 til et stort begreb som vands selvionisering (Niels 19. okt. 2026: alle tider 5
+  // sekunder ned; før var det 15 til 30). Et fagord, der ikke står i SPEEDTALK_TID, får 15 sekunder.
+  // Tempoet Hurtig giver hvert fagord 5 sekunder mindre, dog mindst 9 (SPEEDTALK_HURTIG, Niels 19. okt.
+  // 2026: "mindst 9 sekunder selv i den hurtige"). Læreren
+  // kan også give alle fagord samme tid (SPEEDTALK_FASTE).
   // Mellemrum sætter på pause, pilene (og en fremviser) skifter fagord, og Esc lukker.
-  var SPEEDTALK_STANDARD = 20;
+  var SPEEDTALK_STANDARD = 15;
+  var SPEEDTALK_HURTIG = { 10: 9, 15: 10, 20: 15, 25: 20 };
+  var SPEEDTALK_FASTE = [10, 15, 20, 25];
   // SPEEDTALK_TID begynder
   var SPEEDTALK_TID = {
-    15: [
+    10: [
       "atomsymbol", "halvmetal", "kerne", "proton", "neutron", "atomnummer", "elektrisk neutral", "nukleontal",
       "alkalimetaller", "halogener", "reaktant", "produkt", "reaktionspil", "koefficient", "tilstandssymbol",
       "natriumion", "romertal", "jern(II)ion", "jern(III)ion", "-id", "fluorid", "chlorid", "oxid", "sulfid",
@@ -3612,7 +3670,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "phosphatgruppe", "rygrad", "5′-ende", "3′-ende", "sekvens", "komplementær", "hårnål", "skabelonstreng",
       "kodende streng"
     ],
-    25: [
+    20: [
       "det periodiske system", "kemisk reaktion", "skalmodel", "ædelgasreglen", "oktetreglen", "afstemt",
       "ionbinding", "fældningsreaktion", "elektronparbinding", "vinklet", "elektronegativitet",
       "polær binding", "polært molekyle", "blandbarhed", "betydende cifre", "ækvivalente mængder",
@@ -3641,7 +3699,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "gaschromatografi", "basepar", "londonbindinger", "smeltetemperatur", "DNA-polymerase", "cyklus",
       "mutation"
     ],
-    30: [
+    25: [
       "mængdeberegning", "titrering", "Mohrtitrering", "vands ionprodukt", "titrerkurve", "spændingsrækken",
       "korrosion", "drivhuseffekten", "havforsuring", "syreregn", "reaktionshastighed", "sammenstødsmodel",
       "hastighedsudtryk", "energiprofil", "enzym", "ligevægt", "dynamisk ligevægt", "ligevægtskonstant",
@@ -3664,9 +3722,37 @@ document.addEventListener("DOMContentLoaded", function () {
     SPEEDTALK_TID[sek].forEach(function (ord) { speedTider[speedNoegle(ord)] = Number(sek); });
   });
   function taletid(o) {
-    if (fsTid.value !== "efter") return Number(fsTid.value);
-    return speedTider[speedNoegle(o.ord)] || SPEEDTALK_STANDARD;
+    var tid = speedTider[speedNoegle(o.ord)] || SPEEDTALK_STANDARD;
+    if (fsTid.value === "standard") return tid;
+    if (fsTid.value === "hurtig") return SPEEDTALK_HURTIG[tid] || Math.max(9, tid - 5);
+    return Number(fsTid.value);
   }
+  // Valgene i listen "Tid pr. fagord": de to tempi, der følger fagordet, og de faste tider.
+  // Grænserne i teksten regnes ud fra tiderne ovenfor.
+  (function () {
+    var tider = [SPEEDTALK_STANDARD].concat(Object.keys(SPEEDTALK_TID).map(Number));
+    function spaend(liste) {
+      return Math.min.apply(null, liste) + " til " + Math.max.apply(null, liste) + " sekunder";
+    }
+    var grupper = [
+      ["Tilpasset fagordet", [
+        ["standard", "Standard: " + spaend(tider)],
+        ["hurtig", "Hurtig: " + spaend(tider.map(function (s) { return SPEEDTALK_HURTIG[s] || Math.max(9, s - 5); }))]
+      ]],
+      ["Samme tid til alle fagord", SPEEDTALK_FASTE.map(function (s) { return [String(s), s + " sekunder"]; })]
+    ];
+    grupper.forEach(function (g) {
+      var gruppe = el("optgroup");
+      gruppe.label = g[0];
+      g[1].forEach(function (v) {
+        var mulighed = el("option", null, v[1]);
+        mulighed.value = v[0];
+        gruppe.appendChild(mulighed);
+      });
+      fsTid.appendChild(gruppe);
+    });
+    fsTid.value = "standard";
+  })();
   function omfang(ord) {
     var sek = ord.reduce(function (sum, o) { return sum + taletid(o); }, 0);
     var min = Math.max(1, Math.round(sek / 60));
@@ -3966,18 +4052,7 @@ document.addEventListener("DOMContentLoaded", function () {
     handling();
   }, true);
 
-  function lukSpeed() {
-    fs.hidden = true;
-    speedStart.hidden = false;
-  }
-  speedStart.addEventListener("click", function () {
-    opdaterSpeedOmfang();
-    fs.hidden = false;
-    speedStart.hidden = true;
-    if (fs.scrollIntoView) fs.scrollIntoView({ block: "nearest" });
-    fsVis.focus({ preventScroll: true });
-  });
-  fsLuk.addEventListener("click", lukSpeed);
+  speedAkt.aabn = speedAkt.opdater = opdaterSpeedOmfang;
   fsTid.addEventListener("change", opdaterSpeedOmfang);
   fsVis.addEventListener("click", aabnTavle);
   fsStart.addEventListener("click", koer);
@@ -3985,44 +4060,56 @@ document.addEventListener("DOMContentLoaded", function () {
   fsSlutLuk.addEventListener("click", lukTavle);
 
   // ----- Valget af fagord ændres ------------------------------------------------------------
-  // Knappen viser antallet, afsnittenes flueben følger deres fagord (halvt sat, når kun nogle er
-  // valgt), de fravalgte fagord bliver matte i tabellerne, og linket til Kort og godt følger med.
+  // Afsnittenes knapper og fluebenene følger de valgte fagord, de fravalgte fagord bliver matte i
+  // tabellerne, og linjen under knapperne siger, hvor mange der er med. Er en aktivitet åben,
+  // følger den med: quizzen begynder forfra, og teksten til Quizlet og Crossword Labs, linket til
+  // Kort og godt og tiden til Speedtalk bliver regnet om. Er intet valgt, kan fanerne ikke åbnes.
   function opdaterValg() {
-    var antal = valgte().length;
-    vaelgTekst.textContent = "Vælg fagord (" + (antal === iAlt ? "alle " + iAlt : antal + " af " + iAlt) + ")";
+    var antal = valgte().length, alle = antal === iAlt;
+    alleChip.setAttribute("aria-pressed", alle ? "true" : "false");
     afsnit.forEach(function (a) {
       var n = a.ord.filter(function (o) { return o.valgt; }).length;
-      a.felt.checked = n === a.ord.length;
-      a.felt.indeterminate = n > 0 && n < a.ord.length;
-      a.antal.textContent = n + " af " + a.ord.length;
+      var delvis = n > 0 && n < a.ord.length;
+      if (a.chip) {
+        a.chip.setAttribute("aria-pressed", !alle && n === a.ord.length ? "true" : "false");
+        a.chip.classList.toggle("fe-delvis", delvis);
+        a.chipAntal.textContent = delvis ? n + "/" + a.ord.length : "";
+      }
       a.ord.forEach(function (o) {
         o.felt.checked = o.valgt;
         o.raekke.classList.toggle("fe-fravalgt", !o.valgt);
       });
     });
-    quizStart.disabled = speedStart.disabled = tilQuizlet.disabled = tilKryds.disabled = antal === 0;
-    opdaterSpil();
-    opdaterSpeedOmfang();
+    antalTekst.textContent = !antal ? "Der er ikke valgt nogen fagord. Sæt flueben ved mindst ét." :
+      alle ? "Alle " + iAlt + " fagord er med." : antal + " af " + iAlt + " fagord er med.";
+    antalTekst.classList.toggle("fe-tomt", !antal);
+    aktiviteter.forEach(function (a) { a.fane.disabled = !antal; });
   }
-  // Et resultat, der allerede er vist, hører til det gamle valg og bliver skjult. En quiz, der er
-  // i gang, begynder forfra med de fagord, der nu er valgt.
   function valgAendret() {
     opdaterValg();
-    sidst = null;
-    resultat.hidden = true;
-    if (!valgte().length) {
-      if (quiz) lukQuiz();
-      felt.hidden = true;
-      resultat.hidden = false;
-      status.textContent = "Der er ikke valgt nogen fagord. Sæt flueben ved mindst ét.";
-    } else if (quiz) {
-      startQuiz();
+    if (!valgte().length) lukAktivitet();
+    else if (aaben) aaben.opdater();
+  }
+  // Et tryk på et afsnit: er alle afsnit med, tages kun dette afsnit. Er hele afsnittet med i
+  // forvejen, tages det fra, og er der så ingen fagord tilbage, er alle afsnit med igen. Ellers
+  // lægges hele afsnittet til.
+  function vaelgAfsnit(a) {
+    var helt = a.ord.every(function (o) { return o.valgt; });
+    if (valgte().length === iAlt) {
+      alleOrd.forEach(function (o) { o.valgt = a.ord.indexOf(o) >= 0; });
+    } else if (helt) {
+      a.ord.forEach(function (o) { o.valgt = false; });
+      if (!valgte().length) alleOrd.forEach(function (o) { o.valgt = true; });
+    } else {
+      a.ord.forEach(function (o) { o.valgt = true; });
     }
+    valgAendret();
   }
   function vaelgAlle(til) {
     alleOrd.forEach(function (o) { o.valgt = til; });
     valgAendret();
   }
+  alleChip.addEventListener("click", function () { vaelgAlle(true); });
   alleTil.addEventListener("click", function () { vaelgAlle(true); });
   alleFra.addEventListener("click", function () { vaelgAlle(false); });
   opdaterValg();

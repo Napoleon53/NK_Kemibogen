@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ef8d3709b93ebba7326c36240e53fb22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-38407c8f2a86490ed112d04d4ecfcf6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1671,7 +1671,7 @@ Figur&nbsp;A.1: Det periodiske system. Hvert felt viser grundstoffets atomnummer
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Metaller</td>
-<td style="text-align: left;">metaller, halvmetaller og ikke-metaller</td>
+<td style="text-align: left;">metaller, halvmetaller og ikke-metaller. Gasserne ved 25 °C har rød skrift, og væskerne har lilla skrift</td>
 <td style="text-align: left;"><a href="../kapitler/1-1-hvad-er-kemi.html">afsnit 1.1</a></td>
 </tr>
 <tr class="even">
@@ -1680,11 +1680,6 @@ Figur&nbsp;A.1: Det periodiske system. Hvert felt viser grundstoffets atomnummer
 <td style="text-align: left;"><a href="../kapitler/1-3-elektronskaller.html">afsnit 1.3</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Tilstand</td>
-<td style="text-align: left;">om grundstoffet er fast, flydende eller en gas ved 25 °C</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Elektronegativitet</td>
 <td style="text-align: left;">hvor kraftigt atomet trækker i de fælles elektroner i en binding</td>
 <td style="text-align: left;"><a href="../kapitler/3-3-polaritet.html">afsnit 3.3</a></td>
@@ -3885,9 +3880,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // De samme inddelinger og tal som i bogens figurer (vaerktoej/lav_figurer.py).
   var IKKEMETAL = "H C N O F P S Cl Se Br I He Ne Ar Kr Xe Rn Og".split(" ");
   var HALVMETAL = "B Si Ge As Sb Te At".split(" ");
+  // Gasserne har rød skrift og væskerne lilla, når farverne viser metaller (Niels 19. okt. 2026)
   var GAS = "H He N O F Ne Cl Ar Kr Xe Rn".split(" ");
   var VAESKE = ["Br", "Hg"];
   var SIDSTE_KENDTE_TILSTAND = 103;   // fra 104 er der kun lavet få atomer
+  // Trappen mellem metaller og ikke-metaller, som i figuren i afsnit 1.1: den går langs felternes
+  // venstre side (v) og underside (u) fra bor ned til astat. Den vises, når farverne viser grupper
+  // eller elektronegativitet (Niels 19. okt. 2026).
+  var TRAPPE = { B: "tr-v tr-u", Si: "tr-v", Ge: "tr-v tr-u", Sb: "tr-v tr-u", Te: "tr-u",
+                 At: "tr-v tr-u", Rn: "tr-u" };
   var EN = { H: 2.1, Li: 1.0, Be: 1.5, B: 2.0, C: 2.5, N: 3.0, O: 3.5, F: 4.0,
              Na: 0.9, Mg: 1.2, Al: 1.5, Si: 1.8, P: 2.1, S: 2.5, Cl: 3.0,
              K: 0.8, Ca: 1.0, Ga: 1.6, Ge: 1.8, As: 2.0, Se: 2.4, Br: 2.8,
@@ -3934,13 +3935,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var VISNINGER = [
     { id: "metaller", navn: "Metaller", forklaring: [["m-metal", "Metal"], ["m-halv", "Halvmetal"],
-                                                      ["m-ikke", "Ikke-metal"]] },
+                                                      ["m-ikke", "Ikke-metal"]],
+      skrift: [["t-gas", "Gas ved 25 °C"], ["t-vaeske", "Væske ved 25 °C"]] },
     { id: "grupper", navn: "Grupper", forklaring: [["g-alkali", "Alkalimetaller"],
                                                     ["g-halogen", "Halogener"], ["g-aedel", "Ædelgasser"],
                                                     ["g-hoved", "Andre hovedgrupper"], ["g-under", "Undergrupper"],
                                                     ["g-sjaelden", "Sjældne jordarter"], ["g-actin", "Actinoider"]] },
-    { id: "tilstand", navn: "Tilstand", forklaring: [["t-fast", "Fast stof ved 25 °C"], ["t-vaeske", "Væske ved 25 °C"],
-                                                      ["t-gas", "Gas ved 25 °C"], ["t-ukendt", "Ukendt"]] },
     { id: "en", navn: "Elektronegativitet", forklaring: null }
   ];
 
@@ -4049,7 +4049,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var felter = {};
   stoffer.forEach(function (s) {
-    var f = el("button", "ps-felt " + s.gruppe + " " + s.slags + " " + s.tilstand);
+    var f = el("button", "ps-felt " + s.gruppe + " " + s.slags + " " + s.tilstand + (TRAPPE[s.symbol] ? " " + TRAPPE[s.symbol] : ""));
     f.type = "button";
     f.style.gridRow = String(s.plads[0] + 1);
     f.style.gridColumn = String(s.plads[1] + 1);
@@ -4197,6 +4197,12 @@ document.addEventListener("DOMContentLoaded", function () {
         punkt.appendChild(document.createTextNode(f[1]));
         forklaring.appendChild(punkt);
       });
+      // Forklaringen til skriftens farve står for sig nederst til højre
+      if (v.skrift) {
+        var skrift = el("span", "ps-skriftforklaring");
+        v.skrift.forEach(function (f) { skrift.appendChild(el("span", "ps-skriftpunkt " + f[0], f[1])); });
+        forklaring.appendChild(skrift);
+      }
     } else {
       forklaring.appendChild(el("span", null, "lav 0,8"));
       var skala = el("span", "ps-skala");
@@ -4253,7 +4259,7 @@ document.addEventListener("DOMContentLoaded", function () {
   else window.addEventListener("resize", placerKort);
 
   // Sættes fx "?grundstof=Fe&visning=metaller" efter sidens adresse, er jern valgt, og farverne
-  // viser metaller (visning er metaller, grupper, tilstand eller en). Ellers viser farverne
+  // viser metaller (visning er metaller, grupper eller en). Ellers viser farverne
   // metaller (Niels' valg 9. okt. 2026), og chlor er valgt: det er eksemplet i afsnit 1.3. Farvevalget huskes med vilje
   // ikke til næste besøg: opgaverne henviser til atommassen nederst i feltet, og den står der
   // ikke, når farverne viser elektronegativitet.
