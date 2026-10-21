@@ -1,4 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 3 456 166" width="456" height="166" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Et hydrogenatom består af en proton og en elektron. Uden elektronen er der kun en proton tilbage, og den kaldes en hydron">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 3 456 166" width="387.6" height="141.1" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Et hydrogenatom består af en proton og en elektron. Uden elektronen er der kun en proton tilbage, og den kaldes en hydron">
 <title>Et hydrogenatom består af en proton og en elektron. Uden elektronen er der kun en proton tilbage, og den kaldes en hydron</title>
-<circle cx="80.0" cy="60.0" r="50.0" fill="none" stroke="#c3d6d4" stroke-width="1.6"/><circle cx="80.0" cy="60.0" r="13.0" fill="#e5533d" stroke="#a93226" stroke-width="1"/><line x1="74.0" y1="60.0" x2="86.0" y2="60.0" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><line x1="80.0" y1="54.0" x2="80.0" y2="66.0" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><circle cx="118.3" cy="27.9" r="8.0" fill="#2f6fde" stroke="#1b4aa3" stroke-width="1"/><line x1="114.3" y1="27.9" x2="122.3" y2="27.9" stroke="#ffffff" stroke-width="2.08" stroke-linecap="round"/><text x="80.0" y="140.0" font-size="16" text-anchor="middle" fill="#14201f" font-weight="700"><tspan>Hydrogenatom, H</tspan></text><text x="80.0" y="160.0" font-size="13.5" text-anchor="middle" fill="#556766"><tspan>1 proton og 1 elektron</tspan></text><line x1="172.0" y1="60.0" x2="288.0" y2="60.0" stroke="#14201f" stroke-width="2.6" stroke-linecap="round"/><polygon points="300.0,60.0 288.0,66.0 288.0,54.0" fill="#14201f"/><text x="236.0" y="46.0" font-size="13.5" text-anchor="middle" fill="#556766"><tspan>afgiver elektronen</tspan></text><circle cx="392.0" cy="60.0" r="50.0" fill="none" stroke="#c3d6d4" stroke-width="1.4" stroke-dasharray="4 5"/><circle cx="392.0" cy="60.0" r="13.0" fill="#e5533d" stroke="#a93226" stroke-width="1"/><line x1="386.0" y1="60.0" x2="398.0" y2="60.0" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><line x1="392.0" y1="54.0" x2="392.0" y2="66.0" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><text x="392.0" y="140.0" font-size="16" text-anchor="middle" fill="#14201f" font-weight="700"><tspan>Hydron, H</tspan><tspan dy="-6.08" font-size="10.9">+</tspan></text><text x="392.0" y="160.0" font-size="13.5" text-anchor="middle" fill="#556766"><tspan>kun 1 proton</tspan></text>
+
+<defs>
+  <radialGradient id="fx-pos" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#fff6f2"/><stop offset="0.35" stop-color="#f8b9a8"/>
+    <stop offset="0.85" stop-color="#d9634c"/><stop offset="1" stop-color="#b8432f"/></radialGradient>
+  <radialGradient id="fx-neg" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#f5f9ff"/><stop offset="0.35" stop-color="#b3cdf8"/>
+    <stop offset="0.85" stop-color="#5a86d6"/><stop offset="1" stop-color="#3a63b8"/></radialGradient>
+  <radialGradient id="fx-negg" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#fffdf0"/><stop offset="0.35" stop-color="#c3d3f2"/>
+    <stop offset="0.85" stop-color="#6d8fcc"/><stop offset="1" stop-color="#4d6cab"/></radialGradient>
+  <radialGradient id="fx-orange" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#fffaf0"/><stop offset="0.35" stop-color="#fde0a8"/>
+    <stop offset="0.85" stop-color="#f0a445"/><stop offset="1" stop-color="#d4821f"/></radialGradient>
+  <radialGradient id="fx-lilla" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#fbf6ff"/><stop offset="0.35" stop-color="#dcc4f4"/>
+    <stop offset="0.85" stop-color="#9b62d1"/><stop offset="1" stop-color="#7a40b2"/></radialGradient>
+  <radialGradient id="fx-lillag" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#fffdf0"/><stop offset="0.35" stop-color="#d9c8ef"/>
+    <stop offset="0.85" stop-color="#9a72c9"/><stop offset="1" stop-color="#7b55aa"/></radialGradient>
+  <radialGradient id="fx-vand" cx="0.42" cy="0.36" r="0.75">
+    <stop offset="0" stop-color="#fbfdff"/><stop offset="0.7" stop-color="#e3eff9"/><stop offset="1" stop-color="#cfe2f3"/></radialGradient>
+  <radialGradient id="fx-vandgul" cx="0.42" cy="0.30" r="0.80">
+    <stop offset="0" stop-color="#fffef6"/><stop offset="0.65" stop-color="#f5f2df"/><stop offset="1" stop-color="#ece5c2"/></radialGradient>
+  <radialGradient id="fx-glans" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#fff3a8" stop-opacity="0.9"/><stop offset="1" stop-color="#ffe066" stop-opacity="0"/></radialGradient>
+  <linearGradient id="fx-glas" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#9fb4c2" stop-opacity="0.55"/><stop offset="0.12" stop-color="#ffffff" stop-opacity="0.15"/>
+    <stop offset="0.2" stop-color="#ffffff" stop-opacity="0.75"/><stop offset="0.28" stop-color="#ffffff" stop-opacity="0.1"/>
+    <stop offset="0.85" stop-color="#ffffff" stop-opacity="0.05"/><stop offset="1" stop-color="#9fb4c2" stop-opacity="0.6"/></linearGradient>
+  <linearGradient id="fx-blaa" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#dcecf8"/><stop offset="1" stop-color="#bcd7ee"/></linearGradient>
+  <linearGradient id="fx-gul" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#fbf3c4"/><stop offset="1" stop-color="#f3df86"/></linearGradient>
+  <linearGradient id="fx-bundfald" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#ffd83a"/><stop offset="1" stop-color="#d9a400"/></linearGradient>
+  <radialGradient id="fx-skygge" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#5b6b78" stop-opacity="0.35"/><stop offset="1" stop-color="#5b6b78" stop-opacity="0"/></radialGradient>
+  <linearGradient id="fx-kegle" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#7f97ab" stop-opacity="0.22"/><stop offset="1" stop-color="#7f97ab" stop-opacity="0.04"/></linearGradient>
+  <filter id="fx-blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="fx-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.1"/></filter>
+  
+  <radialGradient id="fx-O" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#fff4f1"/><stop offset="0.35" stop-color="#f4a596"/>
+    <stop offset="0.85" stop-color="#d9533f"/><stop offset="1" stop-color="#b53a28"/></radialGradient>
+  <radialGradient id="fx-H" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#fbfcfc"/>
+    <stop offset="0.85" stop-color="#d5dde1"/><stop offset="1" stop-color="#b3bec4"/></radialGradient>
+  <radialGradient id="fx-C" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#d7dbe0"/><stop offset="0.35" stop-color="#8f98a3"/>
+    <stop offset="0.85" stop-color="#4b5563"/><stop offset="1" stop-color="#323a45"/></radialGradient>
+  <radialGradient id="fx-I" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#f7effc"/><stop offset="0.35" stop-color="#c9a5e6"/>
+    <stop offset="0.85" stop-color="#7d42aa"/><stop offset="1" stop-color="#5f2c88"/></radialGradient>
+  <radialGradient id="fx-Br" cx="0.36" cy="0.32" r="0.72">
+    <stop offset="0" stop-color="#fff2e8"/><stop offset="0.35" stop-color="#eaa97c"/>
+    <stop offset="0.85" stop-color="#c0652e"/><stop offset="1" stop-color="#8e4318"/></radialGradient>
+  <linearGradient id="fx-violet" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#ecd9f6"/><stop offset="1" stop-color="#cfa3e4"/></linearGradient>
+  <linearGradient id="fx-klar" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#fdfdfc"/><stop offset="1" stop-color="#e9ecec"/></linearGradient>
+  <radialGradient id="fx-lup-violet" cx="0.42" cy="0.36" r="0.75">
+    <stop offset="0" stop-color="#fdf9ff"/><stop offset="0.7" stop-color="#f0e4f8"/><stop offset="1" stop-color="#e3cff0"/></radialGradient>
+  <radialGradient id="fx-lup-klar" cx="0.42" cy="0.36" r="0.75">
+    <stop offset="0" stop-color="#ffffff"/><stop offset="0.7" stop-color="#f7f6f1"/><stop offset="1" stop-color="#ecebe2"/></radialGradient>
+  <radialGradient id="fx-lup-gul" cx="0.42" cy="0.36" r="0.75">
+    <stop offset="0" stop-color="#fffdf0"/><stop offset="0.7" stop-color="#fbf0bf"/><stop offset="1" stop-color="#f4e39a"/></radialGradient>
+  <linearGradient id="fx-bromvand" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" stop-color="#f7d272"/><stop offset="1" stop-color="#e9ad2c"/></linearGradient>
+<radialGradient id="fx-mg" cx="0.36" cy="0.32" r="0.72"><stop offset="0" stop-color="#ffffff"/><stop offset="0.35" stop-color="#e3e8eb"/><stop offset="0.85" stop-color="#a3adb3"/><stop offset="1" stop-color="#7c878e"/></radialGradient><radialGradient id="fx-h" cx="0.36" cy="0.32" r="0.72"><stop offset="0" stop-color="#ffffff"/><stop offset="0.6" stop-color="#f1f4f6"/><stop offset="1" stop-color="#c3ccd2"/></radialGradient><radialGradient id="fx-syre" cx="0.42" cy="0.36" r="0.75"><stop offset="0" stop-color="#fffbfa"/><stop offset="0.7" stop-color="#fcefeb"/><stop offset="1" stop-color="#f6ddd5"/></radialGradient><linearGradient id="fx-syreglas" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fbe7e1"/><stop offset="1" stop-color="#f4cfc4"/></linearGradient><linearGradient id="fx-metal" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#c9d1d6"/><stop offset="1" stop-color="#e4e9ec"/></linearGradient><linearGradient id="k7k-kalk" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f8f5ec"/><stop offset="1" stop-color="#d9d1bc"/></linearGradient><linearGradient id="k7k-kalkflade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#efe9da"/><stop offset="1" stop-color="#ddd5c0"/></linearGradient><radialGradient id="k7k-proton" cx="0.36" cy="0.32" r="0.72"><stop offset="0" stop-color="#fff1ec"/><stop offset="0.35" stop-color="#f39a86"/><stop offset="0.85" stop-color="#d4442e"/><stop offset="1" stop-color="#ad3020"/></radialGradient><radialGradient id="k7k-e" cx="0.36" cy="0.32" r="0.72"><stop offset="0" stop-color="#eef4ff"/><stop offset="0.4" stop-color="#8fb3f2"/><stop offset="1" stop-color="#2557b8"/></radialGradient><radialGradient id="k7k-sky" cx="0.5" cy="0.5" r="0.5"><stop offset="0.55" stop-color="#e9f1f8" stop-opacity="0"/><stop offset="0.9" stop-color="#cfe0ee" stop-opacity="0.55"/><stop offset="1" stop-color="#b9cfe2" stop-opacity="0"/></radialGradient><radialGradient id="k7k-cu" cx="0.36" cy="0.32" r="0.72"><stop offset="0" stop-color="#fff1e6"/><stop offset="0.35" stop-color="#eeb48c"/><stop offset="0.85" stop-color="#b8612f"/><stop offset="1" stop-color="#8a4421"/></radialGradient><radialGradient id="k7k-zn" cx="0.36" cy="0.32" r="0.72"><stop offset="0" stop-color="#ffffff"/><stop offset="0.35" stop-color="#e2e7ee"/><stop offset="0.85" stop-color="#9aa6b4"/><stop offset="1" stop-color="#76828f"/></radialGradient>
+</defs><circle cx="80.0" cy="60.0" r="50.0" fill="url(#k7k-sky)"/><circle cx="80.0" cy="60.0" r="50.0" fill="none" stroke="#9fb6c8" stroke-width="1.4"/><circle cx="80.0" cy="60.0" r="13.0" fill="url(#k7k-proton)" stroke="#9c3424" stroke-width="0.9"/><line x1="74.5" y1="60.0" x2="85.5" y2="60.0" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><line x1="80.0" y1="54.5" x2="80.0" y2="65.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><circle cx="118.3" cy="27.9" r="8.0" fill="url(#k7k-e)" stroke="#1b4aa3" stroke-width="0.8"/><line x1="114.7" y1="27.9" x2="121.9" y2="27.9" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><text x="80.0" y="140.0" font-size="16" text-anchor="middle" fill="#14201f" font-weight="700"><tspan>Hydrogenatom, H</tspan></text><text x="80.0" y="160.0" font-size="13.5" text-anchor="middle" fill="#556766"><tspan>1 proton og 1 elektron</tspan></text><line x1="172.0" y1="60.0" x2="288.0" y2="60.0" stroke="#14201f" stroke-width="2.6" stroke-linecap="round"/><polygon points="300.0,60.0 288.0,66.0 288.0,54.0" fill="#14201f"/><text x="236.0" y="46.0" font-size="13.5" text-anchor="middle" fill="#556766"><tspan>afgiver elektronen</tspan></text><circle cx="392.0" cy="60.0" r="50.0" fill="none" stroke="#9fb6c8" stroke-width="1.3" stroke-dasharray="4 5"/><circle cx="392.0" cy="60.0" r="13.0" fill="url(#k7k-proton)" stroke="#9c3424" stroke-width="0.9"/><line x1="386.5" y1="60.0" x2="397.5" y2="60.0" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><line x1="392.0" y1="54.5" x2="392.0" y2="65.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/><text x="392.0" y="140.0" font-size="16" text-anchor="middle" fill="#14201f" font-weight="700"><tspan>Hydron, H</tspan><tspan dy="-6.08" font-size="10.9">+</tspan></text><text x="392.0" y="160.0" font-size="13.5" text-anchor="middle" fill="#556766"><tspan>kun 1 proton</tspan></text>
 </svg>
