@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6213f8560650432cb054a2babb0cd649.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-121173edab625e6cb67ec09af3847831.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1669,7 +1669,10 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p>Hvad er <span class="fagord-peg" data-fagord="masseprocent">masseprocenten</span> af NaCl, når 9,0 g opløses i vand til 1000 g <span class="fagord-peg" data-fagord="opløsning">opløsning</span>?</p>
 <p><span id="ord-kendte-stoerrelser" class="fagord-anker"><strong>Kendte størrelser</strong></span></p>
-<p><em>m</em>(NaCl) = 9,0 g og <em>m</em>(<span class="fagord-peg" data-fagord="opløsning">opløsning</span>) = 1000 g</p>
+<div class="kendte">
+<p><em>m</em>(NaCl) = 9,0 g</p>
+<p><em>m</em>(<span class="fagord-peg" data-fagord="opløsning">opløsning</span>) = 1000 g</p>
+</div>
 <p><span id="ord-formel" class="fagord-anker"><strong>Formel</strong></span></p>
 <p><span class="math display">\[
 \text{masseprocent} = \frac{m(\text{stof})}{m(\text{blanding})} \cdot 100\ \%
@@ -1716,17 +1719,17 @@ c = \frac{n}{V}
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-important callout-titled" title="Volumenet skal stå i liter">
+<div class="callout callout-style-default callout-important callout-titled" title="Volumenet i liter">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Vigtigt</span><span class="fagord-peg" data-fagord="volumen">Volumenet</span> skal stå i liter
+<span class="screen-reader-only">Vigtigt</span><span class="fagord-peg" data-fagord="volumen">Volumenet</span> i liter
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>I laboratoriet måles <span class="fagord-peg" data-fagord="volumen">volumen</span> i mL, og det skal regnes om til liter, før det sættes ind i formlen. Der går 1000 mL på 1 L, så 250 mL er 0,250 L.</p>
+<p>I laboratoriet måles <span class="fagord-peg" data-fagord="volumen">volumen</span> i mL, men i formlen kan det ofte med fordel regnes om til liter, så det passer med enheden mol/L. Der går 1000 mL på 1 L, så 250 mL er 0,250 L.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: fra masse til koncentration">
@@ -1741,7 +1744,11 @@ c = \frac{n}{V}
 <div class="callout-body-container callout-body">
 <p>5,85 g natriumchlorid opløses i vand, så <span class="fagord-peg" data-fagord="opløsning">opløsningen</span> fylder 500 mL. Hvad er koncentrationen af natriumchlorid?</p>
 <p><strong>Kendte størrelser</strong></p>
-<p><em>m</em>(NaCl) = 5,85 g, <em>M</em>(NaCl) = 58,44 g/mol og <em>V</em> = 500 mL = 0,500 L</p>
+<div class="kendte">
+<p><em>m</em>(NaCl) = 5,85 g</p>
+<p><em>M</em>(NaCl) = 58,44 g/mol</p>
+<p><em>V</em> = 0,500 L</p>
+</div>
 <p><span id="ord-trin-1-stofmaengden" class="fagord-anker"><strong>Trin 1: stofmængden</strong></span></p>
 <p><span class="math display">\[
 n(\mathrm{NaCl}) = \frac{m}{M} = \frac{5{,}85\ \mathrm{g}}{58{,}44\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}100\ \mathrm{mol}
@@ -1783,33 +1790,42 @@ Figur&nbsp;2: Ved en fortynding er stofmængden den samme før og efter.
 </figcaption>
 </figure>
 </div>
-<p>Da <span class="fagord-peg" data-fagord="stofmængde">stofmængden</span> er <em>c</em> · <em>V</em> både før og efter, gælder:</p>
+<p>Vandet ændrer ikke <span class="fagord-peg" data-fagord="stofmængde">stofmængden</span> af det <span class="fagord-peg" data-fagord="opløst stof">opløste stof</span>:</p>
+<p><span class="math display">\[
+n_{\text{før}} = n_{\text{efter}}
+\]</span></p>
+<p>Da <span class="fagord-peg" data-fagord="stofmængde">stofmængden</span> er <em>c</em> · <em>V</em>, gælder derfor:</p>
 <p><span class="math display">\[
 c_{\text{før}} \cdot V_{\text{før}} = c_{\text{efter}} \cdot V_{\text{efter}}
 \]</span></p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: en fortynding">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: hvor meget skal fortyndes?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Eksempel: en fortynding
+<span class="screen-reader-only">Note</span>Eksempel: hvor meget skal <span class="fagord-peg" data-fagord="fortynde">fortyndes</span>?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>100 mL af en 0,30 M <span class="fagord-peg" data-fagord="opløsning">opløsning</span> <span class="fagord-peg" data-fagord="fortynde">fortyndes</span> med vand, til den fylder 300 mL. Hvad er koncentrationen efter fortyndingen?</p>
+<p>Du skal lave 250 mL af en 0,100 M <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af natriumchlorid i en <span class="fagord-peg" data-fagord="målekolbe">målekolbe</span>. På hylden står en <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af natriumchlorid, der er 2,00 M. Hvor mange milliliter af 2,00 M-opløsningen skal du hælde i <span class="fagord-peg" data-fagord="målekolbe">målekolben</span>?</p>
 <p><strong>Kendte størrelser</strong></p>
-<p><em>c</em><sub>før</sub> = 0,30 M, <em>V</em><sub>før</sub> = 100 mL = 0,100 L og <em>V</em><sub>efter</sub> = 300 mL = 0,300 L</p>
+<div class="kendte">
+<p><em>c</em><sub>før</sub> = 2,00 M</p>
+<p><em>c</em><sub>efter</sub> = 0,100 M</p>
+<p><em>V</em><sub>efter</sub> = 0,250 L</p>
+</div>
 <p><strong>Formel</strong></p>
+<p>Det er <em>V</em><sub>før</sub>, der skal findes. Den kommer til at stå alene, når begge sider af formlen divideres med <em>c</em><sub>før</sub>:</p>
 <p><span class="math display">\[
-c_{\text{efter}} = \frac{c_{\text{før}} \cdot V_{\text{før}}}{V_{\text{efter}}}
+V_{\text{før}} = \frac{c_{\text{efter}} \cdot V_{\text{efter}}}{c_{\text{før}}}
 \]</span></p>
 <p><strong>Beregning</strong></p>
 <p><span class="math display">\[
-c_{\text{efter}} = \frac{0{,}30\ \dfrac{\mathrm{mol}}{\mathrm{L}} \cdot 0{,}100\ \mathrm{L}}{0{,}300\ \mathrm{L}} = 0{,}10\ \dfrac{\mathrm{mol}}{\mathrm{L}}
+V_{\text{før}} = \frac{0{,}100\ \dfrac{\mathrm{mol}}{\mathrm{L}} \cdot 0{,}250\ \mathrm{L}}{2{,}00\ \dfrac{\mathrm{mol}}{\mathrm{L}}} = 0{,}0125\ \mathrm{L} = 12{,}5\ \mathrm{mL}
 \]</span></p>
 <p><strong>Konklusion</strong></p>
-<p>Efter fortyndingen er koncentrationen 0,10 M. <span class="fagord-peg" data-fagord="volumen">Volumenet</span> er blevet tre gange så stort, og koncentrationen er blevet tre gange så lille.</p>
+<p>Du skal hælde 12,5 mL af 2,00 M-opløsningen i <span class="fagord-peg" data-fagord="målekolbe">målekolben</span> og fylde op med vand til mærket. <span class="fagord-peg" data-fagord="opløsning">Opløsningen</span> bliver <span class="fagord-peg" data-fagord="fortynde">fortyndet</span> 20 gange: <span class="fagord-peg" data-fagord="volumen">volumenet</span> bliver 20 gange så stort, og koncentrationen 20 gange så lille.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
