@@ -47,7 +47,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-121173edab625e6cb67ec09af3847831.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-fdb6c9b90e4b920e014ad47c0287bd80.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,39 +80,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar docked opgaver tema tema-plast quarto-light">
+<body class="nav-sidebar docked opgaver tema tema-sundhed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -118,7 +92,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/plast.html">Tema: Plastic</a></li><li class="breadcrumb-item"><a href="../temaer/t1-5-opgaver.html">Opgaver til T1.5</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/sundhed.html">Tema 1: Sundhed</a></li><li class="breadcrumb-item"><a href="../temaer/t1-5-opgaver.html">Opgaver til T1.5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Søg" onclick="window.quartoOpenSearch();">
@@ -1088,8 +1062,8 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../temaer/plast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Plastic</span></a>
+            <a href="../temaer/sundhed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 1: Sundhed</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1097,44 +1071,68 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-1-fra-olie-til-plast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.1 Fra olie til plast</span></a>
+  <a href="../temaer/t1-1-kroppens-grundstoffer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.1 Kroppens grundstoffer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-2-gummi-og-celluloid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.2 Gummi og celluloid</span></a>
+  <a href="../temaer/t1-2-atomer-og-isotoper.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.2 Atomer og isotoper</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-3-bakelit-og-haerdeplast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.3 Bakelit og hærdeplast</span></a>
+  <a href="../temaer/t1-3-elektronerne-og-det-periodiske-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.3 Elektronerne og det periodiske system</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-4-kaempemolekyler-og-nylon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.4 Kæmpemolekyler og nylon</span></a>
+  <a href="../temaer/t1-4-kroppens-forbraending.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.4 Kroppens forbrænding</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-5-pvc-og-bloedgoerere.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.5 PVC og blødgørere</span></a>
+  <a href="../temaer/t1-5-salte-i-blodet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.5 Salte i blodet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-6-plastens-koder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.6 Plastens koder</span></a>
+  <a href="../temaer/t1-6-knogler-taender-og-tabletter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.6 Knogler, tænder og tabletter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-7-plast-i-dag.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1.7 Plast i dag</span></a>
+  <a href="../temaer/t1-7-molekyler-i-kroppen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.7 Molekyler i kroppen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-8-polaere-molekyler-i-maden.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.8 Polære molekyler i maden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-9-vand-eller-fedt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.9 Vand eller fedt?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-10-fedtstoffer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.10 Fedtstoffer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-11-drop-blodsukker-og-dosis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1.11 Drop, blodsukker og dosis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1181,28 +1179,40 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../fagord/tema-plastic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til Tema: Plastic</span></a>
+  <a href="../temaer/t1-8-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.8</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-oevelse-hvilken-plast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse T1.6: Hvilken slags plast?</span></a>
+  <a href="../temaer/t1-9-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.9</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t1-oevelse-plast-af-kartoffelmel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse T1.7: Plast af kartoffelmel</span></a>
+  <a href="../temaer/t1-10-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t1-11-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T1.11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/tema-sundhed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Sundhed</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../temaer/klima.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Klima</span></a>
+            <a href="../temaer/plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 2: Plastic</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1210,38 +1220,44 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-1-drivhuseffekten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.1 Drivhuseffekten og luftens molekyler</span></a>
+  <a href="../temaer/t2-1-fra-olie-til-plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.1 Fra olie til plast</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-2-drivhusgassernes-form.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.2 Drivhusgassernes form</span></a>
+  <a href="../temaer/t2-2-gummi-og-celluloid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.2 Gummi og celluloid</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-3-havet-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.3 Havet og carbondioxid</span></a>
+  <a href="../temaer/t2-3-bakelit-og-haerdeplast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.3 Bakelit og hærdeplast</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-4-klimaets-historie-i-isen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.4 Klimaets historie i isen</span></a>
+  <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.4 Kæmpemolekyler og nylon</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-5-braendstoffer-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.5 Brændstoffer og carbondioxid</span></a>
+  <a href="../temaer/t2-5-pvc-og-bloedgoerere.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.5 PVC og blødgørere</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-6-carbondioxid-i-tal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.6 Carbondioxid i tal</span></a>
+  <a href="../temaer/t2-6-plastens-koder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.6 Plastens koder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-7-plast-i-dag.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.7 Plast i dag</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1282,22 +1298,34 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../fagord/tema-klima.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til Tema: Klima</span></a>
+  <a href="../temaer/t2-7-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.7</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-oevelse-carbondioxid-i-vand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse T2.3: Carbondioxid i koldt og varmt vand</span></a>
+  <a href="../fagord/tema-plastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Plastic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-oevelse-hvilken-plast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T2.6: Hvilken slags plast?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-oevelse-plast-af-kartoffelmel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T2.7: Plast af kartoffelmel</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../temaer/metaller.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Metaller</span></a>
+            <a href="../temaer/klima.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 3: Klima</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1305,38 +1333,38 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-1-metaller-og-elektroner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.1 Metaller og elektroner</span></a>
+  <a href="../temaer/t3-1-drivhuseffekten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.1 Drivhuseffekten og luftens molekyler</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-2-oldtidens-metaller.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.2 Oldtidens syv metaller</span></a>
+  <a href="../temaer/t3-2-drivhusgassernes-form.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.2 Drivhusgassernes form</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-3-kobber-og-bronze.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.3 Kobber og bronze</span></a>
+  <a href="../temaer/t3-3-havet-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.3 Havet og carbondioxid</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-4-jern.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.4 Jern</span></a>
+  <a href="../temaer/t3-4-klimaets-historie-i-isen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.4 Klimaets historie i isen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-5-kviksoelv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.5 Kviksølv</span></a>
+  <a href="../temaer/t3-5-braendstoffer-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.5 Brændstoffer og carbondioxid</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-6-rust.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.6 Rust</span></a>
+  <a href="../temaer/t3-6-carbondioxid-i-tal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.6 Carbondioxid i tal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1377,22 +1405,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../fagord/tema-metaller.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til Tema: Metaller</span></a>
+  <a href="../fagord/tema-klima.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Klima</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-oevelse-hvor-ruster-jernet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse T3.6: Hvor ruster jernet?</span></a>
+  <a href="../temaer/t3-oevelse-carbondioxid-i-vand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T3.3: Carbondioxid i koldt og varmt vand</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../temaer/sundhed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tema: Sundhed</span></a>
+            <a href="../temaer/metaller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 5: Metaller</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1400,140 +1428,86 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-1-kroppens-grundstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.1 Kroppens grundstoffer</span></a>
+  <a href="../temaer/t5-1-metaller-og-elektroner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T5.1 Metaller og elektroner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-2-atomer-og-isotoper.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.2 Atomer og isotoper</span></a>
+  <a href="../temaer/t5-2-oldtidens-metaller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T5.2 Oldtidens syv metaller</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-3-elektronerne-og-det-periodiske-system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.3 Elektronerne og det periodiske system</span></a>
+  <a href="../temaer/t5-3-kobber-og-bronze.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T5.3 Kobber og bronze</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-4-kroppens-forbraending.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.4 Kroppens forbrænding</span></a>
+  <a href="../temaer/t5-4-jern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T5.4 Jern</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-5-salte-i-blodet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.5 Salte i blodet</span></a>
+  <a href="../temaer/t5-5-kviksoelv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T5.5 Kviksølv</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-6-knogler-taender-og-tabletter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.6 Knogler, tænder og tabletter</span></a>
+  <a href="../temaer/t5-6-rust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T5.6 Rust</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-7-molekyler-i-kroppen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.7 Molekyler i kroppen</span></a>
+  <a href="../temaer/t5-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T5.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-8-polaere-molekyler-i-maden.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.8 Polære molekyler i maden</span></a>
+  <a href="../temaer/t5-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T5.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-9-vand-eller-fedt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.9 Vand eller fedt?</span></a>
+  <a href="../temaer/t5-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T5.3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-10-fedtstoffer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.10 Fedtstoffer</span></a>
+  <a href="../temaer/t5-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T5.4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-11-drop-blodsukker-og-dosis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T4.11 Drop, blodsukker og dosis</span></a>
+  <a href="../temaer/t5-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T5.5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-1-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.1</span></a>
+  <a href="../temaer/t5-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T5.6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-2-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.2</span></a>
+  <a href="../fagord/tema-metaller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Metaller</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-3-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-4-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-5-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.5</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-6-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-7-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.7</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-8-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.8</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-9-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.9</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-10-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.10</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../temaer/t4-11-opgaver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Opgaver til T4.11</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../fagord/tema-sundhed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fagord til Tema: Sundhed</span></a>
+  <a href="../temaer/t5-oevelse-hvor-ruster-jernet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse T5.6: Hvor ruster jernet?</span></a>
   </div>
 </li>
       </ul>
@@ -1612,20 +1586,21 @@ window.Quarto = {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#T1.5.1" id="toc-T1.5.1" class="nav-link active" data-scroll-target="#T1.5.1">Opgave T1.5.1: De vigtigste ord</a></li>
-  <li><a href="#T1.5.2" id="toc-T1.5.2" class="nav-link" data-scroll-target="#T1.5.2">Opgave T1.5.2: Fra chlorethen til PVC</a></li>
-  <li><a href="#T1.5.3" id="toc-T1.5.3" class="nav-link" data-scroll-target="#T1.5.3">Opgave T1.5.3: Hård PVC</a></li>
-  <li><a href="#T1.5.4" id="toc-T1.5.4" class="nav-link" data-scroll-target="#T1.5.4">Opgave T1.5.4: Blødgører i en haveslange</a></li>
-  <li><a href="#T1.5.5" id="toc-T1.5.5" class="nav-link" data-scroll-target="#T1.5.5">Opgave T1.5.5: Phthalater i legetøj</a></li>
-  <li><a href="#T1.5.6" id="toc-T1.5.6" class="nav-link" data-scroll-target="#T1.5.6">Opgave T1.5.6: Chlor i PVC</a></li>
-  <li><a href="#T1.5.7" id="toc-T1.5.7" class="nav-link" data-scroll-target="#T1.5.7">Opgave T1.5.7: Når PVC brænder</a></li>
+  <li><a href="#T1.5.1" id="toc-T1.5.1" class="nav-link active" data-scroll-target="#T1.5.1">Opgave T1.5.1: Ion eller molekyle i kroppen?</a></li>
+  <li><a href="#T1.5.2" id="toc-T1.5.2" class="nav-link" data-scroll-target="#T1.5.2">Opgave T1.5.2: Protoner og elektroner i kroppens ioner</a></li>
+  <li><a href="#T1.5.3" id="toc-T1.5.3" class="nav-link" data-scroll-target="#T1.5.3">Opgave T1.5.3: Hvilken ion er der i blodprøven?</a></li>
+  <li><a href="#T1.5.4" id="toc-T1.5.4" class="nav-link" data-scroll-target="#T1.5.4">Opgave T1.5.4: Kroppens ioner og det periodiske system</a></li>
+  <li><a href="#T1.5.5" id="toc-T1.5.5" class="nav-link" data-scroll-target="#T1.5.5">Opgave T1.5.5: Navne på ionerne i kroppen</a></li>
+  <li><a href="#T1.5.6" id="toc-T1.5.6" class="nav-link" data-scroll-target="#T1.5.6">Opgave T1.5.6: Jern, kobber, zink og sølv</a></li>
+  <li><a href="#T1.5.7" id="toc-T1.5.7" class="nav-link" data-scroll-target="#T1.5.7">Opgave T1.5.7: Sammensatte ioner i krop og mad</a></li>
+  <li><a href="#T1.5.8" id="toc-T1.5.8" class="nav-link" data-scroll-target="#T1.5.8">Opgave T1.5.8: Grundstof eller ion på flasken med kildevand?</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/plast.html">Tema: Plastic</a></li><li class="breadcrumb-item"><a href="../temaer/t1-5-opgaver.html">Opgaver til T1.5</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../temaer/sundhed.html">Tema 1: Sundhed</a></li><li class="breadcrumb-item"><a href="../temaer/t1-5-opgaver.html">Opgaver til T1.5</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Opgaver til T1.5</h1>
 </div>
@@ -1644,15 +1619,14 @@ window.Quarto = {
 </header>
 
 
-<p>Opgaverne hører til siden <a href="../temaer/t1-5-pvc-og-bloedgoerere.html">T1.5 PVC og blødgørere</a>. Prøv selv, før du åbner hjælpen under opgaven.</p>
+<p>Opgaverne hører til siden <a href="../temaer/t1-5-salte-i-blodet.html">T1.5 Salte i blodet</a>. Prøv selv, før du åbner hjælpen under opgaven. Grundstoffernes navne og atomnumre står i <a href="../bilag/grundstoffer.html">det periodiske system bagest i bogen</a>.</p>
 <section id="T1.5.1" class="level2">
-<h2 class="anchored" data-anchor-id="T1.5.1">Opgave T1.5.1: De vigtigste ord</h2>
+<h2 class="anchored" data-anchor-id="T1.5.1">Opgave T1.5.1: Ion eller molekyle i kroppen?</h2>
+<p>Kroppen indeholder både ioner og molekyler.</p>
 <ol type="a">
-<li>Hvad står forkortelsen PVC for?</li>
-<li>Hvad kaldes chlorethen også?</li>
-<li>Hvad er en blødgører?</li>
-<li>Hvad er et tilsætningsstof? Nævn tre eksempler.</li>
-<li>Hvad betyder det, at et stof er hormonforstyrrende?</li>
+<li><p>Fire af de syv formler herunder er ioner. Hvilke?</p>
+<p>K<sup>+</sup>, O<sub>2</sub>, Cl<sup>−</sup>, H<sub>2</sub>O, Fe<sup>2+</sup>, CO<sub>2</sub> og PO<sub>4</sub><sup>3−</sup></p></li>
+<li><p>Det oxygen, du indånder, har formlen O<sub>2</sub>, mens ionen oxid har formlen O<sup>2−</sup>. Hvad viser det sænkede 2-tal i O<sub>2</sub>, og hvad viser det hævede 2− i O<sup>2−</sup>?</p></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -1666,7 +1640,7 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Find ordene i afsnittene <em>Et hvidt stof, som ingen kunne bruge</em>, <em>Hård og blød PVC</em> og <em>Blødgørere, der vandrer</em> på siden T1.5.</p>
+<p>En ion har en ladning, som du kan læse i afsnittet <em>Hvad er en ion?</em> på siden T1.5. Hvordan bliver ladningen vist i en formel?</p>
 </div>
 </div>
 </div>
@@ -1682,7 +1656,7 @@ window.Quarto = {
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Forkortelsen PVC er dannet af det andet navn for chlorethen med poly foran. En blødgører er et af flere stoffer, som fabrikken blander ind i plasten. Ordet hormonforstyrrende er sat sammen af hormon og forstyrre.</p>
+<p>Se efter et hævet plus eller minus til sidst i formlen. De små, sænkede tal viser kun, hvor mange atomer der er.</p>
 </div>
 </div>
 </div>
@@ -1699,28 +1673,63 @@ window.Quarto = {
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Polyvinylchlorid.</li>
-<li>Vinylchlorid.</li>
-<li>Et stof med små molekyler, som bliver blandet ind i plasten. Molekylerne lægger sig mellem kæderne, så plasten bliver blød og bøjelig.</li>
-<li>Et stof, som fabrikken blander ind i plasten. Eksempler er blødgørere, farvestoffer, stoffer, der beskytter plasten mod sollys, og stoffer, der gør plasten mindre brandbar.</li>
-<li>At stoffet kan påvirke kroppens egne hormoner.</li>
+<li>Ionerne er K<sup>+</sup>, Cl<sup>−</sup>, Fe<sup>2+</sup> og PO<sub>4</sub><sup>3−</sup>. De tre andre, O<sub>2</sub>, H<sub>2</sub>O og CO<sub>2</sub>, er molekyler uden ladning.</li>
+<li>Det sænkede 2-tal i O<sub>2</sub> viser, at molekylet består af 2 oxygenatomer. Det hævede 2− i O<sup>2−</sup> viser, at ionen har 2 negative ladninger i overskud.</li>
 </ol>
+<p>Ionen PO<sub>4</sub><sup>3−</sup> sidder i knoglerne. Den består af flere atomer, men den har en ladning og er derfor en ion. Den slags ioner står i afsnittet <em>Sammensatte ioner</em> på siden T1.5.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="T1.5.2" class="level2">
-<h2 class="anchored" data-anchor-id="T1.5.2">Opgave T1.5.2: Fra chlorethen til PVC</h2>
-<p>PVC dannes ved en polyaddition af chlorethen:</p>
-<div class="reaktion">
-<p><em>n</em> CH<sub>2</sub>=CHCl → [−CH<sub>2</sub>−CHCl−]<sub><em>n</em></sub></p>
-</div>
+<h2 class="anchored" data-anchor-id="T1.5.2">Opgave T1.5.2: Protoner og elektroner i kroppens ioner</h2>
+<p>Blodet indeholder kaliumionen K<sup>+</sup>, som har 19 protoner og 18 elektroner. Der er flest protoner, og derfor er ladningen positiv.</p>
 <ol type="a">
-<li>Hvor mange atomer af hvert grundstof er der i ét molekyle chlorethen? Skriv molekylformlen.</li>
-<li>Hvad sker der med dobbeltbindingen mellem de to carbonatomer under reaktionen?</li>
-<li>Hvad viser de kantede parenteser, og hvad står <em>n</em> for?</li>
-<li>Tre chlorethenmolekyler sætter sig sammen. Hvor mange carbonatomer, hydrogenatomer og chloratomer er der i det stykke kæde, de danner?</li>
-<li>Dannes der andre stoffer end polymeren?</li>
+<li>Udfyld skemaet. Ionerne findes alle i kroppen eller i medicin.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ion</th>
+<th style="text-align: center;">Antal protoner</th>
+<th style="text-align: center;">Antal elektroner</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">K<sup>+</sup></td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">18</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Li<sup>+</sup></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mg<sup>2+</sup></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">I<sup>−</sup></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fe<sup>2+</sup></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fe<sup>3+</sup></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="a">
+<li>Tandpasta indeholder fluorid, F<sup>−</sup>. Hvor mange protoner og elektroner har fluorid? Skriv også ionens elektronstruktur.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1734,7 +1743,7 @@ window.Quarto = {
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs afsnittet <em>Fra olie til plast</em> på siden <a href="../temaer/t1-1-fra-olie-til-plast.html">T1.1 Fra olie til plast</a>, og se på <a href="../temaer/t1-1-fra-olie-til-plast.html#fig-plast-polyaddition">figuren med de tre trin</a>. PVC dannes på samme måde som polyethen.</p>
+<p>Antallet af protoner er grundstoffets atomnummer, og det ændrer sig ikke, når atomet bliver til en ion. Se ladningsregnskabet for natrium i afsnittet <em>Hvad er en ion?</em> på siden T1.5.</p>
 </div>
 </div>
 </div>
@@ -1750,7 +1759,7 @@ window.Quarto = {
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tæl atomerne i chlorethen i reaktionsskemaet: begge carbonatomer, alle hydrogenatomerne og chloratomet. I en polyaddition sidder alle atomer fra monomererne i polymeren, så tre monomerer giver tre gange så mange atomer som én monomer.</p>
+<p>En positiv ion har afgivet elektroner og har derfor færre elektroner end protoner, mens en negativ ion har optaget elektroner og har flere. Mg<sup>2+</sup> har 12 protoner og har afgivet 2 elektroner, så den har 10 elektroner tilbage.</p>
 </div>
 </div>
 </div>
@@ -1766,57 +1775,55 @@ window.Quarto = {
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="a">
-<li>2 carbonatomer, 3 hydrogenatomer og 1 chloratom. Molekylformlen er C<sub>2</sub>H<sub>3</sub>Cl.</li>
-<li>Den åbner sig og bliver til en enkeltbinding. De to carbonatomer binder sig i stedet til nabomolekylerne.</li>
-<li>De kantede parenteser viser den enhed, der bliver gentaget gennem hele kæden. Bogstavet <em>n</em> står for et stort tal, ofte flere tusinde.</li>
-<li>Kædestykket er tre monomerer og har 6 carbonatomer, 9 hydrogenatomer og 3 chloratomer. Molekylformlen for stykket er C<sub>6</sub>H<sub>9</sub>Cl<sub>3</sub>.</li>
-<li>Nej. I en polyaddition dannes der kun ét stof, og alle atomer fra monomererne sidder i polymeren.</li>
-</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ion</th>
+<th style="text-align: center;">Antal protoner</th>
+<th style="text-align: center;">Antal elektroner</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Li<sup>+</sup></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mg<sup>2+</sup></td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">I<sup>−</sup></td>
+<td style="text-align: center;">53</td>
+<td style="text-align: center;">54</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fe<sup>2+</sup></td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fe<sup>3+</sup></td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">23</td>
+</tr>
+</tbody>
+</table>
+<p>F<sup>−</sup> har 9 protoner og 10 elektroner. Elektronstrukturen er (2, 8), så ionen har 8 elektroner i yderste skal.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="T1.5.3" class="level2">
-<h2 class="anchored" data-anchor-id="T1.5.3">Opgave T1.5.3: Hård PVC</h2>
+<h2 class="anchored" data-anchor-id="T1.5.3">Opgave T1.5.3: Hvilken ion er der i blodprøven?</h2>
+<p>Figuren viser tre ioner fra en blodprøve. Tallet i kernen er kernens ladning, altså antallet af protoner.</p>
+<p><a href="../figurer/opg-ioner-sundhed.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../figurer/opg-ioner-sundhed.svg" class="img-fluid" alt="Tre ioner, A, B og C, tegnet efter skalmodellen. Kernernes ladning er 11 plus, 17 plus og 20 plus. Ion A har 2 og 8 elektroner i skallerne. Ion B og ion C har 2, 8 og 8 elektroner i skallerne."></a></p>
 <ol type="a">
-<li>Eugen Baumann fandt PVC i 1872, men stoffet lå ubrugt hen i mere end 50 år. Hvorfor?</li>
-<li>Udfyld skemaet, og afgør for hver binding, om den er upolær eller polær.</li>
-</ol>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Binding</th>
-<th style="text-align: left;">Beregning</th>
-<th style="text-align: center;">ΔEN</th>
-<th style="text-align: left;">Slags binding</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">C−H</td>
-<td style="text-align: left;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">C−C</td>
-<td style="text-align: left;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">C−Cl</td>
-<td style="text-align: left;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-<ol start="3" type="a">
-<li>Hvilket atom i bindingen C−Cl får en lille negativ ladning, δ−?</li>
-<li>Polyethen har kun bindingerne C−H og C−C. Forklar, hvorfor kæderne i PVC holder bedre fast i hinanden end kæderne i polyethen.</li>
-<li>I 1926 blandede Waldo Semon PVC med en olieagtig væske. Forklar, hvorfor plasten blev blød.</li>
+<li>Tæl elektronerne i hver ion.</li>
+<li>Hvilken ladning har hver ion?</li>
+<li>Skriv ionens formel.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1830,7 +1837,7 @@ window.Quarto = {
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs afsnittene <em>Et hvidt stof, som ingen kunne bruge</em> og <em>Hård og blød PVC</em> på siden T1.5. Elektronegativiteterne står i <a href="../kapitler/3-3-elektronegativitet-og-polaere-bindinger.html#fig-elektronegativitet">figuren i afsnit 3.3</a>: H 2,1, C 2,5 og Cl 3,0.</p>
+<p>Sammenlign antallet af protoner med antallet af elektroner, som i afsnittet <em>Hvad er en ion?</em> på siden T1.5. Er der flest protoner, er ionen positiv, og er der flest elektroner, er den negativ.</p>
 </div>
 </div>
 </div>
@@ -1846,12 +1853,7 @@ window.Quarto = {
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Træk den mindste elektronegativitet fra den største. Under 0,5 er bindingen upolær, og fra 0,5 til under 2,0 er den polær, så 0,5 hører med til de polære. Du kan begynde dine sætninger sådan:</p>
-<ul>
-<li>I PVC er bindingen C−Cl …, så kæderne har små …</li>
-<li>I polyethen er alle bindingerne …, og derfor …</li>
-<li>Den olieagtige væske var en … Dens små molekyler lagde sig …</li>
-</ul>
+<p>Ion A har 11 protoner og 10 elektroner, nemlig 2 i 1. skal og 8 i 2. skal. Der er 1 proton i overskud, så ladningen er +. Grundstoffet med atomnummer 11 er natrium.</p>
 </div>
 </div>
 </div>
@@ -1867,57 +1869,115 @@ window.Quarto = {
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="a">
-<li><p>Ren PVC var hård og skør. Når den blev varmet op, begyndte den at gå i stykker, før den blev blød nok til at kunne formes.</p></li>
-<li><p>Skemaet:</p></li>
-</ol>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Binding</th>
-<th style="text-align: left;">Beregning</th>
-<th style="text-align: center;">ΔEN</th>
-<th style="text-align: left;">Slags binding</th>
+<th style="text-align: center;">Ion</th>
+<th style="text-align: center;">Protoner</th>
+<th style="text-align: center;">Elektroner</th>
+<th style="text-align: center;">Ladning</th>
+<th style="text-align: center;">Formel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">C−H</td>
-<td style="text-align: left;">2,5 − 2,1</td>
-<td style="text-align: center;">0,4</td>
-<td style="text-align: left;">upolær</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">Na<sup>+</sup></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">C−C</td>
-<td style="text-align: left;">2,5 − 2,5</td>
-<td style="text-align: center;">0,0</td>
-<td style="text-align: left;">upolær</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">−</td>
+<td style="text-align: center;">Cl<sup>−</sup></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">C−Cl</td>
-<td style="text-align: left;">3,0 − 2,5</td>
-<td style="text-align: center;">0,5</td>
-<td style="text-align: left;">polær</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">2+</td>
+<td style="text-align: center;">Ca<sup>2+</sup></td>
 </tr>
 </tbody>
 </table>
-<ol start="3" type="a">
-<li>Chloratomet, fordi chlor har den højeste elektronegativitet. Carbonatomet får en lille positiv ladning, δ+.</li>
-<li>I PVC er bindingen C−Cl polær, så kæderne har små positive og negative ender. De negative ender ved chloratomerne tiltrækker de positive ender i nabokæderne, og derfor holder kæderne godt fast i hinanden. I polyethen er alle bindingerne upolære, så kæderne har ingen positive og negative ender, der kan tiltrække hinanden på den måde.</li>
-<li>Væsken var en blødgører. Dens små molekyler lagde sig mellem kæderne og skubbede dem lidt fra hinanden. Derfor holdt kæderne ikke så godt fast i hinanden og kunne lettere glide, og plasten blev blød og bøjelig.</li>
-</ol>
+<p>Ion B og ion C har lige mange elektroner. Det er antallet af protoner i kernen, der afgør, hvilket grundstof en ion hører til.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="T1.5.4" class="level2">
-<h2 class="anchored" data-anchor-id="T1.5.4">Opgave T1.5.4: Blødgører i en haveslange</h2>
-<p>En blød haveslange af PVC vejer 1,20 kg, og 0,360 kg af massen er blødgører. Regn med, at resten af slangen er PVC.</p>
+<h2 class="anchored" data-anchor-id="T1.5.4">Opgave T1.5.4: Kroppens ioner og det periodiske system</h2>
+<p>Figuren viser et udsnit af det periodiske system. Natrium er vist som ionen Na<sup>+</sup>, som der er meget af i blodet.</p>
+<p><a href="../figurer/opg-periodesystem-ladninger.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../figurer/opg-periodesystem-ladninger.svg" class="img-fluid" alt="Udsnit af det periodiske system med hovedgruppe 1 til 8. Natrium er vist som ionen Na plus. De øvrige grundstoffer står uden ladning."></a></p>
 <ol type="a">
-<li>Beregn masseprocenten af blødgører i slangen.</li>
-<li>På siden T1.5 står der, at op mod en tredjedel af massen i en blød haveslange kan være blødgører. Passer slangen med det?</li>
-<li>Hvor mange kilogram PVC er der i slangen?</li>
-<li>Blødgøreren er ikke bundet til kæderne og kan langsomt vandre ud af plasten. Forklar, hvad der sker med slangen, når meget af blødgøreren er forsvundet.</li>
+<li>Find hvert grundstof i figuren, og udfyld skemaet. Natrium er vist som eksempel.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Grundstof</th>
+<th style="text-align: left;">Ionen findes i</th>
+<th style="text-align: center;">Hovedgruppe</th>
+<th style="text-align: center;">Ion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Na</td>
+<td style="text-align: left;">blodet</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Na<sup>+</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Li</td>
+<td style="text-align: left;">medicin mod bipolar lidelse</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">K</td>
+<td style="text-align: left;">blodet</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mg</td>
+<td style="text-align: left;">musklerne</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ca</td>
+<td style="text-align: left;">knogler og tænder</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">O</td>
+<td style="text-align: left;">zinksalve</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: left;">tandpasta</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">I</td>
+<td style="text-align: left;">jodtabletter</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="a">
+<li>Helium står også i figuren, og flydende helium køler magneterne i hospitalets MR-scanner. Danner helium ioner? Begrund dit svar.</li>
+<li>Kalium findes i blodet som ionen K<sup>+</sup> og aldrig som K<sup>2+</sup>. Forklar hvorfor. Brug kaliums elektronstruktur og ædelgasreglen i din forklaring.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1931,7 +1991,7 @@ window.Quarto = {
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Masseprocent står i <a href="../kapitler/6-1-koncentration.html">afsnit 6.1</a>. Her er blødgøreren stoffet, og slangen er blandingen. Til spørgsmål d skal du læse afsnittene <em>Hård og blød PVC</em> og <em>Blødgørere, der vandrer</em> på siden T1.5.</p>
+<p>Hovedgruppens nummer står øverst i figuren, og reglerne står i afsnittet <em>Forudsig ionen ud fra hovedgruppen</em> på siden T1.5. Til spørgsmål c kan du se, hvordan natrium bliver til Na<sup>+</sup> i afsnittet <em>Metaller afgiver elektroner</em>.</p>
 </div>
 </div>
 </div>
@@ -1947,7 +2007,13 @@ window.Quarto = {
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Divider massen af blødgører med slangens masse, og gang med 100 %. En tredjedel svarer til omkring 33 %. Til spørgsmål d kan du begynde sådan: “Når der er mindre blødgører mellem kæderne, kommer kæderne … og holder …”</p>
+<p>I hovedgruppe 1, 2 og 3 er ladningen positiv og lige så stor som hovedgruppens nummer. I hovedgruppe 5, 6 og 7 er ladningen negativ, og størrelsen er 8 minus hovedgruppens nummer. Til spørgsmål c kan du begynde dine sætninger sådan:</p>
+<ul>
+<li>Kalium har elektronstrukturen …</li>
+<li>Når kalium afgiver … elektron, bliver elektronstrukturen …</li>
+<li>Så har ionen … elektroner i yderste skal, og det passer med …</li>
+<li>Hvis kalium skulle afgive én elektron mere, ville …</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1964,39 +2030,125 @@ window.Quarto = {
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><em>m</em>(blødgører) = 0,360 kg og <em>m</em>(slange) = 1,20 kg</li>
+<li>Skemaet:</li>
 </ol>
-<p><span class="math display">\[
-\text{masseprocent} = \frac{m(\text{blødgører})}{m(\text{slange})} \cdot 100\ \%
-\]</span></p>
-<p><span class="math display">\[
-\text{masseprocent} = \frac{0{,}360\ \mathrm{kg}}{1{,}20\ \mathrm{kg}} \cdot 100\ \% = 30{,}0\ \%
-\]</span></p>
-<p>Slangen indeholder 30,0 % blødgører.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Grundstof</th>
+<th style="text-align: center;">Hovedgruppe</th>
+<th style="text-align: center;">Ion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Li</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Li<sup>+</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">K</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">K<sup>+</sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mg</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Mg<sup>2+</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ca</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Ca<sup>2+</sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">O<sup>2−</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">F<sup>−</sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">I</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">I<sup>−</sup></td>
+</tr>
+</tbody>
+</table>
 <ol start="2" type="a">
-<li><p>Ja. En tredjedel er omkring 33 %, og 30,0 % er lidt mindre end det.</p></li>
-<li><p>Massen af PVC er</p></li>
-</ol>
-<p><span class="math display">\[
-m(\text{PVC}) = m(\text{slange}) - m(\text{blødgører}) = 1{,}20\ \mathrm{kg} - 0{,}360\ \mathrm{kg} = 0{,}840\ \mathrm{kg}
-\]</span></p>
-<p>Der er 0,840 kg PVC i slangen.</p>
-<ol start="4" type="a">
-<li>Når der er mindre blødgører mellem kæderne, kommer kæderne tættere på hinanden og holder bedre fast i hinanden. De kan ikke længere glide så let, og slangen bliver hårdere og stivere.</li>
+<li>Helium danner ikke ioner. Helium står i hovedgruppe 8 og er en ædelgas, og ædelgasserne har allerede en stabil elektronstruktur og danner ikke ioner.</li>
+<li>Kalium har elektronstrukturen (2, 8, 8, 1). Når kalium afgiver 1 elektron, bliver elektronstrukturen (2, 8, 8). Så har ionen 8 elektroner i yderste skal, og det passer med ædelgasreglen. Hvis kalium skulle afgive én elektron mere, ville ionen kun have 7 elektroner i yderste skal, og det sker ikke, fordi en yderste skal med 8 elektroner er meget stabil.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="T1.5.5" class="level2">
-<h2 class="anchored" data-anchor-id="T1.5.5">Opgave T1.5.5: Phthalater i legetøj</h2>
-<p>Siden 2020 må fire af de mest brugte phthalater i hele EU højst udgøre 0,1 % af plasten i de fleste ting, vi køber.</p>
+<h2 class="anchored" data-anchor-id="T1.5.5">Opgave T1.5.5: Navne på ionerne i kroppen</h2>
 <ol type="a">
-<li>Hvor mange gram af de fire phthalater må der højst være i 100 g plast?</li>
-<li>En badeand af blød PVC vejer 50,0 g. Hvor mange gram må de fire phthalater højst udgøre? Regn også svaret om til milligram.</li>
-<li>Forestil dig en gammel badeand på 50,0 g, hvor 30,0 % af massen er phthalater ligesom blødgøreren i haveslangen i opgave T1.5.4. Hvor mange gram phthalater er der i den?</li>
-<li>Hvor mange gange så meget er det, som der højst må være i dag?</li>
-<li>Hvorfor er phthalater et særligt stort problem i legetøj til små børn?</li>
+<li>Skemaet viser ni ioner og et sted, hvor hver af dem findes. Skriv navnet på hver ion. Kaliumionen er vist som eksempel.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ion</th>
+<th style="text-align: left;">Findes i</th>
+<th style="text-align: left;">Navn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">K<sup>+</sup></td>
+<td style="text-align: left;">blodet</td>
+<td style="text-align: left;">kaliumion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Na<sup>+</sup></td>
+<td style="text-align: left;">saltvandsdrop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ca<sup>2+</sup></td>
+<td style="text-align: left;">knogler og tænder</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mg<sup>2+</sup></td>
+<td style="text-align: left;">musklerne</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Al<sup>3+</sup></td>
+<td style="text-align: left;">midler mod halsbrand</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cl<sup>−</sup></td>
+<td style="text-align: left;">mavesyren</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F<sup>−</sup></td>
+<td style="text-align: left;">tandpasta</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">I<sup>−</sup></td>
+<td style="text-align: left;">jodtabletter</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O<sup>2−</sup></td>
+<td style="text-align: left;">zinksalve</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="a">
+<li>Svovl danner ionen S<sup>2−</sup>. Hvad hedder ionen, og hvorfor begynder navnet ikke med svovl?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -2010,7 +2162,7 @@ m(\text{PVC}) = m(\text{slange}) - m(\text{blødgører}) = 1{,}20\ \mathrm{kg} -
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs afsnittet <em>Blødgørere, der vandrer</em> på siden T1.5. Masseprocent står i <a href="../kapitler/6-1-koncentration.html">afsnit 6.1</a>, hvor 1,2 % salt i et brød betyder 1,2 g salt i 100 g brød.</p>
+<p>Læs afsnittet <em>Ionernes navne</em> på siden T1.5. Positive ioner hedder grundstoffets navn efterfulgt af ordet ion, mens negative ioners navne ender på -id.</p>
 </div>
 </div>
 </div>
@@ -2026,7 +2178,7 @@ m(\text{PVC}) = m(\text{slange}) - m(\text{blødgører}) = 1{,}20\ \mathrm{kg} -
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Massen af et stof findes ved at dividere masseprocenten med 100 % og gange med blandingens masse. Der går 1000 mg på 1 g. Til spørgsmål d skal du dividere massen fra spørgsmål c med massen fra spørgsmål b. Til spørgsmål e kan du begynde sådan: “Phthalaterne er ikke bundet til kæderne, så når et barn sutter på legetøjet, …”</p>
+<p>Ladningen skal ikke med i navnet for metallerne fra hovedgruppe 1, 2 og 3, fordi de kun danner én slags ion. I hovedgruppe 7 sættes -id direkte efter grundstoffets navn, så chlor bliver til chlorid. Grundstoffet I hedder iod i kemi, selv om der står jod på æsken, og oxygen bliver til oxid. Til spørgsmål b kan du se på figuren med endelserne i afsnittet <em>Ionernes navne</em>.</p>
 </div>
 </div>
 </div>
@@ -2043,43 +2195,99 @@ m(\text{PVC}) = m(\text{slange}) - m(\text{blødgører}) = 1{,}20\ \mathrm{kg} -
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>0,1 g. Procent betyder hundrededele, så 0,1 % af 100 g er 0,1 g.</p></li>
-<li><p>Den største masse, der er tilladt, er</p></li>
+<li>Navnene:</li>
 </ol>
-<p><span class="math display">\[
-m(\text{phthalater}) = \frac{\text{masseprocent}}{100\ \%} \cdot m(\text{badeand}) = \frac{0{,}1\ \%}{100\ \%} \cdot 50{,}0\ \mathrm{g} = 0{,}05\ \mathrm{g}
-\]</span></p>
-<p>Badeanden må højst indeholde 0,05 g phthalater. Det er 50 mg.</p>
-<ol start="3" type="a">
-<li>Massen af phthalater i den gamle badeand er</li>
-</ol>
-<p><span class="math display">\[
-m(\text{phthalater}) = \frac{30{,}0\ \%}{100\ \%} \cdot 50{,}0\ \mathrm{g} = 15{,}0\ \mathrm{g}
-\]</span></p>
-<p>Den gamle badeand indeholder 15,0 g phthalater.</p>
-<ol start="4" type="a">
-<li>Forholdet mellem de to masser er</li>
-</ol>
-<p><span class="math display">\[
-\text{forhold} = \frac{15{,}0\ \mathrm{g}}{0{,}05\ \mathrm{g}} = 300
-\]</span></p>
-<p>Den gamle badeand indeholder 300 gange så meget phthalat, som der må være i dag.</p>
-<ol start="5" type="a">
-<li>Phthalaterne er ikke bundet til kæderne, så de kan vandre ud af plasten. Når et lille barn sutter på legetøjet, kan de komme ind i munden på barnet, og flere phthalater er hormonforstyrrende.</li>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ion</th>
+<th style="text-align: left;">Navn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Na<sup>+</sup></td>
+<td style="text-align: left;">natriumion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ca<sup>2+</sup></td>
+<td style="text-align: left;">calciumion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mg<sup>2+</sup></td>
+<td style="text-align: left;">magnesiumion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Al<sup>3+</sup></td>
+<td style="text-align: left;">aluminiumion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cl<sup>−</sup></td>
+<td style="text-align: left;">chlorid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F<sup>−</sup></td>
+<td style="text-align: left;">fluorid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">I<sup>−</sup></td>
+<td style="text-align: left;">iodid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">O<sup>2−</sup></td>
+<td style="text-align: left;">oxid</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="a">
+<li>S<sup>2−</sup> hedder sulfid. Navnet på en negativ ion bygger på grundstoffets internationale navn, og svovl hedder sulfur.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="T1.5.6" class="level2">
-<h2 class="anchored" data-anchor-id="T1.5.6">Opgave T1.5.6: Chlor i PVC</h2>
-<p>PVC er bygget af enheden C<sub>2</sub>H<sub>3</sub>Cl, som bliver gentaget gennem hele kæden. Brug atommasserne C 12,01 u, H 1,008 u og Cl 35,45 u.</p>
+<h2 class="anchored" data-anchor-id="T1.5.6">Opgave T1.5.6: Jern, kobber, zink og sølv</h2>
+<p>Kroppen har brug for små mængder af metallerne jern, kobber og zink, og sølv bruges mod bakterier i nogle plastre. De fire metaller står i undergrupperne, og metaller fra undergrupperne kan danne flere forskellige ioner.</p>
 <ol type="a">
-<li>Hvor mange atomer af hvert grundstof er der i enheden C<sub>2</sub>H<sub>3</sub>Cl?</li>
-<li>Beregn molarmassen for C<sub>2</sub>H<sub>3</sub>Cl.</li>
-<li>Hvor mange gram chlor er der i 1 mol C<sub>2</sub>H<sub>3</sub>Cl?</li>
-<li>Beregn masseprocenten af chlor i PVC.</li>
-<li>Et kloakrør af hård PVC vejer 2,00 kg. Regn røret som ren PVC. Hvor mange kilogram chlor er der i røret?</li>
+<li>Skriv navnet på hver ion. Zink(II)ionen er vist som eksempel.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ion</th>
+<th style="text-align: left;">Navn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Zn<sup>2+</sup></td>
+<td style="text-align: left;">zink(II)ion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fe<sup>2+</sup></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fe<sup>3+</sup></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cu<sup>+</sup></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cu<sup>2+</sup></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ag<sup>+</sup></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="a">
+<li>Blodet indeholder Fe<sup>2+</sup>. Hvorfor er det ikke nok at kalde ionen en jernion?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -2093,7 +2301,7 @@ m(\text{phthalater}) = \frac{30{,}0\ \%}{100\ \%} \cdot 50{,}0\ \mathrm{g} = 15{
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Molarmassen beregnes som i <a href="../kapitler/5-2-molarmasse.html">afsnit 5.2</a>, og masseprocenten som i <a href="../kapitler/6-1-koncentration.html">afsnit 6.1</a>. Her er chloratomerne stoffet, og hele enheden C<sub>2</sub>H<sub>3</sub>Cl er blandingen.</p>
+<p>For metaller fra undergrupperne skal ladningen med i navnet som et romertal i en parentes lige efter grundstoffets navn. Det står i afsnittet <em>Ionernes navne</em> på siden T1.5, og tabellen i afsnittet <em>Forudsig ionen ud fra hovedgruppen</em> viser, hvilke ioner jern og kobber danner.</p>
 </div>
 </div>
 </div>
@@ -2109,11 +2317,7 @@ m(\text{phthalater}) = \frac{30{,}0\ \%}{100\ \%} \cdot 50{,}0\ \mathrm{g} = 15{
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Molarmassen er:</p>
-<p><span class="math display">\[
-M(\mathrm{C_2H_3Cl}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 3 \cdot 1{,}008\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 35{,}45\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 62{,}49\ \dfrac{\mathrm{g}}{\mathrm{mol}}
-\]</span></p>
-<p>1 mol C<sub>2</sub>H<sub>3</sub>Cl vejer altså 62,49 g, og 35,45 g af det er chlor. Til spørgsmål e: Divider masseprocenten med 100 %, og gang med rørets masse.</p>
+<p>Opskriften er grundstoffets navn, romertallet i parentes og til sidst ordet ion. Romertallene er I for 1, II for 2 og III for 3. Er ladningen 1, skal romertallet I med i navnet, selv om tallet 1 ikke står i formlen.</p>
 </div>
 </div>
 </div>
@@ -2130,114 +2334,94 @@ M(\mathrm{C_2H_3Cl}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 3 \cd
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>2 carbonatomer, 3 hydrogenatomer og 1 chloratom. Enheden har samme formel som chlorethen, fordi der ikke forsvinder atomer i en polyaddition.</p></li>
-<li><p>Molarmassen er</p></li>
+<li>Navnene:</li>
 </ol>
-<p><span class="math display">\[
-M(\mathrm{C_2H_3Cl}) = (2 \cdot 12{,}01 + 3 \cdot 1{,}008 + 35{,}45)\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 62{,}49\ \dfrac{\mathrm{g}}{\mathrm{mol}}
-\]</span></p>
-<ol start="3" type="a">
-<li>I 1 mol C<sub>2</sub>H<sub>3</sub>Cl er der 1 mol chloratomer.</li>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ion</th>
+<th style="text-align: left;">Navn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Fe<sup>2+</sup></td>
+<td style="text-align: left;">jern(II)ion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fe<sup>3+</sup></td>
+<td style="text-align: left;">jern(III)ion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cu<sup>+</sup></td>
+<td style="text-align: left;">kobber(I)ion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cu<sup>2+</sup></td>
+<td style="text-align: left;">kobber(II)ion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ag<sup>+</sup></td>
+<td style="text-align: left;">sølv(I)ion</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="a">
+<li>Jern kan danne både Fe<sup>2+</sup> og Fe<sup>3+</sup>, så navnet jernion fortæller ikke, hvilken af dem der er tale om. Ionen i blodet hedder jern(II)ion, og det er den, der binder oxygen.</li>
 </ol>
-<p><span class="math display">\[
-m(\mathrm{Cl}) = 35{,}45\ \mathrm{g}
-\]</span></p>
-<ol start="4" type="a">
-<li>1 mol C<sub>2</sub>H<sub>3</sub>Cl vejer 62,49 g.</li>
-</ol>
-<p><span class="math display">\[
-\text{masseprocent} = \frac{m(\mathrm{Cl})}{m(\mathrm{C_2H_3Cl})} \cdot 100\ \% = \frac{35{,}45\ \mathrm{g}}{62{,}49\ \mathrm{g}} \cdot 100\ \% = 56{,}7\ \%
-\]</span></p>
-<p>56,7 % af massen i PVC er chlor. Mere end halvdelen af plastens masse er altså chlor.</p>
-<ol start="5" type="a">
-<li>Massen af chlor i røret er</li>
-</ol>
-<p><span class="math display">\[
-m(\mathrm{Cl}) = \frac{\text{masseprocent}}{100\ \%} \cdot m(\text{rør}) = \frac{56{,}7\ \%}{100\ \%} \cdot 2{,}00\ \mathrm{kg} = 1{,}13\ \mathrm{kg}
-\]</span></p>
-<p>Der er 1,13 kg chlor i røret.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="T1.5.7" class="level2">
-<h2 class="anchored" data-anchor-id="T1.5.7">Opgave T1.5.7: Når PVC brænder</h2>
-<p>Når PVC brænder, dannes der hydrogenchlorid. Reaktionsskemaet er skrevet for enheden C<sub>2</sub>H<sub>3</sub>Cl. Hvor meget hydrogenchlorid dannes der, når 1,000 kg PVC brænder?</p>
-<div class="reaktion">
-<p>2 C<sub>2</sub>H<sub>3</sub>Cl + 5 O<sub>2</sub> → 4 CO<sub>2</sub> + 2 H<sub>2</sub>O + 2 HCl</p>
-</div>
+<h2 class="anchored" data-anchor-id="T1.5.7">Opgave T1.5.7: Sammensatte ioner i krop og mad</h2>
+<ol type="a">
+<li>Udfyld skemaet med formel eller navn for hver sammensat ion. Phosphat er vist som eksempel.</li>
+</ol>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 21%">
-<col style="width: 4%">
-<col style="width: 12%">
-<col style="width: 4%">
-<col style="width: 14%">
-<col style="width: 4%">
-<col style="width: 14%">
-<col style="width: 4%">
-<col style="width: 10%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: center;">2 C<sub>2</sub>H<sub>3</sub>Cl</th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">5 O<sub>2</sub></th>
-<th style="text-align: center;">→</th>
-<th style="text-align: center;">4 CO<sub>2</sub></th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">2 H<sub>2</sub>O</th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">2 HCl</th>
+<th style="text-align: center;">Formel</th>
+<th style="text-align: left;">Navn</th>
+<th style="text-align: left;">Findes i</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><em>m</em></td>
-<td style="text-align: center;">1000 g</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">PO<sub>4</sub><sup>3−</sup></td>
+<td style="text-align: left;">phosphat</td>
+<td style="text-align: left;">knogler og tænder</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><em>M</em></td>
-<td style="text-align: center;">62,49 g/mol</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">36,46 g/mol</td>
+<td style="text-align: left;">carbonat</td>
+<td style="text-align: left;">kalktabletter</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><em>n</em></td>
+<td style="text-align: center;">SO<sub>4</sub><sup>2−</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">jerntabletter</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;"></td>
+<td style="text-align: left;">hydroxid</td>
+<td style="text-align: left;">midler mod halsbrand</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NO<sub>3</sub><sup>−</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">spinat og rødbeder</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: left;">ammonium</td>
+<td style="text-align: left;">hjortetaksalt til bagning</td>
 </tr>
 </tbody>
 </table>
-<ol type="a">
-<li>Vis, at reaktionsskemaet er afstemt.</li>
-<li>Trin 1, ned: Beregn stofmængden af C<sub>2</sub>H<sub>3</sub>Cl.</li>
-<li>Trin 2, på tværs: Find stofmængden af hydrogenchlorid.</li>
-<li>Trin 3, op: Beregn massen af hydrogenchlorid.</li>
-<li>Hvorfor er røgen fra en brand med PVC ætsende?</li>
+<ol start="2" type="a">
+<li>Hvor mange atomer består phosphationen af, og hvor mange negative ladninger har den i alt? Sidder ladningen på ét bestemt atom?</li>
+<li>Hvilken af de seks sammensatte ioner er positiv, og hvilke grundstoffer består den af?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -2251,7 +2435,7 @@ m(\mathrm{Cl}) = \frac{\text{masseprocent}}{100\ \%} \cdot m(\text{rør}) = \fra
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tæl atomerne af hvert grundstof på begge sider af pilen som i <a href="../kapitler/1-4-reaktionsskemaer.html">afsnit 1.4</a>. Mængdeberegningen følger skemaet i <a href="../kapitler/5-5-maengdeberegning.html">afsnit 5.5</a>. Til spørgsmål e skal du læse afsnittet <em>Når PVC brænder</em> på siden T1.5.</p>
+<p>De seks sammensatte ioner står i tabellen i afsnittet <em>Sammensatte ioner</em> på siden T1.5. Ladningen hører med til formlen.</p>
 </div>
 </div>
 </div>
@@ -2267,7 +2451,7 @@ m(\mathrm{Cl}) = \frac{\text{masseprocent}}{100\ \%} \cdot m(\text{rør}) = \fra
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Husk at gange med koefficienten: 2 C<sub>2</sub>H<sub>3</sub>Cl indeholder 4 carbonatomer. Oxygen findes både i CO<sub>2</sub> og i H<sub>2</sub>O, og hydrogen findes både i H<sub>2</sub>O og i HCl. Stofmængden af C<sub>2</sub>H<sub>3</sub>Cl er 16,00 mol. Koefficienterne er 2 for C<sub>2</sub>H<sub>3</sub>Cl og 2 for HCl, så stofmængden af hydrogenchlorid bliver den samme som stofmængden af C<sub>2</sub>H<sub>3</sub>Cl, der brænder.</p>
+<p>Hydroxid består af 1 oxygenatom og 1 hydrogenatom og har ladningen −1. Til spørgsmål b kan du se på figuren med de seks sammensatte ioner, hvor rammen viser, at atomerne hører sammen.</p>
 </div>
 </div>
 </div>
@@ -2284,127 +2468,157 @@ m(\mathrm{Cl}) = \frac{\text{masseprocent}}{100\ \%} \cdot m(\text{rør}) = \fra
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Atomerne før og efter pilen:</li>
+<li>Skemaet:</li>
 </ol>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Grundstof</th>
-<th style="text-align: left;">Før pilen</th>
-<th style="text-align: left;">Efter pilen</th>
+<th style="text-align: center;">Formel</th>
+<th style="text-align: left;">Navn</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">4 i 2 C<sub>2</sub>H<sub>3</sub>Cl</td>
-<td style="text-align: left;">4 i 4 CO<sub>2</sub></td>
+<td style="text-align: center;">CO<sub>3</sub><sup>2−</sup></td>
+<td style="text-align: left;">carbonat</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">H</td>
-<td style="text-align: left;">6 i 2 C<sub>2</sub>H<sub>3</sub>Cl</td>
-<td style="text-align: left;">4 i 2 H<sub>2</sub>O og 2 i 2 HCl, i alt 6</td>
+<td style="text-align: center;">SO<sub>4</sub><sup>2−</sup></td>
+<td style="text-align: left;">sulfat</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cl</td>
-<td style="text-align: left;">2 i 2 C<sub>2</sub>H<sub>3</sub>Cl</td>
-<td style="text-align: left;">2 i 2 HCl</td>
+<td style="text-align: center;">OH<sup>−</sup></td>
+<td style="text-align: left;">hydroxid</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">O</td>
-<td style="text-align: left;">10 i 5 O<sub>2</sub></td>
-<td style="text-align: left;">8 i 4 CO<sub>2</sub> og 2 i 2 H<sub>2</sub>O, i alt 10</td>
+<td style="text-align: center;">NO<sub>3</sub><sup>−</sup></td>
+<td style="text-align: left;">nitrat</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NH<sub>4</sub><sup>+</sup></td>
+<td style="text-align: left;">ammonium</td>
 </tr>
 </tbody>
 </table>
-<p>Der er lige mange atomer af hver slags på begge sider, så reaktionsskemaet er afstemt.</p>
 <ol start="2" type="a">
-<li>Stofmængden findes med massen og molarmassen.</li>
+<li>Phosphationen består af 1 phosphoratom og 4 oxygenatomer, altså 5 atomer i alt, og den har 3 negative ladninger. Ladningen sidder ikke på ét bestemt atom, men gælder for hele gruppen.</li>
+<li>Ammonium, NH<sub>4</sub><sup>+</sup>, er den eneste positive. Den består af nitrogen og hydrogen, som begge er ikke-metaller.</li>
 </ol>
-<p><span class="math display">\[
-n(\mathrm{C_2H_3Cl}) = \frac{m}{M} = \frac{1000\ \mathrm{g}}{62{,}49\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 16{,}00\ \mathrm{mol}
-\]</span></p>
-<ol start="3" type="a">
-<li>Forholdet er 2 : 2.</li>
+</div>
+</div>
+</div>
+</section>
+<section id="T1.5.8" class="level2">
+<h2 class="anchored" data-anchor-id="T1.5.8">Opgave T1.5.8: Grundstof eller ion på flasken med kildevand?</h2>
+<p>Figuren viser varedeklarationen på en flaske kildevand. Eksemplet er opdigtet, men tallene ligner dem, der står på rigtige flasker. Stofferne på deklarationen findes som ioner i vandet.</p>
+<p><a href="../figurer/opg-mineralvand.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../figurer/opg-mineralvand.svg" class="img-fluid" alt="En flaske kildevand med varedeklaration. Indhold pr. liter: calcium 68 mg, magnesium 9 mg, natrium 12 mg, kalium 2 mg, chlorid 20 mg, fluorid 0,2 mg, hydrogencarbonat 213 mg, sulfat 30 mg og nitrat 1 mg."></a></p>
+<ol type="a">
+<li>Se på de seks første: calcium, magnesium, natrium, kalium, chlorid og fluorid. Hvilke af dem er positive ioner, og hvilke er negative?</li>
+<li>Skriv formlen med ladning for hver af de seks ioner.</li>
+<li>Fire af navnene på deklarationen er navne på grundstoffer, selv om det er ionerne, der er i vandet. Skriv de fire ioners rigtige navne.</li>
+<li>Sulfat og nitrat er sammensatte ioner. Skriv deres formler.</li>
+<li>Forklar, hvorfor vandet ikke kan indeholde grundstoffet natrium.</li>
 </ol>
-<p><span class="math display">\[
-n(\mathrm{HCl}) = \frac{2}{2} \cdot 16{,}00\ \mathrm{mol} = 16{,}00\ \mathrm{mol}
-\]</span></p>
-<ol start="4" type="a">
-<li>Massen findes med stofmængden og molarmassen.</li>
-</ol>
-<p><span class="math display">\[
-m(\mathrm{HCl}) = n \cdot M = 16{,}00\ \mathrm{mol} \cdot 36{,}46\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 583{,}4\ \mathrm{g}
-\]</span></p>
-<p>Der dannes 583,4 g hydrogenchlorid. Mere end halvdelen af plastens masse bliver altså til hydrogenchlorid, fordi mere end halvdelen af massen i PVC er chlor.</p>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Metaller danner positive ioner, og navne, der ender på -id, er navne på negative ioner. Læs også afsnittet <em>Grundstof eller ion?</em> på siden T1.5.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Find ladningen ud fra hovedgruppen. Calcium står i hovedgruppe 2 og afgiver 2 elektroner, så ionen er Ca<sup>2+</sup> og hedder calciumion. Chlorid kommer af chlor, som står i hovedgruppe 7 og optager 1 elektron. Til spørgsmål e kan du begynde dine sætninger sådan:</p>
+<ul>
+<li>Grundstoffet natrium er et metal, som …</li>
+<li>I vandet findes natrium som …</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>a, b og c.&nbsp;Skemaet:</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 21%">
-<col style="width: 4%">
-<col style="width: 12%">
-<col style="width: 4%">
-<col style="width: 14%">
-<col style="width: 4%">
-<col style="width: 14%">
-<col style="width: 4%">
-<col style="width: 10%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: center;">2 C<sub>2</sub>H<sub>3</sub>Cl</th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">5 O<sub>2</sub></th>
-<th style="text-align: center;">→</th>
-<th style="text-align: center;">4 CO<sub>2</sub></th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">2 H<sub>2</sub>O</th>
-<th style="text-align: center;">+</th>
-<th style="text-align: center;">2 HCl</th>
+<th style="text-align: left;">På deklarationen</th>
+<th style="text-align: left;">Ion</th>
+<th style="text-align: center;">Formel</th>
+<th style="text-align: left;">Kemisk navn</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><em>m</em></td>
-<td style="text-align: center;">1000 g</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">583,4 g</td>
+<td style="text-align: left;">Calcium</td>
+<td style="text-align: left;">positiv</td>
+<td style="text-align: center;">Ca<sup>2+</sup></td>
+<td style="text-align: left;">calciumion</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><em>M</em></td>
-<td style="text-align: center;">62,49 g/mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">36,46 g/mol</td>
+<td style="text-align: left;">Magnesium</td>
+<td style="text-align: left;">positiv</td>
+<td style="text-align: center;">Mg<sup>2+</sup></td>
+<td style="text-align: left;">magnesiumion</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><em>n</em></td>
-<td style="text-align: center;">16,00 mol</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">16,00 mol</td>
+<td style="text-align: left;">Natrium</td>
+<td style="text-align: left;">positiv</td>
+<td style="text-align: center;">Na<sup>+</sup></td>
+<td style="text-align: left;">natriumion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kalium</td>
+<td style="text-align: left;">positiv</td>
+<td style="text-align: center;">K<sup>+</sup></td>
+<td style="text-align: left;">kaliumion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chlorid</td>
+<td style="text-align: left;">negativ</td>
+<td style="text-align: center;">Cl<sup>−</sup></td>
+<td style="text-align: left;">chlorid</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fluorid</td>
+<td style="text-align: left;">negativ</td>
+<td style="text-align: center;">F<sup>−</sup></td>
+<td style="text-align: left;">fluorid</td>
 </tr>
 </tbody>
 </table>
-<ol start="5" type="a">
-<li>Røgen indeholder hydrogenchlorid, som er en syre. Når gassen kommer i vand, afgiver hvert HCl-molekyle en hydron til et vandmolekyle, og der dannes saltsyre. Derfor er røgen ætsende og farlig at indånde, og forbrændingsanlæg skal rense røgen, før den bliver lukket ud.</li>
+<ol start="4" type="a">
+<li>Sulfat er SO<sub>4</sub><sup>2−</sup>, og nitrat er NO<sub>3</sub><sup>−</sup>.</li>
+<li>Grundstoffet natrium er et blødt metal, som reagerer voldsomt med vand, så det kan ikke findes i en flaske vand. I vandet findes natrium som natriumioner, Na<sup>+</sup>, som er ufarlige og har helt andre egenskaber end natriumatomer.</li>
 </ol>
 </div>
 </div>
@@ -4182,6 +4396,51 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 Niels Kræmmer · Må bruges gratis efter licensen <a href="../index.html#brug-af-bogen">CC BY-NC 4.0</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
