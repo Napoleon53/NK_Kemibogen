@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fdb6c9b90e4b920e014ad47c0287bd80.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-791a2d48fd79a983893025a65b783300.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1647,7 +1647,7 @@ window.Quarto = {
 <p>Hvor meget skal du veje af til et forsøg, og hvor meget får du ud af reaktionen? I dette kapitel lærer du at regne det ud, og første skridt er at skrive en beregning op, så andre kan følge den.</p>
 <section id="størrelser-symboler-og-enheder" class="level2">
 <h2 class="anchored" data-anchor-id="størrelser-symboler-og-enheder">Størrelser, symboler og enheder</h2>
-<p>En <span id="ord-stoerrelse" class="fagord-anker"><strong>størrelse</strong></span> er noget, man kan måle, for eksempel en <span class="fagord-peg" data-fagord="masse">masse</span> eller et <span class="fagord-peg" data-fagord="volumen">volumen</span>. Hver størrelse har et <span id="ord-symbol" class="fagord-anker"><strong>symbol</strong></span>, som er det bogstav, den skrives med i en beregning, og en <span id="ord-enhed" class="fagord-anker"><strong>enhed</strong></span>, som fortæller, hvad der er målt i.</p>
+<p>En <span id="ord-stoerrelse" class="fagord-anker"><strong>størrelse</strong></span> er noget, man kan måle, for eksempel en masse eller et <span class="fagord-peg" data-fagord="volumen">volumen</span>. Hver størrelse har et <span id="ord-symbol" class="fagord-anker"><strong>symbol</strong></span>, som er det bogstav, den skrives med i en beregning. Til hver værdi hører der også en <span id="ord-enhed" class="fagord-anker"><strong>enhed</strong></span>, som knytter sig til den størrelse, der er målt.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1658,7 +1658,7 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="masse">Masse</span></td>
+<td style="text-align: left;">Masse</td>
 <td style="text-align: center;"><em>m</em></td>
 <td style="text-align: left;">g (gram)</td>
 </tr>
@@ -1674,13 +1674,13 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><span class="fagord-peg" data-fagord="volumen">Volumen</span> kan måles i både milliliter og liter, og der går 1000 mL på 1 L. Det, der er målt på, skrives i en parentes efter symbolet, så <span class="fagord-peg" data-fagord="masse">massen</span> af vand skrives <em>m</em>(vand), og <span class="fagord-peg" data-fagord="volumen">volumenet</span> af olie skrives <em>V</em>(olie).</p>
+<p><span class="fagord-peg" data-fagord="volumen">Volumen</span> kan måles i både milliliter og liter, og der går 1000 mL på 1 L. Det, der er målt på, skrives i en parentes efter symbolet, så massen af vand skrives <em>m</em>(vand), og <span class="fagord-peg" data-fagord="volumen">volumenet</span> af olie skrives <em>V</em>(olie).</p>
 </section>
 <section id="densitet" class="level2">
 <h2 class="anchored" data-anchor-id="densitet">Densitet</h2>
-<p><span id="ord-densiteten" class="fagord-anker"><strong>Densiteten</strong></span> fortæller, hvor meget én milliliter af et stof vejer. Den har symbolet <em>ρ</em>, som er det græske bogstav rho, og den findes ved at dividere stoffets <span class="fagord-peg" data-fagord="masse">masse</span> med dets <span class="fagord-peg" data-fagord="volumen">volumen</span>.</p>
+<p><span id="ord-densiteten" class="fagord-anker"><strong>Densiteten</strong></span> fortæller, hvor meget én milliliter af et stof vejer. Den har symbolet <em>ρ</em>, som er det græske bogstav rho, og den findes ved at dividere stoffets masse med dets <span class="fagord-peg" data-fagord="volumen">volumen</span>.</p>
 <p><span class="math display">\[
-\rho = \frac{m}{V}
+\varrho = \frac{m}{V}
 \]</span></p>
 <div id="fig-densitet" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1693,7 +1693,7 @@ Figur&nbsp;5.1: Tre væsker med samme volumen og forskellig masse. Jo større ma
 </figure>
 </div>
 <p>Vand har <span class="fagord-peg" data-fagord="densitet">densiteten</span> 1,00 g/mL. Et stof med lavere <span class="fagord-peg" data-fagord="densitet">densitet</span> end vand flyder oven på vandet, og et stof med højere <span class="fagord-peg" data-fagord="densitet">densitet</span> synker til bunds. Det så du i <a href="../kapitler/3-4-polaere-molekyler-og-blandbarhed.html">afsnit 3.4</a>, hvor olien lagde sig oven på vandet.</p>
-<p>Formlen kan skrives på tre måder, og man vælger den, hvor den størrelse, man vil finde, står alene på venstre side.</p>
+<p>Formlen for <span class="fagord-peg" data-fagord="densitet">densitet</span> kan skrives på tre måder, og man vælger den, hvor den størrelse, man vil finde, står alene på venstre side.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1704,28 +1704,28 @@ Figur&nbsp;5.1: Tre væsker med samme volumen og forskellig masse. Jo større ma
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><span class="fagord-peg" data-fagord="densitet">densiteten</span></td>
-<td style="text-align: left;"><span class="math inline">\(\rho = \dfrac{m}{V}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\varrho = \dfrac{m}{V}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="fagord-peg" data-fagord="masse">massen</span></td>
-<td style="text-align: left;"><span class="math inline">\(m = \rho \cdot V\)</span></td>
+<td style="text-align: left;">massen</td>
+<td style="text-align: left;"><span class="math inline">\(m = \varrho \cdot V\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="fagord-peg" data-fagord="volumen">volumenet</span></td>
-<td style="text-align: left;"><span class="math inline">\(V = \dfrac{m}{\rho}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(V = \dfrac{m}{\varrho}\)</span></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="sådan-skriver-du-en-pæn-beregning" class="level2">
 <h2 class="anchored" data-anchor-id="sådan-skriver-du-en-pæn-beregning">Sådan skriver du en pæn beregning</h2>
-<p>En beregning skal kunne læses og forstås af en anden, og derfor er det en god idé at skrive den op i fire trin. Først skriver du de størrelser, du kender, med symbol og enhed. Derefter skriver du formlen med symboler, så den størrelse, du vil finde, står alene på venstre side. Så sætter du tallene ind med enheder og regner ud med en rigtig brøkstreg, og til sidst skriver du en konklusion med ord.</p>
-<p>Eksemplet herunder viser de fire trin, når <span class="fagord-peg" data-fagord="densitet">densiteten</span> af en madolie beregnes ud fra, at olien vejer 46,0 g og fylder 50,0 mL.</p>
+<p>En beregning skal kunne læses og forstås af en anden, og derfor er det en god idé at skrive den op i fire trin. Først skriver du de størrelser, du kender, med symbol og enhed. Derefter skriver du formlen med symboler, så den størrelse, du vil finde, står alene på venstre side. Så sætter du tallene med enheder ind i formlen, som beregnes, og til sidst skriver du en konklusion med ord.</p>
+<p>Eksemplet herunder viser de fire trin, når <span class="fagord-peg" data-fagord="densitet">densiteten</span> af sprit beregnes ud fra, at spritten vejer 40,5 g og fylder 50,0 mL.</p>
 <div class="trinvis">
 <div class="trin">
 <p><strong>Trin 1: Kendte størrelser</strong></p>
-<p><a href="../figurer/paen-trin-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../figurer/paen-trin-1.svg" class="img-fluid" alt="Trin 1. På papiret står de kendte størrelser: oliens masse er 46,0 gram, og oliens volumen er 50,0 milliliter."></a></p>
-<p>Olien vejer 46,0 g og fylder 50,0 mL, og begge størrelser skrives med symbol og enhed.</p>
+<p><a href="../figurer/paen-trin-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../figurer/paen-trin-1.svg" class="img-fluid" alt="Trin 1. På papiret står de kendte størrelser: sprittens masse er 40,5 gram, og sprittens volumen er 50,0 milliliter."></a></p>
+<p>Spritten vejer 40,5 g og fylder 50,0 mL, og begge størrelser skrives med symbol og enhed.</p>
 </div>
 <div class="trin">
 <p><strong>Trin 2: Formel</strong></p>
@@ -1734,13 +1734,13 @@ Figur&nbsp;5.1: Tre væsker med samme volumen og forskellig masse. Jo større ma
 </div>
 <div class="trin">
 <p><strong>Trin 3: Beregning</strong></p>
-<p><a href="../figurer/paen-trin-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../figurer/paen-trin-3.svg" class="img-fluid" alt="Trin 3. Tallene er sat ind med enheder: 46,0 gram divideret med 50,0 milliliter er 0,920 gram pr. milliliter."></a></p>
+<p><a href="../figurer/paen-trin-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../figurer/paen-trin-3.svg" class="img-fluid" alt="Trin 3. Tallene er sat ind med enheder: 40,5 gram divideret med 50,0 milliliter er 0,810 gram pr. milliliter."></a></p>
 <p>Massen og volumenet sættes ind med enheder over og under en rigtig brøkstreg, så enhederne er lette at følge.</p>
 </div>
 <div class="trin">
 <p><strong>Trin 4: Konklusion</strong></p>
-<p><a href="../figurer/paen-trin-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="../figurer/paen-trin-4.svg" class="img-fluid" alt="Trin 4. Nederst står konklusionen: Oliens densitet er 0,920 gram pr. milliliter."></a></p>
-<p>Konklusionen siger med ord, hvad du har fundet, her at oliens densitet er 0,920 g/mL.</p>
+<p><a href="../figurer/paen-trin-4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="../figurer/paen-trin-4.svg" class="img-fluid" alt="Trin 4. Nederst står konklusionen: Sprittens densitet er 0,810 gram pr. milliliter."></a></p>
+<p>Konklusionen siger med ord, hvad du har fundet, her at sprittens densitet er 0,810 g/mL.</p>
 </div>
 </div>
 <div class="figure-caption trinvis-billedtekst">
@@ -1750,7 +1750,7 @@ Figur&nbsp;5.2: En pæn beregning i fire trin.
 </section>
 <section id="betydende-cifre" class="level2">
 <h2 class="anchored" data-anchor-id="betydende-cifre">Betydende cifre</h2>
-<p>Et måleresultat viser også, hvor præcist der er målt. Skriver du 10 g, kan <span class="fagord-peg" data-fagord="masse">massen</span> være afrundet fra for eksempel 10,4 g, mens 10,00 g viser, at du har målt med to decimaler. De cifre, der fortæller noget om præcisionen, kaldes <span id="ord-betydende-cifre" class="fagord-anker"><strong>betydende cifre</strong></span>.</p>
+<p>Et måleresultat viser også, hvor præcist der er målt. Skriver du 10 g, kan massen være afrundet fra for eksempel 10,4 g, mens 10,00 g viser, at du har målt med to decimaler. De cifre, der fortæller noget om præcisionen, kaldes <span id="ord-betydende-cifre" class="fagord-anker"><strong>betydende cifre</strong></span>.</p>
 <div id="fig-betydende-cifre" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-betydende-cifre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1762,8 +1762,8 @@ Figur&nbsp;5.3: Betydende cifre i fire tal.
 </figure>
 </div>
 <p>Du tæller <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span> fra det første ciffer, der ikke er nul, og derfra tæller alle cifre med, også nuller til sidst efter kommaet. Nullerne foran, som er grå i figuren, tæller ikke med.</p>
-<p>Meget store og meget små tal skrives med en tierpotens. Tallet 0,00045 skrives 4,5 · 10<sup>−4</sup>, og 602 000 000 000 000 000 000 000 skrives 6,02 · 10<sup>23</sup>. Så store tal får du brug for i kemi, fordi atomer er så små, at blot 12 gram carbon består af 6,02 · 10<sup>23</sup> atomer. I <a href="../kapitler/5-3-stofmaengde.html">afsnit 5.3</a> lærer du, hvordan man regner med så store antal.</p>
-<p>Et facit kan ikke blive mere præcist end de tal, det er regnet ud fra. I den pæne beregning har <span class="fagord-peg" data-fagord="masse">massen</span> 46,0 g og <span class="fagord-peg" data-fagord="volumen">volumenet</span> 50,0 mL begge tre <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span>. Facit skal derfor også have tre <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span> og skrives 0,920 g/mL og ikke 0,92 g/mL.</p>
+<p>Meget store og meget små tal skrives med en tierpotens. Tallet 0,00045 skrives 4,5 · 10<sup>−4</sup>, og 602 000 000 000 000 000 000 000 skrives 6,02 · 10<sup>23</sup>. Så store tal får du brug for i kemi, fordi atomer er så små, at blot 12 gram carbon består af 6,02 · 10<sup>23</sup> atomer.</p>
+<p>Et facit kan ikke blive mere præcist end de tal, det er regnet ud fra. Derfor afrundes facit til lige så mange <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span> som det af tallene, der har færrest. I den pæne beregning har massen 40,5 g og <span class="fagord-peg" data-fagord="volumen">volumenet</span> 50,0 mL begge tre <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span>, så facit skal også have tre <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span> og skrives 0,810 g/mL og ikke 0,81 g/mL. Var massen kun vejet til 41 g, som har to <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span>, skulle facit afrundes til 0,82 g/mL.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Regler for afrunding">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1774,7 +1774,6 @@ Figur&nbsp;5.3: Betydende cifre i fire tal.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Når du ganger eller dividerer, afrundes facit til lige så mange <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span> som det af opgavens tal, der har færrest.</p>
 <p>Afrund først til sidst. Skal et mellemresultat bruges i en ny beregning, regner du videre med alle lommeregnerens cifre. Skriver du mellemresultatet op, så tag ét betydende ciffer mere med, end facit skal have.</p>
 </div>
 </div>
@@ -1789,11 +1788,11 @@ Figur&nbsp;5.3: Betydende cifre i fire tal.
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>En størrelse har et symbol og en enhed, for eksempel <span class="fagord-peg" data-fagord="masse">masse</span>, <em>m</em>, i gram.</li>
+<li>En størrelse har et symbol og en enhed, for eksempel masse, <em>m</em>, i gram.</li>
 <li><span class="fagord-peg" data-fagord="volumen">Volumen</span>, <em>V</em>, måles i mL eller L, og <span class="fagord-peg" data-fagord="densitet">densitet</span>, <em>ρ</em>, i g/mL.</li>
-<li><span class="fagord-peg" data-fagord="densitet">Densiteten</span> er <span class="fagord-peg" data-fagord="masse">massen</span> divideret med <span class="fagord-peg" data-fagord="volumen">volumenet</span>.</li>
+<li><span class="fagord-peg" data-fagord="densitet">Densiteten</span> er massen divideret med <span class="fagord-peg" data-fagord="volumen">volumenet</span>.</li>
 <li>En pæn beregning har kendte størrelser, formel, beregning med enhed og konklusion.</li>
-<li>Facit afrundes til lige så mange <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span> som det af opgavens tal, der har færrest.</li>
+<li>Facit afrundes først til sidst og til lige så mange <span class="fagord-peg" data-fagord="betydende cifre">betydende cifre</span> som det af tallene, der har færrest.</li>
 </ul>
 </div>
 </div>
@@ -1814,7 +1813,7 @@ Figur&nbsp;5.3: Betydende cifre i fire tal.
 </div>
 
 
-<script type="application/json" id="fagord-peg-data">{"betydende cifre":{"afsnit":"5.1","forklaring":"De tal i et måleresultat, der viser, hvor præcist der er målt. 10,00 g\nhar fire, og 0,92 g/mL har to.","maal":"../kapitler/5-1-beregninger.html#ord-betydende-cifre","ord":"betydende cifre"},"densitet":{"afsnit":"5.1","forklaring":"Hvor meget én milliliter af et stof vejer. Findes ved at dividere massen\nmed volumenet.","maal":"../kapitler/5-1-beregninger.html#ord-densiteten","ord":"densitet"},"masse":{"afsnit":"5.1","forklaring":"Hvor meget noget vejer. Symbolet er <em>m<\/em>, og der måles i gram.","maal":"../kapitler/5-1-beregninger.html#størrelser-symboler-og-enheder","ord":"masse"},"volumen":{"afsnit":"5.1","forklaring":"Hvor meget noget fylder. Symbolet er <em>V<\/em>, og der måles i\nmilliliter eller liter.","maal":"../kapitler/5-1-beregninger.html#størrelser-symboler-og-enheder","ord":"volumen"}}</script>
+<script type="application/json" id="fagord-peg-data">{"betydende cifre":{"afsnit":"5.1","forklaring":"De tal i et måleresultat, der viser, hvor præcist der er målt. 10,00 g\nhar fire, og 0,92 g/mL har to.","maal":"../kapitler/5-1-beregninger.html#ord-betydende-cifre","ord":"betydende cifre"},"densitet":{"afsnit":"5.1","forklaring":"Hvor meget én milliliter af et stof vejer. Findes ved at dividere massen\nmed volumenet.","maal":"../kapitler/5-1-beregninger.html#ord-densiteten","ord":"densitet"},"volumen":{"afsnit":"5.1","forklaring":"Hvor meget noget fylder. Symbolet er <em>V<\/em>, og der måles i\nmilliliter eller liter.","maal":"../kapitler/5-1-beregninger.html#størrelser-symboler-og-enheder","ord":"volumen"}}</script>
 </section>
 
 </main> <!-- /main -->
@@ -2035,12 +2034,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // Forklaringerne bruger figurprogrammets skrivemåde: _{2} er sænket og ^{2+} er hævet skrift.
   // En størrelse mellem to stjerner, *K*, bliver kursiv som i bogens tekst.
+  // [afsnit B4.3](../kapitler/b4-3-aldehyder-og-ketoner.html#anker) bliver et link. Adressen læses fra
+  // siden, figuren står på, og ikke fra figurens egen mappe.
+  var LINK = /\[([^\]]+)\]\(([^)\s"<>]+)\)/g;
   function rig(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+            .replace(LINK, '<a href="$2">$1</a>')
             .replace(/_\{([^}]*)\}/g, "<sub>$1</sub>").replace(/\^\{([^}]*)\}/g, "<sup>$1</sup>")
             .replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "<em>$1</em>");
   }
-  function ren(s) { return s.replace(/[_^]\{([^}]*)\}/g, "$1").replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "$1"); }
+  function ren(s) { return s.replace(LINK, "$1").replace(/[_^]\{([^}]*)\}/g, "$1").replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "$1"); }
   function ord(s) { return (s || "").split(/\s+/).filter(Boolean); }
 
   var loebenr = 0;
@@ -2173,8 +2176,22 @@ document.addEventListener("DOMContentLoaded", function () {
       vis(d);
     }
 
+    // Har forklaringen et link, bliver den stående et øjeblik, når musen forlader figuren, og så længe musen
+    // er i feltet, så man kan nå at trykke på linket. Andre forklaringer forsvinder med det samme som før.
+    var slip = null;
+    function slipForklaring() {
+      clearTimeout(slip);
+      if (vist && vist !== fast && vist.kort.querySelector("a")) slip = setTimeout(function () { vis(fast); }, 450);
+      else vis(fast);
+    }
+    info.addEventListener("pointerenter", function () { clearTimeout(slip); });
+    info.addEventListener("pointerleave", slipForklaring);
+    info.addEventListener("focusout", function (e) {
+      if (!info.contains(e.relatedTarget) && !svg.contains(e.relatedTarget)) vis(fast);
+    });
+
     dele.forEach(function (d) {
-      d.g.addEventListener("pointerenter", function () { vis(d); });
+      d.g.addEventListener("pointerenter", function () { clearTimeout(slip); vis(d); });
       d.g.addEventListener("focus", function () { vis(d); });
       d.g.addEventListener("click", function (e) { fastgoer(fast === d ? null : d); e.stopPropagation(); });
       d.g.addEventListener("keydown", function (e) {
@@ -2190,8 +2207,10 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
       });
     });
-    svg.addEventListener("pointerleave", function () { vis(fast); });
-    svg.addEventListener("focusout", function (e) { if (!svg.contains(e.relatedTarget)) vis(fast); });
+    svg.addEventListener("pointerleave", slipForklaring);
+    svg.addEventListener("focusout", function (e) {
+      if (!svg.contains(e.relatedTarget) && !info.contains(e.relatedTarget)) vis(fast);
+    });
     svg.addEventListener("click", function () { fastgoer(null); });   // et klik ved siden af slipper forklaringen
 
     boks.classList.add("peg-aktiv");
@@ -2791,7 +2810,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver linjerne "Opgaver til 1.1" osv.
 // til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
 // "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
-// kemiformler.dk; C-bogen og kapitel B2, B3 og B8 har dem). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+// kemiformler.dk; C-bogen og kapitel B2, B3, B4 og B8 har dem). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
 // før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
 // Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke. Temaerne Plastic og Klima i C-bogen er bygget
 // som kapitler (temaer/t1-1-....html og temaer/t1-1-opgaver.html) og får samme menu; "Fagord til Tema: Klima" bliver
@@ -2849,6 +2868,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // når slidesene bygges (slides/kopier_til_b.py).
     "B3": [
       { tekst: "Slides", sti: "slides/kapitel-b3.html", ikon: "slides" }
+    ],
+    // Slides til kapitel B4 (26. okt. 2026), foreløbig kun B4.1 til B4.5.
+    "B4": [
+      { tekst: "Slides", sti: "slides/kapitel-b4.html", ikon: "slides" }
     ],
     // Slides til kapitel B8 (22. okt. 2026), foreløbig kun B8.6 TLC.
     "B8": [
@@ -2980,7 +3003,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
-// Fokusspørgsmål i boksen Kort sagt (kapitel B3 og C-bogens kapitler, 23. okt. 2026). Se noter/fokusspoergsmaal.md.
+// Fokusspørgsmål i boksen Kort sagt (C-bogens kapitler og kapitel B3 23. okt. 2026, B-bogens kapitler 26. okt. 2026).
+// Se noter/fokusspoergsmaal.md.
 //
 // Spørgsmålene står i afsnittet lige under Kort sagt som ::: {.fokusspoergsmaal} med en nummereret liste.
 // Scriptet flytter dem ind i boksen og sætter en knap i boksens titellinje, der skifter mellem Kort sagt og
