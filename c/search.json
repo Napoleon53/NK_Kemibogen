@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Kemibogen C",
     "section": "",
-    "text": "Forord\nKemibogen C er en gratis lærebog til hele kemi C. Den må frit deles og bruges sammen med AI, men ikke bruges i noget, der koster penge (se Brug af bogen). Alt materialet har de samme afsnit, figurer og numre:\nBogen fortsætter i Kemibogen B og Kemibogen A.",
+    "text": "Forord\nKemibogen C er en gratis lærebog til hele kemi C. Den må frit deles og bruges sammen med AI, men ikke bruges i noget, der koster penge (licens: CC BY-NC 4.0). Alt materialet har de samme afsnit, figurer og numre:\nBogen fortsætter i Kemibogen B.",
     "crumbs": [
       "Forord"
     ]
@@ -35,16 +35,6 @@
     "title": "Kemibogen C",
     "section": "Opgaver",
     "text": "Opgaver\nEfter hvert afsnit følger en side med opgaver med hjælp i trin og facit. Opgaverne har samme nummer som afsnittet, så opgave 2.1.3 er den tredje opgave til afsnit 2.1. Sidst på siden står temaopgaver om mad, klima og sundhed.",
-    "crumbs": [
-      "Forord"
-    ]
-  },
-  {
-    "objectID": "index.html#brug-af-bogen",
-    "href": "index.html#brug-af-bogen",
-    "title": "Kemibogen C",
-    "section": "Brug af bogen",
-    "text": "Brug af bogen\nKemibogen er skrevet af Niels Kræmmer. Bogen er gratis og må bruges efter licensen Creative Commons Kreditering-IkkeKommerciel 4.0 International (CC BY-NC 4.0). Licensen gælder tekst, figurer, opgaver, øvelser, slides og modulplaner i alle tre bøger: Kemibogen C, B og A.\nDet må du:\n\nkopiere, printe og dele bogen, også hele kapitler, fx med elever og kolleger\nrette i tekst og figurer og bruge dem i dit eget materiale, fx et opgaveark eller et kompendium\nbruge bogen i undervisningen på alle skoler\nbruge bogen sammen med AI og til at træne AI, også i AI-tjenester, der koster penge\n\nDet skal du: skrive, hvor materialet kommer fra, hvilken licens det har, og om du har ændret i det, fx sådan: Figur fra Kemibogen af Niels Kræmmer, kemibogen.dk, CC BY-NC 4.0. Tilpasset.\nDet må du ikke: sælge bogen eller dele af den. Du må heller ikke bruge tekst, figurer og opgaver i materiale, der koster penge eller ligger bag en betalingsmur, fx bøger, i-bøger og undervisningsplatforme med betaling. Vil du det, så spørg Niels Kræmmer om lov.",
     "crumbs": [
       "Forord"
     ]

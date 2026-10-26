@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Kemibogen B",
     "section": "",
-    "text": "Forord\nKemibogen B er skrevet til kemi på B-niveau. Den fortsætter, hvor Kemibogen til C-niveau slutter, og den er bygget op på samme måde. Forklaringerne er korte, figurerne viser det, teksten beskriver, og efter hvert afsnit følger en side med opgaver.\nMaterialet er gratis. Det må frit deles og bruges sammen med AI, men ikke bruges i noget, der koster penge. Licensen er CC BY-NC 4.0, og hvad den betyder, står under Brug af bogen i forordet til bogen til C-niveau.",
+    "text": "Forord\nKemibogen B er skrevet til kemi på B-niveau. Den fortsætter, hvor Kemibogen til C-niveau slutter, og den er bygget op på samme måde. Forklaringerne er korte, figurerne viser det, teksten beskriver, og efter hvert afsnit følger en side med opgaver.\nMaterialet er gratis. Det må frit deles og bruges sammen med AI, men ikke bruges i noget, der koster penge (licens: CC BY-NC 4.0).",
     "crumbs": [
       "Forord"
     ]
@@ -16671,16 +16671,6 @@
     "text": "Øvelsen\nVis, at du forstår forsøget og har overblik over det. Forklar beregningen af resultatet med formler og enheder, men gennemgå ikke hele efterbehandlingen med alle talværdier. Er øvelsen stor, så vælg de dele, der er vigtigst for at forstå kemien. Inddrag udstyret, og kend navnene på det, men udfør ikke forsøget, og åbn ikke flaskerne.",
     "crumbs": [
       "Eksamen i kemi B"
-    ]
-  },
-  {
-    "objectID": "videre-til-a.html",
-    "href": "videre-til-a.html",
-    "title": "Kemi A",
-    "section": "",
-    "text": "Her slutter bogen til B-niveau. Kapitlerne til A-niveau ligger i en bog for sig, som er bygget op på samme måde.\n\nFortsæt i: Kemibogen A\n\nBogen til A-niveau har indtil videre syv kapitler:\n\nKapitel A1: Ligevægte fortsat bygger videre på kapitel B2 og B6. Det handler om gasser og partialtryk, om ligevægtsloven for gasser, om SÆL-skemaet, om at beregne den nye ligevægt efter et indgreb, om opløselighedsligevægte, om syre-baseligevægte og puffersystemer og om titrering af phosphorsyre.\nKapitel A2: Termodynamik handler om entalpi og Hess’ lov, om entropi, om Gibbs-energi og om, hvordan ligevægtskonstanten kan beregnes ud fra tabelværdier og ændrer sig med temperaturen.\nKapitel A3: Organisk kemi og naturstoffer bygger videre på kapitel B3, B4 og B8. Det handler om elementaranalyse, om de funktionelle grupper i naturstoffer, om reaktionstyper, om kemiske test som bromvand og Tollens’ test, om optisk aktivitet og polarimeteret og om polaritet og log D.\nKapitel A4: Kemisk binding og spektroskopi handler om atomorbitaler og det periodiske system, om hybridisering og σ- og π-bindinger om IR-spektroskopi: hvordan bindinger svinger, og hvordan et IR-spektrum læses og tolkes, og om 1H-NMR: kemisk skift, integraler og kobling, og hvordan et stofs struktur bestemmes ud fra spektret.\nKapitel A5: Reaktionskinetik bygger videre på kapitel B1. Det handler om reaktioner af nulte, første og anden orden, om Arrhenius-ligningen og om reaktionsmekanismer og katalyse. Sidst står et supplerende afsnit om nucleofil substitution.\nKapitel A6: Enzymer og biokemi bygger videre på kapitel B7. Det handler om enzymer og Michaelis-Menten-ligningen, om metallerne i kroppen og om redoxtitrering og chromatografi med HPLC og GC.\nKapitel A7: DNA’s kemi er et temakapitel uden for kernestoffet. Det handler om nucleotider, baseparring, smeltning af DNA, PCR, vejen fra DNA til protein og skader på DNA.",
-    "crumbs": [
-      "Kemi A"
     ]
   },
   {

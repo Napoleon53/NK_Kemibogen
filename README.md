@@ -17,5 +17,4 @@ Bogen skrives i `NK_Undervisning/Kemibogen` og lægges herind med
 
 Kemibogen © 2026 Niels Kræmmer må bruges gratis efter licensen Creative Commons
 Kreditering-IkkeKommerciel 4.0 International (CC BY-NC 4.0). Den fulde licenstekst står i `LICENSE`, og hvad
-licensen betyder, står under [Brug af bogen](https://kemibogen.dk/c/index.html#brug-af-bogen) i forordet til
-Kemibogen C. Programkoden i mapperne `site_libs/` kommer fra Quarto og har sine egne licenser.
+licensen betyder, står på [Creative Commons' danske side](https://creativecommons.org/licenses/by-nc/4.0/deed.da). Programkoden i mapperne `site_libs/` kommer fra Quarto og har sine egne licenser.
