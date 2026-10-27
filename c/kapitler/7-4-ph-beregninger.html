@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-791a2d48fd79a983893025a65b783300.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7f9ef53dce5cab2793d9983fb1f7b719.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -287,7 +287,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../oevelser/1-4a-hydrogen-og-oxygen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demoforsøg 1.4a: Hvor meget oxygen skal hydrogen bruge?</span></a>
+ <span class="menu-text">Demoforsøg 1.4a: Hvor meget dioxygen skal dihydrogen bruge?</span></a>
   </div>
 </li>
       </ul>
@@ -1646,14 +1646,14 @@ window.Quarto = {
 </header>
 
 
-<p>Et <span class="fagord-peg" data-fagord="ph-meter">pH-meter</span> viser sjældent et helt tal, og ud fra en måling som <span class="fagord-peg" data-fagord="ph">pH</span> 4,30 i danskvand er det svært at se, hvor mange <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> der er i vandet. I dette afsnit lærer du at regne begge veje mellem <span class="fagord-peg" data-fagord="ph">pH</span> og koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> og at bruge det til at finde <span class="fagord-peg" data-fagord="ph">pH</span> i en <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af en <span class="fagord-peg" data-fagord="stærk syre">stærk syre</span> og af en <span class="fagord-peg" data-fagord="stærk base">stærk base</span>.</p>
+<p>Et <span class="fagord-peg" data-fagord="ph-meter">pH-meter</span> kan for eksempel vise, at danskvand har <span class="fagord-peg" data-fagord="ph">pH</span> 4,30, men ud fra det tal er det svært at se, hvor mange <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> der er i vandet. I dette afsnit lærer du at regne begge veje mellem <span class="fagord-peg" data-fagord="ph">pH</span> og koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> og at bruge det til at finde <span class="fagord-peg" data-fagord="ph">pH</span> i en <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af en <span class="fagord-peg" data-fagord="stærk syre">stærk syre</span> og af en <span class="fagord-peg" data-fagord="stærk base">stærk base</span>.</p>
 <section id="formlen-for-ph" class="level2">
 <h2 class="anchored" data-anchor-id="formlen-for-ph">Formlen for pH</h2>
 <p><span class="fagord-peg" data-fagord="ph">pH</span> beregnes ud fra den <span class="fagord-peg" data-fagord="aktuel koncentration">aktuelle koncentration</span> af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> med formlen</p>
 <p><span class="math display">\[
 \mathrm{pH} = -\log_{10}[\mathrm{H_3O^+}]
 \]</span></p>
-<p>Tasten <em>log</em> på lommeregneren beregner titalslogaritmen, og titalslogaritmen af et tal er den eksponent, 10 skal opløftes til for at give tallet. Når en størrelse sættes ind i en logaritme, fjernes enheden, så koncentrationen skal være målt i M og sættes ind som et tal uden enhed. Koncentrationen er næsten altid mindre end 1 M, så titalslogaritmen er negativ, og minustegnet foran i formlen gør <span class="fagord-peg" data-fagord="ph">pH</span> til et positivt tal.</p>
+<p>Tasten <em>log</em> på lommeregneren beregner titalslogaritmen, og titalslogaritmen af et tal er den eksponent, 10 skal opløftes til for at give tallet. Når en størrelse sættes ind i en logaritme, fjernes enheden, så koncentrationen skal være målt i M og indtastes som et tal uden enhed. Koncentrationen er oftest mindre end 1 M.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: fra koncentration til pH">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1665,8 +1665,6 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>En energidrik har [H<sub>3</sub>O<sup>+</sup>] = 0,0025 M. Hvad er <span class="fagord-peg" data-fagord="ph">pH</span>?</p>
-<p><span id="ord-kendte-stoerrelser" class="fagord-anker"><strong>Kendte størrelser</strong></span></p>
-<p>[H<sub>3</sub>O<sup>+</sup>] = 0,0025 M</p>
 <p><span id="ord-beregning" class="fagord-anker"><strong>Beregning</strong></span></p>
 <p><span class="math display">\[
 \mathrm{pH} = -\log_{10}[\mathrm{H_3O^+}] = -\log_{10}(0{,}0025) = 2{,}60
@@ -1683,7 +1681,7 @@ window.Quarto = {
 <p><span class="math display">\[
 [\mathrm{H_3O^+}] = 10^{-\mathrm{pH}}\ \mathrm{M}
 \]</span></p>
-<p>Formlen siger, at <span class="fagord-peg" data-fagord="ph">pH</span> er eksponenten i tierpotensen med modsat fortegn. <span class="fagord-peg" data-fagord="ph">pH</span> 3 giver derfor 10<sup>−3</sup> M, som er 0,001 M, og <span class="fagord-peg" data-fagord="ph">pH</span> 4,30 giver et tal mellem 10<sup>−4</sup> M og 10<sup>−5</sup> M. Enheden M skrives på til sidst, fordi <span class="fagord-peg" data-fagord="ph">pH</span> er et tal uden enhed, mens en koncentration har enheden M.</p>
+<p>Formlen siger, at <span class="fagord-peg" data-fagord="ph">pH</span> er eksponenten i tierpotensen med modsat fortegn. <span class="fagord-peg" data-fagord="ph">pH</span> 3 giver derfor 10<sup>−3</sup>&nbsp;M, som er 0,001 M, og <span class="fagord-peg" data-fagord="ph">pH</span> 4,30 giver et tal mellem 10<sup>−4</sup>&nbsp;M og 10<sup>−5</sup>&nbsp;M. Enheden M skrives på til sidst, fordi <span class="fagord-peg" data-fagord="ph">pH</span> er et tal uden enhed, mens en koncentration har enheden M.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: fra pH til koncentration">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1695,14 +1693,12 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>Danskvand har <span class="fagord-peg" data-fagord="ph">pH</span> 4,30. Hvad er koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span>?</p>
-<p><strong>Kendte størrelser</strong></p>
-<p><span class="fagord-peg" data-fagord="ph">pH</span> = 4,30</p>
 <p><strong>Beregning</strong></p>
 <p><span class="math display">\[
 [\mathrm{H_3O^+}] = 10^{-\mathrm{pH}}\ \mathrm{M} = 10^{-4{,}30}\ \mathrm{M} = 5{,}0 \cdot 10^{-5}\ \mathrm{M}
 \]</span></p>
 <p><strong>Konklusion</strong></p>
-<p>Koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> i danskvandet er 5,0 · 10<sup>−5</sup> M. Det er det samme som 0,000050 M.</p>
+<p>Koncentrationen af <span class="fagord-peg" data-fagord="oxoniumion">oxoniumioner</span> i danskvandet er 5,0 · 10<sup>−5</sup>&nbsp;M. Det er det samme som 0,000050 M.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled" title="På lommeregneren">
@@ -1739,8 +1735,6 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>Mavesyre er <span class="fagord-peg" data-fagord="fortynde">fortyndet</span> saltsyre. Hvad er <span class="fagord-peg" data-fagord="ph">pH</span> i mavesyre med <em>c</em>(HCl) = 0,020 M?</p>
-<p><strong>Kendte størrelser</strong></p>
-<p><em>c</em>(HCl) = 0,020 M</p>
 <p><span id="ord-trin-1-koncentrationen-af-oxoniumioner" class="fagord-anker"><strong>Trin 1: koncentrationen af oxoniumioner</strong></span></p>
 <p>Saltsyre er en <span class="fagord-peg" data-fagord="stærk syre">stærk syre</span>, så [H<sub>3</sub>O<sup>+</sup>] = <em>c</em>(HCl) = 0,020 M.</p>
 <p><span id="ord-trin-2-ph" class="fagord-anker"><strong>Trin 2: pH</strong></span></p>
@@ -1751,6 +1745,9 @@ window.Quarto = {
 <p>Mavesyren har <span class="fagord-peg" data-fagord="ph">pH</span> 1,70.</p>
 </div>
 </div>
+<div class="ny-side">
+
+</div>
 </section>
 <section id="vands-ionprodukt" class="level2">
 <h2 class="anchored" data-anchor-id="vands-ionprodukt">Vands ionprodukt</h2>
@@ -1759,7 +1756,7 @@ window.Quarto = {
 [\mathrm{H_3O^+}] \cdot [\mathrm{OH^-}] = 1{,}0 \cdot 10^{-14}\ \mathrm{M^2}
 \]</span></p>
 <p>Sammenhængen kaldes <span id="ord-vands-ionprodukt" class="fagord-anker"><strong>vands ionprodukt</strong></span>, og den gælder ved 25 °C.</p>
-<p>I rent vand er der lige mange af de to <span class="fagord-peg" data-fagord="ion">ioner</span>, og begge koncentrationer er 1,0 · 10<sup>−7</sup> M. Det giver <span class="fagord-peg" data-fagord="ph">pH</span> 7,00, og det er grunden til, at netop 7 er det neutrale punkt på skalaen.</p>
+<p>I rent vand er der lige mange af de to <span class="fagord-peg" data-fagord="ion">ioner</span>, og begge koncentrationer er 1,0 · 10<sup>−7</sup>&nbsp;M. Det giver <span class="fagord-peg" data-fagord="ph">pH</span> 7,00, og det er grunden til, at netop 7 er det neutrale punkt på skalaen.</p>
 <p>Kender man den ene koncentration, kan man beregne den anden:</p>
 <p><span class="math display">\[
 [\mathrm{H_3O^+}] = \frac{1{,}0 \cdot 10^{-14}\ \mathrm{M^2}}{[\mathrm{OH^-}]}
@@ -1767,7 +1764,11 @@ window.Quarto = {
 </section>
 <section id="ph-i-en-stærk-base" class="level2">
 <h2 class="anchored" data-anchor-id="ph-i-en-stærk-base">pH i en stærk base</h2>
-<p>Natriumhydroxid, NaOH, er en <span class="fagord-peg" data-fagord="stærk base">stærk base</span>, som består af <span class="fagord-peg" data-fagord="ion">ioner</span>, og når stoffet opløses i vand, bliver alle <span class="fagord-peg" data-fagord="hydroxidion">hydroxidionerne</span> frie. Koncentrationen af <span class="fagord-peg" data-fagord="hydroxidion">hydroxidioner</span> er derfor den samme som den <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span> af natriumhydroxid:</p>
+<p>Natriumhydroxid, NaOH, er en <span class="fagord-peg" data-fagord="stærk base">stærk base</span>, som består af <span class="fagord-peg" data-fagord="ion">ioner</span>, og når stoffet opløses i vand, bliver alle <span class="fagord-peg" data-fagord="hydroxidion">hydroxidionerne</span> frie:</p>
+<div class="reaktion">
+<p>NaOH(s) → Na<sup>+</sup>(aq) + OH<sup>−</sup>(aq)</p>
+</div>
+<p>Ifølge <span class="fagord-peg" data-fagord="reaktionsskema">reaktionsskemaet</span> giver hver <span class="fagord-peg" data-fagord="formelenhed">formelenhed</span> NaOH én <span class="fagord-peg" data-fagord="hydroxidion">hydroxidion</span>, så koncentrationen af <span class="fagord-peg" data-fagord="hydroxidion">hydroxidioner</span> er den samme som den <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span> af natriumhydroxid:</p>
 <p><span class="math display">\[
 [\mathrm{OH^-}] = c(\mathrm{NaOH})
 \]</span></p>
@@ -1795,8 +1796,6 @@ Figur&nbsp;7.16: Regnevejen fra en stærk syre eller en stærk base til pH.
 </div>
 <div class="callout-body-container callout-body">
 <p>Afløbsrens indeholder natriumhydroxid. Hvad er <span class="fagord-peg" data-fagord="ph">pH</span> i en <span class="fagord-peg" data-fagord="fortynde">fortyndet</span> <span class="fagord-peg" data-fagord="opløsning">opløsning</span> af afløbsrens med <em>c</em>(NaOH) = 0,010 M?</p>
-<p><strong>Kendte størrelser</strong></p>
-<p><em>c</em>(NaOH) = 0,010 M</p>
 <p><span id="ord-trin-1-koncentrationen-af-hydroxidioner" class="fagord-anker"><strong>Trin 1: koncentrationen af hydroxidioner</strong></span></p>
 <p>Natriumhydroxid er en <span class="fagord-peg" data-fagord="stærk base">stærk base</span>, så [OH<sup>−</sup>] = <em>c</em>(NaOH) = 0,010 M.</p>
 <p><span id="ord-trin-2-koncentrationen-af-oxoniumioner" class="fagord-anker"><strong>Trin 2: koncentrationen af oxoniumioner</strong></span></p>
@@ -1834,7 +1833,7 @@ Figur&nbsp;7.16: Regnevejen fra en stærk syre eller en stærk base til pH.
 <li><span class="fagord-peg" data-fagord="ph">pH</span> beregnes med formlen <span class="fagord-peg" data-fagord="ph">pH</span> = −log₁₀[H<sub>3</sub>O<sup>+</sup>].</li>
 <li>Koncentrationen findes ud fra <span class="fagord-peg" data-fagord="ph">pH</span> med formlen [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup> M.</li>
 <li>I en <span class="fagord-peg" data-fagord="stærk syre">stærk syre</span> er [H<sub>3</sub>O<sup>+</sup>] lig med <span class="fagord-peg" data-fagord="syre">syrens</span> <span class="fagord-peg" data-fagord="formel koncentration">formelle koncentration</span>.</li>
-<li><span class="fagord-peg" data-fagord="vands ionprodukt">Vands ionprodukt</span> er [H<sub>3</sub>O<sup>+</sup>] · [OH<sup>−</sup>] = 1,0 · 10<sup>−14</sup> M<sup>2</sup>.</li>
+<li><span class="fagord-peg" data-fagord="vands ionprodukt">Vands ionprodukt</span> er [H<sub>3</sub>O<sup>+</sup>] · [OH<sup>−</sup>] = 1,0 · 10<sup>−14</sup>&nbsp;M<sup>2</sup>.</li>
 <li>I en <span class="fagord-peg" data-fagord="stærk base">stærk base</span> findes først [OH<sup>−</sup>], derefter [H<sub>3</sub>O<sup>+</sup>] med ionproduktet og til sidst <span class="fagord-peg" data-fagord="ph">pH</span>.</li>
 </ul>
 </div>
@@ -1859,7 +1858,7 @@ Figur&nbsp;7.16: Regnevejen fra en stærk syre eller en stærk base til pH.
 </div>
 
 
-<script type="application/json" id="fagord-peg-data">{"aktuel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden pr. liter af de ioner og molekyler, der faktisk findes i\nopløsningen. Skrives med kantede parenteser, for eksempel\n[Ca<sup>2+<\/sup>].","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-aktuelle-koncentration","ord":"aktuel koncentration"},"base":{"afsnit":"7.1","forklaring":"Stof, der kan optage en hydron. Ammoniak, NH<sub>3<\/sub>, er et\neksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-base","ord":"base"},"basisk":{"afsnit":"7.3","forklaring":"Siges om en opløsning, der har flere hydroxidioner end oxoniumioner. Den\nhar pH over 7.","maal":"../kapitler/7-3-ph-skalaen.html#ord-basisk","ord":"basisk"},"betydende cifre":{"afsnit":"5.1","forklaring":"De tal i et måleresultat, der viser, hvor præcist der er målt. 10,00 g\nhar fire, og 0,92 g/mL har to.","maal":"../kapitler/5-1-beregninger.html#ord-betydende-cifre","ord":"betydende cifre"},"formel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden pr. liter af det stof, der er hældt i, også når det er delt\nop i ioner. Skrives for eksempel <em>c<\/em>(CaCl<sub>2<\/sub>).","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-formelle-koncentration","ord":"formel koncentration"},"fortynde":{"afsnit":"6.1","forklaring":"At hælde mere vand i en opløsning, så koncentrationen bliver lavere.\nStofmængden er den samme før og efter.","maal":"../kapitler/6-1-koncentration.html#ord-fortyndes","ord":"fortynde"},"hydron":{"afsnit":"7.1","forklaring":"Partiklen H<sup>+<\/sup>, som overføres fra en syre til en base. Den er\nen enkelt proton uden nogen elektron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydron","ord":"hydron"},"hydroxidion":{"afsnit":"7.1","forklaring":"Partiklen OH<sup>−<\/sup>. Den er tilbage, når et vandmolekyle har\nafgivet H<sup>+<\/sup> til en base.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydroxidion","ord":"hydroxidion"},"ion":{"afsnit":"2.1","forklaring":"Atom, der har afgivet eller optaget elektroner og derfor har en ladning.","maal":"../kapitler/2-1-ioner.html#ord-ion","ord":"ion"},"molekyle":{"afsnit":"1.1","forklaring":"Atomer af ikke-metaller, der sidder sammen, for eksempel H<sub>2<\/sub>O\nog O<sub>2<\/sub>.","maal":"../kapitler/1-1-hvad-er-kemi.html#ord-molekyle","ord":"molekyle"},"opløsning":{"afsnit":"6.1","forklaring":"Blanding, hvor et stof har fordelt sig jævnt i en væske. Salt, der er\nrørt ud i vand, er et eksempel.","maal":"../kapitler/6-1-koncentration.html#ord-oploesning","ord":"opløsning"},"oxoniumion":{"afsnit":"7.1","forklaring":"Partiklen H<sub>3<\/sub>O<sup>+<\/sup>. Den dannes, når et vandmolekyle\noptager en hydron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-oxoniumion","ord":"oxoniumion"},"ph":{"afsnit":"7.3","forklaring":"Tal, der fortæller, hvor høj koncentrationen af oxoniumioner er. Jo\nflere oxoniumioner, jo lavere er tallet.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph","ord":"pH"},"ph-meter":{"afsnit":"7.3","forklaring":"Apparat, der måler, hvor sur eller basisk en opløsning er. Det har en\nelektrode, som holdes ned i opløsningen.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph-meter","ord":"pH-meter"},"stærk base":{"afsnit":"7.2","forklaring":"Stof, der optager en hydron, så snart det møder en syre. Hydroxidionen\ner et eksempel.","maal":"../kapitler/7-2-staerke-og-svage-syrer.html#ord-staerk-base","ord":"stærk base"},"stærk syre":{"afsnit":"7.2","forklaring":"Stof, der afgiver alle sine hydroner, når det kommer i vand, for\neksempel HCl. Reaktionen skrives med en enkelt pil.","maal":"../kapitler/7-2-staerke-og-svage-syrer.html#ord-staerk-syre","ord":"stærk syre"},"svag syre":{"afsnit":"7.2","forklaring":"Stof, der kun afgiver få af sine hydroner i vand, for eksempel\nCH<sub>3<\/sub>COOH. Reaktionen skrives med en dobbeltpil.","maal":"../kapitler/7-2-staerke-og-svage-syrer.html#ord-svag-syre","ord":"svag syre"},"syre":{"afsnit":"7.1","forklaring":"Stof, der kan afgive en hydron. Hydrogenchlorid, HCl, er et eksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-syre","ord":"syre"},"titrering":{"afsnit":"6.3","forklaring":"Metode til at måle, hvor meget stof en prøve indeholder. En opløsning\nmed kendt koncentration dryppes i, til alt stoffet har reageret.","maal":"../kapitler/6-3-titrering.html#ord-titrering","ord":"titrering"},"vands ionprodukt":{"afsnit":"7.4","forklaring":"Koncentrationerne af H<sub>3<\/sub>O<sup>+<\/sup> og OH<sup>−<\/sup> ganget\nmed hinanden. Det giver altid 1,0 · 10<sup>−14<\/sup> M<sup>2<\/sup> ved\n25 °C.","maal":"../kapitler/7-4-ph-beregninger.html#ord-vands-ionprodukt","ord":"vands ionprodukt"}}</script>
+<script type="application/json" id="fagord-peg-data">{"aktuel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden pr. liter af de ioner og molekyler, der faktisk findes i\nopløsningen. Skrives med kantede parenteser, for eksempel\n[Ca<sup>2+<\/sup>].","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-aktuelle-koncentration","ord":"aktuel koncentration"},"base":{"afsnit":"7.1","forklaring":"Stof, der kan optage en hydron. Ammoniak, NH<sub>3<\/sub>, er et\neksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-base","ord":"base"},"basisk":{"afsnit":"7.3","forklaring":"Siges om en opløsning, der har flere hydroxidioner end oxoniumioner. Den\nhar pH over 7.","maal":"../kapitler/7-3-ph-skalaen.html#ord-basisk","ord":"basisk"},"betydende cifre":{"afsnit":"5.1","forklaring":"De tal i et måleresultat, der viser, hvor præcist der er målt. 10,00 g\nhar fire, og 0,92 g/mL har to.","maal":"../kapitler/5-1-beregninger.html#ord-betydende-cifre","ord":"betydende cifre"},"formel koncentration":{"afsnit":"6.2","forklaring":"Stofmængden pr. liter af det stof, der er hældt i, også når det er delt\nop i ioner. Skrives for eksempel <em>c<\/em>(CaCl<sub>2<\/sub>).","maal":"../kapitler/6-2-formel-og-aktuel.html#ord-formelle-koncentration","ord":"formel koncentration"},"formelenhed":{"afsnit":"2.3","forklaring":"Den mindste portion af et salt med ionerne i det rigtige forhold. I NaCl\nbestår den af én natriumion og én chloridion.","maal":"../kapitler/2-3-ionforbindelser.html#ord-formelenhed","ord":"formelenhed"},"fortynde":{"afsnit":"6.1","forklaring":"At hælde mere vand i en opløsning, så koncentrationen bliver lavere.\nStofmængden er den samme før og efter.","maal":"../kapitler/6-1-koncentration.html#ord-fortyndes","ord":"fortynde"},"hydron":{"afsnit":"7.1","forklaring":"Partiklen H<sup>+<\/sup>, som overføres fra en syre til en base. Den er\nen enkelt proton uden nogen elektron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydron","ord":"hydron"},"hydroxidion":{"afsnit":"7.1","forklaring":"Partiklen OH<sup>−<\/sup>. Den er tilbage, når et vandmolekyle har\nafgivet H<sup>+<\/sup> til en base.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-hydroxidion","ord":"hydroxidion"},"ion":{"afsnit":"2.1","forklaring":"Atom, der har afgivet eller optaget elektroner og derfor har en ladning.","maal":"../kapitler/2-1-ioner.html#ord-ion","ord":"ion"},"molekyle":{"afsnit":"3.1","forklaring":"Atomer af ikke-metaller, der sidder sammen, for eksempel H<sub>2<\/sub>O\nog O<sub>2<\/sub>.","maal":"../kapitler/3-1-molekyler.html#ord-molekyle","ord":"molekyle"},"opløsning":{"afsnit":"6.1","forklaring":"Blanding, hvor et stof har fordelt sig jævnt i en væske. Salt, der er\nrørt ud i vand, er et eksempel.","maal":"../kapitler/6-1-koncentration.html#ord-oploesning","ord":"opløsning"},"oxoniumion":{"afsnit":"7.1","forklaring":"Partiklen H<sub>3<\/sub>O<sup>+<\/sup>. Den dannes, når et vandmolekyle\noptager en hydron.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-oxoniumion","ord":"oxoniumion"},"ph":{"afsnit":"7.3","forklaring":"Tal, der fortæller, hvor høj koncentrationen af oxoniumioner er. Jo\nflere oxoniumioner, jo lavere er tallet.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph","ord":"pH"},"ph-meter":{"afsnit":"7.3","forklaring":"Apparat, der måler, hvor sur eller basisk en opløsning er. Det har en\nelektrode, som holdes ned i opløsningen.","maal":"../kapitler/7-3-ph-skalaen.html#ord-ph-meter","ord":"pH-meter"},"reaktionsskema":{"afsnit":"1.4","forklaring":"Kemikerens opskrift: formler og en pil viser, hvad der reagerer, og hvad\nder dannes.","maal":"../kapitler/1-4-reaktionsskemaer.html#ord-reaktionsskema","ord":"reaktionsskema"},"stærk base":{"afsnit":"7.2","forklaring":"Stof, der optager en hydron, så snart det møder en syre. Hydroxidionen\ner et eksempel.","maal":"../kapitler/7-2-staerke-og-svage-syrer.html#ord-staerk-base","ord":"stærk base"},"stærk syre":{"afsnit":"7.2","forklaring":"Stof, der afgiver alle sine hydroner, når det kommer i vand, for\neksempel HCl. Reaktionen skrives med en enkelt pil.","maal":"../kapitler/7-2-staerke-og-svage-syrer.html#ord-staerk-syre","ord":"stærk syre"},"svag syre":{"afsnit":"7.2","forklaring":"Stof, der kun afgiver få af sine hydroner i vand, for eksempel\nCH<sub>3<\/sub>COOH. Reaktionen skrives med en dobbeltpil.","maal":"../kapitler/7-2-staerke-og-svage-syrer.html#ord-svag-syre","ord":"svag syre"},"syre":{"afsnit":"7.1","forklaring":"Stof, der kan afgive en hydron. Hydrogenchlorid, HCl, er et eksempel.","maal":"../kapitler/7-1-syrer-og-baser.html#ord-syre","ord":"syre"},"titrering":{"afsnit":"6.3","forklaring":"Metode til at måle, hvor meget stof en prøve indeholder. En opløsning\nmed kendt koncentration dryppes i, til alt stoffet har reageret.","maal":"../kapitler/6-3-titrering.html#ord-titrering","ord":"titrering"},"vands ionprodukt":{"afsnit":"7.4","forklaring":"Koncentrationerne af H<sub>3<\/sub>O<sup>+<\/sup> og OH<sup>−<\/sup> ganget\nmed hinanden. Det giver altid 1,0 · 10<sup>−14<\/sup> M<sup>2<\/sup> ved\n25 °C.","maal":"../kapitler/7-4-ph-beregninger.html#ord-vands-ionprodukt","ord":"vands ionprodukt"}}</script>
 </section>
 
 </main> <!-- /main -->

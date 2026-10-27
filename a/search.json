@@ -8243,7 +8243,7 @@
     "href": "kapitler/a5-2-foerste-orden.html#brug-modellen",
     "title": "A5.2 Første orden",
     "section": "Brug modellen",
-    "text": "Brug modellen\nNår k og [A]0 er kendt, kan modellen bruges til at beregne koncentrationen til et tidspunkt eller tidspunktet for en koncentration.\n\n\n\n\n\n\nNoteEksempel: hvornår er der under 10 µM tilbage?\n\n\n\nAntag, at ibuprofen ikke virker, når koncentrationen er under 10 µM. Beregn, hvor længe tabletten så virker.\nKendte størrelser\nModellen er ln([ibuprofen] / µM) = −0,347 h−1 · t + 5,012.\nBeregning\nModellen løses for t, og [ibuprofen] = 10 µM sættes ind:\n\\[\nt = \\frac{5{,}012 - \\ln 10}{0{,}347\\ \\mathrm{h^{-1}}} = \\frac{5{,}012 - 2{,}303}{0{,}347\\ \\mathrm{h^{-1}}} = 7{,}8\\ \\mathrm{h}\n\\]\nKonklusion\nKoncentrationen er under 10 µM efter 7,8 timer. Det passer med, at tabletterne skal tages tre gange i døgnet.\n\n\nSkæringen kan også bruges. Modellens startkoncentration er [ibuprofen]0 = e5,012 µM = 150 µM.",
+    "text": "Brug modellen\nNår k og [A]0 er kendt, kan modellen bruges til at beregne koncentrationen til et tidspunkt eller tidspunktet for en koncentration.\n\n\n\n\n\n\nNoteEksempel: hvornår er der under 10 µM tilbage?\n\n\n\nAntag, at ibuprofen ikke virker, når koncentrationen er under 10 µM. Beregn, hvor længe tabletten så virker.\nModellen er ln([ibuprofen] / µM) = −0,347 h−1 · t + 5,012.\nBeregning\nModellen løses for t, og [ibuprofen] = 10 µM sættes ind:\n\\[\nt = \\frac{5{,}012 - \\ln 10}{0{,}347\\ \\mathrm{h^{-1}}} = \\frac{5{,}012 - 2{,}303}{0{,}347\\ \\mathrm{h^{-1}}} = 7{,}8\\ \\mathrm{h}\n\\]\nKonklusion\nKoncentrationen er under 10 µM efter 7,8 timer. Det passer med, at tabletterne skal tages tre gange i døgnet.\n\n\nSkæringen kan også bruges. Modellens startkoncentration er [ibuprofen]0 = e5,012 µM = 150 µM.",
     "crumbs": [
       "Kapitel A5: Reaktionskinetik",
       "A5.2 Første orden"
@@ -8276,7 +8276,7 @@
     "href": "kapitler/a5-3-nulte-og-anden-orden.html#nulte-orden",
     "title": "A5.3 Nulte og anden orden",
     "section": "",
-    "text": "Figur A5.8: Koncentrationen af ethanol i blodet som funktion af tiden med den bedste rette linje.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteEksempel: hvornår er alkoholen under grænsen?\n\n\n\nGrænsen for spirituskørsel svarer til omkring 11 mM ethanol i blodet. Beregn, hvornår personen i figuren er under grænsen.\nKendte størrelser\nModellen er [ethanol] = −3,31 mM/h · t + 26,0 mM.\nBeregning\n\\[\nt = \\frac{26{,}0\\ \\mathrm{mM} - 11\\ \\mathrm{mM}}{3{,}31\\ \\dfrac{\\mathrm{mM}}{\\mathrm{h}}} = 4{,}5\\ \\mathrm{h}\n\\]\nKonklusion\nKoncentrationen er under grænsen efter 4,5 timer. Ved nulte orden hjælper det ikke at vente på en halveringstid: der forsvinder 3,31 mM i timen, hverken mere eller mindre.",
+    "text": "Figur A5.8: Koncentrationen af ethanol i blodet som funktion af tiden med den bedste rette linje.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteEksempel: hvornår er alkoholen under grænsen?\n\n\n\nGrænsen for spirituskørsel svarer til omkring 11 mM ethanol i blodet. Beregn, hvornår personen i figuren er under grænsen.\nModellen er [ethanol] = −3,31 mM/h · t + 26,0 mM.\nBeregning\n\\[\nt = \\frac{26{,}0\\ \\mathrm{mM} - 11\\ \\mathrm{mM}}{3{,}31\\ \\dfrac{\\mathrm{mM}}{\\mathrm{h}}} = 4{,}5\\ \\mathrm{h}\n\\]\nKonklusion\nKoncentrationen er under grænsen efter 4,5 timer. Ved nulte orden hjælper det ikke at vente på en halveringstid: der forsvinder 3,31 mM i timen, hverken mere eller mindre.",
     "crumbs": [
       "Kapitel A5: Reaktionskinetik",
       "A5.3 Nulte og anden orden"
