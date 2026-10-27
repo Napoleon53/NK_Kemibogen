@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="da" xml:lang="da"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -44,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-92d284d523f32b0e013ac51c4057d475.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6da7c687bb799ed0b6aa1b5e2610229c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1562,410 +1562,815 @@ Figur&nbsp;B4.19: En carboxylsyre med en lang kæde bliver opløselig i vand, n�
 
 </main> <!-- /main -->
 <script>
+
 // Temaopgaver kan klappes sammen.
+
 //
+
 // På opgavesiderne indleder en overskrift som "Opgaver med klimatema {.tema}" et tema.
+
 // Dette script gør overskriften til en knap og skjuler temaets opgaver, til man klikker.
+
 // Indholdslisten i højre side følger med, så kun de åbne temaers opgaver står der.
+
 // Et klik på temaets navn i indholdslisten åbner og lukker også temaet.
+
 // Et tema, man har åbnet, bliver ved med at være åbent på de andre opgavesider.
+
 // Uden JavaScript, og når siden skrives ud, vises alle opgaver som almindelig tekst.
+
 // Sættes "?temaer=aabne" efter sidens adresse, er alle temaer åbne fra start.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var temaer = Array.prototype.slice.call(document.querySelectorAll("body.opgaver main section.level2.tema"));
+
   if (!temaer.length) return;
+
   var alleAabne = /[?&]temaer=aabne/.test(location.search);
 
+
+
   function husk(id, aaben) {
+
     try { localStorage.setItem("kemibogen-tema-" + id, aaben ? "1" : "0"); } catch (e) {}
+
   }
+
   function husket(id) {
+
     try { return localStorage.getItem("kemibogen-tema-" + id) === "1"; } catch (e) { return false; }
+
   }
+
   function tocPunkt(id) {
+
     var link = document.getElementById("toc-" + id);
+
     return link ? link.closest("li") : null;
+
   }
+
+
 
   var alle = temaer.map(function (tema) {
+
     var h2 = tema.querySelector("h2");
+
     var indhold = document.createElement("div");
+
     indhold.className = "tema-indhold";
+
     indhold.id = tema.id + "-opgaver";
+
     var opgaver = [];
+
     var naeste = tema.nextElementSibling;
+
     while (naeste && naeste.matches("section.level2") && !naeste.classList.contains("tema")) {
+
       var flyt = naeste;
+
       naeste = naeste.nextElementSibling;
+
       indhold.appendChild(flyt);
+
       opgaver.push(flyt);
+
     }
+
     tema.appendChild(indhold);
 
+
+
     var antal = document.createElement("span");
+
     antal.className = "tema-antal";
+
     antal.textContent = opgaver.length + " opgaver";
+
     h2.appendChild(antal);
+
     h2.setAttribute("role", "button");
+
     h2.setAttribute("tabindex", "0");
+
     h2.setAttribute("aria-controls", indhold.id);
 
+
+
     var t = { tema: tema, h2: h2, indhold: indhold, opgaver: opgaver, aaben: false };
+
     t.saet = function (aaben, gem) {
+
       t.aaben = aaben;
+
       indhold.classList.toggle("lukket", !aaben);
+
       h2.setAttribute("aria-expanded", aaben ? "true" : "false");
+
       opgaver.forEach(function (o) {
+
         var li = tocPunkt(o.id);
+
         if (li) li.classList.toggle("tema-skjult", !aaben);
+
       });
+
       var punkt = document.getElementById("toc-" + tema.id);
+
       if (punkt) punkt.classList.toggle("tema-aaben", aaben);
+
       if (gem) husk(tema.id, aaben);
+
     };
+
     h2.addEventListener("click", function (e) {
+
       if (e.target.closest("a")) return;          // ankerlinket ved overskriften
+
       t.saet(!t.aaben, true);
+
     });
+
     h2.addEventListener("keydown", function (e) {
+
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t.saet(!t.aaben, true); }
+
     });
+
     // Et klik på temaet i indholdslisten åbner det og lukker det igen
+
     var punkt = document.getElementById("toc-" + tema.id);
+
     if (punkt) {
+
       punkt.classList.add("tema-punkt");
+
       punkt.setAttribute("title", "Klik for at åbne eller lukke temaet");
+
       punkt.addEventListener("click", function () { t.saet(!t.aaben, true); });
+
     }
+
+
 
     t.saet(alleAabne || husket(tema.id), false);
+
     return t;
+
   });
+
   // Til stil/lektielinks.html, som åbner og skjuler temaer, når siden kun viser udvalgte opgaver
+
   window.kemibogenTemaer = alle;
 
+
+
   // Et link til en opgave inde i et lukket tema åbner temaet først
+
   function aabnTilAnker() {
+
     var id = decodeURIComponent(location.hash.replace(/^#/, ""));
+
     if (!id) return;
+
     var maal = document.getElementById(id);
+
     if (!maal) return;
+
     alle.forEach(function (t) {
+
       if (!t.aaben && t.indhold.contains(maal)) {
+
         t.saet(true, false);
+
         maal.scrollIntoView();
+
       }
+
     });
+
   }
+
   aabnTilAnker();
+
   window.addEventListener("hashchange", aabnTilAnker);
 
+
+
   // Indholdslisten: peger Quarto på en skjult opgave, markeres temaet i stedet
+
   var venter = false;
+
   function retMarkering() {
+
     venter = false;
+
     alle.forEach(function (t) {
+
       var punkt = document.getElementById("toc-" + t.tema.id);
+
       if (!punkt) return;
+
       var skjultAktiv = !t.aaben && t.opgaver.some(function (o) {
+
         var link = document.getElementById("toc-" + o.id);
+
         return link && link.classList.contains("active");
+
       });
+
       punkt.classList.toggle("tema-aktiv", skjultAktiv);
+
     });
+
   }
+
   window.addEventListener("scroll", function () {
+
     if (!venter) { venter = true; requestAnimationFrame(retMarkering); }
+
   }, { passive: true });
+
 });
+
 </script>
+
 <script>
+
 // Trin for trin.
+
 //
+
 // En boks med klassen "trinvis" indeholder flere bokse med klassen "trin". Dette script
+
 // viser ét trin ad gangen og sætter knapper over: Forrige, Næste, et nummer for hvert trin
+
 // (eller teksten fra trinets egenskab knap="...")
+
 // og "Vis alle trin". Alle trin ligger oven på hinanden, så boksen ikke skifter højde.
+
 // Uden JavaScript, og når siden skrives ud, står trinnene bare under hinanden.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   Array.prototype.forEach.call(document.querySelectorAll(".trinvis"), function (boks) {
+
     var trin = Array.prototype.filter.call(boks.children, function (el) {
+
       return el.classList.contains("trin");
+
     });
+
     if (trin.length < 2) return;
 
+
+
     var stak = document.createElement("div");
+
     stak.className = "trin-stak";
+
     boks.insertBefore(stak, trin[0]);
+
     trin.forEach(function (t) { stak.appendChild(t); });
 
+
+
     var bjaelke = document.createElement("div");
+
     bjaelke.className = "trin-bjaelke";
+
     function knap(tekst, klasse, label) {
+
       var k = document.createElement("button");
+
       k.type = "button";
+
       k.className = klasse;
+
       k.textContent = tekst;
+
       if (label) k.setAttribute("aria-label", label);
+
       bjaelke.appendChild(k);
+
       return k;
+
     }
+
     var nu = 0, visAlle = false;
+
     var forrige = knap("‹ Forrige", "trin-forrige", "Forrige trin");
+
     var numre = trin.map(function (t, k) {
+
       var tekst = t.getAttribute("data-knap") || String(k + 1);
+
       var n = knap(tekst, "trin-nr", /^\d+$/.test(tekst) ? "Trin " + tekst : tekst);
+
       n.addEventListener("click", function () { nu = k; visAlle = false; vis(); });
+
       return n;
+
     });
+
     var naeste = knap("Næste ›", "trin-naeste", "Næste trin");
+
     var alle = knap("Vis alle trin", "trin-alle");
+
     boks.insertBefore(bjaelke, stak);
 
+
+
     function vis() {
+
       boks.classList.toggle("alle", visAlle);
+
       trin.forEach(function (t, k) {
+
         t.classList.toggle("vist", k === nu);
+
         numre[k].classList.toggle("aktiv", !visAlle && k === nu);
+
         if (!visAlle && k === nu) numre[k].setAttribute("aria-current", "step");
+
         else numre[k].removeAttribute("aria-current");
+
       });
+
       forrige.disabled = visAlle || nu === 0;
+
       naeste.disabled = visAlle || nu === trin.length - 1;
+
       alle.textContent = visAlle ? "Vis ét trin ad gangen" : "Vis alle trin";
+
     }
+
     forrige.addEventListener("click", function () { if (nu > 0) { nu--; vis(); } });
+
     naeste.addEventListener("click", function () { if (nu < trin.length - 1) { nu++; vis(); } });
+
     alle.addEventListener("click", function () { visAlle = !visAlle; vis(); });
+
     // Piletasterne bladrer, når en af knapperne har fokus
+
     bjaelke.addEventListener("keydown", function (e) {
+
       if (visAlle) return;
+
       if (e.key === "ArrowRight" && nu < trin.length - 1) { nu++; vis(); e.preventDefault(); }
+
       if (e.key === "ArrowLeft" && nu > 0) { nu--; vis(); e.preventDefault(); }
+
     });
+
+
 
     boks.classList.add("aktiv");
+
     if (/[?&]trin=alle/.test(location.search)) visAlle = true;
+
     vis();
+
   });
+
 });
+
 </script>
+
 <script>
+
 // Figurer, man kan pege på (en boks med klassen "pegefigur" om figuren i .qmd-filen).
+
 //
+
 // Figurprogrammet (vaerktoej/lav_figurer.py) har lagt de dele af figuren, man kan pege på, i
+
 // grupper med klassen "peg" og skrevet en titel og en forklaring på hver gruppe (funktionen peg).
+
 // Dette script henter figuren ind i siden og viser forklaringen i et felt lige under figuren,
+
 // når man peger på en del, trykker på den eller går til den med tabulatortasten og piletasterne.
+
 // Et klik holder forklaringen fast. Nogle dele har "med": så bliver de dele, der hører sammen
+
 // med den, stående, mens resten af figuren bliver bleg (fx vejen gennem et rutediagram).
+
 // En del kan også have hjælpestreger med klassen "peg-kun-fremme", som kun ses, mens man peger på den.
+
 // Uden JavaScript, og når siden skrives ud, er figuren det samme billede som før.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var bokse = document.querySelectorAll(".pegefigur");
+
   if (!bokse.length || !window.fetch || !window.DOMParser) return;
 
+
+
   var SVG = "http://www.w3.org/2000/svg";
+
   var BEROERING = window.matchMedia && window.matchMedia("(hover: none)").matches;
+
   var STANDARD = "Peg på en del af figuren for at se mere.";
+
   var oensket = /[?&]peg=([^&#]+)/.exec(location.search);   // "?peg=Zn" vælger delen Zn (til gennemsyn som billede)
+
   oensket = oensket ? decodeURIComponent(oensket[1]) : null;
 
+
+
   function el(navn, klasse) {
+
     var e = document.createElement(navn);
+
     if (klasse) e.className = klasse;
+
     return e;
+
   }
+
   // Forklaringerne bruger figurprogrammets skrivemåde: _{2} er sænket og ^{2+} er hævet skrift.
+
   // En størrelse mellem to stjerner, *K*, bliver kursiv som i bogens tekst.
+
   // [afsnit B4.3](../kapitler/b4-3-aldehyder-og-ketoner.html#anker) bliver et link. Adressen læses fra
+
   // siden, figuren står på, og ikke fra figurens egen mappe.
+
   var LINK = /\[([^\]]+)\]\(([^)\s"<>]+)\)/g;
+
   function rig(s) {
+
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+
             .replace(LINK, '<a href="$2">$1</a>')
+
             .replace(/_\{([^}]*)\}/g, "<sub>$1</sub>").replace(/\^\{([^}]*)\}/g, "<sup>$1</sup>")
+
             .replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "<em>$1</em>");
+
   }
+
   function ren(s) { return s.replace(LINK, "$1").replace(/[_^]\{([^}]*)\}/g, "$1").replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "$1"); }
+
   function ord(s) { return (s || "").split(/\s+/).filter(Boolean); }
 
+
+
   var loebenr = 0;
+
   Array.prototype.forEach.call(bokse, function (boks) {
+
     var billede = boks.querySelector("img");
+
     if (!billede || !/\.svg([?#]|$)/.test(billede.getAttribute("src") || "")) return;
+
     fetch(billede.src).then(function (svar) {
+
       if (!svar.ok) throw new Error("figuren kunne ikke hentes");
+
       return svar.text();
+
     }).then(function (kilde) { byg(boks, billede, kilde); })
+
       .catch(function () { /* Kan figuren ikke hentes, står billedet der bare som før */ });
+
   });
 
+
+
   function byg(boks, billede, kilde) {
+
     // Navne inde i figuren (fx farveovergange) får et forled, så to figurer på samme side ikke deler navn
+
     var forled = "pf" + (++loebenr) + "-";
+
     kilde = kilde.replace(/(\s)id="([^"]+)"/g, '$1id="' + forled + '$2"')
+
                  .replace(/url\(#([^)]+)\)/g, "url(#" + forled + "$1)")
+
                  .replace(/href="#([^"]+)"/g, 'href="#' + forled + '$1"');
+
     var svg = new DOMParser().parseFromString(kilde, "image/svg+xml").documentElement;
+
     if (!svg || svg.nodeName.toLowerCase() !== "svg") return;
+
     svg = document.importNode(svg, true);
+
     var grupper = Array.prototype.slice.call(svg.querySelectorAll("g.peg"));
+
     if (!grupper.length) return;
 
+
+
     var vejledning = svg.querySelector("g.peg-vejledning");
+
     var start = vejledning ? vejledning.getAttribute("data-tekst") : STANDARD;
+
     if (BEROERING) start = start.replace(/^Peg på/, "Tryk på");
+
     var titel = svg.querySelector("title");
+
     if (titel) svg.removeChild(titel);   // ellers viser browseren figurens beskrivelse som en gul boble
+
     var maal = (svg.getAttribute("viewBox") || "").split(/\s+/).map(Number);
+
     svg.removeAttribute("width");
+
     svg.removeAttribute("height");
+
     svg.setAttribute("role", "group");
+
     svg.setAttribute("class", "peg-svg");
+
     if (maal.length === 4 && maal[2] > 0) svg.style.width = maal[2] + "px";
 
+
+
     // Figuren ind i siden i stedet for billedet, og feltet med forklaringen lige under den
+
     var ramme = el("div", "peg-ramme");
+
     var gammel = billede.closest("a") || billede;
+
     gammel.parentNode.replaceChild(ramme, gammel);
+
     ramme.appendChild(svg);
+
     var info = el("div", "peg-info");
+
     info.setAttribute("aria-live", "polite");
+
     var figur = ramme.closest("figure");
+
     var billedtekst = figur && figur.querySelector("figcaption");
+
     if (billedtekst && billedtekst.parentNode === figur) figur.insertBefore(info, billedtekst);
+
     else ramme.parentNode.insertBefore(info, ramme.nextSibling);
 
+
+
     // Alle forklaringerne ligger oven på hinanden i feltet, og kun én er synlig. Så er feltet
+
     // hele tiden lige så højt som den længste forklaring, og siden hopper ikke, når man peger.
+
     function kort(overskrift, tekst, klasse) {
+
       var k = el("div", "peg-kort" + (klasse ? " " + klasse : ""));
+
       if (overskrift) { var t = el("p", "peg-titel"); t.innerHTML = rig(overskrift); k.appendChild(t); }
+
       (tekst || "").split("\n").forEach(function (afsnit) {
+
         if (!afsnit.trim()) return;
+
         var p = el("p"); p.innerHTML = rig(afsnit); k.appendChild(p);
+
       });
+
       info.appendChild(k);
+
       return k;
+
     }
+
     var startkort = kort(null, start, "peg-vejledning");
 
+
+
     var dele = grupper.map(function (g, i) {
+
       var d = { g: g, nr: i, titel: g.getAttribute("data-titel") || "", tekst: g.getAttribute("data-tekst") || "",
+
                 noegle: g.getAttribute("data-noegle"), i: ord(g.getAttribute("data-i")), med: ord(g.getAttribute("data-med")) };
+
       d.kort = kort(d.titel, d.tekst);
+
       g.setAttribute("role", "button");
+
       g.setAttribute("tabindex", i === 0 ? "0" : "-1");
+
       g.setAttribute("aria-label", ren(d.titel + (d.tekst ? ". " + d.tekst.replace(/\n/g, " ") : "")));
+
       return d;
+
     });
+
     // De dele, der bliver stående fremme sammen med en del: dem, den nævner i "med", ved navn eller ved gruppe
+
     dele.forEach(function (d) {
+
       d.venner = !d.med.length ? [] : dele.filter(function (a) {
+
         return a !== d && (d.med.indexOf(a.noegle) >= 0 || a.i.some(function (s) { return d.med.indexOf(s) >= 0; }));
+
       });
+
     });
+
+
 
     // Hver del får et usynligt felt, der fanger musen (også mellem bogstaverne), og en ramme til fremhævning
+
     var maalt = false;
+
     function maalOp() {
+
       if (maalt) return;
+
       // Har delen en flade med klassen "peg-maal", er det den, der bestemmer feltets størrelse
+
       var kasser = dele.map(function (d) {
+
         try { return (d.g.querySelector(".peg-maal") || d.g).getBBox(); } catch (e) { return null; }
+
       });
+
       if (!kasser.some(function (b) { return b && b.width > 0; })) return;   // figuren er skjult lige nu
+
       maalt = true;
+
       dele.forEach(function (d, i) {
+
         var b = kasser[i];
+
         if (!b || !b.width) return;
+
         var luft = 2.5;
+
         [["peg-felt", true], ["peg-kant", false]].forEach(function (r) {
+
           var rekt = document.createElementNS(SVG, "rect");
+
           rekt.setAttribute("x", (b.x - luft).toFixed(1));
+
           rekt.setAttribute("y", (b.y - luft).toFixed(1));
+
           rekt.setAttribute("width", (b.width + 2 * luft).toFixed(1));
+
           rekt.setAttribute("height", (b.height + 2 * luft).toFixed(1));
+
           rekt.setAttribute("rx", "7");
+
           rekt.setAttribute("class", r[0]);
+
           if (r[1]) d.g.insertBefore(rekt, d.g.firstChild); else d.g.appendChild(rekt);
+
         });
+
       });
+
     }
+
     maalOp();
+
     svg.addEventListener("pointerover", maalOp);
+
     svg.addEventListener("focusin", maalOp);
 
+
+
     var fast = null, vist;
+
     function vis(d) {
+
       if (d === vist) return;
+
       vist = d;
+
       startkort.classList.toggle("peg-vist", !d);
+
       dele.forEach(function (a) {
+
         a.kort.classList.toggle("peg-vist", a === d);
+
         a.g.classList.toggle("peg-fremme", a === d);
+
         a.g.classList.toggle("peg-lys", !!d && (a === d || d.venner.indexOf(a) >= 0));
+
       });
+
       svg.classList.toggle("peg-daemp", !!d && d.venner.length > 0);
+
     }
+
     function fastgoer(d) {
+
       if (fast) { fast.g.classList.remove("peg-valgt"); fast.g.setAttribute("aria-pressed", "false"); }
+
       fast = d;
+
       if (d) {
+
         d.g.classList.add("peg-valgt");
+
         d.g.setAttribute("aria-pressed", "true");
+
         dele.forEach(function (a) { a.g.setAttribute("tabindex", a === d ? "0" : "-1"); });
+
       }
+
       vis(d);
+
     }
+
+
 
     // Har forklaringen et link, bliver den stående et øjeblik, når musen forlader figuren, og så længe musen
+
     // er i feltet, så man kan nå at trykke på linket. Andre forklaringer forsvinder med det samme som før.
+
     var slip = null;
+
     function slipForklaring() {
+
       clearTimeout(slip);
+
       if (vist && vist !== fast && vist.kort.querySelector("a")) slip = setTimeout(function () { vis(fast); }, 450);
+
       else vis(fast);
+
     }
+
     info.addEventListener("pointerenter", function () { clearTimeout(slip); });
+
     info.addEventListener("pointerleave", slipForklaring);
+
     info.addEventListener("focusout", function (e) {
+
       if (!info.contains(e.relatedTarget) && !svg.contains(e.relatedTarget)) vis(fast);
+
     });
+
+
 
     dele.forEach(function (d) {
+
       d.g.addEventListener("pointerenter", function () { clearTimeout(slip); vis(d); });
+
       d.g.addEventListener("focus", function () { vis(d); });
+
       d.g.addEventListener("click", function (e) { fastgoer(fast === d ? null : d); e.stopPropagation(); });
+
       d.g.addEventListener("keydown", function (e) {
+
         if (e.key === "Enter" || e.key === " ") { fastgoer(fast === d ? null : d); e.preventDefault(); return; }
+
         if (e.key === "Escape") { fastgoer(null); return; }
+
         var trin = { ArrowLeft: -1, ArrowUp: -1, ArrowRight: 1, ArrowDown: 1 }[e.key];
+
         if (!trin) return;
+
         var naeste = dele[d.nr + trin];
+
         if (naeste) {
+
           dele.forEach(function (a) { a.g.setAttribute("tabindex", a === naeste ? "0" : "-1"); });
+
           naeste.g.focus();
+
         }
+
         e.preventDefault();
+
       });
+
     });
+
     svg.addEventListener("pointerleave", slipForklaring);
+
     svg.addEventListener("focusout", function (e) {
+
       if (!svg.contains(e.relatedTarget) && !info.contains(e.relatedTarget)) vis(fast);
+
     });
+
     svg.addEventListener("click", function () { fastgoer(null); });   // et klik ved siden af slipper forklaringen
 
+
+
     boks.classList.add("peg-aktiv");
+
     vis(null);
+
     if (oensket) {
+
       var valgt = dele.filter(function (d) { return d.noegle === oensket; })[0];
+
       if (valgt) fastgoer(valgt);
+
     }
+
   }
+
 });
+
 </script>
+
 <script>
 // Lektielinks på opgavesiderne. Se noter/repetition.md.
 //
@@ -2366,394 +2771,783 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
+
 // Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026 i kapitel 1 og 2,
+
 // 16. okt. 2026 i alle kapitler i de tre bøger).
+
 //
+
 // Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver linjerne "Opgaver til 1.1" osv.
+
 // til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
+
 // "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
+
 // kemiformler.dk; C-bogen og kapitel B2, B3, B4 og B8 har dem). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+
 // før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
+
 // Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke. Temaerne Plastic og Klima i C-bogen er bygget
+
 // som kapitler (temaer/t1-1-....html og temaer/t1-1-opgaver.html) og får samme menu; "Fagord til Tema: Klima" bliver
+
 // til "Fagord", også i de små temaer uden opgaver (Niels 16. okt. 2026, noter/temaer-c-oprydning.md).
+
 //
+
 // Øvelser (Niels 18. okt. 2026): efter repetitionen står siden "Øvelser til kapitel 7", som bliver til "Øvelser", og
+
 // bagefter kapitlets øvelser (oevelser/7-5-....html). Øvelserne selv tages ud af menuen; står man på en af dem, er
+
 // "Øvelser" fremhævet. Kapitlernes navne mister ordet "Kapitel" ("7: Syrer og baser"), så de kan stå på én linje, og
+
 // delen Materialer (den fulde liste over øvelser) flyttes ned under Bilag.
+
 (function () {
+
   var EKSTRA = {
+
     "1": [
+
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+
     ],
+
     "2": [
+
       { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
+
     ],
+
     "3": [
+
       { tekst: "Slides", sti: "slides/kapitel-3.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-3.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c3.html", ikon: "animationer" }
+
     ],
+
     "4": [
+
       { tekst: "Slides", sti: "slides/kapitel-4.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-4.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c4.html", ikon: "animationer" }
+
     ],
+
     "5": [
+
       { tekst: "Slides", sti: "slides/kapitel-5.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-5.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c5.html", ikon: "animationer" }
+
     ],
+
     "6": [
+
       { tekst: "Slides", sti: "slides/kapitel-6.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-6.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c6.html", ikon: "animationer" }
+
     ],
+
     "7": [
+
       { tekst: "Slides", sti: "slides/kapitel-7.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-7.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c7.html", ikon: "animationer" }
+
     ],
+
     "8": [
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c8.html", ikon: "animationer" }
+
     ],
+
     // Slides til kapitel B2 (22. okt. 2026), foreløbig kun B2.4 og B2.5.
+
     "B2": [
+
       { tekst: "Slides", sti: "slides/kapitel-b2.html", ikon: "slides" }
+
     ],
+
     // B-bogen (21. okt. 2026): slides til kapitel B3, foreløbig kun B3.1 og B3.2. Filen kopieres til b/slides/,
+
     // når slidesene bygges (slides/kopier_til_b.py).
+
     "B3": [
+
       { tekst: "Slides", sti: "slides/kapitel-b3.html", ikon: "slides" }
+
     ],
+
     // Slides til kapitel B4 (26. okt. 2026), foreløbig kun B4.1 til B4.5.
+
     "B4": [
+
       { tekst: "Slides", sti: "slides/kapitel-b4.html", ikon: "slides" }
+
     ],
+
     // Slides til kapitel B8 (22. okt. 2026), foreløbig kun B8.6 TLC.
+
     "B8": [
+
       { tekst: "Slides", sti: "slides/kapitel-b8.html", ikon: "slides" }
+
     ]
+
   };
 
+
+
   function li(klasse) {
+
     var el = document.createElement("li");
+
     el.className = "sidebar-item " + klasse;
+
     return el;
+
   }
+
+
 
   function lavKapitel(ul) {
+
     var punkter = Array.prototype.filter.call(ul.children, function (el) { return el.tagName === "LI"; });
+
     var afsnit = [], opgaver = [], sidsteAfsnit = -1, foersteOpgave = -1;
+
     punkter.forEach(function (p, i) {
+
       var a = p.querySelector("a.sidebar-link");
+
       if (!a) return;
+
       var href = a.getAttribute("href") || "";
+
       if (/(^|\/)kapitler\//.test(href) || /(^|\/)temaer\/t\d+-\d+-(?!opgaver)[^\/]*\.html/.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
+
       else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href) || /(^|\/)temaer\/t\d+-\d+-opgaver\.html/.test(href)) {
+
         opgaver.push(p);
+
         if (foersteOpgave < 0) foersteOpgave = i;
+
       }
+
     });
+
     if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
 
+
+
     // Kapitlets nummer og vejen til bogens rod tages fra første afsnit ("../kapitler/1-1-....html").
+
     // I B- og A-bogen hedder afsnittene "B1.1" og "A1.1"; dér er nummeret "B1" og "A1", som ikke står i EKSTRA.
+
     var foerste = afsnit[0].getAttribute("href");
+
     var nr = (afsnit[0].textContent.trim().match(/^([AB]?\d+)\./) || [])[1];
+
     var rod = foerste.slice(0, foerste.search(/(kapitler|temaer)\//));
 
+
+
     // Fagord, repetition og øvelser: "Fagord til kapitel 1" bliver til "Fagord". De enkelte øvelser tages ud.
+
     var oevelsesside = null, oevelseAktiv = false;
+
     punkter.slice(foersteOpgave).forEach(function (p) {
+
       if (opgaver.indexOf(p) >= 0) return;
+
       var a = p.querySelector("a.sidebar-link");
+
       var href = a ? a.getAttribute("href") || "" : "";
+
       if (/(^|\/)oevelser\/\d[^\/]*\.html/.test(href)) {
+
         if (a.classList.contains("active")) oevelseAktiv = true;
+
         p.remove();
+
         return;
+
       }
+
       if (/(^|\/)oevelser\/kapitel-[^\/]*\.html/.test(href)) oevelsesside = a;
+
       p.classList.add("kapitelmenu-side");
+
       var t = p.querySelector("a.sidebar-link .menu-text");
+
       if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+[AB]?\d+$/i, "").replace(/\s+til\s+Tema:.*$/, "");
+
     });
+
     if (oevelseAktiv && oevelsesside) {
+
       oevelsesside.classList.add("active");
+
       oevelsesside.setAttribute("aria-current", "page");
+
     }
+
+
 
     var raekke = li("kapitelmenu-opgaver");
+
     var navn = document.createElement("span");
+
     navn.className = "kapitelmenu-navn";
+
     navn.textContent = "Opgaver";
+
     raekke.appendChild(navn);
+
     opgaver.forEach(function (p) {
+
       var gammel = p.querySelector("a.sidebar-link");
+
       var a = document.createElement("a");
+
       a.href = gammel.getAttribute("href");
+
       a.textContent = gammel.textContent.trim().replace(/^Opgaver til\s*/, "");
+
       a.title = gammel.textContent.trim();
+
       if (gammel.classList.contains("active")) { a.className = "active"; a.setAttribute("aria-current", "page"); }
+
       raekke.appendChild(a);
+
     });
+
     ul.insertBefore(raekke, opgaver[0]);
+
     opgaver.forEach(function (p) { p.remove(); });
 
+
+
     (EKSTRA[nr] || []).forEach(function (e) {
+
       var p = li("kapitelmenu-ekstra");
+
       var boks = document.createElement("div");
+
       boks.className = "sidebar-item-container";
+
       var a = document.createElement("a");
+
       a.className = "sidebar-item-text sidebar-link";
+
       a.href = e.url || rod + e.sti;
+
       a.target = "_blank";
+
       a.rel = "noopener";
+
       a.classList.add("kapitelmenu-" + e.ikon);
+
       a.textContent = e.tekst;
+
       boks.appendChild(a);
+
       p.appendChild(boks);
+
       ul.appendChild(p);
+
     });
+
   }
+
+
 
   function start() {
+
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
+
     // De små temaer har ingen opgavesider, men fagordssiden hedder også bare "Fagord" dér.
+
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar a.sidebar-link .menu-text"), function (t) {
+
       if (/^Fagord til Tema:/.test(t.textContent.trim())) {
+
         t.textContent = "Fagord";
+
         var p = t.closest("li");
+
         if (p) p.classList.add("kapitelmenu-side");
+
       }
+
     });
+
     // "Kapitel 7: Syrer og baser" bliver til "7: Syrer og baser" (kun i menuen; siden hedder stadig "Kapitel 7").
+
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar li.sidebar-item-section > .sidebar-item-container .menu-text"), function (t) {
+
       t.textContent = t.textContent.trim().replace(/^Kapitel\s+([AB]?\d+):/, "$1:");
+
     });
+
     // Materialer står sidst i menuen, under Bilag.
+
     var liste = document.querySelector('#quarto-sidebar a.sidebar-link[href$="oevelser/oversigt.html"]');
+
     var del = liste && liste.closest("ul.sidebar-section.depth1");
+
     del = del && del.closest("li.sidebar-item-section");
+
     if (del && del.parentNode) del.parentNode.appendChild(del);
+
   }
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+
   else start();
+
 })();
+
 </script>
+
 <script>
+
 // Kernestofmærkaten ("Kernestof på kemi B", "Kernestof på kemi A" eller "Supplerende stof") står i .qmd-filen lige
+
 // under afsnittets overskrift. Dette script flytter den op til højre for overskriften som en lille, diskret ring
+
 // (Niels 18. okt. 2026: "lidt mere diskret ... til højre for overskriften og ikke nedenunder"). Uden JavaScript
+
 // bliver den stående under overskriften. I PDF'en er den ikke med. Se noter/kernestof.md.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var titel = document.querySelector("main h1.title") || document.querySelector("main h1");
+
   if (!titel) return;
+
   Array.prototype.forEach.call(document.querySelectorAll("main div.kernestofmaerke"), function (maerke) {
+
     var ring = document.createElement("span");
+
     ring.className = maerke.className;
+
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+
     titel.appendChild(ring);
+
     maerke.parentNode.removeChild(maerke);
+
   });
+
 });
+
 </script>
+
 <script>
+
 // Fokusspørgsmål i boksen Kort sagt (C-bogens kapitler og kapitel B3 23. okt. 2026, B-bogens kapitler 26. okt. 2026).
+
 // Se noter/fokusspoergsmaal.md.
+
 //
+
 // Spørgsmålene står i afsnittet lige under Kort sagt som ::: {.fokusspoergsmaal} med en nummereret liste.
+
 // Scriptet flytter dem ind i boksen og sætter en knap i boksens titellinje, der skifter mellem Kort sagt og
+
 // fokusspørgsmålene. Siden åbner altid med Kort sagt. Når spørgsmålene vises, lægger knappen Kopiér dem i
+
 // udklipsholderen med afsnittets titel og adresse, så læreren kan sende dem til eleverne. De kopieres både som
+
 // formateret tekst (nummereret liste og link, når de sættes ind i Teams, Word eller en mail) og som ren tekst.
+
 // Uden JavaScript ses spørgsmålene ikke; stilen står i stil/kemibogen.scss.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var lister = document.querySelectorAll("main .fokusspoergsmaal");
+
   if (!lister.length) return;
 
+
+
   function el(navn, klasse, tekst) {
+
     var e = document.createElement(navn);
+
     if (klasse) e.className = klasse;
+
     if (tekst) e.textContent = tekst;
+
     return e;
+
   }
+
   function knap(klasse, ikon, tekst) {
+
     var k = el("button", "fs-knap " + klasse);
+
     k.type = "button";
+
     var i = el("i", "bi " + ikon);
+
     i.setAttribute("aria-hidden", "true");
+
     k.appendChild(i);
+
     k.appendChild(el("span", "fs-knaptekst", tekst));
+
     return k;
+
   }
+
   function saetTekst(k, ikon, tekst) {
+
     k.querySelector(".bi").className = "bi " + ikon;
+
     k.querySelector(".fs-knaptekst").textContent = tekst;
+
   }
+
   function escape(t) {
+
     return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
   }
+
+
 
   // Afsnittets titel (fx "B3.2 Intermolekylære bindinger") uden linkikonet og uden kernestofmærkaten, som
+
   // stil/kernestofmaerke.html sætter ind i overskriften. Quarto lægger selve titlen i sit eget felt.
+
   function titel() {
+
     var h1 = document.querySelector("main h1.title") || document.querySelector("main h1");
+
     if (!h1) return document.title;
+
     var kopi = (h1.querySelector(".quarto-section-identifier") || h1).cloneNode(true);
+
     Array.prototype.forEach.call(kopi.querySelectorAll(".anchorjs-link, .screen-reader-only"), function (e) {
+
       e.parentNode.removeChild(e);
+
     });
+
     return kopi.textContent.replace(/\s+/g, " ").trim();
+
   }
+
+
 
   // Ren tekst, hvor sænkede og hævede tegn bliver til tegn, der kan stå i en almindelig tekst: C₂H₆O og Cl⁻
+
   var SAENKET = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉",
+
     "+": "₊", "−": "₋", "-": "₋" };
+
   var HAEVET = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹",
+
     "+": "⁺", "−": "⁻", "-": "⁻" };
+
   function renTekst(node) {
+
     var ud = "";
+
     Array.prototype.forEach.call(node.childNodes, function (n) {
+
       if (n.nodeType === 3) {
+
         ud += n.nodeValue;
+
       } else if (n.nodeType === 1) {
+
         var t = renTekst(n);
+
         var tabel = n.tagName === "SUB" ? SAENKET : n.tagName === "SUP" ? HAEVET : null;
+
         if (tabel && t.split("").every(function (c) { return tabel[c]; })) {
+
           t = t.split("").map(function (c) { return tabel[c]; }).join("");
+
         }
+
         ud += t;
+
       }
+
     });
+
     return ud.replace(/\s+/g, " ").trim();
+
   }
+
+
 
   // Formateret tekst til udklipsholderen: kun hævet, sænket og kursiv skrift følger med, ikke mærkerne fra
+
   // forklaringerne ved fagord (stil/fagordpeg.html) og andet, der kun hører til siden
+
   var BEHOLD = { SUB: "sub", SUP: "sup", EM: "em", I: "em", STRONG: "strong", B: "strong" };
+
   function renHtml(node) {
+
     var ud = "";
+
     Array.prototype.forEach.call(node.childNodes, function (n) {
+
       if (n.nodeType === 3) {
+
         ud += escape(n.nodeValue);
+
       } else if (n.nodeType === 1) {
+
         var tag = BEHOLD[n.tagName];
+
         ud += tag ? "<" + tag + ">" + renHtml(n) + "</" + tag + ">" : renHtml(n);
+
       }
+
     });
+
     return ud.replace(/\s+/g, " ").trim();
+
   }
+
+
 
   function kopier(tekst, html, faerdig) {
+
     // Den gamle måde virker også uden https: et markeret tekstfelt, og ved kopieringen lægges begge udgaver ind
+
     function iHaanden() {
+
       var felt = el("textarea");
+
       felt.value = tekst;
+
       felt.setAttribute("readonly", "");
+
       felt.style.position = "fixed";
+
       felt.style.top = "0";
+
       felt.style.opacity = "0";
+
       document.body.appendChild(felt);
+
       felt.select();
+
       function vedKopi(e) {
+
         if (!e.clipboardData) return;
+
         e.clipboardData.setData("text/plain", tekst);
+
         e.clipboardData.setData("text/html", html);
+
         e.preventDefault();
+
       }
+
       document.addEventListener("copy", vedKopi);
+
       var ok = false;
+
       try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+
       document.removeEventListener("copy", vedKopi);
+
       document.body.removeChild(felt);
+
       faerdig(ok);
+
     }
+
     if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write && window.isSecureContext) {
+
       try {
+
         navigator.clipboard.write([new ClipboardItem({
+
           "text/plain": new Blob([tekst], { type: "text/plain" }),
+
           "text/html": new Blob([html], { type: "text/html" })
+
         })]).then(function () { faerdig(true); }, iHaanden);
+
         return;
+
       } catch (e) {}
+
     }
+
     iHaanden();
+
   }
 
+
+
   Array.prototype.forEach.call(lister, function (liste, nr) {
+
     var boks = liste.previousElementSibling;
+
     if (!boks || !boks.classList.contains("callout")) return;
+
     var hoved = boks.querySelector(".callout-header");
+
     var titelfelt = boks.querySelector(".callout-title-container");
+
     var krop = boks.querySelector(".callout-body-container");
+
     if (!hoved || !titelfelt || !krop) return;
 
+
+
     // Titlen "Kort sagt" kommer i sit eget felt, så den kan skiftes
+
     var navn = el("span", "fs-navn", "Kort sagt");
+
     Array.prototype.slice.call(titelfelt.childNodes).forEach(function (n) {
+
       if (n.nodeType === 3) titelfelt.removeChild(n);
+
     });
+
     titelfelt.appendChild(navn);
 
+
+
     // Kort sagt og spørgsmålene ligger i boksen hver for sig
+
     var kortSagt = el("div", "fs-kortsagt");
+
     while (krop.firstChild) kortSagt.appendChild(krop.firstChild);
+
     krop.appendChild(kortSagt);
+
     krop.appendChild(liste);
+
     liste.id = liste.id || "fokusspoergsmaal-" + (nr + 1);
 
+
+
     boks.classList.add("fs-boks");
+
     boks.removeAttribute("title"); // ellers siger musen "Kort sagt", også når spørgsmålene vises
 
+
+
     var knapper = el("div", "fs-knapper");
+
     var kopiKnap = knap("fs-kopier", "bi-clipboard", "Kopiér");
+
     var skift = knap("fs-skift", "bi-question-circle", "Vis fokusspørgsmål");
+
     kopiKnap.hidden = true;
+
     kopiKnap.title = "Kopiér fokusspørgsmålene, så du kan sende dem til eleverne";
+
     skift.setAttribute("aria-controls", liste.id);
+
     skift.setAttribute("aria-expanded", "false");
+
     knapper.appendChild(kopiKnap);
+
     knapper.appendChild(skift);
+
     hoved.appendChild(knapper);
 
+
+
     skift.addEventListener("click", function () {
+
       var fokus = boks.classList.toggle("fs-vis-fokus");
+
       navn.textContent = fokus ? "Fokusspørgsmål" : "Kort sagt";
+
       saetTekst(skift, fokus ? "bi-card-text" : "bi-question-circle", fokus ? "Vis Kort sagt" : "Vis fokusspørgsmål");
+
       skift.setAttribute("aria-expanded", fokus ? "true" : "false");
+
       kopiKnap.hidden = !fokus;
+
     });
 
+
+
     var ur = null;
+
     kopiKnap.addEventListener("click", function () {
+
       var side = location.href.split("#")[0].split("?")[0];
+
       var afsnit = titel();
+
       var punkter = Array.prototype.slice.call(liste.querySelectorAll("li"));
+
       var tekst = "Fokusspørgsmål til " + afsnit + "\n" + side + "\n\n" +
+
         punkter.map(function (li, i) { return (i + 1) + ". " + renTekst(li); }).join("\n") + "\n";
+
       var html = "<p><strong>Fokusspørgsmål til <a href=\"" + escape(side) + "\">" + escape(afsnit) +
+
         "</a></strong></p><ol>" +
+
         punkter.map(function (li) { return "<li>" + renHtml(li) + "</li>"; }).join("") + "</ol>";
+
       kopier(tekst, html, function (ok) {
+
         saetTekst(kopiKnap, ok ? "bi-check-lg" : "bi-x-lg", ok ? "Kopieret" : "Kunne ikke kopiere");
+
         kopiKnap.classList.add("fs-kopieret");
+
         clearTimeout(ur);
+
         ur = setTimeout(function () {
+
           saetTekst(kopiKnap, "bi-clipboard", "Kopiér");
+
           kopiKnap.classList.remove("fs-kopieret");
+
         }, 2200);
+
       });
+
     });
+
   });
+
 });
+
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
