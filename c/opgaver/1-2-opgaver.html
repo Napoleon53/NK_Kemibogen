@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7f9ef53dce5cab2793d9983fb1f7b719.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8db77763d974eb14104974ff4e388ec2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,35 +80,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -1615,14 +1586,11 @@ window.Quarto = {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#1.2.1" id="toc-1.2.1" class="nav-link active" data-scroll-target="#1.2.1">Opgave 1.2.1: Atomets partikler</a></li>
-  <li><a href="#1.2.2" id="toc-1.2.2" class="nav-link" data-scroll-target="#1.2.2">Opgave 1.2.2: Tæl partiklerne</a></li>
-  <li><a href="#1.2.3" id="toc-1.2.3" class="nav-link" data-scroll-target="#1.2.3">Opgave 1.2.3: Brug atomnummeret</a></li>
-  <li><a href="#1.2.4" id="toc-1.2.4" class="nav-link" data-scroll-target="#1.2.4">Opgave 1.2.4: Isotoper af carbon</a></li>
-  <li><a href="#1.2.5" id="toc-1.2.5" class="nav-link" data-scroll-target="#1.2.5">Opgave 1.2.5: Chlors atommasse</a></li>
-  <li><a href="#1.2.6" id="toc-1.2.6" class="nav-link" data-scroll-target="#1.2.6">Opgave 1.2.6: Hvor stor er kernen?</a></li>
-  <li><a href="#1.2.7" id="toc-1.2.7" class="nav-link" data-scroll-target="#1.2.7">Opgave 1.2.7: Sandt eller falsk?</a></li>
-  <li><a href="#1.2.8" id="toc-1.2.8" class="nav-link" data-scroll-target="#1.2.8">Opgave 1.2.8: Hvorfor er et atom neutralt?</a></li>
+  <li><a href="#1.2.1" id="toc-1.2.1" class="nav-link active" data-scroll-target="#1.2.1">Opgave 1.2.1: Tæl partiklerne</a></li>
+  <li><a href="#1.2.2" id="toc-1.2.2" class="nav-link" data-scroll-target="#1.2.2">Opgave 1.2.2: Brug atomnummeret</a></li>
+  <li><a href="#1.2.3" id="toc-1.2.3" class="nav-link" data-scroll-target="#1.2.3">Opgave 1.2.3: Isotoper af carbon</a></li>
+  <li><a href="#1.2.4" id="toc-1.2.4" class="nav-link" data-scroll-target="#1.2.4">Opgave 1.2.4: Chlors atommasse</a></li>
+  <li><a href="#1.2.5" id="toc-1.2.5" class="nav-link" data-scroll-target="#1.2.5">Opgave 1.2.5: Sandt eller falsk?</a></li>
   <li><a href="#opgaver-med-fødevaretema" id="toc-opgaver-med-fødevaretema" class="nav-link" data-scroll-target="#opgaver-med-fødevaretema">Opgaver med fødevaretema</a></li>
   <li><a href="#1.2.mad.1" id="toc-1.2.mad.1" class="nav-link" data-scroll-target="#1.2.mad.1">Opgave 1.2.mad.1: Atomerne i kroppen</a></li>
   <li><a href="#1.2.mad.2" id="toc-1.2.mad.2" class="nav-link" data-scroll-target="#1.2.mad.2">Opgave 1.2.mad.2: Carbon i maden</a></li>
@@ -1660,31 +1628,44 @@ window.Quarto = {
 
 <p>Opgaverne hører til afsnit <a href="../kapitler/1-2-atomet.html">1.2 Atomet</a>. Prøv selv, før du åbner hjælpen under opgaven. Grundstoffernes navne og atomnumre står i <a href="../bilag/grundstoffer.html">det periodiske system bagest i bogen</a>.</p>
 <section id="1.2.1" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.1">Opgave 1.2.1: Atomets partikler</h2>
-<p>Udfyld skemaet.</p>
+<h2 class="anchored" data-anchor-id="1.2.1">Opgave 1.2.1: Tæl partiklerne</h2>
+<p>Figuren viser tre atomer. Tæl protoner, neutroner og elektroner i hvert atom, og udfyld skemaet. Grundstoffet finder du i <a href="../bilag/grundstoffer.html">det periodiske system bagest i bogen</a>.</p>
+<p><a href="../figurer/opg-atomer.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../figurer/opg-atomer.svg" class="img-fluid" alt="Tre atomer, A, B og C. Protoner er røde med plus, neutroner er grå, og elektroner er blå med minus."></a></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Partikel</th>
-<th style="text-align: left;">Plads i atomet</th>
-<th style="text-align: center;">Ladning</th>
+<th style="text-align: center;">Atom</th>
+<th style="text-align: center;">Protoner</th>
+<th style="text-align: center;">Neutroner</th>
+<th style="text-align: center;">Elektroner</th>
+<th style="text-align: center;">Atomnummer</th>
+<th style="text-align: left;">Grundstof</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Proton</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">A</td>
 <td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Neutron</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">B</td>
 <td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Elektron</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">C</td>
 <td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
@@ -1700,7 +1681,7 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To af partiklerne sidder i kernen. Den tredje bevæger sig uden om kernen.</p>
+<p>Protonerne er de røde kugler med et plus. Neutronerne er de grå kugler. Elektronerne er de blå kugler uden om kernen.</p>
 </div>
 </div>
 </div>
@@ -1716,7 +1697,7 @@ window.Quarto = {
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Navnet neutron kommer af ordet neutral. Protonen og elektronen har modsat ladning.</p>
+<p>Atomnummeret er antallet af protoner. Atom A har 3 protoner og har derfor atomnummer 3. Find grundstoffet med atomnummer 3 i listen.</p>
 </div>
 </div>
 </div>
@@ -1731,89 +1712,6 @@ window.Quarto = {
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Partikel</th>
-<th style="text-align: left;">Plads i atomet</th>
-<th style="text-align: center;">Ladning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Proton</td>
-<td style="text-align: left;">i kernen</td>
-<td style="text-align: center;">+1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Neutron</td>
-<td style="text-align: left;">i kernen</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Elektron</td>
-<td style="text-align: left;">uden om kernen</td>
-<td style="text-align: center;">−1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="1.2.2" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.2">Opgave 1.2.2: Tæl partiklerne</h2>
-<p>Figuren viser tre atomer.</p>
-<p><a href="../figurer/opg-atomer.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../figurer/opg-atomer.svg" class="img-fluid" alt="Tre atomer, A, B og C. Protoner er røde med plus, neutroner er grå, og elektroner er blå med minus."></a></p>
-<ol type="a">
-<li>Tæl protoner, neutroner og elektroner i hvert atom.</li>
-<li>Hvad er atomnummeret for hvert atom?</li>
-<li>Hvilket grundstof er hvert atom? Brug <a href="../bilag/grundstoffer.html">det periodiske system bagest i bogen</a>.</li>
-</ol>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Protonerne er de røde kugler med et plus. Neutronerne er de grå kugler. Elektronerne er de blå kugler uden om kernen.</p>
-</div>
-</div>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Atomnummeret er antallet af protoner. Atom A har 3 protoner og har derfor atomnummer 3. Find grundstoffet med atomnummer 3 i listen.</p>
-</div>
-</div>
-</div>
-<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Facit
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -1857,8 +1755,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="1.2.3" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.3">Opgave 1.2.3: Brug atomnummeret</h2>
+<section id="1.2.2" class="level2">
+<h2 class="anchored" data-anchor-id="1.2.2">Opgave 1.2.2: Brug atomnummeret</h2>
 <p>Udfyld de tomme felter. Brug <a href="../bilag/grundstoffer.html">det periodiske system bagest i bogen</a>.</p>
 <table class="caption-top table">
 <thead>
@@ -1916,7 +1814,7 @@ window.Quarto = {
 </tbody>
 </table>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1925,14 +1823,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Atomnummeret er antallet af protoner. Kender du det ene tal, kender du også det andet.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1941,14 +1839,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Et atom er neutralt. Det har derfor lige så mange elektroner som protoner. Carbon har atomnummer 6 og har altså 6 protoner og 6 elektroner.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1957,7 +1855,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -2018,8 +1916,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="1.2.4" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.4">Opgave 1.2.4: Isotoper af carbon</h2>
+<section id="1.2.3" class="level2">
+<h2 class="anchored" data-anchor-id="1.2.3">Opgave 1.2.3: Isotoper af carbon</h2>
 <p>Carbon har atomnummer 6. Der findes tre isotoper af carbon i naturen: carbon-12, carbon-13 og carbon-14.</p>
 <p>Udfyld skemaet.</p>
 <table class="caption-top table">
@@ -2053,7 +1951,7 @@ window.Quarto = {
 </tbody>
 </table>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2062,14 +1960,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alle carbonatomer har lige mange protoner. Tallet efter navnet er antallet af protoner og neutroner tilsammen.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2078,14 +1976,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Antallet af neutroner findes ved at trække antallet af protoner fra tallet i navnet. Carbon-12 har 12 partikler i kernen. 6 af dem er protoner, så de sidste 6 er neutroner.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2094,7 +1992,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -2130,13 +2028,109 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="1.2.5" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.5">Opgave 1.2.5: Chlors atommasse</h2>
+<section id="1.2.4" class="level2">
+<h2 class="anchored" data-anchor-id="1.2.4">Opgave 1.2.4: Chlors atommasse</h2>
 <p>Chlor har atomnummer 17 og findes som to isotoper: chlor-35 og chlor-37.</p>
 <ol type="a">
 <li>Hvor mange neutroner har hver af de to isotoper?</li>
 <li>I det periodiske system står der, at chlors atommasse er 35,45 u. Hvilken af de to isotoper er der flest af i naturen? Begrund dit svar.</li>
 </ol>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Brug samme metode som i opgave 1.2.3 til spørgsmål a. Til spørgsmål b skal du huske, at atommassen er et gennemsnit af isotoperne.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Hvis der var lige mange af de to isotoper, ville gennemsnittet ligge midt imellem 35 og 37, altså på 36. Ligger 35,45 tættest på 35 eller på 37?</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Chlor-35 har 18 neutroner, og chlor-37 har 20 neutroner. Begge har 17 protoner.</li>
+<li>Der er flest af chlor-35. Atommassen 35,45 u ligger tættest på 35, så de lette atomer må fylde mest i gennemsnittet.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="1.2.5" class="level2">
+<h2 class="anchored" data-anchor-id="1.2.5">Opgave 1.2.5: Sandt eller falsk?</h2>
+<p>Afgør, om hver påstand er sand eller falsk. Sæt kryds.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Påstand</th>
+<th style="text-align: center;">Sand</th>
+<th style="text-align: center;">Falsk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Elektronerne sidder i kernen.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Et atom har lige mange protoner og elektroner.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Neutronen har en negativ ladning.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Atomnummeret er antallet af protoner.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Næsten hele atomets masse sidder i elektronerne.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">To isotoper af samme grundstof har forskelligt antal protoner.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2149,7 +2143,7 @@ window.Quarto = {
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Brug samme metode som i opgave 1.2.4 til spørgsmål a. Til spørgsmål b skal du huske, at atommassen er et gennemsnit af isotoperne.</p>
+<p>Sammenlign hver påstand med figuren af lithiumatomet og teksten om partiklerne i afsnit 1.2.</p>
 </div>
 </div>
 </div>
@@ -2165,7 +2159,7 @@ window.Quarto = {
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hvis der var lige mange af de to isotoper, ville gennemsnittet ligge midt imellem 35 og 37, altså på 36. Ligger 35,45 tættest på 35 eller på 37?</p>
+<p>To af påstandene er sande: den om, at et atom har lige mange protoner og elektroner, og den om atomnummeret. De fire andre er falske.</p>
 </div>
 </div>
 </div>
@@ -2181,190 +2175,14 @@ window.Quarto = {
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="a">
-<li>Chlor-35 har 18 neutroner, og chlor-37 har 20 neutroner. Begge har 17 protoner.</li>
-<li>Der er flest af chlor-35. Atommassen 35,45 u ligger tættest på 35, så de lette atomer må fylde mest i gennemsnittet.</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="1.2.6" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.6">Opgave 1.2.6: Hvor stor er kernen?</h2>
-<p>Et atom er omkring 50 000 gange større end sin kerne.</p>
-<p>Forestil dig, at kernen er forstørret op, så den er på størrelse med en ært på 1 cm. Hvor stort ville hele atomet så være? Angiv svaret i kilometer.</p>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Atomet er 50 000 gange større end kernen. Gang kernens størrelse med 50 000.</p>
-</div>
-</div>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Gang 1 cm med 50 000, så du får atomets størrelse i centimeter. Regn den derefter om, for der går 100 cm på 1 m og 1000 m på 1 km.</p>
-</div>
-</div>
-</div>
-<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Facit
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Hvis kernen var en ært, ville atomet være 0,5 km bredt:</p>
-<p><span class="math display">\[
-\text{atomets bredde} = 50\,000 \cdot 1\ \mathrm{cm} = 50\,000\ \mathrm{cm} = 0{,}5\ \mathrm{km}
-\]</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="1.2.7" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.7">Opgave 1.2.7: Sandt eller falsk?</h2>
-<p>Afgør, om hver påstand er sand eller falsk. Ret de falske påstande, så de bliver sande.</p>
-<ol type="a">
-<li>Elektronerne sidder i kernen.</li>
-<li>Et atom har lige mange protoner og elektroner.</li>
-<li>Neutronen har en negativ ladning.</li>
-<li>Atomnummeret er antallet af protoner.</li>
-<li>Næsten hele atomets masse sidder i elektronerne.</li>
-<li>To isotoper af samme grundstof har forskelligt antal protoner.</li>
-</ol>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Sammenlign hver påstand med figuren af carbonatomet og teksten om partiklerne i afsnit 1.2.</p>
-</div>
-</div>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Påstand b og d er sande. De fire andre er falske.</p>
-</div>
-</div>
-</div>
-<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Facit
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="a">
-<li>Falsk. Elektronerne bevæger sig uden om kernen.</li>
-<li>Sand.</li>
-<li>Falsk. Neutronen har ingen ladning.</li>
-<li>Sand.</li>
-<li>Falsk. Næsten hele atomets masse sidder i kernen.</li>
-<li>Falsk. To isotoper af samme grundstof har forskelligt antal neutroner.</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="1.2.8" class="level2">
-<h2 class="anchored" data-anchor-id="1.2.8">Opgave 1.2.8: Hvorfor er et atom neutralt?</h2>
-<p>Et magnesiumatom har atomnummer 12. Forklar, hvorfor atomet er elektrisk neutralt.</p>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Find først ud af, hvor mange protoner og elektroner atomet har, og hvilken ladning hver af dem har.</p>
-</div>
-</div>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Du kan begynde dine sætninger sådan:</p>
 <ul>
-<li>Et magnesiumatom har … protoner, som hver har ladningen …</li>
-<li>Atomet har også … elektroner, som hver har ladningen …</li>
-<li>Tilsammen bliver ladningen …</li>
+<li>Elektronerne sidder i kernen: falsk. Elektronerne bevæger sig uden om kernen.</li>
+<li>Et atom har lige mange protoner og elektroner: sand.</li>
+<li>Neutronen har en negativ ladning: falsk. Neutronen har ingen ladning.</li>
+<li>Atomnummeret er antallet af protoner: sand.</li>
+<li>Næsten hele atomets masse sidder i elektronerne: falsk. Næsten hele atomets masse sidder i kernen.</li>
+<li>To isotoper af samme grundstof har forskelligt antal protoner: falsk. De har forskelligt antal neutroner.</li>
 </ul>
-</div>
-</div>
-</div>
-<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Facit
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Et magnesiumatom har 12 protoner, som hver har ladningen +1. Atomet har også 12 elektroner, som hver har ladningen −1. De 12 positive og 12 negative ladninger ophæver hinanden, så den samlede ladning er 0.</p>
 </div>
 </div>
 </div>
@@ -2425,7 +2243,7 @@ window.Quarto = {
 </tbody>
 </table>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2434,14 +2252,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Atomnummeret er antallet af protoner. Find atomnumrene i det periodiske system bagest i bogen.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2450,14 +2268,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Et atom er neutralt og har derfor lige så mange elektroner som protoner. Carbon har atomnummer 6 og har altså 6 protoner og 6 elektroner.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2466,7 +2284,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -2523,7 +2341,7 @@ window.Quarto = {
 <li>Reagerer de to isotoper forskelligt i kroppen?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2532,14 +2350,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Tallet efter navnet er antallet af protoner og neutroner tilsammen. Antallet af protoner er atomnummeret.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2548,14 +2366,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Carbon-13 har 6 protoner. Antallet af neutroner er derfor 13 − 6. Til spørgsmål c kan du læse sidste linje i afsnittet om isotoper.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2564,7 +2382,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Carbon-13 har 6 protoner, 7 neutroner og 6 elektroner.</li>
@@ -2577,7 +2395,7 @@ window.Quarto = {
 </section>
 <section id="opgaver-med-sundhedstema" class="level2 tema sundhed">
 <h2 class="tema sundhed anchored" data-anchor-id="opgaver-med-sundhedstema">Opgaver med sundhedstema</h2>
-<p>På et hospital bruges atomer til mere end medicin. Særlige isotoper kan vise, hvad der sker inde i kroppen, og de kan behandle sygdomme. Opgaverne træner det samme som opgave 1.2.1 til 1.2.8, men handler alle om sundhed og medicin. Baggrunden står på siden <a href="../temaer/t1-2-atomer-og-isotoper.html">T1.2 Atomer og isotoper</a> i Tema: Sundhed.</p>
+<p>På et hospital bruges atomer til mere end medicin. Særlige isotoper kan vise, hvad der sker inde i kroppen, og de kan behandle sygdomme. Opgaverne træner det samme som opgave 1.2.1 til 1.2.5, men handler alle om sundhed og medicin. Baggrunden står på siden <a href="../temaer/t1-2-atomer-og-isotoper.html">T1.2 Atomer og isotoper</a> i Tema: Sundhed.</p>
 </section>
 <section id="1.2.sundhed.1" class="level2">
 <h2 class="anchored" data-anchor-id="1.2.sundhed.1">Opgave 1.2.sundhed.1: Partiklerne i et jernatom</h2>
@@ -2615,7 +2433,7 @@ window.Quarto = {
 <li>Et jernatom har 26 protoner, 30 neutroner og 26 elektroner. Hvor mange partikler sidder der i kernen, og hvor mange er der uden om kernen?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2624,14 +2442,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To af partiklerne sidder i kernen. Den tredje bevæger sig uden om kernen.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2640,14 +2458,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Partiklen i kernen med ladningen +1 er protonen. Navnet neutron kommer af ordet neutral. Til spørgsmål b lægger du de to slags partikler i kernen sammen.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2656,7 +2474,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span id="ord-spoergsmaal-a" class="fagord-anker"><strong>Spørgsmål a</strong></span></p>
 <table class="caption-top table">
@@ -2750,7 +2568,7 @@ window.Quarto = {
 </tbody>
 </table>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2759,14 +2577,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Atomnummeret er antallet af protoner. Kender du det ene tal, kender du også det andet.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2775,14 +2593,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Et atom er neutralt. Det har derfor lige så mange elektroner som protoner. Calcium har atomnummer 20 og har altså 20 protoner og 20 elektroner.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2791,7 +2609,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -2916,7 +2734,7 @@ window.Quarto = {
 <li>Det fluor, der findes i tandpasta, er fluor-19. Hvad er ens for et atom af fluor-18 og et atom af fluor-19, og hvad er forskelligt?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2925,14 +2743,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Atomnummeret er antallet af protoner. Tallet efter navnet er antallet af protoner og neutroner tilsammen.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2941,14 +2759,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Antallet af neutroner findes ved at trække antallet af protoner fra tallet i navnet. Fluor-18 har 18 partikler i kernen. 9 af dem er protoner, så de sidste 9 er neutroner.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2957,7 +2775,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Spørgsmål a</strong></p>
 <table class="caption-top table">
@@ -3010,7 +2828,7 @@ window.Quarto = {
 <li>I <a href="../bilag/grundstoffer.html">det periodiske system bagest i bogen</a> står der, at lithiums atommasse er 6,941 u. Hvilken af de to isotoper er der flest af i naturen? Begrund dit svar.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3019,14 +2837,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Brug samme metode som i opgave 1.2.sundhed.3 til spørgsmål a. Til spørgsmål b skal du huske, at atommassen er et gennemsnit af isotoperne.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3035,14 +2853,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Hvis der var lige mange af de to isotoper, ville gennemsnittet ligge midt imellem 6 og 7, altså på 6,5. Ligger 6,941 tættest på 6 eller på 7?</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3051,7 +2869,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Lithium-6 har 3 neutroner, og lithium-7 har 4 neutroner. Begge har 3 protoner.</li>
@@ -3073,7 +2891,7 @@ window.Quarto = {
 <li>Elektronerne i et natriumatom sidder i kernen.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3082,14 +2900,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sammenlign hver påstand med figuren af carbonatomet og med stykket om isotoper i afsnit 1.2.</p>
+<p>Sammenlign hver påstand med figuren af lithiumatomet og med stykket om isotoper i afsnit 1.2.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3098,14 +2916,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Påstand a, d og e er sande. De tre andre er falske.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3114,7 +2932,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Sand.</li>
@@ -3132,7 +2950,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="1.2.sundhed.6">Opgave 1.2.sundhed.6: Hvorfor er et titanatom neutralt?</h2>
 <p>En kunstig hofte er lavet af metallet titan. Et titanatom har atomnummer 22. Forklar, hvorfor atomet er elektrisk neutralt.</p>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3141,14 +2959,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Find først ud af, hvor mange protoner og elektroner atomet har, og hvilken ladning hver af dem har.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3157,7 +2975,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Du kan begynde dine sætninger sådan:</p>
 <ul>
@@ -3169,7 +2987,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -3178,7 +2996,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Et titanatom har 22 protoner, som hver har ladningen +1. Atomet har også 22 elektroner, som hver har ladningen −1. De 22 positive og 22 negative ladninger ophæver hinanden, så den samlede ladning er 0.</p>
 </div>
