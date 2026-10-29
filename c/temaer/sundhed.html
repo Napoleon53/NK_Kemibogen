@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7f9ef53dce5cab2793d9983fb1f7b719.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-86105dd9626c63be748b385bc768594a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1724,18 +1724,18 @@ Figur&nbsp;T1.1: Kroppen set med kemikerens øjne. Hver mærkat viser, hvilken s
 </section>
 <section id="sundhedsopgaver-i-kapitlerne" class="level2">
 <h2 class="anchored" data-anchor-id="sundhedsopgaver-i-kapitlerne">Sundhedsopgaver i kapitlerne</h2>
-<p>Sidst på opgavesiderne i kapitel 1, 2, 3 og 6 står opgaver med sundhedstema. De træner det samme som de almindelige opgaver til afsnittet, og baggrunden for dem står på temaets sider.</p>
+<p>Opgavesiderne i kapitel 1, 2, 3 og 6 har opgaver med mærkatet <em>Velegnet til sundhedsforløb</em>. I kapitel 1 står de mellem de andre opgaver, og i kapitel 2, 3 og 6 står de sidst på siden. Baggrunden for dem står på temaets sider.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Kapitel</th>
-<th style="text-align: left;">Opgaver med sundhedstema</th>
+<th style="text-align: left;">Sundhedsopgaver</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1 Atomer</td>
-<td style="text-align: left;"><a href="../opgaver/1-1-opgaver.html#opgaver-med-sundhedstema">1.1</a>, <a href="../opgaver/1-2-opgaver.html#opgaver-med-sundhedstema">1.2</a>, <a href="../opgaver/1-3-opgaver.html#opgaver-med-sundhedstema">1.3</a> og <a href="../opgaver/1-4-opgaver.html#opgaver-med-sundhedstema">1.4</a></td>
+<td style="text-align: left;"><a href="../opgaver/1-1-opgaver.html#1.1.4">1.1.4</a>, <a href="../opgaver/1-2-opgaver.html#1.2.6">1.2.6</a>, <a href="../opgaver/1-4-opgaver.html#1.4.13">1.4.13</a> og <a href="../opgaver/1-4-opgaver.html#1.4.15">1.4.15</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2 Ionforbindelser</td>
@@ -2937,6 +2937,17 @@ document.addEventListener("DOMContentLoaded", function () {
     ring.className = maerke.className;
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
     titel.appendChild(ring);
+    maerke.parentNode.removeChild(maerke);
+  });
+  // Forløbsmærkatet på en opgave ("Velegnet til sundhedsforløb", se stil/lektielinks.lua) står lige under opgavens
+  // overskrift og flyttes på samme måde op til højre for titlen.
+  Array.prototype.forEach.call(document.querySelectorAll("main div.forloebsmaerke"), function (maerke) {
+    var h2 = maerke.previousElementSibling;
+    if (!h2 || h2.tagName !== "H2") return;
+    var ring = document.createElement("span");
+    ring.className = maerke.className;
+    ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+    h2.appendChild(ring);
     maerke.parentNode.removeChild(maerke);
   });
 });
