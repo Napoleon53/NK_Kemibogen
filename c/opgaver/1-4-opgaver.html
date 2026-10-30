@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a826bbd2282cbe4cca3efcac8ba8cf6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b52a2bbdbdffb81cbedb2d38fde6e998.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -79,6 +79,32 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script>
+
+// Densitetens ρ i formlerne: \varrho tegnes med bogens eget ρ med hale fra skriften "Kemibogen I" (kursiv) i stedet for
+
+// formelskriftens ϱ, så formlerne har samme ρ som teksten og figurerne (Niels 29. okt. 2026; se "Faste valg" i README.md).
+
+// Det er 10 % større, så skålen bliver lige så høj som formelskriftens m.
+
+// Skriften står i stil/i-skrift.scss og laves af vaerktoej/lav_i_skrift.py. Siden henter MathJax selv bagefter.
+
+window.MathJax = {
+
+  loader: { load: ["[tex]/html"] },
+
+  tex: {
+
+    packages: { "[+]": ["html"] },
+
+    macros: { varrho: "\\style{font-family:'Kemibogen I';font-style:italic;font-size:110%}{ρ}" }
+
+  }
+
+};
+
+</script>
+
 
 
 </head>
@@ -1586,22 +1612,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#1.4.1" id="toc-1.4.1" class="nav-link active" data-scroll-target="#1.4.1">Opgave 1.4.1: Kemisk reaktion eller ej?</a></li>
-  <li><a href="#1.4.2" id="toc-1.4.2" class="nav-link" data-scroll-target="#1.4.2">Opgave 1.4.2: Læs formlen</a></li>
-  <li><a href="#1.4.3" id="toc-1.4.3" class="nav-link" data-scroll-target="#1.4.3">Opgave 1.4.3: Afstem dannelsen af ammoniak trin for trin</a></li>
-  <li><a href="#1.4.4" id="toc-1.4.4" class="nav-link" data-scroll-target="#1.4.4">Opgave 1.4.4: Tæl atomerne</a></li>
-  <li><a href="#1.4.5" id="toc-1.4.5" class="nav-link" data-scroll-target="#1.4.5">Opgave 1.4.5: Afstem de første reaktionsskemaer</a></li>
-  <li><a href="#1.4.6" id="toc-1.4.6" class="nav-link" data-scroll-target="#1.4.6">Opgave 1.4.6: Afstem reaktionsskemaerne</a></li>
-  <li><a href="#1.4.7" id="toc-1.4.7" class="nav-link" data-scroll-target="#1.4.7">Opgave 1.4.7: Afstem lidt sværere reaktionsskemaer</a></li>
-  <li><a href="#1.4.8" id="toc-1.4.8" class="nav-link" data-scroll-target="#1.4.8">Opgave 1.4.8: Afstem forbrændinger</a></li>
-  <li><a href="#1.4.9" id="toc-1.4.9" class="nav-link" data-scroll-target="#1.4.9">Opgave 1.4.9: Find fejlen</a></li>
-  <li><a href="#1.4.10" id="toc-1.4.10" class="nav-link" data-scroll-target="#1.4.10">Opgave 1.4.10: Fra tegning til reaktionsskema</a></li>
-  <li><a href="#1.4.11" id="toc-1.4.11" class="nav-link" data-scroll-target="#1.4.11">Opgave 1.4.11: Tilstandssymboler</a></li>
-  <li><a href="#1.4.12" id="toc-1.4.12" class="nav-link" data-scroll-target="#1.4.12">Opgave 1.4.12: Hjortetaksalt i småkager</a></li>
-  <li><a href="#1.4.13" id="toc-1.4.13" class="nav-link" data-scroll-target="#1.4.13">Opgave 1.4.13: Afstem reaktionsskemaer fra krop og medicin</a></li>
-  <li><a href="#1.4.14" id="toc-1.4.14" class="nav-link" data-scroll-target="#1.4.14">Opgave 1.4.14: Gær laver sukker om til alkohol</a></li>
-  <li><a href="#1.4.15" id="toc-1.4.15" class="nav-link" data-scroll-target="#1.4.15">Opgave 1.4.15: Afstem lidt sværere reaktionsskemaer om sundhed</a></li>
-  <li><a href="#1.4.16" id="toc-1.4.16" class="nav-link" data-scroll-target="#1.4.16">Opgave 1.4.16: Kroppen forbrænder sukker</a></li>
+  <li><a href="#1.4.1" id="toc-1.4.1" class="nav-link active" data-scroll-target="#1.4.1">Opgave 1.4.1: Læs formlen</a></li>
+  <li><a href="#1.4.2" id="toc-1.4.2" class="nav-link" data-scroll-target="#1.4.2">Opgave 1.4.2: Afstem dannelsen af ammoniak trin for trin</a></li>
+  <li><a href="#1.4.3" id="toc-1.4.3" class="nav-link" data-scroll-target="#1.4.3">Opgave 1.4.3: Tæl atomerne</a></li>
+  <li><a href="#1.4.4" id="toc-1.4.4" class="nav-link" data-scroll-target="#1.4.4">Opgave 1.4.4: Afstem de første reaktionsskemaer</a></li>
+  <li><a href="#1.4.5" id="toc-1.4.5" class="nav-link" data-scroll-target="#1.4.5">Opgave 1.4.5: Afstem reaktionsskemaerne</a></li>
+  <li><a href="#1.4.6" id="toc-1.4.6" class="nav-link" data-scroll-target="#1.4.6">Opgave 1.4.6: Afstem lidt sværere reaktionsskemaer</a></li>
+  <li><a href="#1.4.7" id="toc-1.4.7" class="nav-link" data-scroll-target="#1.4.7">Opgave 1.4.7: Afstem forbrændinger</a></li>
+  <li><a href="#1.4.8" id="toc-1.4.8" class="nav-link" data-scroll-target="#1.4.8">Opgave 1.4.8: Find fejlen</a></li>
+  <li><a href="#1.4.9" id="toc-1.4.9" class="nav-link" data-scroll-target="#1.4.9">Opgave 1.4.9: Fra tegning til reaktionsskema</a></li>
+  <li><a href="#1.4.10" id="toc-1.4.10" class="nav-link" data-scroll-target="#1.4.10">Opgave 1.4.10: Tilstandssymboler</a></li>
+  <li><a href="#1.4.11" id="toc-1.4.11" class="nav-link" data-scroll-target="#1.4.11">Opgave 1.4.11: Hjortetaksalt i småkager</a></li>
+  <li><a href="#1.4.12" id="toc-1.4.12" class="nav-link" data-scroll-target="#1.4.12">Opgave 1.4.12: Afstem reaktionsskemaer fra krop og medicin</a></li>
+  <li><a href="#1.4.13" id="toc-1.4.13" class="nav-link" data-scroll-target="#1.4.13">Opgave 1.4.13: Gær laver sukker om til alkohol</a></li>
+  <li><a href="#1.4.14" id="toc-1.4.14" class="nav-link" data-scroll-target="#1.4.14">Opgave 1.4.14: Afstem lidt sværere reaktionsskemaer om sundhed</a></li>
+  <li><a href="#1.4.15" id="toc-1.4.15" class="nav-link" data-scroll-target="#1.4.15">Opgave 1.4.15: Kroppen forbrænder sukker</a></li>
   </ul>
 </nav>
     </div>
@@ -1629,145 +1654,7 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Opgaverne hører til afsnit <a href="../kapitler/1-4-reaktionsskemaer.html">1.4 Reaktionsskemaer og afstemning</a>. Prøv selv, før du åbner hjælpen under opgaven.</p>
 <section id="1.4.1" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.1">Opgave 1.4.1: Kemisk reaktion eller ej?</h2>
-<p>Afgør for hver sætning, om der sker en kemisk reaktion. Skriv for de kemiske reaktioner, hvilket kendetegn du kan se.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Sætning</th>
-<th style="text-align: center;">Kemisk reaktion?</th>
-<th style="text-align: left;">Kendetegn</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Et stearinlys brænder.</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Isterninger smelter i et glas saftevand.</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Et søm ruster og bliver rødbrunt.</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sukker bliver opløst i te.</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Vand koger i en elkedel.</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">En brusetablet bobler i et glas vand.</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Spørg dig selv: Bliver der dannet et nyt stof, eller er det stadig det samme stof i en anden form? Kendetegnene står under <em>Kendetegn på kemiske reaktioner</em> i afsnit 1.4.</p>
-</div>
-</div>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Når is smelter, er det stadig vand, så det er ikke en kemisk reaktion. Når et stearinlys brænder, kommer der lys, og der dannes nye stoffer, som er gasser.</p>
-</div>
-</div>
-</div>
-<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Facit
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 47%">
-<col style="width: 28%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Sætning</th>
-<th style="text-align: center;">Kemisk reaktion?</th>
-<th style="text-align: left;">Kendetegn</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Et stearinlys brænder.</td>
-<td style="text-align: center;">ja</td>
-<td style="text-align: left;">Der kommer lys, og temperaturen stiger.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Isterninger smelter i et glas saftevand.</td>
-<td style="text-align: center;">nej</td>
-<td style="text-align: left;">Isen bliver til flydende vand, men det er stadig vand.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Et søm ruster og bliver rødbrunt.</td>
-<td style="text-align: center;">ja</td>
-<td style="text-align: left;">Farven ændrer sig.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sukker bliver opløst i te.</td>
-<td style="text-align: center;">nej</td>
-<td style="text-align: left;">Sukkeret er stadig sukker, selv om det ikke kan ses.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Vand koger i en elkedel.</td>
-<td style="text-align: center;">nej</td>
-<td style="text-align: left;">Vanddampen er stadig vand.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">En brusetablet bobler i et glas vand.</td>
-<td style="text-align: center;">ja</td>
-<td style="text-align: left;">Der dannes en gas.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="1.4.2" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.2">Opgave 1.4.2: Læs formlen</h2>
+<h2 class="anchored" data-anchor-id="1.4.1">Opgave 1.4.1: Læs formlen</h2>
 <p>Skriv, hvor mange atomer der er af hver slags i ét molekyle af stoffet. Skriv også, hvor mange atomer der er i alt.</p>
 <table class="caption-top table">
 <thead>
@@ -1818,7 +1705,7 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1827,14 +1714,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Det lille, sænkede tal hører til symbolet lige foran tallet. Står der ikke noget tal efter et symbol, er der ét atom af den slags.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1843,14 +1730,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>I CO<sub>2</sub> står der ikke noget tal efter C, så der er 1 carbonatom. Efter O står der 2, så der er 2 oxygenatomer. Det giver 3 atomer i alt.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1859,7 +1746,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -1901,8 +1788,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="1.4.3" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.3">Opgave 1.4.3: Afstem dannelsen af ammoniak trin for trin</h2>
+<section id="1.4.2" class="level2">
+<h2 class="anchored" data-anchor-id="1.4.2">Opgave 1.4.2: Afstem dannelsen af ammoniak trin for trin</h2>
 <p>Ammoniak, NH<sub>3</sub>, bruges til at fremstille kunstgødning og laves af dinitrogen og dihydrogen. Tegningen viser reaktionsskemaet, før det er afstemt.</p>
 <p><a href="../figurer/opg-ammoniak-uafstemt.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../figurer/opg-ammoniak-uafstemt.svg" class="img-fluid" alt="Skemaet N2 + H2 bliver til NH3 med et dinitrogenmolekyle, et dihydrogenmolekyle og et ammoniakmolekyle. Skemaet er ikke afstemt. Under pilen er et regnskab med tomme felter til antallet af N og H før og efter pilen."></a></p>
 <ol type="a">
@@ -1910,7 +1797,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Sæt koefficienter i skemaet, så antallet af N og H passer.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1919,14 +1806,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Følg trinene i eksemplet under <em>Sådan afstemmer du et reaktionsskema</em> i afsnit 1.4. Begynd med nitrogen, for H<sub>2</sub> består kun af ét grundstof, så den koefficient er lettest at rette til sidst.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1935,14 +1822,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Der er 2 nitrogenatomer før pilen, så der skal stå 2 foran NH<sub>3</sub>. Hvert ammoniakmolekyle har 3 hydrogenatomer, så nu er der 6 hydrogenatomer efter pilen. Hvor mange dihydrogenmolekyler skal der til for at få 6 hydrogenatomer?</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1951,7 +1838,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Nitrogen har 2 atomer før pilen og 1 efter, og hydrogen har 2 før og 3 efter. Ingen af dem passer.</li>
@@ -1962,8 +1849,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="1.4.4" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.4">Opgave 1.4.4: Tæl atomerne</h2>
+<section id="1.4.3" class="level2">
+<h2 class="anchored" data-anchor-id="1.4.3">Opgave 1.4.3: Tæl atomerne</h2>
 <p>Hvor mange atomer af hver slags er der? Udfyld skemaet. Den første række er udfyldt.</p>
 <table class="caption-top table">
 <thead>
@@ -2000,7 +1887,7 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2009,14 +1896,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Gang koefficienten med det lille tal. Står der ikke noget lille tal efter et atom, er der ét af den slags i hvert molekyle.</p>
 </div>
 </div>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2025,14 +1912,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>I 2 C<sub>2</sub>H<sub>6</sub> er der 2 molekyler. Hvert molekyle har 2 C og 6 H. To molekyler giver dobbelt så mange: 4 C og 12 H.</p>
 </div>
 </div>
 </div>
 <div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2041,7 +1928,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <thead>
@@ -2077,11 +1964,72 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="1.4.5" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.5">Opgave 1.4.5: Afstem de første reaktionsskemaer</h2>
+<section id="1.4.4" class="level2">
+<h2 class="anchored" data-anchor-id="1.4.4">Opgave 1.4.4: Afstem de første reaktionsskemaer</h2>
 <p>Tæl atomerne før og efter pilen. Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt. Er et skema allerede afstemt, skriver du ingen koefficienter.</p>
 <div class="skemaliste">
 <span class="skema-nr">a.</span><span class="pile-v"><span class="felt i-skema"></span> C + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub></span><span class="skema-nr">b.</span><span class="pile-v"><span class="felt i-skema"></span> Na + <span class="felt i-skema"></span> Cl<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> NaCl</span><span class="skema-nr">c.</span><span class="pile-v"><span class="felt i-skema"></span> S + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> SO<sub>2</sub></span><span class="skema-nr">d.</span><span class="pile-v"><span class="felt i-skema"></span> Ca + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CaO</span><span class="skema-nr">e.</span><span class="pile-v"><span class="felt i-skema"></span> H<sub>2</sub> + <span class="felt i-skema"></span> F<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> HF</span>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lav et lille regnskab for hvert skema: Skriv hvert grundstof op, og tæl, hvor mange atomer der er før pilen og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I skema b er der 2 Cl før pilen og 1 Cl efter. Sæt 2 foran NaCl. Så er der 2 Na efter pilen, og der skal også stå 2 foran Na.</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>C + O<sub>2</sub> → CO<sub>2</sub> er allerede afstemt. Der er 1 C og 2 O på begge sider.</li>
+<li>2 Na + Cl<sub>2</sub> → 2 NaCl. Tjek: 2 Na og 2 Cl på begge sider.</li>
+<li>S + O<sub>2</sub> → SO<sub>2</sub> er allerede afstemt. Der er 1 S og 2 O på begge sider.</li>
+<li>2 Ca + O<sub>2</sub> → 2 CaO. Tjek: 2 Ca og 2 O på begge sider.</li>
+<li>H<sub>2</sub> + F<sub>2</sub> → 2 HF. Tjek: 2 H og 2 F på begge sider.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="1.4.5" class="level2">
+<h2 class="anchored" data-anchor-id="1.4.5">Opgave 1.4.5: Afstem reaktionsskemaerne</h2>
+<p>Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.</p>
+<div class="skemaliste">
+<span class="skema-nr">a.</span><span class="pile-v"><span class="felt i-skema"></span> H<sub>2</sub> + <span class="felt i-skema"></span> Cl<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> HCl</span><span class="skema-nr">b.</span><span class="pile-v"><span class="felt i-skema"></span> Mg + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> MgO</span><span class="skema-nr">c.</span><span class="pile-v"><span class="felt i-skema"></span> K + <span class="felt i-skema"></span> Br<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> KBr</span><span class="skema-nr">d.</span><span class="pile-v"><span class="felt i-skema"></span> N<sub>2</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> NO</span>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -2095,7 +2043,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Lav et lille regnskab for hvert skema: Skriv hvert grundstof op, og tæl, hvor mange atomer der er før pilen og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen.</p>
+<p>Tæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.</p>
 </div>
 </div>
 </div>
@@ -2111,7 +2059,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I skema b er der 2 Cl før pilen og 1 Cl efter. Sæt 2 foran NaCl. Så er der 2 Na efter pilen, og der skal også stå 2 foran Na.</p>
+<p>I skema b er der 2 O før pilen og 1 O efter. Sæt 2 foran MgO. Så er der 2 Mg efter pilen, og der skal også stå 2 foran Mg.</p>
 </div>
 </div>
 </div>
@@ -2128,21 +2076,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>C + O<sub>2</sub> → CO<sub>2</sub> er allerede afstemt. Der er 1 C og 2 O på begge sider.</li>
-<li>2 Na + Cl<sub>2</sub> → 2 NaCl. Tjek: 2 Na og 2 Cl på begge sider.</li>
-<li>S + O<sub>2</sub> → SO<sub>2</sub> er allerede afstemt. Der er 1 S og 2 O på begge sider.</li>
-<li>2 Ca + O<sub>2</sub> → 2 CaO. Tjek: 2 Ca og 2 O på begge sider.</li>
-<li>H<sub>2</sub> + F<sub>2</sub> → 2 HF. Tjek: 2 H og 2 F på begge sider.</li>
+<li>H<sub>2</sub> + Cl<sub>2</sub> → 2 HCl. Tjek: 2 H og 2 Cl på begge sider.</li>
+<li>2 Mg + O<sub>2</sub> → 2 MgO. Tjek: 2 Mg og 2 O på begge sider.</li>
+<li>2 K + Br<sub>2</sub> → 2 KBr. Tjek: 2 K og 2 Br på begge sider.</li>
+<li>N<sub>2</sub> + O<sub>2</sub> → 2 NO. Tjek: 2 N og 2 O på begge sider.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.6" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.6">Opgave 1.4.6: Afstem reaktionsskemaerne</h2>
+<h2 class="anchored" data-anchor-id="1.4.6">Opgave 1.4.6: Afstem lidt sværere reaktionsskemaer</h2>
 <p>Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.</p>
 <div class="skemaliste">
-<span class="skema-nr">a.</span><span class="pile-v"><span class="felt i-skema"></span> H<sub>2</sub> + <span class="felt i-skema"></span> Cl<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> HCl</span><span class="skema-nr">b.</span><span class="pile-v"><span class="felt i-skema"></span> Mg + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> MgO</span><span class="skema-nr">c.</span><span class="pile-v"><span class="felt i-skema"></span> K + <span class="felt i-skema"></span> Br<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> KBr</span><span class="skema-nr">d.</span><span class="pile-v"><span class="felt i-skema"></span> N<sub>2</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> NO</span>
+<span class="skema-nr">a.</span><span class="pile-v"><span class="felt i-skema"></span> H<sub>2</sub>O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> H<sub>2</sub>O + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="skema-nr">b.</span><span class="pile-v"><span class="felt i-skema"></span> CO + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub></span><span class="skema-nr">c.</span><span class="pile-v"><span class="felt i-skema"></span> Al + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> Al<sub>2</sub>O<sub>3</sub></span><span class="skema-nr">d.</span><span class="pile-v"><span class="felt i-skema"></span> Fe + <span class="felt i-skema"></span> Cl<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> FeCl<sub>3</sub></span>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -2156,7 +2103,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.</p>
+<p>Gem det stof, der kun består af ét grundstof, til sidst. I skema c og d skal du finde et tal, som begge de små tal går op i.</p>
 </div>
 </div>
 </div>
@@ -2172,7 +2119,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I skema b er der 2 O før pilen og 1 O efter. Sæt 2 foran MgO. Så er der 2 Mg efter pilen, og der skal også stå 2 foran Mg.</p>
+<p>I skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O<sub>2</sub> og 2 foran Al<sub>2</sub>O<sub>3</sub>, så der er 6 O på begge sider. Tæl til sidst aluminium.</p>
 </div>
 </div>
 </div>
@@ -2189,20 +2136,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>H<sub>2</sub> + Cl<sub>2</sub> → 2 HCl. Tjek: 2 H og 2 Cl på begge sider.</li>
-<li>2 Mg + O<sub>2</sub> → 2 MgO. Tjek: 2 Mg og 2 O på begge sider.</li>
-<li>2 K + Br<sub>2</sub> → 2 KBr. Tjek: 2 K og 2 Br på begge sider.</li>
-<li>N<sub>2</sub> + O<sub>2</sub> → 2 NO. Tjek: 2 N og 2 O på begge sider.</li>
+<li>2 H<sub>2</sub>O<sub>2</sub> → 2 H<sub>2</sub>O + O<sub>2</sub>. Tjek: 4 H og 4 O på begge sider.</li>
+<li>2 CO + O<sub>2</sub> → 2 CO<sub>2</sub>. Tjek: 2 C og 4 O på begge sider.</li>
+<li>4 Al + 3 O<sub>2</sub> → 2 Al<sub>2</sub>O<sub>3</sub>. Tjek: 4 Al og 6 O på begge sider.</li>
+<li>2 Fe + 3 Cl<sub>2</sub> → 2 FeCl<sub>3</sub>. Tjek: 2 Fe og 6 Cl på begge sider.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.7" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.7">Opgave 1.4.7: Afstem lidt sværere reaktionsskemaer</h2>
-<p>Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.</p>
+<h2 class="anchored" data-anchor-id="1.4.7">Opgave 1.4.7: Afstem forbrændinger</h2>
+<p>Når et stof med carbon og hydrogen brænder, reagerer det med dioxygen og bliver til carbondioxid og vand. Afstem reaktionsskemaerne ved at skrive koefficienter foran formlerne.</p>
 <div class="skemaliste">
-<span class="skema-nr">a.</span><span class="pile-v"><span class="felt i-skema"></span> H<sub>2</sub>O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> H<sub>2</sub>O + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="skema-nr">b.</span><span class="pile-v"><span class="felt i-skema"></span> CO + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub></span><span class="skema-nr">c.</span><span class="pile-v"><span class="felt i-skema"></span> Al + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> Al<sub>2</sub>O<sub>3</sub></span><span class="skema-nr">d.</span><span class="pile-v"><span class="felt i-skema"></span> Fe + <span class="felt i-skema"></span> Cl<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> FeCl<sub>3</sub></span>
+<span class="skema-nr">a.</span><span class="pile-v"><span class="felt i-skema"></span> CH<sub>4</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O</span><span class="skema-nr">b.</span><span class="pile-v"><span class="felt i-skema"></span> C<sub>2</sub>H<sub>4</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O</span><span class="skema-nr">c.</span><span class="pile-v"><span class="felt i-skema"></span> C<sub>5</sub>H<sub>12</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O</span>
 </div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -2216,7 +2163,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Gem det stof, der kun består af ét grundstof, til sidst. I skema c og d skal du finde et tal, som begge de små tal går op i.</p>
+<p>Tag grundstofferne i denne rækkefølge: først carbon, så hydrogen og til sidst oxygen. Oxygen står alene i O<sub>2</sub>, så den koefficient er lettest at rette til sidst.</p>
 </div>
 </div>
 </div>
@@ -2232,7 +2179,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O<sub>2</sub> og 2 foran Al<sub>2</sub>O<sub>3</sub>, så der er 6 O på begge sider. Tæl til sidst aluminium.</p>
+<p>I skema c er der 5 C før pilen, så der skal stå 5 foran CO<sub>2</sub>. Der er 12 H før pilen, så der skal stå 6 foran H<sub>2</sub>O. Tæl så oxygenatomerne efter pilen: 10 i CO<sub>2</sub> og 6 i H<sub>2</sub>O, i alt 16. Det kræver 8 O<sub>2</sub>.</p>
 </div>
 </div>
 </div>
@@ -2249,21 +2196,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>2 H<sub>2</sub>O<sub>2</sub> → 2 H<sub>2</sub>O + O<sub>2</sub>. Tjek: 4 H og 4 O på begge sider.</li>
-<li>2 CO + O<sub>2</sub> → 2 CO<sub>2</sub>. Tjek: 2 C og 4 O på begge sider.</li>
-<li>4 Al + 3 O<sub>2</sub> → 2 Al<sub>2</sub>O<sub>3</sub>. Tjek: 4 Al og 6 O på begge sider.</li>
-<li>2 Fe + 3 Cl<sub>2</sub> → 2 FeCl<sub>3</sub>. Tjek: 2 Fe og 6 Cl på begge sider.</li>
+<li>CH<sub>4</sub> + 2 O<sub>2</sub> → CO<sub>2</sub> + 2 H<sub>2</sub>O. Tjek: 1 C, 4 H og 4 O på begge sider.</li>
+<li>C<sub>2</sub>H<sub>4</sub> + 3 O<sub>2</sub> → 2 CO<sub>2</sub> + 2 H<sub>2</sub>O. Tjek: 2 C, 4 H og 6 O på begge sider.</li>
+<li>C<sub>5</sub>H<sub>12</sub> + 8 O<sub>2</sub> → 5 CO<sub>2</sub> + 6 H<sub>2</sub>O. Tjek: 5 C, 12 H og 16 O på begge sider.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.8" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.8">Opgave 1.4.8: Afstem forbrændinger</h2>
-<p>Når et stof med carbon og hydrogen brænder, reagerer det med dioxygen og bliver til carbondioxid og vand. Afstem reaktionsskemaerne ved at skrive koefficienter foran formlerne.</p>
-<div class="skemaliste">
-<span class="skema-nr">a.</span><span class="pile-v"><span class="felt i-skema"></span> CH<sub>4</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O</span><span class="skema-nr">b.</span><span class="pile-v"><span class="felt i-skema"></span> C<sub>2</sub>H<sub>4</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O</span><span class="skema-nr">c.</span><span class="pile-v"><span class="felt i-skema"></span> C<sub>5</sub>H<sub>12</sub> + <span class="felt i-skema"></span> O<sub>2</sub></span><span class="pile-p">→</span><span class="pile-h"><span class="felt i-skema"></span> CO<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O</span>
-</div>
+<h2 class="anchored" data-anchor-id="1.4.8">Opgave 1.4.8: Find fejlen</h2>
+<p>To elever har afstemt hvert sit reaktionsskema. Begge har lavet en fejl. Forklar fejlen, og skriv det rigtige reaktionsskema.</p>
+<ol type="a">
+<li><p>Dihydrogen og dioxygen bliver til vand:</p>
+<p>H<sub>2</sub> + O<sub>2</sub> → H<sub>2</sub>O<sub>2</sub></p></li>
+<li><p>Natrium og dichlor bliver til natriumchlorid:</p>
+<p>4 Na + 2 Cl<sub>2</sub> → 4 NaCl</p></li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2276,7 +2225,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tag grundstofferne i denne rækkefølge: først carbon, så hydrogen og til sidst oxygen. Oxygen står alene i O<sub>2</sub>, så den koefficient er lettest at rette til sidst.</p>
+<p>Læs <em>Det lille tal må ikke ændres</em> og de to råd under <em>Sådan afstemmer du et reaktionsskema</em> i afsnit 1.4.</p>
 </div>
 </div>
 </div>
@@ -2292,7 +2241,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I skema c er der 5 C før pilen, så der skal stå 5 foran CO<sub>2</sub>. Der er 12 H før pilen, så der skal stå 6 foran H<sub>2</sub>O. Tæl så oxygenatomerne efter pilen: 10 i CO<sub>2</sub> og 6 i H<sub>2</sub>O, i alt 16. Det kræver 8 O<sub>2</sub>.</p>
+<p>I skema a er der rettet i en formel, så der står et andet stof end vand. I skema b er der lige mange atomer på begge sider, men se, om alle koefficienterne kan deles med det samme tal.</p>
 </div>
 </div>
 </div>
@@ -2309,23 +2258,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>CH<sub>4</sub> + 2 O<sub>2</sub> → CO<sub>2</sub> + 2 H<sub>2</sub>O. Tjek: 1 C, 4 H og 4 O på begge sider.</li>
-<li>C<sub>2</sub>H<sub>4</sub> + 3 O<sub>2</sub> → 2 CO<sub>2</sub> + 2 H<sub>2</sub>O. Tjek: 2 C, 4 H og 6 O på begge sider.</li>
-<li>C<sub>5</sub>H<sub>12</sub> + 8 O<sub>2</sub> → 5 CO<sub>2</sub> + 6 H<sub>2</sub>O. Tjek: 5 C, 12 H og 16 O på begge sider.</li>
+<li>Eleven har ændret det lille tal i formlen for vand. H<sub>2</sub>O<sub>2</sub> er hydrogenperoxid og ikke vand. Det rigtige skema er 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O.</li>
+<li>Atomerne passer, men koefficienterne er ikke de mindste hele tal. De kan alle deles med 2. Det rigtige skema er 2 Na + Cl<sub>2</sub> → 2 NaCl.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.9" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.9">Opgave 1.4.9: Find fejlen</h2>
-<p>To elever har afstemt hvert sit reaktionsskema. Begge har lavet en fejl. Forklar fejlen, og skriv det rigtige reaktionsskema.</p>
-<ol type="a">
-<li><p>Dihydrogen og dioxygen bliver til vand:</p>
-<p>H<sub>2</sub> + O<sub>2</sub> → H<sub>2</sub>O<sub>2</sub></p></li>
-<li><p>Natrium og dichlor bliver til natriumchlorid:</p>
-<p>4 Na + 2 Cl<sub>2</sub> → 4 NaCl</p></li>
-</ol>
+<h2 class="anchored" data-anchor-id="1.4.9">Opgave 1.4.9: Fra tegning til reaktionsskema</h2>
+<p><a href="../figurer/opg-kugler-peroxid.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../figurer/opg-kugler-peroxid.svg" class="img-fluid" alt="Før reaktionen er der to molekyler, som hver består af to oxygenatomer og to hydrogenatomer. Efter reaktionen er der to vandmolekyler og et molekyle af to oxygenatomer."></a></p>
+<p>Tegningen viser en reaktion. De røde kugler er oxygenatomer, og de hvide kugler er hydrogenatomer. Skriv det afstemte reaktionsskema for reaktionen med formlerne for stofferne.</p>
+<div class="reaktion skrivskema">
+<p>         →         </p>
+</div>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2338,7 +2284,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs <em>Det lille tal må ikke ændres</em> og de to råd under <em>Sådan afstemmer du et reaktionsskema</em> i afsnit 1.4.</p>
+<p>Tæl atomerne i ét molekyle for at finde formlen. Tæl derefter, hvor mange molekyler der er af hver slags. Det tal er koefficienten.</p>
 </div>
 </div>
 </div>
@@ -2354,7 +2300,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I skema a er der rettet i en formel, så der står et andet stof end vand. I skema b er der lige mange atomer på begge sider, men se, om alle koefficienterne kan deles med det samme tal.</p>
+<p>Hvert molekyle før reaktionen har 2 H og 2 O, så formlen er H<sub>2</sub>O<sub>2</sub>. Der er to af dem, så koefficienten er 2.</p>
 </div>
 </div>
 </div>
@@ -2370,21 +2316,18 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="a">
-<li>Eleven har ændret det lille tal i formlen for vand. H<sub>2</sub>O<sub>2</sub> er hydrogenperoxid og ikke vand. Det rigtige skema er 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O.</li>
-<li>Atomerne passer, men koefficienterne er ikke de mindste hele tal. De kan alle deles med 2. Det rigtige skema er 2 Na + Cl<sub>2</sub> → 2 NaCl.</li>
-</ol>
+<p>Før reaktionen er der H<sub>2</sub>O<sub>2</sub>, som er hydrogenperoxid. Efter reaktionen er der H<sub>2</sub>O og O<sub>2</sub>, altså vand og dioxygen. Reaktionsskemaet er 2 H<sub>2</sub>O<sub>2</sub> → 2 H<sub>2</sub>O + O<sub>2</sub>.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.10" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.10">Opgave 1.4.10: Fra tegning til reaktionsskema</h2>
-<p><a href="../figurer/opg-kugler-peroxid.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../figurer/opg-kugler-peroxid.svg" class="img-fluid" alt="Før reaktionen er der to molekyler, som hver består af to oxygenatomer og to hydrogenatomer. Efter reaktionen er der to vandmolekyler og et molekyle af to oxygenatomer."></a></p>
-<p>Tegningen viser en reaktion. De røde kugler er oxygenatomer, og de hvide kugler er hydrogenatomer. Skriv det afstemte reaktionsskema for reaktionen med formlerne for stofferne.</p>
-<div class="reaktion skrivskema">
-<p>         →         </p>
-</div>
+<h2 class="anchored" data-anchor-id="1.4.10">Opgave 1.4.10: Tilstandssymboler</h2>
+<p>Skriv de afstemte reaktionsskemaer med tilstandssymboler.</p>
+<ol type="a">
+<li>Fast magnesium, Mg, reagerer med dioxygen, O<sub>2</sub>, fra luften og bliver til magnesiumoxid, MgO, som er et fast stof.</li>
+<li>Fast natrium, Na, reagerer med gassen dichlor, Cl<sub>2</sub>, og bliver til natriumchlorid, NaCl, som er et fast stof.</li>
+</ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2397,7 +2340,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tæl atomerne i ét molekyle for at finde formlen. Tæl derefter, hvor mange molekyler der er af hver slags. Det tal er koefficienten.</p>
+<p>Se figuren under <em>Tilstandssymboler</em> i afsnit 1.4. Symbolet står i en parentes lige efter formlen.</p>
 </div>
 </div>
 </div>
@@ -2413,7 +2356,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hvert molekyle før reaktionen har 2 H og 2 O, så formlen er H<sub>2</sub>O<sub>2</sub>. Der er to af dem, så koefficienten er 2.</p>
+<p>Dioxygen i luften er en gas og skrives O<sub>2</sub>(g). Afstem først skemaet uden tilstandssymboler, og sæt dem på til sidst.</p>
 </div>
 </div>
 </div>
@@ -2429,17 +2372,24 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Før reaktionen er der H<sub>2</sub>O<sub>2</sub>, som er hydrogenperoxid. Efter reaktionen er der H<sub>2</sub>O og O<sub>2</sub>, altså vand og dioxygen. Reaktionsskemaet er 2 H<sub>2</sub>O<sub>2</sub> → 2 H<sub>2</sub>O + O<sub>2</sub>.</p>
+<ol type="a">
+<li>2 Mg(s) + O<sub>2</sub>(g) → 2 MgO(s)</li>
+<li>2 Na(s) + Cl<sub>2</sub>(g) → 2 NaCl(s)</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.11" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.11">Opgave 1.4.11: Tilstandssymboler</h2>
-<p>Skriv de afstemte reaktionsskemaer med tilstandssymboler.</p>
+<h2 class="anchored" data-anchor-id="1.4.11">Opgave 1.4.11: Hjortetaksalt i småkager</h2>
+<div class="forloebsmaerke mad">
+Velegnet til fødevareforløb
+</div>
+<p>Hjortetaksalt, NH<sub>4</sub>HCO<sub>3</sub>, får dejen til at hæve i nogle opskrifter på småkager. I den varme ovn bliver hjortetaksalt til tre nye stoffer:</p>
+<p>NH<sub>4</sub>HCO<sub>3</sub>(s) → NH<sub>3</sub>(g) + H<sub>2</sub>O(g) + CO<sub>2</sub>(g)</p>
 <ol type="a">
-<li>Fast magnesium, Mg, reagerer med dioxygen, O<sub>2</sub>, fra luften og bliver til magnesiumoxid, MgO, som er et fast stof.</li>
-<li>Fast natrium, Na, reagerer med gassen dichlor, Cl<sub>2</sub>, og bliver til natriumchlorid, NaCl, som er et fast stof.</li>
+<li>Hvilket stof er reaktant, og hvilke stoffer er produkter?</li>
+<li>Forklar, hvorfor dejen hæver.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
@@ -2453,7 +2403,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Se figuren under <em>Tilstandssymboler</em> i afsnit 1.4. Symbolet står i en parentes lige efter formlen.</p>
+<p>Reaktanten står før pilen, og produkterne står efter pilen. Tilstandssymbolet (g) betyder, at stoffet er en gas.</p>
 </div>
 </div>
 </div>
@@ -2469,7 +2419,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Dioxygen i luften er en gas og skrives O<sub>2</sub>(g). Afstem først skemaet uden tilstandssymboler, og sæt dem på til sidst.</p>
+<p>En gas fylder meget mere end et fast stof. Tænk på, hvad der sker, når der dannes gas inde i dejen.</p>
 </div>
 </div>
 </div>
@@ -2486,23 +2436,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>2 Mg(s) + O<sub>2</sub>(g) → 2 MgO(s)</li>
-<li>2 Na(s) + Cl<sub>2</sub>(g) → 2 NaCl(s)</li>
+<li>Reaktanten er hjortetaksalt, NH<sub>4</sub>HCO<sub>3</sub>. Produkterne er ammoniak, NH<sub>3</sub>, vand, H<sub>2</sub>O, og carbondioxid, CO<sub>2</sub>.</li>
+<li>Alle tre produkter er gasser, og de fylder meget mere end det faste hjortetaksalt. Gasserne danner små bobler i dejen, og boblerne får dejen til at hæve.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.12" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.12">Opgave 1.4.12: Hjortetaksalt i småkager</h2>
-<div class="forloebsmaerke mad">
-Velegnet til fødevareforløb
+<h2 class="anchored" data-anchor-id="1.4.12">Opgave 1.4.12: Afstem reaktionsskemaer fra krop og medicin</h2>
+<div class="forloebsmaerke sundhed">
+Velegnet til sundhedsforløb
 </div>
-<p>Hjortetaksalt, NH<sub>4</sub>HCO<sub>3</sub>, får dejen til at hæve i nogle opskrifter på småkager. I den varme ovn bliver hjortetaksalt til tre nye stoffer:</p>
-<p>NH<sub>4</sub>HCO<sub>3</sub>(s) → NH<sub>3</sub>(g) + H<sub>2</sub>O(g) + CO<sub>2</sub>(g)</p>
+<p>Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.</p>
 <ol type="a">
-<li>Hvilket stof er reaktant, og hvilke stoffer er produkter?</li>
-<li>Forklar, hvorfor dejen hæver.</li>
+<li><p>Musklerne laver glucose om til mælkesyre:</p>
+<p><span class="felt i-skema"></span> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → <span class="felt i-skema"></span> C<sub>3</sub>H<sub>6</sub>O<sub>3</sub></p></li>
+<li><p>Lattergas fremstilles af ammoniumnitrat, som varmes op:</p>
+<p><span class="felt i-skema"></span> NH<sub>4</sub>NO<sub>3</sub> → <span class="felt i-skema"></span> N<sub>2</sub>O + <span class="felt i-skema"></span> H<sub>2</sub>O</p></li>
+<li><p>Zink og dioxygen bliver til zink(II)oxid, som bruges i zinksalve:</p>
+<p><span class="felt i-skema"></span> Zn + <span class="felt i-skema"></span> O<sub>2</sub> → <span class="felt i-skema"></span> ZnO</p></li>
+<li><p>En kalktablet reagerer med mavesyre:</p>
+<p><span class="felt i-skema"></span> CaCO<sub>3</sub> + <span class="felt i-skema"></span> HCl → <span class="felt i-skema"></span> CaCl<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O + <span class="felt i-skema"></span> CO<sub>2</sub></p></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
@@ -2516,7 +2471,7 @@ Velegnet til fødevareforløb
 </div>
 <div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Reaktanten står før pilen, og produkterne står efter pilen. Tilstandssymbolet (g) betyder, at stoffet er en gas.</p>
+<p>Tæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.</p>
 </div>
 </div>
 </div>
@@ -2532,7 +2487,7 @@ Velegnet til fødevareforløb
 </div>
 <div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>En gas fylder meget mere end et fast stof. Tænk på, hvad der sker, når der dannes gas inde i dejen.</p>
+<p>I skema c er der 2 O før pilen og 1 O efter. Sæt 2 foran ZnO. Så er der 2 Zn efter pilen, og der skal også stå 2 foran Zn. I skema d mangler der både H og Cl før pilen.</p>
 </div>
 </div>
 </div>
@@ -2549,29 +2504,23 @@ Velegnet til fødevareforløb
 <div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Reaktanten er hjortetaksalt, NH<sub>4</sub>HCO<sub>3</sub>. Produkterne er ammoniak, NH<sub>3</sub>, vand, H<sub>2</sub>O, og carbondioxid, CO<sub>2</sub>.</li>
-<li>Alle tre produkter er gasser, og de fylder meget mere end det faste hjortetaksalt. Gasserne danner små bobler i dejen, og boblerne får dejen til at hæve.</li>
+<li>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → 2 C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>. Tjek: 6 C, 12 H og 6 O på begge sider.</li>
+<li>NH<sub>4</sub>NO<sub>3</sub> → N<sub>2</sub>O + 2 H<sub>2</sub>O. Tjek: 2 N, 4 H og 3 O på begge sider.</li>
+<li>2 Zn + O<sub>2</sub> → 2 ZnO. Tjek: 2 Zn og 2 O på begge sider.</li>
+<li>CaCO<sub>3</sub> + 2 HCl → CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>. Tjek: 1 Ca, 1 C, 3 O, 2 H og 2 Cl på begge sider.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="1.4.13" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.13">Opgave 1.4.13: Afstem reaktionsskemaer fra krop og medicin</h2>
-<div class="forloebsmaerke sundhed">
-Velegnet til sundhedsforløb
+<h2 class="anchored" data-anchor-id="1.4.13">Opgave 1.4.13: Gær laver sukker om til alkohol</h2>
+<div class="forloebsmaerke mad">
+Velegnet til fødevareforløb
 </div>
-<p>Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.</p>
-<ol type="a">
-<li><p>Musklerne laver glucose om til mælkesyre:</p>
-<p><span class="felt i-skema"></span> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → <span class="felt i-skema"></span> C<sub>3</sub>H<sub>6</sub>O<sub>3</sub></p></li>
-<li><p>Lattergas fremstilles af ammoniumnitrat, som varmes op:</p>
-<p><span class="felt i-skema"></span> NH<sub>4</sub>NO<sub>3</sub> → <span class="felt i-skema"></span> N<sub>2</sub>O + <span class="felt i-skema"></span> H<sub>2</sub>O</p></li>
-<li><p>Zink og dioxygen bliver til zink(II)oxid, som bruges i zinksalve:</p>
-<p><span class="felt i-skema"></span> Zn + <span class="felt i-skema"></span> O<sub>2</sub> → <span class="felt i-skema"></span> ZnO</p></li>
-<li><p>En kalktablet reagerer med mavesyre:</p>
-<p><span class="felt i-skema"></span> CaCO<sub>3</sub> + <span class="felt i-skema"></span> HCl → <span class="felt i-skema"></span> CaCl<sub>2</sub> + <span class="felt i-skema"></span> H<sub>2</sub>O + <span class="felt i-skema"></span> CO<sub>2</sub></p></li>
-</ol>
+<p>Når gær laver vin af druesaft, bliver sukkerstoffet glucose til ethanol og carbondioxid. Skriv koefficienter foran formlerne, så reaktionsskemaet bliver afstemt.</p>
+<p><span class="felt i-skema"></span> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → <span class="felt i-skema"></span> C<sub>2</sub>H<sub>6</sub>O + <span class="felt i-skema"></span> CO<sub>2</sub></p>
+<p>Hvilket af produkterne giver boblerne i mousserende vin?</p>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2584,7 +2533,7 @@ Velegnet til sundhedsforløb
 </div>
 <div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.</p>
+<p>Begynd med hydrogen. Det står kun i ét stof på hver side af pilen.</p>
 </div>
 </div>
 </div>
@@ -2600,7 +2549,7 @@ Velegnet til sundhedsforløb
 </div>
 <div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I skema c er der 2 O før pilen og 1 O efter. Sæt 2 foran ZnO. Så er der 2 Zn efter pilen, og der skal også stå 2 foran Zn. I skema d mangler der både H og Cl før pilen.</p>
+<p>Der er 12 H før pilen og 6 H i hvert ethanolmolekyle. Sæt 2 foran C<sub>2</sub>H<sub>6</sub>O, og tæl derefter carbon.</p>
 </div>
 </div>
 </div>
@@ -2616,76 +2565,14 @@ Velegnet til sundhedsforløb
 </div>
 <div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="a">
-<li>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → 2 C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>. Tjek: 6 C, 12 H og 6 O på begge sider.</li>
-<li>NH<sub>4</sub>NO<sub>3</sub> → N<sub>2</sub>O + 2 H<sub>2</sub>O. Tjek: 2 N, 4 H og 3 O på begge sider.</li>
-<li>2 Zn + O<sub>2</sub> → 2 ZnO. Tjek: 2 Zn og 2 O på begge sider.</li>
-<li>CaCO<sub>3</sub> + 2 HCl → CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>. Tjek: 1 Ca, 1 C, 3 O, 2 H og 2 Cl på begge sider.</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="1.4.14" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.14">Opgave 1.4.14: Gær laver sukker om til alkohol</h2>
-<div class="forloebsmaerke mad">
-Velegnet til fødevareforløb
-</div>
-<p>Når gær laver vin af druesaft, bliver sukkerstoffet glucose til ethanol og carbondioxid. Skriv koefficienter foran formlerne, så reaktionsskemaet bliver afstemt.</p>
-<p><span class="felt i-skema"></span> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → <span class="felt i-skema"></span> C<sub>2</sub>H<sub>6</sub>O + <span class="felt i-skema"></span> CO<sub>2</sub></p>
-<p>Hvilket af produkterne giver boblerne i mousserende vin?</p>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Begynd med hydrogen. Det står kun i ét stof på hver side af pilen.</p>
-</div>
-</div>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Der er 12 H før pilen og 6 H i hvert ethanolmolekyle. Sæt 2 foran C<sub>2</sub>H<sub>6</sub>O, og tæl derefter carbon.</p>
-</div>
-</div>
-</div>
-<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Facit
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-42" class="callout-42-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <p>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → 2 C<sub>2</sub>H<sub>6</sub>O + 2 CO<sub>2</sub>. Tjek: 6 C, 12 H og 6 O på begge sider.</p>
 <p>Boblerne er carbondioxid, CO<sub>2</sub>, som er en gas.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="1.4.15" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.15">Opgave 1.4.15: Afstem lidt sværere reaktionsskemaer om sundhed</h2>
+<section id="1.4.14" class="level2">
+<h2 class="anchored" data-anchor-id="1.4.14">Opgave 1.4.14: Afstem lidt sværere reaktionsskemaer om sundhed</h2>
 <div class="forloebsmaerke sundhed">
 Velegnet til sundhedsforløb
 </div>
@@ -2701,6 +2588,69 @@ Velegnet til sundhedsforløb
 <p><span class="felt i-skema"></span> Al + <span class="felt i-skema"></span> Cl<sub>2</sub> → <span class="felt i-skema"></span> AlCl<sub>3</sub></p></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gem det stof, der kun består af ét grundstof, til sidst. I skema b er det kun natrium og chlor, der ikke passer. I skema c og d skal du finde et tal, som begge de små tal går op i.</p>
+</div>
+</div>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hjælp 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O<sub>2</sub> og 2 foran Fe<sub>2</sub>O<sub>3</sub>, så der er 6 O på begge sider. Tæl til sidst jern.</p>
+</div>
+</div>
+</div>
+<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>2 N<sub>2</sub>O → 2 N<sub>2</sub> + O<sub>2</sub>. Tjek: 4 N og 2 O på begge sider.</li>
+<li>BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> → BaSO<sub>4</sub> + 2 NaCl. Tjek: 1 Ba, 2 Cl, 2 Na, 1 S og 4 O på begge sider.</li>
+<li>4 Fe + 3 O<sub>2</sub> → 2 Fe<sub>2</sub>O<sub>3</sub>. Tjek: 4 Fe og 6 O på begge sider.</li>
+<li>2 Al + 3 Cl<sub>2</sub> → 2 AlCl<sub>3</sub>. Tjek: 2 Al og 6 Cl på begge sider.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="1.4.15" class="level2">
+<h2 class="anchored" data-anchor-id="1.4.15">Opgave 1.4.15: Kroppen forbrænder sukker</h2>
+<div class="forloebsmaerke mad">
+Velegnet til fødevareforløb
+</div>
+<p>Kroppen får energi ved at lade glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, reagere med dioxygen, O<sub>2</sub>. Produkterne er carbondioxid, CO<sub>2</sub>, og vand, H<sub>2</sub>O, som vi ånder ud. Skriv det afstemte reaktionsskema.</p>
+<div class="reaktion skrivskema">
+<p>         →         </p>
+</div>
+<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -2712,7 +2662,7 @@ Velegnet til sundhedsforløb
 </div>
 <div id="callout-43" class="callout-43-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Gem det stof, der kun består af ét grundstof, til sidst. I skema b er det kun natrium og chlor, der ikke passer. I skema c og d skal du finde et tal, som begge de små tal går op i.</p>
+<p>Reaktanterne står før pilen, og produkterne står efter pilen. Afstem i rækkefølgen carbon, hydrogen og oxygen.</p>
 </div>
 </div>
 </div>
@@ -2728,7 +2678,7 @@ Velegnet til sundhedsforløb
 </div>
 <div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O<sub>2</sub> og 2 foran Fe<sub>2</sub>O<sub>3</sub>, så der er 6 O på begge sider. Tæl til sidst jern.</p>
+<p>6 C kræver 6 CO<sub>2</sub>, og 12 H kræver 6 H<sub>2</sub>O. Efter pilen er der så 12 O i CO<sub>2</sub> og 6 O i H<sub>2</sub>O, i alt 18 O. Husk, at glucose selv har 6 O med, når du finder koefficienten foran O<sub>2</sub>.</p>
 </div>
 </div>
 </div>
@@ -2743,69 +2693,6 @@ Velegnet til sundhedsforløb
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-45" class="callout-45-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="a">
-<li>2 N<sub>2</sub>O → 2 N<sub>2</sub> + O<sub>2</sub>. Tjek: 4 N og 2 O på begge sider.</li>
-<li>BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> → BaSO<sub>4</sub> + 2 NaCl. Tjek: 1 Ba, 2 Cl, 2 Na, 1 S og 4 O på begge sider.</li>
-<li>4 Fe + 3 O<sub>2</sub> → 2 Fe<sub>2</sub>O<sub>3</sub>. Tjek: 4 Fe og 6 O på begge sider.</li>
-<li>2 Al + 3 Cl<sub>2</sub> → 2 AlCl<sub>3</sub>. Tjek: 2 Al og 6 Cl på begge sider.</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="1.4.16" class="level2">
-<h2 class="anchored" data-anchor-id="1.4.16">Opgave 1.4.16: Kroppen forbrænder sukker</h2>
-<div class="forloebsmaerke mad">
-Velegnet til fødevareforløb
-</div>
-<p>Kroppen får energi ved at lade glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, reagere med dioxygen, O<sub>2</sub>. Produkterne er carbondioxid, CO<sub>2</sub>, og vand, H<sub>2</sub>O, som vi ånder ud. Skriv det afstemte reaktionsskema.</p>
-<div class="reaktion skrivskema">
-<p>         →         </p>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-46" class="callout-46-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Reaktanterne står før pilen, og produkterne står efter pilen. Afstem i rækkefølgen carbon, hydrogen og oxygen.</p>
-</div>
-</div>
-</div>
-<div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hjælp 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-47" class="callout-47-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>6 C kræver 6 CO<sub>2</sub>, og 12 H kræver 6 H<sub>2</sub>O. Efter pilen er der så 12 O i CO<sub>2</sub> og 6 O i H<sub>2</sub>O, i alt 18 O. Husk, at glucose selv har 6 O med, når du finder koefficienten foran O<sub>2</sub>.</p>
-</div>
-</div>
-</div>
-<div class="facit callout callout-style-default callout-note callout-titled" title="Facit">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Facit
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-48" class="callout-48-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6 O<sub>2</sub> → 6 CO<sub>2</sub> + 6 H<sub>2</sub>O. Tjek: 6 C, 12 H og 18 O på begge sider.</p>
 </div>
@@ -3187,6 +3074,220 @@ document.addEventListener("DOMContentLoaded", function () {
     if (/[?&]trin=alle/.test(location.search)) visAlle = true;
 
     vis();
+
+  });
+
+});
+
+</script>
+
+<script>
+
+// En beregning, der bygges op klik for klik (afsnit B2.6, 30. okt. 2026; Niels ville kunne bladre "som en powerpoint
+
+// uden at skifte slide", så det hele ikke bliver slettet for hvert trin).
+
+//
+
+// En boks med klassen "opbyg" indeholder en boks "opbyg-tekster" med én boks "klik" for hvert klik (forklaringen til
+
+// klikket) og en tavle med beregningen. Hver del af tavlen har egenskaben fra="N" og vises fra klik N; det, der lige
+
+// er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
+
+// knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
+
+// Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+
+// "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
+
+    var tekster = boks.querySelector(".opbyg-tekster");
+
+    if (!tekster) return;
+
+    var klik = Array.prototype.filter.call(tekster.children, function (el) {
+
+      return el.classList.contains("klik");
+
+    });
+
+    if (klik.length < 2) return;
+
+    var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+
+      return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+
+    });
+
+    var trin = [];
+
+    klik.forEach(function (k, i) {
+
+      var t = k.getAttribute("data-knap");
+
+      if (t || !trin.length) trin.push({ tekst: t || "1", start: i, valgfri: k.classList.contains("valgfri") });
+
+    });
+
+    function trinFor(i) {
+
+      for (var j = trin.length - 1; j > 0; j--) if (trin[j].start <= i) return j;
+
+      return 0;
+
+    }
+
+
+
+    var top = document.createElement("div");
+
+    top.className = "opbyg-top";
+
+    var bjaelke = document.createElement("div");
+
+    bjaelke.className = "trin-bjaelke";
+
+    function knap(tekst, klasse, label) {
+
+      var k = document.createElement("button");
+
+      k.type = "button";
+
+      k.className = klasse;
+
+      k.textContent = tekst;
+
+      if (label) k.setAttribute("aria-label", label);
+
+      bjaelke.appendChild(k);
+
+      return k;
+
+    }
+
+    var nu = 0;
+
+    var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
+
+    var numre = trin.map(function (t) {
+
+      var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
+
+      n.addEventListener("click", function () { gaa(t.start); });
+
+      return n;
+
+    });
+
+    var naeste = knap("Næste ›", "trin-naeste", "Næste");
+
+    top.appendChild(bjaelke);
+
+    boks.insertBefore(top, boks.firstChild);
+
+    top.appendChild(tekster);
+
+    tekster.setAttribute("aria-live", "polite");
+
+
+
+    // Ruller siden, så det nye kan ses under bjælken og forklaringen
+
+    function synlig() {
+
+      var nye = boks.querySelectorAll(".ny");
+
+      if (!nye.length) return;
+
+      var oeverst = Infinity, nederst = -Infinity;
+
+      Array.prototype.forEach.call(nye, function (el) {
+
+        var r = el.getBoundingClientRect();
+
+        oeverst = Math.min(oeverst, r.top);
+
+        nederst = Math.max(nederst, r.bottom);
+
+      });
+
+      var loft = getComputedStyle(top).position === "sticky" ? top.getBoundingClientRect().bottom : 0;
+
+      var luft = 16, ned = 0;
+
+      if (nederst > window.innerHeight - luft) ned = nederst - window.innerHeight + luft;
+
+      if (oeverst - ned < loft + luft) ned = oeverst - loft - luft;
+
+      if (Math.abs(ned) > 2) window.scrollBy({ top: ned, behavior: "smooth" });
+
+    }
+
+    function vis(rul) {
+
+      klik.forEach(function (k, i) { k.classList.toggle("vist", i === nu); });
+
+      dele.forEach(function (d) {
+
+        d.el.classList.toggle("vist", d.fra <= nu);
+
+        d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+
+      });
+
+      var aktivt = trinFor(nu);
+
+      numre.forEach(function (n, j) {
+
+        n.classList.toggle("aktiv", j === aktivt);
+
+        if (j === aktivt) n.setAttribute("aria-current", "step");
+
+        else n.removeAttribute("aria-current");
+
+      });
+
+      forrige.disabled = nu === 0;
+
+      naeste.disabled = nu === klik.length - 1;
+
+      if (rul) synlig();
+
+    }
+
+    function gaa(i) {
+
+      nu = Math.max(0, Math.min(klik.length - 1, i));
+
+      vis(true);
+
+    }
+
+    forrige.addEventListener("click", function () { gaa(nu - 1); });
+
+    naeste.addEventListener("click", function () { gaa(nu + 1); });
+
+    bjaelke.addEventListener("keydown", function (e) {
+
+      if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
+
+      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+
+    });
+
+
+
+    boks.classList.add("aktiv");
+
+    var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
+
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+
+    vis(false);
 
   });
 

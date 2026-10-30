@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a826bbd2282cbe4cca3efcac8ba8cf6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b52a2bbdbdffb81cbedb2d38fde6e998.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -79,6 +79,32 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script>
+
+// Densitetens ρ i formlerne: \varrho tegnes med bogens eget ρ med hale fra skriften "Kemibogen I" (kursiv) i stedet for
+
+// formelskriftens ϱ, så formlerne har samme ρ som teksten og figurerne (Niels 29. okt. 2026; se "Faste valg" i README.md).
+
+// Det er 10 % større, så skålen bliver lige så høj som formelskriftens m.
+
+// Skriften står i stil/i-skrift.scss og laves af vaerktoej/lav_i_skrift.py. Siden henter MathJax selv bagefter.
+
+window.MathJax = {
+
+  loader: { load: ["[tex]/html"] },
+
+  tex: {
+
+    packages: { "[+]": ["html"] },
+
+    macros: { varrho: "\\style{font-family:'Kemibogen I';font-style:italic;font-size:110%}{ρ}" }
+
+  }
+
+};
+
+</script>
+
 
 
 </head>
@@ -1735,7 +1761,7 @@ Figur&nbsp;T1.1: Kroppen set med kemikerens øjne. Hver mærkat viser, hvilken s
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1 Atomer</td>
-<td style="text-align: left;"><a href="../opgaver/1-1-opgaver.html#1.1.4">1.1.4</a>, <a href="../opgaver/1-2-opgaver.html#1.2.6">1.2.6</a>, <a href="../opgaver/1-4-opgaver.html#1.4.13">1.4.13</a> og <a href="../opgaver/1-4-opgaver.html#1.4.15">1.4.15</a></td>
+<td style="text-align: left;"><a href="../opgaver/1-1-opgaver.html#1.1.4">1.1.4</a>, <a href="../opgaver/1-2-opgaver.html#1.2.6">1.2.6</a>, <a href="../opgaver/1-4-opgaver.html#1.4.12">1.4.12</a> og <a href="../opgaver/1-4-opgaver.html#1.4.14">1.4.14</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2 Ionforbindelser</td>
@@ -2127,6 +2153,220 @@ document.addEventListener("DOMContentLoaded", function () {
     if (/[?&]trin=alle/.test(location.search)) visAlle = true;
 
     vis();
+
+  });
+
+});
+
+</script>
+
+<script>
+
+// En beregning, der bygges op klik for klik (afsnit B2.6, 30. okt. 2026; Niels ville kunne bladre "som en powerpoint
+
+// uden at skifte slide", så det hele ikke bliver slettet for hvert trin).
+
+//
+
+// En boks med klassen "opbyg" indeholder en boks "opbyg-tekster" med én boks "klik" for hvert klik (forklaringen til
+
+// klikket) og en tavle med beregningen. Hver del af tavlen har egenskaben fra="N" og vises fra klik N; det, der lige
+
+// er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
+
+// knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
+
+// Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+
+// "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
+
+    var tekster = boks.querySelector(".opbyg-tekster");
+
+    if (!tekster) return;
+
+    var klik = Array.prototype.filter.call(tekster.children, function (el) {
+
+      return el.classList.contains("klik");
+
+    });
+
+    if (klik.length < 2) return;
+
+    var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+
+      return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+
+    });
+
+    var trin = [];
+
+    klik.forEach(function (k, i) {
+
+      var t = k.getAttribute("data-knap");
+
+      if (t || !trin.length) trin.push({ tekst: t || "1", start: i, valgfri: k.classList.contains("valgfri") });
+
+    });
+
+    function trinFor(i) {
+
+      for (var j = trin.length - 1; j > 0; j--) if (trin[j].start <= i) return j;
+
+      return 0;
+
+    }
+
+
+
+    var top = document.createElement("div");
+
+    top.className = "opbyg-top";
+
+    var bjaelke = document.createElement("div");
+
+    bjaelke.className = "trin-bjaelke";
+
+    function knap(tekst, klasse, label) {
+
+      var k = document.createElement("button");
+
+      k.type = "button";
+
+      k.className = klasse;
+
+      k.textContent = tekst;
+
+      if (label) k.setAttribute("aria-label", label);
+
+      bjaelke.appendChild(k);
+
+      return k;
+
+    }
+
+    var nu = 0;
+
+    var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
+
+    var numre = trin.map(function (t) {
+
+      var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
+
+      n.addEventListener("click", function () { gaa(t.start); });
+
+      return n;
+
+    });
+
+    var naeste = knap("Næste ›", "trin-naeste", "Næste");
+
+    top.appendChild(bjaelke);
+
+    boks.insertBefore(top, boks.firstChild);
+
+    top.appendChild(tekster);
+
+    tekster.setAttribute("aria-live", "polite");
+
+
+
+    // Ruller siden, så det nye kan ses under bjælken og forklaringen
+
+    function synlig() {
+
+      var nye = boks.querySelectorAll(".ny");
+
+      if (!nye.length) return;
+
+      var oeverst = Infinity, nederst = -Infinity;
+
+      Array.prototype.forEach.call(nye, function (el) {
+
+        var r = el.getBoundingClientRect();
+
+        oeverst = Math.min(oeverst, r.top);
+
+        nederst = Math.max(nederst, r.bottom);
+
+      });
+
+      var loft = getComputedStyle(top).position === "sticky" ? top.getBoundingClientRect().bottom : 0;
+
+      var luft = 16, ned = 0;
+
+      if (nederst > window.innerHeight - luft) ned = nederst - window.innerHeight + luft;
+
+      if (oeverst - ned < loft + luft) ned = oeverst - loft - luft;
+
+      if (Math.abs(ned) > 2) window.scrollBy({ top: ned, behavior: "smooth" });
+
+    }
+
+    function vis(rul) {
+
+      klik.forEach(function (k, i) { k.classList.toggle("vist", i === nu); });
+
+      dele.forEach(function (d) {
+
+        d.el.classList.toggle("vist", d.fra <= nu);
+
+        d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+
+      });
+
+      var aktivt = trinFor(nu);
+
+      numre.forEach(function (n, j) {
+
+        n.classList.toggle("aktiv", j === aktivt);
+
+        if (j === aktivt) n.setAttribute("aria-current", "step");
+
+        else n.removeAttribute("aria-current");
+
+      });
+
+      forrige.disabled = nu === 0;
+
+      naeste.disabled = nu === klik.length - 1;
+
+      if (rul) synlig();
+
+    }
+
+    function gaa(i) {
+
+      nu = Math.max(0, Math.min(klik.length - 1, i));
+
+      vis(true);
+
+    }
+
+    forrige.addEventListener("click", function () { gaa(nu - 1); });
+
+    naeste.addEventListener("click", function () { gaa(nu + 1); });
+
+    bjaelke.addEventListener("keydown", function (e) {
+
+      if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
+
+      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+
+    });
+
+
+
+    boks.classList.add("aktiv");
+
+    var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
+
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+
+    vis(false);
 
   });
 

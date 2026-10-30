@@ -723,7 +723,7 @@
     "href": "opgaver/1-4-opgaver.html",
     "title": "Opgaver til 1.4",
     "section": "",
-    "text": "Opgave 1.4.1: Kemisk reaktion eller ej?\nOpgaverne hører til afsnit 1.4 Reaktionsskemaer og afstemning. Prøv selv, før du åbner hjælpen under opgaven.\nAfgør for hver sætning, om der sker en kemisk reaktion. Skriv for de kemiske reaktioner, hvilket kendetegn du kan se.",
+    "text": "Opgave 1.4.1: Læs formlen\nOpgaverne hører til afsnit 1.4 Reaktionsskemaer og afstemning. Prøv selv, før du åbner hjælpen under opgaven.\nSkriv, hvor mange atomer der er af hver slags i ét molekyle af stoffet. Skriv også, hvor mange atomer der er i alt.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -734,7 +734,7 @@
     "href": "opgaver/1-4-opgaver.html#1.4.1",
     "title": "Opgaver til 1.4",
     "section": "",
-    "text": "Sætning\nKemisk reaktion?\nKendetegn\n\n\n\n\nEt stearinlys brænder.\n\n\n\n\nIsterninger smelter i et glas saftevand.\n\n\n\n\nEt søm ruster og bliver rødbrunt.\n\n\n\n\nSukker bliver opløst i te.\n\n\n\n\nVand koger i en elkedel.\n\n\n\n\nEn brusetablet bobler i et glas vand.\n\n\n\n\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nSpørg dig selv: Bliver der dannet et nyt stof, eller er det stadig det samme stof i en anden form? Kendetegnene står under Kendetegn på kemiske reaktioner i afsnit 1.4.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nNår is smelter, er det stadig vand, så det er ikke en kemisk reaktion. Når et stearinlys brænder, kommer der lys, og der dannes nye stoffer, som er gasser.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n\n\n\n\n\n\n\nSætning\nKemisk reaktion?\nKendetegn\n\n\n\n\nEt stearinlys brænder.\nja\nDer kommer lys, og temperaturen stiger.\n\n\nIsterninger smelter i et glas saftevand.\nnej\nIsen bliver til flydende vand, men det er stadig vand.\n\n\nEt søm ruster og bliver rødbrunt.\nja\nFarven ændrer sig.\n\n\nSukker bliver opløst i te.\nnej\nSukkeret er stadig sukker, selv om det ikke kan ses.\n\n\nVand koger i en elkedel.\nnej\nVanddampen er stadig vand.\n\n\nEn brusetablet bobler i et glas vand.\nja\nDer dannes en gas.",
+    "text": "Stof\nFormel\nAtomer af hver slags\nAtomer i alt\n\n\n\n\nVand\nH2O\n2 H og 1 O\n3\n\n\nCarbondioxid\nCO2\n\n\n\n\nAmmoniak\nNH3\n\n\n\n\nMethan\nCH4\n\n\n\n\nEthanol\nC2H6O\n\n\n\n\nDruesukker\nC6H12O6\n\n\n\n\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nDet lille, sænkede tal hører til symbolet lige foran tallet. Står der ikke noget tal efter et symbol, er der ét atom af den slags.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI CO2 står der ikke noget tal efter C, så der er 1 carbonatom. Efter O står der 2, så der er 2 oxygenatomer. Det giver 3 atomer i alt.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n\n\nStof\nAtomer af hver slags\nAtomer i alt\n\n\n\n\nCarbondioxid\n1 C og 2 O\n3\n\n\nAmmoniak\n1 N og 3 H\n4\n\n\nMethan\n1 C og 4 H\n5\n\n\nEthanol\n2 C, 6 H og 1 O\n9\n\n\nDruesukker\n6 C, 12 H og 6 O\n24",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -744,8 +744,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.2",
     "href": "opgaver/1-4-opgaver.html#1.4.2",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.2: Læs formlen",
-    "text": "Opgave 1.4.2: Læs formlen\nSkriv, hvor mange atomer der er af hver slags i ét molekyle af stoffet. Skriv også, hvor mange atomer der er i alt.\n\n\n\nStof\nFormel\nAtomer af hver slags\nAtomer i alt\n\n\n\n\nVand\nH2O\n2 H og 1 O\n3\n\n\nCarbondioxid\nCO2\n\n\n\n\nAmmoniak\nNH3\n\n\n\n\nMethan\nCH4\n\n\n\n\nEthanol\nC2H6O\n\n\n\n\nDruesukker\nC6H12O6\n\n\n\n\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nDet lille, sænkede tal hører til symbolet lige foran tallet. Står der ikke noget tal efter et symbol, er der ét atom af den slags.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI CO2 står der ikke noget tal efter C, så der er 1 carbonatom. Efter O står der 2, så der er 2 oxygenatomer. Det giver 3 atomer i alt.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n\n\nStof\nAtomer af hver slags\nAtomer i alt\n\n\n\n\nCarbondioxid\n1 C og 2 O\n3\n\n\nAmmoniak\n1 N og 3 H\n4\n\n\nMethan\n1 C og 4 H\n5\n\n\nEthanol\n2 C, 6 H og 1 O\n9\n\n\nDruesukker\n6 C, 12 H og 6 O\n24",
+    "section": "Opgave 1.4.2: Afstem dannelsen af ammoniak trin for trin",
+    "text": "Opgave 1.4.2: Afstem dannelsen af ammoniak trin for trin\nAmmoniak, NH3, bruges til at fremstille kunstgødning og laves af dinitrogen og dihydrogen. Tegningen viser reaktionsskemaet, før det er afstemt.\n\n\nTæl atomerne af hver slags før og efter pilen, og skriv tallene i regnskabet. Hvilke grundstoffer passer ikke?\nSæt koefficienter i skemaet, så antallet af N og H passer.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nFølg trinene i eksemplet under Sådan afstemmer du et reaktionsskema i afsnit 1.4. Begynd med nitrogen, for H2 består kun af ét grundstof, så den koefficient er lettest at rette til sidst.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nDer er 2 nitrogenatomer før pilen, så der skal stå 2 foran NH3. Hvert ammoniakmolekyle har 3 hydrogenatomer, så nu er der 6 hydrogenatomer efter pilen. Hvor mange dihydrogenmolekyler skal der til for at få 6 hydrogenatomer?\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nNitrogen har 2 atomer før pilen og 1 efter, og hydrogen har 2 før og 3 efter. Ingen af dem passer.\nSæt 2 foran NH3, så der er 2 nitrogenatomer på begge sider. Nu er der 6 hydrogenatomer efter pilen, så der skal stå 3 foran H2: N2 + 3 H2 → 2 NH3. Tjek: 2 N og 6 H på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -755,8 +755,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.3",
     "href": "opgaver/1-4-opgaver.html#1.4.3",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.3: Afstem dannelsen af ammoniak trin for trin",
-    "text": "Opgave 1.4.3: Afstem dannelsen af ammoniak trin for trin\nAmmoniak, NH3, bruges til at fremstille kunstgødning og laves af dinitrogen og dihydrogen. Tegningen viser reaktionsskemaet, før det er afstemt.\n\n\nTæl atomerne af hver slags før og efter pilen, og skriv tallene i regnskabet. Hvilke grundstoffer passer ikke?\nSæt koefficienter i skemaet, så antallet af N og H passer.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nFølg trinene i eksemplet under Sådan afstemmer du et reaktionsskema i afsnit 1.4. Begynd med nitrogen, for H2 består kun af ét grundstof, så den koefficient er lettest at rette til sidst.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nDer er 2 nitrogenatomer før pilen, så der skal stå 2 foran NH3. Hvert ammoniakmolekyle har 3 hydrogenatomer, så nu er der 6 hydrogenatomer efter pilen. Hvor mange dihydrogenmolekyler skal der til for at få 6 hydrogenatomer?\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nNitrogen har 2 atomer før pilen og 1 efter, og hydrogen har 2 før og 3 efter. Ingen af dem passer.\nSæt 2 foran NH3, så der er 2 nitrogenatomer på begge sider. Nu er der 6 hydrogenatomer efter pilen, så der skal stå 3 foran H2: N2 + 3 H2 → 2 NH3. Tjek: 2 N og 6 H på begge sider.",
+    "section": "Opgave 1.4.3: Tæl atomerne",
+    "text": "Opgave 1.4.3: Tæl atomerne\nHvor mange atomer af hver slags er der? Udfyld skemaet. Den første række er udfyldt.\n\n\n\nI skemaet står\nAtomer af hver slags\n\n\n\n\n2 H2O\n4 H og 2 O\n\n\n3 CO2\n\n\n\n4 HCl\n\n\n\n5 O2\n\n\n\n2 C2H6\n\n\n\n3 H2SO4\n\n\n\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGang koefficienten med det lille tal. Står der ikke noget lille tal efter et atom, er der ét af den slags i hvert molekyle.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI 2 C2H6 er der 2 molekyler. Hvert molekyle har 2 C og 6 H. To molekyler giver dobbelt så mange: 4 C og 12 H.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n\n\nI skemaet står\nAtomer af hver slags\n\n\n\n\n3 CO2\n3 C og 6 O\n\n\n4 HCl\n4 H og 4 Cl\n\n\n5 O2\n10 O\n\n\n2 C2H6\n4 C og 12 H\n\n\n3 H2SO4\n6 H, 3 S og 12 O",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -766,8 +766,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.4",
     "href": "opgaver/1-4-opgaver.html#1.4.4",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.4: Tæl atomerne",
-    "text": "Opgave 1.4.4: Tæl atomerne\nHvor mange atomer af hver slags er der? Udfyld skemaet. Den første række er udfyldt.\n\n\n\nI skemaet står\nAtomer af hver slags\n\n\n\n\n2 H2O\n4 H og 2 O\n\n\n3 CO2\n\n\n\n4 HCl\n\n\n\n5 O2\n\n\n\n2 C2H6\n\n\n\n3 H2SO4\n\n\n\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGang koefficienten med det lille tal. Står der ikke noget lille tal efter et atom, er der ét af den slags i hvert molekyle.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI 2 C2H6 er der 2 molekyler. Hvert molekyle har 2 C og 6 H. To molekyler giver dobbelt så mange: 4 C og 12 H.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n\n\nI skemaet står\nAtomer af hver slags\n\n\n\n\n3 CO2\n3 C og 6 O\n\n\n4 HCl\n4 H og 4 Cl\n\n\n5 O2\n10 O\n\n\n2 C2H6\n4 C og 12 H\n\n\n3 H2SO4\n6 H, 3 S og 12 O",
+    "section": "Opgave 1.4.4: Afstem de første reaktionsskemaer",
+    "text": "Opgave 1.4.4: Afstem de første reaktionsskemaer\nTæl atomerne før og efter pilen. Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt. Er et skema allerede afstemt, skriver du ingen koefficienter.\n\na. C +  O2→ CO2b. Na +  Cl2→ NaClc. S +  O2→ SO2d. Ca +  O2→ CaOe. H2 +  F2→ HF\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nLav et lille regnskab for hvert skema: Skriv hvert grundstof op, og tæl, hvor mange atomer der er før pilen og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema b er der 2 Cl før pilen og 1 Cl efter. Sæt 2 foran NaCl. Så er der 2 Na efter pilen, og der skal også stå 2 foran Na.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nC + O2 → CO2 er allerede afstemt. Der er 1 C og 2 O på begge sider.\n2 Na + Cl2 → 2 NaCl. Tjek: 2 Na og 2 Cl på begge sider.\nS + O2 → SO2 er allerede afstemt. Der er 1 S og 2 O på begge sider.\n2 Ca + O2 → 2 CaO. Tjek: 2 Ca og 2 O på begge sider.\nH2 + F2 → 2 HF. Tjek: 2 H og 2 F på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -777,8 +777,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.5",
     "href": "opgaver/1-4-opgaver.html#1.4.5",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.5: Afstem de første reaktionsskemaer",
-    "text": "Opgave 1.4.5: Afstem de første reaktionsskemaer\nTæl atomerne før og efter pilen. Skriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt. Er et skema allerede afstemt, skriver du ingen koefficienter.\n\na. C +  O2→ CO2b. Na +  Cl2→ NaClc. S +  O2→ SO2d. Ca +  O2→ CaOe. H2 +  F2→ HF\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nLav et lille regnskab for hvert skema: Skriv hvert grundstof op, og tæl, hvor mange atomer der er før pilen og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema b er der 2 Cl før pilen og 1 Cl efter. Sæt 2 foran NaCl. Så er der 2 Na efter pilen, og der skal også stå 2 foran Na.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nC + O2 → CO2 er allerede afstemt. Der er 1 C og 2 O på begge sider.\n2 Na + Cl2 → 2 NaCl. Tjek: 2 Na og 2 Cl på begge sider.\nS + O2 → SO2 er allerede afstemt. Der er 1 S og 2 O på begge sider.\n2 Ca + O2 → 2 CaO. Tjek: 2 Ca og 2 O på begge sider.\nH2 + F2 → 2 HF. Tjek: 2 H og 2 F på begge sider.",
+    "section": "Opgave 1.4.5: Afstem reaktionsskemaerne",
+    "text": "Opgave 1.4.5: Afstem reaktionsskemaerne\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\na. H2 +  Cl2→ HClb. Mg +  O2→ MgOc. K +  Br2→ KBrd. N2 +  O2→ NO\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema b er der 2 O før pilen og 1 O efter. Sæt 2 foran MgO. Så er der 2 Mg efter pilen, og der skal også stå 2 foran Mg.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nH2 + Cl2 → 2 HCl. Tjek: 2 H og 2 Cl på begge sider.\n2 Mg + O2 → 2 MgO. Tjek: 2 Mg og 2 O på begge sider.\n2 K + Br2 → 2 KBr. Tjek: 2 K og 2 Br på begge sider.\nN2 + O2 → 2 NO. Tjek: 2 N og 2 O på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -788,8 +788,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.6",
     "href": "opgaver/1-4-opgaver.html#1.4.6",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.6: Afstem reaktionsskemaerne",
-    "text": "Opgave 1.4.6: Afstem reaktionsskemaerne\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\na. H2 +  Cl2→ HClb. Mg +  O2→ MgOc. K +  Br2→ KBrd. N2 +  O2→ NO\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema b er der 2 O før pilen og 1 O efter. Sæt 2 foran MgO. Så er der 2 Mg efter pilen, og der skal også stå 2 foran Mg.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nH2 + Cl2 → 2 HCl. Tjek: 2 H og 2 Cl på begge sider.\n2 Mg + O2 → 2 MgO. Tjek: 2 Mg og 2 O på begge sider.\n2 K + Br2 → 2 KBr. Tjek: 2 K og 2 Br på begge sider.\nN2 + O2 → 2 NO. Tjek: 2 N og 2 O på begge sider.",
+    "section": "Opgave 1.4.6: Afstem lidt sværere reaktionsskemaer",
+    "text": "Opgave 1.4.6: Afstem lidt sværere reaktionsskemaer\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\na. H2O2→ H2O +  O2b. CO +  O2→ CO2c. Al +  O2→ Al2O3d. Fe +  Cl2→ FeCl3\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGem det stof, der kun består af ét grundstof, til sidst. I skema c og d skal du finde et tal, som begge de små tal går op i.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O2 og 2 foran Al2O3, så der er 6 O på begge sider. Tæl til sidst aluminium.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n2 H2O2 → 2 H2O + O2. Tjek: 4 H og 4 O på begge sider.\n2 CO + O2 → 2 CO2. Tjek: 2 C og 4 O på begge sider.\n4 Al + 3 O2 → 2 Al2O3. Tjek: 4 Al og 6 O på begge sider.\n2 Fe + 3 Cl2 → 2 FeCl3. Tjek: 2 Fe og 6 Cl på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -799,8 +799,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.7",
     "href": "opgaver/1-4-opgaver.html#1.4.7",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.7: Afstem lidt sværere reaktionsskemaer",
-    "text": "Opgave 1.4.7: Afstem lidt sværere reaktionsskemaer\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\na. H2O2→ H2O +  O2b. CO +  O2→ CO2c. Al +  O2→ Al2O3d. Fe +  Cl2→ FeCl3\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGem det stof, der kun består af ét grundstof, til sidst. I skema c og d skal du finde et tal, som begge de små tal går op i.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O2 og 2 foran Al2O3, så der er 6 O på begge sider. Tæl til sidst aluminium.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n2 H2O2 → 2 H2O + O2. Tjek: 4 H og 4 O på begge sider.\n2 CO + O2 → 2 CO2. Tjek: 2 C og 4 O på begge sider.\n4 Al + 3 O2 → 2 Al2O3. Tjek: 4 Al og 6 O på begge sider.\n2 Fe + 3 Cl2 → 2 FeCl3. Tjek: 2 Fe og 6 Cl på begge sider.",
+    "section": "Opgave 1.4.7: Afstem forbrændinger",
+    "text": "Opgave 1.4.7: Afstem forbrændinger\nNår et stof med carbon og hydrogen brænder, reagerer det med dioxygen og bliver til carbondioxid og vand. Afstem reaktionsskemaerne ved at skrive koefficienter foran formlerne.\n\na. CH4 +  O2→ CO2 +  H2Ob. C2H4 +  O2→ CO2 +  H2Oc. C5H12 +  O2→ CO2 +  H2O\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTag grundstofferne i denne rækkefølge: først carbon, så hydrogen og til sidst oxygen. Oxygen står alene i O2, så den koefficient er lettest at rette til sidst.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 5 C før pilen, så der skal stå 5 foran CO2. Der er 12 H før pilen, så der skal stå 6 foran H2O. Tæl så oxygenatomerne efter pilen: 10 i CO2 og 6 i H2O, i alt 16. Det kræver 8 O2.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nCH4 + 2 O2 → CO2 + 2 H2O. Tjek: 1 C, 4 H og 4 O på begge sider.\nC2H4 + 3 O2 → 2 CO2 + 2 H2O. Tjek: 2 C, 4 H og 6 O på begge sider.\nC5H12 + 8 O2 → 5 CO2 + 6 H2O. Tjek: 5 C, 12 H og 16 O på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -810,8 +810,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.8",
     "href": "opgaver/1-4-opgaver.html#1.4.8",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.8: Afstem forbrændinger",
-    "text": "Opgave 1.4.8: Afstem forbrændinger\nNår et stof med carbon og hydrogen brænder, reagerer det med dioxygen og bliver til carbondioxid og vand. Afstem reaktionsskemaerne ved at skrive koefficienter foran formlerne.\n\na. CH4 +  O2→ CO2 +  H2Ob. C2H4 +  O2→ CO2 +  H2Oc. C5H12 +  O2→ CO2 +  H2O\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTag grundstofferne i denne rækkefølge: først carbon, så hydrogen og til sidst oxygen. Oxygen står alene i O2, så den koefficient er lettest at rette til sidst.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 5 C før pilen, så der skal stå 5 foran CO2. Der er 12 H før pilen, så der skal stå 6 foran H2O. Tæl så oxygenatomerne efter pilen: 10 i CO2 og 6 i H2O, i alt 16. Det kræver 8 O2.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nCH4 + 2 O2 → CO2 + 2 H2O. Tjek: 1 C, 4 H og 4 O på begge sider.\nC2H4 + 3 O2 → 2 CO2 + 2 H2O. Tjek: 2 C, 4 H og 6 O på begge sider.\nC5H12 + 8 O2 → 5 CO2 + 6 H2O. Tjek: 5 C, 12 H og 16 O på begge sider.",
+    "section": "Opgave 1.4.8: Find fejlen",
+    "text": "Opgave 1.4.8: Find fejlen\nTo elever har afstemt hvert sit reaktionsskema. Begge har lavet en fejl. Forklar fejlen, og skriv det rigtige reaktionsskema.\n\nDihydrogen og dioxygen bliver til vand:\nH2 + O2 → H2O2\nNatrium og dichlor bliver til natriumchlorid:\n4 Na + 2 Cl2 → 4 NaCl\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nLæs Det lille tal må ikke ændres og de to råd under Sådan afstemmer du et reaktionsskema i afsnit 1.4.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema a er der rettet i en formel, så der står et andet stof end vand. I skema b er der lige mange atomer på begge sider, men se, om alle koefficienterne kan deles med det samme tal.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nEleven har ændret det lille tal i formlen for vand. H2O2 er hydrogenperoxid og ikke vand. Det rigtige skema er 2 H2 + O2 → 2 H2O.\nAtomerne passer, men koefficienterne er ikke de mindste hele tal. De kan alle deles med 2. Det rigtige skema er 2 Na + Cl2 → 2 NaCl.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -821,8 +821,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.9",
     "href": "opgaver/1-4-opgaver.html#1.4.9",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.9: Find fejlen",
-    "text": "Opgave 1.4.9: Find fejlen\nTo elever har afstemt hvert sit reaktionsskema. Begge har lavet en fejl. Forklar fejlen, og skriv det rigtige reaktionsskema.\n\nDihydrogen og dioxygen bliver til vand:\nH2 + O2 → H2O2\nNatrium og dichlor bliver til natriumchlorid:\n4 Na + 2 Cl2 → 4 NaCl\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nLæs Det lille tal må ikke ændres og de to råd under Sådan afstemmer du et reaktionsskema i afsnit 1.4.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema a er der rettet i en formel, så der står et andet stof end vand. I skema b er der lige mange atomer på begge sider, men se, om alle koefficienterne kan deles med det samme tal.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nEleven har ændret det lille tal i formlen for vand. H2O2 er hydrogenperoxid og ikke vand. Det rigtige skema er 2 H2 + O2 → 2 H2O.\nAtomerne passer, men koefficienterne er ikke de mindste hele tal. De kan alle deles med 2. Det rigtige skema er 2 Na + Cl2 → 2 NaCl.",
+    "section": "Opgave 1.4.9: Fra tegning til reaktionsskema",
+    "text": "Opgave 1.4.9: Fra tegning til reaktionsskema\n\nTegningen viser en reaktion. De røde kugler er oxygenatomer, og de hvide kugler er hydrogenatomer. Skriv det afstemte reaktionsskema for reaktionen med formlerne for stofferne.\n\n         →         \n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl atomerne i ét molekyle for at finde formlen. Tæl derefter, hvor mange molekyler der er af hver slags. Det tal er koefficienten.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nHvert molekyle før reaktionen har 2 H og 2 O, så formlen er H2O2. Der er to af dem, så koefficienten er 2.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\nFør reaktionen er der H2O2, som er hydrogenperoxid. Efter reaktionen er der H2O og O2, altså vand og dioxygen. Reaktionsskemaet er 2 H2O2 → 2 H2O + O2.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -832,8 +832,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.10",
     "href": "opgaver/1-4-opgaver.html#1.4.10",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.10: Fra tegning til reaktionsskema",
-    "text": "Opgave 1.4.10: Fra tegning til reaktionsskema\n\nTegningen viser en reaktion. De røde kugler er oxygenatomer, og de hvide kugler er hydrogenatomer. Skriv det afstemte reaktionsskema for reaktionen med formlerne for stofferne.\n\n         →         \n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl atomerne i ét molekyle for at finde formlen. Tæl derefter, hvor mange molekyler der er af hver slags. Det tal er koefficienten.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nHvert molekyle før reaktionen har 2 H og 2 O, så formlen er H2O2. Der er to af dem, så koefficienten er 2.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\nFør reaktionen er der H2O2, som er hydrogenperoxid. Efter reaktionen er der H2O og O2, altså vand og dioxygen. Reaktionsskemaet er 2 H2O2 → 2 H2O + O2.",
+    "section": "Opgave 1.4.10: Tilstandssymboler",
+    "text": "Opgave 1.4.10: Tilstandssymboler\nSkriv de afstemte reaktionsskemaer med tilstandssymboler.\n\nFast magnesium, Mg, reagerer med dioxygen, O2, fra luften og bliver til magnesiumoxid, MgO, som er et fast stof.\nFast natrium, Na, reagerer med gassen dichlor, Cl2, og bliver til natriumchlorid, NaCl, som er et fast stof.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nSe figuren under Tilstandssymboler i afsnit 1.4. Symbolet står i en parentes lige efter formlen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nDioxygen i luften er en gas og skrives O2(g). Afstem først skemaet uden tilstandssymboler, og sæt dem på til sidst.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n2 Mg(s) + O2(g) → 2 MgO(s)\n2 Na(s) + Cl2(g) → 2 NaCl(s)",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -843,8 +843,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.11",
     "href": "opgaver/1-4-opgaver.html#1.4.11",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.11: Tilstandssymboler",
-    "text": "Opgave 1.4.11: Tilstandssymboler\nSkriv de afstemte reaktionsskemaer med tilstandssymboler.\n\nFast magnesium, Mg, reagerer med dioxygen, O2, fra luften og bliver til magnesiumoxid, MgO, som er et fast stof.\nFast natrium, Na, reagerer med gassen dichlor, Cl2, og bliver til natriumchlorid, NaCl, som er et fast stof.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nSe figuren under Tilstandssymboler i afsnit 1.4. Symbolet står i en parentes lige efter formlen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nDioxygen i luften er en gas og skrives O2(g). Afstem først skemaet uden tilstandssymboler, og sæt dem på til sidst.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n2 Mg(s) + O2(g) → 2 MgO(s)\n2 Na(s) + Cl2(g) → 2 NaCl(s)",
+    "section": "Opgave 1.4.11: Hjortetaksalt i småkager",
+    "text": "Opgave 1.4.11: Hjortetaksalt i småkager\n\nVelegnet til fødevareforløb\n\nHjortetaksalt, NH4HCO3, får dejen til at hæve i nogle opskrifter på småkager. I den varme ovn bliver hjortetaksalt til tre nye stoffer:\nNH4HCO3(s) → NH3(g) + H2O(g) + CO2(g)\n\nHvilket stof er reaktant, og hvilke stoffer er produkter?\nForklar, hvorfor dejen hæver.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nReaktanten står før pilen, og produkterne står efter pilen. Tilstandssymbolet (g) betyder, at stoffet er en gas.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nEn gas fylder meget mere end et fast stof. Tænk på, hvad der sker, når der dannes gas inde i dejen.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nReaktanten er hjortetaksalt, NH4HCO3. Produkterne er ammoniak, NH3, vand, H2O, og carbondioxid, CO2.\nAlle tre produkter er gasser, og de fylder meget mere end det faste hjortetaksalt. Gasserne danner små bobler i dejen, og boblerne får dejen til at hæve.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -854,8 +854,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.12",
     "href": "opgaver/1-4-opgaver.html#1.4.12",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.12: Hjortetaksalt i småkager",
-    "text": "Opgave 1.4.12: Hjortetaksalt i småkager\n\nVelegnet til fødevareforløb\n\nHjortetaksalt, NH4HCO3, får dejen til at hæve i nogle opskrifter på småkager. I den varme ovn bliver hjortetaksalt til tre nye stoffer:\nNH4HCO3(s) → NH3(g) + H2O(g) + CO2(g)\n\nHvilket stof er reaktant, og hvilke stoffer er produkter?\nForklar, hvorfor dejen hæver.\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nReaktanten står før pilen, og produkterne står efter pilen. Tilstandssymbolet (g) betyder, at stoffet er en gas.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nEn gas fylder meget mere end et fast stof. Tænk på, hvad der sker, når der dannes gas inde i dejen.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nReaktanten er hjortetaksalt, NH4HCO3. Produkterne er ammoniak, NH3, vand, H2O, og carbondioxid, CO2.\nAlle tre produkter er gasser, og de fylder meget mere end det faste hjortetaksalt. Gasserne danner små bobler i dejen, og boblerne får dejen til at hæve.",
+    "section": "Opgave 1.4.12: Afstem reaktionsskemaer fra krop og medicin",
+    "text": "Opgave 1.4.12: Afstem reaktionsskemaer fra krop og medicin\n\nVelegnet til sundhedsforløb\n\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\nMusklerne laver glucose om til mælkesyre:\n C6H12O6 →  C3H6O3\nLattergas fremstilles af ammoniumnitrat, som varmes op:\n NH4NO3 →  N2O +  H2O\nZink og dioxygen bliver til zink(II)oxid, som bruges i zinksalve:\n Zn +  O2 →  ZnO\nEn kalktablet reagerer med mavesyre:\n CaCO3 +  HCl →  CaCl2 +  H2O +  CO2\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 2 O før pilen og 1 O efter. Sæt 2 foran ZnO. Så er der 2 Zn efter pilen, og der skal også stå 2 foran Zn. I skema d mangler der både H og Cl før pilen.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nC6H12O6 → 2 C3H6O3. Tjek: 6 C, 12 H og 6 O på begge sider.\nNH4NO3 → N2O + 2 H2O. Tjek: 2 N, 4 H og 3 O på begge sider.\n2 Zn + O2 → 2 ZnO. Tjek: 2 Zn og 2 O på begge sider.\nCaCO3 + 2 HCl → CaCl2 + H2O + CO2. Tjek: 1 Ca, 1 C, 3 O, 2 H og 2 Cl på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -865,8 +865,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.13",
     "href": "opgaver/1-4-opgaver.html#1.4.13",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.13: Afstem reaktionsskemaer fra krop og medicin",
-    "text": "Opgave 1.4.13: Afstem reaktionsskemaer fra krop og medicin\n\nVelegnet til sundhedsforløb\n\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\nMusklerne laver glucose om til mælkesyre:\n C6H12O6 →  C3H6O3\nLattergas fremstilles af ammoniumnitrat, som varmes op:\n NH4NO3 →  N2O +  H2O\nZink og dioxygen bliver til zink(II)oxid, som bruges i zinksalve:\n Zn +  O2 →  ZnO\nEn kalktablet reagerer med mavesyre:\n CaCO3 +  HCl →  CaCl2 +  H2O +  CO2\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nTæl atomerne før og efter pilen. Sæt en koefficient foran det stof, der mangler atomer, og tæl igen. Du må ikke ændre de små tal.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 2 O før pilen og 1 O efter. Sæt 2 foran ZnO. Så er der 2 Zn efter pilen, og der skal også stå 2 foran Zn. I skema d mangler der både H og Cl før pilen.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\nC6H12O6 → 2 C3H6O3. Tjek: 6 C, 12 H og 6 O på begge sider.\nNH4NO3 → N2O + 2 H2O. Tjek: 2 N, 4 H og 3 O på begge sider.\n2 Zn + O2 → 2 ZnO. Tjek: 2 Zn og 2 O på begge sider.\nCaCO3 + 2 HCl → CaCl2 + H2O + CO2. Tjek: 1 Ca, 1 C, 3 O, 2 H og 2 Cl på begge sider.",
+    "section": "Opgave 1.4.13: Gær laver sukker om til alkohol",
+    "text": "Opgave 1.4.13: Gær laver sukker om til alkohol\n\nVelegnet til fødevareforløb\n\nNår gær laver vin af druesaft, bliver sukkerstoffet glucose til ethanol og carbondioxid. Skriv koefficienter foran formlerne, så reaktionsskemaet bliver afstemt.\n C6H12O6 →  C2H6O +  CO2\nHvilket af produkterne giver boblerne i mousserende vin?\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nBegynd med hydrogen. Det står kun i ét stof på hver side af pilen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nDer er 12 H før pilen og 6 H i hvert ethanolmolekyle. Sæt 2 foran C2H6O, og tæl derefter carbon.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\nC6H12O6 → 2 C2H6O + 2 CO2. Tjek: 6 C, 12 H og 6 O på begge sider.\nBoblerne er carbondioxid, CO2, som er en gas.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -876,8 +876,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.14",
     "href": "opgaver/1-4-opgaver.html#1.4.14",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.14: Gær laver sukker om til alkohol",
-    "text": "Opgave 1.4.14: Gær laver sukker om til alkohol\n\nVelegnet til fødevareforløb\n\nNår gær laver vin af druesaft, bliver sukkerstoffet glucose til ethanol og carbondioxid. Skriv koefficienter foran formlerne, så reaktionsskemaet bliver afstemt.\n C6H12O6 →  C2H6O +  CO2\nHvilket af produkterne giver boblerne i mousserende vin?\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nBegynd med hydrogen. Det står kun i ét stof på hver side af pilen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nDer er 12 H før pilen og 6 H i hvert ethanolmolekyle. Sæt 2 foran C2H6O, og tæl derefter carbon.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\nC6H12O6 → 2 C2H6O + 2 CO2. Tjek: 6 C, 12 H og 6 O på begge sider.\nBoblerne er carbondioxid, CO2, som er en gas.",
+    "section": "Opgave 1.4.14: Afstem lidt sværere reaktionsskemaer om sundhed",
+    "text": "Opgave 1.4.14: Afstem lidt sværere reaktionsskemaer om sundhed\n\nVelegnet til sundhedsforløb\n\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\nLattergas spaltes til dinitrogen og dioxygen:\n N2O →  N2 +  O2\nBariumsulfat, som en patient drikker før et røntgenbillede af maven, fremstilles:\n BaCl2 +  Na2SO4 →  BaSO4 +  NaCl\nJernpulveret i et varmeplaster reagerer med dioxygen fra luften:\n Fe +  O2 →  Fe2O3\nAluminiumchlorid til deodorant fremstilles:\n Al +  Cl2 →  AlCl3\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGem det stof, der kun består af ét grundstof, til sidst. I skema b er det kun natrium og chlor, der ikke passer. I skema c og d skal du finde et tal, som begge de små tal går op i.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O2 og 2 foran Fe2O3, så der er 6 O på begge sider. Tæl til sidst jern.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n2 N2O → 2 N2 + O2. Tjek: 4 N og 2 O på begge sider.\nBaCl2 + Na2SO4 → BaSO4 + 2 NaCl. Tjek: 1 Ba, 2 Cl, 2 Na, 1 S og 4 O på begge sider.\n4 Fe + 3 O2 → 2 Fe2O3. Tjek: 4 Fe og 6 O på begge sider.\n2 Al + 3 Cl2 → 2 AlCl3. Tjek: 2 Al og 6 Cl på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -887,19 +887,8 @@
     "objectID": "opgaver/1-4-opgaver.html#1.4.15",
     "href": "opgaver/1-4-opgaver.html#1.4.15",
     "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.15: Afstem lidt sværere reaktionsskemaer om sundhed",
-    "text": "Opgave 1.4.15: Afstem lidt sværere reaktionsskemaer om sundhed\n\nVelegnet til sundhedsforløb\n\nSkriv koefficienter foran formlerne, så reaktionsskemaerne bliver afstemt.\n\nLattergas spaltes til dinitrogen og dioxygen:\n N2O →  N2 +  O2\nBariumsulfat, som en patient drikker før et røntgenbillede af maven, fremstilles:\n BaCl2 +  Na2SO4 →  BaSO4 +  NaCl\nJernpulveret i et varmeplaster reagerer med dioxygen fra luften:\n Fe +  O2 →  Fe2O3\nAluminiumchlorid til deodorant fremstilles:\n Al +  Cl2 →  AlCl3\n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nGem det stof, der kun består af ét grundstof, til sidst. I skema b er det kun natrium og chlor, der ikke passer. I skema c og d skal du finde et tal, som begge de små tal går op i.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\nI skema c er der 2 O før pilen og 3 O efter. Både 2 og 3 går op i 6. Sæt derfor 3 foran O2 og 2 foran Fe2O3, så der er 6 O på begge sider. Tæl til sidst jern.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\n\n2 N2O → 2 N2 + O2. Tjek: 4 N og 2 O på begge sider.\nBaCl2 + Na2SO4 → BaSO4 + 2 NaCl. Tjek: 1 Ba, 2 Cl, 2 Na, 1 S og 4 O på begge sider.\n4 Fe + 3 O2 → 2 Fe2O3. Tjek: 4 Fe og 6 O på begge sider.\n2 Al + 3 Cl2 → 2 AlCl3. Tjek: 2 Al og 6 Cl på begge sider.",
-    "crumbs": [
-      "Kapitel 1: Atomer",
-      "Opgaver til 1.4"
-    ]
-  },
-  {
-    "objectID": "opgaver/1-4-opgaver.html#1.4.16",
-    "href": "opgaver/1-4-opgaver.html#1.4.16",
-    "title": "Opgaver til 1.4",
-    "section": "Opgave 1.4.16: Kroppen forbrænder sukker",
-    "text": "Opgave 1.4.16: Kroppen forbrænder sukker\n\nVelegnet til fødevareforløb\n\nKroppen får energi ved at lade glucose, C6H12O6, reagere med dioxygen, O2. Produkterne er carbondioxid, CO2, og vand, H2O, som vi ånder ud. Skriv det afstemte reaktionsskema.\n\n         →         \n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nReaktanterne står før pilen, og produkterne står efter pilen. Afstem i rækkefølgen carbon, hydrogen og oxygen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\n6 C kræver 6 CO2, og 12 H kræver 6 H2O. Efter pilen er der så 12 O i CO2 og 6 O i H2O, i alt 18 O. Husk, at glucose selv har 6 O med, når du finder koefficienten foran O2.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\nC6H12O6 + 6 O2 → 6 CO2 + 6 H2O. Tjek: 6 C, 12 H og 18 O på begge sider.",
+    "section": "Opgave 1.4.15: Kroppen forbrænder sukker",
+    "text": "Opgave 1.4.15: Kroppen forbrænder sukker\n\nVelegnet til fødevareforløb\n\nKroppen får energi ved at lade glucose, C6H12O6, reagere med dioxygen, O2. Produkterne er carbondioxid, CO2, og vand, H2O, som vi ånder ud. Skriv det afstemte reaktionsskema.\n\n         →         \n\n\n\n\n\n\n\nTipHjælp 1\n\n\n\n\n\nReaktanterne står før pilen, og produkterne står efter pilen. Afstem i rækkefølgen carbon, hydrogen og oxygen.\n\n\n\n\n\n\n\n\n\nTipHjælp 2\n\n\n\n\n\n6 C kræver 6 CO2, og 12 H kræver 6 H2O. Efter pilen er der så 12 O i CO2 og 6 O i H2O, i alt 18 O. Husk, at glucose selv har 6 O med, når du finder koefficienten foran O2.\n\n\n\n\n\n\n\n\n\nNoteFacit\n\n\n\n\n\nC6H12O6 + 6 O2 → 6 CO2 + 6 H2O. Tjek: 6 C, 12 H og 18 O på begge sider.",
     "crumbs": [
       "Kapitel 1: Atomer",
       "Opgaver til 1.4"
@@ -13011,7 +13000,7 @@
     "href": "temaer/sundhed.html#sundhedsopgaver-i-kapitlerne",
     "title": "Tema 1: Sundhed",
     "section": "Sundhedsopgaver i kapitlerne",
-    "text": "Sundhedsopgaver i kapitlerne\nOpgavesiderne i kapitel 1, 2, 3 og 6 har opgaver med mærkatet Velegnet til sundhedsforløb. I kapitel 1 og 2 står de mellem de andre opgaver, og i kapitel 3 og 6 står de sidst på siden. Baggrunden for dem står på temaets sider.\n\n\n\nKapitel\nSundhedsopgaver\n\n\n\n\n1 Atomer\n1.1.4, 1.2.6, 1.4.13 og 1.4.15\n\n\n2 Ionforbindelser\n2.1.8\n\n\n3 Molekyler\n3.1, 3.2, 3.3 og 3.4\n\n\n6 Koncentration\n6.1, 6.2 og 6.3",
+    "text": "Sundhedsopgaver i kapitlerne\nOpgavesiderne i kapitel 1, 2, 3 og 6 har opgaver med mærkatet Velegnet til sundhedsforløb. I kapitel 1 og 2 står de mellem de andre opgaver, og i kapitel 3 og 6 står de sidst på siden. Baggrunden for dem står på temaets sider.\n\n\n\nKapitel\nSundhedsopgaver\n\n\n\n\n1 Atomer\n1.1.4, 1.2.6, 1.4.12 og 1.4.14\n\n\n2 Ionforbindelser\n2.1.8\n\n\n3 Molekyler\n3.1, 3.2, 3.3 og 3.4\n\n\n6 Koncentration\n6.1, 6.2 og 6.3",
     "crumbs": [
       "Tema 1: Sundhed"
     ]
