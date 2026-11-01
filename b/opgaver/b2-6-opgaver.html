@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a9cfe0d9f8838868d99f449a3bb64121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-fde1b4ef36ac541f615005b2c6976086.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -1281,7 +1281,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../temaer/t10-6-hydrogen-som-energilager.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T10.6 Hydrogen som energilager</span></a>
+ <span class="menu-text">T10.6 Dihydrogen som energilager</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1586,7 +1586,7 @@ window.Quarto = {
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Opgaven ligner eksemplet med beholderen fra afsnit B2.1 i afsnit B2.6, bare med en anden startkoncentration. Der dannes to NO<sub>2</sub>, hver gang ét N<sub>2</sub>O<sub>4</sub> går i stykker. Ændringen for NO<sub>2</sub> er derfor +2<em>x</em>.</p>
+<p>Opgaven ligner eksemplet med dinitrogentetraoxid i afsnit B2.6, bare med en anden startkoncentration. Der dannes to NO<sub>2</sub>, hver gang ét N<sub>2</sub>O<sub>4</sub> går i stykker. Ændringen for NO<sub>2</sub> er derfor +2<em>x</em>.</p>
 </div>
 </div>
 </div>
@@ -1686,7 +1686,7 @@ K = \frac{(2x)^{2}}{0{,}30\ \mathrm{M} - x} = 0{,}20\ \mathrm{M}
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Følg de syv trin i opsummeringen sidst i afsnit B2.6. Opgaven ligner eksemplet med SO<sub>2</sub>Cl<sub>2</sub>.</p>
+<p>Følg de fire trin i eksemplet med SO<sub>2</sub>Cl<sub>2</sub> i afsnit B2.6. Opgaven ligner det, bare med andre tal.</p>
 </div>
 </div>
 </div>
@@ -2461,6 +2461,113 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
+// En beregning, der bygges op klik for klik (afsnit B2.6, 30. okt. 2026; Niels ville kunne bladre "som en powerpoint
+// uden at skifte slide", så det hele ikke bliver slettet for hvert trin).
+//
+// En boks med klassen "opbyg" indeholder en boks "opbyg-tekster" med én boks "klik" for hvert klik (forklaringen til
+// klikket) og en tavle med beregningen. Hver del af tavlen har egenskaben fra="N" og vises fra klik N; det, der lige
+// er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
+// knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
+// Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+// "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+document.addEventListener("DOMContentLoaded", function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
+    var tekster = boks.querySelector(".opbyg-tekster");
+    if (!tekster) return;
+    var klik = Array.prototype.filter.call(tekster.children, function (el) {
+      return el.classList.contains("klik");
+    });
+    if (klik.length < 2) return;
+    var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+      return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+    });
+    var trin = [];
+    klik.forEach(function (k, i) {
+      var t = k.getAttribute("data-knap");
+      if (t || !trin.length) trin.push({ tekst: t || "1", start: i, valgfri: k.classList.contains("valgfri") });
+    });
+    function trinFor(i) {
+      for (var j = trin.length - 1; j > 0; j--) if (trin[j].start <= i) return j;
+      return 0;
+    }
+
+    var top = document.createElement("div");
+    top.className = "opbyg-top";
+    var bjaelke = document.createElement("div");
+    bjaelke.className = "trin-bjaelke";
+    function knap(tekst, klasse, label) {
+      var k = document.createElement("button");
+      k.type = "button";
+      k.className = klasse;
+      k.textContent = tekst;
+      if (label) k.setAttribute("aria-label", label);
+      bjaelke.appendChild(k);
+      return k;
+    }
+    var nu = 0;
+    var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
+    var numre = trin.map(function (t) {
+      var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+[a-z]?$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
+      n.addEventListener("click", function () { gaa(t.start); });
+      return n;
+    });
+    var naeste = knap("Næste ›", "trin-naeste", "Næste");
+    top.appendChild(bjaelke);
+    boks.insertBefore(top, boks.firstChild);
+    top.appendChild(tekster);
+    tekster.setAttribute("aria-live", "polite");
+
+    // Ruller siden, så det nye kan ses under bjælken og forklaringen
+    function synlig() {
+      var nye = boks.querySelectorAll(".ny");
+      if (!nye.length) return;
+      var oeverst = Infinity, nederst = -Infinity;
+      Array.prototype.forEach.call(nye, function (el) {
+        var r = el.getBoundingClientRect();
+        oeverst = Math.min(oeverst, r.top);
+        nederst = Math.max(nederst, r.bottom);
+      });
+      var loft = getComputedStyle(top).position === "sticky" ? top.getBoundingClientRect().bottom : 0;
+      var luft = 16, ned = 0;
+      if (nederst > window.innerHeight - luft) ned = nederst - window.innerHeight + luft;
+      if (oeverst - ned < loft + luft) ned = oeverst - loft - luft;
+      if (Math.abs(ned) > 2) window.scrollBy({ top: ned, behavior: "smooth" });
+    }
+    function vis(rul) {
+      klik.forEach(function (k, i) { k.classList.toggle("vist", i === nu); });
+      dele.forEach(function (d) {
+        d.el.classList.toggle("vist", d.fra <= nu);
+        d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+      });
+      var aktivt = trinFor(nu);
+      numre.forEach(function (n, j) {
+        n.classList.toggle("aktiv", j === aktivt);
+        if (j === aktivt) n.setAttribute("aria-current", "step");
+        else n.removeAttribute("aria-current");
+      });
+      forrige.disabled = nu === 0;
+      naeste.disabled = nu === klik.length - 1;
+      if (rul) synlig();
+    }
+    function gaa(i) {
+      nu = Math.max(0, Math.min(klik.length - 1, i));
+      vis(true);
+    }
+    forrige.addEventListener("click", function () { gaa(nu - 1); });
+    naeste.addEventListener("click", function () { gaa(nu + 1); });
+    bjaelke.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+    });
+
+    boks.classList.add("aktiv");
+    var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+    vis(false);
+  });
+});
+</script>
+<script>
 // Figurer, man kan pege på (en boks med klassen "pegefigur" om figuren i .qmd-filen).
 //
 // Figurprogrammet (vaerktoej/lav_figurer.py) har lagt de dele af figuren, man kan pege på, i
@@ -3179,7 +3286,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var rod = foerste.slice(0, foerste.search(/(kapitler|temaer)\//));
 
     // Fagord, repetition og øvelser: "Fagord til kapitel 1" bliver til "Fagord". De enkelte øvelser tages ud.
-    var oevelsesside = null, oevelseAktiv = false;
+    var oevelsesside = null, oevelseAktiv = false, fagordPunkt = null;
     punkter.slice(foersteOpgave).forEach(function (p) {
       if (opgaver.indexOf(p) >= 0) return;
       var a = p.querySelector("a.sidebar-link");
@@ -3190,6 +3297,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       if (/(^|\/)oevelser\/kapitel-[^\/]*\.html/.test(href)) oevelsesside = a;
+      if (/(^|\/)fagord\/[^\/]*\.html/.test(href)) fagordPunkt = p;
       p.classList.add("kapitelmenu-side");
       var t = p.querySelector("a.sidebar-link .menu-text");
       if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+[AB]?\d+$/i, "").replace(/\s+til\s+Tema:.*$/, "");
@@ -3216,6 +3324,17 @@ document.addEventListener("DOMContentLoaded", function () {
     ul.insertBefore(raekke, opgaver[0]);
     opgaver.forEach(function (p) { p.remove(); });
 
+    // Fagord står sidst blandt materialerne, lige over Slides, med et kartotekskort som ikon ligesom i Portugals
+    // historie (Niels 29. okt. 2026: "samme ikon skal du også bruge ved kemibogen, hvor fagord også skal stå lige over
+    // slides"). Ikonet står i stil/kemibogen.scss.
+    if (fagordPunkt) {
+      fagordPunkt.classList.remove("kapitelmenu-side");
+      fagordPunkt.classList.add("kapitelmenu-ekstra");
+      var fagordLink = fagordPunkt.querySelector("a.sidebar-link");
+      if (fagordLink) fagordLink.classList.add("kapitelmenu-fagord");
+      ul.appendChild(fagordPunkt);
+    }
+
     (EKSTRA[nr] || []).forEach(function (e) {
       var p = li("kapitelmenu-ekstra");
       var boks = document.createElement("div");
@@ -3241,6 +3360,8 @@ document.addEventListener("DOMContentLoaded", function () {
         t.textContent = "Fagord";
         var p = t.closest("li");
         if (p) p.classList.add("kapitelmenu-side");
+        var a = t.closest("a");
+        if (a) a.classList.add("kapitelmenu-fagord");
       }
     });
     // "Kapitel 7: Syrer og baser" bliver til "7: Syrer og baser" (kun i menuen; siden hedder stadig "Kapitel 7").
@@ -3270,6 +3391,17 @@ document.addEventListener("DOMContentLoaded", function () {
     ring.className = maerke.className;
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
     titel.appendChild(ring);
+    maerke.parentNode.removeChild(maerke);
+  });
+  // Forløbsmærkatet på en opgave ("Velegnet til sundhedsforløb", se stil/lektielinks.lua) står lige under opgavens
+  // overskrift og flyttes på samme måde op til højre for titlen.
+  Array.prototype.forEach.call(document.querySelectorAll("main div.forloebsmaerke"), function (maerke) {
+    var h2 = maerke.previousElementSibling;
+    if (!h2 || h2.tagName !== "H2") return;
+    var ring = document.createElement("span");
+    ring.className = maerke.className;
+    ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+    h2.appendChild(ring);
     maerke.parentNode.removeChild(maerke);
   });
 });
