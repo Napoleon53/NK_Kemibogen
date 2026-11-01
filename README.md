@@ -8,7 +8,7 @@ Bogen skrives i `NK_Undervisning/Kemibogen` og lægges herind med
 (Windows-computeren) derfra. Den kommer på nettet, når mappen sendes til GitHub (Synkroniser).
 
 - `c/` er bogen til kemi C, `b/` er bogen til kemi B, og `a/` er bogen til kemi A. De linker til hinanden.
-- `index.html` sender læseren videre til `c/index.html`.
+- `index.html` sender læseren videre til `c/`.
 - `CNAME` er adressen kemibogen.dk, og `.nojekyll` får GitHub til at vise filerne, som de er.
 - Animationerne, bogen linker til, ligger på kemiformler.dk (mappen `NK_hjemmeside`).
 - Bogen lå på kemiformler.dk/kemibogen fra 9. til 13. okt. 2026. Den adresse sender videre hertil.
