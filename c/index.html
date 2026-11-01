@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5437118ac671a11d193d1e48d97697d4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f0e3657c045a0978277e6f31e332139e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -1759,49 +1759,49 @@ window.MathJax = {
 <tr class="odd">
 <td style="text-align: left;">1<span class="kapnavn">: Atomer</span></td>
 <td style="text-align: left;"><a href="slides/kapitel-1.html" target="_blank">Slides</a></td>
-<td style="text-align: left;"><a href="modulplaner/kapitel-1.html">Modulplaner</a></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-1.html">Fagordsøvelser</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2<span class="kapnavn">: Ionforbindelser</span></td>
 <td style="text-align: left;"><a href="slides/kapitel-2.html" target="_blank">Slides</a></td>
-<td style="text-align: left;"><a href="modulplaner/kapitel-2.html">Modulplaner</a></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-2.html">Fagordsøvelser</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3<span class="kapnavn">: Molekyler</span></td>
 <td style="text-align: left;"><a href="slides/kapitel-3.html" target="_blank">Slides</a></td>
-<td style="text-align: left;"><a href="modulplaner/kapitel-3.html">Modulplaner</a></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-3.html">Fagordsøvelser</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4<span class="kapnavn">: Organisk kemi C</span></td>
 <td style="text-align: left;"><a href="slides/kapitel-4.html" target="_blank">Slides</a></td>
-<td style="text-align: left;"><a href="modulplaner/kapitel-4.html">Modulplaner</a></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-4.html">Fagordsøvelser</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">5<span class="kapnavn">: Mængdeberegning</span></td>
 <td style="text-align: left;"><a href="slides/kapitel-5.html" target="_blank">Slides</a></td>
-<td style="text-align: left;"><a href="modulplaner/kapitel-5.html">Modulplaner</a></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-5.html">Fagordsøvelser</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">6<span class="kapnavn">: Koncentration</span></td>
 <td style="text-align: left;"><a href="slides/kapitel-6.html" target="_blank">Slides</a></td>
-<td style="text-align: left;"><a href="modulplaner/kapitel-6.html">Modulplaner</a></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-6.html">Fagordsøvelser</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">7<span class="kapnavn">: Syrer og baser</span></td>
 <td style="text-align: left;"><a href="slides/kapitel-7.html" target="_blank">Slides</a></td>
-<td style="text-align: left;"><a href="modulplaner/kapitel-7.html">Modulplaner</a></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-7.html">Fagordsøvelser</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">8<span class="kapnavn">: Redoxreaktioner</span></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="kommer-snart">Kommer snart</span></td>
 <td style="text-align: left;"><a href="./fagord/kapitel-8.html">Fagordsøvelser</a></td>
 </tr>
 </tbody>
@@ -2969,6 +2969,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // "Øvelser" fremhævet. Kapitlernes navne mister ordet "Kapitel" ("7: Syrer og baser"), så de kan stå på én linje, og
 // delen Materialer (den fulde liste over øvelser) flyttes ned under Bilag.
 (function () {
+  // Modulplanerne vises først, når Niels har set dem igennem (1. nov. 2026: "lige nu skal der bare stå 'kommer
+  // snart' ... i løbet af næste uge, så opdaterer jeg dem løbende - startende med kap 1 og 2"). Skriv kapitlets
+  // nummer her, når planen er klar, fx ["1", "2"], og skift "Kommer snart" ud med linket i tabellen på forsiden.
+  var MODULPLANER_KLAR = [];
   var EKSTRA = {
     "1": [
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
@@ -3104,7 +3108,9 @@ document.addEventListener("DOMContentLoaded", function () {
       ul.appendChild(fagordPunkt);
     }
 
-    (EKSTRA[nr] || []).forEach(function (e) {
+    (EKSTRA[nr] || []).filter(function (e) {
+      return e.ikon !== "modulplaner" || MODULPLANER_KLAR.indexOf(nr) >= 0;
+    }).forEach(function (e) {
       var p = li("kapitelmenu-ekstra");
       var boks = document.createElement("div");
       boks.className = "sidebar-item-container";

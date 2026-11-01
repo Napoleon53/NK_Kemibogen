@@ -3254,6 +3254,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 (function () {
 
+  // Modulplanerne vises først, når Niels har set dem igennem (1. nov. 2026: "lige nu skal der bare stå 'kommer
+  // snart' ... i løbet af næste uge, så opdaterer jeg dem løbende - startende med kap 1 og 2"). Skriv kapitlets
+  // nummer her, når planen er klar, fx ["1", "2"], og skift "Kommer snart" ud med linket i tabellen på forsiden.
+  var MODULPLANER_KLAR = [];
   var EKSTRA = {
 
     "1": [
@@ -3524,7 +3528,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    (EKSTRA[nr] || []).forEach(function (e) {
+    (EKSTRA[nr] || []).filter(function (e) {
+      return e.ikon !== "modulplaner" || MODULPLANER_KLAR.indexOf(nr) >= 0;
+    }).forEach(function (e) {
 
       var p = li("kapitelmenu-ekstra");
 
