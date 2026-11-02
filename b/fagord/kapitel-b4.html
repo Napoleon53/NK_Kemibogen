@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-80676c2a70331dfb5bcc4844f8625dc7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b5508d4fb024aced3181fbf510a15229.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -3468,8 +3468,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // udvalg. Flisen siger det i en gul bjælke ("Bruger alle fagord"), den kan åbnes uden valgte
   // fagord, og feltet har en knap pr. afsnit. Er der valgt fagord, er knapperne til de afsnit, de
   // kommer fra, fyldt ud. Kun kapitler med en figur får flisen (C 1 til 4 indtil videre).
-  var BYG_FIGUREN = { "1": "sc1.5_byg_figuren", "2": "sc2.7_byg_figuren", "3": "sc3.6_byg_figuren", "4": "sc4.9_byg_figuren" };
-  var bygKapitel = (/\/c\/fagord\/kapitel-(\d+)\.html$/.exec(location.pathname) || [])[1];
+  var BYG_FIGUREN = { "1": "sc1.5_byg_figuren", "2": "sc2.7_byg_figuren", "3": "sc3.6_byg_figuren", "4": "sc4.9_byg_figuren", "5": "sc5.13_byg_figuren", "6": "sc6.4_byg_figuren", "7": "sc7.6_byg_figuren", "8": "sc8.7_byg_figuren", "b1": "sb1.5_byg_figuren" };
+  // C-bogen: c/fagord/kapitel-7.html giver "7"; B-bogen: b/fagord/kapitel-b1.html giver "b1"
+  var bygKapitel = (/\/(?:c|b)\/fagord\/kapitel-(b?\d+)\.html$/.exec(location.pathname) || [])[1];
   if (BYG_FIGUREN[bygKapitel]) {
     var bygAkt = aktivitet("Byg figuren", "bygfiguren", "Sæt fagordene på figurer som i bogen.", "Bruger alle fagord",
       "Byg figuren åbner på kemiformler.dk i en ny fane. Hver figur rummer alle fagordene fra ét afsnit, også dem, " +
@@ -3478,7 +3479,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var bygHandling = el("div", "fe-handling fe-byg");
     var bygNote = el("p", "fe-note fe-bygnote");
     var bygKnapper = kapitler[0].afsnit.map(function (a) {
-      var nr = (/^(\d+\.\d+)/.exec(a.titel) || [])[1] || "";
+      var nr = (/^(B?\d+\.\d+)/.exec(a.titel) || [])[1] || "";
       var k = el("a", "fe-knap", a.titel);
       k.href = "https://kemiformler.dk/animationer/superanimationer/" + BYG_FIGUREN[bygKapitel] + "/index.html#" + nr;
       k.target = "_blank";

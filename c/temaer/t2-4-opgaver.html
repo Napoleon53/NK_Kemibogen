@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="da" xml:lang="da"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -44,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a826bbd2282cbe4cca3efcac8ba8cf6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-37ee27488652f2928621d20df482a2b1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -76,36 +76,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
+<script>
+// Densitetens ρ i formlerne: \varrho tegnes med bogens eget ρ med hale fra skriften "Kemibogen I" (kursiv) i stedet for
+// formelskriftens ϱ, så formlerne har samme ρ som teksten og figurerne (Niels 29. okt. 2026; se "Faste valg" i README.md).
+// Det er 10 % større, så skålen bliver lige så høj som formelskriftens m.
+// Skriften står i stil/i-skrift.scss og laves af vaerktoej/lav_i_skrift.py. Siden henter MathJax selv bagefter.
+window.MathJax = {
+  loader: { load: ["[tex]/html"] },
+  tex: {
+    packages: { "[+]": ["html"] },
+    macros: { varrho: "\\style{font-family:'Kemibogen I';font-style:italic;font-size:110%}{ρ}" }
   }
-}
-window.Quarto = {
-  typesetMath
 };
 </script>
+
 
 </head>
 
@@ -147,21 +131,32 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Forside</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../indledninger/kapitel-0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapitel 0: Før du går i gang</span></a>
+            <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Forside</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../forfatterens-note.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Forfatterens note</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../indledninger/kapitel-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kapitel 0: Før du går i gang</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/0-1-hvorfor-kemi.html" class="sidebar-item-text sidebar-link">
@@ -186,11 +181,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 1: Atomer</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/1-1-hvad-er-kemi.html" class="sidebar-item-text sidebar-link">
@@ -293,11 +288,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 2: Ionforbindelser</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/2-1-ioner.html" class="sidebar-item-text sidebar-link">
@@ -372,14 +367,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../oevelser/2-2a-jern-ii-eller-jern-iii.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demoforsøg 2.2a: Jern(II) eller jern(III)?</span></a>
+  <a href="../oevelser/2-3-salt-i-varmt-og-koldt-vand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Øvelse 2.3: Salt i varmt og koldt vand</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../oevelser/2-3-salt-i-varmt-og-koldt-vand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse 2.3: Salt i varmt og koldt vand</span></a>
+  <a href="../oevelser/2-3a-jern-ii-eller-jern-iii.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demoforsøg 2.3a: Jern(II) eller jern(III)?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -406,11 +401,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 3: Molekyler</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/3-1-molekyler.html" class="sidebar-item-text sidebar-link">
@@ -501,11 +496,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 4: Organisk kemi C</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/4-1-alkaner.html" class="sidebar-item-text sidebar-link">
@@ -650,11 +645,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 5: Mængdeberegning</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/5-1-beregninger.html" class="sidebar-item-text sidebar-link">
@@ -799,11 +794,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 6: Koncentration</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/6-1-koncentration.html" class="sidebar-item-text sidebar-link">
@@ -876,11 +871,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 7: Syrer og baser</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/7-1-syrer-og-baser.html" class="sidebar-item-text sidebar-link">
@@ -1007,11 +1002,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../indledninger/kapitel-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kapitel 8: Redoxreaktioner</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/8-1-redoxreaktioner.html" class="sidebar-item-text sidebar-link">
@@ -1090,11 +1085,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../temaer/sundhed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tema 1: Sundhed</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../temaer/t1-1-kroppens-grundstoffer.html" class="sidebar-item-text sidebar-link">
@@ -1239,39 +1234,39 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../temaer/plast.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tema 2: Plastic</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-1-fra-olie-til-plast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.1 Fra olie til plast</span></a>
+  <a href="../temaer/t2-1-olie-og-alkaner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.1 Olie og alkaner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-2-gummi-og-celluloid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.2 Gummi og celluloid</span></a>
+  <a href="../temaer/t2-2-zigzag-og-forgreninger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.2 Zigzag og forgreninger</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-3-bakelit-og-haerdeplast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.3 Bakelit og hærdeplast</span></a>
+  <a href="../temaer/t2-3-fra-ethen-til-polyethen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.3 Fra ethen til polyethen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.4 Kæmpemolekyler og nylon</span></a>
+  <a href="../temaer/t2-4-naar-plast-braender.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.4 Når plast brænder</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t2-5-pvc-og-bloedgoerere.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2.5 PVC og blødgørere</span></a>
+  <a href="../temaer/t2-5-bloed-haard-eller-elastisk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.5 Blød, hård eller elastisk?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1284,6 +1279,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../temaer/t2-7-plast-i-dag.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">T2.7 Plast i dag</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-8-plastens-vilde-historie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2.8 Plastens vilde historie</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1330,6 +1331,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../temaer/t2-8-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T2.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../fagord/tema-plastic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fagord til Tema: Plastic</span></a>
   </div>
@@ -1352,45 +1359,63 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../temaer/klima.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tema 3: Klima</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-1-drivhuseffekten.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.1 Drivhuseffekten og luftens molekyler</span></a>
+  <a href="../temaer/t3-1-drivhusgasser-og-molarmasse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.1 Drivhusgasser og molarmasse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-2-drivhusgassernes-form.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.2 Drivhusgassernes form</span></a>
+  <a href="../temaer/t3-2-mol-og-stofmaengde.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.2 Mol og stofmængde</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-3-havet-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.3 Havet og carbondioxid</span></a>
+  <a href="../temaer/t3-3-carbonets-kredsloeb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.3 Carbonets kredsløb</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-4-klimaets-historie-i-isen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.4 Klimaets historie i isen</span></a>
+  <a href="../temaer/t3-4-carbondioxid-i-tal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.4 Carbondioxid i tal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-5-braendstoffer-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.5 Brændstoffer og carbondioxid</span></a>
+  <a href="../temaer/t3-5-drivhuseffekten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.5 Drivhuseffekten og luftens molekyler</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../temaer/t3-6-carbondioxid-i-tal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T3.6 Carbondioxid i tal</span></a>
+  <a href="../temaer/t3-6-drivhusgassernes-form.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.6 Drivhusgassernes form</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-7-havet-og-carbondioxid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.7 Havet og carbondioxid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-8-klimaets-historie-i-isen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.8 Klimaets historie i isen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-9-braendstoffer-fra-planter-og-stroem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T3.9 Brændstoffer fra planter og strøm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1431,6 +1456,24 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-7-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-8-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t3-9-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T3.9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../fagord/tema-klima.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fagord til Tema: Klima</span></a>
   </div>
@@ -1438,7 +1481,96 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../temaer/t3-oevelse-carbondioxid-i-vand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Øvelse T3.3: Carbondioxid i koldt og varmt vand</span></a>
+ <span class="menu-text">Øvelse T3.7: Carbondioxid i koldt og varmt vand</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../temaer/havet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 4: Havet og regnen</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-1-salt-i-havet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.1 Salt i havet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-2-syrer-og-baser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.2 Syrer og baser</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-3-staerke-og-svage-syrer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.3 Stærke og svage syrer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-4-ph-og-havforsuring.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.4 pH og havforsuring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-5-titrering-af-havvand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.5 Titrering af havvand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-6-syreregn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T4.6 Syreregn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-1-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-2-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-3-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-4-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-5-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../temaer/t4-6-opgaver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Opgaver til T4.6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fagord/tema-havet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fagord til Tema: Havet og regnen</span></a>
   </div>
 </li>
       </ul>
@@ -1447,11 +1579,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../temaer/metaller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tema 5: Metaller</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../temaer/t5-1-metaller-og-elektroner.html" class="sidebar-item-text sidebar-link">
@@ -1546,13 +1678,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
  <span class="menu-text">Materialer</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../oevelser/oversigt.html" class="sidebar-item-text sidebar-link">
@@ -1563,13 +1695,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
  <span class="menu-text">Bilag</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Skift sektion">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Skift sektion">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bilag/grundstoffer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Det periodiske system</span></a>
@@ -1612,13 +1744,13 @@ window.Quarto = {
     <h2 id="toc-title">På denne side</h2>
    
   <ul class="collapse">
-  <li><a href="#T2.4.1" id="toc-T2.4.1" class="nav-link active" data-scroll-target="#T2.4.1">Opgave T2.4.1: De vigtigste ord</a></li>
-  <li><a href="#T2.4.2" id="toc-T2.4.2" class="nav-link" data-scroll-target="#T2.4.2">Opgave T2.4.2: Micelle eller makromolekyle?</a></li>
-  <li><a href="#T2.4.3" id="toc-T2.4.3" class="nav-link" data-scroll-target="#T2.4.3">Opgave T2.4.3: Fra gas til plast</a></li>
-  <li><a href="#T2.4.4" id="toc-T2.4.4" class="nav-link" data-scroll-target="#T2.4.4">Opgave T2.4.4: Hvor lang er en kæde i polyethen?</a></li>
-  <li><a href="#T2.4.5" id="toc-T2.4.5" class="nav-link" data-scroll-target="#T2.4.5">Opgave T2.4.5: Staudinger og makromolekylerne</a></li>
-  <li><a href="#T2.4.6" id="toc-T2.4.6" class="nav-link" data-scroll-target="#T2.4.6">Opgave T2.4.6: Plast gennem tiden</a></li>
-  <li><a href="#T2.4.7" id="toc-T2.4.7" class="nav-link" data-scroll-target="#T2.4.7">Opgave T2.4.7: Copolymerer i LEGO</a></li>
+  <li><a href="#T2.4.1" id="toc-T2.4.1" class="nav-link active" data-scroll-target="#T2.4.1">Opgave T2.4.1: Hvad dannes der?</a></li>
+  <li><a href="#T2.4.2" id="toc-T2.4.2" class="nav-link" data-scroll-target="#T2.4.2">Opgave T2.4.2: Er skemaet afstemt?</a></li>
+  <li><a href="#T2.4.3" id="toc-T2.4.3" class="nav-link" data-scroll-target="#T2.4.3">Opgave T2.4.3: Afstem forbrændingen</a></li>
+  <li><a href="#T2.4.4" id="toc-T2.4.4" class="nav-link" data-scroll-target="#T2.4.4">Opgave T2.4.4: Når det ikke går op</a></li>
+  <li><a href="#T2.4.5" id="toc-T2.4.5" class="nav-link" data-scroll-target="#T2.4.5">Opgave T2.4.5: Grillkul</a></li>
+  <li><a href="#T2.4.6" id="toc-T2.4.6" class="nav-link" data-scroll-target="#T2.4.6">Opgave T2.4.6: Plast i bålet</a></li>
+  <li><a href="#T2.4.7" id="toc-T2.4.7" class="nav-link" data-scroll-target="#T2.4.7">Opgave T2.4.7: Når PVC brænder</a></li>
   </ul>
 </nav>
     </div>
@@ -1644,15 +1776,14 @@ window.Quarto = {
 </header>
 
 
-<p>Opgaverne hører til siden <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html">T2.4 Kæmpemolekyler og nylon</a>. Prøv selv, før du åbner hjælpen under opgaven.</p>
+<p>Opgaverne hører til siden <a href="../temaer/t2-4-naar-plast-braender.html">T2.4 Når plast brænder</a>. Prøv selv, før du åbner hjælpen under opgaven.</p>
 <section id="T2.4.1" class="level2">
-<h2 class="anchored" data-anchor-id="T2.4.1">Opgave T2.4.1: De vigtigste ord</h2>
+<h2 class="anchored" data-anchor-id="T2.4.1">Opgave T2.4.1: Hvad dannes der?</h2>
 <ol type="a">
-<li>Hvad betyder ordet makromolekyle?</li>
-<li>Hvad er en micelle?</li>
-<li>Hvad kaldes en polymer, der er bygget af to eller flere slags monomerer?</li>
-<li>Hvilken tysk kemiker indførte ordet makromolekyle?</li>
-<li>Hvilken amerikansk kemiker stod bag nylon?</li>
+<li>Hvilke to stoffer dannes der, når en frysepose af polyethen brænder fuldstændigt?</li>
+<li>Hvilke to stoffer kan der også dannes, når forbrændingen er ufuldstændig?</li>
+<li>Hvad er årsagen til, at en forbrænding bliver ufuldstændig?</li>
+<li>Hvordan kan man se på flammen, at forbrændingen er ufuldstændig?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -1666,7 +1797,7 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Ordene i a og c står med fed skrift på siden <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html">T2.4</a>. Micellerne står i afsnittet <em>Klumper af små molekyler?</em>, og nylon står i afsnittet <em>Carothers og nylon</em>.</p>
+<p>Læs afsnittene <em>Forbrænding</em> og <em>Ufuldstændig forbrænding</em> på siden T2.4, og se på <a href="../temaer/t2-4-naar-plast-braender.html#fig-t2-forbraending-flammer">figuren med de to flammer</a>.</p>
 </div>
 </div>
 </div>
@@ -1682,7 +1813,7 @@ window.Quarto = {
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Makro betyder stor. En micelle er ikke ét molekyle, men mange. Navnene i d og e står i overskrifterne på siden.</p>
+<p>Polyethen er et carbonhydrid ligesom methan. Ved en fuldstændig forbrænding får hvert carbonatom to oxygenatomer. Når der mangler dioxygen, får nogle carbonatomer kun ét oxygenatom eller slet ingen.</p>
 </div>
 </div>
 </div>
@@ -1699,24 +1830,22 @@ window.Quarto = {
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Et stort molekyle, hvor tusindvis af atomer er bundet sammen med almindelige elektronparbindinger.</li>
-<li>En lille kugle af mange små molekyler, der klumper sig sammen.</li>
-<li>En copolymer.</li>
-<li>Hermann Staudinger.</li>
-<li>Wallace Carothers.</li>
+<li>Carbondioxid, CO<sub>2</sub>, og vand, H<sub>2</sub>O</li>
+<li>Carbonmonoxid, CO, og sod, som er carbon, C</li>
+<li>Der er for lidt dioxygen.</li>
+<li>Flammen er gul og soder. Den gule farve kommer fra små sodpartikler, der gløder.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="T2.4.2" class="level2">
-<h2 class="anchored" data-anchor-id="T2.4.2">Opgave T2.4.2: Micelle eller makromolekyle?</h2>
-<p>Se på <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html#fig-tema-plast-micelle">figuren med de to forklaringer</a> på siden T2.4.</p>
+<h2 class="anchored" data-anchor-id="T2.4.2">Opgave T2.4.2: Er skemaet afstemt?</h2>
+<p>Tæl atomerne på begge sider af pilen, og afgør, om reaktionsskemaet er afstemt.</p>
 <ol type="a">
-<li>Hvad består en micelle af?</li>
-<li>Hvad holder atomerne sammen i et makromolekyle?</li>
-<li>Hvorfor mente de fleste kemikere, at store molekyler ikke kunne holde sammen?</li>
-<li>Forestil dig, at de små molekyler i en micelle slipper hinanden, fx fordi stoffet bliver opløst. Hvad sker der med micellen, og hvad sker der med et makromolekyle?</li>
+<li>Methan fra naturgas: CH<sub>4</sub> + 2 O<sub>2</sub> → CO<sub>2</sub> + 2 H<sub>2</sub>O</li>
+<li>Polyethen skrevet for enheden C<sub>2</sub>H<sub>4</sub>: C<sub>2</sub>H<sub>4</sub> + 2 O<sub>2</sub> → 2 CO<sub>2</sub> + 2 H<sub>2</sub>O</li>
+<li>Propan fra flaskegas: C<sub>3</sub>H<sub>8</sub> + 5 O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1730,7 +1859,7 @@ window.Quarto = {
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs afsnittene <em>Klumper af små molekyler?</em> og <em>Staudingers kæmpemolekyler</em> på siden <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html">T2.4</a>.</p>
+<p>Lav et lille skema for hvert reaktionsskema med antallet af C, H og O på venstre side og på højre side. Læs om afstemte reaktionsskemaer i afsnittet <em>Sådan afstemmer du en forbrænding</em> på siden T2.4.</p>
 </div>
 </div>
 </div>
@@ -1746,8 +1875,7 @@ window.Quarto = {
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I en micelle klumper små molekyler sig sammen, men de er ikke bundet til hinanden. I et makromolekyle er alle atomerne bundet sammen.</p>
-<p>Til d kan du begynde sådan: “Micellen falder fra hinanden i …, men makromolekylet …”</p>
+<p>Koefficienten foran en formel ganges med de små tal i formlen. 2 H<sub>2</sub>O indeholder altså 4 hydrogenatomer og 2 oxygenatomer.</p>
 </div>
 </div>
 </div>
@@ -1764,23 +1892,21 @@ window.Quarto = {
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Mange små molekyler, der klumper sig sammen til en lille kugle.</li>
-<li>Almindelige elektronparbindinger.</li>
-<li>De sammenlignede med atomkerner, hvor meget store kerner er ustabile og falder fra hinanden.</li>
-<li>Micellen falder fra hinanden i mange små molekyler, fordi de ikke er bundet til hinanden. Makromolekylet bliver ved med at være én lang kæde, fordi atomerne er bundet sammen med elektronparbindinger.</li>
+<li>Afstemt. Der er 1 C, 4 H og 4 O på begge sider.</li>
+<li>Ikke afstemt. Der er 4 oxygenatomer til venstre og 6 til højre, så der skal stå 3 foran O<sub>2</sub>.</li>
+<li>Afstemt. Der er 3 C, 8 H og 10 O på begge sider.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="T2.4.3" class="level2">
-<h2 class="anchored" data-anchor-id="T2.4.3">Opgave T2.4.3: Fra gas til plast</h2>
-<p>Brug tabellen med methan, octan, eicosan og polyethen i afsnittet <em>Staudingers kæmpemolekyler</em> på siden <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html">T2.4</a>.</p>
+<h2 class="anchored" data-anchor-id="T2.4.3">Opgave T2.4.3: Afstem forbrændingen</h2>
+<p>Skriv og afstem reaktionsskemaet for den fuldstændige forbrænding af de tre stoffer.</p>
 <ol type="a">
-<li>Hvad sker der med smeltepunktet, når kæden bliver længere?</li>
-<li>Er eicosan fast eller flydende ved 20 °C og ved 50 °C?</li>
-<li>Er octan fast, flydende eller en gas ved 150 °C?</li>
-<li>Hvorfor koger polyethen aldrig?</li>
+<li>Pentan, C<sub>5</sub>H<sub>12</sub></li>
+<li>Heptan, C<sub>7</sub>H<sub>16</sub></li>
+<li>Polystyren i flamingo, skrevet for enheden C<sub>8</sub>H<sub>8</sub></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1794,7 +1920,7 @@ window.Quarto = {
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Under smeltepunktet er stoffet fast. Mellem smeltepunktet og kogepunktet er det flydende, og over kogepunktet er det en gas.</p>
+<p>Skriv først formlerne op med stoffet og O<sub>2</sub> til venstre for pilen og CO<sub>2</sub> og H<sub>2</sub>O til højre. Afstem derefter i rækkefølgen carbon, hydrogen og oxygen som i afsnittet <em>Sådan afstemmer du en forbrænding</em> på siden T2.4.</p>
 </div>
 </div>
 </div>
@@ -1810,8 +1936,7 @@ window.Quarto = {
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Eicosan smelter ved 37 °C og koger ved 343 °C. Octan koger ved 126 °C.</p>
-<p>Til d kan du begynde sådan: “Kæderne i polyethen holder så godt fast i hinanden, at …”</p>
+<p>Pentan har 5 carbonatomer, så der dannes 5 CO<sub>2</sub>. Pentan har 12 hydrogenatomer, så der dannes 6 H<sub>2</sub>O. Til højre er der nu 10 oxygenatomer i 5 CO<sub>2</sub> og 6 i 6 H<sub>2</sub>O, altså 16 i alt. Hvor mange O<sub>2</sub> svarer det til?</p>
 </div>
 </div>
 </div>
@@ -1828,24 +1953,20 @@ window.Quarto = {
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Smeltepunktet stiger, når kæden bliver længere.</li>
-<li>Ved 20 °C er eicosan fast, fordi 20 °C er under smeltepunktet. Ved 50 °C er den flydende, fordi 50 °C ligger mellem smeltepunktet og kogepunktet.</li>
-<li>En gas, fordi 150 °C er over kogepunktet på 126 °C.</li>
-<li>Kæderne i polyethen holder så godt fast i hinanden, at bindingerne inde i kæden bliver brudt, før kæderne kan slippe hinanden. Plasten bliver derfor nedbrudt i stedet for at koge.</li>
+<li>C<sub>5</sub>H<sub>12</sub> + 8 O<sub>2</sub> → 5 CO<sub>2</sub> + 6 H<sub>2</sub>O</li>
+<li>C<sub>7</sub>H<sub>16</sub> + 11 O<sub>2</sub> → 7 CO<sub>2</sub> + 8 H<sub>2</sub>O</li>
+<li>C<sub>8</sub>H<sub>8</sub> + 10 O<sub>2</sub> → 8 CO<sub>2</sub> + 4 H<sub>2</sub>O</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="T2.4.4" class="level2">
-<h2 class="anchored" data-anchor-id="T2.4.4">Opgave T2.4.4: Hvor lang er en kæde i polyethen?</h2>
-<p>Den enhed, der gentages i polyethen, har molekylformlen C<sub>2</sub>H<sub>4</sub> ligesom monomeren ethen. En kæde i en bærepose af polyethen har molarmassen 200 000 g/mol. Brug atommasserne C 12,01 u og H 1,008 u.</p>
+<h2 class="anchored" data-anchor-id="T2.4.4">Opgave T2.4.4: Når det ikke går op</h2>
+<p>Skriv og afstem reaktionsskemaet for den fuldstændige forbrænding af de to alkaner.</p>
 <ol type="a">
-<li>Forklar, hvorfor enheden i polyethen har samme molekylformel som ethen.</li>
-<li>Beregn molarmassen af enheden.</li>
-<li>Hvor mange enheder er der i kæden?</li>
-<li>Hvor mange carbonatomer er der i kæden?</li>
-<li>Hver enhed har 6 atomer. Hvor mange atomer er der i alt i kæden?</li>
+<li>Butan, C<sub>4</sub>H<sub>10</sub></li>
+<li>Octan, C<sub>8</sub>H<sub>18</sub></li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1859,7 +1980,7 @@ window.Quarto = {
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Til a kan du læse om polyaddition på siden <a href="../temaer/t2-1-fra-olie-til-plast.html">T2.1 Fra olie til plast</a>. Molarmassen beregnes som i <a href="../kapitler/5-2-molarmasse.html">afsnit 5.2</a>. Én kæde er ét molekyle, så kæden har også en molarmasse.</p>
+<p>Afstem carbon og hydrogen først. Antallet af oxygenatomer til højre bliver et ulige tal. Læs, hvordan forbrændingen af polypropen bliver afstemt i afsnittet <em>Sådan afstemmer du en forbrænding</em> på siden T2.4.</p>
 </div>
 </div>
 </div>
@@ -1875,8 +1996,7 @@ window.Quarto = {
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I en polyaddition dannes der ikke andre stoffer end polymeren. Formlen for molarmassen er <em>M</em>(C<sub>2</sub>H<sub>4</sub>) = 2 · <em>M</em>(C) + 4 · <em>M</em>(H).</p>
-<p>Til c: Antallet af enheder er kædens molarmasse divideret med enhedens molarmasse.</p>
+<p>For butan er der 4 CO<sub>2</sub> og 5 H<sub>2</sub>O til højre. Det giver 8 oxygenatomer i 4 CO<sub>2</sub> og 5 i 5 H<sub>2</sub>O, altså 13 i alt, og det svarer til 6½ O<sub>2</sub>. Gang alle koefficienterne i skemaet med 2, så de bliver hele tal.</p>
 </div>
 </div>
 </div>
@@ -1893,45 +2013,25 @@ window.Quarto = {
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Polyethen dannes ved en polyaddition, hvor der ikke dannes andre stoffer end polymeren. Alle atomer fra hvert ethenmolekyle sidder derfor i kæden.</p></li>
-<li><p>Molarmassen er</p></li>
+<li>C<sub>4</sub>H<sub>10</sub> + 6½ O<sub>2</sub> → 4 CO<sub>2</sub> + 5 H<sub>2</sub>O, og med hele tal 2 C<sub>4</sub>H<sub>10</sub> + 13 O<sub>2</sub> → 8 CO<sub>2</sub> + 10 H<sub>2</sub>O</li>
+<li>C<sub>8</sub>H<sub>18</sub> + 12½ O<sub>2</sub> → 8 CO<sub>2</sub> + 9 H<sub>2</sub>O, og med hele tal 2 C<sub>8</sub>H<sub>18</sub> + 25 O<sub>2</sub> → 16 CO<sub>2</sub> + 18 H<sub>2</sub>O</li>
 </ol>
-<p><span class="math display">\[
-M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot 1{,}008\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 28{,}05\ \dfrac{\mathrm{g}}{\mathrm{mol}}
-\]</span></p>
-<ol start="3" type="a">
-<li>Antallet af enheder er</li>
-</ol>
-<p><span class="math display">\[
-\text{antal enheder} = \frac{M(\text{kæde})}{M(\mathrm{C_2H_4})} = \frac{200\,000\ \dfrac{\mathrm{g}}{\mathrm{mol}}}{28{,}05\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 7130
-\]</span></p>
-<p>Der er 7130 enheder i kæden.</p>
-<ol start="4" type="a">
-<li>Hver enhed har 2 carbonatomer.</li>
-</ol>
-<p><span class="math display">\[
-\text{antal carbonatomer} = 2 \cdot 7130 = 14\,260
-\]</span></p>
-<p>Der er 14 260 carbonatomer i kæden.</p>
-<ol start="5" type="a">
-<li>Hver enhed har 6 atomer.</li>
-</ol>
-<p><span class="math display">\[
-\text{antal atomer} = 6 \cdot 7130 = 42\,780
-\]</span></p>
-<p>Der er 42 780 atomer i kæden. Det passer med, at Staudinger kaldte den slags molekyler for kæmpestore molekyler.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="T2.4.5" class="level2">
-<h2 class="anchored" data-anchor-id="T2.4.5">Opgave T2.4.5: Staudinger og makromolekylerne</h2>
+<h2 class="anchored" data-anchor-id="T2.4.5">Opgave T2.4.5: Grillkul</h2>
+<p>Grillkul består næsten kun af carbon, C.</p>
 <ol type="a">
-<li>Hvad mente de fleste kemikere omkring 1920, at gummi og cellulose bestod af?</li>
-<li>Hvad påstod Hermann Staudinger i stedet?</li>
-<li>Hvilken slags binding holder atomerne sammen i et makromolekyle?</li>
-<li>Hvornår viste nye målinger, at Staudinger havde ret, og hvornår fik han Nobelprisen i kemi?</li>
-<li>Forklar, hvorfor der kom mange nye slags plast, da kemikerne havde forstået, at plast består af lange kæder.</li>
+<li>Skriv reaktionsskemaet for den fuldstændige forbrænding af carbon.</li>
+<li>Når gløderne ligger tæt, og der ikke kommer luft nok til, dannes der carbonmonoxid. Afstem reaktionsskemaet:</li>
+</ol>
+<div class="reaktion">
+<p>C + O<sub>2</sub> → CO</p>
+</div>
+<ol start="3" type="a">
+<li>Forklar, hvorfor man aldrig må tage en grill med glødende kul med ind i et telt eller en stue for at holde varmen.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -1945,7 +2045,7 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs afsnittene <em>Klumper af små molekyler?</em> og <em>Staudingers kæmpemolekyler</em> på siden <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html">T2.4</a>. Svaret på e står i begyndelsen af afsnittet <em>Carothers og nylon</em>. Bindingen i c lærte du om i <a href="../kapitler/3-1-molekyler.html">afsnit 3.1</a>.</p>
+<p>Ved en fuldstændig forbrænding bliver alt carbon til carbondioxid. Der er ingen hydrogen i kul, så der dannes ikke vand. Til spørgsmål c skal du læse boksen <em>Carbonmonoxid er giftig</em> på siden T2.4.</p>
 </div>
 </div>
 </div>
@@ -1961,8 +2061,12 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>I a og b står to forklaringer over for hinanden: små molekyler, der klumper sig sammen, eller ét stort molekyle.</p>
-<p>Til e kan du begynde sådan: “Da kemikerne vidste, at plast består af …, kunne de …”</p>
+<p>I spørgsmål b er der 2 oxygenatomer til venstre og kun 1 til højre. Sæt et 2-tal foran CO, og afstem derefter carbon. Til spørgsmål c kan du begynde dine sætninger sådan:</p>
+<ul>
+<li>Gløderne bruger … i teltet.</li>
+<li>Når der bliver for lidt dioxygen, bliver forbrændingen …, og der dannes …</li>
+<li>Gassen er giftig, fordi …</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1979,27 +2083,31 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Små molekyler, der klumpede sig sammen i miceller.</li>
-<li>At gummi og cellulose bestod af kæmpestore molekyler, hvor tusindvis af atomer var bundet sammen. Han kaldte dem makromolekyler.</li>
-<li>Almindelige elektronparbindinger.</li>
-<li>Nye målinger i løbet af 1930’erne viste, at han havde ret, og han fik Nobelprisen i kemi i 1953.</li>
-<li>Da kemikerne vidste, at plast består af lange kæder, kunne de begynde at bygge nye kæder med vilje. Derfor kom de fleste af de slags plast, vi bruger i dag, i løbet af 30 år.</li>
+<li>C + O<sub>2</sub> → CO<sub>2</sub></li>
+<li>2 C + O<sub>2</sub> → 2 CO</li>
+<li>Gløderne bruger dioxygenet i teltet. Når der bliver for lidt dioxygen, bliver forbrændingen ufuldstændig, og der dannes carbonmonoxid. Gassen er giftig, fordi den sætter sig fast på de røde blodlegemer, så de ikke kan transportere dioxygen rundt i kroppen. Carbonmonoxid kan hverken ses eller lugtes, så man opdager ikke faren i tide.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="T2.4.6" class="level2">
-<h2 class="anchored" data-anchor-id="T2.4.6">Opgave T2.4.6: Plast gennem tiden</h2>
-<p>Brug tabellen over otte slags plast i afsnittet <em>Carothers og nylon</em> på siden <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html">T2.4</a>.</p>
+<h2 class="anchored" data-anchor-id="T2.4.6">Opgave T2.4.6: Plast i bålet</h2>
+<p>Nogen har smidt en madkasse af polypropen i et bål, hvor der er for lidt dioxygen. Polypropen skrives for enheden C<sub>3</sub>H<sub>6</sub>.</p>
 <ol type="a">
-<li>Hvilken plast i tabellen kom først frem, og hvad bruges den til i dag?</li>
-<li>Hvilken plast i tabellen kom sidst frem?</li>
-<li>Hvor mange af de otte slags plast kom frem i 1930’erne?</li>
-<li>Hvilken plast er en sodavandsflaske lavet af? Skriv både navn og forkortelse.</li>
-<li>Hvilke to slags plast i tabellen bliver dannet på en anden måde end polyethen?</li>
-<li>Hvilken plast blev brugt til faldskærme under 2. verdenskrig, og hvem opfandt den?</li>
-<li>Carothers’ gruppe lavede også et syntetisk gummi. Hvad hedder det, hvornår blev det lavet, og hvad bruges det til i dag?</li>
+<li>Afstem reaktionsskemaet, hvor der dannes carbonmonoxid:</li>
+</ol>
+<div class="reaktion">
+<p>C<sub>3</sub>H<sub>6</sub> + O<sub>2</sub> → CO + H<sub>2</sub>O</p>
+</div>
+<ol start="2" type="a">
+<li>Afstem reaktionsskemaet, hvor der dannes sod:</li>
+</ol>
+<div class="reaktion">
+<p>C<sub>3</sub>H<sub>6</sub> + O<sub>2</sub> → C + H<sub>2</sub>O</p>
+</div>
+<ol start="3" type="a">
+<li>Polystyren i flamingo har enheden C<sub>8</sub>H<sub>8</sub>. Forklar, hvorfor en kasse af flamingo soder mere end madkassen, når den brænder.</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -2013,7 +2121,7 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs kolonnen <em>Kom frem i</em> fra toppen af tabellen. Svarene på e, f og g står i teksten lige over tabellen.</p>
+<p>Afstem i rækkefølgen carbon, hydrogen og oxygen. Husk, at CO kun har ét oxygenatom, og at sod slet ikke har nogen. Til spørgsmål c skal du læse afsnittet <em>Ufuldstændig forbrænding</em> på siden T2.4.</p>
 </div>
 </div>
 </div>
@@ -2029,7 +2137,12 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tabellen er ordnet efter årti, så den ældste plast står øverst. I c skal du tælle de rækker, hvor der står 1930’erne. I d skal du lede i kolonnen <em>Bruges i dag til</em>.</p>
+<p>I spørgsmål b står der 3 C og 3 H<sub>2</sub>O til højre, når carbon og hydrogen er afstemt. Det giver 3 oxygenatomer, og det svarer til 1½ O<sub>2</sub>, så alle koefficienterne skal ganges med 2. Til spørgsmål c kan du begynde dine sætninger sådan:</p>
+<ul>
+<li>Enheden i polypropen har … hydrogenatomer for hvert carbonatom.</li>
+<li>Enheden i polystyren har …</li>
+<li>Jo mere carbon et stof har i forhold til hydrogen, jo …</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2046,52 +2159,25 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Polyvinylchlorid, PVC, fra 1920’erne. Den bruges til rør, kabler og gulve.</li>
-<li>Polypropen, PP, fra 1950’erne.</li>
-<li>Fem: polystyren, plexiglas, polyethen, nylon og polyurethan.</li>
-<li>Polyester, PET.</li>
-<li>Nylon og polyester.</li>
-<li>Nylon. Den blev lavet i 1935 af Wallace Carothers’ gruppe hos det amerikanske kemifirma DuPont.</li>
-<li>Neopren fra 1930. I dag bruges det til våddragter.</li>
+<li>C<sub>3</sub>H<sub>6</sub> + 3 O<sub>2</sub> → 3 CO + 3 H<sub>2</sub>O</li>
+<li>C<sub>3</sub>H<sub>6</sub> + 1½ O<sub>2</sub> → 3 C + 3 H<sub>2</sub>O, og med hele tal 2 C<sub>3</sub>H<sub>6</sub> + 3 O<sub>2</sub> → 6 C + 6 H<sub>2</sub>O</li>
+<li>Enheden i polypropen har 2 hydrogenatomer for hvert carbonatom, mens enheden i polystyren kun har 1. Polystyren har altså mere carbon i forhold til hydrogen, og jo mere carbon et stof har i forhold til hydrogen, jo lettere bliver noget af carbonet tilbage som sod.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
 <section id="T2.4.7" class="level2">
-<h2 class="anchored" data-anchor-id="T2.4.7">Opgave T2.4.7: Copolymerer i LEGO</h2>
-<p>Kæderne i tabellen er skrevet med bogstaver. A står for én slags monomer, og B står for en anden slags.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Kæde</th>
-<th style="text-align: left;">Monomererne i kæden</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">−A−A−A−A−A−A−</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">−A−B−A−B−A−B−</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">−B−B−B−B−B−B−</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">−A−A−B−A−B−B−</td>
-</tr>
-</tbody>
-</table>
+<h2 class="anchored" data-anchor-id="T2.4.7">Opgave T2.4.7: Når PVC brænder</h2>
+<p>PVC bliver brugt til rør, kabler og regntøj. Reaktionsskemaet viser, hvad der sker, når PVC brænder fuldstændigt. Skemaet er skrevet for enheden C<sub>2</sub>H<sub>3</sub>Cl, som bliver gentaget i kæden.</p>
+<div class="reaktion">
+<p>2 C<sub>2</sub>H<sub>3</sub>Cl + 5 O<sub>2</sub> → 4 CO<sub>2</sub> + 2 H<sub>2</sub>O + 2 HCl</p>
+</div>
 <ol type="a">
-<li>Hvilke af de fire kæder er copolymerer?</li>
-<li>LEGO-klodser er lavet af copolymeren ABS. Hvilke tre monomerer er ABS bygget af?</li>
-<li>Hvad giver styren plasten, og hvad giver butadien plasten?</li>
-<li>Forklar, hvorfor LEGO-klodser ikke er lavet af ren polystyren, som kun er bygget af styren.</li>
+<li>Vis, at reaktionsskemaet er afstemt.</li>
+<li>Hvilket stof dannes der, når PVC brænder, men ikke når polyethen brænder? Forklar hvorfor.</li>
+<li>Forklar, hvorfor røgen fra en brand med PVC er farlig at indånde.</li>
+<li>På et forbrændingsanlæg bliver røgen renset for hydrogenchlorid og sod, før den bliver lukket ud. Hvilken gas fra plasten kommer alligevel ud af skorstenen, og hvorfor er den et problem for klimaet?</li>
 </ol>
 <div class="hjaelp callout callout-style-default callout-tip callout-titled" title="Hjælp 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -2105,7 +2191,7 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Læs afsnittet <em>Flere slags monomerer i samme kæde</em> på siden <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html">T2.4</a>, og se på <a href="../temaer/t2-4-kaempemolekyler-og-nylon.html#fig-tema-plast-copolymer">figuren med en polymer og en copolymer</a>.</p>
+<p>Tæl atomerne af hvert grundstof på begge sider af pilen. Til spørgsmål b til d skal du læse afsnittene <em>Når PVC brænder</em> og <em>Plast på forbrændingsanlægget</em> på siden T2.4.</p>
 </div>
 </div>
 </div>
@@ -2121,8 +2207,12 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>En copolymer har mindst to slags monomerer i den samme kæde. Det er ligegyldigt, i hvilken rækkefølge de sidder.</p>
-<p>Til d kan du begynde sådan: “Styren gør plasten …, men butadien …”</p>
+<p>Husk at gange med koefficienten, så 2 C<sub>2</sub>H<sub>3</sub>Cl indeholder 4 carbonatomer. Oxygen findes både i CO<sub>2</sub> og i H<sub>2</sub>O, og hydrogen findes både i H<sub>2</sub>O og i HCl. Til spørgsmål c og d kan du begynde dine sætninger sådan:</p>
+<ul>
+<li>Når PVC brænder, dannes der …, som danner … i fugten i lungerne.</li>
+<li>Carbonatomerne fra plasten bliver til …, som er en …</li>
+<li>Plasten er lavet af …, så …</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2139,10 +2229,44 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>Kæde 2 og kæde 4, fordi de har både A og B i den samme kæde. Kæde 1 og kæde 3 er bygget af én slags monomer.</li>
-<li>Acrylonitril, butadien og styren.</li>
-<li>Styren gør plasten hård og blank. Butadien er en slags gummi, som gør plasten sej.</li>
-<li>Styren gør plasten hård og blank, men butadien gør den sej, så klodserne ikke revner. I copolymeren får klodserne begge egenskaber.</li>
+<li>Atomerne før og efter pilen:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Grundstof</th>
+<th style="text-align: left;">Før pilen</th>
+<th style="text-align: left;">Efter pilen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">4 i 2 C<sub>2</sub>H<sub>3</sub>Cl</td>
+<td style="text-align: left;">4 i 4 CO<sub>2</sub></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">6 i 2 C<sub>2</sub>H<sub>3</sub>Cl</td>
+<td style="text-align: left;">4 i 2 H<sub>2</sub>O og 2 i 2 HCl, i alt 6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cl</td>
+<td style="text-align: left;">2 i 2 C<sub>2</sub>H<sub>3</sub>Cl</td>
+<td style="text-align: left;">2 i 2 HCl</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">10 i 5 O<sub>2</sub></td>
+<td style="text-align: left;">8 i 4 CO<sub>2</sub> og 2 i 2 H<sub>2</sub>O, i alt 10</td>
+</tr>
+</tbody>
+</table>
+<p>Der er lige mange atomer af hver slags på begge sider, så reaktionsskemaet er afstemt.</p>
+<ol start="2" type="a">
+<li><p>Hydrogenchlorid, HCl. Det dannes, fordi PVC indeholder chlor, mens polyethen kun består af carbon og hydrogen.</p></li>
+<li><p>Når PVC brænder, dannes der hydrogenchlorid, som danner en stærk syre i fugten i lungerne. Røgen er derfor ætsende og farlig at indånde.</p></li>
+<li><p>Carbondioxid. Carbonatomerne fra plasten bliver til carbondioxid, som er en drivhusgas. Plasten er lavet af olie, så når plasten brænder, øger det mængden af carbondioxid i atmosfæren.</p></li>
 </ol>
 </div>
 </div>
@@ -2153,815 +2277,517 @@ M(\mathrm{C_2H_4}) = 2 \cdot 12{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} + 4 \cdot
 
 </main> <!-- /main -->
 <script>
-
 // Temaopgaver kan klappes sammen.
-
 //
-
 // På opgavesiderne indleder en overskrift som "Opgaver med klimatema {.tema}" et tema.
-
 // Dette script gør overskriften til en knap og skjuler temaets opgaver, til man klikker.
-
 // Indholdslisten i højre side følger med, så kun de åbne temaers opgaver står der.
-
 // Et klik på temaets navn i indholdslisten åbner og lukker også temaet.
-
 // Et tema, man har åbnet, bliver ved med at være åbent på de andre opgavesider.
-
 // Uden JavaScript, og når siden skrives ud, vises alle opgaver som almindelig tekst.
-
 // Sættes "?temaer=aabne" efter sidens adresse, er alle temaer åbne fra start.
-
 document.addEventListener("DOMContentLoaded", function () {
-
   var temaer = Array.prototype.slice.call(document.querySelectorAll("body.opgaver main section.level2.tema"));
-
   if (!temaer.length) return;
-
   var alleAabne = /[?&]temaer=aabne/.test(location.search);
 
-
-
   function husk(id, aaben) {
-
     try { localStorage.setItem("kemibogen-tema-" + id, aaben ? "1" : "0"); } catch (e) {}
-
   }
-
   function husket(id) {
-
     try { return localStorage.getItem("kemibogen-tema-" + id) === "1"; } catch (e) { return false; }
-
   }
-
   function tocPunkt(id) {
-
     var link = document.getElementById("toc-" + id);
-
     return link ? link.closest("li") : null;
-
   }
-
-
 
   var alle = temaer.map(function (tema) {
-
     var h2 = tema.querySelector("h2");
-
     var indhold = document.createElement("div");
-
     indhold.className = "tema-indhold";
-
     indhold.id = tema.id + "-opgaver";
-
     var opgaver = [];
-
     var naeste = tema.nextElementSibling;
-
     while (naeste && naeste.matches("section.level2") && !naeste.classList.contains("tema")) {
-
       var flyt = naeste;
-
       naeste = naeste.nextElementSibling;
-
       indhold.appendChild(flyt);
-
       opgaver.push(flyt);
-
     }
-
     tema.appendChild(indhold);
 
-
-
     var antal = document.createElement("span");
-
     antal.className = "tema-antal";
-
     antal.textContent = opgaver.length + " opgaver";
-
     h2.appendChild(antal);
-
     h2.setAttribute("role", "button");
-
     h2.setAttribute("tabindex", "0");
-
     h2.setAttribute("aria-controls", indhold.id);
 
-
-
     var t = { tema: tema, h2: h2, indhold: indhold, opgaver: opgaver, aaben: false };
-
     t.saet = function (aaben, gem) {
-
       t.aaben = aaben;
-
       indhold.classList.toggle("lukket", !aaben);
-
       h2.setAttribute("aria-expanded", aaben ? "true" : "false");
-
       opgaver.forEach(function (o) {
-
         var li = tocPunkt(o.id);
-
         if (li) li.classList.toggle("tema-skjult", !aaben);
-
       });
-
       var punkt = document.getElementById("toc-" + tema.id);
-
       if (punkt) punkt.classList.toggle("tema-aaben", aaben);
-
       if (gem) husk(tema.id, aaben);
-
     };
-
     h2.addEventListener("click", function (e) {
-
       if (e.target.closest("a")) return;          // ankerlinket ved overskriften
-
       t.saet(!t.aaben, true);
-
     });
-
     h2.addEventListener("keydown", function (e) {
-
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t.saet(!t.aaben, true); }
-
     });
-
     // Et klik på temaet i indholdslisten åbner det og lukker det igen
-
     var punkt = document.getElementById("toc-" + tema.id);
-
     if (punkt) {
-
       punkt.classList.add("tema-punkt");
-
       punkt.setAttribute("title", "Klik for at åbne eller lukke temaet");
-
       punkt.addEventListener("click", function () { t.saet(!t.aaben, true); });
-
     }
-
-
 
     t.saet(alleAabne || husket(tema.id), false);
-
     return t;
-
   });
-
   // Til stil/lektielinks.html, som åbner og skjuler temaer, når siden kun viser udvalgte opgaver
-
   window.kemibogenTemaer = alle;
 
-
-
   // Et link til en opgave inde i et lukket tema åbner temaet først
-
   function aabnTilAnker() {
-
     var id = decodeURIComponent(location.hash.replace(/^#/, ""));
-
     if (!id) return;
-
     var maal = document.getElementById(id);
-
     if (!maal) return;
-
     alle.forEach(function (t) {
-
       if (!t.aaben && t.indhold.contains(maal)) {
-
         t.saet(true, false);
-
         maal.scrollIntoView();
-
       }
-
     });
-
   }
-
   aabnTilAnker();
-
   window.addEventListener("hashchange", aabnTilAnker);
 
-
-
   // Indholdslisten: peger Quarto på en skjult opgave, markeres temaet i stedet
-
   var venter = false;
-
   function retMarkering() {
-
     venter = false;
-
     alle.forEach(function (t) {
-
       var punkt = document.getElementById("toc-" + t.tema.id);
-
       if (!punkt) return;
-
       var skjultAktiv = !t.aaben && t.opgaver.some(function (o) {
-
         var link = document.getElementById("toc-" + o.id);
-
         return link && link.classList.contains("active");
-
       });
-
       punkt.classList.toggle("tema-aktiv", skjultAktiv);
-
     });
-
   }
-
   window.addEventListener("scroll", function () {
-
     if (!venter) { venter = true; requestAnimationFrame(retMarkering); }
-
   }, { passive: true });
-
 });
-
 </script>
-
 <script>
-
 // Trin for trin.
-
 //
-
 // En boks med klassen "trinvis" indeholder flere bokse med klassen "trin". Dette script
-
 // viser ét trin ad gangen og sætter knapper over: Forrige, Næste, et nummer for hvert trin
-
 // (eller teksten fra trinets egenskab knap="...")
-
 // og "Vis alle trin". Alle trin ligger oven på hinanden, så boksen ikke skifter højde.
-
 // Uden JavaScript, og når siden skrives ud, står trinnene bare under hinanden.
-
 document.addEventListener("DOMContentLoaded", function () {
-
   Array.prototype.forEach.call(document.querySelectorAll(".trinvis"), function (boks) {
-
     var trin = Array.prototype.filter.call(boks.children, function (el) {
-
       return el.classList.contains("trin");
-
     });
-
     if (trin.length < 2) return;
 
-
-
     var stak = document.createElement("div");
-
     stak.className = "trin-stak";
-
     boks.insertBefore(stak, trin[0]);
-
     trin.forEach(function (t) { stak.appendChild(t); });
 
-
-
     var bjaelke = document.createElement("div");
-
     bjaelke.className = "trin-bjaelke";
-
     function knap(tekst, klasse, label) {
-
       var k = document.createElement("button");
-
       k.type = "button";
-
       k.className = klasse;
-
       k.textContent = tekst;
-
       if (label) k.setAttribute("aria-label", label);
-
       bjaelke.appendChild(k);
-
       return k;
-
     }
-
     var nu = 0, visAlle = false;
-
     var forrige = knap("‹ Forrige", "trin-forrige", "Forrige trin");
-
     var numre = trin.map(function (t, k) {
-
       var tekst = t.getAttribute("data-knap") || String(k + 1);
-
       var n = knap(tekst, "trin-nr", /^\d+$/.test(tekst) ? "Trin " + tekst : tekst);
-
       n.addEventListener("click", function () { nu = k; visAlle = false; vis(); });
-
       return n;
-
     });
-
     var naeste = knap("Næste ›", "trin-naeste", "Næste trin");
-
     var alle = knap("Vis alle trin", "trin-alle");
-
     boks.insertBefore(bjaelke, stak);
 
-
-
     function vis() {
-
       boks.classList.toggle("alle", visAlle);
-
       trin.forEach(function (t, k) {
-
         t.classList.toggle("vist", k === nu);
-
         numre[k].classList.toggle("aktiv", !visAlle && k === nu);
-
         if (!visAlle && k === nu) numre[k].setAttribute("aria-current", "step");
-
         else numre[k].removeAttribute("aria-current");
-
       });
-
       forrige.disabled = visAlle || nu === 0;
-
       naeste.disabled = visAlle || nu === trin.length - 1;
-
       alle.textContent = visAlle ? "Vis ét trin ad gangen" : "Vis alle trin";
-
     }
-
     forrige.addEventListener("click", function () { if (nu > 0) { nu--; vis(); } });
-
     naeste.addEventListener("click", function () { if (nu < trin.length - 1) { nu++; vis(); } });
-
     alle.addEventListener("click", function () { visAlle = !visAlle; vis(); });
-
     // Piletasterne bladrer, når en af knapperne har fokus
-
     bjaelke.addEventListener("keydown", function (e) {
-
       if (visAlle) return;
-
       if (e.key === "ArrowRight" && nu < trin.length - 1) { nu++; vis(); e.preventDefault(); }
-
       if (e.key === "ArrowLeft" && nu > 0) { nu--; vis(); e.preventDefault(); }
-
     });
-
-
 
     boks.classList.add("aktiv");
-
     if (/[?&]trin=alle/.test(location.search)) visAlle = true;
-
     vis();
-
   });
-
 });
-
 </script>
-
 <script>
-
-// Figurer, man kan pege på (en boks med klassen "pegefigur" om figuren i .qmd-filen).
-
+// En beregning, der bygges op klik for klik (afsnit B2.6, 30. okt. 2026; Niels ville kunne bladre "som en powerpoint
+// uden at skifte slide", så det hele ikke bliver slettet for hvert trin).
 //
-
-// Figurprogrammet (vaerktoej/lav_figurer.py) har lagt de dele af figuren, man kan pege på, i
-
-// grupper med klassen "peg" og skrevet en titel og en forklaring på hver gruppe (funktionen peg).
-
-// Dette script henter figuren ind i siden og viser forklaringen i et felt lige under figuren,
-
-// når man peger på en del, trykker på den eller går til den med tabulatortasten og piletasterne.
-
-// Et klik holder forklaringen fast. Nogle dele har "med": så bliver de dele, der hører sammen
-
-// med den, stående, mens resten af figuren bliver bleg (fx vejen gennem et rutediagram).
-
-// En del kan også have hjælpestreger med klassen "peg-kun-fremme", som kun ses, mens man peger på den.
-
-// Uden JavaScript, og når siden skrives ud, er figuren det samme billede som før.
-
+// En boks med klassen "opbyg" indeholder en boks "opbyg-tekster" med én boks "klik" for hvert klik (forklaringen til
+// klikket) og en tavle med beregningen. Hver del af tavlen har egenskaben fra="N" og vises fra klik N; det, der lige
+// er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
+// knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
+// Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+// "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
 document.addEventListener("DOMContentLoaded", function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
+    var tekster = boks.querySelector(".opbyg-tekster");
+    if (!tekster) return;
+    var klik = Array.prototype.filter.call(tekster.children, function (el) {
+      return el.classList.contains("klik");
+    });
+    if (klik.length < 2) return;
+    var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+      return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+    });
+    var trin = [];
+    klik.forEach(function (k, i) {
+      var t = k.getAttribute("data-knap");
+      if (t || !trin.length) trin.push({ tekst: t || "1", start: i, valgfri: k.classList.contains("valgfri") });
+    });
+    function trinFor(i) {
+      for (var j = trin.length - 1; j > 0; j--) if (trin[j].start <= i) return j;
+      return 0;
+    }
 
+    var top = document.createElement("div");
+    top.className = "opbyg-top";
+    var bjaelke = document.createElement("div");
+    bjaelke.className = "trin-bjaelke";
+    function knap(tekst, klasse, label) {
+      var k = document.createElement("button");
+      k.type = "button";
+      k.className = klasse;
+      k.textContent = tekst;
+      if (label) k.setAttribute("aria-label", label);
+      bjaelke.appendChild(k);
+      return k;
+    }
+    var nu = 0;
+    var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
+    var numre = trin.map(function (t) {
+      var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+[a-z]?$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
+      n.addEventListener("click", function () { gaa(t.start); });
+      return n;
+    });
+    var naeste = knap("Næste ›", "trin-naeste", "Næste");
+    top.appendChild(bjaelke);
+    boks.insertBefore(top, boks.firstChild);
+    top.appendChild(tekster);
+    tekster.setAttribute("aria-live", "polite");
+
+    // Ruller siden, så det nye kan ses under bjælken og forklaringen
+    function synlig() {
+      var nye = boks.querySelectorAll(".ny");
+      if (!nye.length) return;
+      var oeverst = Infinity, nederst = -Infinity;
+      Array.prototype.forEach.call(nye, function (el) {
+        var r = el.getBoundingClientRect();
+        oeverst = Math.min(oeverst, r.top);
+        nederst = Math.max(nederst, r.bottom);
+      });
+      var loft = getComputedStyle(top).position === "sticky" ? top.getBoundingClientRect().bottom : 0;
+      var luft = 16, ned = 0;
+      if (nederst > window.innerHeight - luft) ned = nederst - window.innerHeight + luft;
+      if (oeverst - ned < loft + luft) ned = oeverst - loft - luft;
+      if (Math.abs(ned) > 2) window.scrollBy({ top: ned, behavior: "smooth" });
+    }
+    function vis(rul) {
+      klik.forEach(function (k, i) { k.classList.toggle("vist", i === nu); });
+      dele.forEach(function (d) {
+        d.el.classList.toggle("vist", d.fra <= nu);
+        d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+      });
+      var aktivt = trinFor(nu);
+      numre.forEach(function (n, j) {
+        n.classList.toggle("aktiv", j === aktivt);
+        if (j === aktivt) n.setAttribute("aria-current", "step");
+        else n.removeAttribute("aria-current");
+      });
+      forrige.disabled = nu === 0;
+      naeste.disabled = nu === klik.length - 1;
+      if (rul) synlig();
+    }
+    function gaa(i) {
+      nu = Math.max(0, Math.min(klik.length - 1, i));
+      vis(true);
+    }
+    forrige.addEventListener("click", function () { gaa(nu - 1); });
+    naeste.addEventListener("click", function () { gaa(nu + 1); });
+    bjaelke.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+    });
+
+    boks.classList.add("aktiv");
+    var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+    vis(false);
+  });
+});
+</script>
+<script>
+// Figurer, man kan pege på (en boks med klassen "pegefigur" om figuren i .qmd-filen).
+//
+// Figurprogrammet (vaerktoej/lav_figurer.py) har lagt de dele af figuren, man kan pege på, i
+// grupper med klassen "peg" og skrevet en titel og en forklaring på hver gruppe (funktionen peg).
+// Dette script henter figuren ind i siden og viser forklaringen i et felt lige under figuren,
+// når man peger på en del, trykker på den eller går til den med tabulatortasten og piletasterne.
+// Et klik holder forklaringen fast. Nogle dele har "med": så bliver de dele, der hører sammen
+// med den, stående, mens resten af figuren bliver bleg (fx vejen gennem et rutediagram).
+// En del kan også have hjælpestreger med klassen "peg-kun-fremme", som kun ses, mens man peger på den.
+// Uden JavaScript, og når siden skrives ud, er figuren det samme billede som før.
+document.addEventListener("DOMContentLoaded", function () {
   var bokse = document.querySelectorAll(".pegefigur");
-
   if (!bokse.length || !window.fetch || !window.DOMParser) return;
 
-
-
   var SVG = "http://www.w3.org/2000/svg";
-
   var BEROERING = window.matchMedia && window.matchMedia("(hover: none)").matches;
-
   var STANDARD = "Peg på en del af figuren for at se mere.";
-
   var oensket = /[?&]peg=([^&#]+)/.exec(location.search);   // "?peg=Zn" vælger delen Zn (til gennemsyn som billede)
-
   oensket = oensket ? decodeURIComponent(oensket[1]) : null;
 
-
-
   function el(navn, klasse) {
-
     var e = document.createElement(navn);
-
     if (klasse) e.className = klasse;
-
     return e;
-
   }
-
   // Forklaringerne bruger figurprogrammets skrivemåde: _{2} er sænket og ^{2+} er hævet skrift.
-
   // En størrelse mellem to stjerner, *K*, bliver kursiv som i bogens tekst.
-
   // [afsnit B4.3](../kapitler/b4-3-aldehyder-og-ketoner.html#anker) bliver et link. Adressen læses fra
-
   // siden, figuren står på, og ikke fra figurens egen mappe.
-
   var LINK = /\[([^\]]+)\]\(([^)\s"<>]+)\)/g;
-
   function rig(s) {
-
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-
             .replace(LINK, '<a href="$2">$1</a>')
-
             .replace(/_\{([^}]*)\}/g, "<sub>$1</sub>").replace(/\^\{([^}]*)\}/g, "<sup>$1</sup>")
-
             .replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "<em>$1</em>");
-
   }
-
   function ren(s) { return s.replace(LINK, "$1").replace(/[_^]\{([^}]*)\}/g, "$1").replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "$1"); }
-
   function ord(s) { return (s || "").split(/\s+/).filter(Boolean); }
 
-
-
   var loebenr = 0;
-
   Array.prototype.forEach.call(bokse, function (boks) {
-
     var billede = boks.querySelector("img");
-
     if (!billede || !/\.svg([?#]|$)/.test(billede.getAttribute("src") || "")) return;
-
     fetch(billede.src).then(function (svar) {
-
       if (!svar.ok) throw new Error("figuren kunne ikke hentes");
-
       return svar.text();
-
     }).then(function (kilde) { byg(boks, billede, kilde); })
-
       .catch(function () { /* Kan figuren ikke hentes, står billedet der bare som før */ });
-
   });
 
-
-
   function byg(boks, billede, kilde) {
-
     // Navne inde i figuren (fx farveovergange) får et forled, så to figurer på samme side ikke deler navn
-
     var forled = "pf" + (++loebenr) + "-";
-
     kilde = kilde.replace(/(\s)id="([^"]+)"/g, '$1id="' + forled + '$2"')
-
                  .replace(/url\(#([^)]+)\)/g, "url(#" + forled + "$1)")
-
                  .replace(/href="#([^"]+)"/g, 'href="#' + forled + '$1"');
-
     var svg = new DOMParser().parseFromString(kilde, "image/svg+xml").documentElement;
-
     if (!svg || svg.nodeName.toLowerCase() !== "svg") return;
-
     svg = document.importNode(svg, true);
-
     var grupper = Array.prototype.slice.call(svg.querySelectorAll("g.peg"));
-
     if (!grupper.length) return;
 
-
-
     var vejledning = svg.querySelector("g.peg-vejledning");
-
     var start = vejledning ? vejledning.getAttribute("data-tekst") : STANDARD;
-
     if (BEROERING) start = start.replace(/^Peg på/, "Tryk på");
-
     var titel = svg.querySelector("title");
-
     if (titel) svg.removeChild(titel);   // ellers viser browseren figurens beskrivelse som en gul boble
-
     var maal = (svg.getAttribute("viewBox") || "").split(/\s+/).map(Number);
-
     svg.removeAttribute("width");
-
     svg.removeAttribute("height");
-
     svg.setAttribute("role", "group");
-
     svg.setAttribute("class", "peg-svg");
-
     if (maal.length === 4 && maal[2] > 0) svg.style.width = maal[2] + "px";
 
-
-
     // Figuren ind i siden i stedet for billedet, og feltet med forklaringen lige under den
-
     var ramme = el("div", "peg-ramme");
-
     var gammel = billede.closest("a") || billede;
-
     gammel.parentNode.replaceChild(ramme, gammel);
-
     ramme.appendChild(svg);
-
     var info = el("div", "peg-info");
-
     info.setAttribute("aria-live", "polite");
-
     var figur = ramme.closest("figure");
-
     var billedtekst = figur && figur.querySelector("figcaption");
-
     if (billedtekst && billedtekst.parentNode === figur) figur.insertBefore(info, billedtekst);
-
     else ramme.parentNode.insertBefore(info, ramme.nextSibling);
 
-
-
     // Alle forklaringerne ligger oven på hinanden i feltet, og kun én er synlig. Så er feltet
-
     // hele tiden lige så højt som den længste forklaring, og siden hopper ikke, når man peger.
-
     function kort(overskrift, tekst, klasse) {
-
       var k = el("div", "peg-kort" + (klasse ? " " + klasse : ""));
-
       if (overskrift) { var t = el("p", "peg-titel"); t.innerHTML = rig(overskrift); k.appendChild(t); }
-
       (tekst || "").split("\n").forEach(function (afsnit) {
-
         if (!afsnit.trim()) return;
-
         var p = el("p"); p.innerHTML = rig(afsnit); k.appendChild(p);
-
       });
-
       info.appendChild(k);
-
       return k;
-
     }
-
     var startkort = kort(null, start, "peg-vejledning");
 
-
-
     var dele = grupper.map(function (g, i) {
-
       var d = { g: g, nr: i, titel: g.getAttribute("data-titel") || "", tekst: g.getAttribute("data-tekst") || "",
-
                 noegle: g.getAttribute("data-noegle"), i: ord(g.getAttribute("data-i")), med: ord(g.getAttribute("data-med")) };
-
       d.kort = kort(d.titel, d.tekst);
-
       g.setAttribute("role", "button");
-
       g.setAttribute("tabindex", i === 0 ? "0" : "-1");
-
       g.setAttribute("aria-label", ren(d.titel + (d.tekst ? ". " + d.tekst.replace(/\n/g, " ") : "")));
-
       return d;
-
     });
-
     // De dele, der bliver stående fremme sammen med en del: dem, den nævner i "med", ved navn eller ved gruppe
-
     dele.forEach(function (d) {
-
       d.venner = !d.med.length ? [] : dele.filter(function (a) {
-
         return a !== d && (d.med.indexOf(a.noegle) >= 0 || a.i.some(function (s) { return d.med.indexOf(s) >= 0; }));
-
       });
-
     });
-
-
 
     // Hver del får et usynligt felt, der fanger musen (også mellem bogstaverne), og en ramme til fremhævning
-
     var maalt = false;
-
     function maalOp() {
-
       if (maalt) return;
-
       // Har delen en flade med klassen "peg-maal", er det den, der bestemmer feltets størrelse
-
       var kasser = dele.map(function (d) {
-
         try { return (d.g.querySelector(".peg-maal") || d.g).getBBox(); } catch (e) { return null; }
-
       });
-
       if (!kasser.some(function (b) { return b && b.width > 0; })) return;   // figuren er skjult lige nu
-
       maalt = true;
-
       dele.forEach(function (d, i) {
-
         var b = kasser[i];
-
         if (!b || !b.width) return;
-
         var luft = 2.5;
-
         [["peg-felt", true], ["peg-kant", false]].forEach(function (r) {
-
           var rekt = document.createElementNS(SVG, "rect");
-
           rekt.setAttribute("x", (b.x - luft).toFixed(1));
-
           rekt.setAttribute("y", (b.y - luft).toFixed(1));
-
           rekt.setAttribute("width", (b.width + 2 * luft).toFixed(1));
-
           rekt.setAttribute("height", (b.height + 2 * luft).toFixed(1));
-
           rekt.setAttribute("rx", "7");
-
           rekt.setAttribute("class", r[0]);
-
           if (r[1]) d.g.insertBefore(rekt, d.g.firstChild); else d.g.appendChild(rekt);
-
         });
-
       });
-
     }
-
     maalOp();
-
     svg.addEventListener("pointerover", maalOp);
-
     svg.addEventListener("focusin", maalOp);
 
-
-
     var fast = null, vist;
-
     function vis(d) {
-
       if (d === vist) return;
-
       vist = d;
-
       startkort.classList.toggle("peg-vist", !d);
-
       dele.forEach(function (a) {
-
         a.kort.classList.toggle("peg-vist", a === d);
-
         a.g.classList.toggle("peg-fremme", a === d);
-
         a.g.classList.toggle("peg-lys", !!d && (a === d || d.venner.indexOf(a) >= 0));
-
       });
-
       svg.classList.toggle("peg-daemp", !!d && d.venner.length > 0);
-
     }
-
     function fastgoer(d) {
-
       if (fast) { fast.g.classList.remove("peg-valgt"); fast.g.setAttribute("aria-pressed", "false"); }
-
       fast = d;
-
       if (d) {
-
         d.g.classList.add("peg-valgt");
-
         d.g.setAttribute("aria-pressed", "true");
-
         dele.forEach(function (a) { a.g.setAttribute("tabindex", a === d ? "0" : "-1"); });
-
       }
-
       vis(d);
-
     }
-
-
 
     // Har forklaringen et link, bliver den stående et øjeblik, når musen forlader figuren, og så længe musen
-
     // er i feltet, så man kan nå at trykke på linket. Andre forklaringer forsvinder med det samme som før.
-
     var slip = null;
-
     function slipForklaring() {
-
       clearTimeout(slip);
-
       if (vist && vist !== fast && vist.kort.querySelector("a")) slip = setTimeout(function () { vis(fast); }, 450);
-
       else vis(fast);
-
     }
-
     info.addEventListener("pointerenter", function () { clearTimeout(slip); });
-
     info.addEventListener("pointerleave", slipForklaring);
-
     info.addEventListener("focusout", function (e) {
-
       if (!info.contains(e.relatedTarget) && !svg.contains(e.relatedTarget)) vis(fast);
-
     });
-
-
 
     dele.forEach(function (d) {
-
       d.g.addEventListener("pointerenter", function () { clearTimeout(slip); vis(d); });
-
       d.g.addEventListener("focus", function () { vis(d); });
-
       d.g.addEventListener("click", function (e) { fastgoer(fast === d ? null : d); e.stopPropagation(); });
-
       d.g.addEventListener("keydown", function (e) {
-
         if (e.key === "Enter" || e.key === " ") { fastgoer(fast === d ? null : d); e.preventDefault(); return; }
-
         if (e.key === "Escape") { fastgoer(null); return; }
-
         var trin = { ArrowLeft: -1, ArrowUp: -1, ArrowRight: 1, ArrowDown: 1 }[e.key];
-
         if (!trin) return;
-
         var naeste = dele[d.nr + trin];
-
         if (naeste) {
-
           dele.forEach(function (a) { a.g.setAttribute("tabindex", a === naeste ? "0" : "-1"); });
-
           naeste.g.focus();
-
         }
-
         e.preventDefault();
-
       });
-
     });
-
     svg.addEventListener("pointerleave", slipForklaring);
-
     svg.addEventListener("focusout", function (e) {
-
       if (!svg.contains(e.relatedTarget) && !info.contains(e.relatedTarget)) vis(fast);
-
     });
-
     svg.addEventListener("click", function () { fastgoer(null); });   // et klik ved siden af slipper forklaringen
 
-
-
     boks.classList.add("peg-aktiv");
-
     vis(null);
-
     if (oensket) {
-
       var valgt = dele.filter(function (d) { return d.noegle === oensket; })[0];
-
       if (valgt) fastgoer(valgt);
-
     }
-
   }
-
 });
-
 </script>
-
 <script>
 // Lektielinks på opgavesiderne. Se noter/repetition.md.
 //
@@ -3484,6 +3310,50 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
+// Knappen "Hent som PDF" på øvelsernes sider (30. okt. 2026).
+//
+// stil/oevelsepdf.lua sætter linket lige efter overskriften, når øvelsen har en PDF i oevelser/pdf/ (lavet af
+// kompendier/lav_oevelsespdf.py). Scriptet flytter linket op i rækken med knapperne til udgaverne
+// (stil/udgaver.html, som kører først), eller lige under overskriften, når øvelsen kun har én udgave, og sætter et
+// ikon foran. Har øvelsen to udgaver, henter knappen den udgave, der er valgt, og filnavnet siger hvilken.
+// Uden JavaScript står linket øverst på siden og henter den første udgave.
+document.addEventListener("DOMContentLoaded", function () {
+  var boks = document.querySelector("main .oevelsepdf");
+  var link = boks && boks.querySelector("a.pdfknap");
+  if (!link) return;
+
+  var ikon = document.createElement("i");
+  ikon.className = "bi bi-file-earmark-arrow-down";
+  ikon.setAttribute("aria-hidden", "true");
+  link.insertBefore(ikon, link.firstChild);
+
+  var valg = document.querySelector("main .udgavevalg");
+  if (valg) {
+    valg.appendChild(link);
+    boks.parentNode.removeChild(boks);
+  } else {
+    var hoved = document.querySelector("main #title-block-header") || document.querySelector("main h1");
+    if (hoved && hoved !== boks.previousElementSibling) hoved.parentNode.insertBefore(boks, hoved.nextSibling);
+  }
+
+  var lukket = link.getAttribute("href");
+  var aaben = boks.getAttribute("data-aaben");
+  var navn = (link.getAttribute("download") || "").replace(/\.pdf$/, "");
+  function opdater() {
+    if (!aaben || !valg) return;
+    var knap = valg.querySelector('button[aria-pressed="true"]');
+    var erAaben = document.body.classList.contains("udgave-aaben");
+    link.setAttribute("href", erAaben ? aaben : lukket);
+    link.setAttribute("download", navn + (knap ? " (" + knap.textContent + ")" : "") + ".pdf");
+    link.title = knap ? "Henter udgaven " + knap.textContent : "";
+  }
+  opdater();
+  if (aaben && valg && window.MutationObserver) {
+    new MutationObserver(opdater).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+  }
+});
+</script>
+<script>
 // Linkikonet ved en overskrift kopierer adressen til afsnittet.
 //
 // Quarto sætter et lille linkikon (a.anchorjs-link) ved hver overskrift. Et klik på det går stadig til
@@ -3544,839 +3414,425 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
-
 // Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026 i kapitel 1 og 2,
-
 // 16. okt. 2026 i alle kapitler i de tre bøger).
-
 //
-
 // Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver linjerne "Opgaver til 1.1" osv.
-
 // til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
-
 // "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
-
 // kemiformler.dk; C-bogen og kapitel B2, B3, B4 og B8 har dem). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
-
 // før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
-
 // Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke. Temaerne Plastic og Klima i C-bogen er bygget
-
 // som kapitler (temaer/t1-1-....html og temaer/t1-1-opgaver.html) og får samme menu; "Fagord til Tema: Klima" bliver
-
 // til "Fagord", også i de små temaer uden opgaver (Niels 16. okt. 2026, noter/temaer-c-oprydning.md).
-
 //
-
 // Øvelser (Niels 18. okt. 2026): efter repetitionen står siden "Øvelser til kapitel 7", som bliver til "Øvelser", og
-
 // bagefter kapitlets øvelser (oevelser/7-5-....html). Øvelserne selv tages ud af menuen; står man på en af dem, er
-
 // "Øvelser" fremhævet. Kapitlernes navne mister ordet "Kapitel" ("7: Syrer og baser"), så de kan stå på én linje, og
-
 // delen Materialer (den fulde liste over øvelser) flyttes ned under Bilag.
-
 (function () {
-
   // Modulplanerne vises først, når Niels har set dem igennem (1. nov. 2026: "lige nu skal der bare stå 'kommer
   // snart' ... i løbet af næste uge, så opdaterer jeg dem løbende - startende med kap 1 og 2"). Skriv kapitlets
   // nummer her, når planen er klar, fx ["1", "2"], og skift "Kommer snart" ud med linket i tabellen på forsiden.
   var MODULPLANER_KLAR = [];
   var EKSTRA = {
-
     "1": [
-
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
-
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
-
     ],
-
     "2": [
-
       { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
-
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
-
     ],
-
     "3": [
-
       { tekst: "Slides", sti: "slides/kapitel-3.html", ikon: "slides" },
-
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-3.html", ikon: "modulplaner" },
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c3.html", ikon: "animationer" }
-
     ],
-
     "4": [
-
       { tekst: "Slides", sti: "slides/kapitel-4.html", ikon: "slides" },
-
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-4.html", ikon: "modulplaner" },
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c4.html", ikon: "animationer" }
-
     ],
-
     "5": [
-
       { tekst: "Slides", sti: "slides/kapitel-5.html", ikon: "slides" },
-
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-5.html", ikon: "modulplaner" },
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c5.html", ikon: "animationer" }
-
     ],
-
     "6": [
-
       { tekst: "Slides", sti: "slides/kapitel-6.html", ikon: "slides" },
-
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-6.html", ikon: "modulplaner" },
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c6.html", ikon: "animationer" }
-
     ],
-
     "7": [
-
       { tekst: "Slides", sti: "slides/kapitel-7.html", ikon: "slides" },
-
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-7.html", ikon: "modulplaner" },
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c7.html", ikon: "animationer" }
-
     ],
-
     "8": [
-
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c8.html", ikon: "animationer" }
-
     ],
-
-    // Slides til kapitel B2 (22. okt. 2026), foreløbig kun B2.4 og B2.5.
-
+    // Slides til kapitel B2 (22. okt. 2026), foreløbig kun B2.4, B2.5 og B2.6 (B2.6 fra 1. nov. 2026).
     "B2": [
-
       { tekst: "Slides", sti: "slides/kapitel-b2.html", ikon: "slides" }
-
     ],
-
-    // B-bogen (21. okt. 2026): slides til kapitel B3, foreløbig kun B3.1 og B3.2. Filen kopieres til b/slides/,
-
+    // B-bogen (21. okt. 2026): slides til kapitel B3, fra 26. okt. 2026 hele kapitlet (B3.1 til B3.4). Filen kopieres til b/slides/,
     // når slidesene bygges (slides/kopier_til_b.py).
-
     "B3": [
-
       { tekst: "Slides", sti: "slides/kapitel-b3.html", ikon: "slides" }
-
     ],
-
-    // Slides til kapitel B4 (26. okt. 2026), foreløbig kun B4.1 til B4.5.
-
+    // Slides til kapitel B4 (26. okt. 2026), nu hele kapitlet (B4.1 til B4.7).
     "B4": [
-
       { tekst: "Slides", sti: "slides/kapitel-b4.html", ikon: "slides" }
-
     ],
-
     // Slides til kapitel B8 (22. okt. 2026), foreløbig kun B8.6 TLC.
-
     "B8": [
-
       { tekst: "Slides", sti: "slides/kapitel-b8.html", ikon: "slides" }
-
     ]
-
   };
 
-
-
   function li(klasse) {
-
     var el = document.createElement("li");
-
     el.className = "sidebar-item " + klasse;
-
     return el;
-
   }
 
-
-
   function lavKapitel(ul) {
-
     var punkter = Array.prototype.filter.call(ul.children, function (el) { return el.tagName === "LI"; });
-
     var afsnit = [], opgaver = [], sidsteAfsnit = -1, foersteOpgave = -1;
-
     punkter.forEach(function (p, i) {
-
       var a = p.querySelector("a.sidebar-link");
-
       if (!a) return;
-
       var href = a.getAttribute("href") || "";
-
       if (/(^|\/)kapitler\//.test(href) || /(^|\/)temaer\/t\d+-\d+-(?!opgaver)[^\/]*\.html/.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
-
       else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href) || /(^|\/)temaer\/t\d+-\d+-opgaver\.html/.test(href)) {
-
         opgaver.push(p);
-
         if (foersteOpgave < 0) foersteOpgave = i;
-
       }
-
     });
-
     if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
 
-
-
     // Kapitlets nummer og vejen til bogens rod tages fra første afsnit ("../kapitler/1-1-....html").
-
     // I B- og A-bogen hedder afsnittene "B1.1" og "A1.1"; dér er nummeret "B1" og "A1", som ikke står i EKSTRA.
-
     var foerste = afsnit[0].getAttribute("href");
-
     var nr = (afsnit[0].textContent.trim().match(/^([AB]?\d+)\./) || [])[1];
-
     var rod = foerste.slice(0, foerste.search(/(kapitler|temaer)\//));
 
-
-
     // Fagord, repetition og øvelser: "Fagord til kapitel 1" bliver til "Fagord". De enkelte øvelser tages ud.
-
     var oevelsesside = null, oevelseAktiv = false, fagordPunkt = null;
-
     punkter.slice(foersteOpgave).forEach(function (p) {
-
       if (opgaver.indexOf(p) >= 0) return;
-
       var a = p.querySelector("a.sidebar-link");
-
       var href = a ? a.getAttribute("href") || "" : "";
-
       if (/(^|\/)oevelser\/\d[^\/]*\.html/.test(href)) {
-
         if (a.classList.contains("active")) oevelseAktiv = true;
-
         p.remove();
-
         return;
-
       }
-
       if (/(^|\/)oevelser\/kapitel-[^\/]*\.html/.test(href)) oevelsesside = a;
-
       if (/(^|\/)fagord\/[^\/]*\.html/.test(href)) fagordPunkt = p;
-
       p.classList.add("kapitelmenu-side");
-
       var t = p.querySelector("a.sidebar-link .menu-text");
-
       if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+[AB]?\d+$/i, "").replace(/\s+til\s+Tema:.*$/, "");
-
     });
-
     if (oevelseAktiv && oevelsesside) {
-
       oevelsesside.classList.add("active");
-
       oevelsesside.setAttribute("aria-current", "page");
-
     }
-
-
 
     var raekke = li("kapitelmenu-opgaver");
-
     var navn = document.createElement("span");
-
     navn.className = "kapitelmenu-navn";
-
     navn.textContent = "Opgaver";
-
     raekke.appendChild(navn);
-
     opgaver.forEach(function (p) {
-
       var gammel = p.querySelector("a.sidebar-link");
-
       var a = document.createElement("a");
-
       a.href = gammel.getAttribute("href");
-
       a.textContent = gammel.textContent.trim().replace(/^Opgaver til\s*/, "");
-
       a.title = gammel.textContent.trim();
-
       if (gammel.classList.contains("active")) { a.className = "active"; a.setAttribute("aria-current", "page"); }
-
       raekke.appendChild(a);
-
     });
-
     ul.insertBefore(raekke, opgaver[0]);
-
     opgaver.forEach(function (p) { p.remove(); });
 
-
-
     // Fagord står sidst blandt materialerne, lige over Slides, med et kartotekskort som ikon ligesom i Portugals
-
     // historie (Niels 29. okt. 2026: "samme ikon skal du også bruge ved kemibogen, hvor fagord også skal stå lige over
-
     // slides"). Ikonet står i stil/kemibogen.scss.
-
     if (fagordPunkt) {
-
       fagordPunkt.classList.remove("kapitelmenu-side");
-
       fagordPunkt.classList.add("kapitelmenu-ekstra");
-
       var fagordLink = fagordPunkt.querySelector("a.sidebar-link");
-
       if (fagordLink) fagordLink.classList.add("kapitelmenu-fagord");
-
       ul.appendChild(fagordPunkt);
-
     }
-
-
 
     (EKSTRA[nr] || []).filter(function (e) {
       return e.ikon !== "modulplaner" || MODULPLANER_KLAR.indexOf(nr) >= 0;
     }).forEach(function (e) {
-
       var p = li("kapitelmenu-ekstra");
-
       var boks = document.createElement("div");
-
       boks.className = "sidebar-item-container";
-
       var a = document.createElement("a");
-
       a.className = "sidebar-item-text sidebar-link";
-
       a.href = e.url || rod + e.sti;
-
       a.target = "_blank";
-
       a.rel = "noopener";
-
       a.classList.add("kapitelmenu-" + e.ikon);
-
       a.textContent = e.tekst;
-
       boks.appendChild(a);
-
       p.appendChild(boks);
-
       ul.appendChild(p);
-
     });
-
   }
-
-
 
   function start() {
-
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
-
     // De små temaer har ingen opgavesider, men fagordssiden hedder også bare "Fagord" dér.
-
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar a.sidebar-link .menu-text"), function (t) {
-
       if (/^Fagord til Tema:/.test(t.textContent.trim())) {
-
         t.textContent = "Fagord";
-
         var p = t.closest("li");
-
         if (p) p.classList.add("kapitelmenu-side");
-
         var a = t.closest("a");
-
         if (a) a.classList.add("kapitelmenu-fagord");
-
       }
-
     });
-
     // "Kapitel 7: Syrer og baser" bliver til "7: Syrer og baser" (kun i menuen; siden hedder stadig "Kapitel 7").
-
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar li.sidebar-item-section > .sidebar-item-container .menu-text"), function (t) {
-
       t.textContent = t.textContent.trim().replace(/^Kapitel\s+([AB]?\d+):/, "$1:");
-
     });
-
     // Materialer står sidst i menuen, under Bilag.
-
     var liste = document.querySelector('#quarto-sidebar a.sidebar-link[href$="oevelser/oversigt.html"]');
-
     var del = liste && liste.closest("ul.sidebar-section.depth1");
-
     del = del && del.closest("li.sidebar-item-section");
-
     if (del && del.parentNode) del.parentNode.appendChild(del);
-
   }
-
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
-
   else start();
-
 })();
-
 </script>
-
 <script>
-
 // Kernestofmærkaten ("Kernestof på kemi B", "Kernestof på kemi A" eller "Supplerende stof") står i .qmd-filen lige
-
 // under afsnittets overskrift. Dette script flytter den op til højre for overskriften som en lille, diskret ring
-
 // (Niels 18. okt. 2026: "lidt mere diskret ... til højre for overskriften og ikke nedenunder"). Uden JavaScript
-
 // bliver den stående under overskriften. I PDF'en er den ikke med. Se noter/kernestof.md.
-
 document.addEventListener("DOMContentLoaded", function () {
-
   var titel = document.querySelector("main h1.title") || document.querySelector("main h1");
-
   if (!titel) return;
-
   Array.prototype.forEach.call(document.querySelectorAll("main div.kernestofmaerke"), function (maerke) {
-
     var ring = document.createElement("span");
-
     ring.className = maerke.className;
-
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
-
     titel.appendChild(ring);
-
     maerke.parentNode.removeChild(maerke);
-
   });
-
   // Forløbsmærkatet på en opgave ("Velegnet til sundhedsforløb", se stil/lektielinks.lua) står lige under opgavens
-
   // overskrift og flyttes på samme måde op til højre for titlen.
-
   Array.prototype.forEach.call(document.querySelectorAll("main div.forloebsmaerke"), function (maerke) {
-
     var h2 = maerke.previousElementSibling;
-
     if (!h2 || h2.tagName !== "H2") return;
-
     var ring = document.createElement("span");
-
     ring.className = maerke.className;
-
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
-
     h2.appendChild(ring);
-
     maerke.parentNode.removeChild(maerke);
-
   });
-
 });
-
 </script>
-
 <script>
-
 // Fokusspørgsmål i boksen Kort sagt (C-bogens kapitler og kapitel B3 23. okt. 2026, B-bogens kapitler 26. okt. 2026).
-
 // Se noter/fokusspoergsmaal.md.
-
 //
-
 // Spørgsmålene står i afsnittet lige under Kort sagt som ::: {.fokusspoergsmaal} med en nummereret liste.
-
 // Scriptet flytter dem ind i boksen og sætter en knap i boksens titellinje, der skifter mellem Kort sagt og
-
 // fokusspørgsmålene. Siden åbner altid med Kort sagt. Når spørgsmålene vises, lægger knappen Kopiér dem i
-
 // udklipsholderen med afsnittets titel og adresse, så læreren kan sende dem til eleverne. De kopieres både som
-
 // formateret tekst (nummereret liste og link, når de sættes ind i Teams, Word eller en mail) og som ren tekst.
-
 // Uden JavaScript ses spørgsmålene ikke; stilen står i stil/kemibogen.scss.
-
 document.addEventListener("DOMContentLoaded", function () {
-
   var lister = document.querySelectorAll("main .fokusspoergsmaal");
-
   if (!lister.length) return;
 
-
-
   function el(navn, klasse, tekst) {
-
     var e = document.createElement(navn);
-
     if (klasse) e.className = klasse;
-
     if (tekst) e.textContent = tekst;
-
     return e;
-
   }
-
   function knap(klasse, ikon, tekst) {
-
     var k = el("button", "fs-knap " + klasse);
-
     k.type = "button";
-
     var i = el("i", "bi " + ikon);
-
     i.setAttribute("aria-hidden", "true");
-
     k.appendChild(i);
-
     k.appendChild(el("span", "fs-knaptekst", tekst));
-
     return k;
-
   }
-
   function saetTekst(k, ikon, tekst) {
-
     k.querySelector(".bi").className = "bi " + ikon;
-
     k.querySelector(".fs-knaptekst").textContent = tekst;
-
   }
-
   function escape(t) {
-
     return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
   }
-
-
 
   // Afsnittets titel (fx "B3.2 Intermolekylære bindinger") uden linkikonet og uden kernestofmærkaten, som
-
   // stil/kernestofmaerke.html sætter ind i overskriften. Quarto lægger selve titlen i sit eget felt.
-
   function titel() {
-
     var h1 = document.querySelector("main h1.title") || document.querySelector("main h1");
-
     if (!h1) return document.title;
-
     var kopi = (h1.querySelector(".quarto-section-identifier") || h1).cloneNode(true);
-
     Array.prototype.forEach.call(kopi.querySelectorAll(".anchorjs-link, .screen-reader-only"), function (e) {
-
       e.parentNode.removeChild(e);
-
     });
-
     return kopi.textContent.replace(/\s+/g, " ").trim();
-
   }
-
-
 
   // Ren tekst, hvor sænkede og hævede tegn bliver til tegn, der kan stå i en almindelig tekst: C₂H₆O og Cl⁻
-
   var SAENKET = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉",
-
     "+": "₊", "−": "₋", "-": "₋" };
-
   var HAEVET = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹",
-
     "+": "⁺", "−": "⁻", "-": "⁻" };
-
   function renTekst(node) {
-
     var ud = "";
-
     Array.prototype.forEach.call(node.childNodes, function (n) {
-
       if (n.nodeType === 3) {
-
         ud += n.nodeValue;
-
       } else if (n.nodeType === 1) {
-
         var t = renTekst(n);
-
         var tabel = n.tagName === "SUB" ? SAENKET : n.tagName === "SUP" ? HAEVET : null;
-
         if (tabel && t.split("").every(function (c) { return tabel[c]; })) {
-
           t = t.split("").map(function (c) { return tabel[c]; }).join("");
-
         }
-
         ud += t;
-
       }
-
     });
-
     return ud.replace(/\s+/g, " ").trim();
-
   }
-
-
 
   // Formateret tekst til udklipsholderen: kun hævet, sænket og kursiv skrift følger med, ikke mærkerne fra
-
   // forklaringerne ved fagord (stil/fagordpeg.html) og andet, der kun hører til siden
-
   var BEHOLD = { SUB: "sub", SUP: "sup", EM: "em", I: "em", STRONG: "strong", B: "strong" };
-
   function renHtml(node) {
-
     var ud = "";
-
     Array.prototype.forEach.call(node.childNodes, function (n) {
-
       if (n.nodeType === 3) {
-
         ud += escape(n.nodeValue);
-
       } else if (n.nodeType === 1) {
-
         var tag = BEHOLD[n.tagName];
-
         ud += tag ? "<" + tag + ">" + renHtml(n) + "</" + tag + ">" : renHtml(n);
-
       }
-
     });
-
     return ud.replace(/\s+/g, " ").trim();
-
   }
-
-
 
   function kopier(tekst, html, faerdig) {
-
     // Den gamle måde virker også uden https: et markeret tekstfelt, og ved kopieringen lægges begge udgaver ind
-
     function iHaanden() {
-
       var felt = el("textarea");
-
       felt.value = tekst;
-
       felt.setAttribute("readonly", "");
-
       felt.style.position = "fixed";
-
       felt.style.top = "0";
-
       felt.style.opacity = "0";
-
       document.body.appendChild(felt);
-
       felt.select();
-
       function vedKopi(e) {
-
         if (!e.clipboardData) return;
-
         e.clipboardData.setData("text/plain", tekst);
-
         e.clipboardData.setData("text/html", html);
-
         e.preventDefault();
-
       }
-
       document.addEventListener("copy", vedKopi);
-
       var ok = false;
-
       try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
-
       document.removeEventListener("copy", vedKopi);
-
       document.body.removeChild(felt);
-
       faerdig(ok);
-
     }
-
     if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write && window.isSecureContext) {
-
       try {
-
         navigator.clipboard.write([new ClipboardItem({
-
           "text/plain": new Blob([tekst], { type: "text/plain" }),
-
           "text/html": new Blob([html], { type: "text/html" })
-
         })]).then(function () { faerdig(true); }, iHaanden);
-
         return;
-
       } catch (e) {}
-
     }
-
     iHaanden();
-
   }
 
-
-
   Array.prototype.forEach.call(lister, function (liste, nr) {
-
     var boks = liste.previousElementSibling;
-
     if (!boks || !boks.classList.contains("callout")) return;
-
     var hoved = boks.querySelector(".callout-header");
-
     var titelfelt = boks.querySelector(".callout-title-container");
-
     var krop = boks.querySelector(".callout-body-container");
-
     if (!hoved || !titelfelt || !krop) return;
 
-
-
     // Titlen "Kort sagt" kommer i sit eget felt, så den kan skiftes
-
     var navn = el("span", "fs-navn", "Kort sagt");
-
     Array.prototype.slice.call(titelfelt.childNodes).forEach(function (n) {
-
       if (n.nodeType === 3) titelfelt.removeChild(n);
-
     });
-
     titelfelt.appendChild(navn);
 
-
-
     // Kort sagt og spørgsmålene ligger i boksen hver for sig
-
     var kortSagt = el("div", "fs-kortsagt");
-
     while (krop.firstChild) kortSagt.appendChild(krop.firstChild);
-
     krop.appendChild(kortSagt);
-
     krop.appendChild(liste);
-
     liste.id = liste.id || "fokusspoergsmaal-" + (nr + 1);
 
-
-
     boks.classList.add("fs-boks");
-
     boks.removeAttribute("title"); // ellers siger musen "Kort sagt", også når spørgsmålene vises
 
-
-
     var knapper = el("div", "fs-knapper");
-
     var kopiKnap = knap("fs-kopier", "bi-clipboard", "Kopiér");
-
     var skift = knap("fs-skift", "bi-question-circle", "Vis fokusspørgsmål");
-
     kopiKnap.hidden = true;
-
     kopiKnap.title = "Kopiér fokusspørgsmålene, så du kan sende dem til eleverne";
-
     skift.setAttribute("aria-controls", liste.id);
-
     skift.setAttribute("aria-expanded", "false");
-
     knapper.appendChild(kopiKnap);
-
     knapper.appendChild(skift);
-
     hoved.appendChild(knapper);
 
-
-
     skift.addEventListener("click", function () {
-
       var fokus = boks.classList.toggle("fs-vis-fokus");
-
       navn.textContent = fokus ? "Fokusspørgsmål" : "Kort sagt";
-
       saetTekst(skift, fokus ? "bi-card-text" : "bi-question-circle", fokus ? "Vis Kort sagt" : "Vis fokusspørgsmål");
-
       skift.setAttribute("aria-expanded", fokus ? "true" : "false");
-
       kopiKnap.hidden = !fokus;
-
     });
-
-
 
     var ur = null;
-
     kopiKnap.addEventListener("click", function () {
-
       var side = location.href.split("#")[0].split("?")[0];
-
       var afsnit = titel();
-
       var punkter = Array.prototype.slice.call(liste.querySelectorAll("li"));
-
       var tekst = "Fokusspørgsmål til " + afsnit + "\n" + side + "\n\n" +
-
         punkter.map(function (li, i) { return (i + 1) + ". " + renTekst(li); }).join("\n") + "\n";
-
       var html = "<p><strong>Fokusspørgsmål til <a href=\"" + escape(side) + "\">" + escape(afsnit) +
-
         "</a></strong></p><ol>" +
-
         punkter.map(function (li) { return "<li>" + renHtml(li) + "</li>"; }).join("") + "</ol>";
-
       kopier(tekst, html, function (ok) {
-
         saetTekst(kopiKnap, ok ? "bi-check-lg" : "bi-x-lg", ok ? "Kopieret" : "Kunne ikke kopiere");
-
         kopiKnap.classList.add("fs-kopieret");
-
         clearTimeout(ur);
-
         ur = setTimeout(function () {
-
           saetTekst(kopiKnap, "bi-clipboard", "Kopiér");
-
           kopiKnap.classList.remove("fs-kopieret");
-
         }, 2200);
-
       });
-
     });
-
   });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
