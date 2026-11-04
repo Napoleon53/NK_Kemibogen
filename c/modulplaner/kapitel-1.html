@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modulplaner kapitel 1</title>
+<title>Forslag til modulplaner, kapitel 1</title>
 <style>
 /* Kemibogen I */
 /* Bogens store I, lille l og ρ (vaerktoej/lav_i_skrift.py). Ret ikke i linjerne her. */
@@ -130,9 +130,23 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .bagefter > div { min-width: 0; }
 .bagefter p { margin: 0; }
 
+/* Planen "Kap 1 2026": en note om, at planen er et forslag, grupperne til elevoplæggene og boksen "Flere forslag". */
+/* Øverst på siden: planerne er forslag (Niels 4. nov. 2026: det skal "fremgå tydeligt"). */
+.udkast { margin: 0; max-width: 65ch; padding: 10px 14px; border: 2px solid var(--accent); background: var(--accent-svag); border-radius: 6px; font-size: .95rem; }
+.forslagsnote { margin: 0; max-width: 65ch; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--accent-svag); border-radius: 0 6px 6px 0; font-size: .9rem; }
+.pakker { list-style: none; margin: 2px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px 16px; font-size: .84rem; color: var(--dæmpet); }
+.saerudgaver { max-width: 65ch; font-size: .9rem; }
+.saerudgaver p { margin: 0; }
+.saerudgaver ul { margin: 2px 0 0; padding-left: 1.1em; display: grid; gap: 2px; }
+.pakker li { display: block; padding: 0; border: 0; }
+.pakker b { color: var(--blæk); }
+.forslag { border: 1px dashed var(--streg); border-radius: 6px; padding: 10px 16px; display: grid; gap: 4px; }
+.forslag h4 { margin: 0; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600; }
+.forslag ul { margin: 0; padding-left: 1.1em; font-size: .86rem; display: grid; gap: 2px; }
+
 @media (max-width: 640px) {
   .modul { padding: 20px 16px; }
-  .før { grid-template-columns: 1fr; }
+  .før, .pakker { grid-template-columns: 1fr; }
   .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
 }
 
@@ -143,6 +157,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .side, .plan { gap: 0; max-width: none; }
   .modul { border: 0; padding: 0; gap: 4mm; break-after: page; }
   a { color: inherit; text-decoration: none; }
+  /* Kap 1 2026 har også boksen Flere forslag, så arket er lidt tættere. */
+  #nv2026 { font-size: 10pt; }
+  #nv2026 .modul { gap: 2.5mm; }
+  #nv2026 .modul > header { padding-bottom: 2mm; }
+  #nv2026 .forløb li { padding-block: 5px; }
+  #nv2026 .fokus { padding: 2mm 4mm; }
+  #nv2026 .forslag { padding: 2mm 4mm; }
 }
 </style>
 </head>
@@ -152,17 +173,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 <section class="forside">
   <span class="etiket"><a href="https://kemibogen.dk/c/" style="color: inherit; text-decoration: none;">Kemibogen C</a> · lærerens udgave</span>
-  <h1>Modulplaner til kapitel 1: Atomer</h1>
+  <h1>Forslag til modulplaner: kapitel 1, Atomer</h1>
+  <p class="udkast"><b>Forslag og eksempler, ikke faste planer.</b> Planerne er udkast, som du kan bruge som inspiration og tilpasse til dit hold.</p>
   <p>Vælg den plan, der passer til holdet. Hvert modul er 90 minutter og fylder ét ark. Tiderne er et forslag: spring et punkt over eller brug mere tid, når klassen har brug for det.</p>
   <div class="skifter" role="group" aria-label="Vælg plan">
     <button type="button" id="knap-kort" data-plan="kort" aria-pressed="true">Kort · 2 moduler<span>Højt tempo, uden øvelser</span></button>
     <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 4 moduler<span>To øvelser, god tid til afstemning</span></button>
+    <button type="button" id="knap-nv2026" data-plan="nv2026" aria-pressed="false">Kap 1 2026 · 2 moduler<span>Afkortet pga. NV</span></button>
   </div>
+  <p class="forslagsnote" data-plan="nv2026" hidden><b>Et forslag til en modulplan</b> til et hold, der har haft atomer og reaktionsskemaer i NV-forløbet. Kapitlet får derfor kun to moduler, og modul 2 er samtidig kemis del af faglig læsning i 1g. Tilpas tider og opgaver til holdet; flere idéer står i boksen nederst i hvert modul.</p>
   <p class="materialer">
     <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-1-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 16 sider).</span>
     <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-1-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 19 sider).</span>
+    <span data-plan="nv2026" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-1-og-2-2026.pdf" target="_blank">kapitel 1 og 2 samlet</a> (PDF, 30 sider), som også bruges i kapitel 2.</span>
     Du kan også sætte dit eget kompendium sammen på <a href="https://kemiformler.dk/kompendier/" target="_blank">Byg dit kompendium</a>.
   </p>
+  <div class="saerudgaver" data-plan="nv2026" hidden>
+    <p><b>Slides:</b> én særudgave til hvert modul, sat sammen af kapitlernes egne slides i den rækkefølge, planen bruger dem.</p>
+    <ul>
+      <li><a class="sl" href="../slides/kap1-2026-modul-1.html" target="_blank">Modul 1</a> (38 slides): slide 2–13 er kapitel 0 (slide 2–13), slide 14–22 er kapitel 1 (slide 4–5 og 9–15), og slide 23–38 er oplæggene A–E fra kapitel 1 (slide 2–3, 6–8, 16–19, 20–22 og 23–26).</li>
+      <li><a class="sl" href="../slides/kap1-2026-modul-2.html" target="_blank">Modul 2</a> (13 slides): slide 2 er læsekortet fra kapitel 0 (slide 5), slide 3–6 er kapitel 1 (slide 34–37), slide 7–8 er ædelgasreglen fra kapitel 1 (slide 25–26), og slide 9–13 er kapitel 2 (slide 2–6).</li>
+    </ul>
+  </div>
   <div class="signatur">
     <span><span class="form start">Start</span> fravær og repetition</span>
     <span><span class="form tavle">Tavle</span> læreren styrer</span>
@@ -177,7 +209,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 <article class="modul">
   <header>
-    <div class="øverst"><span class="etiket">Kapitel 1 · kort plan · modul 1 af 2</span><span class="afsnit">Afsnit 1.1 og 1.2 · 90 min</span></div>
+    <div class="øverst"><span class="etiket">Kapitel 1 · kort plan · forslag · modul 1 af 2</span><span class="afsnit">Afsnit 1.1 og 1.2 · 90 min</span></div>
     <h3>Stoffer og atomet</h3>
   </header>
 
@@ -226,7 +258,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 <article class="modul">
   <header>
-    <div class="øverst"><span class="etiket">Kapitel 1 · kort plan · modul 2 af 2</span><span class="afsnit">Afsnit 1.3 og 1.4 · 90 min</span></div>
+    <div class="øverst"><span class="etiket">Kapitel 1 · kort plan · forslag · modul 2 af 2</span><span class="afsnit">Afsnit 1.3 og 1.4 · 90 min</span></div>
     <h3>Elektronskaller og afstemning</h3>
   </header>
 
@@ -280,7 +312,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 <article class="modul">
   <header>
-    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · modul 1 af 4</span><span class="afsnit">Afsnit 1.1 · 90 min</span></div>
+    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · forslag · modul 1 af 4</span><span class="afsnit">Afsnit 1.1 · 90 min</span></div>
     <h3>Hvad er kemi?</h3>
   </header>
 
@@ -328,7 +360,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 <article class="modul">
   <header>
-    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · modul 2 af 4</span><span class="afsnit">Afsnit 1.2 og begyndelsen af 1.3 · 90 min</span></div>
+    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · forslag · modul 2 af 4</span><span class="afsnit">Afsnit 1.2 og begyndelsen af 1.3 · 90 min</span></div>
     <h3>Atomet og elektronskallerne</h3>
   </header>
 
@@ -375,7 +407,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 <article class="modul">
   <header>
-    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · modul 3 af 4</span><span class="afsnit">Resten af 1.3 og 0.3 · 90 min</span></div>
+    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · forslag · modul 3 af 4</span><span class="afsnit">Resten af 1.3 og 0.3 · 90 min</span></div>
     <h3>Det periodiske system og første gang i laboratoriet</h3>
   </header>
 
@@ -424,7 +456,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 <article class="modul">
   <header>
-    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · modul 4 af 4</span><span class="afsnit">Afsnit 1.4 · 90 min</span></div>
+    <div class="øverst"><span class="etiket">Kapitel 1 · lang plan · forslag · modul 4 af 4</span><span class="afsnit">Afsnit 1.4 · 90 min</span></div>
     <h3>Afstemning af reaktionsskemaer</h3>
   </header>
 
@@ -478,6 +510,133 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 </div>
 
+<!-- ======================= KAP 1 2026 (AFKORTET PGA. NV) ======================= -->
+<!-- Niels 4. nov. 2026: to moduler, fordi holdet har haft kapitlet i NV, og fordi modul 2 er faglig læsning.
+     Kompendiet er hans "Kompendium til kap1 og kap2.pdf" (Dropbox\2026.2027\Kemi C, 1z), sidetal derfra. -->
+<div class="plan" id="nv2026" hidden>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kap 1 2026 · afkortet pga. NV · forslag · modul 1 af 2</span><span class="afsnit">Afsnit 0.2 og 1.1–1.3 · 90 min</span></div>
+    <h3>Stoffer, atomet og elektronskaller</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/0-2-saadan-laerer-du-kemi.html">0.2 Sådan læser og lærer du kemi</a> og <a href="https://kemibogen.dk/c/kapitler/1-1-hvad-er-kemi.html">1.1 Hvad er kemi?</a></p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="kompendium-kapitel-1-og-2-2026.pdf" target="_blank">Kompendiet</a> til kapitel 1 og 2</li><li><a class="sl" href="../slides/kap1-2026-modul-1.html" target="_blank">Slides til modul 1</a> (særudgave)</li><li><a href="https://quizlet.com/dk/1231116816/11-13-det-hele-fra-kemibogen-flash-cards/?i=oc87n&amp;x=1qqt" target="_blank">Quizlet-sættet til 1.1–1.3</a></li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>15 min</b><span>0–15</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Sådan læser og lærer du kemi</strong><span class="form start">Start</span><span class="form tavle">Tavle</span></div>
+        <p>Tag fravær, og vis <a class="sl" href="../slides/kap1-2026-modul-1.html#/2" target="_blank">slide 2–13</a> (kapitel 0): hvad kemi er, læsekortet, når man sidder fast, og hvad I forventer af hinanden. Klassen svarer, før du klikker videre.</p></div></li>
+    <li><div class="tid"><b>15 min</b><span>15–30</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Stoffer og atomet</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kap1-2026-modul-1.html#/14" target="_blank">Slide 14–15</a>: rene stoffer, blandinger og grundstoffer. <a class="sl" href="../slides/kap1-2026-modul-1.html#/16" target="_blank">Slide 16–22</a>: atomets opbygning, atomnummeret og isotoper. Isotoper er nyt for holdet, så giv slide 20–21 god tid.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Eleverne holder oplæg</strong><span class="form par">Par</span></div>
+        <p>Fem grupper forbereder hvert sit oplæg på 2–3 min (10 min). Bagefter holdes oplæggene i blandede grupper med én fra hver, i slidenes rækkefølge (15 min).</p>
+        <ul class="pakker">
+          <li><b>A</b> <a class="sl" href="../slides/kap1-2026-modul-1.html#/23" target="_blank">slide 23–24</a>: makro og mikro</li>
+          <li><b>B</b> <a class="sl" href="../slides/kap1-2026-modul-1.html#/25" target="_blank">slide 25–27</a>: symboler, metaller, ikke-metaller</li>
+          <li><b>C</b> <a class="sl" href="../slides/kap1-2026-modul-1.html#/28" target="_blank">slide 28–31</a>: skalmodellen</li>
+          <li><b>D</b> <a class="sl" href="../slides/kap1-2026-modul-1.html#/32" target="_blank">slide 32–34</a>: perioder og hovedgrupper</li>
+          <li><b>E</b> <a class="sl" href="../slides/kap1-2026-modul-1.html#/35" target="_blank">slide 35–38</a>: valenselektroner, ædelgasreglen</li>
+        </ul></div></li>
+    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Noter og opgaver</strong><span class="form par">Par</span></div>
+        <p>Kompendiet s. 2–6: noterne til 1.1–1.3 og opgave <a href="https://kemibogen.dk/c/opgaver/1-2-opgaver.html">1.2.1 og 1.2.3</a> og <a href="https://kemibogen.dk/c/opgaver/1-3-opgaver.html">1.3.1, 1.3.3 og 1.3.6</a>.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
+        <p>Quizlet Live i hold med <a href="https://quizlet.com/dk/1231116816/11-13-det-hele-fra-kemibogen-flash-cards/?i=oc87n&amp;x=1qqt" target="_blank">sættet til 1.1–1.3</a>.</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>afgøre, om et stof er et grundstof eller en kemisk forbindelse</li>
+      <li>beskrive atomets opbygning og bruge atomnummeret til at finde antallet af protoner og elektroner</li>
+      <li>forklare, hvad isotoper er, og finde antallet af neutroner ud fra nukleontallet</li>
+      <li>skrive elektronstrukturen for de første 20 grundstoffer, fx (2, 8, 7)</li>
+    </ul>
+    <p><b>Centrale fagord:</b> grundstof, kemisk forbindelse, atomnummer, isotoper, elektronstruktur, hovedgruppe</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/1-2-atomet.html">1.2 Atomet</a> og <a href="https://kemibogen.dk/c/kapitler/1-3-elektronskaller.html">1.3 Elektronskaller</a>, og gør kompendiet s. 2–6 færdigt.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Atommassen (slide 22) kan springes over. Den kommer igen i kapitel 5.</p></div>
+  </div>
+
+  <div class="forslag">
+    <h4>Flere forslag</h4>
+    <ul>
+      <li>Hurtigt færdige: animationerne <a href="https://kemiformler.dk/animationer/superanimationer/sc1.2_grundstofudstilling/index.html">Grundstofudstillingen</a> og <a href="https://kemiformler.dk/animationer/superanimationer/sc1.1_atombygger/index.html">Atomets opbygning</a>.</li>
+      <li>Er holdet lille eller stille: vis selv oplæggenes slides (23–38, 15–20 min), og giv opgaverne resten af tiden.</li>
+      <li>I stedet for Quizlet: <em>Quiz: fem hurtige</em> på fagordsiden.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="modul">
+  <header>
+    <div class="øverst"><span class="etiket">Kap 1 2026 · afkortet pga. NV · forslag · modul 2 af 2</span><span class="afsnit">Afsnit 1.4 · faglig læsning · 90 min</span></div>
+    <h3>Faglig læsning: reaktionsskemaer og afstemning</h3>
+  </header>
+
+  <div class="før">
+    <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/1-2-atomet.html">1.2 Atomet</a> og <a href="https://kemibogen.dk/c/kapitler/1-3-elektronskaller.html">1.3 Elektronskaller og det periodiske system</a>.</p></div>
+    <div><h4>Du skal bruge</h4><ul><li><a href="https://kemibogen.dk/c/kapitler/1-4-reaktionsskemaer.html">Afsnit 1.4</a> på tavlen og læsearket i kompendiet s. 7</li><li><a class="sl" href="../slides/kap1-2026-modul-2.html" target="_blank">Slides til modul 2</a> (særudgave)</li><li>Animationerne <a href="https://kemiformler.dk/animationer/superanimationer/sc1.5_byg_figuren/index.html#atomet">Byg figuren</a> og <a href="https://kemiformler.dk/animationer/superanimationer/sc1.4_afstemning/index.html#kugler">Afstem reaktioner</a></li></ul></div>
+  </div>
+
+  <ol class="forløb">
+    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Byg figuren</strong><span class="form start">Start</span></div>
+        <p>Ord fra sidst: <span class="ord">atomnummer, isotoper, elektronstruktur</span>.</p>
+        <p>Mens du tager fravær, bygger eleverne to og to figurerne til 1.2 og 1.3 i <em>Byg figuren</em>.</p></div></li>
+    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Faglig læsning af 1.4</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
+        <p>Vis 1.4 på tavlen, og læs højt til og med tabellen under <em>Koefficienter og små tal</em> (10 min). Stop ved figur 1, boksen, fed skrift og tabellen, og sig, hvad en erfaren læser tænker.</p>
+        <p>Eleverne læser resten hver for sig med læsekortet (<a class="sl" href="../slides/kap1-2026-modul-2.html#/2" target="_blank">slide 2</a>) og læsearket: fra <em>Sådan afstemmer du et reaktionsskema</em> til og med <em>Kort sagt</em> (15 min).</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>35–45</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Afstem sammen</strong><span class="form tavle">Tavle</span></div>
+        <p><a class="sl" href="../slides/kap1-2026-modul-2.html#/3" target="_blank">Slide 3–6</a>: tæl atomer, afstem vand og ammoniak. Klassen foreslår koefficienterne.</p></div></li>
+    <li><div class="tid"><b>35 min</b><span>45–80</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Afstemning</strong><span class="form par">Par</span></div>
+        <p>Kompendiet s. 8–9: <a href="https://kemibogen.dk/c/opgaver/1-4-opgaver.html">opgave 1.4.1, 1.4.3, 1.4.4 og 1.4.5</a>, derefter 1.4.6, 1.4.8 og 1.4.10.</p>
+        <p>Hurtigt færdige går videre til animationen <em>Afstem reaktioner</em>.</p></div></li>
+    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+      <div class="trin"><div class="trin-hoved"><strong>Speeddating med fagord</strong><span class="form klasse">Klassen</span></div>
+        <p>Eleverne står i to rækker over for hinanden. Vælg de 11 fagord på <a href="https://kemibogen.dk/c/fagord/kapitel-1.html">fagordsiden</a>, og start <em>Speedtalk</em> med 25 sekunder pr. fagord. Ved hver klokke rykker den ene række én plads.</p>
+        <p class="ekstra">grundstof, kemisk forbindelse, metal, atomnummer, isotoper, elektronstruktur, hovedgruppe, valenselektroner, ædelgasreglen, koefficient, afstemt</p></div></li>
+  </ol>
+
+  <div class="fokus">
+    <h4>Det skal eleverne kunne</h4>
+    <ul>
+      <li>læse et afsnit med læsekortet og genfortælle det uden at kigge</li>
+      <li>læse en kemisk formel og et reaktionsskema højt med ord</li>
+      <li>afstemme et reaktionsskema uden at ændre de små tal i formlerne</li>
+    </ul>
+    <p><b>Centrale fagord:</b> kemisk formel, reaktionsskema, koefficient, afstemt</p>
+  </div>
+
+  <div class="bagefter">
+    <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-1-ioner.html">2.1 Ioner</a>. Genlæs 1.4 efter behov, og prøv animationen <a href="https://kemiformler.dk/animationer/superanimationer/sc1.4_afstemning/index.html#kugler">Afstem reaktioner</a>.</p></div>
+    <div><h4>Hvis tiden skrider</h4><p>Tilstandssymbolerne (1.4.10) kan vente til kapitel 2, hvor de bruges ved fældningsreaktioner.</p></div>
+  </div>
+
+  <div class="forslag">
+    <h4>Flere forslag</h4>
+    <ul>
+      <li><b>Er der tid tilovers:</b> begynd på 2.1, som er næste lektie, med <a class="sl" href="../slides/kap1-2026-modul-2.html#/7" target="_blank">slide 7–13</a>: ædelgasreglen igen og de første slides om ioner. Resten af 2.1 kommer næste gang.</li>
+      <li>I stedet for speeddating: afslut afstemningen sammen. Skriv to skemaer fra 1.4.6 på tavlen, og lad klassen foreslå ét tal ad gangen.</li>
+      <li>Læsningen kan også foregå i par, hvor de to genfortæller for hinanden med lukket bog.</li>
+    </ul>
+  </div>
+</article>
+
+</div>
+
 </main>
 
 <script>
@@ -489,12 +648,23 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     });
   }
 
+  // Tre planer: kort, lang og nv2026 (Kap 1 2026, afkortet pga. NV). #kort, #lang og #nv2026 i adressen vælger.
+  // <body data-planer="nv2026"> viser kun de nævnte planer; uden attributten vises alle. Kapitel 2 viser kun
+  // Kap 2 2026 (Niels 4. nov. 2026: "til kapitel 2 skal du blot placere 2026-udgaven").
+  var kun = (document.body.dataset.planer || "").split(/\s+/).filter(Boolean);
+  if (kun.length) {
+    document.querySelectorAll(".plan").forEach(function (p) { if (kun.indexOf(p.id) < 0) p.remove(); });
+    document.querySelectorAll(".skifter button, .forside [data-plan]").forEach(function (el) {
+      if (kun.indexOf(el.dataset.plan) < 0) el.remove();
+    });
+    if (kun.length === 1) document.querySelector(".skifter").style.display = "none";
+  }
   var knapper = document.querySelectorAll(".skifter button");
+  var planer = Array.prototype.map.call(document.querySelectorAll(".plan"), function (p) { return p.id; });
   function vis(plan) {
     knapper.forEach(function (k) { k.setAttribute("aria-pressed", String(k.dataset.plan === plan)); });
-    document.getElementById("kort").hidden = plan !== "kort";
-    document.getElementById("lang").hidden = plan !== "lang";
-    document.querySelectorAll(".materialer [data-plan]").forEach(function (el) { el.hidden = el.dataset.plan !== plan; });
+    planer.forEach(function (id) { document.getElementById(id).hidden = id !== plan; });
+    document.querySelectorAll(".forside [data-plan]:not(button)").forEach(function (el) { el.hidden = el.dataset.plan !== plan; });
   }
   knapper.forEach(function (k) {
     k.addEventListener("click", function () {
@@ -503,9 +673,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     });
   });
 
-  var start = location.hash === "#lang" ? "lang" : location.hash === "#kort" ? "kort" : null;
-  if (!start) { try { start = localStorage.getItem("modulplan-plan"); } catch (e) {} }
-  vis(start === "lang" ? "lang" : "kort");
+  var start = location.hash.replace("#", "");
+  if (planer.indexOf(start) < 0) { try { start = localStorage.getItem("modulplan-plan"); } catch (e) {} }
+  vis(planer.indexOf(start) >= 0 ? start : planer[0]);
 })();
 </script>
 </body>
