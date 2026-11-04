@@ -3674,8 +3674,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // Elevnoter: eleven markerer tekst i bogen og skriver noter (Niels 4. nov. 2026, efter forslag fra en elev).
 //
 // Markerer eleven tekst med musen, kommer to knapper frem: Markér (gul baggrund) og Tilføj note. Et klik på en
-// markering viser noten eller knapperne Tilføj note og Fjern markering. En note kan sendes til læreren uden navn:
-// den lander i Google-arket livefeedback i fanen "feedback til bogen" (modtageren står i
+// markering viser noten eller knapperne Tilføj note og Fjern markering. Notens grønne knap er Gem og luk. Under den
+// står med småt "Send note til forfatteren", som skal trykkes to gange ("Er du sikker?"), for afsendelsen skal ikke
+// være det, man lægger mærke til (Niels 4. nov. 2026 om aftenen; før stod der en grøn knap "Send til læreren").
+// Noten sendes uden navn og lander i Google-arket livefeedback i fanen "feedback til bogen" (modtageren står i
 // vaerktoej/livefeedback_appsscript.gs; den gamle udgave af modtageren lægger den i fanen Feedback). Højst
 // LOFT_PR_MINUT beskeder i minuttet fra hver browser.
 // Alt gemmes kun i browseren (localStorage, nøglen "kemibogen-noter", fælles for bøgerne på kemibogen.dk). Knappen
@@ -3857,7 +3859,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Den markerede tekst til visning og til læreren: formler står som TeX i stedet for at forsvinde.
+  // Den markerede tekst til visning og til forfatteren: formler står som TeX i stedet for at forsvinde.
   document.querySelectorAll("#quarto-document-content .math").forEach(function (m) {
     if (!m.querySelector("mjx-container")) m.setAttribute("data-kb-tex", m.textContent.replace(/^\s*\\[(\[]|\\[)\]]\s*$/g, "").trim());
   });
@@ -3930,16 +3932,20 @@ document.addEventListener("DOMContentLoaded", function () {
     var to = function (x) { return (x < 10 ? "0" : "") + x; };
     return d.toLocaleDateString("da-DK", { day: "numeric", month: "short" }) + " kl. " + to(d.getHours()) + "." + to(d.getMinutes());
   }
-  // Knap, der skal trykkes to gange (første tryk skifter teksten i 3 sekunder).
-  function toTryk(b, sikkerTekst, handling) {
+  // Knap, der skal trykkes to gange (første tryk skifter teksten i ms millisekunder, normalt 3 sekunder). tjek() kan
+  // stoppe første tryk (fx en tom note). Giver en funktion tilbage, der sætter knappen tilbage.
+  function toTryk(b, sikkerTekst, handling, ms, tjek) {
     var normal = b.textContent, timer = null;
+    function nulstil() { clearTimeout(timer); b.classList.remove("kb-sikker"); b.textContent = normal; }
     b.addEventListener("click", function (e) {
       e.stopPropagation();
-      if (b.classList.contains("kb-sikker")) { clearTimeout(timer); handling(); return; }
+      if (b.classList.contains("kb-sikker")) { nulstil(); handling(); return; }
+      if (tjek && !tjek()) return;
       b.classList.add("kb-sikker");
       b.textContent = sikkerTekst;
-      timer = setTimeout(function () { b.classList.remove("kb-sikker"); b.textContent = normal; }, 3000);
+      timer = setTimeout(nulstil, ms || 3000);
     });
+    return nulstil;
   }
   function placer(boks, rect, over, venstre) {
     boks.style.visibility = "hidden";
@@ -4023,22 +4029,25 @@ document.addEventListener("DOMContentLoaded", function () {
   felt.rows = 4;
   felt.placeholder = "Skriv en note eller et spørgsmål …";
   var kortBund = el("div", "kb-kort-bund");
-  var sendKnap = knap("Send til læreren", "kb-send", function () { send(); });
+  var gemKnap = knap("Gem og luk", "kb-gem", function () { lukKort(); });
   var fjernKnap = knap("Fjern", "kb-fjern");
-  toTryk(fjernKnap, "Ja, fjern note og markering", function () { var id = aktiv && aktiv.id; lukKort(); if (id) fjernPost(id); });
-  kortBund.appendChild(sendKnap);
+  var nulstilFjern = toTryk(fjernKnap, "Ja, fjern note og markering", function () { var id = aktiv && aktiv.id; lukKort(); if (id) fjernPost(id); });
+  kortBund.appendChild(gemKnap);
   kortBund.appendChild(fjernKnap);
+  var sendKnap = knap("Send note til forfatteren", "kb-send");
+  var nulstilSend = toTryk(sendKnap, "Er du sikker? Tryk igen for at sende noten uden navn.", function () { send(); }, 5000, kanSende);
   var status = el("div", "kb-status");
   kortEl.appendChild(kortTop);
   kortEl.appendChild(felt);
   kortEl.appendChild(kortBund);
+  kortEl.appendChild(sendKnap);
   kortEl.appendChild(status);
   var aktiv = null, gemTimer = null;
 
   function visStatus(tekst, slags) { status.textContent = tekst; status.className = "kb-status" + (slags ? " kb-" + slags : ""); }
   function standardStatus() {
-    if (aktiv && aktiv.sendt) visStatus("Sendt til læreren " + dato(aktiv.sendt) + ".");
-    else visStatus("Sendes uden navn.");
+    if (aktiv && aktiv.sendt) visStatus("Sendt til forfatteren " + dato(aktiv.sendt) + ".");
+    else visStatus("");
   }
   function aabnKort(id) {
     var post = findPost(id), marks = alleMarks(id);
@@ -4047,8 +4056,8 @@ document.addEventListener("DOMContentLoaded", function () {
     aktiv = post;
     felt.value = post.note || "";
     sendKnap.disabled = false;
-    fjernKnap.classList.remove("kb-sikker");
-    fjernKnap.textContent = "Fjern";
+    nulstilFjern();
+    nulstilSend();
     standardStatus();
     var sidste = marks[marks.length - 1], rects = sidste.getClientRects();
     placer(kortEl, rects.length ? rects[rects.length - 1] : sidste.getBoundingClientRect(), false, true);
@@ -4073,7 +4082,7 @@ document.addEventListener("DOMContentLoaded", function () {
   felt.addEventListener("input", function () {
     clearTimeout(gemTimer);
     gemTimer = setTimeout(gemNote, 400);
-    if (aktiv && aktiv.sendt) visStatus("Sendt til læreren " + dato(aktiv.sendt) + ". Du kan sende noten igen.");
+    if (aktiv && aktiv.sendt) visStatus("Sendt til forfatteren " + dato(aktiv.sendt) + ". Du kan sende noten igen.");
   });
   // Tasterne i feltet må ikke nå bogens genveje (fx søgningen).
   felt.addEventListener("keydown", function (e) {
@@ -4084,18 +4093,25 @@ document.addEventListener("DOMContentLoaded", function () {
   function sendtTider() {
     try { var a = JSON.parse(localStorage.getItem(SENDT_NOEGLE) || "[]"); return Array.isArray(a) ? a : []; } catch (e) { return []; }
   }
-  function send() {
-    if (!aktiv) return;
+  // Tjekkes ved første tryk på Send (så eleven ikke bliver spurgt "Er du sikker?" om en tom note) og igen ved det andet.
+  function kanSende() {
+    if (!aktiv) return false;
     gemNote();
-    var post = aktiv, tekst = (post.note || "").trim();
-    if (tekst.length < 3) { visStatus("Skriv noten først.", "fejl"); felt.focus(); return; }
+    if ((aktiv.note || "").trim().length < 3) { visStatus("Skriv noten først.", "fejl"); felt.focus(); return false; }
     var nu = Date.now();
     var tider = sendtTider().filter(function (t) { return nu - t < 60000; });
     if (tider.length >= LOFT_PR_MINUT) {
       var sek = Math.max(1, Math.ceil((60000 - (nu - Math.min.apply(null, tider))) / 1000));
       visStatus("Du kan sende igen om " + sek + " sekunder.", "fejl");
-      return;
+      return false;
     }
+    standardStatus();
+    return true;
+  }
+  function send() {
+    if (!kanSende()) return;
+    var post = aktiv, tekst = post.note.trim(), nu = Date.now();
+    var tider = sendtTider().filter(function (t) { return nu - t < 60000; });
     tider.push(nu);
     try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(tider)); } catch (e) {}
     sendKnap.disabled = true;
@@ -4116,7 +4132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(SEND_URL, { method: "POST", mode: "no-cors", body: d }).then(function () {
       post.sendt = new Date().toISOString();
       gem();
-      if (aktiv === post) { visStatus("Sendt til læreren. Tak!", "ok"); sendKnap.disabled = false; }
+      if (aktiv === post) { visStatus("Sendt til forfatteren. Tak!", "ok"); sendKnap.disabled = false; }
     }, function () {
       var t = sendtTider(), i = t.indexOf(nu);
       if (i >= 0) { t.splice(i, 1); try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(t)); } catch (e) {} }
@@ -4126,18 +4142,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ---------- Mine noter ----------
   var mineKnap = knap("", "kb-ui kb-mine", function () { panel.classList.contains("kb-aaben") ? lukPanel() : aabnPanel(); });
-  mineKnap.title = "Dine markeringer og noter i bogen";
+  mineKnap.title = "Mine noter";
+  mineKnap.setAttribute("aria-label", "Mine noter");
+  var BLYANT = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.2 3.8a2.2 2.2 0 0 1 3.1 3.1L8 18.2l-4.2 1.1 1.1-4.2Z"/><path d="M14.3 5.7l3.1 3.1"/></svg>';
   function antalPoster() {
     var n = 0;
     Object.keys(data.sider).forEach(function (k) { n += (data.sider[k].poster || []).length; });
     return n;
   }
+  // Knappen er diskret: en lille grå blyant uden ramme og uden gul tæller (Niels 4. nov. 2026: "lidt for tydeligt", den
+  // skal ikke bryde det minimalistiske design). Blyanten står der altid, så eleven kan læse om noterne og hente dem fra
+  // en fil, før der er nogen. Har eleven markeringer eller noter et sted i bogen, står "Mine noter" ved blyanten.
   function opdaterKnap() {
     var n = antalPoster();
-    mineKnap.innerHTML = "";
-    mineKnap.appendChild(el("span", "kb-ikon", "✎"));
-    mineKnap.appendChild(document.createTextNode(" Mine noter"));
-    if (n) mineKnap.appendChild(el("span", "kb-antal", String(n)));
+    mineKnap.innerHTML = BLYANT;
+    if (n) mineKnap.appendChild(el("span", "", "Mine noter"));
+    mineKnap.classList.toggle("kb-ingen", !n);
   }
 
   var panel = el("aside", "kb-ui kb-panel");
@@ -4151,13 +4171,15 @@ document.addEventListener("DOMContentLoaded", function () {
   var panelIndhold = el("div", "kb-panel-indhold");
   var panelBund = el("div", "kb-panel-bund");
   var raekke = el("div", "kb-knaprække");
-  raekke.appendChild(knap("Kopiér alle", "", kopierAlle));
-  raekke.appendChild(knap("Gem som fil", "", gemFil));
+  var kopierKnap = knap("Kopiér alle", "", kopierAlle);
+  var gemFilKnap = knap("Gem som fil", "", gemFil);
+  raekke.appendChild(kopierKnap);
+  raekke.appendChild(gemFilKnap);
   raekke.appendChild(knap("Hent fra fil", "", function () { filvaelger.click(); }));
   var panelStatus = el("div", "kb-panel-status");
   panelBund.appendChild(raekke);
   panelBund.appendChild(panelStatus);
-  panelBund.appendChild(el("p", "kb-lille", "Noterne gemmes kun i denne browser. Gem dem som fil, så du ikke mister dem."));
+  panelBund.appendChild(el("p", "kb-lille", "Noterne gemmes kun i denne browser. De bliver slettet, hvis du rydder browserdata (cookies og andre webstedsdata), så gem dem som fil en gang imellem."));
   panel.appendChild(panelTop);
   panel.appendChild(panelIndhold);
   panel.appendChild(panelBund);
@@ -4183,8 +4205,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function tegnPanel() {
     panelIndhold.innerHTML = "";
     var sider = sorteredeSider();
+    kopierKnap.hidden = gemFilKnap.hidden = !sider.length;
     if (!sider.length) {
-      panelIndhold.appendChild(el("p", "kb-tom", "Markér tekst i bogen med musen. Så kan du gøre den gul eller skrive en note. En note kan også sendes til læreren."));
+      panelIndhold.appendChild(el("p", "kb-tom", "Du har ingen noter endnu."));
+      panelIndhold.appendChild(el("p", "kb-tom", "Markér tekst i bogen med musen, og vælg Markér eller Tilføj note. Dine markeringer og noter bliver samlet her."));
       return;
     }
     sider.forEach(function (k) {
@@ -4198,7 +4222,7 @@ document.addEventListener("DOMContentLoaded", function () {
         d.appendChild(el("div", "kb-citat", "“" + kort(p.visning || p.citat, 160) + "”"));
         if (harNote(p)) d.appendChild(el("div", "kb-notetekst", p.note.trim()));
         var meta = [];
-        if (p.sendt) meta.push("Sendt til læreren " + dato(p.sendt));
+        if (p.sendt) meta.push("Sendt til forfatteren " + dato(p.sendt));
         if (k === SIDE && !placeret[p.id]) meta.push("Teksten findes ikke længere på siden");
         if (meta.length) d.appendChild(el("div", "kb-meta", meta.join(" · ")));
         var slet = knap("Slet", "kb-slet");
@@ -4400,28 +4424,33 @@ mark.kb-mark.kb-blink { animation: kb-blink 1.6s ease-out; }
 .kb-kort textarea { display: block; width: 100%; box-sizing: border-box; border: 1px solid #c9d3d2; border-radius: 6px; padding: .45rem .55rem; font: inherit; font-size: .95rem; line-height: 1.45; resize: vertical; min-height: 5.5rem; color: #14201f; }
 .kb-kort textarea:focus { outline: none; border-color: var(--bs-primary, #0f766e); box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb, 15, 118, 110), .2); }
 .kb-kort-bund { display: flex; gap: .5rem; align-items: center; margin-top: .55rem; }
-.kb-send { background: var(--bs-primary, #0f766e); color: #fff; border: 0; border-radius: 6px; padding: .35rem .85rem; font: inherit; font-size: .9rem; cursor: pointer; }
-.kb-send:hover { filter: brightness(.88); }
-.kb-send:disabled { opacity: .55; cursor: default; filter: none; }
+.kb-gem { background: var(--bs-primary, #0f766e); color: #fff; border: 0; border-radius: 6px; padding: .35rem .85rem; font: inherit; font-size: .9rem; cursor: pointer; }
+.kb-gem:hover { filter: brightness(.88); }
+.kb-send { display: block; margin-top: .5rem; background: transparent; border: 0; padding: 0; font: inherit; font-size: .76rem; line-height: 1.35; color: #8a9897; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: rgba(138, 152, 151, .45); text-underline-offset: 2px; }
+.kb-send:hover { color: #556766; }
+.kb-send.kb-sikker { color: var(--bs-primary, #0f766e); font-weight: 600; text-decoration-color: currentColor; }
+.kb-send:disabled { opacity: .55; cursor: default; }
 .kb-fjern { margin-left: auto; background: transparent; border: 0; padding: .2rem .1rem; color: #556766; font: inherit; font-size: .88rem; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 .kb-fjern.kb-sikker, .kb-slet.kb-sikker { color: #c0392b; }
-.kb-status { margin-top: .4rem; font-size: .85rem; color: #556766; min-height: 1.25em; }
+.kb-status { margin-top: .3rem; font-size: .8rem; color: #556766; }
+.kb-status:empty { display: none; }
 .kb-status.kb-ok { color: var(--bs-primary, #0f766e); font-weight: 600; }
 .kb-status.kb-fejl { color: #c0392b; }
 .kb-luk { background: transparent; border: 0; font-size: 1.35rem; line-height: 1; color: #556766; cursor: pointer; padding: 0 .25rem; }
 .kb-luk:hover { color: #14201f; }
 
-.kb-mine { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 1040; background: #fff; color: var(--bs-primary, #0f766e); border: 1.5px solid var(--bs-primary, #0f766e); border-radius: 999px; padding: .35rem .9rem; font: inherit; font-size: .9rem; line-height: 1.3; box-shadow: 0 2px 8px rgba(20, 32, 31, .12); cursor: pointer; }
-.kb-mine:hover { background: var(--bs-primary, #0f766e); color: #fff; }
+.kb-mine { position: fixed; right: .9rem; bottom: .8rem; z-index: 1040; display: inline-flex; align-items: center; gap: .35rem; background: rgba(255, 255, 255, .9); color: #7a8988; border: 0; border-radius: 6px; padding: .3rem .45rem; font: inherit; font-size: .8rem; line-height: 1.3; cursor: pointer; }
+.kb-mine svg { width: 1.05rem; height: 1.05rem; display: block; flex: none; }
+.kb-mine.kb-ingen { color: #9eabaa; }
+.kb-mine:hover, .kb-mine:focus-visible { color: var(--bs-primary, #0f766e); background: #f1f5f5; }
 .kb-panel.kb-aaben ~ .kb-mine { display: none; }
-.kb-mine .kb-antal { display: inline-block; margin-left: .45em; min-width: 1.4em; padding: 0 .35em; border-radius: 999px; background: #fde047; color: #14201f; font-size: .8rem; font-weight: 600; text-align: center; }
 
 .kb-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 25rem; max-width: 100vw; z-index: 1065; background: #fff; box-shadow: -8px 0 28px rgba(20, 32, 31, .16); display: none; flex-direction: column; font-size: .95rem; line-height: 1.45; }
 .kb-panel.kb-aaben { display: flex; }
 .kb-panel-top { display: flex; align-items: center; justify-content: space-between; padding: .85rem 1rem .65rem; border-bottom: 1px solid #e3e8e7; }
 .kb-panel-titel { font-size: 1.2rem; font-weight: 650; }
 .kb-panel-indhold { flex: 1; overflow-y: auto; padding: .2rem 1rem 1rem; }
-.kb-tom { color: #556766; margin-top: 1rem; }
+.kb-tom { color: #556766; margin: 1rem 0 0; }
 .kb-side-titel { font-weight: 600; margin: 1rem 0 .45rem; }
 .kb-side-titel a { text-decoration: none; }
 .kb-side-titel a:hover { text-decoration: underline; }

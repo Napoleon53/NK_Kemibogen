@@ -4544,6 +4544,808 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<script>
+// Elevnoter: eleven markerer tekst i bogen og skriver noter (Niels 4. nov. 2026, efter forslag fra en elev).
+//
+// Markerer eleven tekst med musen, kommer to knapper frem: Markér (gul baggrund) og Tilføj note. Et klik på en
+// markering viser noten eller knapperne Tilføj note og Fjern markering. Notens grønne knap er Gem og luk. Under den
+// står med småt "Send note til forfatteren", som skal trykkes to gange ("Er du sikker?"), for afsendelsen skal ikke
+// være det, man lægger mærke til (Niels 4. nov. 2026 om aftenen; før stod der en grøn knap "Send til læreren").
+// Noten sendes uden navn og lander i Google-arket livefeedback i fanen "feedback til bogen" (modtageren står i
+// vaerktoej/livefeedback_appsscript.gs; den gamle udgave af modtageren lægger den i fanen Feedback). Højst
+// LOFT_PR_MINUT beskeder i minuttet fra hver browser.
+// Alt gemmes kun i browseren (localStorage, nøglen "kemibogen-noter", fælles for bøgerne på kemibogen.dk). Knappen
+// Mine noter nederst til højre viser alle noter og kan kopiere dem, gemme dem som fil og hente dem igen.
+// Kun på computer med mus, ikke på telefon og tablet (Niels 4. nov. 2026).
+//
+// En markering huskes som sin tekst plus lidt tekst før og efter (mellemrum gjort ens, formler sprunget over), så den
+// finder sin plads igen, når bogen er bygget på ny. Findes teksten ikke mere, står noten stadig under Mine noter.
+(function () {
+  "use strict";
+  if (!window.matchMedia || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  var main = document.getElementById("quarto-document-content");
+  if (!main || !window.localStorage) return;
+
+  var SEND_URL = "https://script.google.com/macros/s/AKfycbxgfp2af0Zf9QL15s8E6FtsYOCrKh8rRZcjRY_cMh6MCgaEZVfRr2a3CDts29EB6CRQug/exec";
+  var NOEGLE = "kemibogen-noter";
+  var SENDT_NOEGLE = "kemibogen-noter-sendt";
+  var GAA_TIL = "kemibogen-noter-gaa-til";
+  var LOFT_PR_MINUT = 2;
+  var MAKS_TEGN = 4000;
+  var KONTEKST = 40;
+
+  var SIDE = location.pathname.replace(/\/index\.html$/, "/");
+  var BOG = (function () {
+    var her = document.querySelector(".niveauer .her");
+    if (her) return her.textContent.replace(/kemi/i, "").trim();
+    var m = SIDE.match(/\/([abc])\//);
+    return m ? m[1].toUpperCase() : "";
+  })();
+  var h1 = document.querySelector("#title-block-header h1, h1.title, main h1");
+  var TITEL = (h1 ? h1.textContent : document.title).replace(/\s+/g, " ").trim();
+
+  // ---------- Gemte noter ----------
+  function laes() {
+    try {
+      var d = JSON.parse(localStorage.getItem(NOEGLE) || "null");
+      if (d && d.sider && typeof d.sider === "object") return d;
+    } catch (e) {}
+    return { version: 1, sider: {} };
+  }
+  var data = laes();
+  function sidensPoster() { var s = data.sider[SIDE]; return s && s.poster ? s.poster : []; }
+  function findPost(id) { return sidensPoster().filter(function (p) { return p.id === id; })[0]; }
+  // Læser altid det gemte igen først, så noter fra andre faneblade ikke bliver skrevet over. aendring() kan rette i
+  // andre siders noter; denne sides noter er dem i hukommelsen.
+  function gem(aendring) {
+    var poster = sidensPoster();
+    var frisk = laes();
+    if (aendring) aendring(frisk);
+    if (poster.length) frisk.sider[SIDE] = { titel: TITEL, bog: BOG, poster: poster };
+    else delete frisk.sider[SIDE];
+    data = frisk;
+    try { localStorage.setItem(NOEGLE, JSON.stringify(data)); } catch (e) { return false; }
+    opdaterKnap();
+    return true;
+  }
+  function tilfoej(post) {
+    if (!data.sider[SIDE]) data.sider[SIDE] = { titel: TITEL, bog: BOG, poster: [] };
+    data.sider[SIDE].poster.push(post);
+    gem();
+  }
+  function nytId() { return "n" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+  function harNote(p) { return !!(p && p.note && p.note.trim()); }
+
+  // ---------- Sidens tekst som én streng ----------
+  // Mellemrum gøres ens, og formler, figurer, knapper og egne knapper springes over. Hvert tegn i hver tekstnode får
+  // sin plads i strengen, så en markering kan gemmes som to tal og lægges ind igen.
+  var SPRING = "script, style, svg, math, mjx-container, .math, textarea, input, select, button, noscript, .kb-ui, .screen-reader-only, .visually-hidden";
+  var MELLEM = /\s/;
+  var ix = null;
+  function indeks() {
+    if (ix) return ix;
+    var noder = [], pos = [], dele = [], n = 0, mellem = true, t;
+    var w = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+      acceptNode: function (x) {
+        if (x.nodeType === 1) return x.matches(SPRING) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    while ((t = w.nextNode())) {
+      var s = t.data, p = new Int32Array(s.length);
+      for (var i = 0; i < s.length; i++) {
+        var c = s.charAt(i);
+        if (MELLEM.test(c)) {
+          if (!mellem) { dele.push(" "); n++; mellem = true; }
+          p[i] = n > 0 ? n - 1 : 0;
+        } else { dele.push(c); p[i] = n; n++; mellem = false; }
+      }
+      noder.push(t); pos.push(p);
+    }
+    ix = { tekst: dele.join(""), noder: noder, pos: pos };
+    return ix;
+  }
+  function omraadeTilTal(r) {
+    var x = indeks(), s = -1, e = -1;
+    for (var k = 0; k < x.noder.length; k++) {
+      var n = x.noder[k];
+      if (!r.intersectsNode(n)) continue;
+      var a = n === r.startContainer ? r.startOffset : 0;
+      var b = n === r.endContainer ? r.endOffset : n.length;
+      while (a < b && MELLEM.test(n.data.charAt(a))) a++;
+      while (b > a && MELLEM.test(n.data.charAt(b - 1))) b--;
+      if (a >= b) continue;
+      if (s < 0) s = x.pos[k][a];
+      e = x.pos[k][b - 1] + 1;
+    }
+    return s < 0 || e <= s ? null : [s, e];
+  }
+  function ens(a, b, bagfra) {
+    var n = 0, la = a.length, lb = b.length;
+    while (n < la && n < lb && (bagfra ? a.charAt(la - 1 - n) === b.charAt(lb - 1 - n) : a.charAt(n) === b.charAt(n))) n++;
+    return n;
+  }
+  function findPlads(post) {
+    var t = indeks().tekst, c = post.citat || "", foer = post.foer || "", efter = post.efter || "";
+    if (!c) return null;
+    var bedst = -1, bedstPoint = -1, bedstAfst = Infinity, i = t.indexOf(c);
+    while (i >= 0) {
+      var point = ens(t.slice(Math.max(0, i - foer.length), i), foer, true) + ens(t.substr(i + c.length, efter.length), efter, false);
+      var afst = Math.abs(i - (post.start || 0));
+      if (point > bedstPoint || (point === bedstPoint && afst < bedstAfst)) { bedst = i; bedstPoint = point; bedstAfst = afst; }
+      i = t.indexOf(c, i + 1);
+    }
+    return bedst < 0 ? null : [bedst, bedst + c.length];
+  }
+
+  // ---------- Markeringer i teksten ----------
+  function alleMarks(id) { return Array.prototype.slice.call(main.querySelectorAll('mark.kb-mark[data-kb="' + id + '"]')); }
+  function laegMarkering(post, s, e) {
+    var x = indeks(), stykker = [];
+    for (var k = 0; k < x.noder.length; k++) {
+      var p = x.pos[k];
+      if (!p.length || p[p.length - 1] < s || p[0] >= e) continue;
+      var a = 0; while (a < p.length && p[a] < s) a++;
+      var b = p.length; while (b > a && p[b - 1] >= e) b--;
+      if (a >= b) continue;
+      var node = x.noder[k];
+      // Et mellemrum alene pakkes kun ind inde i en linje, ikke mellem afsnit, rækker og punkter.
+      if (!/\S/.test(node.data.slice(a, b))) {
+        var f = node.parentNode;
+        if (!f || getComputedStyle(f).display.indexOf("inline") !== 0) continue;
+      }
+      stykker.push([node, a, b]);
+    }
+    var sidste = null;
+    stykker.forEach(function (st) {
+      var node = st[0];
+      if (st[2] < node.length) node.splitText(st[2]);
+      if (st[1] > 0) node = node.splitText(st[1]);
+      var m = document.createElement("mark");
+      m.className = "kb-mark";
+      m.setAttribute("data-kb", post.id);
+      node.parentNode.insertBefore(m, node);
+      m.appendChild(node);
+      sidste = m;
+    });
+    ix = null;
+    if (sidste) { sidste.classList.add("kb-sidste"); visNoteMaerke(post); }
+    return !!sidste;
+  }
+  function visNoteMaerke(post) {
+    alleMarks(post.id).forEach(function (m) { m.classList.toggle("kb-har-note", harNote(post)); });
+  }
+  function fjernMarks(id) {
+    alleMarks(id).forEach(function (m) {
+      var f = m.parentNode;
+      while (m.firstChild) f.insertBefore(m.firstChild, m);
+      f.removeChild(m);
+      f.normalize();
+    });
+    ix = null;
+  }
+  var placeret = {};
+  function genopret() {
+    sidensPoster().slice().sort(function (a, b) { return (a.start || 0) - (b.start || 0); }).forEach(function (post) {
+      if (placeret[post.id]) return;
+      var se = findPlads(post);
+      if (se && laegMarkering(post, se[0], se[1])) placeret[post.id] = true;
+    });
+  }
+
+  // Den markerede tekst til visning og til forfatteren: formler står som TeX i stedet for at forsvinde.
+  document.querySelectorAll("#quarto-document-content .math").forEach(function (m) {
+    if (!m.querySelector("mjx-container")) m.setAttribute("data-kb-tex", m.textContent.replace(/^\s*\\[(\[]|\\[)\]]\s*$/g, "").trim());
+  });
+  // TeX gjort lettere at læse: 0{,}078 bliver 0,078, \frac{a}{b} bliver (a)/(b) og \mathrm{M} bliver M.
+  function paenTex(t) {
+    var gl;
+    t = t.replace(/\{,\}/g, ",");
+    do {
+      gl = t;
+      t = t.replace(/\\(?:mathrm|text|textrm|mathit|mathbf|ce|operatorname)\s*\{([^{}]*)\}/g, "$1")
+        .replace(/\\[dt]?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, "($1)/($2)");
+    } while (t !== gl);
+    var tegn = { cdot: "·", times: "×", rightarrow: "→", to: "→", longrightarrow: "→", rightleftharpoons: "⇌", leftrightarrow: "↔",
+      pm: "±", Delta: "Δ", approx: "≈", leq: "≤", geq: "≥", le: "≤", ge: "≥", degree: "°", circ: "°", left: "", right: "" };
+    t = t.replace(/\\([A-Za-z]+)/g, function (a, navn) { return tegn.hasOwnProperty(navn) ? tegn[navn] : a; });
+    return t.replace(/\\[ ,;:!]/g, " ").replace(/[{}]/g, "").replace(/\s+/g, " ").trim();
+  }
+  function tex(m) {
+    var t = m.getAttribute("data-kb-tex");
+    if (!t) {
+      try {
+        var items = window.MathJax.startup.document.getMathItemsWithin(m);
+        if (items && items.length && items[0].math) t = items[0].math;
+      } catch (e) {}
+    }
+    return t ? paenTex(t) : "[formel]";
+  }
+  function visningstekst(r) {
+    var rod = r.commonAncestorContainer;
+    if (rod.nodeType !== 1) rod = rod.parentNode;
+    var formel = rod.closest(".math");
+    if (formel) return tex(formel);
+    var ud = "", n;
+    var w = document.createTreeWalker(rod, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+      acceptNode: function (x) {
+        if (!r.intersectsNode(x)) return NodeFilter.FILTER_REJECT;
+        if (x.nodeType === 1) {
+          if (x.matches(".math")) return NodeFilter.FILTER_ACCEPT;
+          return x.matches(SPRING) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_SKIP;
+        }
+        return x.parentNode.closest(".math") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    while ((n = w.nextNode())) {
+      if (n.nodeType === 1) { ud += " " + tex(n) + " "; continue; }
+      var a = n === r.startContainer ? r.startOffset : 0;
+      var b = n === r.endContainer ? r.endOffset : n.length;
+      ud += n.data.slice(a, b);
+    }
+    return ud.replace(/\s+/g, " ").trim().slice(0, 1500);
+  }
+
+  // ---------- Små hjælpere ----------
+  function el(tag, klasse, tekst) {
+    var e = document.createElement(tag);
+    if (klasse) e.className = klasse;
+    if (tekst != null) e.textContent = tekst;
+    return e;
+  }
+  function knap(tekst, klasse, handling) {
+    var b = el("button", klasse || "", tekst);
+    b.type = "button";
+    if (handling) b.addEventListener("click", handling);
+    return b;
+  }
+  function kort(t, n) { t = (t || "").replace(/\s+/g, " ").trim(); return t.length > n ? t.slice(0, n - 1).trim() + "…" : t; }
+  function dato(iso) {
+    var d = new Date(iso);
+    if (isNaN(d)) return "";
+    var to = function (x) { return (x < 10 ? "0" : "") + x; };
+    return d.toLocaleDateString("da-DK", { day: "numeric", month: "short" }) + " kl. " + to(d.getHours()) + "." + to(d.getMinutes());
+  }
+  // Knap, der skal trykkes to gange (første tryk skifter teksten i ms millisekunder, normalt 3 sekunder). tjek() kan
+  // stoppe første tryk (fx en tom note). Giver en funktion tilbage, der sætter knappen tilbage.
+  function toTryk(b, sikkerTekst, handling, ms, tjek) {
+    var normal = b.textContent, timer = null;
+    function nulstil() { clearTimeout(timer); b.classList.remove("kb-sikker"); b.textContent = normal; }
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (b.classList.contains("kb-sikker")) { nulstil(); handling(); return; }
+      if (tjek && !tjek()) return;
+      b.classList.add("kb-sikker");
+      b.textContent = sikkerTekst;
+      timer = setTimeout(nulstil, ms || 3000);
+    });
+    return nulstil;
+  }
+  function placer(boks, rect, over, venstre) {
+    boks.style.visibility = "hidden";
+    boks.style.display = "block";
+    var bw = boks.offsetWidth, bh = boks.offsetHeight, vw = document.documentElement.clientWidth, vh = window.innerHeight;
+    var x = venstre ? rect.left : rect.left + rect.width / 2 - bw / 2;
+    x = Math.max(8, main.getBoundingClientRect().left - 8, Math.min(x, vw - bw - 8));
+    var pladsOver = rect.top - bh - 8 > 8, pladsUnder = rect.bottom + 8 + bh < vh - 8;
+    var y = (over && pladsOver) || (!pladsUnder && pladsOver) ? rect.top - bh - 8 : rect.bottom + 8;
+    boks.style.left = Math.round(x + window.scrollX) + "px";
+    boks.style.top = Math.round(y + window.scrollY) + "px";
+    boks.style.visibility = "";
+    // Er der hverken plads over eller under, rulles siden, så hele boksen kan ses.
+    if (y + bh > vh - 8) window.scrollBy({ top: y + bh - vh + 16, behavior: "smooth" });
+  }
+
+  // ---------- Knapperne ved det markerede ----------
+  var vaerktoej = el("div", "kb-ui kb-vaerktoej");
+  vaerktoej.setAttribute("role", "toolbar");
+  vaerktoej.addEventListener("mousedown", function (e) { e.preventDefault(); });
+  var valgt = null;
+  function skjulVaerktoej() { vaerktoej.style.display = "none"; valgt = null; }
+  function visValg() {
+    var sel = window.getSelection();
+    if (!sel.rangeCount || sel.isCollapsed) return;
+    var r = sel.getRangeAt(0);
+    if (!main.contains(r.commonAncestorContainer)) return;
+    var se = omraadeTilTal(r);
+    if (!se || se[1] - se[0] > MAKS_TEGN) return;
+    valgt = r.cloneRange();
+    vaerktoej.innerHTML = "";
+    vaerktoej.appendChild(knap("Markér", "kb-gul", function () { nyPost(false); }));
+    vaerktoej.appendChild(knap("Tilføj note", "", function () { nyPost(true); }));
+    placer(vaerktoej, r.getBoundingClientRect(), true, false);
+  }
+  function nyPost(medNote) {
+    if (!valgt) return;
+    var r = valgt, se = omraadeTilTal(r);
+    skjulVaerktoej();
+    window.getSelection().removeAllRanges();
+    if (!se) return;
+    var t = indeks().tekst, nu = new Date().toISOString();
+    var post = {
+      id: nytId(), citat: t.slice(se[0], se[1]), foer: t.slice(Math.max(0, se[0] - KONTEKST), se[0]),
+      efter: t.slice(se[1], se[1] + KONTEKST), start: se[0], visning: visningstekst(r), note: "", oprettet: nu, rettet: nu
+    };
+    if (!laegMarkering(post, se[0], se[1])) return;
+    placeret[post.id] = true;
+    tilfoej(post);
+    if (medNote) aabnKort(post.id);
+  }
+  function visMarkMenu(post, m) {
+    lukKort();
+    vaerktoej.innerHTML = "";
+    vaerktoej.appendChild(knap("Tilføj note", "", function () { skjulVaerktoej(); aabnKort(post.id); }));
+    vaerktoej.appendChild(knap("Fjern markering", "", function () { skjulVaerktoej(); fjernPost(post.id); }));
+    valgt = null;
+    var rects = m.getClientRects();
+    placer(vaerktoej, rects.length ? rects[0] : m.getBoundingClientRect(), true, false);
+  }
+  function fjernPost(id) {
+    fjernMarks(id);
+    delete placeret[id];
+    var s = data.sider[SIDE];
+    if (s) s.poster = s.poster.filter(function (p) { return p.id !== id; });
+    gem();
+    if (panel.classList.contains("kb-aaben")) tegnPanel();
+  }
+
+  // ---------- Noten ----------
+  var kortEl = el("div", "kb-ui kb-kort");
+  kortEl.setAttribute("role", "dialog");
+  kortEl.setAttribute("aria-label", "Note");
+  var kortTop = el("div", "kb-kort-top");
+  kortTop.appendChild(el("span", "", "Note"));
+  var kortLuk = knap("×", "kb-luk", function () { lukKort(); });
+  kortLuk.title = "Luk";
+  kortLuk.setAttribute("aria-label", "Luk");
+  kortTop.appendChild(kortLuk);
+  var felt = el("textarea");
+  felt.rows = 4;
+  felt.placeholder = "Skriv en note eller et spørgsmål …";
+  var kortBund = el("div", "kb-kort-bund");
+  var gemKnap = knap("Gem og luk", "kb-gem", function () { lukKort(); });
+  var fjernKnap = knap("Fjern", "kb-fjern");
+  var nulstilFjern = toTryk(fjernKnap, "Ja, fjern note og markering", function () { var id = aktiv && aktiv.id; lukKort(); if (id) fjernPost(id); });
+  kortBund.appendChild(gemKnap);
+  kortBund.appendChild(fjernKnap);
+  var sendKnap = knap("Send note til forfatteren", "kb-send");
+  var nulstilSend = toTryk(sendKnap, "Er du sikker? Tryk igen for at sende noten uden navn.", function () { send(); }, 5000, kanSende);
+  var status = el("div", "kb-status");
+  kortEl.appendChild(kortTop);
+  kortEl.appendChild(felt);
+  kortEl.appendChild(kortBund);
+  kortEl.appendChild(sendKnap);
+  kortEl.appendChild(status);
+  var aktiv = null, gemTimer = null;
+
+  function visStatus(tekst, slags) { status.textContent = tekst; status.className = "kb-status" + (slags ? " kb-" + slags : ""); }
+  function standardStatus() {
+    if (aktiv && aktiv.sendt) visStatus("Sendt til forfatteren " + dato(aktiv.sendt) + ".");
+    else visStatus("");
+  }
+  function aabnKort(id) {
+    var post = findPost(id), marks = alleMarks(id);
+    if (!post || !marks.length) return;
+    skjulVaerktoej();
+    aktiv = post;
+    felt.value = post.note || "";
+    sendKnap.disabled = false;
+    nulstilFjern();
+    nulstilSend();
+    standardStatus();
+    var sidste = marks[marks.length - 1], rects = sidste.getClientRects();
+    placer(kortEl, rects.length ? rects[rects.length - 1] : sidste.getBoundingClientRect(), false, true);
+    felt.focus({ preventScroll: true });
+  }
+  function gemNote() {
+    clearTimeout(gemTimer);
+    if (!aktiv) return;
+    if ((aktiv.note || "") !== felt.value) {
+      aktiv.note = felt.value;
+      aktiv.rettet = new Date().toISOString();
+      gem();
+    }
+    visNoteMaerke(aktiv);
+  }
+  function lukKort() {
+    if (kortEl.style.display !== "block") return;
+    gemNote();
+    kortEl.style.display = "none";
+    aktiv = null;
+  }
+  felt.addEventListener("input", function () {
+    clearTimeout(gemTimer);
+    gemTimer = setTimeout(gemNote, 400);
+    if (aktiv && aktiv.sendt) visStatus("Sendt til forfatteren " + dato(aktiv.sendt) + ". Du kan sende noten igen.");
+  });
+  // Tasterne i feltet må ikke nå bogens genveje (fx søgningen).
+  felt.addEventListener("keydown", function (e) {
+    e.stopPropagation();
+    if (e.key === "Escape") lukKort();
+  });
+
+  function sendtTider() {
+    try { var a = JSON.parse(localStorage.getItem(SENDT_NOEGLE) || "[]"); return Array.isArray(a) ? a : []; } catch (e) { return []; }
+  }
+  // Tjekkes ved første tryk på Send (så eleven ikke bliver spurgt "Er du sikker?" om en tom note) og igen ved det andet.
+  function kanSende() {
+    if (!aktiv) return false;
+    gemNote();
+    if ((aktiv.note || "").trim().length < 3) { visStatus("Skriv noten først.", "fejl"); felt.focus(); return false; }
+    var nu = Date.now();
+    var tider = sendtTider().filter(function (t) { return nu - t < 60000; });
+    if (tider.length >= LOFT_PR_MINUT) {
+      var sek = Math.max(1, Math.ceil((60000 - (nu - Math.min.apply(null, tider))) / 1000));
+      visStatus("Du kan sende igen om " + sek + " sekunder.", "fejl");
+      return false;
+    }
+    standardStatus();
+    return true;
+  }
+  function send() {
+    if (!kanSende()) return;
+    var post = aktiv, tekst = post.note.trim(), nu = Date.now();
+    var tider = sendtTider().filter(function (t) { return nu - t < 60000; });
+    tider.push(nu);
+    try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(tider)); } catch (e) {}
+    sendKnap.disabled = true;
+    visStatus("Sender …");
+    var markeret = post.visning || post.citat;
+    var d = new URLSearchParams();
+    d.append("kilde", "kemibogen");
+    d.append("bog", BOG);
+    d.append("afsnit", TITEL);
+    d.append("side", location.href.split("#")[0]);
+    d.append("markeret", markeret);
+    d.append("note", tekst);
+    // Til den gamle udgave af modtageren, som kun kender fanen Feedback (kapitel, animation, navn og feedback).
+    d.append("kapitel", "Kemibogen " + BOG + ": " + TITEL);
+    d.append("animation", "Markeret: " + kort(markeret, 300));
+    d.append("navn", "(anonym)");
+    d.append("feedback", tekst);
+    fetch(SEND_URL, { method: "POST", mode: "no-cors", body: d }).then(function () {
+      post.sendt = new Date().toISOString();
+      gem();
+      if (aktiv === post) { visStatus("Sendt til forfatteren. Tak!", "ok"); sendKnap.disabled = false; }
+    }, function () {
+      var t = sendtTider(), i = t.indexOf(nu);
+      if (i >= 0) { t.splice(i, 1); try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(t)); } catch (e) {} }
+      if (aktiv === post) { visStatus("Det lykkedes ikke at sende. Tjek internettet, og prøv igen.", "fejl"); sendKnap.disabled = false; }
+    });
+  }
+
+  // ---------- Mine noter ----------
+  var mineKnap = knap("", "kb-ui kb-mine", function () { panel.classList.contains("kb-aaben") ? lukPanel() : aabnPanel(); });
+  mineKnap.title = "Mine noter";
+  mineKnap.setAttribute("aria-label", "Mine noter");
+  var BLYANT = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.2 3.8a2.2 2.2 0 0 1 3.1 3.1L8 18.2l-4.2 1.1 1.1-4.2Z"/><path d="M14.3 5.7l3.1 3.1"/></svg>';
+  function antalPoster() {
+    var n = 0;
+    Object.keys(data.sider).forEach(function (k) { n += (data.sider[k].poster || []).length; });
+    return n;
+  }
+  // Knappen er diskret: en lille grå blyant uden ramme og uden gul tæller (Niels 4. nov. 2026: "lidt for tydeligt", den
+  // skal ikke bryde det minimalistiske design). Blyanten står der altid, så eleven kan læse om noterne og hente dem fra
+  // en fil, før der er nogen. Har eleven markeringer eller noter et sted i bogen, står "Mine noter" ved blyanten.
+  function opdaterKnap() {
+    var n = antalPoster();
+    mineKnap.innerHTML = BLYANT;
+    if (n) mineKnap.appendChild(el("span", "", "Mine noter"));
+    mineKnap.classList.toggle("kb-ingen", !n);
+  }
+
+  var panel = el("aside", "kb-ui kb-panel");
+  panel.setAttribute("aria-label", "Mine noter");
+  var panelTop = el("div", "kb-panel-top");
+  panelTop.appendChild(el("div", "kb-panel-titel", "Mine noter"));
+  var panelLuk = knap("×", "kb-luk", function () { lukPanel(); });
+  panelLuk.title = "Luk";
+  panelLuk.setAttribute("aria-label", "Luk");
+  panelTop.appendChild(panelLuk);
+  var panelIndhold = el("div", "kb-panel-indhold");
+  var panelBund = el("div", "kb-panel-bund");
+  var raekke = el("div", "kb-knaprække");
+  var kopierKnap = knap("Kopiér alle", "", kopierAlle);
+  var gemFilKnap = knap("Gem som fil", "", gemFil);
+  raekke.appendChild(kopierKnap);
+  raekke.appendChild(gemFilKnap);
+  raekke.appendChild(knap("Hent fra fil", "", function () { filvaelger.click(); }));
+  var panelStatus = el("div", "kb-panel-status");
+  panelBund.appendChild(raekke);
+  panelBund.appendChild(panelStatus);
+  panelBund.appendChild(el("p", "kb-lille", "Noterne gemmes kun i denne browser. De bliver slettet, hvis du rydder browserdata (cookies og andre webstedsdata), så gem dem som fil en gang imellem."));
+  panel.appendChild(panelTop);
+  panel.appendChild(panelIndhold);
+  panel.appendChild(panelBund);
+  var filvaelger = el("input");
+  filvaelger.type = "file";
+  filvaelger.accept = ".json,application/json";
+  filvaelger.style.display = "none";
+  filvaelger.addEventListener("change", hentFil);
+  panel.appendChild(filvaelger);
+
+  function sorteredeSider() {
+    var sider = Object.keys(data.sider).filter(function (k) { return (data.sider[k].poster || []).length; });
+    sider.sort(function (a, b) {
+      if (a === SIDE) return -1;
+      if (b === SIDE) return 1;
+      return (data.sider[a].titel || a).localeCompare(data.sider[b].titel || b, "da", { numeric: true });
+    });
+    return sider;
+  }
+  function sorteredePoster(k) {
+    return (data.sider[k].poster || []).slice().sort(function (a, b) { return (a.start || 0) - (b.start || 0); });
+  }
+  function tegnPanel() {
+    panelIndhold.innerHTML = "";
+    var sider = sorteredeSider();
+    kopierKnap.hidden = gemFilKnap.hidden = !sider.length;
+    if (!sider.length) {
+      panelIndhold.appendChild(el("p", "kb-tom", "Du har ingen noter endnu."));
+      panelIndhold.appendChild(el("p", "kb-tom", "Markér tekst i bogen med musen, og vælg Markér eller Tilføj note. Dine markeringer og noter bliver samlet her."));
+      return;
+    }
+    sider.forEach(function (k) {
+      var s = data.sider[k];
+      var h = el("div", "kb-side-titel");
+      if (k === SIDE) { h.textContent = s.titel || k; h.appendChild(el("span", "kb-her", " · denne side")); }
+      else { var a = el("a", "", s.titel || k); a.href = k; h.appendChild(a); }
+      panelIndhold.appendChild(h);
+      sorteredePoster(k).forEach(function (p) {
+        var d = el("div", "kb-post" + (harNote(p) ? " kb-med-note" : ""));
+        d.appendChild(el("div", "kb-citat", "“" + kort(p.visning || p.citat, 160) + "”"));
+        if (harNote(p)) d.appendChild(el("div", "kb-notetekst", p.note.trim()));
+        var meta = [];
+        if (p.sendt) meta.push("Sendt til forfatteren " + dato(p.sendt));
+        if (k === SIDE && !placeret[p.id]) meta.push("Teksten findes ikke længere på siden");
+        if (meta.length) d.appendChild(el("div", "kb-meta", meta.join(" · ")));
+        var slet = knap("Slet", "kb-slet");
+        toTryk(slet, "Ja, slet", function () { sletPost(k, p.id); });
+        d.appendChild(slet);
+        d.addEventListener("click", function () { gaaTil(k, p.id); });
+        panelIndhold.appendChild(d);
+      });
+    });
+  }
+  function sletPost(k, id) {
+    if (k === SIDE) { fjernPost(id); return; }
+    gem(function (f) {
+      var s = f.sider[k];
+      if (!s) return;
+      s.poster = (s.poster || []).filter(function (p) { return p.id !== id; });
+      if (!s.poster.length) delete f.sider[k];
+    });
+    tegnPanel();
+  }
+  function visMark(id) {
+    var marks = alleMarks(id);
+    if (!marks.length) return false;
+    var lukket = marks[0].closest(".collapse:not(.show)");
+    if (lukket) lukket.classList.add("show");
+    marks[0].scrollIntoView({ block: "center", behavior: "instant" });
+    marks.forEach(function (m) { m.classList.remove("kb-blink"); void m.offsetWidth; m.classList.add("kb-blink"); });
+    setTimeout(function () { marks.forEach(function (m) { m.classList.remove("kb-blink"); }); }, 1800);
+    var post = findPost(id);
+    if (harNote(post)) setTimeout(function () { aabnKort(id); }, 60);
+    return true;
+  }
+  function gaaTil(k, id) {
+    if (k === SIDE) { if (placeret[id]) { lukPanel(); visMark(id); } return; }
+    try { sessionStorage.setItem(GAA_TIL, id); } catch (e) {}
+    location.href = k;
+  }
+  function aabnPanel() { lukKort(); skjulVaerktoej(); data = laes(); tegnPanel(); panelStatus.textContent = ""; panel.classList.add("kb-aaben"); }
+  function lukPanel() { panel.classList.remove("kb-aaben"); }
+
+  function somTekst() {
+    var linjer = ["Mine noter fra Kemibogen (" + new Date().toLocaleDateString("da-DK") + ")", ""];
+    sorteredeSider().forEach(function (k) {
+      linjer.push(data.sider[k].titel || k);
+      sorteredePoster(k).forEach(function (p) {
+        linjer.push("• “" + (p.visning || p.citat) + "”");
+        if (harNote(p)) linjer.push("  Note: " + p.note.trim().replace(/\n/g, "\n  "));
+      });
+      linjer.push("");
+    });
+    return linjer.join("\n");
+  }
+  function gammelKopi(tekst) {
+    var f = document.createElement("textarea");
+    f.value = tekst;
+    f.setAttribute("readonly", "");
+    f.style.position = "fixed";
+    f.style.opacity = "0";
+    document.body.appendChild(f);
+    f.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(f);
+    return ok;
+  }
+  function kopierAlle() {
+    data = laes();
+    if (!antalPoster()) { panelStatus.textContent = "Der er ingen noter endnu."; return; }
+    var tekst = somTekst();
+    var ok = function () { panelStatus.textContent = "Kopieret. Sæt teksten ind, hvor du vil."; };
+    var ikke = function () { panelStatus.textContent = gammelKopi(tekst) ? "Kopieret. Sæt teksten ind, hvor du vil." : "Det lykkedes ikke at kopiere."; };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(tekst).then(ok, ikke);
+    else ikke();
+  }
+  function gemFil() {
+    data = laes();
+    if (!antalPoster()) { panelStatus.textContent = "Der er ingen noter endnu."; return; }
+    var indhold = JSON.stringify({ kemibogenNoter: 1, gemt: new Date().toISOString(), sider: data.sider }, null, 1);
+    var url = URL.createObjectURL(new Blob([indhold], { type: "application/json" }));
+    var a = el("a");
+    a.href = url;
+    a.download = "kemibogen-noter-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+    panelStatus.textContent = "Filen er gemt i din mappe Overførsler.";
+  }
+  function flet(liste, ny) {
+    var findes = {};
+    liste.forEach(function (p, i) { findes[p.id] = i; });
+    var n = 0;
+    ny.forEach(function (p) {
+      if (!p || typeof p.id !== "string" || typeof p.citat !== "string") return;
+      if (findes[p.id] == null) { liste.push(p); n++; }
+      else if ((p.rettet || "") > (liste[findes[p.id]].rettet || "")) { liste[findes[p.id]] = p; n++; }
+    });
+    return n;
+  }
+  function hentFil() {
+    var fil = filvaelger.files && filvaelger.files[0];
+    filvaelger.value = "";
+    if (!fil) return;
+    var l = new FileReader();
+    l.onload = function () {
+      var ind;
+      try { ind = JSON.parse(l.result); } catch (e) { ind = null; }
+      if (!ind || !ind.sider || typeof ind.sider !== "object") { panelStatus.textContent = "Filen er ikke en fil med noter fra Kemibogen."; return; }
+      var antal = 0;
+      // Denne side flettes ind i noterne i hukommelsen, de andre sider i det gemte.
+      var her = ind.sider[SIDE];
+      if (her && Array.isArray(her.poster)) {
+        if (!data.sider[SIDE]) data.sider[SIDE] = { titel: TITEL, bog: BOG, poster: [] };
+        var foer = {};
+        sidensPoster().forEach(function (p) { foer[p.id] = p; });
+        antal += flet(data.sider[SIDE].poster, her.poster);
+        // En note, der er afløst af filens udgave, fjernes fra teksten, så den kan lægges ind igen.
+        sidensPoster().forEach(function (p) { if (foer[p.id] && foer[p.id] !== p) { fjernMarks(p.id); delete placeret[p.id]; } });
+      }
+      gem(function (f) {
+        Object.keys(ind.sider).forEach(function (k) {
+          var s = ind.sider[k];
+          if (k === SIDE || !s || !Array.isArray(s.poster) || k.charAt(0) !== "/") return;
+          if (!f.sider[k]) f.sider[k] = { titel: s.titel || k, bog: s.bog || "", poster: [] };
+          antal += flet(f.sider[k].poster, s.poster);
+        });
+      });
+      genopret();
+      tegnPanel();
+      panelStatus.textContent = antal ? "Hentet: " + antal + (antal === 1 ? " note." : " noter.") : "Alle noterne i filen fandtes allerede.";
+    };
+    l.readAsText(fil);
+  }
+
+  // ---------- Hændelser ----------
+  document.addEventListener("mouseup", function (e) {
+    if (e.button !== 0 || (e.target.closest && e.target.closest(".kb-ui"))) return;
+    setTimeout(visValg, 0);
+  });
+  document.addEventListener("mousedown", function (e) {
+    if (e.target.closest && e.target.closest(".kb-ui")) return;
+    skjulVaerktoej();
+    if (!(e.target.closest && e.target.closest("mark.kb-mark"))) lukKort();
+  }, true);
+  main.addEventListener("click", function (e) {
+    var m = e.target.closest && e.target.closest("mark.kb-mark");
+    if (!m || !window.getSelection().isCollapsed || e.target.closest("a")) return;
+    var post = findPost(m.getAttribute("data-kb"));
+    if (!post) return;
+    if (harNote(post)) aabnKort(post.id);
+    else visMarkMenu(post, m);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    skjulVaerktoej();
+    lukKort();
+    lukPanel();
+  });
+  window.addEventListener("storage", function (e) {
+    if (e.key !== NOEGLE) return;
+    var mine = sidensPoster();
+    data = laes();
+    if (mine.length) data.sider[SIDE] = { titel: TITEL, bog: BOG, poster: mine };
+    opdaterKnap();
+  });
+
+  function start() {
+    document.body.appendChild(vaerktoej);
+    document.body.appendChild(kortEl);
+    document.body.appendChild(panel);
+    document.body.appendChild(mineKnap);
+    opdaterKnap();
+    genopret();
+    var id = null;
+    try { id = sessionStorage.getItem(GAA_TIL); sessionStorage.removeItem(GAA_TIL); } catch (e) {}
+    if (id) setTimeout(function () { if (!visMark(id)) { genopret(); visMark(id); } }, 150);
+    // Indhold, som andre dele af siden lægger ind lidt senere, får sine markeringer bagefter.
+    setTimeout(genopret, 1500);
+    setTimeout(genopret, 4000);
+  }
+  if (document.readyState === "complete") setTimeout(start, 0);
+  else window.addEventListener("load", function () { setTimeout(start, 0); });
+})();
+</script>
+<style>
+mark.kb-mark { background: rgba(253, 224, 71, .5); color: inherit; padding: 0; border-radius: 2px; cursor: pointer; }
+mark.kb-mark.kb-har-note { background: rgba(253, 224, 71, .7); box-shadow: inset 0 -2px 0 #e0b100; }
+mark.kb-mark.kb-sidste.kb-har-note::after { content: "✎"; font-size: .78em; vertical-align: super; line-height: 0; margin-left: 2px; color: var(--bs-primary, #0f766e); }
+mark.kb-mark.kb-blink { animation: kb-blink 1.6s ease-out; }
+@keyframes kb-blink { 0%, 40% { background: rgba(253, 200, 0, .95); } 100% { background: rgba(253, 224, 71, .6); } }
+
+.kb-vaerktoej { position: absolute; z-index: 1060; display: none; background: #14201f; border-radius: 8px; padding: 3px; box-shadow: 0 4px 14px rgba(0, 0, 0, .25); white-space: nowrap; line-height: 1.2; }
+.kb-vaerktoej button { background: transparent; color: #fff; border: 0; padding: .4rem .75rem; font: inherit; font-size: .9rem; border-radius: 6px; cursor: pointer; }
+.kb-vaerktoej button:hover { background: rgba(255, 255, 255, .16); }
+.kb-vaerktoej .kb-gul::before { content: ""; display: inline-block; width: .75em; height: .75em; background: #fde047; border-radius: 2px; margin-right: .45em; vertical-align: -1px; }
+
+.kb-kort { position: absolute; z-index: 1060; display: none; width: 22rem; max-width: calc(100vw - 16px); background: #fff; border: 1px solid #d8dfde; border-top: 4px solid #fde047; border-radius: 8px; box-shadow: 0 8px 24px rgba(20, 32, 31, .18); padding: .5rem .75rem .65rem; font-size: .95rem; line-height: 1.45; }
+.kb-kort-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: .35rem; font-weight: 600; }
+.kb-kort textarea { display: block; width: 100%; box-sizing: border-box; border: 1px solid #c9d3d2; border-radius: 6px; padding: .45rem .55rem; font: inherit; font-size: .95rem; line-height: 1.45; resize: vertical; min-height: 5.5rem; color: #14201f; }
+.kb-kort textarea:focus { outline: none; border-color: var(--bs-primary, #0f766e); box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb, 15, 118, 110), .2); }
+.kb-kort-bund { display: flex; gap: .5rem; align-items: center; margin-top: .55rem; }
+.kb-gem { background: var(--bs-primary, #0f766e); color: #fff; border: 0; border-radius: 6px; padding: .35rem .85rem; font: inherit; font-size: .9rem; cursor: pointer; }
+.kb-gem:hover { filter: brightness(.88); }
+.kb-send { display: block; margin-top: .5rem; background: transparent; border: 0; padding: 0; font: inherit; font-size: .76rem; line-height: 1.35; color: #8a9897; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: rgba(138, 152, 151, .45); text-underline-offset: 2px; }
+.kb-send:hover { color: #556766; }
+.kb-send.kb-sikker { color: var(--bs-primary, #0f766e); font-weight: 600; text-decoration-color: currentColor; }
+.kb-send:disabled { opacity: .55; cursor: default; }
+.kb-fjern { margin-left: auto; background: transparent; border: 0; padding: .2rem .1rem; color: #556766; font: inherit; font-size: .88rem; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.kb-fjern.kb-sikker, .kb-slet.kb-sikker { color: #c0392b; }
+.kb-status { margin-top: .3rem; font-size: .8rem; color: #556766; }
+.kb-status:empty { display: none; }
+.kb-status.kb-ok { color: var(--bs-primary, #0f766e); font-weight: 600; }
+.kb-status.kb-fejl { color: #c0392b; }
+.kb-luk { background: transparent; border: 0; font-size: 1.35rem; line-height: 1; color: #556766; cursor: pointer; padding: 0 .25rem; }
+.kb-luk:hover { color: #14201f; }
+
+.kb-mine { position: fixed; right: .9rem; bottom: .8rem; z-index: 1040; display: inline-flex; align-items: center; gap: .35rem; background: rgba(255, 255, 255, .9); color: #7a8988; border: 0; border-radius: 6px; padding: .3rem .45rem; font: inherit; font-size: .8rem; line-height: 1.3; cursor: pointer; }
+.kb-mine svg { width: 1.05rem; height: 1.05rem; display: block; flex: none; }
+.kb-mine.kb-ingen { color: #9eabaa; }
+.kb-mine:hover, .kb-mine:focus-visible { color: var(--bs-primary, #0f766e); background: #f1f5f5; }
+.kb-panel.kb-aaben ~ .kb-mine { display: none; }
+
+.kb-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 25rem; max-width: 100vw; z-index: 1065; background: #fff; box-shadow: -8px 0 28px rgba(20, 32, 31, .16); display: none; flex-direction: column; font-size: .95rem; line-height: 1.45; }
+.kb-panel.kb-aaben { display: flex; }
+.kb-panel-top { display: flex; align-items: center; justify-content: space-between; padding: .85rem 1rem .65rem; border-bottom: 1px solid #e3e8e7; }
+.kb-panel-titel { font-size: 1.2rem; font-weight: 650; }
+.kb-panel-indhold { flex: 1; overflow-y: auto; padding: .2rem 1rem 1rem; }
+.kb-tom { color: #556766; margin: 1rem 0 0; }
+.kb-side-titel { font-weight: 600; margin: 1rem 0 .45rem; }
+.kb-side-titel a { text-decoration: none; }
+.kb-side-titel a:hover { text-decoration: underline; }
+.kb-her { font-weight: 400; color: #556766; font-size: .85rem; }
+.kb-post { position: relative; padding: .45rem 3.2rem .5rem .7rem; border-left: 4px solid #fde047; background: #f7f9f9; border-radius: 0 6px 6px 0; margin-bottom: .5rem; cursor: pointer; }
+.kb-post.kb-med-note { border-left-color: #e0b100; }
+.kb-post:hover { background: #eef3f2; }
+.kb-citat { color: #556766; font-style: italic; font-size: .9rem; }
+.kb-notetekst { margin-top: .25rem; white-space: pre-wrap; color: #14201f; }
+.kb-meta { margin-top: .25rem; font-size: .8rem; color: #556766; }
+.kb-slet { position: absolute; top: .35rem; right: .45rem; background: transparent; border: 0; padding: 0 .15rem; font: inherit; font-size: .8rem; color: #556766; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; opacity: 0; }
+.kb-post:hover .kb-slet, .kb-slet:focus, .kb-slet.kb-sikker { opacity: 1; }
+.kb-panel-bund { border-top: 1px solid #e3e8e7; padding: .7rem 1rem .85rem; }
+.kb-knaprække { display: flex; gap: .45rem; flex-wrap: wrap; }
+.kb-knaprække button { background: #fff; color: var(--bs-primary, #0f766e); border: 1.5px solid var(--bs-primary, #0f766e); border-radius: 6px; padding: .3rem .7rem; font: inherit; font-size: .88rem; cursor: pointer; }
+.kb-knaprække button:hover { background: var(--bs-primary, #0f766e); color: #fff; }
+.kb-panel-status { min-height: 1.2em; margin-top: .4rem; font-size: .85rem; color: var(--bs-primary, #0f766e); }
+.kb-lille { font-size: .8rem; color: #556766; margin: .3rem 0 0; }
+
+@media print { .kb-ui { display: none !important; } }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
