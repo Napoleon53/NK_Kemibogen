@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="da" xml:lang="da"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -44,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b5508d4fb024aced3181fbf510a15229.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-16753a3ba1a1e20eacb53d9cbad244d4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -2166,517 +2166,1029 @@ Velegnet til fødevareforløb
 
 </main> <!-- /main -->
 <script>
+
 // Temaopgaver kan klappes sammen.
+
 //
+
 // På opgavesiderne indleder en overskrift som "Opgaver med klimatema {.tema}" et tema.
+
 // Dette script gør overskriften til en knap og skjuler temaets opgaver, til man klikker.
+
 // Indholdslisten i højre side følger med, så kun de åbne temaers opgaver står der.
+
 // Et klik på temaets navn i indholdslisten åbner og lukker også temaet.
+
 // Et tema, man har åbnet, bliver ved med at være åbent på de andre opgavesider.
+
 // Uden JavaScript, og når siden skrives ud, vises alle opgaver som almindelig tekst.
+
 // Sættes "?temaer=aabne" efter sidens adresse, er alle temaer åbne fra start.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var temaer = Array.prototype.slice.call(document.querySelectorAll("body.opgaver main section.level2.tema"));
+
   if (!temaer.length) return;
+
   var alleAabne = /[?&]temaer=aabne/.test(location.search);
 
+
+
   function husk(id, aaben) {
+
     try { localStorage.setItem("kemibogen-tema-" + id, aaben ? "1" : "0"); } catch (e) {}
+
   }
+
   function husket(id) {
+
     try { return localStorage.getItem("kemibogen-tema-" + id) === "1"; } catch (e) { return false; }
+
   }
+
   function tocPunkt(id) {
+
     var link = document.getElementById("toc-" + id);
+
     return link ? link.closest("li") : null;
+
   }
+
+
 
   var alle = temaer.map(function (tema) {
+
     var h2 = tema.querySelector("h2");
+
     var indhold = document.createElement("div");
+
     indhold.className = "tema-indhold";
+
     indhold.id = tema.id + "-opgaver";
+
     var opgaver = [];
+
     var naeste = tema.nextElementSibling;
+
     while (naeste && naeste.matches("section.level2") && !naeste.classList.contains("tema")) {
+
       var flyt = naeste;
+
       naeste = naeste.nextElementSibling;
+
       indhold.appendChild(flyt);
+
       opgaver.push(flyt);
+
     }
+
     tema.appendChild(indhold);
 
+
+
     var antal = document.createElement("span");
+
     antal.className = "tema-antal";
+
     antal.textContent = opgaver.length + " opgaver";
+
     h2.appendChild(antal);
+
     h2.setAttribute("role", "button");
+
     h2.setAttribute("tabindex", "0");
+
     h2.setAttribute("aria-controls", indhold.id);
 
+
+
     var t = { tema: tema, h2: h2, indhold: indhold, opgaver: opgaver, aaben: false };
+
     t.saet = function (aaben, gem) {
+
       t.aaben = aaben;
+
       indhold.classList.toggle("lukket", !aaben);
+
       h2.setAttribute("aria-expanded", aaben ? "true" : "false");
+
       opgaver.forEach(function (o) {
+
         var li = tocPunkt(o.id);
+
         if (li) li.classList.toggle("tema-skjult", !aaben);
+
       });
+
       var punkt = document.getElementById("toc-" + tema.id);
+
       if (punkt) punkt.classList.toggle("tema-aaben", aaben);
+
       if (gem) husk(tema.id, aaben);
+
     };
+
     h2.addEventListener("click", function (e) {
+
       if (e.target.closest("a")) return;          // ankerlinket ved overskriften
+
       t.saet(!t.aaben, true);
+
     });
+
     h2.addEventListener("keydown", function (e) {
+
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t.saet(!t.aaben, true); }
+
     });
+
     // Et klik på temaet i indholdslisten åbner det og lukker det igen
+
     var punkt = document.getElementById("toc-" + tema.id);
+
     if (punkt) {
+
       punkt.classList.add("tema-punkt");
+
       punkt.setAttribute("title", "Klik for at åbne eller lukke temaet");
+
       punkt.addEventListener("click", function () { t.saet(!t.aaben, true); });
+
     }
+
+
 
     t.saet(alleAabne || husket(tema.id), false);
+
     return t;
+
   });
+
   // Til stil/lektielinks.html, som åbner og skjuler temaer, når siden kun viser udvalgte opgaver
+
   window.kemibogenTemaer = alle;
 
+
+
   // Et link til en opgave inde i et lukket tema åbner temaet først
+
   function aabnTilAnker() {
+
     var id = decodeURIComponent(location.hash.replace(/^#/, ""));
+
     if (!id) return;
+
     var maal = document.getElementById(id);
+
     if (!maal) return;
+
     alle.forEach(function (t) {
+
       if (!t.aaben && t.indhold.contains(maal)) {
+
         t.saet(true, false);
+
         maal.scrollIntoView();
+
       }
+
     });
+
   }
+
   aabnTilAnker();
+
   window.addEventListener("hashchange", aabnTilAnker);
 
+
+
   // Indholdslisten: peger Quarto på en skjult opgave, markeres temaet i stedet
+
   var venter = false;
+
   function retMarkering() {
+
     venter = false;
+
     alle.forEach(function (t) {
+
       var punkt = document.getElementById("toc-" + t.tema.id);
+
       if (!punkt) return;
+
       var skjultAktiv = !t.aaben && t.opgaver.some(function (o) {
+
         var link = document.getElementById("toc-" + o.id);
+
         return link && link.classList.contains("active");
+
       });
+
       punkt.classList.toggle("tema-aktiv", skjultAktiv);
+
     });
+
   }
+
   window.addEventListener("scroll", function () {
+
     if (!venter) { venter = true; requestAnimationFrame(retMarkering); }
+
   }, { passive: true });
+
 });
+
 </script>
+
 <script>
+
 // Trin for trin.
+
 //
+
 // En boks med klassen "trinvis" indeholder flere bokse med klassen "trin". Dette script
+
 // viser ét trin ad gangen og sætter knapper over: Forrige, Næste, et nummer for hvert trin
+
 // (eller teksten fra trinets egenskab knap="...")
+
 // og "Vis alle trin". Alle trin ligger oven på hinanden, så boksen ikke skifter højde.
+
 // Uden JavaScript, og når siden skrives ud, står trinnene bare under hinanden.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   Array.prototype.forEach.call(document.querySelectorAll(".trinvis"), function (boks) {
+
     var trin = Array.prototype.filter.call(boks.children, function (el) {
+
       return el.classList.contains("trin");
+
     });
+
     if (trin.length < 2) return;
 
+
+
     var stak = document.createElement("div");
+
     stak.className = "trin-stak";
+
     boks.insertBefore(stak, trin[0]);
+
     trin.forEach(function (t) { stak.appendChild(t); });
 
+
+
     var bjaelke = document.createElement("div");
+
     bjaelke.className = "trin-bjaelke";
+
     function knap(tekst, klasse, label) {
+
       var k = document.createElement("button");
+
       k.type = "button";
+
       k.className = klasse;
+
       k.textContent = tekst;
+
       if (label) k.setAttribute("aria-label", label);
+
       bjaelke.appendChild(k);
+
       return k;
+
     }
+
     var nu = 0, visAlle = false;
+
     var forrige = knap("‹ Forrige", "trin-forrige", "Forrige trin");
+
     var numre = trin.map(function (t, k) {
+
       var tekst = t.getAttribute("data-knap") || String(k + 1);
+
       var n = knap(tekst, "trin-nr", /^\d+$/.test(tekst) ? "Trin " + tekst : tekst);
+
       n.addEventListener("click", function () { nu = k; visAlle = false; vis(); });
+
       return n;
+
     });
+
     var naeste = knap("Næste ›", "trin-naeste", "Næste trin");
+
     var alle = knap("Vis alle trin", "trin-alle");
+
     boks.insertBefore(bjaelke, stak);
 
+
+
     function vis() {
+
       boks.classList.toggle("alle", visAlle);
+
       trin.forEach(function (t, k) {
+
         t.classList.toggle("vist", k === nu);
+
         numre[k].classList.toggle("aktiv", !visAlle && k === nu);
+
         if (!visAlle && k === nu) numre[k].setAttribute("aria-current", "step");
+
         else numre[k].removeAttribute("aria-current");
+
       });
+
       forrige.disabled = visAlle || nu === 0;
+
       naeste.disabled = visAlle || nu === trin.length - 1;
+
       alle.textContent = visAlle ? "Vis ét trin ad gangen" : "Vis alle trin";
+
     }
+
     forrige.addEventListener("click", function () { if (nu > 0) { nu--; vis(); } });
+
     naeste.addEventListener("click", function () { if (nu < trin.length - 1) { nu++; vis(); } });
+
     alle.addEventListener("click", function () { visAlle = !visAlle; vis(); });
+
     // Piletasterne bladrer, når en af knapperne har fokus
+
     bjaelke.addEventListener("keydown", function (e) {
+
       if (visAlle) return;
+
       if (e.key === "ArrowRight" && nu < trin.length - 1) { nu++; vis(); e.preventDefault(); }
+
       if (e.key === "ArrowLeft" && nu > 0) { nu--; vis(); e.preventDefault(); }
+
     });
 
+
+
     boks.classList.add("aktiv");
+
     if (/[?&]trin=alle/.test(location.search)) visAlle = true;
+
     vis();
+
   });
+
 });
+
 </script>
+
 <script>
+
 // En beregning, der bygges op klik for klik (afsnit B2.6, 30. okt. 2026; Niels ville kunne bladre "som en powerpoint
+
 // uden at skifte slide", så det hele ikke bliver slettet for hvert trin).
+
 //
+
 // En boks med klassen "opbyg" indeholder en boks "opbyg-tekster" med én boks "klik" for hvert klik (forklaringen til
+
 // klikket) og en tavle med beregningen. Hver del af tavlen har egenskaben fra="N" og vises fra klik N; det, der lige
+
 // er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
+
 // knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
+
 // Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+
 // "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+
 document.addEventListener("DOMContentLoaded", function () {
+
   Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
+
     var tekster = boks.querySelector(".opbyg-tekster");
+
     if (!tekster) return;
+
     var klik = Array.prototype.filter.call(tekster.children, function (el) {
+
       return el.classList.contains("klik");
+
     });
+
     if (klik.length < 2) return;
+
     var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+
       return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+
     });
+
     var trin = [];
+
     klik.forEach(function (k, i) {
+
       var t = k.getAttribute("data-knap");
+
       if (t || !trin.length) trin.push({ tekst: t || "1", start: i, valgfri: k.classList.contains("valgfri") });
+
     });
+
     function trinFor(i) {
+
       for (var j = trin.length - 1; j > 0; j--) if (trin[j].start <= i) return j;
+
       return 0;
+
     }
+
+
 
     var top = document.createElement("div");
+
     top.className = "opbyg-top";
+
     var bjaelke = document.createElement("div");
+
     bjaelke.className = "trin-bjaelke";
+
     function knap(tekst, klasse, label) {
+
       var k = document.createElement("button");
+
       k.type = "button";
+
       k.className = klasse;
+
       k.textContent = tekst;
+
       if (label) k.setAttribute("aria-label", label);
+
       bjaelke.appendChild(k);
+
       return k;
+
     }
+
     var nu = 0;
+
     var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
+
     var numre = trin.map(function (t) {
+
       var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+[a-z]?$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
+
       n.addEventListener("click", function () { gaa(t.start); });
+
       return n;
+
     });
+
     var naeste = knap("Næste ›", "trin-naeste", "Næste");
+
     top.appendChild(bjaelke);
+
     boks.insertBefore(top, boks.firstChild);
+
     top.appendChild(tekster);
+
     tekster.setAttribute("aria-live", "polite");
 
+
+
     // Ruller siden, så det nye kan ses under bjælken og forklaringen
+
     function synlig() {
+
       var nye = boks.querySelectorAll(".ny");
+
       if (!nye.length) return;
+
       var oeverst = Infinity, nederst = -Infinity;
+
       Array.prototype.forEach.call(nye, function (el) {
+
         var r = el.getBoundingClientRect();
+
         oeverst = Math.min(oeverst, r.top);
+
         nederst = Math.max(nederst, r.bottom);
+
       });
+
       var loft = getComputedStyle(top).position === "sticky" ? top.getBoundingClientRect().bottom : 0;
+
       var luft = 16, ned = 0;
+
       if (nederst > window.innerHeight - luft) ned = nederst - window.innerHeight + luft;
+
       if (oeverst - ned < loft + luft) ned = oeverst - loft - luft;
+
       if (Math.abs(ned) > 2) window.scrollBy({ top: ned, behavior: "smooth" });
+
     }
+
     function vis(rul) {
+
       klik.forEach(function (k, i) { k.classList.toggle("vist", i === nu); });
+
       dele.forEach(function (d) {
+
         d.el.classList.toggle("vist", d.fra <= nu);
+
         d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+
       });
+
       var aktivt = trinFor(nu);
+
       numre.forEach(function (n, j) {
+
         n.classList.toggle("aktiv", j === aktivt);
+
         if (j === aktivt) n.setAttribute("aria-current", "step");
+
         else n.removeAttribute("aria-current");
+
       });
+
       forrige.disabled = nu === 0;
+
       naeste.disabled = nu === klik.length - 1;
+
       if (rul) synlig();
+
     }
+
     function gaa(i) {
+
       nu = Math.max(0, Math.min(klik.length - 1, i));
+
       vis(true);
+
     }
+
     forrige.addEventListener("click", function () { gaa(nu - 1); });
+
     naeste.addEventListener("click", function () { gaa(nu + 1); });
+
     bjaelke.addEventListener("keydown", function (e) {
+
       if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
+
       if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+
     });
+
+
 
     boks.classList.add("aktiv");
+
     var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
+
     if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+
     vis(false);
+
   });
+
 });
+
 </script>
+
 <script>
+
 // Figurer, man kan pege på (en boks med klassen "pegefigur" om figuren i .qmd-filen).
+
 //
+
 // Figurprogrammet (vaerktoej/lav_figurer.py) har lagt de dele af figuren, man kan pege på, i
+
 // grupper med klassen "peg" og skrevet en titel og en forklaring på hver gruppe (funktionen peg).
+
 // Dette script henter figuren ind i siden og viser forklaringen i et felt lige under figuren,
+
 // når man peger på en del, trykker på den eller går til den med tabulatortasten og piletasterne.
+
 // Et klik holder forklaringen fast. Nogle dele har "med": så bliver de dele, der hører sammen
+
 // med den, stående, mens resten af figuren bliver bleg (fx vejen gennem et rutediagram).
+
 // En del kan også have hjælpestreger med klassen "peg-kun-fremme", som kun ses, mens man peger på den.
+
 // Uden JavaScript, og når siden skrives ud, er figuren det samme billede som før.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var bokse = document.querySelectorAll(".pegefigur");
+
   if (!bokse.length || !window.fetch || !window.DOMParser) return;
 
+
+
   var SVG = "http://www.w3.org/2000/svg";
+
   var BEROERING = window.matchMedia && window.matchMedia("(hover: none)").matches;
+
   var STANDARD = "Peg på en del af figuren for at se mere.";
+
   var oensket = /[?&]peg=([^&#]+)/.exec(location.search);   // "?peg=Zn" vælger delen Zn (til gennemsyn som billede)
+
   oensket = oensket ? decodeURIComponent(oensket[1]) : null;
 
+
+
   function el(navn, klasse) {
+
     var e = document.createElement(navn);
+
     if (klasse) e.className = klasse;
+
     return e;
+
   }
+
   // Forklaringerne bruger figurprogrammets skrivemåde: _{2} er sænket og ^{2+} er hævet skrift.
+
   // En størrelse mellem to stjerner, *K*, bliver kursiv som i bogens tekst.
+
   // [afsnit B4.3](../kapitler/b4-3-aldehyder-og-ketoner.html#anker) bliver et link. Adressen læses fra
+
   // siden, figuren står på, og ikke fra figurens egen mappe.
+
   var LINK = /\[([^\]]+)\]\(([^)\s"<>]+)\)/g;
+
   function rig(s) {
+
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+
             .replace(LINK, '<a href="$2">$1</a>')
+
             .replace(/_\{([^}]*)\}/g, "<sub>$1</sub>").replace(/\^\{([^}]*)\}/g, "<sup>$1</sup>")
+
             .replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "<em>$1</em>");
+
   }
+
   function ren(s) { return s.replace(LINK, "$1").replace(/[_^]\{([^}]*)\}/g, "$1").replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, "$1"); }
+
   function ord(s) { return (s || "").split(/\s+/).filter(Boolean); }
 
+
+
   var loebenr = 0;
+
   Array.prototype.forEach.call(bokse, function (boks) {
+
     var billede = boks.querySelector("img");
+
     if (!billede || !/\.svg([?#]|$)/.test(billede.getAttribute("src") || "")) return;
+
     fetch(billede.src).then(function (svar) {
+
       if (!svar.ok) throw new Error("figuren kunne ikke hentes");
+
       return svar.text();
+
     }).then(function (kilde) { byg(boks, billede, kilde); })
+
       .catch(function () { /* Kan figuren ikke hentes, står billedet der bare som før */ });
+
   });
 
+
+
   function byg(boks, billede, kilde) {
+
     // Navne inde i figuren (fx farveovergange) får et forled, så to figurer på samme side ikke deler navn
+
     var forled = "pf" + (++loebenr) + "-";
+
     kilde = kilde.replace(/(\s)id="([^"]+)"/g, '$1id="' + forled + '$2"')
+
                  .replace(/url\(#([^)]+)\)/g, "url(#" + forled + "$1)")
+
                  .replace(/href="#([^"]+)"/g, 'href="#' + forled + '$1"');
+
     var svg = new DOMParser().parseFromString(kilde, "image/svg+xml").documentElement;
+
     if (!svg || svg.nodeName.toLowerCase() !== "svg") return;
+
     svg = document.importNode(svg, true);
+
     var grupper = Array.prototype.slice.call(svg.querySelectorAll("g.peg"));
+
     if (!grupper.length) return;
 
+
+
     var vejledning = svg.querySelector("g.peg-vejledning");
+
     var start = vejledning ? vejledning.getAttribute("data-tekst") : STANDARD;
+
     if (BEROERING) start = start.replace(/^Peg på/, "Tryk på");
+
     var titel = svg.querySelector("title");
+
     if (titel) svg.removeChild(titel);   // ellers viser browseren figurens beskrivelse som en gul boble
+
     var maal = (svg.getAttribute("viewBox") || "").split(/\s+/).map(Number);
+
     svg.removeAttribute("width");
+
     svg.removeAttribute("height");
+
     svg.setAttribute("role", "group");
+
     svg.setAttribute("class", "peg-svg");
+
     if (maal.length === 4 && maal[2] > 0) svg.style.width = maal[2] + "px";
 
+
+
     // Figuren ind i siden i stedet for billedet, og feltet med forklaringen lige under den
+
     var ramme = el("div", "peg-ramme");
+
     var gammel = billede.closest("a") || billede;
+
     gammel.parentNode.replaceChild(ramme, gammel);
+
     ramme.appendChild(svg);
+
     var info = el("div", "peg-info");
+
     info.setAttribute("aria-live", "polite");
+
     var figur = ramme.closest("figure");
+
     var billedtekst = figur && figur.querySelector("figcaption");
+
     if (billedtekst && billedtekst.parentNode === figur) figur.insertBefore(info, billedtekst);
+
     else ramme.parentNode.insertBefore(info, ramme.nextSibling);
 
+
+
     // Alle forklaringerne ligger oven på hinanden i feltet, og kun én er synlig. Så er feltet
+
     // hele tiden lige så højt som den længste forklaring, og siden hopper ikke, når man peger.
+
     function kort(overskrift, tekst, klasse) {
+
       var k = el("div", "peg-kort" + (klasse ? " " + klasse : ""));
+
       if (overskrift) { var t = el("p", "peg-titel"); t.innerHTML = rig(overskrift); k.appendChild(t); }
+
       (tekst || "").split("\n").forEach(function (afsnit) {
+
         if (!afsnit.trim()) return;
+
         var p = el("p"); p.innerHTML = rig(afsnit); k.appendChild(p);
+
       });
+
       info.appendChild(k);
+
       return k;
+
     }
+
     var startkort = kort(null, start, "peg-vejledning");
 
+
+
     var dele = grupper.map(function (g, i) {
+
       var d = { g: g, nr: i, titel: g.getAttribute("data-titel") || "", tekst: g.getAttribute("data-tekst") || "",
+
                 noegle: g.getAttribute("data-noegle"), i: ord(g.getAttribute("data-i")), med: ord(g.getAttribute("data-med")) };
+
       d.kort = kort(d.titel, d.tekst);
+
       g.setAttribute("role", "button");
+
       g.setAttribute("tabindex", i === 0 ? "0" : "-1");
+
       g.setAttribute("aria-label", ren(d.titel + (d.tekst ? ". " + d.tekst.replace(/\n/g, " ") : "")));
+
       return d;
+
     });
+
     // De dele, der bliver stående fremme sammen med en del: dem, den nævner i "med", ved navn eller ved gruppe
+
     dele.forEach(function (d) {
+
       d.venner = !d.med.length ? [] : dele.filter(function (a) {
+
         return a !== d && (d.med.indexOf(a.noegle) >= 0 || a.i.some(function (s) { return d.med.indexOf(s) >= 0; }));
+
       });
+
     });
+
+
 
     // Hver del får et usynligt felt, der fanger musen (også mellem bogstaverne), og en ramme til fremhævning
+
     var maalt = false;
+
     function maalOp() {
+
       if (maalt) return;
+
       // Har delen en flade med klassen "peg-maal", er det den, der bestemmer feltets størrelse
+
       var kasser = dele.map(function (d) {
+
         try { return (d.g.querySelector(".peg-maal") || d.g).getBBox(); } catch (e) { return null; }
+
       });
+
       if (!kasser.some(function (b) { return b && b.width > 0; })) return;   // figuren er skjult lige nu
+
       maalt = true;
+
       dele.forEach(function (d, i) {
+
         var b = kasser[i];
+
         if (!b || !b.width) return;
+
         var luft = 2.5;
+
         [["peg-felt", true], ["peg-kant", false]].forEach(function (r) {
+
           var rekt = document.createElementNS(SVG, "rect");
+
           rekt.setAttribute("x", (b.x - luft).toFixed(1));
+
           rekt.setAttribute("y", (b.y - luft).toFixed(1));
+
           rekt.setAttribute("width", (b.width + 2 * luft).toFixed(1));
+
           rekt.setAttribute("height", (b.height + 2 * luft).toFixed(1));
+
           rekt.setAttribute("rx", "7");
+
           rekt.setAttribute("class", r[0]);
+
           if (r[1]) d.g.insertBefore(rekt, d.g.firstChild); else d.g.appendChild(rekt);
+
         });
+
       });
+
     }
+
     maalOp();
+
     svg.addEventListener("pointerover", maalOp);
+
     svg.addEventListener("focusin", maalOp);
 
+
+
     var fast = null, vist;
+
     function vis(d) {
+
       if (d === vist) return;
+
       vist = d;
+
       startkort.classList.toggle("peg-vist", !d);
+
       dele.forEach(function (a) {
+
         a.kort.classList.toggle("peg-vist", a === d);
+
         a.g.classList.toggle("peg-fremme", a === d);
+
         a.g.classList.toggle("peg-lys", !!d && (a === d || d.venner.indexOf(a) >= 0));
+
       });
+
       svg.classList.toggle("peg-daemp", !!d && d.venner.length > 0);
+
     }
+
     function fastgoer(d) {
+
       if (fast) { fast.g.classList.remove("peg-valgt"); fast.g.setAttribute("aria-pressed", "false"); }
+
       fast = d;
+
       if (d) {
+
         d.g.classList.add("peg-valgt");
+
         d.g.setAttribute("aria-pressed", "true");
+
         dele.forEach(function (a) { a.g.setAttribute("tabindex", a === d ? "0" : "-1"); });
+
       }
+
       vis(d);
+
     }
+
+
 
     // Har forklaringen et link, bliver den stående et øjeblik, når musen forlader figuren, og så længe musen
+
     // er i feltet, så man kan nå at trykke på linket. Andre forklaringer forsvinder med det samme som før.
+
     var slip = null;
+
     function slipForklaring() {
+
       clearTimeout(slip);
+
       if (vist && vist !== fast && vist.kort.querySelector("a")) slip = setTimeout(function () { vis(fast); }, 450);
+
       else vis(fast);
+
     }
+
     info.addEventListener("pointerenter", function () { clearTimeout(slip); });
+
     info.addEventListener("pointerleave", slipForklaring);
+
     info.addEventListener("focusout", function (e) {
+
       if (!info.contains(e.relatedTarget) && !svg.contains(e.relatedTarget)) vis(fast);
+
     });
+
+
 
     dele.forEach(function (d) {
+
       d.g.addEventListener("pointerenter", function () { clearTimeout(slip); vis(d); });
+
       d.g.addEventListener("focus", function () { vis(d); });
+
       d.g.addEventListener("click", function (e) { fastgoer(fast === d ? null : d); e.stopPropagation(); });
+
       d.g.addEventListener("keydown", function (e) {
+
         if (e.key === "Enter" || e.key === " ") { fastgoer(fast === d ? null : d); e.preventDefault(); return; }
+
         if (e.key === "Escape") { fastgoer(null); return; }
+
         var trin = { ArrowLeft: -1, ArrowUp: -1, ArrowRight: 1, ArrowDown: 1 }[e.key];
+
         if (!trin) return;
+
         var naeste = dele[d.nr + trin];
+
         if (naeste) {
+
           dele.forEach(function (a) { a.g.setAttribute("tabindex", a === naeste ? "0" : "-1"); });
+
           naeste.g.focus();
+
         }
+
         e.preventDefault();
+
       });
+
     });
+
     svg.addEventListener("pointerleave", slipForklaring);
+
     svg.addEventListener("focusout", function (e) {
+
       if (!svg.contains(e.relatedTarget) && !info.contains(e.relatedTarget)) vis(fast);
+
     });
+
     svg.addEventListener("click", function () { fastgoer(null); });   // et klik ved siden af slipper forklaringen
 
+
+
     boks.classList.add("peg-aktiv");
+
     vis(null);
+
     if (oensket) {
+
       var valgt = dele.filter(function (d) { return d.noegle === oensket; })[0];
+
       if (valgt) fastgoer(valgt);
+
     }
+
   }
+
 });
+
 </script>
+
 <script>
 // Lektielinks på opgavesiderne. Se noter/repetition.md.
 //
@@ -3077,425 +3589,1644 @@ document.addEventListener("DOMContentLoaded", function () {
 .kopierlink-besked.vist { opacity: .92; }
 </style>
 <script>
+
 // Menuen i venstre side: materialerne til kapitlet under afsnittene (Niels 15. okt. 2026 i kapitel 1 og 2,
+
 // 16. okt. 2026 i alle kapitler i de tre bøger).
+
 //
+
 // Står et kapitels opgavesider i _quarto.yml efter alle afsnittene, bliver linjerne "Opgaver til 1.1" osv.
+
 // til én linje: "Opgaver 1.1 1.2 1.3 1.4". Fagord og repetition står bagefter og hedder bare "Fagord" og
+
 // "Repetition". Til sidst kommer linkene i EKSTRA (slides, modulplaner og kapitlets animationer på
+
 // kemiformler.dk; C-bogen og kapitel B2, B3, B4 og B8 har dem). Der står ingen rubrik over materialerne: en streg, mindre og grå skrift og et lille mellemrum
+
 // før EKSTRA skiller dem fra afsnittene (Niels 15. okt. 2026: "Til kapitlet" var akavet og indforstået).
+
 // Kapitler, hvor opgaverne stadig står under hvert afsnit, røres ikke. Temaerne Plastic og Klima i C-bogen er bygget
+
 // som kapitler (temaer/t1-1-....html og temaer/t1-1-opgaver.html) og får samme menu; "Fagord til Tema: Klima" bliver
+
 // til "Fagord", også i de små temaer uden opgaver (Niels 16. okt. 2026, noter/temaer-c-oprydning.md).
+
 //
-// Øvelser (Niels 18. okt. 2026): efter repetitionen står siden "Øvelser til kapitel 7", som bliver til "Øvelser", og
+
+// Øvelser (Niels 18. okt. 2026; fra 4. nov. 2026 står de ikke længere under kapitlerne, men samlet under Øvrige
+
+// materialer, se start()): efter repetitionen står siden "Øvelser til kapitel 7", som bliver til "Øvelser", og
+
 // bagefter kapitlets øvelser (oevelser/7-5-....html). Øvelserne selv tages ud af menuen; står man på en af dem, er
+
 // "Øvelser" fremhævet. Kapitlernes navne mister ordet "Kapitel" ("7: Syrer og baser"), så de kan stå på én linje, og
+
 // delen Materialer (den fulde liste over øvelser) flyttes ned under Bilag.
+
 (function () {
-  // Modulplanerne vises først, når Niels har set dem igennem (1. nov. 2026: "lige nu skal der bare stå 'kommer
-  // snart' ... i løbet af næste uge, så opdaterer jeg dem løbende - startende med kap 1 og 2"). Skriv kapitlets
-  // nummer her, når planen er klar, fx ["1", "2"], og skift "Kommer snart" ud med linket i tabellen på forsiden.
+
+  // Modulplanerne står ikke i menuen, kun i tabellen Til læreren på forsiden (Niels 4. nov. 2026: "Menuen er jo
+
+  // egentlig til elever"). Lad listen være tom; skriv kun et kapitels nummer her, hvis Niels beder om planen i menuen.
+
   var MODULPLANER_KLAR = [];
+
   var EKSTRA = {
+
     "1": [
+
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-1.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c1.html", ikon: "animationer" }
+
     ],
+
     "2": [
+
       { tekst: "Slides", sti: "slides/kapitel-2.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-2.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c2.html", ikon: "animationer" }
+
     ],
+
     "3": [
+
       { tekst: "Slides", sti: "slides/kapitel-3.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-3.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c3.html", ikon: "animationer" }
+
     ],
+
     "4": [
+
       { tekst: "Slides", sti: "slides/kapitel-4.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-4.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c4.html", ikon: "animationer" }
+
     ],
+
     "5": [
+
       { tekst: "Slides", sti: "slides/kapitel-5.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-5.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c5.html", ikon: "animationer" }
+
     ],
+
     "6": [
+
       { tekst: "Slides", sti: "slides/kapitel-6.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-6.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c6.html", ikon: "animationer" }
+
     ],
+
     "7": [
+
       { tekst: "Slides", sti: "slides/kapitel-7.html", ikon: "slides" },
+
       { tekst: "Modulplaner", sti: "modulplaner/kapitel-7.html", ikon: "modulplaner" },
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c7.html", ikon: "animationer" }
+
     ],
+
     "8": [
+
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c8.html", ikon: "animationer" }
+
     ],
+
     // Slides til kapitel B2 (22. okt. 2026), foreløbig kun B2.4, B2.5 og B2.6 (B2.6 fra 1. nov. 2026).
+
     "B2": [
+
       { tekst: "Slides", sti: "slides/kapitel-b2.html", ikon: "slides" }
+
     ],
+
     // B-bogen (21. okt. 2026): slides til kapitel B3, fra 26. okt. 2026 hele kapitlet (B3.1 til B3.4). Filen kopieres til b/slides/,
+
     // når slidesene bygges (slides/kopier_til_b.py).
+
     "B3": [
+
       { tekst: "Slides", sti: "slides/kapitel-b3.html", ikon: "slides" }
+
     ],
+
     // Slides til kapitel B4 (26. okt. 2026), nu hele kapitlet (B4.1 til B4.7).
+
     "B4": [
+
       { tekst: "Slides", sti: "slides/kapitel-b4.html", ikon: "slides" }
+
     ],
+
     // Slides til kapitel B8 (22. okt. 2026), foreløbig kun B8.6 TLC.
+
     "B8": [
+
       { tekst: "Slides", sti: "slides/kapitel-b8.html", ikon: "slides" }
+
     ]
+
   };
 
+
+
   function li(klasse) {
+
     var el = document.createElement("li");
+
     el.className = "sidebar-item " + klasse;
+
     return el;
+
   }
+
+
 
   function lavKapitel(ul) {
+
     var punkter = Array.prototype.filter.call(ul.children, function (el) { return el.tagName === "LI"; });
+
     var afsnit = [], opgaver = [], sidsteAfsnit = -1, foersteOpgave = -1;
+
     punkter.forEach(function (p, i) {
+
       var a = p.querySelector("a.sidebar-link");
+
       if (!a) return;
+
       var href = a.getAttribute("href") || "";
+
       if (/(^|\/)kapitler\//.test(href) || /(^|\/)temaer\/t\d+-\d+-(?!opgaver)[^\/]*\.html/.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
+
       else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href) || /(^|\/)temaer\/t\d+-\d+-opgaver\.html/.test(href)) {
+
         opgaver.push(p);
+
         if (foersteOpgave < 0) foersteOpgave = i;
+
       }
+
     });
+
     if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
 
+
+
     // Kapitlets nummer og vejen til bogens rod tages fra første afsnit ("../kapitler/1-1-....html").
+
     // I B- og A-bogen hedder afsnittene "B1.1" og "A1.1"; dér er nummeret "B1" og "A1", som ikke står i EKSTRA.
+
     var foerste = afsnit[0].getAttribute("href");
+
     var nr = (afsnit[0].textContent.trim().match(/^([AB]?\d+)\./) || [])[1];
+
     var rod = foerste.slice(0, foerste.search(/(kapitler|temaer)\//));
 
+
+
     // Fagord, repetition og øvelser: "Fagord til kapitel 1" bliver til "Fagord". De enkelte øvelser tages ud.
+
     var oevelsesside = null, oevelseAktiv = false, fagordPunkt = null;
+
     punkter.slice(foersteOpgave).forEach(function (p) {
+
       if (opgaver.indexOf(p) >= 0) return;
+
       var a = p.querySelector("a.sidebar-link");
+
       var href = a ? a.getAttribute("href") || "" : "";
+
       if (/(^|\/)oevelser\/\d[^\/]*\.html/.test(href)) {
+
         if (a.classList.contains("active")) oevelseAktiv = true;
+
         p.remove();
+
         return;
+
       }
+
       if (/(^|\/)oevelser\/kapitel-[^\/]*\.html/.test(href)) oevelsesside = a;
+
       if (/(^|\/)fagord\/[^\/]*\.html/.test(href)) fagordPunkt = p;
+
       p.classList.add("kapitelmenu-side");
+
       var t = p.querySelector("a.sidebar-link .menu-text");
+
       if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+[AB]?\d+$/i, "").replace(/\s+til\s+Tema:.*$/, "");
+
     });
+
     if (oevelseAktiv && oevelsesside) {
+
       oevelsesside.classList.add("active");
+
       oevelsesside.setAttribute("aria-current", "page");
+
     }
+
+
 
     var raekke = li("kapitelmenu-opgaver");
+
     var navn = document.createElement("span");
+
     navn.className = "kapitelmenu-navn";
+
     navn.textContent = "Opgaver";
+
     raekke.appendChild(navn);
+
     opgaver.forEach(function (p) {
+
       var gammel = p.querySelector("a.sidebar-link");
+
       var a = document.createElement("a");
+
       a.href = gammel.getAttribute("href");
+
       a.textContent = gammel.textContent.trim().replace(/^Opgaver til\s*/, "");
+
       a.title = gammel.textContent.trim();
+
       if (gammel.classList.contains("active")) { a.className = "active"; a.setAttribute("aria-current", "page"); }
+
       raekke.appendChild(a);
+
     });
+
     ul.insertBefore(raekke, opgaver[0]);
+
     opgaver.forEach(function (p) { p.remove(); });
 
+
+
     // Fagord står sidst blandt materialerne, lige over Slides, med et kartotekskort som ikon ligesom i Portugals
+
     // historie (Niels 29. okt. 2026: "samme ikon skal du også bruge ved kemibogen, hvor fagord også skal stå lige over
+
     // slides"). Ikonet står i stil/kemibogen.scss.
+
     if (fagordPunkt) {
+
       fagordPunkt.classList.remove("kapitelmenu-side");
+
       fagordPunkt.classList.add("kapitelmenu-ekstra");
+
       var fagordLink = fagordPunkt.querySelector("a.sidebar-link");
+
       if (fagordLink) fagordLink.classList.add("kapitelmenu-fagord");
+
       ul.appendChild(fagordPunkt);
+
     }
+
+
 
     (EKSTRA[nr] || []).filter(function (e) {
+
       return e.ikon !== "modulplaner" || MODULPLANER_KLAR.indexOf(nr) >= 0;
+
     }).forEach(function (e) {
+
       var p = li("kapitelmenu-ekstra");
+
       var boks = document.createElement("div");
+
       boks.className = "sidebar-item-container";
+
       var a = document.createElement("a");
+
       a.className = "sidebar-item-text sidebar-link";
+
       a.href = e.url || rod + e.sti;
+
       a.target = "_blank";
+
       a.rel = "noopener";
+
       a.classList.add("kapitelmenu-" + e.ikon);
+
       a.textContent = e.tekst;
+
       boks.appendChild(a);
+
       p.appendChild(boks);
+
       ul.appendChild(p);
+
     });
+
   }
+
+
 
   function start() {
+
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
+
     // De små temaer har ingen opgavesider, men fagordssiden hedder også bare "Fagord" dér.
+
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar a.sidebar-link .menu-text"), function (t) {
+
       if (/^Fagord til Tema:/.test(t.textContent.trim())) {
+
         t.textContent = "Fagord";
+
         var p = t.closest("li");
+
         if (p) p.classList.add("kapitelmenu-side");
+
         var a = t.closest("a");
+
         if (a) a.classList.add("kapitelmenu-fagord");
+
       }
+
     });
+
     // "Kapitel 7: Syrer og baser" bliver til "7: Syrer og baser" (kun i menuen; siden hedder stadig "Kapitel 7").
+
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar li.sidebar-item-section > .sidebar-item-container .menu-text"), function (t) {
+
       t.textContent = t.textContent.trim().replace(/^Kapitel\s+([AB]?\d+):/, "$1:");
+
     });
-    // Materialer står sidst i menuen, under Bilag.
+
+    // Øvrige materialer står sidst i menuen, under Bilag. Kun Laboratorieøvelser vises; kapitlernes øvelsessider og
+
+    // øvelserne selv tages ud, og står man på en af dem, er Laboratorieøvelser fremhævet (Niels 4. nov. 2026).
+
     var liste = document.querySelector('#quarto-sidebar a.sidebar-link[href$="oevelser/oversigt.html"]');
+
     var del = liste && liste.closest("ul.sidebar-section.depth1");
+
+    if (del) {
+
+      var aktiv = false;
+
+      Array.prototype.slice.call(del.children).forEach(function (p) {
+
+        var a = p.querySelector("a.sidebar-link");
+
+        if (!a || a === liste) return;
+
+        if (/(^|\/)oevelser\/[^\/]*\.html/.test(a.getAttribute("href") || "")) {
+
+          if (a.classList.contains("active")) aktiv = true;
+
+          p.remove();
+
+        }
+
+      });
+
+      if (aktiv) { liste.classList.add("active"); liste.setAttribute("aria-current", "page"); }
+
+    }
+
     del = del && del.closest("li.sidebar-item-section");
+
     if (del && del.parentNode) del.parentNode.appendChild(del);
+
   }
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+
   else start();
+
 })();
+
 </script>
+
 <script>
+
 // Kernestofmærkaten ("Kernestof på kemi B", "Kernestof på kemi A" eller "Supplerende stof") står i .qmd-filen lige
+
 // under afsnittets overskrift. Dette script flytter den op til højre for overskriften som en lille, diskret ring
+
 // (Niels 18. okt. 2026: "lidt mere diskret ... til højre for overskriften og ikke nedenunder"). Uden JavaScript
+
 // bliver den stående under overskriften. I PDF'en er den ikke med. Se noter/kernestof.md.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var titel = document.querySelector("main h1.title") || document.querySelector("main h1");
+
   if (!titel) return;
+
   Array.prototype.forEach.call(document.querySelectorAll("main div.kernestofmaerke"), function (maerke) {
+
     var ring = document.createElement("span");
+
     ring.className = maerke.className;
+
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+
     titel.appendChild(ring);
+
     maerke.parentNode.removeChild(maerke);
+
   });
+
   // Forløbsmærkatet på en opgave ("Velegnet til sundhedsforløb", se stil/lektielinks.lua) står lige under opgavens
+
   // overskrift og flyttes på samme måde op til højre for titlen.
+
   Array.prototype.forEach.call(document.querySelectorAll("main div.forloebsmaerke"), function (maerke) {
+
     var h2 = maerke.previousElementSibling;
+
     if (!h2 || h2.tagName !== "H2") return;
+
     var ring = document.createElement("span");
+
     ring.className = maerke.className;
+
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+
     h2.appendChild(ring);
+
     maerke.parentNode.removeChild(maerke);
+
   });
+
 });
+
 </script>
+
 <script>
+
 // Fokusspørgsmål i boksen Kort sagt (C-bogens kapitler og kapitel B3 23. okt. 2026, B-bogens kapitler 26. okt. 2026).
+
 // Se noter/fokusspoergsmaal.md.
+
 //
+
 // Spørgsmålene står i afsnittet lige under Kort sagt som ::: {.fokusspoergsmaal} med en nummereret liste.
+
 // Scriptet flytter dem ind i boksen og sætter en knap i boksens titellinje, der skifter mellem Kort sagt og
+
 // fokusspørgsmålene. Siden åbner altid med Kort sagt. Når spørgsmålene vises, lægger knappen Kopiér dem i
+
 // udklipsholderen med afsnittets titel og adresse, så læreren kan sende dem til eleverne. De kopieres både som
+
 // formateret tekst (nummereret liste og link, når de sættes ind i Teams, Word eller en mail) og som ren tekst.
+
 // Uden JavaScript ses spørgsmålene ikke; stilen står i stil/kemibogen.scss.
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var lister = document.querySelectorAll("main .fokusspoergsmaal");
+
   if (!lister.length) return;
 
+
+
   function el(navn, klasse, tekst) {
+
     var e = document.createElement(navn);
+
     if (klasse) e.className = klasse;
+
     if (tekst) e.textContent = tekst;
+
     return e;
+
   }
+
   function knap(klasse, ikon, tekst) {
+
     var k = el("button", "fs-knap " + klasse);
+
     k.type = "button";
+
     var i = el("i", "bi " + ikon);
+
     i.setAttribute("aria-hidden", "true");
+
     k.appendChild(i);
+
     k.appendChild(el("span", "fs-knaptekst", tekst));
+
     return k;
+
   }
+
   function saetTekst(k, ikon, tekst) {
+
     k.querySelector(".bi").className = "bi " + ikon;
+
     k.querySelector(".fs-knaptekst").textContent = tekst;
+
   }
+
   function escape(t) {
+
     return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
   }
+
+
 
   // Afsnittets titel (fx "B3.2 Intermolekylære bindinger") uden linkikonet og uden kernestofmærkaten, som
+
   // stil/kernestofmaerke.html sætter ind i overskriften. Quarto lægger selve titlen i sit eget felt.
+
   function titel() {
+
     var h1 = document.querySelector("main h1.title") || document.querySelector("main h1");
+
     if (!h1) return document.title;
+
     var kopi = (h1.querySelector(".quarto-section-identifier") || h1).cloneNode(true);
+
     Array.prototype.forEach.call(kopi.querySelectorAll(".anchorjs-link, .screen-reader-only"), function (e) {
+
       e.parentNode.removeChild(e);
+
     });
+
     return kopi.textContent.replace(/\s+/g, " ").trim();
+
   }
+
+
 
   // Ren tekst, hvor sænkede og hævede tegn bliver til tegn, der kan stå i en almindelig tekst: C₂H₆O og Cl⁻
+
   var SAENKET = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉",
+
     "+": "₊", "−": "₋", "-": "₋" };
+
   var HAEVET = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹",
+
     "+": "⁺", "−": "⁻", "-": "⁻" };
+
   function renTekst(node) {
+
     var ud = "";
+
     Array.prototype.forEach.call(node.childNodes, function (n) {
+
       if (n.nodeType === 3) {
+
         ud += n.nodeValue;
+
       } else if (n.nodeType === 1) {
+
         var t = renTekst(n);
+
         var tabel = n.tagName === "SUB" ? SAENKET : n.tagName === "SUP" ? HAEVET : null;
+
         if (tabel && t.split("").every(function (c) { return tabel[c]; })) {
+
           t = t.split("").map(function (c) { return tabel[c]; }).join("");
+
         }
+
         ud += t;
+
       }
+
     });
+
     return ud.replace(/\s+/g, " ").trim();
+
   }
+
+
 
   // Formateret tekst til udklipsholderen: kun hævet, sænket og kursiv skrift følger med, ikke mærkerne fra
+
   // forklaringerne ved fagord (stil/fagordpeg.html) og andet, der kun hører til siden
+
   var BEHOLD = { SUB: "sub", SUP: "sup", EM: "em", I: "em", STRONG: "strong", B: "strong" };
+
   function renHtml(node) {
+
     var ud = "";
+
     Array.prototype.forEach.call(node.childNodes, function (n) {
+
       if (n.nodeType === 3) {
+
         ud += escape(n.nodeValue);
+
       } else if (n.nodeType === 1) {
+
         var tag = BEHOLD[n.tagName];
+
         ud += tag ? "<" + tag + ">" + renHtml(n) + "</" + tag + ">" : renHtml(n);
+
       }
+
     });
+
     return ud.replace(/\s+/g, " ").trim();
+
   }
+
+
 
   function kopier(tekst, html, faerdig) {
+
     // Den gamle måde virker også uden https: et markeret tekstfelt, og ved kopieringen lægges begge udgaver ind
+
     function iHaanden() {
+
       var felt = el("textarea");
+
       felt.value = tekst;
+
       felt.setAttribute("readonly", "");
+
       felt.style.position = "fixed";
+
       felt.style.top = "0";
+
       felt.style.opacity = "0";
+
       document.body.appendChild(felt);
+
       felt.select();
+
       function vedKopi(e) {
+
         if (!e.clipboardData) return;
+
         e.clipboardData.setData("text/plain", tekst);
+
         e.clipboardData.setData("text/html", html);
+
         e.preventDefault();
+
       }
+
       document.addEventListener("copy", vedKopi);
+
       var ok = false;
+
       try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+
       document.removeEventListener("copy", vedKopi);
+
       document.body.removeChild(felt);
+
       faerdig(ok);
+
     }
+
     if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write && window.isSecureContext) {
+
       try {
+
         navigator.clipboard.write([new ClipboardItem({
+
           "text/plain": new Blob([tekst], { type: "text/plain" }),
+
           "text/html": new Blob([html], { type: "text/html" })
+
         })]).then(function () { faerdig(true); }, iHaanden);
+
         return;
+
       } catch (e) {}
+
     }
+
     iHaanden();
+
   }
 
+
+
   Array.prototype.forEach.call(lister, function (liste, nr) {
+
     var boks = liste.previousElementSibling;
+
     if (!boks || !boks.classList.contains("callout")) return;
+
     var hoved = boks.querySelector(".callout-header");
+
     var titelfelt = boks.querySelector(".callout-title-container");
+
     var krop = boks.querySelector(".callout-body-container");
+
     if (!hoved || !titelfelt || !krop) return;
 
+
+
     // Titlen "Kort sagt" kommer i sit eget felt, så den kan skiftes
+
     var navn = el("span", "fs-navn", "Kort sagt");
+
     Array.prototype.slice.call(titelfelt.childNodes).forEach(function (n) {
+
       if (n.nodeType === 3) titelfelt.removeChild(n);
+
     });
+
     titelfelt.appendChild(navn);
 
+
+
     // Kort sagt og spørgsmålene ligger i boksen hver for sig
+
     var kortSagt = el("div", "fs-kortsagt");
+
     while (krop.firstChild) kortSagt.appendChild(krop.firstChild);
+
     krop.appendChild(kortSagt);
+
     krop.appendChild(liste);
+
     liste.id = liste.id || "fokusspoergsmaal-" + (nr + 1);
 
+
+
     boks.classList.add("fs-boks");
+
     boks.removeAttribute("title"); // ellers siger musen "Kort sagt", også når spørgsmålene vises
 
+
+
     var knapper = el("div", "fs-knapper");
+
     var kopiKnap = knap("fs-kopier", "bi-clipboard", "Kopiér");
+
     var skift = knap("fs-skift", "bi-question-circle", "Vis fokusspørgsmål");
+
     kopiKnap.hidden = true;
+
     kopiKnap.title = "Kopiér fokusspørgsmålene, så du kan sende dem til eleverne";
+
     skift.setAttribute("aria-controls", liste.id);
+
     skift.setAttribute("aria-expanded", "false");
+
     knapper.appendChild(kopiKnap);
+
     knapper.appendChild(skift);
+
     hoved.appendChild(knapper);
 
+
+
     skift.addEventListener("click", function () {
+
       var fokus = boks.classList.toggle("fs-vis-fokus");
+
       navn.textContent = fokus ? "Fokusspørgsmål" : "Kort sagt";
+
       saetTekst(skift, fokus ? "bi-card-text" : "bi-question-circle", fokus ? "Vis Kort sagt" : "Vis fokusspørgsmål");
+
       skift.setAttribute("aria-expanded", fokus ? "true" : "false");
+
       kopiKnap.hidden = !fokus;
+
     });
 
+
+
     var ur = null;
+
     kopiKnap.addEventListener("click", function () {
+
       var side = location.href.split("#")[0].split("?")[0];
+
       var afsnit = titel();
+
       var punkter = Array.prototype.slice.call(liste.querySelectorAll("li"));
+
       var tekst = "Fokusspørgsmål til " + afsnit + "\n" + side + "\n\n" +
+
         punkter.map(function (li, i) { return (i + 1) + ". " + renTekst(li); }).join("\n") + "\n";
+
       var html = "<p><strong>Fokusspørgsmål til <a href=\"" + escape(side) + "\">" + escape(afsnit) +
+
         "</a></strong></p><ol>" +
+
         punkter.map(function (li) { return "<li>" + renHtml(li) + "</li>"; }).join("") + "</ol>";
+
       kopier(tekst, html, function (ok) {
+
         saetTekst(kopiKnap, ok ? "bi-check-lg" : "bi-x-lg", ok ? "Kopieret" : "Kunne ikke kopiere");
+
         kopiKnap.classList.add("fs-kopieret");
+
         clearTimeout(ur);
+
         ur = setTimeout(function () {
+
           saetTekst(kopiKnap, "bi-clipboard", "Kopiér");
+
           kopiKnap.classList.remove("fs-kopieret");
+
         }, 2200);
+
+      });
+
+    });
+
+  });
+
+});
+
+</script>
+
+<script>
+// Elevnoter: eleven markerer tekst i bogen og skriver noter (Niels 4. nov. 2026, efter forslag fra en elev).
+//
+// Markerer eleven tekst med musen, kommer to knapper frem: Markér (gul baggrund) og Tilføj note. Et klik på en
+// markering viser noten eller knapperne Tilføj note og Fjern markering. En note kan sendes til læreren uden navn:
+// den lander i Google-arket livefeedback i fanen "feedback til bogen" (modtageren står i
+// vaerktoej/livefeedback_appsscript.gs; den gamle udgave af modtageren lægger den i fanen Feedback). Højst
+// LOFT_PR_MINUT beskeder i minuttet fra hver browser.
+// Alt gemmes kun i browseren (localStorage, nøglen "kemibogen-noter", fælles for bøgerne på kemibogen.dk). Knappen
+// Mine noter nederst til højre viser alle noter og kan kopiere dem, gemme dem som fil og hente dem igen.
+// Kun på computer med mus, ikke på telefon og tablet (Niels 4. nov. 2026).
+//
+// En markering huskes som sin tekst plus lidt tekst før og efter (mellemrum gjort ens, formler sprunget over), så den
+// finder sin plads igen, når bogen er bygget på ny. Findes teksten ikke mere, står noten stadig under Mine noter.
+(function () {
+  "use strict";
+  if (!window.matchMedia || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  var main = document.getElementById("quarto-document-content");
+  if (!main || !window.localStorage) return;
+
+  var SEND_URL = "https://script.google.com/macros/s/AKfycbxgfp2af0Zf9QL15s8E6FtsYOCrKh8rRZcjRY_cMh6MCgaEZVfRr2a3CDts29EB6CRQug/exec";
+  var NOEGLE = "kemibogen-noter";
+  var SENDT_NOEGLE = "kemibogen-noter-sendt";
+  var GAA_TIL = "kemibogen-noter-gaa-til";
+  var LOFT_PR_MINUT = 2;
+  var MAKS_TEGN = 4000;
+  var KONTEKST = 40;
+
+  var SIDE = location.pathname.replace(/\/index\.html$/, "/");
+  var BOG = (function () {
+    var her = document.querySelector(".niveauer .her");
+    if (her) return her.textContent.replace(/kemi/i, "").trim();
+    var m = SIDE.match(/\/([abc])\//);
+    return m ? m[1].toUpperCase() : "";
+  })();
+  var h1 = document.querySelector("#title-block-header h1, h1.title, main h1");
+  var TITEL = (h1 ? h1.textContent : document.title).replace(/\s+/g, " ").trim();
+
+  // ---------- Gemte noter ----------
+  function laes() {
+    try {
+      var d = JSON.parse(localStorage.getItem(NOEGLE) || "null");
+      if (d && d.sider && typeof d.sider === "object") return d;
+    } catch (e) {}
+    return { version: 1, sider: {} };
+  }
+  var data = laes();
+  function sidensPoster() { var s = data.sider[SIDE]; return s && s.poster ? s.poster : []; }
+  function findPost(id) { return sidensPoster().filter(function (p) { return p.id === id; })[0]; }
+  // Læser altid det gemte igen først, så noter fra andre faneblade ikke bliver skrevet over. aendring() kan rette i
+  // andre siders noter; denne sides noter er dem i hukommelsen.
+  function gem(aendring) {
+    var poster = sidensPoster();
+    var frisk = laes();
+    if (aendring) aendring(frisk);
+    if (poster.length) frisk.sider[SIDE] = { titel: TITEL, bog: BOG, poster: poster };
+    else delete frisk.sider[SIDE];
+    data = frisk;
+    try { localStorage.setItem(NOEGLE, JSON.stringify(data)); } catch (e) { return false; }
+    opdaterKnap();
+    return true;
+  }
+  function tilfoej(post) {
+    if (!data.sider[SIDE]) data.sider[SIDE] = { titel: TITEL, bog: BOG, poster: [] };
+    data.sider[SIDE].poster.push(post);
+    gem();
+  }
+  function nytId() { return "n" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+  function harNote(p) { return !!(p && p.note && p.note.trim()); }
+
+  // ---------- Sidens tekst som én streng ----------
+  // Mellemrum gøres ens, og formler, figurer, knapper og egne knapper springes over. Hvert tegn i hver tekstnode får
+  // sin plads i strengen, så en markering kan gemmes som to tal og lægges ind igen.
+  var SPRING = "script, style, svg, math, mjx-container, .math, textarea, input, select, button, noscript, .kb-ui, .screen-reader-only, .visually-hidden";
+  var MELLEM = /\s/;
+  var ix = null;
+  function indeks() {
+    if (ix) return ix;
+    var noder = [], pos = [], dele = [], n = 0, mellem = true, t;
+    var w = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+      acceptNode: function (x) {
+        if (x.nodeType === 1) return x.matches(SPRING) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    while ((t = w.nextNode())) {
+      var s = t.data, p = new Int32Array(s.length);
+      for (var i = 0; i < s.length; i++) {
+        var c = s.charAt(i);
+        if (MELLEM.test(c)) {
+          if (!mellem) { dele.push(" "); n++; mellem = true; }
+          p[i] = n > 0 ? n - 1 : 0;
+        } else { dele.push(c); p[i] = n; n++; mellem = false; }
+      }
+      noder.push(t); pos.push(p);
+    }
+    ix = { tekst: dele.join(""), noder: noder, pos: pos };
+    return ix;
+  }
+  function omraadeTilTal(r) {
+    var x = indeks(), s = -1, e = -1;
+    for (var k = 0; k < x.noder.length; k++) {
+      var n = x.noder[k];
+      if (!r.intersectsNode(n)) continue;
+      var a = n === r.startContainer ? r.startOffset : 0;
+      var b = n === r.endContainer ? r.endOffset : n.length;
+      while (a < b && MELLEM.test(n.data.charAt(a))) a++;
+      while (b > a && MELLEM.test(n.data.charAt(b - 1))) b--;
+      if (a >= b) continue;
+      if (s < 0) s = x.pos[k][a];
+      e = x.pos[k][b - 1] + 1;
+    }
+    return s < 0 || e <= s ? null : [s, e];
+  }
+  function ens(a, b, bagfra) {
+    var n = 0, la = a.length, lb = b.length;
+    while (n < la && n < lb && (bagfra ? a.charAt(la - 1 - n) === b.charAt(lb - 1 - n) : a.charAt(n) === b.charAt(n))) n++;
+    return n;
+  }
+  function findPlads(post) {
+    var t = indeks().tekst, c = post.citat || "", foer = post.foer || "", efter = post.efter || "";
+    if (!c) return null;
+    var bedst = -1, bedstPoint = -1, bedstAfst = Infinity, i = t.indexOf(c);
+    while (i >= 0) {
+      var point = ens(t.slice(Math.max(0, i - foer.length), i), foer, true) + ens(t.substr(i + c.length, efter.length), efter, false);
+      var afst = Math.abs(i - (post.start || 0));
+      if (point > bedstPoint || (point === bedstPoint && afst < bedstAfst)) { bedst = i; bedstPoint = point; bedstAfst = afst; }
+      i = t.indexOf(c, i + 1);
+    }
+    return bedst < 0 ? null : [bedst, bedst + c.length];
+  }
+
+  // ---------- Markeringer i teksten ----------
+  function alleMarks(id) { return Array.prototype.slice.call(main.querySelectorAll('mark.kb-mark[data-kb="' + id + '"]')); }
+  function laegMarkering(post, s, e) {
+    var x = indeks(), stykker = [];
+    for (var k = 0; k < x.noder.length; k++) {
+      var p = x.pos[k];
+      if (!p.length || p[p.length - 1] < s || p[0] >= e) continue;
+      var a = 0; while (a < p.length && p[a] < s) a++;
+      var b = p.length; while (b > a && p[b - 1] >= e) b--;
+      if (a >= b) continue;
+      var node = x.noder[k];
+      // Et mellemrum alene pakkes kun ind inde i en linje, ikke mellem afsnit, rækker og punkter.
+      if (!/\S/.test(node.data.slice(a, b))) {
+        var f = node.parentNode;
+        if (!f || getComputedStyle(f).display.indexOf("inline") !== 0) continue;
+      }
+      stykker.push([node, a, b]);
+    }
+    var sidste = null;
+    stykker.forEach(function (st) {
+      var node = st[0];
+      if (st[2] < node.length) node.splitText(st[2]);
+      if (st[1] > 0) node = node.splitText(st[1]);
+      var m = document.createElement("mark");
+      m.className = "kb-mark";
+      m.setAttribute("data-kb", post.id);
+      node.parentNode.insertBefore(m, node);
+      m.appendChild(node);
+      sidste = m;
+    });
+    ix = null;
+    if (sidste) { sidste.classList.add("kb-sidste"); visNoteMaerke(post); }
+    return !!sidste;
+  }
+  function visNoteMaerke(post) {
+    alleMarks(post.id).forEach(function (m) { m.classList.toggle("kb-har-note", harNote(post)); });
+  }
+  function fjernMarks(id) {
+    alleMarks(id).forEach(function (m) {
+      var f = m.parentNode;
+      while (m.firstChild) f.insertBefore(m.firstChild, m);
+      f.removeChild(m);
+      f.normalize();
+    });
+    ix = null;
+  }
+  var placeret = {};
+  function genopret() {
+    sidensPoster().slice().sort(function (a, b) { return (a.start || 0) - (b.start || 0); }).forEach(function (post) {
+      if (placeret[post.id]) return;
+      var se = findPlads(post);
+      if (se && laegMarkering(post, se[0], se[1])) placeret[post.id] = true;
+    });
+  }
+
+  // Den markerede tekst til visning og til læreren: formler står som TeX i stedet for at forsvinde.
+  document.querySelectorAll("#quarto-document-content .math").forEach(function (m) {
+    if (!m.querySelector("mjx-container")) m.setAttribute("data-kb-tex", m.textContent.replace(/^\s*\\[(\[]|\\[)\]]\s*$/g, "").trim());
+  });
+  // TeX gjort lettere at læse: 0{,}078 bliver 0,078, \frac{a}{b} bliver (a)/(b) og \mathrm{M} bliver M.
+  function paenTex(t) {
+    var gl;
+    t = t.replace(/\{,\}/g, ",");
+    do {
+      gl = t;
+      t = t.replace(/\\(?:mathrm|text|textrm|mathit|mathbf|ce|operatorname)\s*\{([^{}]*)\}/g, "$1")
+        .replace(/\\[dt]?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, "($1)/($2)");
+    } while (t !== gl);
+    var tegn = { cdot: "·", times: "×", rightarrow: "→", to: "→", longrightarrow: "→", rightleftharpoons: "⇌", leftrightarrow: "↔",
+      pm: "±", Delta: "Δ", approx: "≈", leq: "≤", geq: "≥", le: "≤", ge: "≥", degree: "°", circ: "°", left: "", right: "" };
+    t = t.replace(/\\([A-Za-z]+)/g, function (a, navn) { return tegn.hasOwnProperty(navn) ? tegn[navn] : a; });
+    return t.replace(/\\[ ,;:!]/g, " ").replace(/[{}]/g, "").replace(/\s+/g, " ").trim();
+  }
+  function tex(m) {
+    var t = m.getAttribute("data-kb-tex");
+    if (!t) {
+      try {
+        var items = window.MathJax.startup.document.getMathItemsWithin(m);
+        if (items && items.length && items[0].math) t = items[0].math;
+      } catch (e) {}
+    }
+    return t ? paenTex(t) : "[formel]";
+  }
+  function visningstekst(r) {
+    var rod = r.commonAncestorContainer;
+    if (rod.nodeType !== 1) rod = rod.parentNode;
+    var formel = rod.closest(".math");
+    if (formel) return tex(formel);
+    var ud = "", n;
+    var w = document.createTreeWalker(rod, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+      acceptNode: function (x) {
+        if (!r.intersectsNode(x)) return NodeFilter.FILTER_REJECT;
+        if (x.nodeType === 1) {
+          if (x.matches(".math")) return NodeFilter.FILTER_ACCEPT;
+          return x.matches(SPRING) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_SKIP;
+        }
+        return x.parentNode.closest(".math") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    while ((n = w.nextNode())) {
+      if (n.nodeType === 1) { ud += " " + tex(n) + " "; continue; }
+      var a = n === r.startContainer ? r.startOffset : 0;
+      var b = n === r.endContainer ? r.endOffset : n.length;
+      ud += n.data.slice(a, b);
+    }
+    return ud.replace(/\s+/g, " ").trim().slice(0, 1500);
+  }
+
+  // ---------- Små hjælpere ----------
+  function el(tag, klasse, tekst) {
+    var e = document.createElement(tag);
+    if (klasse) e.className = klasse;
+    if (tekst != null) e.textContent = tekst;
+    return e;
+  }
+  function knap(tekst, klasse, handling) {
+    var b = el("button", klasse || "", tekst);
+    b.type = "button";
+    if (handling) b.addEventListener("click", handling);
+    return b;
+  }
+  function kort(t, n) { t = (t || "").replace(/\s+/g, " ").trim(); return t.length > n ? t.slice(0, n - 1).trim() + "…" : t; }
+  function dato(iso) {
+    var d = new Date(iso);
+    if (isNaN(d)) return "";
+    var to = function (x) { return (x < 10 ? "0" : "") + x; };
+    return d.toLocaleDateString("da-DK", { day: "numeric", month: "short" }) + " kl. " + to(d.getHours()) + "." + to(d.getMinutes());
+  }
+  // Knap, der skal trykkes to gange (første tryk skifter teksten i 3 sekunder).
+  function toTryk(b, sikkerTekst, handling) {
+    var normal = b.textContent, timer = null;
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (b.classList.contains("kb-sikker")) { clearTimeout(timer); handling(); return; }
+      b.classList.add("kb-sikker");
+      b.textContent = sikkerTekst;
+      timer = setTimeout(function () { b.classList.remove("kb-sikker"); b.textContent = normal; }, 3000);
+    });
+  }
+  function placer(boks, rect, over, venstre) {
+    boks.style.visibility = "hidden";
+    boks.style.display = "block";
+    var bw = boks.offsetWidth, bh = boks.offsetHeight, vw = document.documentElement.clientWidth, vh = window.innerHeight;
+    var x = venstre ? rect.left : rect.left + rect.width / 2 - bw / 2;
+    x = Math.max(8, main.getBoundingClientRect().left - 8, Math.min(x, vw - bw - 8));
+    var pladsOver = rect.top - bh - 8 > 8, pladsUnder = rect.bottom + 8 + bh < vh - 8;
+    var y = (over && pladsOver) || (!pladsUnder && pladsOver) ? rect.top - bh - 8 : rect.bottom + 8;
+    boks.style.left = Math.round(x + window.scrollX) + "px";
+    boks.style.top = Math.round(y + window.scrollY) + "px";
+    boks.style.visibility = "";
+    // Er der hverken plads over eller under, rulles siden, så hele boksen kan ses.
+    if (y + bh > vh - 8) window.scrollBy({ top: y + bh - vh + 16, behavior: "smooth" });
+  }
+
+  // ---------- Knapperne ved det markerede ----------
+  var vaerktoej = el("div", "kb-ui kb-vaerktoej");
+  vaerktoej.setAttribute("role", "toolbar");
+  vaerktoej.addEventListener("mousedown", function (e) { e.preventDefault(); });
+  var valgt = null;
+  function skjulVaerktoej() { vaerktoej.style.display = "none"; valgt = null; }
+  function visValg() {
+    var sel = window.getSelection();
+    if (!sel.rangeCount || sel.isCollapsed) return;
+    var r = sel.getRangeAt(0);
+    if (!main.contains(r.commonAncestorContainer)) return;
+    var se = omraadeTilTal(r);
+    if (!se || se[1] - se[0] > MAKS_TEGN) return;
+    valgt = r.cloneRange();
+    vaerktoej.innerHTML = "";
+    vaerktoej.appendChild(knap("Markér", "kb-gul", function () { nyPost(false); }));
+    vaerktoej.appendChild(knap("Tilføj note", "", function () { nyPost(true); }));
+    placer(vaerktoej, r.getBoundingClientRect(), true, false);
+  }
+  function nyPost(medNote) {
+    if (!valgt) return;
+    var r = valgt, se = omraadeTilTal(r);
+    skjulVaerktoej();
+    window.getSelection().removeAllRanges();
+    if (!se) return;
+    var t = indeks().tekst, nu = new Date().toISOString();
+    var post = {
+      id: nytId(), citat: t.slice(se[0], se[1]), foer: t.slice(Math.max(0, se[0] - KONTEKST), se[0]),
+      efter: t.slice(se[1], se[1] + KONTEKST), start: se[0], visning: visningstekst(r), note: "", oprettet: nu, rettet: nu
+    };
+    if (!laegMarkering(post, se[0], se[1])) return;
+    placeret[post.id] = true;
+    tilfoej(post);
+    if (medNote) aabnKort(post.id);
+  }
+  function visMarkMenu(post, m) {
+    lukKort();
+    vaerktoej.innerHTML = "";
+    vaerktoej.appendChild(knap("Tilføj note", "", function () { skjulVaerktoej(); aabnKort(post.id); }));
+    vaerktoej.appendChild(knap("Fjern markering", "", function () { skjulVaerktoej(); fjernPost(post.id); }));
+    valgt = null;
+    var rects = m.getClientRects();
+    placer(vaerktoej, rects.length ? rects[0] : m.getBoundingClientRect(), true, false);
+  }
+  function fjernPost(id) {
+    fjernMarks(id);
+    delete placeret[id];
+    var s = data.sider[SIDE];
+    if (s) s.poster = s.poster.filter(function (p) { return p.id !== id; });
+    gem();
+    if (panel.classList.contains("kb-aaben")) tegnPanel();
+  }
+
+  // ---------- Noten ----------
+  var kortEl = el("div", "kb-ui kb-kort");
+  kortEl.setAttribute("role", "dialog");
+  kortEl.setAttribute("aria-label", "Note");
+  var kortTop = el("div", "kb-kort-top");
+  kortTop.appendChild(el("span", "", "Note"));
+  var kortLuk = knap("×", "kb-luk", function () { lukKort(); });
+  kortLuk.title = "Luk";
+  kortLuk.setAttribute("aria-label", "Luk");
+  kortTop.appendChild(kortLuk);
+  var felt = el("textarea");
+  felt.rows = 4;
+  felt.placeholder = "Skriv en note eller et spørgsmål …";
+  var kortBund = el("div", "kb-kort-bund");
+  var sendKnap = knap("Send til læreren", "kb-send", function () { send(); });
+  var fjernKnap = knap("Fjern", "kb-fjern");
+  toTryk(fjernKnap, "Ja, fjern note og markering", function () { var id = aktiv && aktiv.id; lukKort(); if (id) fjernPost(id); });
+  kortBund.appendChild(sendKnap);
+  kortBund.appendChild(fjernKnap);
+  var status = el("div", "kb-status");
+  kortEl.appendChild(kortTop);
+  kortEl.appendChild(felt);
+  kortEl.appendChild(kortBund);
+  kortEl.appendChild(status);
+  var aktiv = null, gemTimer = null;
+
+  function visStatus(tekst, slags) { status.textContent = tekst; status.className = "kb-status" + (slags ? " kb-" + slags : ""); }
+  function standardStatus() {
+    if (aktiv && aktiv.sendt) visStatus("Sendt til læreren " + dato(aktiv.sendt) + ".");
+    else visStatus("Sendes uden navn.");
+  }
+  function aabnKort(id) {
+    var post = findPost(id), marks = alleMarks(id);
+    if (!post || !marks.length) return;
+    skjulVaerktoej();
+    aktiv = post;
+    felt.value = post.note || "";
+    sendKnap.disabled = false;
+    fjernKnap.classList.remove("kb-sikker");
+    fjernKnap.textContent = "Fjern";
+    standardStatus();
+    var sidste = marks[marks.length - 1], rects = sidste.getClientRects();
+    placer(kortEl, rects.length ? rects[rects.length - 1] : sidste.getBoundingClientRect(), false, true);
+    felt.focus({ preventScroll: true });
+  }
+  function gemNote() {
+    clearTimeout(gemTimer);
+    if (!aktiv) return;
+    if ((aktiv.note || "") !== felt.value) {
+      aktiv.note = felt.value;
+      aktiv.rettet = new Date().toISOString();
+      gem();
+    }
+    visNoteMaerke(aktiv);
+  }
+  function lukKort() {
+    if (kortEl.style.display !== "block") return;
+    gemNote();
+    kortEl.style.display = "none";
+    aktiv = null;
+  }
+  felt.addEventListener("input", function () {
+    clearTimeout(gemTimer);
+    gemTimer = setTimeout(gemNote, 400);
+    if (aktiv && aktiv.sendt) visStatus("Sendt til læreren " + dato(aktiv.sendt) + ". Du kan sende noten igen.");
+  });
+  // Tasterne i feltet må ikke nå bogens genveje (fx søgningen).
+  felt.addEventListener("keydown", function (e) {
+    e.stopPropagation();
+    if (e.key === "Escape") lukKort();
+  });
+
+  function sendtTider() {
+    try { var a = JSON.parse(localStorage.getItem(SENDT_NOEGLE) || "[]"); return Array.isArray(a) ? a : []; } catch (e) { return []; }
+  }
+  function send() {
+    if (!aktiv) return;
+    gemNote();
+    var post = aktiv, tekst = (post.note || "").trim();
+    if (tekst.length < 3) { visStatus("Skriv noten først.", "fejl"); felt.focus(); return; }
+    var nu = Date.now();
+    var tider = sendtTider().filter(function (t) { return nu - t < 60000; });
+    if (tider.length >= LOFT_PR_MINUT) {
+      var sek = Math.max(1, Math.ceil((60000 - (nu - Math.min.apply(null, tider))) / 1000));
+      visStatus("Du kan sende igen om " + sek + " sekunder.", "fejl");
+      return;
+    }
+    tider.push(nu);
+    try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(tider)); } catch (e) {}
+    sendKnap.disabled = true;
+    visStatus("Sender …");
+    var markeret = post.visning || post.citat;
+    var d = new URLSearchParams();
+    d.append("kilde", "kemibogen");
+    d.append("bog", BOG);
+    d.append("afsnit", TITEL);
+    d.append("side", location.href.split("#")[0]);
+    d.append("markeret", markeret);
+    d.append("note", tekst);
+    // Til den gamle udgave af modtageren, som kun kender fanen Feedback (kapitel, animation, navn og feedback).
+    d.append("kapitel", "Kemibogen " + BOG + ": " + TITEL);
+    d.append("animation", "Markeret: " + kort(markeret, 300));
+    d.append("navn", "(anonym)");
+    d.append("feedback", tekst);
+    fetch(SEND_URL, { method: "POST", mode: "no-cors", body: d }).then(function () {
+      post.sendt = new Date().toISOString();
+      gem();
+      if (aktiv === post) { visStatus("Sendt til læreren. Tak!", "ok"); sendKnap.disabled = false; }
+    }, function () {
+      var t = sendtTider(), i = t.indexOf(nu);
+      if (i >= 0) { t.splice(i, 1); try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(t)); } catch (e) {} }
+      if (aktiv === post) { visStatus("Det lykkedes ikke at sende. Tjek internettet, og prøv igen.", "fejl"); sendKnap.disabled = false; }
+    });
+  }
+
+  // ---------- Mine noter ----------
+  var mineKnap = knap("", "kb-ui kb-mine", function () { panel.classList.contains("kb-aaben") ? lukPanel() : aabnPanel(); });
+  mineKnap.title = "Dine markeringer og noter i bogen";
+  function antalPoster() {
+    var n = 0;
+    Object.keys(data.sider).forEach(function (k) { n += (data.sider[k].poster || []).length; });
+    return n;
+  }
+  function opdaterKnap() {
+    var n = antalPoster();
+    mineKnap.innerHTML = "";
+    mineKnap.appendChild(el("span", "kb-ikon", "✎"));
+    mineKnap.appendChild(document.createTextNode(" Mine noter"));
+    if (n) mineKnap.appendChild(el("span", "kb-antal", String(n)));
+  }
+
+  var panel = el("aside", "kb-ui kb-panel");
+  panel.setAttribute("aria-label", "Mine noter");
+  var panelTop = el("div", "kb-panel-top");
+  panelTop.appendChild(el("div", "kb-panel-titel", "Mine noter"));
+  var panelLuk = knap("×", "kb-luk", function () { lukPanel(); });
+  panelLuk.title = "Luk";
+  panelLuk.setAttribute("aria-label", "Luk");
+  panelTop.appendChild(panelLuk);
+  var panelIndhold = el("div", "kb-panel-indhold");
+  var panelBund = el("div", "kb-panel-bund");
+  var raekke = el("div", "kb-knaprække");
+  raekke.appendChild(knap("Kopiér alle", "", kopierAlle));
+  raekke.appendChild(knap("Gem som fil", "", gemFil));
+  raekke.appendChild(knap("Hent fra fil", "", function () { filvaelger.click(); }));
+  var panelStatus = el("div", "kb-panel-status");
+  panelBund.appendChild(raekke);
+  panelBund.appendChild(panelStatus);
+  panelBund.appendChild(el("p", "kb-lille", "Noterne gemmes kun i denne browser. Gem dem som fil, så du ikke mister dem."));
+  panel.appendChild(panelTop);
+  panel.appendChild(panelIndhold);
+  panel.appendChild(panelBund);
+  var filvaelger = el("input");
+  filvaelger.type = "file";
+  filvaelger.accept = ".json,application/json";
+  filvaelger.style.display = "none";
+  filvaelger.addEventListener("change", hentFil);
+  panel.appendChild(filvaelger);
+
+  function sorteredeSider() {
+    var sider = Object.keys(data.sider).filter(function (k) { return (data.sider[k].poster || []).length; });
+    sider.sort(function (a, b) {
+      if (a === SIDE) return -1;
+      if (b === SIDE) return 1;
+      return (data.sider[a].titel || a).localeCompare(data.sider[b].titel || b, "da", { numeric: true });
+    });
+    return sider;
+  }
+  function sorteredePoster(k) {
+    return (data.sider[k].poster || []).slice().sort(function (a, b) { return (a.start || 0) - (b.start || 0); });
+  }
+  function tegnPanel() {
+    panelIndhold.innerHTML = "";
+    var sider = sorteredeSider();
+    if (!sider.length) {
+      panelIndhold.appendChild(el("p", "kb-tom", "Markér tekst i bogen med musen. Så kan du gøre den gul eller skrive en note. En note kan også sendes til læreren."));
+      return;
+    }
+    sider.forEach(function (k) {
+      var s = data.sider[k];
+      var h = el("div", "kb-side-titel");
+      if (k === SIDE) { h.textContent = s.titel || k; h.appendChild(el("span", "kb-her", " · denne side")); }
+      else { var a = el("a", "", s.titel || k); a.href = k; h.appendChild(a); }
+      panelIndhold.appendChild(h);
+      sorteredePoster(k).forEach(function (p) {
+        var d = el("div", "kb-post" + (harNote(p) ? " kb-med-note" : ""));
+        d.appendChild(el("div", "kb-citat", "“" + kort(p.visning || p.citat, 160) + "”"));
+        if (harNote(p)) d.appendChild(el("div", "kb-notetekst", p.note.trim()));
+        var meta = [];
+        if (p.sendt) meta.push("Sendt til læreren " + dato(p.sendt));
+        if (k === SIDE && !placeret[p.id]) meta.push("Teksten findes ikke længere på siden");
+        if (meta.length) d.appendChild(el("div", "kb-meta", meta.join(" · ")));
+        var slet = knap("Slet", "kb-slet");
+        toTryk(slet, "Ja, slet", function () { sletPost(k, p.id); });
+        d.appendChild(slet);
+        d.addEventListener("click", function () { gaaTil(k, p.id); });
+        panelIndhold.appendChild(d);
       });
     });
+  }
+  function sletPost(k, id) {
+    if (k === SIDE) { fjernPost(id); return; }
+    gem(function (f) {
+      var s = f.sider[k];
+      if (!s) return;
+      s.poster = (s.poster || []).filter(function (p) { return p.id !== id; });
+      if (!s.poster.length) delete f.sider[k];
+    });
+    tegnPanel();
+  }
+  function visMark(id) {
+    var marks = alleMarks(id);
+    if (!marks.length) return false;
+    var lukket = marks[0].closest(".collapse:not(.show)");
+    if (lukket) lukket.classList.add("show");
+    marks[0].scrollIntoView({ block: "center", behavior: "instant" });
+    marks.forEach(function (m) { m.classList.remove("kb-blink"); void m.offsetWidth; m.classList.add("kb-blink"); });
+    setTimeout(function () { marks.forEach(function (m) { m.classList.remove("kb-blink"); }); }, 1800);
+    var post = findPost(id);
+    if (harNote(post)) setTimeout(function () { aabnKort(id); }, 60);
+    return true;
+  }
+  function gaaTil(k, id) {
+    if (k === SIDE) { if (placeret[id]) { lukPanel(); visMark(id); } return; }
+    try { sessionStorage.setItem(GAA_TIL, id); } catch (e) {}
+    location.href = k;
+  }
+  function aabnPanel() { lukKort(); skjulVaerktoej(); data = laes(); tegnPanel(); panelStatus.textContent = ""; panel.classList.add("kb-aaben"); }
+  function lukPanel() { panel.classList.remove("kb-aaben"); }
+
+  function somTekst() {
+    var linjer = ["Mine noter fra Kemibogen (" + new Date().toLocaleDateString("da-DK") + ")", ""];
+    sorteredeSider().forEach(function (k) {
+      linjer.push(data.sider[k].titel || k);
+      sorteredePoster(k).forEach(function (p) {
+        linjer.push("• “" + (p.visning || p.citat) + "”");
+        if (harNote(p)) linjer.push("  Note: " + p.note.trim().replace(/\n/g, "\n  "));
+      });
+      linjer.push("");
+    });
+    return linjer.join("\n");
+  }
+  function gammelKopi(tekst) {
+    var f = document.createElement("textarea");
+    f.value = tekst;
+    f.setAttribute("readonly", "");
+    f.style.position = "fixed";
+    f.style.opacity = "0";
+    document.body.appendChild(f);
+    f.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(f);
+    return ok;
+  }
+  function kopierAlle() {
+    data = laes();
+    if (!antalPoster()) { panelStatus.textContent = "Der er ingen noter endnu."; return; }
+    var tekst = somTekst();
+    var ok = function () { panelStatus.textContent = "Kopieret. Sæt teksten ind, hvor du vil."; };
+    var ikke = function () { panelStatus.textContent = gammelKopi(tekst) ? "Kopieret. Sæt teksten ind, hvor du vil." : "Det lykkedes ikke at kopiere."; };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(tekst).then(ok, ikke);
+    else ikke();
+  }
+  function gemFil() {
+    data = laes();
+    if (!antalPoster()) { panelStatus.textContent = "Der er ingen noter endnu."; return; }
+    var indhold = JSON.stringify({ kemibogenNoter: 1, gemt: new Date().toISOString(), sider: data.sider }, null, 1);
+    var url = URL.createObjectURL(new Blob([indhold], { type: "application/json" }));
+    var a = el("a");
+    a.href = url;
+    a.download = "kemibogen-noter-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+    panelStatus.textContent = "Filen er gemt i din mappe Overførsler.";
+  }
+  function flet(liste, ny) {
+    var findes = {};
+    liste.forEach(function (p, i) { findes[p.id] = i; });
+    var n = 0;
+    ny.forEach(function (p) {
+      if (!p || typeof p.id !== "string" || typeof p.citat !== "string") return;
+      if (findes[p.id] == null) { liste.push(p); n++; }
+      else if ((p.rettet || "") > (liste[findes[p.id]].rettet || "")) { liste[findes[p.id]] = p; n++; }
+    });
+    return n;
+  }
+  function hentFil() {
+    var fil = filvaelger.files && filvaelger.files[0];
+    filvaelger.value = "";
+    if (!fil) return;
+    var l = new FileReader();
+    l.onload = function () {
+      var ind;
+      try { ind = JSON.parse(l.result); } catch (e) { ind = null; }
+      if (!ind || !ind.sider || typeof ind.sider !== "object") { panelStatus.textContent = "Filen er ikke en fil med noter fra Kemibogen."; return; }
+      var antal = 0;
+      // Denne side flettes ind i noterne i hukommelsen, de andre sider i det gemte.
+      var her = ind.sider[SIDE];
+      if (her && Array.isArray(her.poster)) {
+        if (!data.sider[SIDE]) data.sider[SIDE] = { titel: TITEL, bog: BOG, poster: [] };
+        var foer = {};
+        sidensPoster().forEach(function (p) { foer[p.id] = p; });
+        antal += flet(data.sider[SIDE].poster, her.poster);
+        // En note, der er afløst af filens udgave, fjernes fra teksten, så den kan lægges ind igen.
+        sidensPoster().forEach(function (p) { if (foer[p.id] && foer[p.id] !== p) { fjernMarks(p.id); delete placeret[p.id]; } });
+      }
+      gem(function (f) {
+        Object.keys(ind.sider).forEach(function (k) {
+          var s = ind.sider[k];
+          if (k === SIDE || !s || !Array.isArray(s.poster) || k.charAt(0) !== "/") return;
+          if (!f.sider[k]) f.sider[k] = { titel: s.titel || k, bog: s.bog || "", poster: [] };
+          antal += flet(f.sider[k].poster, s.poster);
+        });
+      });
+      genopret();
+      tegnPanel();
+      panelStatus.textContent = antal ? "Hentet: " + antal + (antal === 1 ? " note." : " noter.") : "Alle noterne i filen fandtes allerede.";
+    };
+    l.readAsText(fil);
+  }
+
+  // ---------- Hændelser ----------
+  document.addEventListener("mouseup", function (e) {
+    if (e.button !== 0 || (e.target.closest && e.target.closest(".kb-ui"))) return;
+    setTimeout(visValg, 0);
   });
-});
+  document.addEventListener("mousedown", function (e) {
+    if (e.target.closest && e.target.closest(".kb-ui")) return;
+    skjulVaerktoej();
+    if (!(e.target.closest && e.target.closest("mark.kb-mark"))) lukKort();
+  }, true);
+  main.addEventListener("click", function (e) {
+    var m = e.target.closest && e.target.closest("mark.kb-mark");
+    if (!m || !window.getSelection().isCollapsed || e.target.closest("a")) return;
+    var post = findPost(m.getAttribute("data-kb"));
+    if (!post) return;
+    if (harNote(post)) aabnKort(post.id);
+    else visMarkMenu(post, m);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    skjulVaerktoej();
+    lukKort();
+    lukPanel();
+  });
+  window.addEventListener("storage", function (e) {
+    if (e.key !== NOEGLE) return;
+    var mine = sidensPoster();
+    data = laes();
+    if (mine.length) data.sider[SIDE] = { titel: TITEL, bog: BOG, poster: mine };
+    opdaterKnap();
+  });
+
+  function start() {
+    document.body.appendChild(vaerktoej);
+    document.body.appendChild(kortEl);
+    document.body.appendChild(panel);
+    document.body.appendChild(mineKnap);
+    opdaterKnap();
+    genopret();
+    var id = null;
+    try { id = sessionStorage.getItem(GAA_TIL); sessionStorage.removeItem(GAA_TIL); } catch (e) {}
+    if (id) setTimeout(function () { if (!visMark(id)) { genopret(); visMark(id); } }, 150);
+    // Indhold, som andre dele af siden lægger ind lidt senere, får sine markeringer bagefter.
+    setTimeout(genopret, 1500);
+    setTimeout(genopret, 4000);
+  }
+  if (document.readyState === "complete") setTimeout(start, 0);
+  else window.addEventListener("load", function () { setTimeout(start, 0); });
+})();
 </script>
+<style>
+mark.kb-mark { background: rgba(253, 224, 71, .5); color: inherit; padding: 0; border-radius: 2px; cursor: pointer; }
+mark.kb-mark.kb-har-note { background: rgba(253, 224, 71, .7); box-shadow: inset 0 -2px 0 #e0b100; }
+mark.kb-mark.kb-sidste.kb-har-note::after { content: "✎"; font-size: .78em; vertical-align: super; line-height: 0; margin-left: 2px; color: var(--bs-primary, #0f766e); }
+mark.kb-mark.kb-blink { animation: kb-blink 1.6s ease-out; }
+@keyframes kb-blink { 0%, 40% { background: rgba(253, 200, 0, .95); } 100% { background: rgba(253, 224, 71, .6); } }
+
+.kb-vaerktoej { position: absolute; z-index: 1060; display: none; background: #14201f; border-radius: 8px; padding: 3px; box-shadow: 0 4px 14px rgba(0, 0, 0, .25); white-space: nowrap; line-height: 1.2; }
+.kb-vaerktoej button { background: transparent; color: #fff; border: 0; padding: .4rem .75rem; font: inherit; font-size: .9rem; border-radius: 6px; cursor: pointer; }
+.kb-vaerktoej button:hover { background: rgba(255, 255, 255, .16); }
+.kb-vaerktoej .kb-gul::before { content: ""; display: inline-block; width: .75em; height: .75em; background: #fde047; border-radius: 2px; margin-right: .45em; vertical-align: -1px; }
+
+.kb-kort { position: absolute; z-index: 1060; display: none; width: 22rem; max-width: calc(100vw - 16px); background: #fff; border: 1px solid #d8dfde; border-top: 4px solid #fde047; border-radius: 8px; box-shadow: 0 8px 24px rgba(20, 32, 31, .18); padding: .5rem .75rem .65rem; font-size: .95rem; line-height: 1.45; }
+.kb-kort-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: .35rem; font-weight: 600; }
+.kb-kort textarea { display: block; width: 100%; box-sizing: border-box; border: 1px solid #c9d3d2; border-radius: 6px; padding: .45rem .55rem; font: inherit; font-size: .95rem; line-height: 1.45; resize: vertical; min-height: 5.5rem; color: #14201f; }
+.kb-kort textarea:focus { outline: none; border-color: var(--bs-primary, #0f766e); box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb, 15, 118, 110), .2); }
+.kb-kort-bund { display: flex; gap: .5rem; align-items: center; margin-top: .55rem; }
+.kb-send { background: var(--bs-primary, #0f766e); color: #fff; border: 0; border-radius: 6px; padding: .35rem .85rem; font: inherit; font-size: .9rem; cursor: pointer; }
+.kb-send:hover { filter: brightness(.88); }
+.kb-send:disabled { opacity: .55; cursor: default; filter: none; }
+.kb-fjern { margin-left: auto; background: transparent; border: 0; padding: .2rem .1rem; color: #556766; font: inherit; font-size: .88rem; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.kb-fjern.kb-sikker, .kb-slet.kb-sikker { color: #c0392b; }
+.kb-status { margin-top: .4rem; font-size: .85rem; color: #556766; min-height: 1.25em; }
+.kb-status.kb-ok { color: var(--bs-primary, #0f766e); font-weight: 600; }
+.kb-status.kb-fejl { color: #c0392b; }
+.kb-luk { background: transparent; border: 0; font-size: 1.35rem; line-height: 1; color: #556766; cursor: pointer; padding: 0 .25rem; }
+.kb-luk:hover { color: #14201f; }
+
+.kb-mine { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 1040; background: #fff; color: var(--bs-primary, #0f766e); border: 1.5px solid var(--bs-primary, #0f766e); border-radius: 999px; padding: .35rem .9rem; font: inherit; font-size: .9rem; line-height: 1.3; box-shadow: 0 2px 8px rgba(20, 32, 31, .12); cursor: pointer; }
+.kb-mine:hover { background: var(--bs-primary, #0f766e); color: #fff; }
+.kb-panel.kb-aaben ~ .kb-mine { display: none; }
+.kb-mine .kb-antal { display: inline-block; margin-left: .45em; min-width: 1.4em; padding: 0 .35em; border-radius: 999px; background: #fde047; color: #14201f; font-size: .8rem; font-weight: 600; text-align: center; }
+
+.kb-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 25rem; max-width: 100vw; z-index: 1065; background: #fff; box-shadow: -8px 0 28px rgba(20, 32, 31, .16); display: none; flex-direction: column; font-size: .95rem; line-height: 1.45; }
+.kb-panel.kb-aaben { display: flex; }
+.kb-panel-top { display: flex; align-items: center; justify-content: space-between; padding: .85rem 1rem .65rem; border-bottom: 1px solid #e3e8e7; }
+.kb-panel-titel { font-size: 1.2rem; font-weight: 650; }
+.kb-panel-indhold { flex: 1; overflow-y: auto; padding: .2rem 1rem 1rem; }
+.kb-tom { color: #556766; margin-top: 1rem; }
+.kb-side-titel { font-weight: 600; margin: 1rem 0 .45rem; }
+.kb-side-titel a { text-decoration: none; }
+.kb-side-titel a:hover { text-decoration: underline; }
+.kb-her { font-weight: 400; color: #556766; font-size: .85rem; }
+.kb-post { position: relative; padding: .45rem 3.2rem .5rem .7rem; border-left: 4px solid #fde047; background: #f7f9f9; border-radius: 0 6px 6px 0; margin-bottom: .5rem; cursor: pointer; }
+.kb-post.kb-med-note { border-left-color: #e0b100; }
+.kb-post:hover { background: #eef3f2; }
+.kb-citat { color: #556766; font-style: italic; font-size: .9rem; }
+.kb-notetekst { margin-top: .25rem; white-space: pre-wrap; color: #14201f; }
+.kb-meta { margin-top: .25rem; font-size: .8rem; color: #556766; }
+.kb-slet { position: absolute; top: .35rem; right: .45rem; background: transparent; border: 0; padding: 0 .15rem; font: inherit; font-size: .8rem; color: #556766; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; opacity: 0; }
+.kb-post:hover .kb-slet, .kb-slet:focus, .kb-slet.kb-sikker { opacity: 1; }
+.kb-panel-bund { border-top: 1px solid #e3e8e7; padding: .7rem 1rem .85rem; }
+.kb-knaprække { display: flex; gap: .45rem; flex-wrap: wrap; }
+.kb-knaprække button { background: #fff; color: var(--bs-primary, #0f766e); border: 1.5px solid var(--bs-primary, #0f766e); border-radius: 6px; padding: .3rem .7rem; font: inherit; font-size: .88rem; cursor: pointer; }
+.kb-knaprække button:hover { background: var(--bs-primary, #0f766e); color: #fff; }
+.kb-panel-status { min-height: 1.2em; margin-top: .4rem; font-size: .85rem; color: var(--bs-primary, #0f766e); }
+.kb-lille { font-size: .8rem; color: #556766; margin: .3rem 0 0; }
+
+@media print { .kb-ui { display: none !important; } }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
