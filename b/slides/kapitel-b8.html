@@ -4127,7 +4127,7 @@ window.QuartoSupport = function () {
     // Et punkt, der er tømt helt, forsvinder sammen med sit klik.
     // "Gem som fil" (her og i indholdsmenuen) henter en kopi af filen med rettelserne skrevet ind i blokken ovenfor
     // (ret-rettelser), som lægges på sliderne, når kopien åbnes. Kopien virker uden net og kan sendes til en kollega.
-    // Fra kemibogen.dk henter siden selv filen; er slidesene åbnet fra en fil på computeren, må browseren ikke læse den, så
+    // Fra hjemmesiden (kemibogen.dk, historiebog.dk) henter siden selv filen; er slidesene åbnet fra en fil på computeren, må browseren ikke læse den, så
     // man bliver bedt om at vælge den. Bogens egen fil ændres aldrig.
     // En rettelse kendes på slidens nummer og den oprindelige tekst. Den finder derfor sin plads, selv om slidesene er bygget
     // om, og passer den ingen steder, bruges den ikke.
@@ -4143,6 +4143,7 @@ window.QuartoSupport = function () {
       var LAAST = ".afsnit, .math, math, mjx-container";              // afsnitsnavnet og formler heller ikke
       var MAERKE = '<script type="application/json" id="ret-' + 'rettelser">';
       var SLUT = "</scr" + "ipt>";
+      // Kopier i andre slides (Portugal, Sådan læser du historie) har deres eget navn her, som i deres fortsaet.html
       var NOEGLE = "kemibogen-slides-ret:" + location.pathname;
 
       function tekst(el) { return el.textContent.replace(/\s+/g, " ").trim(); }
@@ -4363,7 +4364,7 @@ window.QuartoSupport = function () {
       function lavFil(kilde, data) {
         var a = kilde.indexOf(MAERKE);
         var b = a < 0 ? -1 : kilde.indexOf(SLUT, a + MAERKE.length);
-        if (b < 0) { besked("Filen kunne ikke gemmes. Det er ikke en slidefil fra Kemibogen."); return; }
+        if (b < 0) { besked("Filen kunne ikke gemmes. Det er ikke en slidefil, der kan rettes."); return; }
         var t = /<title>([^<]*)<\/title>/i.exec(kilde);
         var her = document.createElement("textarea");
         her.innerHTML = t ? t[1] : "";
@@ -4430,6 +4431,8 @@ window.QuartoSupport = function () {
         }
         if (!bygget || e.ctrlKey || e.metaKey || e.altKey || document.body.classList.contains("indhold-vist")) return;
         if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+        // Tasterne i feedbackboksen (feedback.html) styrer boksen selv; Esc dér lukker kun boksen
+        if (e.target && e.target.closest && e.target.closest(".fb-boks")) return;
         if (e.key === "r" || e.key === "R") { tilRet(!tilstand); e.preventDefault(); e.stopImmediatePropagation(); return; }
         if (!tilstand) return;
         if (e.key === "Escape") { tilRet(false); e.preventDefault(); e.stopImmediatePropagation(); return; }
@@ -4607,6 +4610,261 @@ window.QuartoSupport = function () {
       if (document.readyState === "complete") start(); else window.addEventListener("load", start);
     })();
     </script>
+    <script>
+    // Giv feedback på slides (Niels 5. nov. 2026). Knappen "Giv feedback" står i linjen, der kommer frem, når man trykker
+    // "Ret tekst" (ret.html), ikke i knaprækken (Niels: "ellers kommer der for mange knapper"). Den åbner en boks, hvor
+    // slidens nummer allerede står. Man skriver en kort besked, og den sendes uden navn til Google-arket
+    // livefeedback, fanen "feedback til bogen", med samme modtager som elevnoterne i bogen (stil/elevnoter.html og
+    // vaerktoej/livefeedback_appsscript.gs). Send-knappen skal trykkes to gange ("Er du sikker?"), ligesom "Send note til
+    // forfatteren" i bogen. Højst 2 beskeder i minuttet fra hver browser (fælles med elevnoterne på kemibogen.dk).
+    // Har man markeret tekst på sliden, før man trykker, sendes den med.
+    (function () {
+      var SEND_URL = "https://script.google.com/macros/s/AKfycbxgfp2af0Zf9QL15s8E6FtsYOCrKh8rRZcjRY_cMh6MCgaEZVfRr2a3CDts29EB6CRQug/exec";
+      var SENDT_NOEGLE = "kemibogen-noter-sendt";
+      var LOFT_PR_MINUT = 2;
+      var BOG = /kapitel-b\d/i.test(location.pathname) || /\/b\/slides\//.test(location.pathname) ? "B" : "C";
+
+      function el(tag, klasse, tekst) {
+        var e = document.createElement(tag);
+        if (klasse) e.className = klasse;
+        if (tekst != null) e.textContent = tekst;
+        return e;
+      }
+      function ren(t) { return (t || "").replace(/\s+/g, " ").trim(); }
+      // Slidens overskrift uden afsnittets navn; den første slide er forsiden
+      function slideTitel(slide, i) {
+        if (!slide) return "";
+        if (i === 0) return "Forside";
+        var h = slide.querySelector("h2, h1, h3");
+        if (!h) return "";
+        var kopi = h.cloneNode(true);
+        kopi.querySelectorAll(".afsnit").forEach(function (a) { a.remove(); });
+        return ren(kopi.textContent);
+      }
+      function sendtTider() {
+        try { var a = JSON.parse(localStorage.getItem(SENDT_NOEGLE) || "[]"); return Array.isArray(a) ? a : []; } catch (e) { return []; }
+      }
+
+      function byg() {
+        if (Reveal.isPrintView() || (Reveal.isSpeakerNotes && Reveal.isSpeakerNotes())) return;
+        var palet = document.querySelector(".retpalet");
+        if (!palet) return;   // uden Ret tekst (ret.html) er der ingen linje at stå i
+        var alle = Reveal.getSlides();
+
+        var knap = el("button", "feedback-knap", "Giv feedback");
+        knap.type = "button";
+        knap.title = "Send en kort besked om en slide til forfatteren";
+        palet.insertBefore(knap, palet.querySelector(".ret-faerdig"));
+
+        var boks = el("div", "fb-boks");
+        boks.setAttribute("role", "dialog");
+        boks.setAttribute("aria-label", "Giv feedback");
+        var top = el("div", "fb-top");
+        top.appendChild(el("span", "", "Feedback til forfatteren"));
+        var luk = el("button", "fb-luk", "×");
+        luk.type = "button";
+        luk.title = "Luk (Esc)";
+        luk.setAttribute("aria-label", "Luk");
+        top.appendChild(luk);
+        var linje = el("label", "fb-slide");
+        linje.appendChild(document.createTextNode("Slide "));
+        var nr = el("input");
+        nr.type = "number";
+        nr.min = "1";
+        nr.max = String(alle.length);
+        linje.appendChild(nr);
+        var titel = el("span", "fb-titel");
+        linje.appendChild(titel);
+        var markeretEl = el("div", "fb-markeret");
+        var felt = el("textarea");
+        felt.rows = 4;
+        felt.maxLength = 1000;
+        felt.placeholder = "Skriv en kort besked …";
+        var bund = el("div", "fb-bund");
+        var send = el("button", "fb-send", "Send til forfatteren");
+        send.type = "button";
+        var annuller = el("button", "fb-annuller", "Annullér");
+        annuller.type = "button";
+        bund.appendChild(send);
+        bund.appendChild(annuller);
+        var status = el("div", "fb-status");
+        [top, linje, markeretEl, felt, bund, status].forEach(function (x) { boks.appendChild(x); });
+        document.body.appendChild(boks);
+        // Samme skrift som knapperne nederst (slides.scss), så boksen passer til de andre slides med deres egen skrift
+        boks.style.fontFamily = getComputedStyle(knap).fontFamily;
+
+        var markeret = "", nrRettet = false, sikkerTimer = null, lukTimer = null;
+        function aaben() { return boks.classList.contains("vist"); }
+        function visStatus(t, slags) { status.textContent = t; status.className = "fb-status" + (slags ? " fb-" + slags : ""); }
+        function visTitel() {
+          var i = parseInt(nr.value, 10) - 1;
+          titel.textContent = i >= 0 && i < alle.length ? slideTitel(alle[i], i) : "";
+        }
+        function saetNr() { nr.value = String(alle.indexOf(Reveal.getCurrentSlide()) + 1); visTitel(); }
+        function nulstilSend() {
+          clearTimeout(sikkerTimer);
+          send.classList.remove("fb-sikker");
+          send.textContent = "Send til forfatteren";
+        }
+        function vis() {
+          clearTimeout(lukTimer);
+          nrRettet = false;
+          saetNr();
+          markeretEl.textContent = markeret ? "Markeret: “" + (markeret.length > 140 ? markeret.slice(0, 139) + "…" : markeret) + "”" : "";
+          markeretEl.style.display = markeret ? "" : "none";
+          nulstilSend();
+          send.disabled = false;
+          visStatus("Sendes uden navn.");
+          // Boksen står lige over linjen med knapperne (som kan fylde to linjer i et smalt vindue)
+          boks.style.bottom = Math.round(window.innerHeight - palet.getBoundingClientRect().top + 8) + "px";
+          boks.classList.add("vist");
+          knap.setAttribute("aria-pressed", "true");
+          felt.focus({ preventScroll: true });
+        }
+        function skjul() {
+          clearTimeout(lukTimer);
+          nulstilSend();
+          boks.classList.remove("vist");
+          knap.setAttribute("aria-pressed", "false");
+          markeret = "";
+          if (document.activeElement && boks.contains(document.activeElement)) document.activeElement.blur();
+        }
+
+        // Tekst, der er markeret på sliden, huskes, før knappen tager fokus
+        knap.addEventListener("mousedown", function () {
+          if (aaben()) return;
+          var valg = window.getSelection ? window.getSelection() : null;
+          var t = valg && !valg.isCollapsed ? ren(valg.toString()) : "";
+          var r = t && valg.rangeCount ? valg.getRangeAt(0).commonAncestorContainer : null;
+          if (r && r.nodeType !== 1) r = r.parentNode;
+          markeret = r && r.closest && r.closest(".reveal .slides") ? t.slice(0, 600) : "";
+        });
+        knap.addEventListener("click", function (e) { e.stopPropagation(); knap.blur(); if (aaben()) skjul(); else vis(); });
+        luk.addEventListener("click", function (e) { e.stopPropagation(); skjul(); });
+        annuller.addEventListener("click", function (e) { e.stopPropagation(); skjul(); });
+        nr.addEventListener("input", function () { nrRettet = true; visTitel(); });
+        felt.addEventListener("input", function () { if (status.classList.contains("fb-fejl")) visStatus("Sendes uden navn."); });
+        Reveal.on("slidechanged", function () { if (aaben() && !nrRettet) saetNr(); });
+        boks.addEventListener("click", function (e) { e.stopPropagation(); });
+        // Et klik på boksens knapper flytter ikke markøren fra tekstfeltet
+        [send, annuller, luk].forEach(function (b) { b.addEventListener("mousedown", function (e) { e.preventDefault(); }); });
+
+        // Tjekkes ved første tryk (så man ikke bliver spurgt "Er du sikker?" om en tom besked) og igen ved det andet
+        function kanSende() {
+          if (ren(felt.value).length < 3) { visStatus("Skriv en kort besked først.", "fejl"); felt.focus(); return false; }
+          var i = parseInt(nr.value, 10);
+          if (!(i >= 1 && i <= alle.length)) { visStatus("Skriv et slidenummer fra 1 til " + alle.length + ".", "fejl"); nr.focus(); return false; }
+          var nu = Date.now();
+          var tider = sendtTider().filter(function (t) { return nu - t < 60000; });
+          if (tider.length >= LOFT_PR_MINUT) {
+            var sek = Math.max(1, Math.ceil((60000 - (nu - Math.min.apply(null, tider))) / 1000));
+            visStatus("Du kan sende igen om " + sek + " sekunder.", "fejl");
+            return false;
+          }
+          return true;
+        }
+        send.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (send.classList.contains("fb-sikker")) { nulstilSend(); sendNu(); return; }
+          if (!kanSende()) return;
+          send.classList.add("fb-sikker");
+          send.textContent = "Er du sikker? Tryk igen for at sende.";
+          visStatus("Sendes uden navn.");
+          sikkerTimer = setTimeout(nulstilSend, 5000);
+        });
+
+        function sendNu() {
+          if (!kanSende()) return;
+          var i = parseInt(nr.value, 10), besked = felt.value.trim(), nu = Date.now();
+          var tider = sendtTider().filter(function (t) { return nu - t < 60000; });
+          tider.push(nu);
+          try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(tider)); } catch (e) {}
+          var titelTekst = slideTitel(alle[i - 1], i - 1);
+          var afsnit = ren(document.title) + " · slide " + i + (titelTekst ? ": " + titelTekst : "");
+          var hvad = markeret || "Slide " + i + (titelTekst ? ": " + titelTekst : "");
+          var side = location.href.split("#")[0] + "#/" + i;
+          var d = new URLSearchParams();
+          d.append("kilde", "kemibogen");
+          d.append("bog", BOG + " (slides)");
+          d.append("afsnit", afsnit);
+          d.append("side", side);
+          d.append("markeret", hvad);
+          d.append("note", besked);
+          // Til den gamle udgave af modtageren, som kun kender fanen Feedback (kapitel, animation, navn og feedback)
+          d.append("kapitel", "Kemibogen " + BOG + ", slides: " + afsnit);
+          d.append("animation", hvad.slice(0, 300));
+          d.append("navn", "(anonym)");
+          d.append("feedback", besked);
+          send.disabled = true;
+          visStatus("Sender …");
+          fetch(SEND_URL, { method: "POST", mode: "no-cors", body: d }).then(function () {
+            felt.value = "";
+            send.disabled = false;
+            visStatus("Sendt til forfatteren. Tak!", "ok");
+            lukTimer = setTimeout(skjul, 1800);
+          }, function () {
+            var t = sendtTider(), j = t.indexOf(nu);
+            if (j >= 0) { t.splice(j, 1); try { localStorage.setItem(SENDT_NOEGLE, JSON.stringify(t)); } catch (e) {} }
+            send.disabled = false;
+            visStatus("Det lykkedes ikke at sende. Tjek internettet, og prøv igen.", "fejl");
+          });
+        }
+
+        // Mens man skriver i boksen, må tasterne ikke bladre, åbne menuen eller tegne (Esc lukker boksen)
+        ["keydown", "keypress", "keyup"].forEach(function (navn) {
+          window.addEventListener(navn, function (e) {
+            if (!aaben()) return;
+            var iBoksen = boks.contains(e.target) || boks.contains(document.activeElement);
+            if (navn === "keydown" && e.key === "Escape" && (iBoksen || !document.body.classList.contains("indhold-vist"))) {
+              skjul(); e.preventDefault(); e.stopImmediatePropagation(); return;
+            }
+            if (iBoksen) e.stopImmediatePropagation();
+          }, true);
+        });
+        Reveal.on("overviewshown", function () { if (aaben()) skjul(); });
+        // Slutter man med at rette (Færdig, R eller Esc uden for boksen), lukker boksen også
+        new MutationObserver(function () {
+          if (aaben() && !document.body.classList.contains("ret-tilstand")) skjul();
+        }).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+      }
+
+      function start() { if (Reveal.isReady()) byg(); else Reveal.on("ready", byg); }
+      if (document.readyState === "complete") start(); else window.addEventListener("load", start);
+    })();
+    </script>
+    <style>
+.fb-boks {
+display: none; position: fixed; left: 12px; bottom: 46px; z-index: 46; box-sizing: border-box;
+width: 380px; max-width: calc(100vw - 24px); padding: 8px 12px 10px;
+font-size: 15px; line-height: 1.4; color: #14201f; background: #ffffff;
+border: 1.5px solid #c3d6d4; border-top: 4px solid #0f766e; border-radius: 10px; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+}
+.fb-boks.vist { display: block; }
+.fb-top { display: flex; justify-content: space-between; align-items: center; font-weight: 600; margin-bottom: 6px; }
+.fb-luk { background: transparent; border: 0; font-size: 22px; line-height: 1; color: #556766; cursor: pointer; padding: 0 2px; }
+.fb-luk:hover { color: #14201f; }
+.fb-slide { display: flex; align-items: center; gap: 6px; margin: 0 0 6px; font-size: 14px; color: #556766; }
+.fb-slide input { width: 4.2em; font: inherit; color: #14201f; border: 1.5px solid #c3d6d4; border-radius: 6px; padding: 2px 4px; }
+.fb-titel { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #14201f; }
+.fb-markeret { margin: 0 0 6px; font-size: 13px; font-style: italic; color: #556766; }
+.fb-boks textarea {
+display: block; width: 100%; box-sizing: border-box; min-height: 84px; resize: vertical;
+font: inherit; font-size: 15px; color: #14201f; border: 1.5px solid #c3d6d4; border-radius: 6px; padding: 6px 8px;
+}
+.fb-boks textarea:focus, .fb-slide input:focus { outline: none; border-color: #0f766e; }
+.fb-bund { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+.fb-bund button { font-family: inherit; font-weight: 600; font-size: 14px; line-height: 1.3; border-radius: 8px; padding: 4px 10px; cursor: pointer; border: 1.5px solid #c3d6d4; background: #ffffff; color: #556766; }
+.fb-bund button:hover:not(:disabled) { border-color: #0f766e; }
+.fb-bund .fb-send { color: #ffffff; background: #0f766e; border-color: #0f766e; }
+.fb-bund .fb-send.fb-sikker { background: #0a5a54; border-color: #0a5a54; white-space: normal; text-align: left; }
+.fb-bund button:disabled { opacity: 0.55; cursor: default; }
+.fb-status { min-height: 1.3em; margin-top: 6px; font-size: 13px; color: #556766; }
+.fb-status.fb-ok { color: #0f766e; font-weight: 600; }
+.fb-status.fb-fejl { color: #c0392b; }
+.retpalet .feedback-knap[aria-pressed="true"] { color: #ffffff; background: #0f766e; border-color: #0f766e; }
+html.reveal-print .fb-boks { display: none !important; }
+@media print { .fb-boks { display: none !important; } }
+</style>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
