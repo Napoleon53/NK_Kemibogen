@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-07a818b9d8ee279c6767c02d44b62122.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a6c772ef3c0057e5e83c9acca8984848.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -1390,6 +1390,113 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
+// En beregning, der bygges op klik for klik (afsnit B2.6, 30. okt. 2026; Niels ville kunne bladre "som en powerpoint
+// uden at skifte slide", så det hele ikke bliver slettet for hvert trin).
+//
+// En boks med klassen "opbyg" indeholder en boks "opbyg-tekster" med én boks "klik" for hvert klik (forklaringen til
+// klikket) og en tavle med beregningen. Hver del af tavlen har egenskaben fra="N" og vises fra klik N; det, der lige
+// er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
+// knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
+// Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+// "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+document.addEventListener("DOMContentLoaded", function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
+    var tekster = boks.querySelector(".opbyg-tekster");
+    if (!tekster) return;
+    var klik = Array.prototype.filter.call(tekster.children, function (el) {
+      return el.classList.contains("klik");
+    });
+    if (klik.length < 2) return;
+    var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+      return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+    });
+    var trin = [];
+    klik.forEach(function (k, i) {
+      var t = k.getAttribute("data-knap");
+      if (t || !trin.length) trin.push({ tekst: t || "1", start: i, valgfri: k.classList.contains("valgfri") });
+    });
+    function trinFor(i) {
+      for (var j = trin.length - 1; j > 0; j--) if (trin[j].start <= i) return j;
+      return 0;
+    }
+
+    var top = document.createElement("div");
+    top.className = "opbyg-top";
+    var bjaelke = document.createElement("div");
+    bjaelke.className = "trin-bjaelke";
+    function knap(tekst, klasse, label) {
+      var k = document.createElement("button");
+      k.type = "button";
+      k.className = klasse;
+      k.textContent = tekst;
+      if (label) k.setAttribute("aria-label", label);
+      bjaelke.appendChild(k);
+      return k;
+    }
+    var nu = 0;
+    var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
+    var numre = trin.map(function (t) {
+      var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+[a-z]?$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
+      n.addEventListener("click", function () { gaa(t.start); });
+      return n;
+    });
+    var naeste = knap("Næste ›", "trin-naeste", "Næste");
+    top.appendChild(bjaelke);
+    boks.insertBefore(top, boks.firstChild);
+    top.appendChild(tekster);
+    tekster.setAttribute("aria-live", "polite");
+
+    // Ruller siden, så det nye kan ses under bjælken og forklaringen
+    function synlig() {
+      var nye = boks.querySelectorAll(".ny");
+      if (!nye.length) return;
+      var oeverst = Infinity, nederst = -Infinity;
+      Array.prototype.forEach.call(nye, function (el) {
+        var r = el.getBoundingClientRect();
+        oeverst = Math.min(oeverst, r.top);
+        nederst = Math.max(nederst, r.bottom);
+      });
+      var loft = getComputedStyle(top).position === "sticky" ? top.getBoundingClientRect().bottom : 0;
+      var luft = 16, ned = 0;
+      if (nederst > window.innerHeight - luft) ned = nederst - window.innerHeight + luft;
+      if (oeverst - ned < loft + luft) ned = oeverst - loft - luft;
+      if (Math.abs(ned) > 2) window.scrollBy({ top: ned, behavior: "smooth" });
+    }
+    function vis(rul) {
+      klik.forEach(function (k, i) { k.classList.toggle("vist", i === nu); });
+      dele.forEach(function (d) {
+        d.el.classList.toggle("vist", d.fra <= nu);
+        d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+      });
+      var aktivt = trinFor(nu);
+      numre.forEach(function (n, j) {
+        n.classList.toggle("aktiv", j === aktivt);
+        if (j === aktivt) n.setAttribute("aria-current", "step");
+        else n.removeAttribute("aria-current");
+      });
+      forrige.disabled = nu === 0;
+      naeste.disabled = nu === klik.length - 1;
+      if (rul) synlig();
+    }
+    function gaa(i) {
+      nu = Math.max(0, Math.min(klik.length - 1, i));
+      vis(true);
+    }
+    forrige.addEventListener("click", function () { gaa(nu - 1); });
+    naeste.addEventListener("click", function () { gaa(nu + 1); });
+    bjaelke.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+    });
+
+    boks.classList.add("aktiv");
+    var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+    vis(false);
+  });
+});
+</script>
+<script>
 // Figurer, man kan pege på (en boks med klassen "pegefigur" om figuren i .qmd-filen).
 //
 // Figurprogrammet (vaerktoej/lav_figurer.py) har lagt de dele af figuren, man kan pege på, i
@@ -2017,11 +2124,15 @@ document.addEventListener("DOMContentLoaded", function () {
 // som kapitler (temaer/t1-1-....html og temaer/t1-1-opgaver.html) og får samme menu; "Fagord til Tema: Klima" bliver
 // til "Fagord", også i de små temaer uden opgaver (Niels 16. okt. 2026, noter/temaer-c-oprydning.md).
 //
-// Øvelser (Niels 18. okt. 2026): efter repetitionen står siden "Øvelser til kapitel 7", som bliver til "Øvelser", og
+// Øvelser (Niels 18. okt. 2026; fra 4. nov. 2026 står de ikke længere under kapitlerne, men samlet under Øvrige
+// materialer, se start()): efter repetitionen står siden "Øvelser til kapitel 7", som bliver til "Øvelser", og
 // bagefter kapitlets øvelser (oevelser/7-5-....html). Øvelserne selv tages ud af menuen; står man på en af dem, er
 // "Øvelser" fremhævet. Kapitlernes navne mister ordet "Kapitel" ("7: Syrer og baser"), så de kan stå på én linje, og
 // delen Materialer (den fulde liste over øvelser) flyttes ned under Bilag.
 (function () {
+  // Modulplanerne står ikke i menuen, kun i tabellen Til læreren på forsiden (Niels 4. nov. 2026: "Menuen er jo
+  // egentlig til elever"). Lad listen være tom; skriv kun et kapitels nummer her, hvis Niels beder om planen i menuen.
+  var MODULPLANER_KLAR = [];
   var EKSTRA = {
     "1": [
       { tekst: "Slides", sti: "slides/kapitel-1.html", ikon: "slides" },
@@ -2061,16 +2172,16 @@ document.addEventListener("DOMContentLoaded", function () {
     "8": [
       { tekst: "Animationer", url: "https://kemiformler.dk/animationer/kemi-c-filer/samling_c8.html", ikon: "animationer" }
     ],
-    // Slides til kapitel B2 (22. okt. 2026), foreløbig kun B2.4 og B2.5.
+    // Slides til kapitel B2 (22. okt. 2026), foreløbig kun B2.4, B2.5 og B2.6 (B2.6 fra 1. nov. 2026).
     "B2": [
       { tekst: "Slides", sti: "slides/kapitel-b2.html", ikon: "slides" }
     ],
-    // B-bogen (21. okt. 2026): slides til kapitel B3, foreløbig kun B3.1 og B3.2. Filen kopieres til b/slides/,
+    // B-bogen (21. okt. 2026): slides til kapitel B3, fra 26. okt. 2026 hele kapitlet (B3.1 til B3.4). Filen kopieres til b/slides/,
     // når slidesene bygges (slides/kopier_til_b.py).
     "B3": [
       { tekst: "Slides", sti: "slides/kapitel-b3.html", ikon: "slides" }
     ],
-    // Slides til kapitel B4 (26. okt. 2026), foreløbig kun B4.1 til B4.5.
+    // Slides til kapitel B4 (26. okt. 2026), nu hele kapitlet (B4.1 til B4.7).
     "B4": [
       { tekst: "Slides", sti: "slides/kapitel-b4.html", ikon: "slides" }
     ],
@@ -2108,7 +2219,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var rod = foerste.slice(0, foerste.search(/(kapitler|temaer)\//));
 
     // Fagord, repetition og øvelser: "Fagord til kapitel 1" bliver til "Fagord". De enkelte øvelser tages ud.
-    var oevelsesside = null, oevelseAktiv = false;
+    var oevelsesside = null, oevelseAktiv = false, fagordPunkt = null;
     punkter.slice(foersteOpgave).forEach(function (p) {
       if (opgaver.indexOf(p) >= 0) return;
       var a = p.querySelector("a.sidebar-link");
@@ -2119,6 +2230,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       if (/(^|\/)oevelser\/kapitel-[^\/]*\.html/.test(href)) oevelsesside = a;
+      if (/(^|\/)fagord\/[^\/]*\.html/.test(href)) fagordPunkt = p;
       p.classList.add("kapitelmenu-side");
       var t = p.querySelector("a.sidebar-link .menu-text");
       if (t) t.textContent = t.textContent.trim().replace(/\s+(til|af)\s+kapitel\s+[AB]?\d+$/i, "").replace(/\s+til\s+Tema:.*$/, "");
@@ -2145,7 +2257,20 @@ document.addEventListener("DOMContentLoaded", function () {
     ul.insertBefore(raekke, opgaver[0]);
     opgaver.forEach(function (p) { p.remove(); });
 
-    (EKSTRA[nr] || []).forEach(function (e) {
+    // Fagord står sidst blandt materialerne, lige over Slides, med et kartotekskort som ikon ligesom i Portugals
+    // historie (Niels 29. okt. 2026: "samme ikon skal du også bruge ved kemibogen, hvor fagord også skal stå lige over
+    // slides"). Ikonet står i stil/kemibogen.scss.
+    if (fagordPunkt) {
+      fagordPunkt.classList.remove("kapitelmenu-side");
+      fagordPunkt.classList.add("kapitelmenu-ekstra");
+      var fagordLink = fagordPunkt.querySelector("a.sidebar-link");
+      if (fagordLink) fagordLink.classList.add("kapitelmenu-fagord");
+      ul.appendChild(fagordPunkt);
+    }
+
+    (EKSTRA[nr] || []).filter(function (e) {
+      return e.ikon !== "modulplaner" || MODULPLANER_KLAR.indexOf(nr) >= 0;
+    }).forEach(function (e) {
       var p = li("kapitelmenu-ekstra");
       var boks = document.createElement("div");
       boks.className = "sidebar-item-container";
@@ -2170,15 +2295,30 @@ document.addEventListener("DOMContentLoaded", function () {
         t.textContent = "Fagord";
         var p = t.closest("li");
         if (p) p.classList.add("kapitelmenu-side");
+        var a = t.closest("a");
+        if (a) a.classList.add("kapitelmenu-fagord");
       }
     });
     // "Kapitel 7: Syrer og baser" bliver til "7: Syrer og baser" (kun i menuen; siden hedder stadig "Kapitel 7").
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar li.sidebar-item-section > .sidebar-item-container .menu-text"), function (t) {
       t.textContent = t.textContent.trim().replace(/^Kapitel\s+([AB]?\d+):/, "$1:");
     });
-    // Materialer står sidst i menuen, under Bilag.
+    // Øvrige materialer står sidst i menuen, under Bilag. Kun Laboratorieøvelser vises; kapitlernes øvelsessider og
+    // øvelserne selv tages ud, og står man på en af dem, er Laboratorieøvelser fremhævet (Niels 4. nov. 2026).
     var liste = document.querySelector('#quarto-sidebar a.sidebar-link[href$="oevelser/oversigt.html"]');
     var del = liste && liste.closest("ul.sidebar-section.depth1");
+    if (del) {
+      var aktiv = false;
+      Array.prototype.slice.call(del.children).forEach(function (p) {
+        var a = p.querySelector("a.sidebar-link");
+        if (!a || a === liste) return;
+        if (/(^|\/)oevelser\/[^\/]*\.html/.test(a.getAttribute("href") || "")) {
+          if (a.classList.contains("active")) aktiv = true;
+          p.remove();
+        }
+      });
+      if (aktiv) { liste.classList.add("active"); liste.setAttribute("aria-current", "page"); }
+    }
     del = del && del.closest("li.sidebar-item-section");
     if (del && del.parentNode) del.parentNode.appendChild(del);
   }
@@ -2199,6 +2339,17 @@ document.addEventListener("DOMContentLoaded", function () {
     ring.className = maerke.className;
     ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
     titel.appendChild(ring);
+    maerke.parentNode.removeChild(maerke);
+  });
+  // Forløbsmærkatet på en opgave ("Velegnet til sundhedsforløb", se stil/lektielinks.lua) står lige under opgavens
+  // overskrift og flyttes på samme måde op til højre for titlen.
+  Array.prototype.forEach.call(document.querySelectorAll("main div.forloebsmaerke"), function (maerke) {
+    var h2 = maerke.previousElementSibling;
+    if (!h2 || h2.tagName !== "H2") return;
+    var ring = document.createElement("span");
+    ring.className = maerke.className;
+    ring.textContent = maerke.textContent.replace(/\s+/g, " ").trim();
+    h2.appendChild(ring);
     maerke.parentNode.removeChild(maerke);
   });
 });
@@ -2503,7 +2654,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var fliser = el("div", "fe-fliser");
   trin2.indhold.appendChild(fliser);
   var aktiviteter = [], aaben = null;
-  function aktivitet(navn, id, tekst, raad, intro) {
+  // o.udenValg: aktiviteten kan åbnes uden valgte fagord (Byg figuren bruger altid alle).
+  function aktivitet(navn, id, tekst, raad, intro, o) {
     var flise = el("button", "fe-flise");
     flise.type = "button";
     flise.setAttribute("aria-expanded", "false");
@@ -2523,9 +2675,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (intro) panel.appendChild(el("p", "fe-intro", intro));
     fliser.appendChild(flise);
     trin2.indhold.appendChild(panel);
-    var a = { flise: flise, panel: panel, aabn: function () {}, opdater: function () {}, luk: function () {} };
+    var a = { flise: flise, panel: panel, udenValg: !!(o && o.udenValg), aabn: function () {}, opdater: function () {}, luk: function () {} };
     flise.addEventListener("click", function () {
-      if (!valgte().length) { pegPaaTrin1(); return; }
+      if (!a.udenValg && !valgte().length) { pegPaaTrin1(); return; }
       if (aaben === a) lukAktivitet(); else aabnAktivitet(a);
     });
     luk.addEventListener("click", function () { lukAktivitet(); flise.focus(); });
@@ -2689,6 +2841,41 @@ document.addEventListener("DOMContentLoaded", function () {
     quizletNote.textContent = "";
   };
   quizletKopier.addEventListener("click", function () { kopierTekst(quizletTekst, quizletNote); });
+
+  // Byg figuren (Niels 2. nov. 2026): fagordene sættes på figurer som i bogen, i en animation på
+  // kemiformler.dk. Hver figur rummer alle fagordene fra ét afsnit, så aktiviteten kan ikke bruge et
+  // udvalg. Flisen siger det i en gul bjælke ("Bruger alle fagord"), den kan åbnes uden valgte
+  // fagord, og feltet har en knap pr. afsnit. Er der valgt fagord, er knapperne til de afsnit, de
+  // kommer fra, fyldt ud. Kun kapitler med en figur får flisen (C 1 til 8 og B1 til B4 indtil videre).
+  var BYG_FIGUREN = { "1": "sc1.5_byg_figuren", "2": "sc2.7_byg_figuren", "3": "sc3.6_byg_figuren", "4": "sc4.9_byg_figuren", "5": "sc5.13_byg_figuren", "6": "sc6.4_byg_figuren", "7": "sc7.6_byg_figuren", "8": "sc8.7_byg_figuren", "b1": "sb1.5_byg_figuren", "b2": "sb2.9_byg_figuren", "b3": "sb3.5_byg_figuren", "b4": "sb4.10_byg_figuren", "b5": "sb5.6_byg_figuren" };
+  // C-bogen: c/fagord/kapitel-7.html giver "7"; B-bogen: b/fagord/kapitel-b1.html giver "b1"
+  var bygKapitel = (/\/(?:c|b)\/fagord\/kapitel-(b?\d+)\.html$/.exec(location.pathname) || [])[1];
+  if (BYG_FIGUREN[bygKapitel]) {
+    var bygAkt = aktivitet("Byg figuren", "bygfiguren", "Sæt fagordene på figurer som i bogen.", "Bruger alle fagord",
+      "Byg figuren åbner på kemiformler.dk i en ny fane. Hver figur rummer alle fagordene fra ét afsnit, også dem, " +
+      "der ikke er valgt her. Vælg afsnittet.", { udenValg: true });
+    bygAkt.flise.classList.add("fe-alle");
+    var bygHandling = el("div", "fe-handling fe-byg");
+    var bygNote = el("p", "fe-note fe-bygnote");
+    var bygKnapper = kapitler[0].afsnit.map(function (a) {
+      var nr = (/^(B?\d+\.\d+)/.exec(a.titel) || [])[1] || "";
+      var k = el("a", "fe-knap", a.titel);
+      k.href = "https://kemiformler.dk/animationer/superanimationer/" + BYG_FIGUREN[bygKapitel] + "/index.html#" + nr;
+      k.target = "_blank";
+      k.rel = "noopener";
+      bygHandling.appendChild(k);
+      return { a: a, knap: k, nr: nr };
+    });
+    bygAkt.panel.appendChild(bygHandling);
+    bygAkt.panel.appendChild(bygNote);
+    bygAkt.aabn = bygAkt.opdater = function () {
+      var med = bygKnapper.filter(function (b) { return b.a.ord.some(function (o) { return o.valgt; }); });
+      bygKnapper.forEach(function (b) { b.knap.classList.toggle("fe-fyldt", med.indexOf(b) >= 0); });
+      bygNote.textContent = med.length && med.length < bygKnapper.length ?
+        "De valgte fagord er fra afsnit " + remse(med.map(function (b) { return b.nr; })) + ". Figuren tager alle afsnittets fagord med." :
+        "Den svære udgave med alle fagord på én gang slås til i figurens panel.";
+    };
+  }
 
   var foerste = main.querySelector("section.level2");
   foerste.parentNode.insertBefore(boks, foerste);
@@ -4244,7 +4431,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function valgAendret() {
     opdaterValg();
-    if (!valgte().length) lukAktivitet();
+    if (!valgte().length && !(aaben && aaben.udenValg)) lukAktivitet();
     else if (aaben) aaben.opdater();
   }
   function vaelgAlle(til) {
