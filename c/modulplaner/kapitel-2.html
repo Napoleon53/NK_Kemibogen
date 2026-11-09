@@ -93,22 +93,21 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 .før { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: .88rem; }
 .før > div { min-width: 0; }
-.før h4, .fokus h4, .bagefter h4 {
+.før h4, .bagefter h4 {
   margin: 0 0 2px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600;
 }
 .før p, .før ul { margin: 0; }
 .før ul { padding-left: 1.1em; }
 
-/* Tidslinje */
+/* Tidslinje: kun et omtrentligt antal minutter pr. trin (Niels 9. nov. 2026), ingen klokkeslæt. */
 .forløb { list-style: none; margin: 0; padding: 0; display: grid; }
 .forløb li {
-  display: grid; grid-template-columns: 74px 1fr; gap: 16px;
+  display: grid; grid-template-columns: 84px 1fr; gap: 14px;
   padding-block: 10px; border-top: 1px solid var(--streg);
 }
 .forløb li:first-child { border-top: 0; padding-top: 0; }
 .tid { font-variant-numeric: tabular-nums; display: grid; align-content: start; }
-.tid b { font-size: 1.15rem; line-height: 1.1; }
-.tid span { font-size: .75rem; color: var(--dæmpet); }
+.tid b { font-size: 1.02rem; line-height: 1.25; white-space: nowrap; }
 .trin { min-width: 0; display: grid; gap: 3px; }
 .trin-hoved { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .trin-hoved strong { font-size: 1rem; }
@@ -122,9 +121,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .trin .ekstra { color: var(--dæmpet); font-size: .84rem; }
 .ord { font-weight: 600; }
 
-.fokus { background: var(--fokus-bg); border-radius: 6px; padding: 12px 16px; display: grid; gap: 6px; }
-.fokus ul { margin: 0; padding-left: 1.1em; font-size: .88rem; display: grid; gap: 2px; }
-.fokus p { margin: 0; font-size: .88rem; }
 
 .bagefter { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; font-size: .88rem; }
 .bagefter > div { min-width: 0; }
@@ -137,14 +133,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .forslag { border: 1px dashed var(--streg); border-radius: 6px; padding: 10px 16px; display: grid; gap: 4px; }
 .forslag h4 { margin: 0; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600; }
 .forslag ul { margin: 0; padding-left: 1.1em; font-size: .86rem; display: grid; gap: 2px; }
-/* Det skal eleverne kunne som stikord (Niels 4. nov. 2026): punkterne står på linje med kommaer imellem. */
-.stikord { list-style: none; padding-left: 0 !important; display: flex !important; flex-wrap: wrap; gap: 2px 0 !important; }
-.stikord li:not(:last-child)::after { content: "·"; margin: 0 .5em; color: var(--dæmpet); }
 
 @media (max-width: 640px) {
   .modul { padding: 20px 16px; }
   .før { grid-template-columns: 1fr; }
-  .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
+  .forløb li { grid-template-columns: 78px 1fr; gap: 10px; }
 }
 
 @page { size: A4; margin: 12mm; }
@@ -159,7 +152,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   #nv2026 .modul { gap: 2.5mm; }
   #nv2026 .modul > header { padding-bottom: 2mm; }
   #nv2026 .forløb li { padding-block: 5px; }
-  #nv2026 .fokus { padding: 2mm 4mm; }
   #nv2026 .forslag { padding: 2mm 4mm; }
 }
 </style>
@@ -178,7 +170,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 7 moduler<span>Tre øvelser og en øveprøve</span></button>
     <button type="button" id="knap-nv2026" data-plan="nv2026" aria-pressed="false">Kap 2 2026 · 6 moduler<span>Demo og dråbeøvelse på delehold</span></button>
   </div>
-  <p class="forslagsnote" data-plan="nv2026" hidden><b>Et forslag til en modulplan</b> til holdet fra planen Kap 1 2026 på kapitel 1, med samme kompendium til kapitel 1 og 2. Demoforsøg 2.3a indleder fældningsreaktionerne, øvelse 2.4b tages på delehold, og sidste modul følger op på øvelserne og træner de svære fældningsreaktioner. Tilpas tider og opgaver til holdet; flere idéer står i boksen nederst i hvert modul.</p>
+  <p class="forslagsnote" data-plan="nv2026" hidden><b>Et forslag til en modulplan</b> til holdet fra planen Kap 1 2026 på kapitel 1, med samme kompendium til kapitel 1 og 2. Demoforsøg 2.3a indleder fældningsreaktionerne, øvelse 2.4b tages på delehold, og sidste modul følger op på øvelserne og træner de svære fældningsreaktioner. Tilpas tider og opgaver til holdet.</p>
   <p class="materialer">
     <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-2-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 27 sider).</span>
     <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-2-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 36 sider).</span>
@@ -209,40 +201,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra kapitel 1: <span class="ord">elektronstruktur, hovedgruppe, ædelgasreglen</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv elektronstrukturen for natrium (atomnummer 11) og chlor (atomnummer 17). Hvor mange elektroner har de i yderste skal?</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fra atom til ion</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/2" target="_blank">Slides 2–11</a>: ion og ladning, natrium og chlor, hovedgruppen og undergruppernes metaller.</p>
         <p class="ekstra">Lad klassen svare højt på slide 4, 7 og 9, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ioner</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-1-opgaver.html">Opgave 2.1.1, 2.1.3 og 2.1.5</a>.</p>
         <p class="ekstra">Hurtige par: 2.1.7.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ioners navne</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/12" target="_blank">Slides 12–16</a> (10 min): natrium i cornflakes, romertal og -id. Klassen svarer på slide 12 og 16. Derefter <a href="https://kemibogen.dk/c/opgaver/2-2-opgaver.html">opgave 2.2.1, 2.2.2 og 2.2.3</a>.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
         <p><a href="https://kemibogen.dk/c/fagord/kapitel-2.html">Fagordsiden</a>, afsnit 2.1 og 2.2. Fjern de sammensatte ioner under <em>Vælg fagord</em>. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>forklare, hvad en ion er, og finde ladningen ud fra antallet af protoner og elektroner</li>
-      <li>bruge ædelgasreglen til at forklare, hvorfor natrium danner Na⁺ og chlor danner Cl⁻</li>
-      <li>forudsige ladningen på ioner af grundstoffer fra hovedgrupperne</li>
-      <li>navngive positive ioner, også med romertal, og negative ioner med endelsen -id</li>
-    </ul>
-    <p><b>Centrale fagord:</b> ion, positiv ion, negativ ion, ladning, -id</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-2-ioners-navne.html">2.2 Ioners navne</a>, og lær de seks sammensatte ioner udenad.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Ioners størrelse (slide 11) kan springes over.</p></div>
   </div>
 </article>
 
@@ -258,36 +238,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">ion, ladning, -id</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv navnet på K⁺, S²⁻ og Fe³⁺. Skriv formlen for sulfat og nitrat.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Sammensatte ioner</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/17" target="_blank">Slides 17–18</a> (5 min): ladningen gælder hele gruppen. Klassen svarer på slide 18. Derefter <a href="https://kemibogen.dk/c/opgaver/2-2-opgaver.html">opgave 2.2.4 og 2.2.5</a>.</p>
         <p class="ekstra">Hurtige par: 2.2.6.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>35–60</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ionforbindelser</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/19" target="_blank">Slides 19–22</a> (15 min): ionbinding, iongitter og klodserne, hvor ladningerne går lige op. Klassen svarer på slide 22. Derefter <a href="https://kemibogen.dk/c/opgaver/2-3-opgaver.html">opgave 2.3.1</a>.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Skriv formlen</strong><span class="form par">Par</span></div>
         <p>Opgave 2.3.2 og 2.3.10. Stop klassen, hvis mange laver samme fejl. Eleverne arbejder, til klokken ringer.</p>
         <p class="ekstra">Hurtige par: <em>Saltbyggeren</em>.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>kende de seks sammensatte ioner med formel og navn</li>
-      <li>forklare, hvad en ionbinding og et iongitter er</li>
-      <li>skrive formlen for en ionforbindelse, så den er elektrisk neutral</li>
-    </ul>
-    <p><b>Centrale fagord:</b> sammensat ion, ionforbindelse, ionbinding, iongitter, formelenhed</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-3-ionforbindelser.html">2.3 Ionforbindelser</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Den rumlige model af iongitteret (slide 20) kan nøjes med et blik. Laget til venstre er nok til formlerne.</p></div>
   </div>
 </article>
 
@@ -303,39 +272,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">ionbinding, iongitter, formelenhed</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv formlen for calciumchlorid og aluminiumoxid.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Navne og parenteser</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/23" target="_blank">Slides 23–29</a>: navne på ionforbindelser, sammensatte ioner og parentes, klassiske fejl, fra formel til navn med Cu(NO₃)₂ og saltes egenskaber.</p>
         <p class="ekstra">Lad klassen svare højt på slide 25, 26, 27 og 28, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>30–60</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Formel og navn</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-3-opgaver.html">Opgave 2.3.4, 2.3.5 og 2.3.6</a>. Stop klassen, hvis mange laver samme fejl.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>60–75</span></div>
+    <li><div class="tid"><b>10–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Klassiske fejl</strong><span class="form par">Par</span></div>
         <p>Opgave 2.3.9.</p>
         <p class="ekstra">Hurtige par: <em>Ion-Tetris</em>.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+    <li><div class="tid"><b>15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Samlebåndet</strong><span class="form klasse">Klassen</span></div>
         <p><em>Kemikalielageret</em>, fanen Samlebåndet: glassene kører forbi, og eleverne skriver formel eller navn, før glasset når kassen. Alle spiller på egen computer i 10 min, og klassen sammenligner point til sidst.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>navngive en ionforbindelse, også når metallet kommer fra en undergruppe</li>
-      <li>skrive formel og navn for en ionforbindelse med en sammensat ion</li>
-      <li>sætte parentes om en sammensat ion, når der er flere af den i formlen</li>
-    </ul>
-    <p><b>Centrale fagord:</b> salt, ionforbindelse, sammensat ion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-4-faeldningsreaktioner.html">2.4 Fældningsreaktioner</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Saltes egenskaber (slide 29) kan nøjes med en kort omtale. Salte, der opløses i vand, kommer igen i 2.4.</p></div>
   </div>
 </article>
 
@@ -351,38 +309,27 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">salt, sammensat ion</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv formlen for natriumcarbonat og calciumnitrat.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Bundfald</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/30" target="_blank">Slides 30–33</a>: fældningstabellen, bundfald og tilskuerioner og de fire trin med magnesiumchlorid og natriumhydroxid.</p>
         <p class="ekstra">Lad klassen svare højt på slide 31, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>30–60</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Find det ukendte salt</strong><span class="form lab">Lab</span></div>
         <p>Øvelse 2.4a, den korte udgave, i par. Eleverne gætter med fældningstabellen, før de drypper.</p>
         <p class="ekstra">Briller og kittel: sølv(I)nitrat giver sorte pletter, der først kommer frem efter nogle timer.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Kommer der bundfald?</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-4-opgaver.html">Opgave 2.4.1, 2.4.5 og 2.4.6</a>.</p>
         <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc2.4_faeldningsreaktioner/index.html#let">Fældningsreaktioner</a> på Let. Sidste 5 min: udgangsbillet. Hver elev skriver på en seddel, om der kommer bundfald, når magnesiumchlorid og natriumcarbonat blandes, og i så fald bundfaldets formel. Læs sedlerne før næste modul.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>forklare, hvad et bundfald, en fældningsreaktion og en tilskuerion er</li>
-      <li>bruge fældningstabellen til at afgøre, om to ioner danner bundfald</li>
-      <li>finde formlen for bundfaldet</li>
-    </ul>
-    <p><b>Centrale fagord:</b> letopløselig, tungtopløselig, fældningstabel, bundfald, tilskuerion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Efterbehandlingen af <a href="https://kemibogen.dk/c/oevelser/2-4a-find-det-ukendte-salt.html">øvelse 2.4a</a>.</p></div>
     <div><h4>Uden laboratorium</h4><p>Lad eleverne dryppe i <a href="https://kemiformler.dk/animationer/v2/superlab/sc2.5_faeldning/index.html">Forsøg: Fældning</a> (animation, 25 min). Det er samme slags forsøg på skærmen, men uden flaske X.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Tegnet ÷ i fældningstabellen kan nøjes med en sætning.</p></div>
   </div>
 </article>
 
@@ -398,41 +345,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">bundfald, tungtopløselig, tilskuerion</span>. Tag fejlene fra udgangsbilletterne op.</p>
         <p class="ekstra">Mens du tager fravær: Hvilket salt var der i flaske X? Skriv ionskemaet for A + B.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Når der skal tal foran</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/33" target="_blank">Slide 33</a> igen: én Pb²⁺ og to I⁻ giver PbI₂, og i ionskemaet står 2 I⁻, aldrig I₂⁻. På slide 34–35 skriver klassen ionskemaet med dig.</p>
         <p class="ekstra">Spørg til sidst: Hvor mange OH⁻ skal der til én Cu²⁺?</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>25–50</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Bundfald i dråber</strong><span class="form lab">Lab</span></div>
         <p>Øvelse 2.4b, felt A til E, i par.</p>
         <p class="ekstra">Hurtige par går i gang med efterbehandlingen.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>50–75</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ionskemaer</strong><span class="form par">Par</span></div>
         <p>Efterbehandling 1 og 2 af øvelse 2.4b, derefter <a href="https://kemibogen.dk/c/opgaver/2-4-opgaver.html">opgave 2.4.8</a>.</p>
         <p class="ekstra">Hurtige par: ekstraopgaverne bagest i kompendiet eller <a href="https://kemiformler.dk/animationer/superanimationer/sc2.4_faeldningsreaktioner/index.html#svaer">Fældningsreaktioner</a> på Svær.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+    <li><div class="tid"><b>15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
         <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-2.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>skrive ionskemaet for en fældningsreaktion med koefficienter og tilstandssymboler</li>
-      <li>forklare forskellen på tallet foran en ion og det lille tal i en formel</li>
-      <li>forklare med fældningstabellen, hvorfor der ikke kommer bundfald</li>
-    </ul>
-    <p><b>Centrale fagord:</b> ionskema, fældningsreaktion, tilskuerion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-2.html">Repetition af kapitel 2</a> med øveprøven.</p></div>
     <div><h4>Uden laboratorium</h4><p>Vis felt A til E som demo under dokumentkameraet (10 min), og giv ionskemaerne de sparede 15 min.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Reaktionsskemaet med hele saltene kan nøjes med eksemplet på slide 33. Ionskemaet er det vigtigste.</p></div>
   </div>
 </article>
 
@@ -453,37 +389,26 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra kapitel 1: <span class="ord">molekyle, ionforbindelse, elektronstruktur</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv elektronstrukturen for natrium (atomnummer 11) og chlor (atomnummer 17).</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Leder det strøm?</strong><span class="form lab">Lab</span></div>
         <p>Øvelse 2.1 i grupper på 2–3. Eleverne udfylder kolonnen Gæt, før de måler.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>35–60</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fra atom til ion</strong><span class="form tavle">Tavle</span></div>
         <p>Start med spørgsmålet: Hvorfor lyste pæren i saltvand, men ikke i sukkervand? Derefter <a class="sl" href="../slides/kapitel-2.html#/2" target="_blank">slides 2–7</a>: ion og ladning, sådan skrives en ion, natrium afgiver og chlor optager en elektron.</p>
         <p class="ekstra">Lad klassen svare højt på slide 4 og 7, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ioner i skalmodellen</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-1-opgaver.html">Opgave 2.1.1 og 2.1.3</a>. Stop klassen, hvis mange laver samme fejl.</p>
         <p class="ekstra">Hurtige par: ekstraopgaverne bagest i kompendiet. Sidste 5 min: udgangsbillet. Hver elev skriver på en seddel, hvorfor pæren lyste i saltvand, men ikke i sukkervand, og bruger ordet ion. Læs sedlerne før næste modul.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>forklare, hvad en ion er, og hvorfor en saltopløsning leder strøm</li>
-      <li>finde en ions ladning ud fra antallet af protoner og elektroner</li>
-      <li>bruge ædelgasreglen til at forklare, hvorfor natrium danner Na⁺ og chlor danner Cl⁻</li>
-    </ul>
-    <p><b>Centrale fagord:</b> ion, positiv ion, negativ ion, ladning</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-1-ioner.html">2.1 Ioner</a>, og lav efterbehandlingen af øvelse 2.1.</p></div>
     <div><h4>Uden laboratorium</h4><p>Vis glas 2, 3 og 7 som demo ved katederet (10 min), og giv opgaverne de sparede 15 min.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Skemaerne med elektroner, Na → Na⁺ + e⁻ (slide 5 og 6), kan vente. De kommer igen i kapitel 8 om redoxreaktioner.</p></div>
   </div>
 </article>
 
@@ -499,40 +424,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">ion, positiv ion, negativ ion, ladning</span>.</p>
         <p class="ekstra">Mens du tager fravær: Hvilke glas i øvelse 2.1 fik pæren til at lyse? Hvad har stofferne til fælles? Tag de fejl op, du så på udgangsbilletterne.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>10–40</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Forudsig ionen</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/8" target="_blank">Slides 8–10</a> (10 min): hovedgruppen viser ladningen, og undergruppernes metaller kan danne flere ioner. Klassen svarer på slide 9. Derefter <a href="https://kemibogen.dk/c/opgaver/2-1-opgaver.html">opgave 2.1.2, 2.1.5 og 2.1.6</a>.</p>
         <p class="ekstra">Hurtige par: 2.1.7.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>40–55</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ioners navne</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/12" target="_blank">Slides 12–16</a>: natrium i cornflakes, romertal for undergruppernes metaller og -id for de negative ioner.</p>
         <p class="ekstra">Lad klassen svare højt på slide 12 og 16, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Navngiv ionerne</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-2-opgaver.html">Opgave 2.2.1, 2.2.2 og 2.2.3</a>.</p>
         <p class="ekstra">Hurtige par: 2.2.6.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
         <p><a href="https://kemibogen.dk/c/fagord/kapitel-2.html">Fagordsiden</a>, afsnit 2.1 og 2.2. Fjern de sammensatte ioner under <em>Vælg fagord</em>. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>forudsige ladningen på ioner af grundstoffer fra hovedgrupperne</li>
-      <li>skelne mellem et grundstof og dets ion</li>
-      <li>navngive positive ioner, også med romertal, og negative ioner med endelsen -id</li>
-    </ul>
-    <p><b>Centrale fagord:</b> -id, chlorid, oxid</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-2-ioners-navne.html">2.2 Ioners navne</a>, og lær de seks sammensatte ioner udenad.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Ioners størrelse (slide 11) kan springes over.</p></div>
   </div>
 </article>
 
@@ -548,39 +462,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">-id, chlorid, oxid</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv navnet på K⁺, S²⁻ og Fe³⁺. Skriv formlen for sulfat og nitrat.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Sammensatte ioner</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/17" target="_blank">Slides 17–18</a> (5 min): ladningen gælder hele gruppen, og ammonium er den eneste positive. Klassen svarer på slide 18. Derefter <a href="https://kemibogen.dk/c/opgaver/2-2-opgaver.html">opgave 2.2.4 og 2.2.5</a>.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>30–50</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ionbinding og iongitter</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/19" target="_blank">Slides 19–22</a>: ionbinding, iongitter og klodserne, hvor ladningerne går lige op i NaCl, CaCl₂ og Al₂O₃.</p>
         <p class="ekstra">Lad klassen svare højt på slide 22, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Skriv formlen</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-3-opgaver.html">Opgave 2.3.1, 2.3.2 og 2.3.10</a>. Stop klassen, hvis mange laver samme fejl.</p>
         <p class="ekstra">Hurtige par: <em>Saltbyggeren</em>.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Kort og godt</strong><span class="form klasse">Klassen</span></div>
         <p>Vendespil i par med ionernes formel og navn i <em>Kort og godt</em>. Sættet har også et par ioner, der først kommer senere, fx permanganat.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>kende de seks sammensatte ioner med formel og navn</li>
-      <li>forklare, hvad en ionbinding og et iongitter er</li>
-      <li>skrive formlen for en ionforbindelse af to enkle ioner, så den er elektrisk neutral</li>
-    </ul>
-    <p><b>Centrale fagord:</b> sammensat ion, ionbinding, iongitter, formelenhed</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-3-ionforbindelser.html">2.3 Ionforbindelser</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Den rumlige model af iongitteret (slide 20) kan nøjes med et blik. Laget til venstre er nok til formlerne.</p></div>
   </div>
 </article>
 
@@ -596,40 +499,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">sammensat ion, ionbinding, iongitter, formelenhed</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv formlen for calciumchlorid og aluminiumoxid.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Navne og parenteser</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/23" target="_blank">Slides 23–25</a>: navne på ionforbindelser, sammensatte ioner og parentes, fx Ca(NO₃)₂ og CaCO₃.</p>
         <p class="ekstra">Lad klassen svare højt på slide 25, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>25–50</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Formel og navn</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-3-opgaver.html">Opgave 2.3.4 og 2.3.5</a>.</p>
         <p class="ekstra">Hurtige par: <em>Kemikalielageret</em>, giv glassene en etiket med formel eller navn.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>50–60</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Klassiske fejl</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/26" target="_blank">Slides 26–29</a>: hvad formlen MgCl₂ viser, fra formel til navn med Cu(NO₃)₂, navne på salte og saltes egenskaber. Klassen svarer på slide 26, 27 og 28.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>60–90</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Parenteser og fejl</strong><span class="form par">Par</span></div>
         <p>Opgave 2.3.6 og 2.3.9, derefter <em>Kemikalielageret</em>. Eleverne arbejder, til klokken ringer.</p>
         <p class="ekstra">Hurtige par: <em>Ion-Tetris</em>.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>navngive en ionforbindelse, også når metallet kommer fra en undergruppe</li>
-      <li>skrive formel og navn for en ionforbindelse med en sammensat ion</li>
-      <li>sætte parentes om en sammensat ion, når der er flere af den i formlen</li>
-    </ul>
-    <p><b>Centrale fagord:</b> salt, ionforbindelse, sammensat ion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-4-faeldningsreaktioner.html">2.4 Fældningsreaktioner</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Saltes egenskaber (slide 29) kan nøjes med en kort omtale. Salte, der opløses i vand, kommer igen i 2.4.</p></div>
   </div>
 </article>
 
@@ -645,41 +537,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">salt, ionforbindelse, sammensat ion</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv formlen for natriumcarbonat og calciumnitrat.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Bundfald og fældningstabellen</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/30" target="_blank">Slides 30–32</a>: fældningstabellen, bundfald og tilskuerioner. Na⁺, K⁺ og NO₃⁻ er aldrig med i et bundfald.</p>
         <p class="ekstra">Lad klassen svare højt på slide 31, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>30–60</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Find det ukendte salt</strong><span class="form lab">Lab</span></div>
         <p>Øvelse 2.4a, den lange udgave, i par. Eleverne gætter med fældningstabellen, før de drypper.</p>
         <p class="ekstra">Briller og kittel: sølv(I)nitrat giver sorte pletter, der først kommer frem efter nogle timer. Plastlommerne lægges over dråbeskemaet i kompendiet.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>60–80</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Slå op i tabellen</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-4-opgaver.html">Opgave 2.4.1, 2.4.2 og 2.4.3</a>.</p>
         <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc2.4_faeldningsreaktioner/index.html#let">Fældningsreaktioner</a> på Let.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Syregalgen</strong><span class="form klasse">Klassen</span></div>
         <p>Galgespil med kapitlets fagord på projektoren. Klassen gætter bogstaver på skift, bord for bord.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>forklare, hvad et let- og et tungtopløseligt salt er</li>
-      <li>bruge fældningstabellen til at afgøre, om to ioner danner bundfald</li>
-      <li>forklare, hvad et bundfald, en fældningsreaktion og en tilskuerion er</li>
-    </ul>
-    <p><b>Centrale fagord:</b> letopløselig, tungtopløselig, fældningstabel, bundfald, tilskuerion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Efterbehandling 1, 3, 4 og 5 af <a href="https://kemibogen.dk/c/oevelser/2-4a-find-det-ukendte-salt.html">øvelse 2.4a</a>. Ionskemaerne i spørgsmål 2 venter til næste gang.</p></div>
     <div><h4>Uden laboratorium</h4><p>Lad eleverne dryppe i <a href="https://kemiformler.dk/animationer/v2/superlab/sc2.5_faeldning/index.html">Forsøg: Fældning</a> (animation, 25 min). Det er samme slags forsøg på skærmen, men uden flaske X.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Tegnet ÷ i fældningstabellen kan nøjes med en sætning.</p></div>
   </div>
 </article>
 
@@ -695,41 +576,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">bundfald, tungtopløselig, tilskuerion</span>.</p>
         <p class="ekstra">Mens du tager fravær: Hvilket salt var der i flaske X, og hvordan kunne I se det?</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>De fire trin</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/33" target="_blank">Slides 33–35</a>: de fire trin med magnesiumchlorid og natriumhydroxid. I trin 3 står 2 OH⁻, og først i trin 4 kommer der koefficienter foran saltene. På slide 35 skriver klassen ionskemaet sammen med dig.</p>
         <p class="ekstra">Lad klassen svare højt på slide 34. Spørg til sidst: Hvad bliver ionskemaet for A + B i øvelse 2.4a?</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Bundfald i dråber</strong><span class="form lab">Lab</span></div>
         <p>Øvelse 2.4b, felt A til E, i par.</p>
         <p class="ekstra">Hurtige par går i gang med efterbehandlingen.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ionskemaer</strong><span class="form par">Par</span></div>
         <p>Spørgsmål 2 i efterbehandlingen af øvelse 2.4a, derefter <a href="https://kemibogen.dk/c/opgaver/2-4-opgaver.html">opgave 2.4.5 og 2.4.6</a>.</p>
         <p class="ekstra">Hurtige par: <em>Fældningsreaktioner</em> på Middel.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fagord</strong><span class="form klasse">Klassen</span></div>
         <p><em>Quiz: fem hurtige</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-2.html">fagordsiden</a>, afsnit 2.4. Klassen stemmer med fingre (1–4).</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>finde formlen for bundfaldet ved at lade ladningerne give 0 tilsammen</li>
-      <li>skrive ionskemaet for en fældningsreaktion med (aq) og (s)</li>
-      <li>forklare, hvilke ioner der er tilskuerioner</li>
-    </ul>
-    <p><b>Centrale fagord:</b> ionskema, tilskuerion, fældningsreaktion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Efterbehandling 1 til 4 af <a href="https://kemibogen.dk/c/oevelser/2-4b-bundfald-i-draaber.html">øvelse 2.4b</a>.</p></div>
     <div><h4>Uden laboratorium</h4><p>Vis felt A til E som demo under dokumentkameraet (10 min), og giv ionskemaerne de sparede 15 min.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Reaktionsskemaet med hele saltene kan nøjes med eksemplet på slide 33. Ionskemaet er det vigtigste.</p></div>
   </div>
 </article>
 
@@ -745,34 +615,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">ionskema, tilskuerion, fældningsreaktion</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv ionskemaet for bundfaldet i felt C i øvelse 2.4b.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>10–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Gennemgå øvelse 2.4b</strong><span class="form klasse">Klassen</span></div>
         <p>Eleverne foreslår ionskemaerne for felt B, C og D, og klassen retter. I felt D skal der én Fe³⁺ og tre OH⁻ til. Hvorfor kom der intet bundfald i felt E?</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>25–45</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Når der skal tal foran</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/2-4-opgaver.html">Opgave 2.4.8 og 2.4.9</a>.</p>
         <p class="ekstra">Hurtige par: ekstraopgaverne bagest i kompendiet eller <em>Fældningsreaktioner</em> på Svær.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>45–75</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Øveprøven</strong><span class="form par">Par</span></div>
         <p>Øveprøve uden hjælpemidler. Eleverne arbejder alene i 25 min og retter selv med facit på siden de sidste 5 min.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+    <li><div class="tid"><b>15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
         <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-2.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
   </ol>
-
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>skrive ionskemaet, også når der skal tal foran ionerne</li>
-      <li>forklare forskellen på tallet foran en ion og det lille tal i en formel</li>
-      <li>forudsige, hvad der sker, når to saltopløsninger blandes</li>
-    </ul>
-    <p><b>Centrale fagord:</b> ionskema, koefficient, tilskuerion</p>
-  </div>
 
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-2.html">Repetition af kapitel 2</a>: sæt flueben ved det, du kan.</p></div>
@@ -799,50 +659,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra kapitel 1: <span class="ord">ædelgasreglen, valenselektroner, afstemt</span>.</p>
         <p class="ekstra">Mens du tager fravær: Skriv elektronstrukturen for natrium og chlor. Hvor mange elektroner har de i yderste skal?</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>10–20</span></div>
+    <li><div class="tid"><b>5–15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Afstem sammen</strong><span class="form tavle">Tavle</span></div>
         <p>Skriv Al + Cl₂ → AlCl₃ på tavlen, og lad klassen foreslå ét tal ad gangen (2 Al + 3 Cl₂ → 2 AlCl₃). Saltet AlCl₃ er bygget af ioner, og det handler kapitlet om.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>20–35</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fra atom til ion</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/7" target="_blank">Slide 7–10</a>: oxygen optager to elektroner, hovedgruppen viser ladningen og undergruppernes metaller. Klassen svarer på slide 7 og 9.</p>
         <p class="ekstra">Nåede klassen ikke slide 2–6 i sidste modul, så begynd med <a class="sl" href="../slides/kapitel-2.html#/2" target="_blank">slide 2–6</a> (10 min mere).</p></div></li>
-    <li><div class="tid"><b>35 min</b><span>35–70</span></div>
+    <li><div class="tid"><b>30–40 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ioner</strong><span class="form par">Par</span></div>
         <p>Kompendiet s. 11–13: noterne til 2.1 og <a href="https://kemibogen.dk/c/opgaver/2-1-opgaver.html">opgave 2.1.1, 2.1.2, 2.1.3 og 2.1.5</a>.</p>
         <p class="ekstra">Hurtige par: 2.1.6 og 2.1.7.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ioners navne</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/11" target="_blank">Slide 11–16</a>: natrium i cornflakes, romertal og -id. Klassen svarer på slide 11 og 16.</p>
         <p class="ekstra">Er der tid tilovers: <a href="https://kemibogen.dk/c/opgaver/2-2-opgaver.html">opgave 2.2.1</a> (grundstof eller ion?) i par.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul class="stikord">
-      <li>ion, positiv og negativ ion</li>
-      <li>ladning = protoner − elektroner</li>
-      <li>metaller afgiver, ikke-metaller optager elektroner</li>
-      <li>ladningen ud fra hovedgruppen</li>
-      <li>Fe²⁺ og Fe³⁺: undergruppernes metaller</li>
-    </ul>
-    <p><b>Centrale fagord:</b> ion, positiv ion, negativ ion, ladning</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-2-ioners-navne.html">2.2 Ioners navne</a>, og lær de seks sammensatte ioner udenad.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Undergruppernes metaller (slide 10) kan nøjes med jern. Resten kommer igen i 2.2.</p></div>
-  </div>
-
-  <div class="forslag">
-    <h4>Flere forslag</h4>
-    <ul>
-      <li>I stedet for at afstemme på tavlen: animationen <a href="https://kemiformler.dk/animationer/superanimationer/sc1.4_afstemning/index.html#kugler">Afstem reaktioner</a> på egen computer (10 min).</li>
-      <li>Har klassen svært ved ladningen: tegn natriumatomet og natriumionen ved siden af hinanden på tavlen, og tæl protoner og elektroner sammen.</li>
-    </ul>
   </div>
 </article>
 
@@ -858,43 +697,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>15 min</b><span>0–15</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fagordbyggeren</strong><span class="form start">Start</span></div>
         <p>Mens du tager fravær, bygger eleverne to og to figurerne til <a href="https://kemiformler.dk/animationer/superanimationer/sc2.7_byg_figuren/index.html#ioner">2.1</a> og <a href="https://kemiformler.dk/animationer/superanimationer/sc2.7_byg_figuren/index.html#navne">2.2</a> i <em>Byg figuren</em>.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>15–45</span></div>
+    <li><div class="tid"><b>30–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ioners navne</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/17" target="_blank">Slide 17–18</a> (5 min): ladningen gælder hele den sammensatte ion. Klassen svarer på slide 18. Derefter kompendiet s. 14–16: noterne til 2.2 og <a href="https://kemibogen.dk/c/opgaver/2-2-opgaver.html">opgave 2.2.1–2.2.5</a>.</p>
         <p class="ekstra">Hurtige par: 2.2.6 og 2.2.7.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>45–65</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Ionforbindelser</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/19" target="_blank">Slide 19–22</a>: ionbinding, iongitter, og ladningerne går lige op. Klassen svarer på slide 22.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>65–90</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Skriv formlen</strong><span class="form par">Par</span></div>
         <p>Kompendiet s. 17–18: noterne til 2.3 til og med <em>Ladningerne går lige op</em> og <a href="https://kemibogen.dk/c/opgaver/2-3-opgaver.html">opgave 2.3.1 og 2.3.2</a>. Eleverne arbejder, til klokken ringer.</p>
         <p class="ekstra">Hurtige par: 2.3.3 (hævemidler i kagen).</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul class="stikord">
-      <li>de seks sammensatte ioner: NO₃⁻, SO₄²⁻, CO₃²⁻, PO₄³⁻, OH⁻, NH₄⁺</li>
-      <li>ionbinding og iongitter</li>
-      <li>formlen er neutral: ladningerne går lige op</li>
-    </ul>
-    <p><b>Centrale fagord:</b> sammensat ion, ionforbindelse, ionbinding, iongitter, formelenhed</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-3-ionforbindelser.html">2.3 Ionforbindelser</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Den rumlige model af iongitteret (slide 20) kan nøjes med et blik. Laget til venstre er nok til formlerne.</p></div>
-  </div>
-
-  <div class="forslag">
-    <h4>Flere forslag</h4>
-    <ul>
-      <li>Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc2.2_saltbygger/index.html#opgaver">Saltbyggeren</a> (animation).</li>
-      <li>Kan klassen de sammensatte ioner: lad Byg figuren tage 10 min, og giv opgaverne resten.</li>
-    </ul>
   </div>
 </article>
 
@@ -910,47 +730,27 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>15 min</b><span>0–15</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span><span class="form tavle">Tavle</span></div>
         <p>Ord fra sidst: <span class="ord">ionbinding, iongitter, formelenhed</span>.</p>
         <p>Tag fravær, og gennemgå <a class="sl" href="../slides/kapitel-2.html#/19" target="_blank">slide 19–22</a> igen kort. Klassen svarer på slide 22.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>15–35</span></div>
+    <li><div class="tid"><b>20–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Navne og parenteser</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/23" target="_blank">Slide 23–29</a>: navne på ionforbindelser, sammensatte ioner og parentes, klassiske fejl, fra formel til navn med Cu(NO₃)₂ og saltes egenskaber. Klassen svarer på slide 25–28.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>35–65</span></div>
+    <li><div class="tid"><b>30–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Formel og navn</strong><span class="form par">Par</span></div>
         <p>Kompendiet s. 17 og 19: resten af noterne til 2.3 og <a href="https://kemibogen.dk/c/opgaver/2-3-opgaver.html">opgave 2.3.4, 2.3.5 og 2.3.6</a>. Stop klassen, hvis mange laver samme fejl.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>65–80</span></div>
+    <li><div class="tid"><b>10–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Klassiske fejl</strong><span class="form par">Par</span></div>
         <p>Opgave 2.3.7 og 2.3.9 (s. 20).</p>
         <p class="ekstra">Hurtige par: 2.3.8 eller <a href="https://kemiformler.dk/animationer/superanimationer/sc_spil6_iontetris/index.html">Ion-Tetris</a> (spil).</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Samlebåndet</strong><span class="form klasse">Klassen</span></div>
         <p><em>Kemikalielageret</em>, fanen Samlebåndet: alle spiller på egen computer, og klassen sammenligner point til sidst.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul class="stikord">
-      <li>navn: metal + ikke-metal med -id</li>
-      <li>romertal ved undergruppernes metaller</li>
-      <li>parentes om en sammensat ion, når der er flere</li>
-      <li>fra formel til navn</li>
-    </ul>
-    <p><b>Centrale fagord:</b> salt, ionforbindelse, sammensat ion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Gør opgaverne til 2.3 færdige (kompendiet s. 18–20).</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Saltes egenskaber (slide 29) kan nøjes med en kort omtale. Salte, der opløses i vand, kommer igen i 2.4.</p></div>
-  </div>
-
-  <div class="forslag">
-    <h4>Flere forslag</h4>
-    <ul>
-      <li><b>Er der tid tilovers:</b> Quizlet med fagordene fra 2.1–2.3. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-2.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</li>
-      <li>I stedet for Samlebåndet: <em>Ion-Tetris</em> i par.</li>
-    </ul>
   </div>
 </article>
 
@@ -966,48 +766,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">salt, sammensat ion</span>.</p>
         <p class="ekstra">Mens du tager fravær: <em>Før forsøget</em> i kompendiet s. 25: ionerne og formlen for jern(II)sulfat, jern(III)nitrat og natriumhydroxid.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>10–40</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Jern(II) eller jern(III)?</strong><span class="form tavle">Tavle</span><span class="form klasse">Klassen</span></div>
         <p>Demoforsøg 2.3a. Vis opløsningernes farve, og lad klassen gætte bundfaldets farve, før du hælder natriumhydroxid i. Eleverne udfylder resultaterne og efterbehandling 1–2 (s. 25–26). Efterbehandling 3 venter til modul 6.</p>
         <p class="ekstra">Opløs jern(II)sulfat lige før forsøget: jern(II)ioner bliver langsomt til jern(III)ioner. Briller: natriumhydroxid er ætsende.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>40–70</span></div>
+    <li><div class="tid"><b>30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Faglig læsning af 2.4</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p>Vis 2.4 på tavlen, og læs højt til og med figur 1 (10 min). Eleverne læser resten hver for sig med læsekortet og læsearket s. 21 (20 min).</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>70–85</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Bundfald</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/30" target="_blank">Slide 30–33</a>: fældningstabellen, bundfald og tilskuerioner og de fire trin med magnesiumchlorid og natriumhydroxid. Klassen svarer på slide 31.</p></div></li>
-    <li><div class="tid"><b>5 min</b><span>85–90</span></div>
+    <li><div class="tid"><b>5 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Udgangsbillet</strong><span class="form klasse">Klassen</span></div>
         <p>Kommer der bundfald, når magnesiumchlorid og natriumcarbonat blandes? Skriv i så fald ionskemaet. Billetten har en boks med en reaktionspil i midten. Læs sedlerne før næste modul.</p>
         <p class="ekstra"><a href="udgangsbillet-kap2-2026-modul-4.pdf" target="_blank">Billetterne klar til print</a> (8 pr. ark). Vil du ændre spørgsmålet: <a href="udgangsbillet.html?q=Kommer+der+bundfald%2C+n%C3%A5r+magnesiumchlorid+og+natriumcarbonat+blandes%3F+Skriv+i+s%C3%A5+fald+ionskemaet.&amp;linje=Kemi+C+%C2%B7+kapitel+2+%C2%B7+modul+4&amp;n=8&amp;svar=pil&amp;navn=1&amp;skrift=kemibogen&amp;str=lille" target="_blank">værktøjet til udgangsbilletter</a>.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul class="stikord">
-      <li>Fe²⁺ og Fe³⁺ giver to forskellige bundfald</li>
-      <li>let- og tungtopløselig</li>
-      <li>fældningstabellen</li>
-      <li>bundfald og tilskuerioner</li>
-    </ul>
-    <p><b>Centrale fagord:</b> letopløselig, tungtopløselig, fældningstabel, bundfald, tilskuerion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-4-faeldningsreaktioner.html">2.4 Fældningsreaktioner</a> igen, og gør læsearket færdigt (s. 21).</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Tegnet ÷ i fældningstabellen kan nøjes med en sætning.</p></div>
-  </div>
-
-  <div class="forslag">
-    <h4>Flere forslag</h4>
-    <ul>
-      <li>Læsningen kan også foregå i par, hvor de to genfortæller for hinanden med lukket bog.</li>
-      <li>Hurtige læsere: <a href="https://kemiformler.dk/animationer/superanimationer/sc2.4_faeldningsreaktioner/index.html#let">Fældningsreaktioner</a> på Let (animation).</li>
-    </ul>
   </div>
 </article>
 
@@ -1019,49 +799,37 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
   <div class="før">
     <div><h4>Lektie til i dag</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-4-faeldningsreaktioner.html">2.4 Fældningsreaktioner</a> igen, og gør læsearket færdigt (s. 21).</p></div>
-    <div><h4>Du skal bruge</h4><ul><li>Laboratoriet booket fra minut 25 til 85, til halvdelen af klassen ad gangen</li><li><a href="https://kemibogen.dk/c/oevelser/2-4b-bundfald-i-draaber.html">Øvelse 2.4b Bundfald i dråber</a>: plastlommer og dråbeflasker med 0,1 M kobber(II)sulfat, natriumphosphat, sølv(I)nitrat, kaliumiodid, calciumchlorid, natriumcarbonat og jern(III)nitrat</li><li><a class="sl" href="../slides/kapitel-2.html#/32" target="_blank">Slides til kapitel 2</a>, slide 32–35</li></ul></div>
+    <div><h4>Du skal bruge</h4><ul><li>Laboratoriet booket i en time midt i modulet, til halvdelen af klassen ad gangen</li><li><a href="https://kemibogen.dk/c/oevelser/2-4b-bundfald-i-draaber.html">Øvelse 2.4b Bundfald i dråber</a>: plastlommer og dråbeflasker med 0,1 M kobber(II)sulfat, natriumphosphat, sølv(I)nitrat, kaliumiodid, calciumchlorid, natriumcarbonat og jern(III)nitrat</li><li><a class="sl" href="../slides/kapitel-2.html#/32" target="_blank">Slides til kapitel 2</a>, slide 32–35</li></ul></div>
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">bundfald, tungtopløselig, tilskuerion</span>. Tag fejlene fra udgangsbilletterne op (svaret er Mg²⁺(aq) + CO₃²⁻(aq) → MgCO₃(s)).</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>10–15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Når der skal tal foran</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-2.html#/32" target="_blank">Slide 32–33</a> igen: én Pb²⁺ og to I⁻ giver PbI₂, og i ionskemaet står 2 I⁻, aldrig I₂⁻. På <a class="sl" href="../slides/kapitel-2.html#/34" target="_blank">slide 34–35</a> svarer klassen og skriver ionskemaet med dig.</p>
         <p class="ekstra">Fortæl, hvem der er på hold A og B, og hvad hold B skal lave.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>25–55</span></div>
+    <li><div class="tid"><b>30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Hold A i laboratoriet</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
         <p><b>Hold A:</b> øvelse 2.4b, felt A–E, i par, og et billede af plastlommen. <b>Hold B</b> i klassen: kompendiet s. 22–23, <a href="https://kemibogen.dk/c/opgaver/2-4-opgaver.html">opgave 2.4.1, 2.4.5 og 2.4.6</a> med fældningstabellen (s. 29).</p>
         <p class="ekstra">Briller og kittel: sølv(I)nitrat giver sorte pletter, der først kommer frem efter nogle timer. Køkkenrullen i beholderen, ikke i vasken. Hurtige på hold B: 2.4.2–2.4.4.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>55–85</span></div>
+    <li><div class="tid"><b>30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Holdene bytter</strong><span class="form lab">Lab</span><span class="form par">Par</span></div>
         <p><b>Hold B:</b> øvelse 2.4b. <b>Hold A:</b> opgave 2.4.1, 2.4.5 og 2.4.6.</p></div></li>
-    <li><div class="tid"><b>5 min</b><span>85–90</span></div>
+    <li><div class="tid"><b>5 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Hvilke felter gav bundfald?</strong><span class="form klasse">Klassen</span></div>
         <p>Klassen samles og siger felt for felt, om der kom bundfald, og hvilken farve det havde.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul class="stikord">
-      <li>to opløsninger → to nye par, L eller T</li>
-      <li>bundfaldets formel: ladningerne giver 0</li>
-      <li>ionskema med tal foran: 3 Cu²⁺ + 2 PO₄³⁻</li>
-    </ul>
-    <p><b>Centrale fagord:</b> fældningsreaktion, ionskema, tilskuerion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Efterbehandling 1 og 2 af øvelse 2.4b (kompendiet s. 28).</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Efterbehandlingens spørgsmål 3 (hele reaktionsskemaet) er ekstra. Ionskemaet er det vigtigste.</p></div>
   </div>
 
   <div class="forslag">
     <h4>Flere forslag</h4>
     <ul>
       <li>Kan klassen ikke deles: hele klassen laver øvelsen i par (30 min), og opgaverne kommer bagefter.</li>
-      <li>Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc2.4_faeldningsreaktioner/index.html#let">Fældningsreaktioner</a> på Let.</li>
     </ul>
   </div>
 </article>
@@ -1078,43 +846,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">fældningsreaktion, ionskema</span>.</p>
         <p class="ekstra">Mens du tager fravær: I felt E blev kaliumiodid og natriumcarbonat blandet. Hvorfor kom der ikke noget bundfald? Svar med fældningstabellen.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>10–30</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Følg op på øvelserne</strong><span class="form tavle">Tavle</span><span class="form klasse">Klassen</span></div>
         <p>Vis et par billeder af plastlommen. Klassen siger ionskemaerne for felt B–D, og du skriver dem på tavlen. Til sidst demoforsøgets efterbehandling 3 (s. 26): Fe²⁺ + 2 OH⁻ → Fe(OH)₂ og Fe³⁺ + 3 OH⁻ → Fe(OH)₃.</p></div></li>
-    <li><div class="tid"><b>45 min</b><span>30–75</span></div>
+    <li><div class="tid"><b>40–50 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>De svære fældningsreaktioner</strong><span class="form par">Par</span></div>
         <p>Kompendiet s. 23–24: <a href="https://kemibogen.dk/c/opgaver/2-4-opgaver.html">opgave 2.4.7, 2.4.8 og 2.4.9</a>. Stop klassen, hvis mange skriver I₂⁻ eller glemmer tallet foran.</p>
         <p class="ekstra">Hurtige par: 2.4.10 eller <em>Fældningsreaktioner</em> på Svær.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>75–90</span></div>
+    <li><div class="tid"><b>15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
         <p>Quizlet med hele kapitlets fagord. Knappen <em>Quizlet</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-2.html">fagordsiden</a> kopierer ordene, så de kan sættes ind i et nyt sæt.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul class="stikord">
-      <li>ionskema med tal foran og tilstandssymboler</li>
-      <li>tallet foran ≠ det lille tal i formlen</li>
-      <li>intet bundfald: begge nye par er L</li>
-      <li>tilskuerioner står ikke i ionskemaet</li>
-    </ul>
-    <p><b>Centrale fagord:</b> ionskema, fældningsreaktion, tilskuerion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-2.html">Repetition af kapitel 2</a> med øveprøven.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Reaktionsskemaet med hele saltene (2.4.8 d) kan vente. Ionskemaet er det vigtigste.</p></div>
   </div>
 
   <div class="forslag">
     <h4>Flere forslag</h4>
     <ul>
       <li><b>Har I kun fem moduler:</b> lad modul 6 udgå, giv opgave 2.4.7–2.4.9 som lektie, og tag opfølgningen på øvelserne (15 min) i starten af næste kapitel.</li>
-      <li>I stedet for Quizlet: <em>Fældningsreaktioner</em> på Svær i par, hvor den ene skriver og den anden tjekker.</li>
     </ul>
   </div>
 </article>

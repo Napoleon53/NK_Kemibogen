@@ -93,22 +93,21 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 .før { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: .88rem; }
 .før > div { min-width: 0; }
-.før h4, .fokus h4, .bagefter h4 {
+.før h4, .bagefter h4 {
   margin: 0 0 2px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dæmpet); font-weight: 600;
 }
 .før p, .før ul { margin: 0; }
 .før ul { padding-left: 1.1em; }
 
-/* Tidslinje */
+/* Tidslinje: kun et omtrentligt antal minutter pr. trin (Niels 9. nov. 2026), ingen klokkeslæt. */
 .forløb { list-style: none; margin: 0; padding: 0; display: grid; }
 .forløb li {
-  display: grid; grid-template-columns: 74px 1fr; gap: 16px;
+  display: grid; grid-template-columns: 84px 1fr; gap: 14px;
   padding-block: 10px; border-top: 1px solid var(--streg);
 }
 .forløb li:first-child { border-top: 0; padding-top: 0; }
 .tid { font-variant-numeric: tabular-nums; display: grid; align-content: start; }
-.tid b { font-size: 1.15rem; line-height: 1.1; }
-.tid span { font-size: .75rem; color: var(--dæmpet); }
+.tid b { font-size: 1.02rem; line-height: 1.25; white-space: nowrap; }
 .trin { min-width: 0; display: grid; gap: 3px; }
 .trin-hoved { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .trin-hoved strong { font-size: 1rem; }
@@ -122,9 +121,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .trin .ekstra { color: var(--dæmpet); font-size: .84rem; }
 .ord { font-weight: 600; }
 
-.fokus { background: var(--fokus-bg); border-radius: 6px; padding: 12px 16px; display: grid; gap: 6px; }
-.fokus ul { margin: 0; padding-left: 1.1em; font-size: .88rem; display: grid; gap: 2px; }
-.fokus p { margin: 0; font-size: .88rem; }
 
 .bagefter { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; font-size: .88rem; }
 .bagefter > div { min-width: 0; }
@@ -147,7 +143,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 @media (max-width: 640px) {
   .modul { padding: 20px 16px; }
   .før, .pakker { grid-template-columns: 1fr; }
-  .forløb li { grid-template-columns: 56px 1fr; gap: 10px; }
+  .forløb li { grid-template-columns: 78px 1fr; gap: 10px; }
 }
 
 @page { size: A4; margin: 12mm; }
@@ -162,7 +158,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   #nv2026 .modul { gap: 2.5mm; }
   #nv2026 .modul > header { padding-bottom: 2mm; }
   #nv2026 .forløb li { padding-block: 5px; }
-  #nv2026 .fokus { padding: 2mm 4mm; }
   #nv2026 .forslag { padding: 2mm 4mm; }
 }
 </style>
@@ -181,7 +176,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     <button type="button" id="knap-lang" data-plan="lang" aria-pressed="false">Lang · 4 moduler<span>To øvelser, god tid til afstemning</span></button>
     <button type="button" id="knap-nv2026" data-plan="nv2026" aria-pressed="false">Kap 1 2026 · 2 moduler<span>Afkortet pga. NV</span></button>
   </div>
-  <p class="forslagsnote" data-plan="nv2026" hidden><b>Et forslag til en modulplan</b> til et hold, der har haft atomer og reaktionsskemaer i NV-forløbet. Kapitlet får derfor kun to moduler, og modul 2 er samtidig kemis del af faglig læsning i 1g. Tilpas tider og opgaver til holdet; flere idéer står i boksen nederst i hvert modul.</p>
+  <p class="forslagsnote" data-plan="nv2026" hidden><b>Et forslag til en modulplan</b> til et hold, der har haft atomer og reaktionsskemaer i NV-forløbet. Kapitlet får derfor kun to moduler, og modul 2 er samtidig kemis del af faglig læsning i 1g. Tilpas tider og opgaver til holdet.</p>
   <p class="materialer">
     <span data-plan="kort"><b>Kompendium:</b> <a href="kompendium-kapitel-1-kort.pdf" target="_blank">klar til print til den korte plan</a> (PDF, 16 sider).</span>
     <span data-plan="lang" hidden><b>Kompendium:</b> <a href="kompendium-kapitel-1-lang.pdf" target="_blank">klar til print til den lange plan</a> (PDF, 19 sider).</span>
@@ -219,40 +214,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra grundskolen: <span class="ord">atom, molekyle, grundstof</span>.</p>
         <p class="ekstra">Mens du tager fravær: skriv med sidemanden ét stof, der er et grundstof, og ét, der ikke er.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Kemiens sprog</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/2" target="_blank">Slides 2–8</a>: makro og mikro, grundstof og kemisk forbindelse, metaller og ikke-metaller, molekyler og ionforbindelser.</p>
         <p class="ekstra">Lad klassen svare højt på slide 6 og 8, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>25–50</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Grundstoffer og forbindelser</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/1-1-opgaver.html">Opgave 1.1.1, 1.1.2 og 1.1.3</a>.</p>
         <p class="ekstra">Hurtige par: <a href="https://kemiformler.dk/animationer/superanimationer/sc1.2_grundstofudstilling/index.html">Grundstofudstillingen</a>.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>50–80</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Atomet</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
-        <p><a class="sl" href="../slides/kapitel-1.html#/9" target="_blank">Slides 9–15</a> (12 min): kerne og elektroner, atomnummer, isotoper og atommasse. Derefter <a href="https://kemibogen.dk/c/opgaver/1-2-opgaver.html">opgave 1.2.1, 1.2.2 og 1.2.3</a>.</p>
+        <p><a class="sl" href="../slides/kapitel-1.html#/9" target="_blank">Slides 9–15</a> (10–15 min): kerne og elektroner, atomnummer, isotoper og atommasse. Derefter <a href="https://kemibogen.dk/c/opgaver/1-2-opgaver.html">opgave 1.2.1, 1.2.2 og 1.2.3</a>.</p>
         <p class="ekstra">Hurtige par: animationen <em>Atomets opbygning</em> eller 1.2.4.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
         <p><a href="https://kemibogen.dk/c/fagord/kapitel-1.html">Fagordsiden</a>, afsnit 1.1 og 1.2. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>afgøre, om et stof er et grundstof eller en kemisk forbindelse</li>
-      <li>finde metaller og ikke-metaller i det periodiske system</li>
-      <li>beskrive atomets opbygning og bruge atomnummeret til at finde antallet af protoner og elektroner</li>
-    </ul>
-    <p><b>Centrale fagord:</b> grundstof, kemisk forbindelse, metal, atomnummer</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/1-3-elektronskaller.html">1.3 Elektronskaller og det periodiske system</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Isotoper og atommasse (slide 13–15) kan springes over. Atommassen kommer igen i kapitel 5.</p></div>
   </div>
 </article>
 
@@ -268,40 +252,27 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">kemisk forbindelse, atomnummer, isotoper</span>.</p>
         <p class="ekstra">Mens du tager fravær: Oxygen har atomnummer 8. Hvor mange protoner og elektroner har et oxygenatom? Er O₂ et grundstof?</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Skalmodellen</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/16" target="_blank">Slides 16–21</a> og <a class="sl" href="../slides/kapitel-1.html#/25" target="_blank">25–26</a>: skaller, elektronstruktur, periode og hovedgruppe, ædelgasreglen. Find magnesiums elektronstruktur sammen (slide 19).</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>25–45</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Elektronstrukturer</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/1-3-opgaver.html">Opgave 1.3.1, 1.3.4 og 1.3.6</a>.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>45–65</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fra forsøg til reaktionsskema</strong><span class="form tavle">Tavle</span></div>
-        <p><a class="sl" href="../slides/kapitel-1.html#/27" target="_blank">Slides 27–29</a>: formler og kemiske reaktioner. Brænd et stykke magnesiumbånd (1 min): hvad ser vi, og hvilke kendetegn fra slide 30 er det? Derefter <a class="sl" href="../slides/kapitel-1.html#/31" target="_blank">slides 31–38</a>. Afstem ammoniak sammen med klassen (slide 36).</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>65–90</span></div>
+        <p><a class="sl" href="../slides/kapitel-1.html#/27" target="_blank">Slides 27–29</a>: formler og kemiske reaktioner. Brænd et stykke magnesiumbånd: hvad ser vi, og hvilke kendetegn fra slide 30 er det? Derefter <a class="sl" href="../slides/kapitel-1.html#/31" target="_blank">slides 31–38</a>. Afstem ammoniak sammen med klassen (slide 36).</p></div></li>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Afstemning</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/1-4-opgaver.html">Opgave 1.4.1, 1.4.3, 1.4.4 og 1.4.5</a>.</p>
         <p class="ekstra">Hurtige par: 1.4.6 og 1.4.7, ekstraopgaverne bagest i kompendiet eller animationen <em>Afstem reaktioner</em>. Sidste 5 min: <em>Quiz: fem hurtige</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-1.html">fagordsiden</a>.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>skrive elektronstrukturen for de første 20 grundstoffer, fx (2, 8, 7)</li>
-      <li>aflæse antallet af skaller og elektroner i yderste skal i det periodiske system</li>
-      <li>forklare ædelgasreglen</li>
-      <li>læse en kemisk formel som H₂O</li>
-      <li>afstemme et reaktionsskema uden at ændre de små tal i formlerne</li>
-    </ul>
-    <p><b>Centrale fagord:</b> elektronstruktur, hovedgruppe, ædelgasreglen, koefficient, afstemning</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-1.html">Repetition af kapitel 1</a> med øveprøven.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Tilstandssymbolerne (slide 38) kan vente til kapitel 2, hvor de bruges ved fældningsreaktioner.</p></div>
   </div>
 </article>
 
@@ -322,39 +293,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra grundskolen: <span class="ord">atom, molekyle, grundstof</span>.</p>
         <p class="ekstra">Mens du tager fravær: nævn med sidemanden tre stoffer i lokalet. Hvad tror I, de består af?</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Makro og mikro</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/2" target="_blank">Slides 2–4</a>. Spørg: Er saltvand et rent stof? Er en blyant det?</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>25–45</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Grundstoffer og forbindelser</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/5" target="_blank">Slides 5–8</a>: symboler, metaller og ikke-metaller, molekyler og ionforbindelser.</p>
         <p class="ekstra">Klassen svarer på slide 6 og 8, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>35 min</b><span>45–80</span></div>
+    <li><div class="tid"><b>30–40 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opgaver</strong><span class="form par">Par</span></div>
         <p>10 min med <em>Grundstofudstillingen</em>. Derefter <a href="https://kemibogen.dk/c/opgaver/1-1-opgaver.html">opgave 1.1.1 til 1.1.3</a>. Stop klassen, hvis mange laver samme fejl.</p>
         <p class="ekstra">Hurtige par: ekstraopgaverne bagest i kompendiet.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fagord</strong><span class="form klasse">Klassen</span></div>
         <p><em>Quiz: fem hurtige</em> på <a href="https://kemibogen.dk/c/fagord/kapitel-1.html">fagordsiden</a>, kun afsnit 1.1. Klassen stemmer med fingre (1–4).</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>forklare forskellen på makroniveau og mikroniveau</li>
-      <li>afgøre, om et stof er et grundstof eller en kemisk forbindelse</li>
-      <li>finde metaller og ikke-metaller i det periodiske system</li>
-    </ul>
-    <p><b>Centrale fagord:</b> rent stof, grundstof, kemisk forbindelse, metal</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/1-2-atomet.html">1.2 Atomet</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Halvmetaller og ionforbindelser kan nøjes med en kort omtale. Ionforbindelser bliver forklaret i kapitel 2.</p></div>
   </div>
 </article>
 
@@ -370,38 +330,27 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">grundstof, kemisk forbindelse, molekyle, ionforbindelse</span>.</p>
         <p class="ekstra">Mens du tager fravær: sortér O₂, H₂O, Fe og NaCl i grundstoffer og kemiske forbindelser.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>10–40</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Atomet</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/9" target="_blank">Slides 9–15</a> (15 min): kerne og elektroner, atomnummer, isotoper og atommasse. Klassen svarer på slide 12 og 14. Derefter <a href="https://kemibogen.dk/c/opgaver/1-2-opgaver.html">opgave 1.2.1 og 1.2.2</a>.</p>
         <p class="ekstra">Hurtige par: animationen <em>Atomets opbygning</em> eller 1.2.3.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>40–55</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Skalmodellen</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/16" target="_blank">Slides 16–19</a>: skaller, chlor som eksempel, hvornår en ny skal starter. Find magnesiums elektronstruktur sammen (slide 19).</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Skriv og tegn</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/1-3-opgaver.html">Opgave 1.3.1 og 1.3.3</a>.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Speedtalk</strong><span class="form klasse">Klassen</span></div>
         <p><a href="https://kemibogen.dk/c/fagord/kapitel-1.html">Fagordsiden</a>, afsnit 1.1 og 1.2. Eleverne forklarer ordet på skærmen for sidemanden, til klokken ringer.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>beskrive atomets opbygning med kerne, protoner, neutroner og elektroner</li>
-      <li>bruge atomnummeret til at finde antallet af protoner og elektroner</li>
-      <li>fordele et atoms elektroner i skaller og skrive elektronstrukturen, fx (2, 8, 7)</li>
-    </ul>
-    <p><b>Centrale fagord:</b> atomnummer, isotoper, elektronstruktur</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/1-3-elektronskaller.html">1.3 Elektronskaller og det periodiske system</a> og <a href="https://kemibogen.dk/c/kapitler/0-3-sikkerhed-i-laboratoriet.html">0.3 Sikkerhed i laboratoriet</a>, og tag <a href="https://kemiformler.dk/animationer/laboratoriekoerekort/index.html">Laboratoriekørekortet</a> (10 min). Tag et skærmbillede, når du har bestået, og vis det ved døren til laboratoriet.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Atomets størrelse (slide 10) og atommasse (slide 15) kan springes over. Atommassen kommer igen i kapitel 5.</p></div>
   </div>
 </article>
 
@@ -417,40 +366,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">atomnummer, isotoper, elektronstruktur</span>.</p>
         <p class="ekstra">Mens du tager fravær: Kalium har atomnummer 19. Hvor mange elektroner har et kaliumatom, og hvordan er de fordelt i skaller?</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>10–25</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Det periodiske system</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/20" target="_blank">Slides 20–26</a>: periode og hovedgruppe, valenselektroner, ædelgasreglen. Klassen svarer på slide 21 og 26.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>25–40</span></div>
+    <li><div class="tid"><b>10–15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Sikkerhed i laboratoriet</strong><span class="form lab">Lab</span></div>
-        <p>Se skærmbillederne fra Laboratoriekørekortet ved døren. Vis øjenskylleflasken, nødbruseren, brandtæppet og affaldsbeholderen (3 min). Hver gruppe finder faresymbolet og én H- og én P-sætning på en af flaskerne med de faste salte, med bilaget ved siden af (5 min). Vis til sidst, hvordan bunsenbrænderen tændes og skrues fra gul til blå flamme (5 min).</p>
+        <p>Se skærmbillederne fra Laboratoriekørekortet ved døren. Vis øjenskylleflasken, nødbruseren, brandtæppet og affaldsbeholderen. Hver gruppe finder faresymbolet og én H- og én P-sætning på en af flaskerne med de faste salte, med bilaget ved siden af. Vis til sidst, hvordan bunsenbrænderen tændes og skrues fra gul til blå flamme.</p>
         <p class="ekstra">Har klassen været i laboratoriet før: spring rundvisningen over, og giv flammefarverne mere tid.</p></div></li>
-    <li><div class="tid"><b>30 min</b><span>40–70</span></div>
+    <li><div class="tid"><b>25–35 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Flammefarver</strong><span class="form lab">Lab</span></div>
         <p>Øvelse 1.3 i grupper på 2–3. Find metallet i pind X og Y.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>70–90</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Efterbehandling</strong><span class="form par">Par</span></div>
         <p>Efterbehandlingen af øvelse 1.3: metallet i X og Y, elektronstrukturerne og skalmodellen af natrium.</p>
         <p class="ekstra">Hurtige par: ekstraopgaverne til 1.3 bagest i kompendiet.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>aflæse antallet af skaller og elektroner i yderste skal i det periodiske system</li>
-      <li>forklare ædelgasreglen</li>
-      <li>arbejde sikkert i laboratoriet og finde faresymbolet på en etiket</li>
-    </ul>
-    <p><b>Centrale fagord:</b> periode, hovedgruppe, ædelgasreglen, faresymbol</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/1-4-reaktionsskemaer.html">1.4 Reaktionsskemaer og afstemning</a>.</p></div>
     <div><h4>Uden laboratorium</h4><p>Vis <a href="https://kemibogen.dk/c/oevelser/1-3b-regnbueflammen.html">Demoforsøg 1.3b Regnbueflammen</a> ved katederet (10 min), og tag formlerne og reaktionsskemaet (slides 27–35) og opgave 1.4.1 og 1.4.3 fra modul 4 i de sparede minutter. Sikkerheden venter til første gang, klassen er i laboratoriet.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Undergrupper og hovedgruppernes navne (slide 22 og 24) kan vente til kapitel 2.</p></div>
   </div>
 </article>
 
@@ -466,45 +404,32 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>5–10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Opstart</strong><span class="form start">Start</span></div>
         <p>Ord fra lektien: <span class="ord">reaktant, produkt, koefficient, afstemning</span>.</p>
         <p class="ekstra">Mens du tager fravær: H₂ + Cl₂ → HCl. Tæl atomerne på hver side. Er skemaet afstemt?</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Sker der en kemisk reaktion?</strong><span class="form lab">Lab</span></div>
         <p>Øvelse 1.4: fire små forsøg. Eleverne skriver kun, hvad de ser, hører og mærker.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>35–55</span></div>
+    <li><div class="tid"><b>15–25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Formler og reaktionsskemaet</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kapitel-1.html#/27" target="_blank">Slides 27–35</a>: formler, kendetegn på en kemisk reaktion, reaktanter og produkter, koefficient og lille tal, tæl atomer, afstem dannelsen af vand. Klassen svarer på slide 28, 32 og 34.</p>
         <p class="ekstra">På slide 30 bruger klassen sine iagttagelser fra øvelsen.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>55–65</span></div>
+    <li><div class="tid"><b>5–15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Afstem sammen</strong><span class="form klasse">Klassen</span></div>
         <p>Ammoniak trin for trin (<a class="sl" href="../slides/kapitel-1.html#/36" target="_blank">slide 36</a>) og fælden med H₂O₂ (slide 37). Eleverne foreslår næste tal.</p></div></li>
-    <li><div class="tid"><b>20 min</b><span>65–85</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Afstem selv</strong><span class="form par">Par</span></div>
         <p><a href="https://kemibogen.dk/c/opgaver/1-4-opgaver.html">Opgave 1.4.1, 1.4.3, 1.4.4 og 1.4.5</a>, derefter de fire skemaer i øvelsens efterbehandling.</p>
         <p class="ekstra">Hurtige par: 1.4.6 og 1.4.7, ekstraopgaverne bagest i kompendiet eller animationen <em>Afstem reaktioner</em>.</p></div></li>
-    <li><div class="tid"><b>5 min</b><span>85–90</span></div>
+    <li><div class="tid"><b>5 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Fagord</strong><span class="form klasse">Klassen</span></div>
         <p>Quiz: fem hurtige på <a href="https://kemibogen.dk/c/fagord/kapitel-1.html">fagordsiden</a>, hele kapitlet. Klassen stemmer med fingre (1–4).</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>læse en kemisk formel som H₂O</li>
-      <li>læse et reaktionsskema og tælle atomerne på hver side af pilen</li>
-      <li>afstemme et reaktionsskema med koefficienter</li>
-      <li>forklare, hvorfor de små tal i en formel ikke må ændres</li>
-      <li>nævne kendetegn på, at der sker en kemisk reaktion</li>
-    </ul>
-    <p><b>Centrale fagord:</b> reaktant, produkt, koefficient, afstemning, kemisk reaktion</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p><a href="https://kemibogen.dk/c/repetition/kapitel-1.html">Repetition af kapitel 1</a> med øveprøven.</p></div>
     <div><h4>Uden laboratorium</h4><p>Vis forsøg 1 (magnesium brænder) og 3 (to opløsninger) som demo (10 min), eller vis <a href="https://kemibogen.dk/c/oevelser/1-4a-hydrogen-og-oxygen.html">Demoforsøg 1.4a</a>, hvis I har dihydrogen og dioxygen på flaske. Giv afstemningen resten.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Tilstandssymbolerne (slide 38) kan vente til kapitel 2, hvor de bruges ved fældningsreaktioner.</p></div>
   </div>
 </article>
 
@@ -527,13 +452,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>15 min</b><span>0–15</span></div>
+    <li><div class="tid"><b>10–15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Sådan læser og lærer du kemi</strong><span class="form start">Start</span><span class="form tavle">Tavle</span></div>
         <p>Tag fravær, og vis <a class="sl" href="../slides/kap1-2026-modul-1.html#/2" target="_blank">slide 2–13</a> (kapitel 0): hvad kemi er, læsekortet, når man sidder fast, og hvad I forventer af hinanden. Klassen svarer, før du klikker videre.</p></div></li>
-    <li><div class="tid"><b>15 min</b><span>15–30</span></div>
+    <li><div class="tid"><b>15–20 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Stoffer og atomet</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kap1-2026-modul-1.html#/14" target="_blank">Slide 14–15</a>: rene stoffer, blandinger og grundstoffer. <a class="sl" href="../slides/kap1-2026-modul-1.html#/16" target="_blank">Slide 16–22</a>: atomets opbygning, atomnummeret og isotoper. Isotoper er nyt for holdet, så giv slide 20–21 god tid.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>30–55</span></div>
+    <li><div class="tid"><b>25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Eleverne holder oplæg</strong><span class="form par">Par</span></div>
         <p>Fem grupper forbereder hvert sit oplæg på 2–3 min (10 min). Bagefter holdes oplæggene i blandede grupper med én fra hver, i slidenes rækkefølge (15 min).</p>
         <ul class="pakker">
@@ -543,37 +468,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
           <li><b>D</b> <a class="sl" href="../slides/kap1-2026-modul-1.html#/32" target="_blank">slide 32–34</a>: perioder og hovedgrupper</li>
           <li><b>E</b> <a class="sl" href="../slides/kap1-2026-modul-1.html#/35" target="_blank">slide 35–38</a>: valenselektroner, ædelgasreglen</li>
         </ul></div></li>
-    <li><div class="tid"><b>25 min</b><span>55–80</span></div>
+    <li><div class="tid"><b>20–30 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Noter og opgaver</strong><span class="form par">Par</span></div>
-        <p>Kompendiet s. 2–6: noterne til 1.1–1.3 og opgave <a href="https://kemibogen.dk/c/opgaver/1-2-opgaver.html">1.2.1 og 1.2.3</a> og <a href="https://kemibogen.dk/c/opgaver/1-3-opgaver.html">1.3.1, 1.3.3 og 1.3.6</a>.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+        <p>Kompendiet s. 2–6: noterne til 1.1–1.3 og opgave <a href="https://kemibogen.dk/c/opgaver/1-2-opgaver.html">1.2.1 og 1.2.3</a> og <a href="https://kemibogen.dk/c/opgaver/1-3-opgaver.html">1.3.1, 1.3.3 og 1.3.6</a>.</p>
+        <p class="ekstra">Hurtige par: animationerne <a href="https://kemiformler.dk/animationer/superanimationer/sc1.2_grundstofudstilling/index.html">Grundstofudstillingen</a> og <a href="https://kemiformler.dk/animationer/superanimationer/sc1.1_atombygger/index.html">Atomets opbygning</a>.</p></div></li>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Quizlet</strong><span class="form klasse">Klassen</span></div>
         <p>Quizlet Live i hold med <a href="https://quizlet.com/dk/1231116816/11-13-det-hele-fra-kemibogen-flash-cards/?i=oc87n&amp;x=1qqt" target="_blank">sættet til 1.1–1.3</a>.</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>afgøre, om et stof er et grundstof eller en kemisk forbindelse</li>
-      <li>beskrive atomets opbygning og bruge atomnummeret til at finde antallet af protoner og elektroner</li>
-      <li>forklare, hvad isotoper er, og finde antallet af neutroner ud fra nukleontallet</li>
-      <li>skrive elektronstrukturen for de første 20 grundstoffer, fx (2, 8, 7)</li>
-    </ul>
-    <p><b>Centrale fagord:</b> grundstof, kemisk forbindelse, atomnummer, isotoper, elektronstruktur, hovedgruppe</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/1-2-atomet.html">1.2 Atomet</a> og <a href="https://kemibogen.dk/c/kapitler/1-3-elektronskaller.html">1.3 Elektronskaller</a>, og gør kompendiet s. 2–6 færdigt.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Atommassen (slide 22) kan springes over. Den kommer igen i kapitel 5.</p></div>
-  </div>
-
-  <div class="forslag">
-    <h4>Flere forslag</h4>
-    <ul>
-      <li>Hurtigt færdige: animationerne <a href="https://kemiformler.dk/animationer/superanimationer/sc1.2_grundstofudstilling/index.html">Grundstofudstillingen</a> og <a href="https://kemiformler.dk/animationer/superanimationer/sc1.1_atombygger/index.html">Atomets opbygning</a>.</li>
-      <li>Er holdet lille eller stille: vis selv oplæggenes slides (23–38, 15–20 min), og giv opgaverne resten af tiden.</li>
-      <li>I stedet for Quizlet: <em>Quiz: fem hurtige</em> på fagordsiden.</li>
-    </ul>
   </div>
 </article>
 
@@ -589,48 +494,35 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </div>
 
   <ol class="forløb">
-    <li><div class="tid"><b>10 min</b><span>0–10</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Byg figuren</strong><span class="form start">Start</span></div>
         <p>Ord fra sidst: <span class="ord">atomnummer, isotoper, elektronstruktur</span>.</p>
         <p>Mens du tager fravær, bygger eleverne to og to figurerne til 1.2 og 1.3 i <em>Byg figuren</em>.</p></div></li>
-    <li><div class="tid"><b>25 min</b><span>10–35</span></div>
+    <li><div class="tid"><b>25 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Faglig læsning af 1.4</strong><span class="form tavle">Tavle</span><span class="form par">Par</span></div>
         <p>Vis 1.4 på tavlen, og læs højt til og med tabellen under <em>Koefficienter og små tal</em> (10 min). Stop ved figur 1, boksen, fed skrift og tabellen, og sig, hvad en erfaren læser tænker.</p>
         <p>Eleverne læser resten hver for sig med læsekortet (<a class="sl" href="../slides/kap1-2026-modul-2.html#/2" target="_blank">slide 2</a>) og læsearket: fra <em>Sådan afstemmer du et reaktionsskema</em> til og med <em>Kort sagt</em> (15 min).</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>35–45</span></div>
+    <li><div class="tid"><b>5–15 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Afstem sammen</strong><span class="form tavle">Tavle</span></div>
         <p><a class="sl" href="../slides/kap1-2026-modul-2.html#/3" target="_blank">Slide 3–6</a>: tæl atomer, afstem vand og ammoniak. Klassen foreslår koefficienterne.</p></div></li>
-    <li><div class="tid"><b>35 min</b><span>45–80</span></div>
+    <li><div class="tid"><b>30–40 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Afstemning</strong><span class="form par">Par</span></div>
         <p>Kompendiet s. 8–9: <a href="https://kemibogen.dk/c/opgaver/1-4-opgaver.html">opgave 1.4.1, 1.4.3, 1.4.4 og 1.4.5</a>, derefter 1.4.6, 1.4.8 og 1.4.10.</p>
         <p>Hurtigt færdige går videre til animationen <em>Afstem reaktioner</em>.</p></div></li>
-    <li><div class="tid"><b>10 min</b><span>80–90</span></div>
+    <li><div class="tid"><b>10 min</b></div>
       <div class="trin"><div class="trin-hoved"><strong>Speeddating med fagord</strong><span class="form klasse">Klassen</span></div>
         <p>Eleverne står i to rækker over for hinanden. Vælg de 11 fagord på <a href="https://kemibogen.dk/c/fagord/kapitel-1.html">fagordsiden</a>, og start <em>Speedtalk</em> med 25 sekunder pr. fagord. Ved hver klokke rykker den ene række én plads.</p>
         <p class="ekstra">grundstof, kemisk forbindelse, metal, atomnummer, isotoper, elektronstruktur, hovedgruppe, valenselektroner, ædelgasreglen, koefficient, afstemt</p></div></li>
   </ol>
 
-  <div class="fokus">
-    <h4>Det skal eleverne kunne</h4>
-    <ul>
-      <li>læse et afsnit med læsekortet og genfortælle det uden at kigge</li>
-      <li>læse en kemisk formel og et reaktionsskema højt med ord</li>
-      <li>afstemme et reaktionsskema uden at ændre de små tal i formlerne</li>
-    </ul>
-    <p><b>Centrale fagord:</b> kemisk formel, reaktionsskema, koefficient, afstemt</p>
-  </div>
-
   <div class="bagefter">
     <div><h4>Lektie til næste gang</h4><p>Læs <a href="https://kemibogen.dk/c/kapitler/2-1-ioner.html">2.1 Ioner</a>. Genlæs 1.4 efter behov, og prøv animationen <a href="https://kemiformler.dk/animationer/superanimationer/sc1.4_afstemning/index.html#kugler">Afstem reaktioner</a>.</p></div>
-    <div><h4>Hvis tiden skrider</h4><p>Tilstandssymbolerne (1.4.10) kan vente til kapitel 2, hvor de bruges ved fældningsreaktioner.</p></div>
   </div>
 
   <div class="forslag">
     <h4>Flere forslag</h4>
     <ul>
       <li><b>Er der tid tilovers:</b> begynd på 2.1, som er næste lektie, med <a class="sl" href="../slides/kap1-2026-modul-2.html#/7" target="_blank">slide 7–13</a>: ædelgasreglen igen og de første slides om ioner. Resten af 2.1 kommer næste gang.</li>
-      <li>I stedet for speeddating: afslut afstemningen sammen. Skriv to skemaer fra 1.4.6 på tavlen, og lad klassen foreslå ét tal ad gangen.</li>
-      <li>Læsningen kan også foregå i par, hvor de to genfortæller for hinanden med lukket bog.</li>
     </ul>
   </div>
 </article>
