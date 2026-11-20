@@ -9,6 +9,8 @@ Bogen skrives i `NK_Undervisning/Kemibogen` og lægges herind med
 
 - `c/` er bogen til kemi C, `b/` er bogen til kemi B, og `a/` er bogen til kemi A. De linker til hinanden.
 - `index.html` sender læseren videre til `c/`.
+- `404.html` er fejlsiden, som også sender korte adresser videre (fx kemibogen.dk/c/3.3.2 til opgave 3.3.2).
+- `apple-touch-icon.png` er ikonet, når bogen lægges på hjemmeskærmen på iPhone og iPad.
 - `CNAME` er adressen kemibogen.dk, og `.nojekyll` får GitHub til at vise filerne, som de er.
 - Animationerne, bogen linker til, ligger på kemiformler.dk (mappen `NK_hjemmeside`).
 - Bogen lå på kemiformler.dk/kemibogen fra 9. til 13. okt. 2026. Den adresse sender videre hertil.
