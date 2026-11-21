@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ba9239d585c152f7a16fb082d7661d16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-aa783457632bcbbde4a21fa5107176f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -426,7 +426,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../kapitler/b4-7-overblik.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">B4.7 Overblik: reaktionstyper og test</span></a>
+ <span class="menu-text">B4.7 Overblik: Reaktionstyper og test</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1400,10 +1400,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Reaktionshastigheden er ændringen i et stofs koncentration pr. tid og har enheden M/s.</li>
-<li>Den gennemsnitlige reaktionshastighed er koncentrationsændringen divideret med tiden.</li>
-<li>Hastigheden er størst ved start og falder, mens reaktionen forløber. Hastigheden ved start kaldes starthastigheden, <em>v</em><sub>0</sub>.</li>
-<li>Hastighederne for to stoffer i samme reaktion forholder sig som koefficienterne i reaktionsskemaet.</li>
+<li>Reaktionshastigheden er koncentrationsændringen pr. tid og har enheden M/s.</li>
+<li>Hastigheden er størst ved start, hvor den kaldes starthastigheden, <em>v</em><sub>0</sub>.</li>
+<li>Hastighederne for to stoffer i en reaktion forholder sig som koefficienterne.</li>
 </ul>
 </div>
 </div>
@@ -1437,11 +1436,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Partikler kan kun reagere, når de støder sammen, så en højere koncentration giver flere sammenstød pr. sekund og en større hastighed.</li>
-<li>Et fast stof reagerer kun på overfladen, så et fint pulver reagerer hurtigere end en klump.</li>
-<li>I forsøget med thiosulfat og syre er 1/Δ<em>t</em> et mål for reaktionshastigheden.</li>
+<li>En højere koncentration giver flere sammenstød og derfor en større hastighed.</li>
+<li>Et fint pulver reagerer hurtigere end en klump, fordi overfladen er større.</li>
 <li>Hastighedsudtrykket har formen <em>v</em> = <em>k</em> · [A]<sup><em>x</em></sup> · [B]<sup><em>y</em></sup>.</li>
-<li>Eksponenterne kan ikke ses i reaktionsskemaet, men findes ved forsøg, hvor én koncentration ændres ad gangen.</li>
+<li>Eksponenterne findes ved forsøg og kan ikke ses i reaktionsskemaet.</li>
 </ul>
 </div>
 </div>
@@ -1476,11 +1474,10 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <ul>
 <li>Kun sammenstød med energi nok og den rigtige retning fører til en reaktion.</li>
-<li>Aktiveringsenergien <em>E</em><sub>a</sub> er den mindste energi, molekylerne skal støde sammen med for at reagere, og på energiprofilen er den højden fra reaktanterne op til toppen.</li>
+<li>Aktiveringsenergien <em>E</em><sub>a</sub> er energiprofilens højde fra reaktanterne til toppen.</li>
 <li>Jo højere aktiveringsenergien er, jo mindre er reaktionshastigheden.</li>
-<li>En exoterm reaktion afgiver energi, og en endoterm reaktion optager energi.</li>
-<li>Ved en højere temperatur har langt flere molekyler en bevægelsesenergi over aktiveringsenergien.</li>
-<li>Tommelfingerreglen siger, at hastigheden omtrent fordobles, når temperaturen stiger 10 °C.</li>
+<li>Ved en højere temperatur har langt flere molekyler bevægelsesenergi over <em>E</em><sub>a</sub>.</li>
+<li>Hastigheden omtrent fordobles, når temperaturen stiger 10 °C.</li>
 </ul>
 </div>
 </div>
@@ -1514,9 +1511,9 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <ul>
 <li>En katalysator øger reaktionshastigheden uden selv at blive forbrugt.</li>
-<li>Katalysatoren sænker aktiveringsenergien, men ændrer hverken produkterne eller energiforskellen.</li>
-<li>Et enzym er et protein, der virker som katalysator. Substratet passer i enzymets aktive center som en nøgle i en lås.</li>
-<li>Enzymer arbejder hurtigst ved deres optimum og denaturerer ved for høj temperatur.</li>
+<li>En katalysator sænker aktiveringsenergien, men ændrer ikke energiforskellen.</li>
+<li>Et enzym er et protein, der virker som katalysator.</li>
+<li>Enzymer arbejder hurtigst ved deres optimum og denaturerer ved høj temperatur.</li>
 <li>En inhibitor nedsætter reaktionshastigheden.</li>
 </ul>
 </div>
@@ -1728,6 +1725,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
 // knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
 // Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+// En boks "skift" på tavlen har flere dele med fra="N", som står på samme plads, og kun den nyeste, man er nået til,
+// vises (20. nov. 2026, C-bogen: reaktionsskemaet står én gang og opdateres ved hvert klik, mens mellemtrinene under
+// det bliver stående som i PDF'en). Uden JavaScript og på print vises kun den sidste.
+// Er alle klik tomme (kun knap="..."), står der ingen forklaring øverst, kun knapperne (klassen "uden-tekst", 20. nov.
+// 2026, C-bogen: Niels syntes, teksten øverst gentog tavlen, når det gule allerede viser det aktuelle trin).
 // "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
 document.addEventListener("DOMContentLoaded", function () {
   Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
@@ -1737,8 +1739,17 @@ document.addEventListener("DOMContentLoaded", function () {
       return el.classList.contains("klik");
     });
     if (klik.length < 2) return;
-    var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+    var udenTekst = klik.every(function (k) { return !k.textContent.trim(); });
+    if (udenTekst) boks.classList.add("uden-tekst");
+    function iSkift(el) { return el.parentElement && el.parentElement.classList.contains("skift"); }
+    var dele = Array.prototype.filter.call(boks.querySelectorAll("[data-fra]"), function (el) {
+      return !iSkift(el);
+    }).map(function (el) {
       return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+    });
+    var skift = Array.prototype.map.call(boks.querySelectorAll(".skift"), function (s) {
+      return Array.prototype.filter.call(s.children, function (el) { return el.hasAttribute("data-fra"); })
+        .map(function (el) { return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1 }; });
     });
     var trin = [];
     klik.forEach(function (k, i) {
@@ -1774,7 +1785,7 @@ document.addEventListener("DOMContentLoaded", function () {
     top.appendChild(bjaelke);
     boks.insertBefore(top, boks.firstChild);
     top.appendChild(tekster);
-    tekster.setAttribute("aria-live", "polite");
+    if (!udenTekst) tekster.setAttribute("aria-live", "polite");
 
     // Ruller siden, så det nye kan ses under bjælken og forklaringen
     function synlig() {
@@ -1797,6 +1808,11 @@ document.addEventListener("DOMContentLoaded", function () {
       dele.forEach(function (d) {
         d.el.classList.toggle("vist", d.fra <= nu);
         d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+      });
+      skift.forEach(function (liste) {
+        var valgt = null;
+        liste.forEach(function (d) { if (d.fra <= nu) valgt = d; });
+        liste.forEach(function (d) { d.el.classList.toggle("vist", d === valgt); });
       });
       var aktivt = trinFor(nu);
       numre.forEach(function (n, j) {
@@ -1824,6 +1840,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
     vis(false);
   });
+});
+</script>
+<script>
+// Quarto giver eksempelrammerne en title, så browseren viser rammens titel i en lille boks, når musen står et sted i
+// eksemplet, fx oven i en figur (Niels' billede af 5.5, 20. nov. 2026). Den fjernes.
+document.addEventListener("DOMContentLoaded", function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".callout[title]"), function (c) { c.removeAttribute("title"); });
 });
 </script>
 <script>
@@ -2749,7 +2772,77 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Pilene nederst på siden (feedback 21. nov. 2026: "Lad bundnavigationen føre videre i teorien eller til opgaverne
+  // for det afsnit, eleven lige har læst"). Quarto følger menuens rækkefølge, og dér står alle opgavesider efter alle
+  // afsnit, så pilen fra kapitlets sidste afsnit gik til opgaverne til første afsnit. Pilene følger nu rækkefølgen
+  // afsnit 1, opgaver 1, afsnit 2, opgaver 2 osv., og efter de sidste opgaver kommer fagord og repetition som før.
+  // Afsnit og opgaver parres efter filnavnet (kapitler/b5-3-....html og opgaver/b5-3-opgaver.html). Menuen er uændret.
+  // Kører før lavKapitel, som omdøber og flytter opgavelinjerne i menuen.
+  function noegle(href) {
+    var m = (href || "").match(/(?:^|\/)(?:kapitler|opgaver|temaer)\/([a-z]?\d+-\d+)-/i);
+    return m ? m[1].toLowerCase() : null;
+  }
+  function bundpile(ul) {
+    var nav = document.querySelector("nav.page-navigation");
+    if (!nav) return;
+    var punkter = Array.prototype.filter.call(ul.children, function (el) { return el.tagName === "LI"; });
+    var afsnit = [], opgaver = [], sidsteAfsnit = -1, foersteOpgave = -1, sidsteOpgave = -1;
+    punkter.forEach(function (p, i) {
+      var a = p.querySelector("a.sidebar-link");
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      if (/(^|\/)kapitler\//.test(href) || /(^|\/)temaer\/t\d+-\d+-(?!opgaver)[^\/]*\.html/.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
+      else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href) || /(^|\/)temaer\/t\d+-\d+-opgaver\.html/.test(href)) {
+        opgaver.push(a); sidsteOpgave = i;
+        if (foersteOpgave < 0) foersteOpgave = i;
+      }
+    });
+    if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
+    var raekke = [], brugt = [];
+    afsnit.forEach(function (a) {
+      raekke.push(a);
+      var n = noegle(a.getAttribute("href"));
+      opgaver.forEach(function (o) {
+        if (n && brugt.indexOf(o) < 0 && noegle(o.getAttribute("href")) === n) { raekke.push(o); brugt.push(o); }
+      });
+    });
+    opgaver.forEach(function (o) { if (brugt.indexOf(o) < 0) raekke.push(o); });
+    var her = -1;
+    raekke.forEach(function (a, i) { if (a.classList.contains("active")) her = i; });
+    if (her < 0) return;
+    // Siden efter de sidste opgaver (fagord) står i menuen lige efter den sidste opgavelinje.
+    var efter = null;
+    for (var j = sidsteOpgave + 1; j < punkter.length && !efter; j++) efter = punkter[j].querySelector("a.sidebar-link");
+    var forrige = her > 0 ? raekke[her - 1] : null;
+    var naeste = her < raekke.length - 1 ? raekke[her + 1] : efter;
+    if (forrige) saetPil(nav, "previous", forrige);
+    if (naeste) saetPil(nav, "next", naeste);
+  }
+  function saetPil(nav, side, kilde) {
+    var tekst = (kilde.querySelector(".menu-text") || kilde).textContent.trim();
+    var boks = nav.querySelector(".nav-page-" + side);
+    if (!boks) {
+      boks = document.createElement("div");
+      boks.className = "nav-page nav-page-" + side;
+      if (side === "previous") nav.insertBefore(boks, nav.firstChild); else nav.appendChild(boks);
+    }
+    boks.innerHTML = "";
+    var a = document.createElement("a");
+    a.className = "pagination-link";
+    a.setAttribute("href", kilde.getAttribute("href"));
+    a.setAttribute("aria-label", tekst);
+    var span = document.createElement("span");
+    span.className = "nav-page-text";
+    span.textContent = tekst;
+    var pil = document.createElement("i");
+    pil.className = "bi bi-arrow-" + (side === "previous" ? "left" : "right") + "-short";
+    if (side === "previous") { a.appendChild(pil); a.appendChild(document.createTextNode(" ")); a.appendChild(span); }
+    else { a.appendChild(span); a.appendChild(document.createTextNode(" ")); a.appendChild(pil); }
+    boks.appendChild(a);
+  }
+
   function start() {
+    Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), bundpile);
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
     // De små temaer har ingen opgavesider, men fagordssiden hedder også bare "Fagord" dér.
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar a.sidebar-link .menu-text"), function (t) {

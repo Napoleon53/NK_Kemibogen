@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6ee62161c91d4fc98ac228bd33c027a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-edf0dde1a68ab6bcc2e54d53646a23b5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1818,7 +1818,7 @@ window.Quarto = {
 </header>
 
 
-<p>I nyhederne bliver klimaet ofte gjort op i tons carbondioxid: et fly til Spanien, en bøf, et kraftværk. Tallene kommer fra mængdeberegninger, og med et afstemt reaktionsskema og nogle molarmasser kan du selv regne ud, hvor meget carbondioxid et brændstof giver, og hvor meget en skov kan optage.</p>
+<p>I nyhederne bliver klimaet ofte gjort op i tons carbondioxid: Et fly til Spanien, en bøf, et kraftværk. Tallene kommer fra mængdeberegninger, og med et afstemt reaktionsskema og nogle molarmasser kan du selv regne ud, hvor meget carbondioxid et brændstof giver, og hvor meget en skov kan optage.</p>
 <p>Siden kan bruges i stedet for <a href="../kapitler/5-5-maengdeberegning.html">afsnit 5.5</a> og bygger på stofmængden fra <a href="../temaer/t3-2-mol-og-stofmaengde.html">T3.2</a> og ækvivalente mængder fra <a href="../temaer/t3-3-carbonets-kredsloeb.html">T3.3</a>.</p>
 <section id="vejen-fra-gram-til-gram" class="level2">
 <h2 class="anchored" data-anchor-id="vejen-fra-gram-til-gram">Vejen fra gram til gram</h2>
@@ -1829,7 +1829,7 @@ window.Quarto = {
 <li><span id="ord-op" class="fagord-anker"><strong>Op.</strong></span> Regn stofmængden af det andet stof om til masse.</li>
 </ol>
 <p>Tallene holdes i orden i et <em>mængdeberegningsskema</em> med rækkerne <em>m</em>, <em>M</em> og <em>n</em> under reaktionsskemaet, som i eksemplet herunder.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: Naturgas brænder">
+<div class="eksempelboks callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: Naturgas brænder">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1890,21 +1890,33 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><span id="ord-trin-1-ned" class="fagord-anker"><strong>Trin 1: ned.</strong></span> Stofmængden af methan beregnes ud fra massen og molarmassen.</p>
+<div class="trinhoved">
+<span class="tavle-nr">1</span> <span class="tavle-navn">Ned</span>
+</div>
+<p>Stofmængden af methan beregnes ud fra massen og molarmassen.</p>
 <p><span class="math display">\[
 n(\mathrm{CH_4}) = \frac{m}{M} = \frac{1000\ \mathrm{g}}{16{,}04\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 62{,}3\ \mathrm{mol}
 \]</span></p>
-<p><span id="ord-trin-2-paa-tvaers" class="fagord-anker"><strong>Trin 2: på tværs.</strong></span> Koefficienterne er 1 for CH<sub>4</sub> og 1 for CO<sub>2</sub>, så der dannes lige så mange mol carbondioxid, som der brænder methan.</p>
+<div class="trinhoved">
+<span class="tavle-nr">2</span> <span class="tavle-navn">På tværs</span>
+</div>
+<p>Koefficienterne er 1 for CH<sub>4</sub> og 1 for CO<sub>2</sub>, så der dannes lige så mange mol carbondioxid, som der brænder methan.</p>
 <p><span class="math display">\[
 n(\mathrm{CO_2}) = \frac{1}{1} \cdot n(\mathrm{CH_4}) = \frac{1}{1} \cdot 62{,}3\ \mathrm{mol} = 62{,}3\ \mathrm{mol}
 \]</span></p>
-<p><span id="ord-trin-3-op" class="fagord-anker"><strong>Trin 3: op.</strong></span> Massen af carbondioxid beregnes ud fra stofmængden og molarmassen.</p>
+<div class="trinhoved">
+<span class="tavle-nr">3</span> <span class="tavle-navn">Op</span>
+</div>
+<p>Massen af carbondioxid beregnes ud fra stofmængden og molarmassen.</p>
 <p><span class="math display">\[
 m(\mathrm{CO_2}) = n \cdot M = 62{,}3\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 2{,}74 \cdot 10^{3}\ \mathrm{g}
 \]</span></p>
 <p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion</strong></span></p>
 <p>Der dannes 2,74 kg carbondioxid, når 1,00 kg methan brænder.</p>
 </div>
+</div>
+<div class="traen-opgave">
+<p><span id="ord-traen-med-en-tilsvarende-opgave" class="fagord-anker"><strong>Træn med en tilsvarende opgave:</strong></span> <a href="../temaer/t3-4-opgaver.html#T3.4.1">Opgave T3.4.1 Kul brænder</a></p>
 </div>
 </section>
 <section id="mere-carbondioxid-end-der-var-benzin" class="level2">
@@ -1974,7 +1986,7 @@ Figur&nbsp;T3.6: En liter benzin bliver til mere end to kilogram carbondioxid, f
 <section id="når-begge-masser-er-kendt" class="level2">
 <h2 class="anchored" data-anchor-id="når-begge-masser-er-kendt">Når begge masser er kendt</h2>
 <p>Nogle gange kendes massen af begge de stoffer, der reagerer. Du beregner da stofmængden af begge stoffer og bruger koefficienterne til at finde den begrænsende faktor, som i <a href="../temaer/t3-3-carbonets-kredsloeb.html">T3.3</a>. Derefter regner du videre på tværs og op ud fra den begrænsende faktor.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: Brændt kalk fanger carbondioxid">
+<div class="eksempelboks callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: Brændt kalk fanger carbondioxid">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1988,7 +2000,10 @@ Figur&nbsp;T3.6: En liter benzin bliver til mere end to kilogram carbondioxid, f
 <div class="reaktion">
 <p>CaO(s) + CO<sub>2</sub>(g) → CaCO<sub>3</sub>(s)</p>
 </div>
-<p><span id="ord-trin-1-ned-for-begge-stoffer" class="fagord-anker"><strong>Trin 1: ned for begge stoffer.</strong></span> Stofmængderne beregnes ud fra masserne og molarmasserne.</p>
+<div class="trinhoved">
+<span class="tavle-nr">1</span> <span class="tavle-navn">Ned for begge stoffer</span>
+</div>
+<p>Stofmængderne beregnes ud fra masserne og molarmasserne.</p>
 <p><span class="math display">\[
 n(\mathrm{CaO}) = \frac{m}{M} = \frac{11{,}2\ \mathrm{g}}{56{,}08\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}1997\ \mathrm{mol}
 \]</span></p>
@@ -1996,11 +2011,17 @@ n(\mathrm{CaO}) = \frac{m}{M} = \frac{11{,}2\ \mathrm{g}}{56{,}08\ \dfrac{\mathr
 n(\mathrm{CO_2}) = \frac{m}{M} = \frac{4{,}40\ \mathrm{g}}{44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 0{,}09998\ \mathrm{mol}
 \]</span></p>
 <p><span id="ord-den-begraensende-faktor" class="fagord-anker"><strong>Den begrænsende faktor.</strong></span> Koefficienterne er 1 for CaO og 1 for CO<sub>2</sub>, så stofferne reagerer i forholdet 1 : 1. Der er en mindre stofmængde carbondioxid end brændt kalk, så carbondioxid slipper op først og er den begrænsende faktor.</p>
-<p><span id="ord-trin-2-paa-tvaers-fra-carbondioxid" class="fagord-anker"><strong>Trin 2: på tværs fra carbondioxid.</strong></span> Forholdet mellem CO<sub>2</sub> og CaCO<sub>3</sub> er 1 : 1.</p>
+<div class="trinhoved">
+<span class="tavle-nr">2</span> <span class="tavle-navn">På tværs fra carbondioxid</span>
+</div>
+<p>Forholdet mellem CO<sub>2</sub> og CaCO<sub>3</sub> er 1 : 1.</p>
 <p><span class="math display">\[
 n(\mathrm{CaCO_3}) = \frac{1}{1} \cdot n(\mathrm{CO_2}) = \frac{1}{1} \cdot 0{,}09998\ \mathrm{mol} = 0{,}09998\ \mathrm{mol}
 \]</span></p>
-<p><strong>Trin 3: op.</strong> Massen af kalk beregnes ud fra stofmængden og molarmassen.</p>
+<div class="trinhoved">
+<span class="tavle-nr">3</span> <span class="tavle-navn">Op</span>
+</div>
+<p>Massen af kalk beregnes ud fra stofmængden og molarmassen.</p>
 <p><span class="math display">\[
 m(\mathrm{CaCO_3}) = n \cdot M = 0{,}09998\ \mathrm{mol} \cdot 100{,}09\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 10{,}0\ \mathrm{g}
 \]</span></p>
@@ -2015,51 +2036,89 @@ m(\mathrm{CaO\ tilovers}) = n \cdot M = 0{,}09972\ \mathrm{mol} \cdot 56{,}08\ \
 <p>Der dannes 10,0 g kalk, og 5,59 g brændt kalk bliver tilovers.</p>
 </div>
 </div>
+<div class="traen-opgave">
+<p><strong>Træn med en tilsvarende opgave:</strong> <a href="../temaer/t3-4-opgaver.html#T3.4.7">Opgave T3.4.7 To kendte masser på anlægget</a></p>
+</div>
 </section>
 <section id="en-skov-binder-carbondioxid" class="level2">
 <h2 class="anchored" data-anchor-id="en-skov-binder-carbondioxid">En skov binder carbondioxid</h2>
+<div class="eksempelboks callout callout-style-default callout-note no-icon callout-titled" title="Eksempel: Carbondioxid til 1,00 kg glucose">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Eksempel: Carbondioxid til 1,00 kg glucose
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Træer bygger glucose af carbondioxid og vand ved fotosyntese og laver glucosen om til træ. Hvor meget carbondioxid skal en skov optage for at danne 1,00 kg glucose?</p>
 <div class="reaktion">
 <p>6 CO<sub>2</sub>(g) + 6 H<sub>2</sub>O(l) → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(aq) + 6 O<sub>2</sub>(g)</p>
 </div>
-<p>Følg beregningen trin for trin med knapperne.</p>
-<div class="trinvis">
-<div class="trin" data-knap="Skema">
-<p><strong>Skemaet stilles op</strong></p>
-<p><a href="../figurer/skov-trin-0.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../figurer/skov-trin-0.svg" class="img-fluid" alt="Skemaet er stillet op. Massen af glucose, 1000 gram, og de to molarmasser er skrevet ind, og der står et spørgsmålstegn ved massen af carbondioxid."></a></p>
-<p>Det kendte tal er massen af glucose, og det står i den stiplede ramme. Massen af carbondioxid skal findes og har et spørgsmålstegn. Vand og dioxygen skal ikke bruges i beregningen, så deres felter er tomme.</p>
+<p>Skemaet stilles op med massen af glucose i den stiplede ramme. Vand og dioxygen skal ikke bruges i beregningen, så deres felter er tomme.</p>
+<div class="opbyg">
+<div class="opbyg-tekster">
+<div class="klik" data-knap="Skema">
+
 </div>
-<div class="trin" data-knap="1">
-<p><strong>Trin 1: ned</strong></p>
-<p><a href="../figurer/skov-trin-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../figurer/skov-trin-1.svg" class="img-fluid" alt="Trin 1, ned. En pil går ned gennem kolonnen med glucose, og stofmængden 5,55 mol er skrevet ind."></a></p>
-<p>Gå ned gennem kolonnen med glucose. Stofmængden beregnes ud fra massen og molarmassen.</p>
+<div class="klik" data-knap="1">
+
+</div>
+<div class="klik" data-knap="2">
+
+</div>
+<div class="klik" data-knap="3">
+
+</div>
+</div>
+<div class="tavle en-kolonne">
+<div class="skift">
+<div data-fra="1">
+<p><a href="../figurer/skov-tavle-0.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../figurer/skov-tavle-0.svg" class="img-fluid" alt="Skemaet er stillet op. Massen af glucose, 1000 gram, og de to molarmasser er skrevet ind, og der står et spørgsmålstegn ved massen af carbondioxid."></a></p>
+</div>
+<div data-fra="2">
+<p><a href="../figurer/skov-tavle-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../figurer/skov-tavle-1.svg" class="img-fluid" alt="Trin 1, ned. En pil går ned gennem kolonnen med glucose, og stofmængden 5,55 mol er skrevet ind."></a></p>
+</div>
+<div data-fra="3">
+<p><a href="../figurer/skov-tavle-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../figurer/skov-tavle-2.svg" class="img-fluid" alt="Trin 2, på tværs. En pil går fra stofmængden af glucose til stofmængden af carbondioxid, som er 6 gange så stor, 33,3 mol."></a></p>
+</div>
+<div data-fra="4">
+<p><a href="../figurer/skov-tavle-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="../figurer/skov-tavle-3.svg" class="img-fluid" alt="Trin 3, op. En pil går op gennem kolonnen med carbondioxid, og massen 1,47 gange 10 i tredje gram er skrevet ind."></a></p>
+</div>
+</div>
+<div class="trin tavle-del linje" data-fra="2">
+<p><span class="tavle-nr">1</span></p>
 <p><span class="math display">\[
 n(\mathrm{C_6H_{12}O_6}) = \frac{m}{M} = \frac{1000\ \mathrm{g}}{180{,}16\ \dfrac{\mathrm{g}}{\mathrm{mol}}} = 5{,}55\ \mathrm{mol}
 \]</span></p>
 </div>
-<div class="trin" data-knap="2">
-<p><strong>Trin 2: på tværs</strong></p>
-<p><a href="../figurer/skov-trin-2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../figurer/skov-trin-2.svg" class="img-fluid" alt="Trin 2, på tværs. En pil går fra stofmængden af glucose til stofmængden af carbondioxid, som er 6 gange så stor, 33,3 mol."></a></p>
-<p>Gå på tværs i rækken med stofmængder, her fra højre mod venstre. Koefficienterne er 6 for CO<sub>2</sub> og 1 for C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, så der skal bruges 6 gange så mange mol carbondioxid.</p>
+<div class="trin tavle-del linje" data-fra="3">
+<p><span class="tavle-nr">2</span></p>
 <p><span class="math display">\[
 n(\mathrm{CO_2}) = \frac{6}{1} \cdot n(\mathrm{C_6H_{12}O_6}) = \frac{6}{1} \cdot 5{,}55\ \mathrm{mol} = 33{,}3\ \mathrm{mol}
 \]</span></p>
 </div>
-<div class="trin" data-knap="3">
-<p><strong>Trin 3: op</strong></p>
-<p><a href="../figurer/skov-trin-3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="../figurer/skov-trin-3.svg" class="img-fluid" alt="Trin 3, op. En pil går op gennem kolonnen med carbondioxid, og massen 1,47 gange 10 i tredje gram er skrevet ind."></a></p>
-<p>Gå op gennem kolonnen med carbondioxid. Massen beregnes ud fra stofmængden og molarmassen.</p>
+<div class="trin tavle-del linje" data-fra="4">
+<p><span class="tavle-nr">3</span></p>
 <p><span class="math display">\[
 m(\mathrm{CO_2}) = n \cdot M = 33{,}3\ \mathrm{mol} \cdot 44{,}01\ \dfrac{\mathrm{g}}{\mathrm{mol}} = 1{,}47 \cdot 10^{3}\ \mathrm{g}
 \]</span></p>
+<p><span class="tavle-konklusion">Skoven skal optage 1,47 kg carbondioxid for at danne 1,00 kg glucose.</span></p>
 </div>
 </div>
-<p><strong>Konklusion.</strong> Skoven skal optage 1,47 kg carbondioxid for at danne 1,00 kg glucose. Mellemresultaterne er skrevet med tre betydende cifre, men der er regnet videre med alle lommeregnerens cifre.</p>
+</div>
+</div>
+</div>
+<div class="traen-opgave">
+<p><strong>Træn med en tilsvarende opgave:</strong> <a href="../temaer/t3-4-opgaver.html#T3.4.5">Opgave T3.4.5 Et træ binder carbondioxid</a></p>
+</div>
+<p>I eksemplet er mellemresultaterne skrevet med tre betydende cifre, men der er regnet videre med alle lommeregnerens cifre.</p>
 <div class="vidste-du">
 <p><span id="ord-myte-en-skov-fjerner-carbondioxid-for-altid" class="fagord-anker"><strong>Myte: En skov fjerner carbondioxid for altid</strong></span></p>
 <p>Når et træ til sidst rådner eller bliver brændt, kommer den samme mængde carbondioxid tilbage i luften, som træet optog, mens det voksede. En skov binder altså kun carbondioxid, så længe den vokser, og en gammel skov optager omtrent lige så meget, som den afgiver. Træer er et godt lager for carbon, men kun så længe de får lov at stå.</p>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
+<div class="kort-sagt callout callout-style-default callout-note no-icon callout-titled" title="Kort sagt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -2287,6 +2346,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // er kommet til, får klassen "ny". Et klik med knap="..." begynder et nyt trin og får en knap i bjælken; et klik uden
 // knap hører til trinnet før (fx rækkerne i skemaet). Et klik med klassen "valgfri" giver en stiplet knap.
 // Uden JavaScript, og når siden skrives ud, står hele beregningen og alle forklaringerne.
+// En boks "skift" på tavlen har flere dele med fra="N", som står på samme plads, og kun den nyeste, man er nået til,
+// vises (20. nov. 2026, C-bogen: reaktionsskemaet står én gang og opdateres ved hvert klik, mens mellemtrinene under
+// det bliver stående som i PDF'en). Uden JavaScript og på print vises kun den sidste.
+// Er alle klik tomme (kun knap="..."), står der ingen forklaring øverst, kun knapperne (klassen "uden-tekst", 20. nov.
+// 2026, C-bogen: Niels syntes, teksten øverst gentog tavlen, når det gule allerede viser det aktuelle trin).
 // "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
 document.addEventListener("DOMContentLoaded", function () {
   Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
@@ -2296,8 +2360,17 @@ document.addEventListener("DOMContentLoaded", function () {
       return el.classList.contains("klik");
     });
     if (klik.length < 2) return;
-    var dele = Array.prototype.map.call(boks.querySelectorAll("[data-fra]"), function (el) {
+    var udenTekst = klik.every(function (k) { return !k.textContent.trim(); });
+    if (udenTekst) boks.classList.add("uden-tekst");
+    function iSkift(el) { return el.parentElement && el.parentElement.classList.contains("skift"); }
+    var dele = Array.prototype.filter.call(boks.querySelectorAll("[data-fra]"), function (el) {
+      return !iSkift(el);
+    }).map(function (el) {
       return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1, inderst: !el.querySelector("[data-fra]") };
+    });
+    var skift = Array.prototype.map.call(boks.querySelectorAll(".skift"), function (s) {
+      return Array.prototype.filter.call(s.children, function (el) { return el.hasAttribute("data-fra"); })
+        .map(function (el) { return { el: el, fra: parseInt(el.getAttribute("data-fra"), 10) - 1 }; });
     });
     var trin = [];
     klik.forEach(function (k, i) {
@@ -2333,7 +2406,7 @@ document.addEventListener("DOMContentLoaded", function () {
     top.appendChild(bjaelke);
     boks.insertBefore(top, boks.firstChild);
     top.appendChild(tekster);
-    tekster.setAttribute("aria-live", "polite");
+    if (!udenTekst) tekster.setAttribute("aria-live", "polite");
 
     // Ruller siden, så det nye kan ses under bjælken og forklaringen
     function synlig() {
@@ -2356,6 +2429,11 @@ document.addEventListener("DOMContentLoaded", function () {
       dele.forEach(function (d) {
         d.el.classList.toggle("vist", d.fra <= nu);
         d.el.classList.toggle("ny", d.inderst && d.fra === nu);
+      });
+      skift.forEach(function (liste) {
+        var valgt = null;
+        liste.forEach(function (d) { if (d.fra <= nu) valgt = d; });
+        liste.forEach(function (d) { d.el.classList.toggle("vist", d === valgt); });
       });
       var aktivt = trinFor(nu);
       numre.forEach(function (n, j) {
@@ -2383,6 +2461,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
     vis(false);
   });
+});
+</script>
+<script>
+// Quarto giver eksempelrammerne en title, så browseren viser rammens titel i en lille boks, når musen står et sted i
+// eksemplet, fx oven i en figur (Niels' billede af 5.5, 20. nov. 2026). Den fjernes.
+document.addEventListener("DOMContentLoaded", function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".callout[title]"), function (c) { c.removeAttribute("title"); });
 });
 </script>
 <script>
@@ -3439,7 +3524,77 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Pilene nederst på siden (feedback 21. nov. 2026: "Lad bundnavigationen føre videre i teorien eller til opgaverne
+  // for det afsnit, eleven lige har læst"). Quarto følger menuens rækkefølge, og dér står alle opgavesider efter alle
+  // afsnit, så pilen fra kapitlets sidste afsnit gik til opgaverne til første afsnit. Pilene følger nu rækkefølgen
+  // afsnit 1, opgaver 1, afsnit 2, opgaver 2 osv., og efter de sidste opgaver kommer fagord og repetition som før.
+  // Afsnit og opgaver parres efter filnavnet (kapitler/b5-3-....html og opgaver/b5-3-opgaver.html). Menuen er uændret.
+  // Kører før lavKapitel, som omdøber og flytter opgavelinjerne i menuen.
+  function noegle(href) {
+    var m = (href || "").match(/(?:^|\/)(?:kapitler|opgaver|temaer)\/([a-z]?\d+-\d+)-/i);
+    return m ? m[1].toLowerCase() : null;
+  }
+  function bundpile(ul) {
+    var nav = document.querySelector("nav.page-navigation");
+    if (!nav) return;
+    var punkter = Array.prototype.filter.call(ul.children, function (el) { return el.tagName === "LI"; });
+    var afsnit = [], opgaver = [], sidsteAfsnit = -1, foersteOpgave = -1, sidsteOpgave = -1;
+    punkter.forEach(function (p, i) {
+      var a = p.querySelector("a.sidebar-link");
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      if (/(^|\/)kapitler\//.test(href) || /(^|\/)temaer\/t\d+-\d+-(?!opgaver)[^\/]*\.html/.test(href)) { afsnit.push(a); sidsteAfsnit = i; }
+      else if (/(^|\/)opgaver\/[^\/]*-opgaver\.html/.test(href) || /(^|\/)temaer\/t\d+-\d+-opgaver\.html/.test(href)) {
+        opgaver.push(a); sidsteOpgave = i;
+        if (foersteOpgave < 0) foersteOpgave = i;
+      }
+    });
+    if (!afsnit.length || !opgaver.length || foersteOpgave < sidsteAfsnit) return;
+    var raekke = [], brugt = [];
+    afsnit.forEach(function (a) {
+      raekke.push(a);
+      var n = noegle(a.getAttribute("href"));
+      opgaver.forEach(function (o) {
+        if (n && brugt.indexOf(o) < 0 && noegle(o.getAttribute("href")) === n) { raekke.push(o); brugt.push(o); }
+      });
+    });
+    opgaver.forEach(function (o) { if (brugt.indexOf(o) < 0) raekke.push(o); });
+    var her = -1;
+    raekke.forEach(function (a, i) { if (a.classList.contains("active")) her = i; });
+    if (her < 0) return;
+    // Siden efter de sidste opgaver (fagord) står i menuen lige efter den sidste opgavelinje.
+    var efter = null;
+    for (var j = sidsteOpgave + 1; j < punkter.length && !efter; j++) efter = punkter[j].querySelector("a.sidebar-link");
+    var forrige = her > 0 ? raekke[her - 1] : null;
+    var naeste = her < raekke.length - 1 ? raekke[her + 1] : efter;
+    if (forrige) saetPil(nav, "previous", forrige);
+    if (naeste) saetPil(nav, "next", naeste);
+  }
+  function saetPil(nav, side, kilde) {
+    var tekst = (kilde.querySelector(".menu-text") || kilde).textContent.trim();
+    var boks = nav.querySelector(".nav-page-" + side);
+    if (!boks) {
+      boks = document.createElement("div");
+      boks.className = "nav-page nav-page-" + side;
+      if (side === "previous") nav.insertBefore(boks, nav.firstChild); else nav.appendChild(boks);
+    }
+    boks.innerHTML = "";
+    var a = document.createElement("a");
+    a.className = "pagination-link";
+    a.setAttribute("href", kilde.getAttribute("href"));
+    a.setAttribute("aria-label", tekst);
+    var span = document.createElement("span");
+    span.className = "nav-page-text";
+    span.textContent = tekst;
+    var pil = document.createElement("i");
+    pil.className = "bi bi-arrow-" + (side === "previous" ? "left" : "right") + "-short";
+    if (side === "previous") { a.appendChild(pil); a.appendChild(document.createTextNode(" ")); a.appendChild(span); }
+    else { a.appendChild(span); a.appendChild(document.createTextNode(" ")); a.appendChild(pil); }
+    boks.appendChild(a);
+  }
+
   function start() {
+    Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), bundpile);
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar ul.sidebar-section.depth1"), lavKapitel);
     // De små temaer har ingen opgavesider, men fagordssiden hedder også bare "Fagord" dér.
     Array.prototype.forEach.call(document.querySelectorAll("#quarto-sidebar a.sidebar-link .menu-text"), function (t) {
