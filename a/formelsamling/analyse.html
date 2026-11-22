@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c87d4edabd898286e155b55bb83ed3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f46cea2fcbdaa533a44745f1f89e1a16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,6 +77,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!-- Besøgstæller GoatCounter (Niels 22. nov. 2026): ingen cookies, så intet cookiebanner. Én konto (napoleon53) tæller
+     både kemibogen.dk og kemiformler.dk, så domænet sættes foran siden. Tæller ikke på localhost og file://. -->
+<script>window.goatcounter = {path: function (p) { return location.host + p; }};</script>
+<script data-goatcounter="https://napoleon53.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -113,8 +117,6 @@ window.Quarto = {
 <meta property="og:image" content="https://kemibogen.dk/a/ikon/delingsbillede.png">
 <meta property="og:site_name" content="Kemibogen A">
 <meta property="og:locale" content="da_DK">
-<script>window.goatcounter = {path: function (p) { return location.host + p; }};</script>
-<script data-goatcounter="https://napoleon53.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -1143,12 +1145,12 @@ n(\mathrm{C}) = \frac{m(\mathrm{C})}{M(\mathrm{C})}
 <div class="formelkort">
 <p><span class="formelnavn">Specifik drejning</span> <a href="../kapitler/a3-5-optisk-aktivitet-og-polarimeteret.html" class="bogref" title="Afsnit A3.5 Optisk aktivitet og polarimeteret">A3.5</a></p>
 <p><span class="math display">\[
-[\alpha] = \frac{\alpha}{l \cdot c}
+[\alpha] = \frac{\alpha}{l \cdot \gamma}
 \]</span></p>
 <p><span class="math display">\[
-c = \frac{\alpha}{[\alpha] \cdot l}
+\gamma = \frac{\alpha}{[\alpha] \cdot l}
 \]</span></p>
-<p><em>α</em> den målte drejning i ° · <em>l</em> rørets længde i dm · <em>c</em> massekoncentrationen i g/mL</p>
+<p><em>α</em> den målte drejning i ° · <em>l</em> rørets længde i dm · <em>γ</em> massekoncentrationen i g/mL</p>
 </div>
 </section>
 <section id="spektroskopi" class="level2">
@@ -1465,9 +1467,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var ramme = boks.closest(".callout-body-container") || boks.closest(".callout-body");
     var opgave = null, mellem = [];
     if (ramme) {
-      for (var el = ramme.firstElementChild; el && !el.contains(boks); el = el.nextElementSibling) {
-        if (el.classList.contains("opgavetekst")) opgave = el;
-        else if (opgave) mellem.push(el);
+      // Opgaveteksten er den sidste .opgavetekst før tavlen i eksemplet; den kan også stå inde i en boks, der kun
+      // vises på hjemmesiden (4.3). Mellem er det, der står efter den og før tavlen.
+      Array.prototype.forEach.call(ramme.querySelectorAll(".opgavetekst"), function (o) {
+        if (!boks.contains(o) && (o.compareDocumentPosition(boks) & Node.DOCUMENT_POSITION_FOLLOWING)) opgave = o;
+      });
+      if (opgave) {
+        for (var el = opgave.nextElementSibling; el && !el.contains(boks) && el !== boks; el = el.nextElementSibling) mellem.push(el);
       }
     }
     var fraOpgaven = !!opgave;

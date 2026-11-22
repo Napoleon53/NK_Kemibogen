@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c87d4edabd898286e155b55bb83ed3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f46cea2fcbdaa533a44745f1f89e1a16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -80,6 +80,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!-- Besøgstæller GoatCounter (Niels 22. nov. 2026): ingen cookies, så intet cookiebanner. Én konto (napoleon53) tæller
+     både kemibogen.dk og kemiformler.dk, så domænet sættes foran siden. Tæller ikke på localhost og file://. -->
+<script>window.goatcounter = {path: function (p) { return location.host + p; }};</script>
+<script data-goatcounter="https://napoleon53.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -116,8 +120,6 @@ window.Quarto = {
 <meta property="og:image" content="https://kemibogen.dk/a/ikon/delingsbillede.png">
 <meta property="og:site_name" content="Kemibogen A">
 <meta property="og:locale" content="da_DK">
-<script>window.goatcounter = {path: function (p) { return location.host + p; }};</script>
-<script data-goatcounter="https://napoleon53.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -1154,7 +1156,7 @@ Figur&nbsp;A3.16: To spejlbilledisomerer drejer lyset lige meget, men hver sin v
 <h2 class="anchored" data-anchor-id="specifik-drejning">Specifik drejning</h2>
 <p>Den målte drejning afhænger af antallet af optisk aktive molekyler på lysets vej gennem prøven. Drejningen er ligefrem proportional med rørets længde og med opløsningens koncentration. For at kunne sammenligne stoffer regner man om til den <span id="ord-specifikke-drejning" class="fagord-anker"><strong>specifikke drejning</strong></span>, som skrives [α]:</p>
 <p><span class="math display">\[
-[\alpha] = \frac{\alpha}{l \cdot c}
+[\alpha] = \frac{\alpha}{l \cdot \gamma}
 \]</span></p>
 <table class="caption-top table">
 <thead>
@@ -1176,7 +1178,7 @@ Figur&nbsp;A3.16: To spejlbilledisomerer drejer lyset lige meget, men hver sin v
 <td style="text-align: left;">dm</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><em>c</em></td>
+<td style="text-align: center;"><em>γ</em></td>
 <td style="text-align: left;">massekoncentrationen</td>
 <td style="text-align: left;">g/mL</td>
 </tr>
@@ -1187,7 +1189,7 @@ Figur&nbsp;A3.16: To spejlbilledisomerer drejer lyset lige meget, men hver sin v
 </tr>
 </tbody>
 </table>
-<p>Læg mærke til enhederne. Rørets længde måles i decimeter, og koncentrationen er her en massekoncentration i gram pr. milliliter, ikke en stofmængdekoncentration.</p>
+<p>Læg mærke til enhederne. Rørets længde måles i decimeter, og koncentrationen er her en massekoncentration i gram pr. milliliter, ikke en stofmængdekoncentration. Massekoncentrationen har sit eget symbol <em>γ</em> (gamma), så den ikke kan forveksles med stofmængdekoncentrationen <em>c</em>. Symbolet <em>γ</em> er anbefalet af IUPAC og står også i <a href="../formelsamling/maengdeberegning.html#massekoncentration">formelsamlingen</a>.</p>
 <p>Den specifikke drejning er en konstant for stoffet ligesom smeltepunktet, men den gælder kun ved en bestemt temperatur og bølgelængde og i et bestemt opløsningsmiddel.</p>
 <table class="caption-top table">
 <thead>
@@ -1235,11 +1237,11 @@ Figur&nbsp;A3.16: To spejlbilledisomerer drejer lyset lige meget, men hver sin v
 <div class="callout-body-container callout-body">
 <p>12,0 g saccharose opløses i vand, så opløsningen fylder 100 mL. Opløsningen hældes i et polarimeterrør, der er 2,00 dm langt. Hvilken drejning måler man?</p>
 <p><span id="ord-kendte-stoerrelser" class="fagord-anker"><strong>Kendte størrelser</strong></span></p>
-<p>[α] = +66,5 ° · mL/(g · dm), <span class="math inline">\(l\)</span> = 2,00 dm og <em>c</em> = 12,0 g / 100 mL = 0,120 g/mL</p>
+<p>[α] = +66,5 ° · mL/(g · dm), <span class="math inline">\(l\)</span> = 2,00 dm og <em>γ</em> = 12,0 g / 100 mL = 0,120 g/mL</p>
 <p><span id="ord-formel" class="fagord-anker"><strong>Formel</strong></span></p>
 <p>Drejningen isoleres i formlen for specifik drejning:</p>
 <p><span class="math display">\[
-\alpha = [\alpha] \cdot l \cdot c
+\alpha = [\alpha] \cdot l \cdot \gamma
 \]</span></p>
 <p><span id="ord-beregning" class="fagord-anker"><strong>Beregning</strong></span></p>
 <p><span class="math display">\[
@@ -1269,11 +1271,11 @@ Figur&nbsp;A3.16: To spejlbilledisomerer drejer lyset lige meget, men hver sin v
 <p>En opløsning af saccharose drejer lyset +8,65° i et rør på 1,00 dm. Hvad er koncentrationen af saccharose?</p>
 <p><strong>Formel</strong></p>
 <p><span class="math display">\[
-c = \frac{\alpha}{[\alpha] \cdot l}
+\gamma = \frac{\alpha}{[\alpha] \cdot l}
 \]</span></p>
 <p><strong>Beregning</strong></p>
 <p><span class="math display">\[
-c = \frac{8{,}65^{\circ}}{66{,}5\ \dfrac{^{\circ} \cdot \mathrm{mL}}{\mathrm{g \cdot dm}} \cdot 1{,}00\ \mathrm{dm}} = 0{,}130\ \dfrac{\mathrm{g}}{\mathrm{mL}}
+\gamma = \frac{8{,}65^{\circ}}{66{,}5\ \dfrac{^{\circ} \cdot \mathrm{mL}}{\mathrm{g \cdot dm}} \cdot 1{,}00\ \mathrm{dm}} = 0{,}130\ \dfrac{\mathrm{g}}{\mathrm{mL}}
 \]</span></p>
 <p><strong>Konklusion</strong></p>
 <p>Opløsningen indeholder 0,130 g saccharose pr. milliliter. Det svarer til 130 g pr. liter.</p>
@@ -1328,6 +1330,7 @@ c = \frac{8{,}65^{\circ}}{66{,}5\ \dfrac{^{\circ} \cdot \mathrm{mL}}{\mathrm{g \
 <li>Skal du forklare, at et stof er optisk aktivt, så peg på det asymmetriske carbonatom i strukturen, og skriv de fire forskellige grupper, det er bundet til.</li>
 <li>Skriv, at stoffet derfor findes som to spejlbilledisomerer, som drejer planpolariseret lys lige meget i hver sin retning.</li>
 <li>Husk enhederne i formlen: Decimeter og gram pr. milliliter.</li>
+<li>Skriv første gang, at <em>γ</em> er massekoncentrationen. Mange opgavesæt skriver <em>c</em> for både stofmængdekoncentration og massekoncentration, så se altid på enheden.</li>
 <li>Et stof uden asymmetriske carbonatomer er ikke optisk aktivt.</li>
 </ul>
 </div>
@@ -1347,7 +1350,7 @@ c = \frac{8{,}65^{\circ}}{66{,}5\ \dfrac{^{\circ} \cdot \mathrm{mL}}{\mathrm{g \
 <li>Et optisk aktivt stof drejer det planpolariserede lys. Det kræver kirale molekyler.</li>
 <li>Et polarimeter måler drejningen, α, med to polarisationsfiltre og et rør med prøven imellem.</li>
 <li>To spejlbilledisomerer drejer lyset lige meget i hver sin retning. En racemisk blanding drejer ikke lyset.</li>
-<li>Den specifikke drejning er [α] = α / (<span class="math inline">\(l\)</span> · <em>c</em>) med længden i dm og koncentrationen i g/mL.</li>
+<li>Den specifikke drejning er [α] = α / (<span class="math inline">\(l\)</span> · <em>γ</em>) med længden i dm og koncentrationen i g/mL.</li>
 </ul>
 </div>
 </div>
@@ -1617,9 +1620,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var ramme = boks.closest(".callout-body-container") || boks.closest(".callout-body");
     var opgave = null, mellem = [];
     if (ramme) {
-      for (var el = ramme.firstElementChild; el && !el.contains(boks); el = el.nextElementSibling) {
-        if (el.classList.contains("opgavetekst")) opgave = el;
-        else if (opgave) mellem.push(el);
+      // Opgaveteksten er den sidste .opgavetekst før tavlen i eksemplet; den kan også stå inde i en boks, der kun
+      // vises på hjemmesiden (4.3). Mellem er det, der står efter den og før tavlen.
+      Array.prototype.forEach.call(ramme.querySelectorAll(".opgavetekst"), function (o) {
+        if (!boks.contains(o) && (o.compareDocumentPosition(boks) & Node.DOCUMENT_POSITION_FOLLOWING)) opgave = o;
+      });
+      if (opgave) {
+        for (var el = opgave.nextElementSibling; el && !el.contains(boks) && el !== boks; el = el.nextElementSibling) mellem.push(el);
       }
     }
     var fraOpgaven = !!opgave;
