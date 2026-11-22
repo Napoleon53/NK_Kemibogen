@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-91171fd5b92ee47f184b53fc904951e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6c87d4edabd898286e155b55bb83ed3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1155,10 +1155,10 @@ Y = \frac{p(\mathrm{NO_2})^{2}}{p(\mathrm{N_2O_4})} = \frac{0{,}10^{2}}{1{,}00} 
 \]</span></p>
 <p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion</strong></span></p>
 <p>Δ<em>G</em> = −6,7 kJ/mol. Den er negativ, så reaktionen forløber mod højre. Der dannes NO<sub>2</sub>, selv om Δ<em>G</em><sup>⊖</sup> er positiv.</p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><span id="ord-traen-med-en-tilsvarende-opgave" class="fagord-anker"><strong>Træn med en tilsvarende opgave:</strong></span> <a href="../opgaver/a2-5-opgaver.html#A2.5.2">Opgave A2.5.2 Fire gasser i en beholder</a></p>
+</div>
+</div>
 </div>
 <p>Eksemplet viser forskellen på de to størrelser. Δ<em>G</em><sup>⊖</sup> er et fast tal for reaktionen ved en bestemt temperatur. Δ<em>G</em> afhænger desuden af blandingens sammensætning.</p>
 </section>
@@ -1280,10 +1280,10 @@ K = e^{-1{,}897} = 0{,}15
 <p>Formlen giver et tal uden enhed. Enheden findes ud fra ligevægtsloven som i <a href="../kapitler/a1-2-gasligevaegte.html">afsnit A1.2</a>. For gasser gælder tallet for partialtryk i bar, og i ligevægtsloven står der bar<sup>2</sup> i tælleren og bar i nævneren.</p>
 <p><strong>Konklusion</strong></p>
 <p>Ligevægtskonstanten er <em>K</em><sub>p</sub> = 0,15 bar ved 25 °C. Det er den værdi, kapitel A1 regnede med.</p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><strong>Træn med en tilsvarende opgave:</strong> <a href="../opgaver/a2-5-opgaver.html#A2.5.3">Opgave A2.5.3 Methanol ved 25 °C</a></p>
+</div>
+</div>
 </div>
 <p>På denne måde kan man beregne ligevægtskonstanten for en reaktion, som ingen har målt på. Det kræver kun tabelværdierne for stofferne.</p>
 <p>For opløste stoffer gælder tallet fra formlen for koncentrationer i M, fordi standardtilstanden er 1 M, og formlen giver dermed <em>K</em><sub>c</sub>.</p>
@@ -1313,10 +1313,10 @@ K = e^{-1{,}897} = 0{,}15
 \]</span></p>
 <p><strong>Konklusion</strong></p>
 <p>Δ<em>G</em><sup>⊖</sup> = 56,9 kJ/mol. Den er stor og positiv, så ligevægten er forskudt langt mod venstre, det vil sige mod det faste salt. Det stemmer med, at bariumsulfat er tungtopløseligt.</p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><strong>Træn med en tilsvarende opgave:</strong> <a href="../opgaver/a2-5-opgaver.html#A2.5.4">Opgave A2.5.4 Ethansyre og methansyre</a></p>
+</div>
+</div>
 </div>
 </section>
 <section id="reaktionsbrøken-og-ligevægtskonstanten-igen" class="level2">
@@ -1575,6 +1575,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Er alle klik tomme (kun knap="..."), står der ingen forklaring øverst, kun knapperne (klassen "uden-tekst", 20. nov.
 // 2026, C-bogen: Niels syntes, teksten øverst gentog tavlen, når det gule allerede viser det aktuelle trin).
 // "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+// Står der en opgavetekst (::: {.opgavetekst}) i eksemplet før tavlen, begynder man i trin 0, hvor kun opgaven står
+// (22. nov. 2026, Niels: "Det er lige præcis sådanne eksempler jeg gerne vil have"). Opgaven flyttes op over knapperne
+// og bliver stående, når man ruller (er den meget høj, står den over knapperne uden at blive stående), og knappen Næste
+// hedder "Vis løsningen" i trin 0. Det, der står mellem opgaven og tavlen, flyttes ind lige under knapperne og vises fra
+// trin 1. "?opbyg=0" viser trin 0.
 document.addEventListener("DOMContentLoaded", function () {
   Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
     var tekster = boks.querySelector(".opbyg-tekster");
@@ -1618,7 +1623,18 @@ document.addEventListener("DOMContentLoaded", function () {
       bjaelke.appendChild(k);
       return k;
     }
-    var nu = 0;
+    var ramme = boks.closest(".callout-body-container") || boks.closest(".callout-body");
+    var opgave = null, mellem = [];
+    if (ramme) {
+      for (var el = ramme.firstElementChild; el && !el.contains(boks); el = el.nextElementSibling) {
+        if (el.classList.contains("opgavetekst")) opgave = el;
+        else if (opgave) mellem.push(el);
+      }
+    }
+    var fraOpgaven = !!opgave;
+    if (fraOpgaven) boks.classList.add("fra-opgaven");
+    var foerst = fraOpgaven ? -1 : 0;
+    var nu = foerst;
     var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
     var numre = trin.map(function (t) {
       var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+[a-z]?$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
@@ -1629,6 +1645,15 @@ document.addEventListener("DOMContentLoaded", function () {
     top.appendChild(bjaelke);
     boks.insertBefore(top, boks.firstChild);
     top.appendChild(tekster);
+    if (fraOpgaven) {
+      top.insertBefore(opgave, bjaelke);
+      if (mellem.length) {
+        var indledning = document.createElement("div");
+        indledning.className = "opbyg-indledning";
+        mellem.forEach(function (el) { indledning.appendChild(el); });
+        boks.insertBefore(indledning, top.nextSibling);
+      }
+    }
     if (!udenTekst) tekster.setAttribute("aria-live", "polite");
 
     // Ruller siden, så det nye kan ses under bjælken og forklaringen
@@ -1658,31 +1683,35 @@ document.addEventListener("DOMContentLoaded", function () {
         liste.forEach(function (d) { if (d.fra <= nu) valgt = d; });
         liste.forEach(function (d) { d.el.classList.toggle("vist", d === valgt); });
       });
-      var aktivt = trinFor(nu);
+      var aktivt = nu < 0 ? -1 : trinFor(nu);
+      boks.classList.toggle("ved-start", nu < 0);
+      if (fraOpgaven) naeste.textContent = nu < 0 ? "Vis løsningen ›" : "Næste ›";
       numre.forEach(function (n, j) {
         n.classList.toggle("aktiv", j === aktivt);
         if (j === aktivt) n.setAttribute("aria-current", "step");
         else n.removeAttribute("aria-current");
       });
-      forrige.disabled = nu === 0;
+      forrige.disabled = nu === foerst;
       naeste.disabled = nu === klik.length - 1;
       if (rul) synlig();
     }
     function gaa(i) {
-      nu = Math.max(0, Math.min(klik.length - 1, i));
+      nu = Math.max(foerst, Math.min(klik.length - 1, i));
       vis(true);
     }
     forrige.addEventListener("click", function () { gaa(nu - 1); });
     naeste.addEventListener("click", function () { gaa(nu + 1); });
     bjaelke.addEventListener("keydown", function (e) {
       if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
-      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft" && nu > foerst) { gaa(nu - 1); e.preventDefault(); }
     });
 
     boks.classList.add("aktiv");
     var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
-    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(foerst + 1, +m[1])) - 1;
     vis(false);
+    // En høj opgave (fx med reaktionsskema og mange tal) må ikke fylde skærmen, når den bliver stående
+    if (fraOpgaven && opgave.offsetHeight > 0.3 * window.innerHeight) boks.insertBefore(opgave, top);
   });
 });
 </script>

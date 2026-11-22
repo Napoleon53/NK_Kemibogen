@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-91171fd5b92ee47f184b53fc904951e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6c87d4edabd898286e155b55bb83ed3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1154,10 +1154,10 @@ T_\mathrm{m} = \frac{\Delta H}{\Delta S} = \frac{200\,000\ \dfrac{\mathrm{J}}{\m
 \]</span></p>
 <p><span id="ord-konklusion" class="fagord-anker"><strong>Konklusion</strong></span></p>
 <p>Smeltetemperaturen er 60 °C. Ved 37 °C er Δ<em>G</em> for udfoldningen positiv, så udfoldningen er ikke spontan, og hårnålen er foldet.</p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><span id="ord-traen-med-en-tilsvarende-opgave" class="fagord-anker"><strong>Træn med en tilsvarende opgave:</strong></span> <a href="../opgaver/a7-4-opgaver.html#A7.4.3">Opgave A7.4.3 Smeltetemperaturen for to hårnåle</a></p>
+</div>
+</div>
 </div>
 <p>For to adskilte strenge afhænger smeltetemperaturen også af koncentrationen, fordi to molekyler skal støde sammen for at danne dobbeltstrengen. Princippet er dog det samme.</p>
 </section>
@@ -1244,10 +1244,10 @@ c = 50 \cdot 18\ \dfrac{\mathrm{\mu g}}{\mathrm{mL}} = 900\ \dfrac{\mathrm{\mu g
 \]</span></p>
 <p><strong>Konklusion</strong></p>
 <p>Den oprindelige opløsning indeholder 900 µg DNA pr. mL, det vil sige 0,90 mg/mL.</p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><strong>Træn med en tilsvarende opgave:</strong> <a href="../opgaver/a7-4-opgaver.html#A7.4.6">Opgave A7.4.6 Hvor meget DNA er der?</a></p>
+</div>
+</div>
 </div>
 <div class="til-proeven callout callout-style-default callout-important callout-titled" title="Til den skriftlige prøve">
 <div class="callout-header d-flex align-content-center">
@@ -1498,6 +1498,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Er alle klik tomme (kun knap="..."), står der ingen forklaring øverst, kun knapperne (klassen "uden-tekst", 20. nov.
 // 2026, C-bogen: Niels syntes, teksten øverst gentog tavlen, når det gule allerede viser det aktuelle trin).
 // "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+// Står der en opgavetekst (::: {.opgavetekst}) i eksemplet før tavlen, begynder man i trin 0, hvor kun opgaven står
+// (22. nov. 2026, Niels: "Det er lige præcis sådanne eksempler jeg gerne vil have"). Opgaven flyttes op over knapperne
+// og bliver stående, når man ruller (er den meget høj, står den over knapperne uden at blive stående), og knappen Næste
+// hedder "Vis løsningen" i trin 0. Det, der står mellem opgaven og tavlen, flyttes ind lige under knapperne og vises fra
+// trin 1. "?opbyg=0" viser trin 0.
 document.addEventListener("DOMContentLoaded", function () {
   Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
     var tekster = boks.querySelector(".opbyg-tekster");
@@ -1541,7 +1546,18 @@ document.addEventListener("DOMContentLoaded", function () {
       bjaelke.appendChild(k);
       return k;
     }
-    var nu = 0;
+    var ramme = boks.closest(".callout-body-container") || boks.closest(".callout-body");
+    var opgave = null, mellem = [];
+    if (ramme) {
+      for (var el = ramme.firstElementChild; el && !el.contains(boks); el = el.nextElementSibling) {
+        if (el.classList.contains("opgavetekst")) opgave = el;
+        else if (opgave) mellem.push(el);
+      }
+    }
+    var fraOpgaven = !!opgave;
+    if (fraOpgaven) boks.classList.add("fra-opgaven");
+    var foerst = fraOpgaven ? -1 : 0;
+    var nu = foerst;
     var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
     var numre = trin.map(function (t) {
       var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+[a-z]?$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
@@ -1552,6 +1568,15 @@ document.addEventListener("DOMContentLoaded", function () {
     top.appendChild(bjaelke);
     boks.insertBefore(top, boks.firstChild);
     top.appendChild(tekster);
+    if (fraOpgaven) {
+      top.insertBefore(opgave, bjaelke);
+      if (mellem.length) {
+        var indledning = document.createElement("div");
+        indledning.className = "opbyg-indledning";
+        mellem.forEach(function (el) { indledning.appendChild(el); });
+        boks.insertBefore(indledning, top.nextSibling);
+      }
+    }
     if (!udenTekst) tekster.setAttribute("aria-live", "polite");
 
     // Ruller siden, så det nye kan ses under bjælken og forklaringen
@@ -1581,31 +1606,35 @@ document.addEventListener("DOMContentLoaded", function () {
         liste.forEach(function (d) { if (d.fra <= nu) valgt = d; });
         liste.forEach(function (d) { d.el.classList.toggle("vist", d === valgt); });
       });
-      var aktivt = trinFor(nu);
+      var aktivt = nu < 0 ? -1 : trinFor(nu);
+      boks.classList.toggle("ved-start", nu < 0);
+      if (fraOpgaven) naeste.textContent = nu < 0 ? "Vis løsningen ›" : "Næste ›";
       numre.forEach(function (n, j) {
         n.classList.toggle("aktiv", j === aktivt);
         if (j === aktivt) n.setAttribute("aria-current", "step");
         else n.removeAttribute("aria-current");
       });
-      forrige.disabled = nu === 0;
+      forrige.disabled = nu === foerst;
       naeste.disabled = nu === klik.length - 1;
       if (rul) synlig();
     }
     function gaa(i) {
-      nu = Math.max(0, Math.min(klik.length - 1, i));
+      nu = Math.max(foerst, Math.min(klik.length - 1, i));
       vis(true);
     }
     forrige.addEventListener("click", function () { gaa(nu - 1); });
     naeste.addEventListener("click", function () { gaa(nu + 1); });
     bjaelke.addEventListener("keydown", function (e) {
       if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
-      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft" && nu > foerst) { gaa(nu - 1); e.preventDefault(); }
     });
 
     boks.classList.add("aktiv");
     var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
-    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(foerst + 1, +m[1])) - 1;
     vis(false);
+    // En høj opgave (fx med reaktionsskema og mange tal) må ikke fylde skærmen, når den bliver stående
+    if (fraOpgaven && opgave.offsetHeight > 0.3 * window.innerHeight) boks.insertBefore(opgave, top);
   });
 });
 </script>

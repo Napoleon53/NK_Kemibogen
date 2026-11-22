@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-91171fd5b92ee47f184b53fc904951e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6c87d4edabd898286e155b55bb83ed3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -1246,10 +1246,10 @@ Figur&nbsp;A1.6: Totaltrykket stiger, fordi hvert spaltet molekyle bliver til to
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><span id="ord-traen-med-en-tilsvarende-opgave" class="fagord-anker"><strong>Træn med en tilsvarende opgave:</strong></span> <a href="../opgaver/a1-3-opgaver.html#A1.3.3">Opgave A1.3.3 Ethen af ethan</a></p>
+</div>
+</div>
 </div>
 </section>
 <section id="når-der-står-et-tal-foran-stoffet" class="level2">
@@ -1369,10 +1369,10 @@ p_\mathrm{total} = 0{,}40\ \mathrm{bar} + 1{,}40\ \mathrm{bar} + 0{,}60\ \mathrm
 \]</span></p>
 <p><strong>Konklusion</strong></p>
 <p>Partialtrykket af dihydrogen er 1,80 bar ved ligevægt, og totaltrykket er 4,20 bar. Af de 1,00 bar methan er 0,60 bar omdannet. Det svarer til 60 % af methanen.</p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><strong>Træn med en tilsvarende opgave:</strong> <a href="../opgaver/a1-3-opgaver.html#A1.3.11">Opgave A1.3.11 Grøn methanol</a></p>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled" title="Pas på eksponenten">
 <div class="callout-header d-flex align-content-center">
@@ -1453,10 +1453,10 @@ K_\mathrm{p} = \frac{(0{,}50\ \mathrm{bar} - 2x)^{2}}{0{,}50\ \mathrm{bar} + x} 
 <p><span class="math display">\[
 Y = \frac{(0{,}30\ \mathrm{bar})^{2}}{0{,}60\ \mathrm{bar}} = 0{,}15\ \mathrm{bar}
 \]</span></p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><strong>Træn med en tilsvarende opgave:</strong> <a href="../opgaver/a1-3-opgaver.html#A1.3.6">Opgave A1.3.6 Find retningen først</a></p>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled" title="Sådan vælger du løsningen">
 <div class="callout-header d-flex align-content-center">
@@ -1554,10 +1554,10 @@ m(\mathrm{C}) = n \cdot M = 0{,}0602\ \mathrm{mol} \cdot 12{,}01\ \dfrac{\mathrm
 \]</span></p>
 <p><strong>Konklusion</strong></p>
 <p>Ved ligevægt er <em>p</em>(CO<sub>2</sub>) = 0,50 bar og <em>p</em>(CO) = 1,00 bar. Der er forbrugt 0,72 g carbon.</p>
-</div>
-</div>
-<div class="traen-opgave">
+<div class="traen-opgave i-boksen">
 <p><strong>Træn med en tilsvarende opgave:</strong> <a href="../opgaver/a1-3-opgaver.html#A1.3.7">Opgave A1.3.7 Et fast stof i skemaet</a></p>
+</div>
+</div>
 </div>
 </section>
 <section id="før-og-efter-skemaet" class="level2">
@@ -1843,6 +1843,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Er alle klik tomme (kun knap="..."), står der ingen forklaring øverst, kun knapperne (klassen "uden-tekst", 20. nov.
 // 2026, C-bogen: Niels syntes, teksten øverst gentog tavlen, når det gule allerede viser det aktuelle trin).
 // "?opbyg=4" eller "?opbyg=alle" i adressen viser klik 4 eller det hele (til billeder af siden).
+// Står der en opgavetekst (::: {.opgavetekst}) i eksemplet før tavlen, begynder man i trin 0, hvor kun opgaven står
+// (22. nov. 2026, Niels: "Det er lige præcis sådanne eksempler jeg gerne vil have"). Opgaven flyttes op over knapperne
+// og bliver stående, når man ruller (er den meget høj, står den over knapperne uden at blive stående), og knappen Næste
+// hedder "Vis løsningen" i trin 0. Det, der står mellem opgaven og tavlen, flyttes ind lige under knapperne og vises fra
+// trin 1. "?opbyg=0" viser trin 0.
 document.addEventListener("DOMContentLoaded", function () {
   Array.prototype.forEach.call(document.querySelectorAll(".opbyg"), function (boks) {
     var tekster = boks.querySelector(".opbyg-tekster");
@@ -1886,7 +1891,18 @@ document.addEventListener("DOMContentLoaded", function () {
       bjaelke.appendChild(k);
       return k;
     }
-    var nu = 0;
+    var ramme = boks.closest(".callout-body-container") || boks.closest(".callout-body");
+    var opgave = null, mellem = [];
+    if (ramme) {
+      for (var el = ramme.firstElementChild; el && !el.contains(boks); el = el.nextElementSibling) {
+        if (el.classList.contains("opgavetekst")) opgave = el;
+        else if (opgave) mellem.push(el);
+      }
+    }
+    var fraOpgaven = !!opgave;
+    if (fraOpgaven) boks.classList.add("fra-opgaven");
+    var foerst = fraOpgaven ? -1 : 0;
+    var nu = foerst;
     var forrige = knap("‹ Forrige", "trin-forrige", "Forrige");
     var numre = trin.map(function (t) {
       var n = knap(t.tekst, "trin-nr" + (t.valgfri ? " valgfri" : ""), /^\d+[a-z]?$/.test(t.tekst) ? "Trin " + t.tekst : t.tekst);
@@ -1897,6 +1913,15 @@ document.addEventListener("DOMContentLoaded", function () {
     top.appendChild(bjaelke);
     boks.insertBefore(top, boks.firstChild);
     top.appendChild(tekster);
+    if (fraOpgaven) {
+      top.insertBefore(opgave, bjaelke);
+      if (mellem.length) {
+        var indledning = document.createElement("div");
+        indledning.className = "opbyg-indledning";
+        mellem.forEach(function (el) { indledning.appendChild(el); });
+        boks.insertBefore(indledning, top.nextSibling);
+      }
+    }
     if (!udenTekst) tekster.setAttribute("aria-live", "polite");
 
     // Ruller siden, så det nye kan ses under bjælken og forklaringen
@@ -1926,31 +1951,35 @@ document.addEventListener("DOMContentLoaded", function () {
         liste.forEach(function (d) { if (d.fra <= nu) valgt = d; });
         liste.forEach(function (d) { d.el.classList.toggle("vist", d === valgt); });
       });
-      var aktivt = trinFor(nu);
+      var aktivt = nu < 0 ? -1 : trinFor(nu);
+      boks.classList.toggle("ved-start", nu < 0);
+      if (fraOpgaven) naeste.textContent = nu < 0 ? "Vis løsningen ›" : "Næste ›";
       numre.forEach(function (n, j) {
         n.classList.toggle("aktiv", j === aktivt);
         if (j === aktivt) n.setAttribute("aria-current", "step");
         else n.removeAttribute("aria-current");
       });
-      forrige.disabled = nu === 0;
+      forrige.disabled = nu === foerst;
       naeste.disabled = nu === klik.length - 1;
       if (rul) synlig();
     }
     function gaa(i) {
-      nu = Math.max(0, Math.min(klik.length - 1, i));
+      nu = Math.max(foerst, Math.min(klik.length - 1, i));
       vis(true);
     }
     forrige.addEventListener("click", function () { gaa(nu - 1); });
     naeste.addEventListener("click", function () { gaa(nu + 1); });
     bjaelke.addEventListener("keydown", function (e) {
       if (e.key === "ArrowRight" && nu < klik.length - 1) { gaa(nu + 1); e.preventDefault(); }
-      if (e.key === "ArrowLeft" && nu > 0) { gaa(nu - 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft" && nu > foerst) { gaa(nu - 1); e.preventDefault(); }
     });
 
     boks.classList.add("aktiv");
     var m = /[?&]opbyg=(\d+|alle)/.exec(location.search);
-    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(1, +m[1])) - 1;
+    if (m) nu = m[1] === "alle" ? klik.length - 1 : Math.min(klik.length, Math.max(foerst + 1, +m[1])) - 1;
     vis(false);
+    // En høj opgave (fx med reaktionsskema og mange tal) må ikke fylde skærmen, når den bliver stående
+    if (fraOpgaven && opgave.offsetHeight > 0.3 * window.innerHeight) boks.insertBefore(opgave, top);
   });
 });
 </script>
