@@ -111,6 +111,15 @@ h2.afl { font-size: 1.3rem; }
 .hjaelp { margin: 4px 0 0; font-size: .92rem; color: var(--daempet); }
 .hjaelp summary { cursor: pointer; color: var(--accent); font-weight: 600; width: max-content; }
 .hjaelp p { margin: 4px 0 0; }
+.hjaelpe { display: flex; flex-direction: column; gap: 3px; margin-top: 6px; }
+.hjaelpe .hjaelp { margin: 0; }
+.hjaelpe .hjaelp[open] { background: var(--teori-bg); border-left: 4px solid var(--teori); padding: 4px 12px 8px; border-radius: 4px; color: var(--blaek); }
+.hjaelp p.formel { text-align: center; margin: 8px 0; }
+.brok { display: inline-block; vertical-align: middle; text-align: center; margin: 0 .12em; line-height: 1.2; }
+.brok > span { display: block; padding: 0 .2em; }
+.brok > .t { border-bottom: 1px solid currentColor; }
+sup .brok, sub .brok { font-size: .9em; }
+.brok.felt > span { padding: 3px .2em; }
 .tekst.ind, .regn, textarea.svar, .ark .skemaboks, .ring { margin-left: 1.6em; }
 .regn { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; margin-bottom: 10px; }
 .rt { white-space: nowrap; }
