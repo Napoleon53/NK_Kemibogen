@@ -1,58 +1,117 @@
-/* Gasser og luftballoner. Farverne er Kemibogens (modulplanerne). */
+/* Gasser og luftballoner. Opbygget som kemibogen.dk: menu til venstre, "På denne side" til højre. */
 @font-face { font-family: "Kemibogen I"; font-weight: 400; font-style: normal; unicode-range: U+0049, U+006C, U+03C1; src: url("data:font/woff;base64,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") format("woff"); }
 :root {
-  --bord: #e6ecea; --ark: #ffffff; --blaek: #1c2826; --daempet: #5b6b67; --streg: #d3dcd9; --felt: #f8faf9;
-  --accent: #0f766e; --accent-svag: #e3f1ef;
-  --fysik: #b45309; --fysik-bg: #fbefe1; --kemi: #1d4ed8; --kemi-bg: #e7eefc;
-  --mat: #7c3aed; --mat-bg: #f0eafd; --faelles: #0f766e; --faelles-bg: #e3f1ef;
-  --udf: #b45309; --udf-bg: #fff6ea; --guld: #c99a2e; --guld-bg: #fff8e1; --groen-bg: #e8f5e9;
+  --bg: #ffffff; --panel: #ffffff; --blaek: #14201f; --daempet: #5f6b6a; --streg: #dee2e6; --felt: #f7f9fa;
+  --accent: #007bbd; --accent-svag: #e5f1f8; --her: #e5f1f8;
+  --teori: #0f766e; --teori-bg: #e9f5f3;
+  --fysik: #b45309; --kemi: #1d4ed8; --mat: #7c3aed; --faelles: #0f766e;
+  --udf: #b45309; --udf-bg: #fff6ea; --guld: #c99a2e; --guld-bg: #fff8e1; --groen: #2e7d32; --groen-bg: #e8f5e9;
   --skrift: "Kemibogen I", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) { :root {
-  --bord: #0e1514; --ark: #172120; --blaek: #e4ecea; --daempet: #9fb0ab; --streg: #2c3a38; --felt: #1c2827;
-  --accent: #4fc2b5; --accent-svag: #1b3532;
-  --fysik: #f0a95a; --fysik-bg: #3a2a17; --kemi: #8fb0ff; --kemi-bg: #1d2a47; --mat: #c4a6ff; --mat-bg: #2c2342;
-  --faelles: #4fc2b5; --faelles-bg: #1b3532; --udf: #f0a95a; --udf-bg: #33261a; --guld: #e0b85a; --guld-bg: #332b17; --groen-bg: #1b3326;
+  --bg: #181c1f; --panel: #181c1f; --blaek: #dee2e6; --daempet: #9aa5a9; --streg: #343a40; --felt: #20262a;
+  --accent: #66b0d7; --accent-svag: #18303d; --her: #18303d; --teori: #4fc2b5; --teori-bg: #183230;
+  --fysik: #f0a95a; --kemi: #8fb0ff; --mat: #c4a6ff; --faelles: #4fc2b5;
+  --udf: #f0a95a; --udf-bg: #33261a; --guld: #e0b85a; --guld-bg: #332b17; --groen: #7ccf80; --groen-bg: #1b3326;
 } }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bord); color: var(--blaek); font-family: var(--skrift); font-size: 17px; line-height: 1.55; }
+html { scroll-padding-top: 16px; }
+body { margin: 0; background: var(--bg); color: var(--blaek); font-family: var(--skrift); font-size: 17px; line-height: 1.6; }
 a { color: var(--accent); }
-.top { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; justify-content: space-between;
-  padding: 10px 20px; background: var(--ark); border-bottom: 1px solid var(--streg); }
-.top .forloeb { font-weight: 700; text-decoration: none; color: var(--blaek); }
-.moduler { display: flex; gap: 6px; flex-wrap: wrap; }
-.moduler a { min-width: 34px; height: 34px; padding: 0 6px; border-radius: 17px; display: grid; place-items: center; text-decoration: none; font-weight: 700; font-size: .9rem; border: 1px solid var(--streg); color: var(--blaek); }
-.moduler a.her { background: var(--accent); color: var(--ark); border-color: var(--accent); }
-.moduler a.fysik:not(.her) { color: var(--fysik); } .moduler a.kemi:not(.her) { color: var(--kemi); }
-.moduler a.mat:not(.her) { color: var(--mat); } .moduler a.faelles:not(.her) { color: var(--faelles); }
-main { padding: 24px 16px 40px; }
-.ark { max-width: 860px; margin: 0 auto; background: var(--ark); border: 1px solid var(--streg); border-radius: 12px; padding: 28px clamp(18px, 4vw, 48px) 32px; }
-h1 { font-size: 1.9rem; line-height: 1.2; margin: 4px 0 14px; }
+button { font: inherit; cursor: pointer; }
+svg { width: 15px; height: 15px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* rammen */
+.layout { display: grid; grid-template-columns: 260px minmax(0, 1fr) 220px; min-height: 100vh; }
+.panel { position: sticky; top: 0; height: 100vh; overflow-y: auto; background: var(--panel); border-right: 1px solid var(--streg); padding: 28px 18px 30px 20px; font-size: .92rem; }
+.ptitel { display: block; font-size: 1.35rem; font-weight: 600; line-height: 1.25; color: var(--blaek); text-decoration: none; }
+.pundertitel { margin: 4px 0 18px; color: var(--daempet); font-size: .82rem; }
+.menu { list-style: none; margin: 0; padding: 0; }
+.menu a { display: flex; align-items: center; gap: 7px; padding: 3px 8px; border-radius: 5px; color: var(--blaek); text-decoration: none; }
+.menu a:hover { color: var(--accent); }
+.menu a.her { background: var(--her); color: var(--accent); }
+.menu > li { margin: 1px 0; }
+.modul summary { list-style: none; display: flex; align-items: center; cursor: pointer; border-radius: 5px; }
+.modul summary::-webkit-details-marker { display: none; }
+.modul summary a { flex: 1; }
+.modul summary::after { content: ""; width: 7px; height: 7px; margin: 0 8px 0 6px; border-right: 1.5px solid var(--daempet); border-bottom: 1.5px solid var(--daempet); transform: rotate(-45deg); transition: transform .15s; flex: none; }
+.modul details[open] > summary::after { transform: rotate(45deg); margin-top: -4px; }
+.mnr { min-width: 1.6em; font-weight: 700; }
+.modul.fysik .mnr { color: var(--fysik); } .modul.kemi .mnr { color: var(--kemi); } .modul.mat .mnr { color: var(--mat); } .modul.faelles .mnr { color: var(--faelles); }
+.modul ul { list-style: none; margin: 2px 0 8px; padding: 0 0 0 26px; font-size: .86rem; }
+.modul ul a { color: var(--daempet); padding: 2px 8px; }
+.modul ul a:hover { color: var(--accent); }
+.menu.ekstra { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--streg); font-size: .84rem; }
+.menu.ekstra a { color: var(--daempet); }
+.indhold { padding: 30px clamp(18px, 4vw, 56px) 60px; max-width: 900px; width: 100%; }
+.toc { position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto; padding: 30px 16px 20px 6px; font-size: .84rem; }
+.toctitel { font-weight: 600; margin: 0 0 8px; }
+.toc ul { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--streg); }
+.toc a { display: block; padding: 3px 0 3px 12px; margin-left: -1px; color: var(--blaek); text-decoration: none; border-left: 2px solid transparent; line-height: 1.35; }
+.toc a:hover { color: var(--accent); }
+.toc a.aktiv { color: var(--accent); border-left-color: var(--accent); }
+.toc.tom { visibility: hidden; }
+.mobiltop { display: none; }
+@media (max-width: 1150px) { .layout { grid-template-columns: 250px minmax(0, 1fr); } .toc { display: none; } }
+@media (max-width: 820px) {
+  .layout { display: block; }
+  .mobiltop { display: flex; position: sticky; top: 0; z-index: 5; gap: 12px; align-items: center; padding: 8px 14px; background: var(--panel); border-bottom: 1px solid var(--streg); }
+  .mobiltop a { color: var(--blaek); font-weight: 600; text-decoration: none; }
+  .mobiltop button { border: 1px solid var(--streg); background: var(--felt); color: var(--blaek); border-radius: 6px; padding: 4px 10px; }
+  .panel { display: none; position: fixed; z-index: 4; top: 47px; left: 0; height: calc(100vh - 47px); width: min(300px, 88vw); box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+  body.menu-aaben .panel { display: block; }
+  .indhold { padding: 20px 16px 50px; }
+}
+
+/* sidens top */
+.sti { margin: 0 0 6px; font-size: .88rem; color: var(--daempet); }
+.sti .fysik { color: var(--fysik); } .sti .kemi { color: var(--kemi); } .sti .mat { color: var(--mat); } .sti .faelles { color: var(--faelles); }
+h1 { font-size: 2.05rem; font-weight: 600; line-height: 1.2; margin: 0 0 16px; }
+h2 { font-size: 1.45rem; font-weight: 600; margin: 34px 0 12px; }
+h2.lille { font-size: 1rem; margin: 0 0 4px; }
+.forslag { display: inline-block; margin: 0 0 18px; padding: 3px 10px; border-radius: 5px; background: var(--groen-bg); color: var(--groen); font-size: .85rem; font-weight: 600; }
 .etiket { margin: 0; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .etiket.fysik { color: var(--fysik); } .etiket.kemi { color: var(--kemi); } .etiket.mat { color: var(--mat); } .etiket.faelles { color: var(--faelles); }
+
+/* modulets forside */
+.lektier { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lektier > div { background: var(--felt); border: 1px solid var(--streg); border-radius: 8px; padding: 12px 16px; }
+.lektier p { margin: 0; }
+@media (max-width: 600px) { .lektier { grid-template-columns: 1fr; } }
+ol.forloeb { padding-left: 1.5em; } ol.forloeb li { margin: 7px 0; padding-left: 4px; }
+ol.forloeb li::marker { color: var(--accent); font-weight: 700; }
+.kortgitter { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.matkort { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start; padding: 14px 16px; border: 1px solid var(--streg); border-radius: 8px; text-decoration: none; color: var(--blaek); }
+.matkort svg { width: 22px; height: 22px; color: var(--accent); grid-row: span 2; margin-top: 2px; }
+.matkort span { font-size: .86rem; color: var(--daempet); line-height: 1.4; }
+.matkort:hover { border-color: var(--accent); }
+
+/* arket */
 .vaerktoj { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .82rem; color: var(--daempet); margin: 0 0 18px; }
 .vaerktoj span { flex: 1 1 260px; }
-button { font: inherit; cursor: pointer; }
-.vaerktoj button, .faner button { border: 1px solid var(--streg); background: var(--felt); color: var(--blaek); border-radius: 8px; padding: 5px 12px; }
+.vaerktoj button, .faner button { border: 1px solid var(--streg); background: var(--felt); color: var(--blaek); border-radius: 6px; padding: 5px 12px; }
 .intro { font-size: 1.05rem; }
-.teori, .udf, .regler, .billet { border-radius: 8px; padding: 12px 18px; margin: 14px 0; }
-.teori { background: var(--accent-svag); border-left: 5px solid var(--accent); }
-.teori h3 { margin: 0 0 4px; font-size: 1rem; color: var(--accent); }
+.teori, .udf, .regler, .billet { border-radius: 6px; padding: 12px 18px; margin: 14px 0; }
+.teori { background: var(--teori-bg); border-left: 5px solid var(--teori); }
+.teori h3 { margin: 0 0 4px; font-size: 1rem; color: var(--teori); }
+details.teori { padding: 8px 18px; }
+details.teori summary { cursor: pointer; color: var(--teori); font-weight: 600; }
+details.teori[open] summary { margin-bottom: 4px; }
 .teori p, .udf p, .regler p, .billet p { margin: 6px 0; }
 .udf { background: var(--udf-bg); border-left: 5px solid var(--udf); }
 .regler { background: var(--guld-bg); border-left: 5px solid var(--guld); }
 .billet { border: 2px dashed var(--streg); }
-h2.opg { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 1.25rem; margin: 30px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--streg); }
-h2.opg .nr { color: var(--kemi); font-weight: 800; } h2.opg .nr.udf { color: var(--udf); }
+h2.opg { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 1.3rem; margin: 34px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--streg); }
+h2.opg .nr { color: var(--accent); font-weight: 800; } h2.opg .nr.udf { color: var(--udf); }
 .tag { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--daempet); }
 .tag.udf { color: var(--udf); }
-h2.afl { font-size: 1.3rem; margin: 34px 0 6px; }
+h2.afl { font-size: 1.3rem; }
 .spm { display: grid; grid-template-columns: 1.6em 1fr; gap: 0 4px; margin: 12px 0 6px; }
 .spm .b { font-weight: 700; } .spm p { margin: 0; }
 .hjaelp { margin: 4px 0 0; font-size: .92rem; color: var(--daempet); }
 .hjaelp summary { cursor: pointer; color: var(--accent); font-weight: 600; width: max-content; }
 .hjaelp p { margin: 4px 0 0; }
-.tekst.ind, .regn, textarea.svar, .skemaboks, .ring { margin-left: 1.6em; }
+.tekst.ind, .regn, textarea.svar, .ark .skemaboks, .ring { margin-left: 1.6em; }
 .regn { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; margin-bottom: 10px; }
 .rt { white-space: nowrap; }
 input.svar, textarea.svar { font: inherit; color: var(--blaek); background: var(--felt); border: 1px solid var(--streg); border-radius: 6px; padding: 6px 8px; }
@@ -70,39 +129,43 @@ table { border-collapse: collapse; }
 .valg.ringet { border-color: var(--accent); background: var(--accent-svag); }
 .ring .lbl { color: var(--daempet); font-size: .9rem; margin-right: 6px; }
 .formel { text-align: center; font-size: 1.08rem; margin: 10px 0; }
-.figur { margin: 14px 0; background: #fff; border-radius: 10px; padding: 8px; border: 1px solid var(--streg); }
+.figur { margin: 14px 0; background: #fff; border-radius: 8px; padding: 8px; border: 1px solid var(--streg); }
 .figur img { display: block; width: 100%; height: auto; }
 ol.trin { padding-left: 1.6em; } ol.trin li { margin: 4px 0; }
 .lektie { margin-top: 26px; padding-top: 10px; border-top: 1px solid var(--streg); }
-.faner { display: flex; gap: 8px; margin: 30px 0 0; }
-.faner button[aria-pressed="true"] { background: var(--accent); color: var(--ark); border-color: var(--accent); }
-.bladr { display: flex; justify-content: space-between; margin-top: 34px; font-weight: 600; }
-.fod { text-align: center; font-size: .82rem; color: var(--daempet); padding: 0 16px 30px; }
-/* forsiden */
-.spoergsmaal { font-size: 1.35rem; font-weight: 700; color: var(--accent); margin: 0 0 14px; }
-h2.sektion { font-size: 1.3rem; margin: 30px 0 12px; }
+.faner { display: flex; gap: 8px; margin: 0 0 6px; }
+.faner button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+.bladr { display: flex; justify-content: space-between; gap: 16px; margin-top: 44px; padding-top: 14px; border-top: 1px solid var(--streg); font-weight: 600; }
+.bladr a { text-decoration: none; }
+
+/* forløbets forside */
+.spoergsmaal { font-size: 1.3rem; font-weight: 600; color: var(--accent); margin: 0 0 14px; }
 .modulgitter { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
-.modulkort { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border: 1px solid var(--streg); border-radius: 10px; text-decoration: none; color: var(--blaek); background: var(--felt); }
-.modulkort:hover { border-color: var(--accent); }
-.modulkort .kort { font-size: .9rem; color: var(--daempet); }
+.modulkort { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border: 1px solid var(--streg); border-left-width: 4px; border-radius: 8px; text-decoration: none; color: var(--blaek); }
+.modulkort.fysik { border-left-color: var(--fysik); } .modulkort.kemi { border-left-color: var(--kemi); } .modulkort.mat { border-left-color: var(--mat); } .modulkort.faelles { border-left-color: var(--faelles); }
+.modulkort.fysik .etiket { color: var(--fysik); } .modulkort.kemi .etiket { color: var(--kemi); } .modulkort.mat .etiket { color: var(--mat); } .modulkort.faelles .etiket { color: var(--faelles); }
+.modulkort:hover { background: var(--felt); }
+.modulkort .kort { font-size: .88rem; color: var(--daempet); }
 .formler th, .formler td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--streg); vertical-align: top; }
 .formler th { font-size: .92rem; } .formler .f { white-space: nowrap; } .formler .note { font-size: .88rem; color: var(--daempet); }
+
 /* lærersiden */
 .overblik th, .overblik td, .plan th, .plan td { border: 1px solid var(--streg); padding: 6px 9px; vertical-align: top; text-align: left; }
 .overblik th, .plan th { background: var(--accent-svag); font-size: .88rem; }
 .overblik td.fysik { color: var(--fysik); font-weight: 700; } .overblik td.kemi { color: var(--kemi); font-weight: 700; }
 .overblik td.mat { color: var(--mat); font-weight: 700; } .overblik td.faelles { color: var(--faelles); font-weight: 700; }
 .planmodul { margin-top: 40px; padding-top: 18px; border-top: 2px solid var(--streg); }
-.planmodul h2 { margin: 4px 0 10px; font-size: 1.5rem; }
+.planmodul h2 { margin: 4px 0 10px; }
 .plan p { margin: 4px 0; }
 .plan tr.elev td { background: var(--groen-bg); }
 .plan .tid { white-space: nowrap; font-size: .85rem; color: var(--daempet); }
 .plan .tnr { display: block; font-size: 1.3rem; font-weight: 800; color: var(--accent); }
 .plan .hvem { font-size: .9rem; } .plan .facit { font-size: .88rem; color: var(--daempet); }
 .note { color: var(--daempet); font-size: .92rem; }
+
 @media print {
-  body { background: #fff; font-size: 11pt; } .top, .vaerktoj, .bladr, .fod, .faner { display: none; }
-  .ark { border: 0; padding: 0; max-width: none; } main { padding: 0; }
+  body { background: #fff; font-size: 11pt; } .panel, .toc, .mobiltop, .vaerktoj, .bladr, .faner, .sti { display: none !important; }
+  .layout { display: block; } .indhold { padding: 0; max-width: none; }
   .fane[hidden] { display: block; } details.hjaelp { display: none; }
   input.svar, textarea.svar { background: #fff; }
 }
